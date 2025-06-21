@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "dapr-run",
-            "program": "${workspaceFolder}/cocktails.api/src/Cocktails.Api/bin/Debug/net9.0/Cocktails.Api.dll",
+            "program": "${workspaceFolder}/src/Cocktails.Api/bin/Debug/net9.0/Cocktails.Api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/cocktails.api/src/Cocktails.Api",
+            "cwd": "${workspaceFolder}/src/Cocktails.Api",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

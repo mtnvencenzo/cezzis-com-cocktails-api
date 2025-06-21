@@ -10,6 +10,6 @@
         }
     },
     "dotrush.roslyn.projectOrSolutionFiles": [
-      "cocktails.api\\Cocktails.Api.sln"
+      "Cocktails.Api.sln"
     ]
 }

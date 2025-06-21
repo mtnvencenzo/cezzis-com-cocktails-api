@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/cocktails.api/src/Cocktails.Api/Cocktails.Api.csproj",
+                "${workspaceFolder}/src/Cocktails.Api/Cocktails.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
