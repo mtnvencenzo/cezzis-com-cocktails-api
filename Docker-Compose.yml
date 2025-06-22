@@ -25,7 +25,7 @@ services:
   api: 
     container_name: cocktails-api-cmp-local
     build:
-      dockerfile: './cocktails.api/src/Cocktails.Api/Dockerfile'
+      dockerfile: './src/Cocktails.Api/Dockerfile'
     image: cocktails-api:local
     ports:
       - '6000:8080'

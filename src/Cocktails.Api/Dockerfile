@@ -4,7 +4,7 @@ WORKDIR /App
 COPY ./Directory.Build.props ./
 COPY ./Nuget-Docker.Config ./Nuget.Config
 COPY ./.editorconfig ./
-COPY ./cocktails.api ./
+COPY ./src ./src
 
 RUN ls -la
 RUN dotnet restore ./src/Cocktails.Api/Cocktails.Api.csproj --configfile ./Nuget.Config

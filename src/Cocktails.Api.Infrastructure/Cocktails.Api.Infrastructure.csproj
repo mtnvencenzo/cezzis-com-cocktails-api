@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.14.0" />
-    <PackageReference Include="Azure.Search.Documents" Version="11.6.0" />
+    <PackageReference Include="Azure.Search.Documents" Version="11.6.1" />
     <PackageReference Include="Cezzi.Applications" Version="1.0.11" />
     <PackageReference Include="Cezzi.Smtp" Version="1.0.11" />
     <PackageReference Include="Dapr.Client" Version="1.15.4" />
@@ -14,10 +14,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Graph" Version="5.79.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Cosmos" Version="9.0.5" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.5" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.5" />
+    <PackageReference Include="Microsoft.Graph" Version="5.82.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Cosmos" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.6" />
     <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
   </ItemGroup>
 
