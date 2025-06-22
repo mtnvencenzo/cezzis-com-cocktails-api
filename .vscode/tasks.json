@@ -2,16 +2,27 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "restore",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "restore",
+                "${workspaceFolder}/Cocktails.Api.sln"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "build",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/Cocktails.Api/Cocktails.Api.csproj",
+                "${workspaceFolder}/Cocktails.Api.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "dependsOn": "restore"
         },
         {
             "label": "dapr-run",
@@ -22,6 +33,7 @@
                 "dapr run --app-id cocktails-api --resources-path ${workspaceFolder}\\.dapr\\ --app-port 7176 --app-protocol https --dapr-http-port 5295 --dapr-grpc-port 50001 --metrics-port 9090"
             ],
             "isBackground": true,
+            "dependsOn": "build",
             "problemMatcher": {
                 "pattern": {
                     "regexp": ".",

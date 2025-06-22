@@ -1,5 +1,4 @@
 {
-    "dotnet.defaultSolution": "disable",
     "rest-client.enableTelemetry": false,
     "rest-client.environmentVariables": {
         "local": {
@@ -9,7 +8,13 @@
           "host": "https://api.cezzis.com/prd/cocktails"
         }
     },
-    "dotrush.roslyn.projectOrSolutionFiles": [
-      "Cocktails.Api.sln"
-    ]
+    "dotnet.defaultSolution": "Cocktails.Api.sln",
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    },
+    "search.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    }
 }
