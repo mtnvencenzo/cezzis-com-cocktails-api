@@ -76,5 +76,5 @@ jobs:
     secrets:
       arm_client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
       terraform_module_repo_access_key_secret: ${{ secrets.TERRAFORM_MODULE_REPO_ACCESS_KEY_SECRET }}
-      command_line_args: '-var "b2c_terraform_app_registration_client_id=${{ secrets.TERRAFORM_APP_REGISTRATION_CLIENT_ID }}" -var "b2c_terraform_app_registration_client_secret=${{ secrets.TERRAFORM_APP_REGISTRATION_CLIENT_SECRET }}"'
+      command_line_args: '-var "b2c_terraform_app_registration_client_id=${{ secrets.PRD_B2C_TERRAFORM_APP_REGISTRATION_CLIENT_ID }}" -var "b2c_terraform_app_registration_client_secret=${{ secrets.PRD_B2C_TERRAFORM_APP_REGISTRATION_CLIENT_SECRET }}"'
     
