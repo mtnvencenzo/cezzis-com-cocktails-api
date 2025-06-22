@@ -3,7 +3,7 @@ common:
   resourcesPath: ./.dapr/
 apps:
   - appID: cocktails-api
-    appDirPath: ./cocktails.api/src/Cocktails.Api/
+    appDirPath: ./src/Cocktails.Api/
     appPort: 7176
     appProtocol: https
     command: ["dotnet", "run"]

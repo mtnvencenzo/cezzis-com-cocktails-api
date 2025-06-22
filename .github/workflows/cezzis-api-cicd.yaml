@@ -3,10 +3,20 @@ name: cicd-cezzis-api
 on:
   pull_request:
     branches: [main]
-    paths: [cocktails.api/**, .github/workflows/cezzis-api-cicd.yaml]
+    paths: [
+      src/**,
+      terraform/**,
+      test/**,
+      .github/workflows/cezzis-api-cicd.yaml
+    ]
   push:
     branches: [main]
-    paths: [cocktails.api/**, .github/workflows/cezzis-api-cicd.yaml]
+    paths: [
+      src/**,
+      terraform/**,
+      test/**,
+      .github/workflows/cezzis-api-cicd.yaml
+    ]
 
   workflow_dispatch:
 
@@ -15,9 +25,9 @@ jobs:
     name: Build and test
     uses: mtnvencenzo/workflows/.github/workflows/api-build.yaml@main
     with:
-      working_directory: 'cocktails.api'
+      working_directory: './'
       dotnet_version: '9.x'
-      nuget_file_path: './../Nuget.Config'
+      nuget_file_path: './Nuget.Config'
       github_nuget_feed_name: 'github-mtnvencenzo'
       github_nuget_feed_source: 'https://nuget.pkg.github.com/mtnvencenzo/index.json'
       project_path: './Cocktails.Api.sln'
@@ -34,7 +44,7 @@ jobs:
     needs: [build]
     uses: mtnvencenzo/workflows/.github/workflows/docker-build-and-push.yaml@main
     with:
-      working_directory: 'cocktails.api'
+      working_directory: './'
       allow_build_and_push: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
       artifact_name: 'cocktails-api'
       docker_file_name: 'Dockerfile-CI'
@@ -51,7 +61,7 @@ jobs:
     uses: mtnvencenzo/workflows/.github/workflows/terraform-plan-and-apply.yaml@main
     needs: [docker]
     with:
-      working_directory: cocktails.api/terraform
+      working_directory: terraform
       environment_name: prd
       allow_deploy: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
       terraform_version: 1.11.4

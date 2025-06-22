@@ -36,7 +36,6 @@
 - **CI/CD**: GitHub Workflows
 
 ## 🏗️ Project Structure
-
 ```
 src/
 ├── Cocktails.Api/           # Main API project
