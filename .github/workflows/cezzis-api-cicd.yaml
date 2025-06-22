@@ -37,7 +37,7 @@ jobs:
       setup_files: '["./src/Cocktails.Api/Dockerfile-CI"]' # Must be a string representation of a json array with items separated by ', '
       publish_directory_name: 'publish'
     secrets:
-      github_packages_pat_token: ${{ secrets.GH_PACKAGES_PAT_TOKEN }}
+      github_packages_pat_token: ${{ secrets.GH_PACKAGES_PAT_TOKEN_READ }}
 
   docker:
     name: Containerize app
