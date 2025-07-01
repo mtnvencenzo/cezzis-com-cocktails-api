@@ -26,10 +26,14 @@ public static class HealthApi
             .WithName(nameof(GetPing))
             .WithDisplayName(nameof(GetPing));
 
+        groupBuilder.MapGet("/version", GetVersion)
+            .WithName(nameof(GetVersion))
+            .WithDisplayName(nameof(GetVersion));
+
         return groupBuilder;
     }
 
-    /// <summary>Gets the cocktails open API spec.</summary>
+    /// <summary>Pings the cocktails api</summary>
     /// <returns></returns>
     [ApiExplorerSettings(IgnoreApi = true)]
     [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(PingRs))]
@@ -39,5 +43,17 @@ public static class HealthApi
         var ping = healthServices.Queries.GetPing();
 
         return TypedResults.Ok(ping);
+    }
+
+    /// <summary>Gets the current cocktails api version</summary>
+    /// <returns></returns>
+    [ApiExplorerSettings(IgnoreApi = true)]
+    [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(VersionRs))]
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public static Ok<VersionRs> GetVersion([AsParameters] HealthServices healthServices)
+    {
+        var version = healthServices.Queries.GetVersion();
+
+        return TypedResults.Ok(version);
     }
 }

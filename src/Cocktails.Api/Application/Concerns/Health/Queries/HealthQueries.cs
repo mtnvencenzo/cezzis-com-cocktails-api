@@ -2,6 +2,7 @@
 
 using global::Cocktails.Api.Application.Concerns.Health.Models;
 using global::Cocktails.Api.Domain.Aggregates.HealthAggregate;
+using System.Reflection;
 
 public class HealthQueries(IHealthRepository healthRepository) : IHealthQueries
 {
@@ -19,5 +20,14 @@ public class HealthQueries(IHealthRepository healthRepository) : IHealthQueries
             ProcessorCount: item.ProcessorCount,
             Version: item.Version
         );
+    }
+
+    public VersionRs GetVersion()
+    {
+        var version = Assembly.GetExecutingAssembly()
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+            .InformationalVersion;
+
+        return new VersionRs(version ?? "0.0.0");
     }
 }
