@@ -23,6 +23,8 @@ on:
 jobs:
   gitVersion:
     name: Git version
+    permissions: 
+      contents: read
     runs-on: ubuntu-latest
     outputs:
       semVer: ${{ steps.gitVersion.outputs.semVer }}
