@@ -104,3 +104,14 @@ jobs:
       terraform_module_repo_access_key_secret: ${{ secrets.TERRAFORM_MODULE_REPO_ACCESS_KEY_SECRET }}
       command_line_args: '-var "b2c_terraform_app_registration_client_id=${{ secrets.PRD_B2C_TERRAFORM_APP_REGISTRATION_CLIENT_ID }}" -var "b2c_terraform_app_registration_client_secret=${{ secrets.PRD_B2C_TERRAFORM_APP_REGISTRATION_CLIENT_SECRET }}"'
     
+  warmup_prd:
+    name: Warmup prd
+    uses: mtnvencenzo/workflows/.github/workflows/warmup-request.yaml@main
+    needs: [docker, gitVersion, terraform_deploy_prd]
+    with:
+      allow_warmup: true
+      url: https://api.cezzis.com/prd/cocktails/api/v1/health/ping
+      statusCode: 200
+      authHeader: X-Key
+    secrets:
+      authValue: ${{ secrets.PRD_DEVOPS_APIM_SUBSCRIPTION_KEY }}
