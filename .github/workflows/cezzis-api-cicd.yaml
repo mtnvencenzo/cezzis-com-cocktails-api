@@ -106,6 +106,7 @@ jobs:
     
   create_release:
     name: Create release
+    if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -115,7 +116,6 @@ jobs:
         uses: mtnvencenzo/workflows/.github/actions/create-release@main
         with:
           version: ${{ needs.gitVersion.outputs.semVer }}
-          allow_release: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
 
   warmup_prd:
     name: Warmup prd
