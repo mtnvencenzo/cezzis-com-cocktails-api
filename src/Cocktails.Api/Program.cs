@@ -1,12 +1,8 @@
 using Asp.Versioning;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
-using Cocktails.Api.Domain.Config;
 using Cocktails.Api.StartupExtensions;
 using Cocktails.Api.Infrastructure;
 using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Microsoft.Graph;
 using System.Diagnostics;
 using MediatR;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;

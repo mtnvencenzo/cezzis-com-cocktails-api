@@ -126,6 +126,14 @@ module "apim_cocktails_api" {
       security_type       = "anonymous"
     },
     {
+      display_name        = "Get Version"
+      method              = "GET"
+      url_template        = "/health/version"
+      description         = "Get version"
+      success_status_code = 200
+      security_type       = "anonymous"
+    },
+    {
       display_name        = "Put Ingredients List"
       method              = "PUT"
       url_template        = "/cocktails/ingredients"

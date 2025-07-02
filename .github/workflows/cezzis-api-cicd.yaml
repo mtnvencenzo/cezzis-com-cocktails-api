@@ -21,8 +21,33 @@ on:
   workflow_dispatch:
 
 jobs:
+  gitVersion:
+    name: Git version
+    permissions: 
+      contents: read
+    runs-on: ubuntu-latest
+    outputs:
+      semVer: ${{ steps.gitVersion.outputs.semVer }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
+      
+      - name: Install GetVersion
+        uses: gittools/actions/gitversion/setup@v1.1.1
+        with:
+          versionSpec: "5.x"
+
+      - name: Use GitVersion
+        id: gitVersion
+        uses: gittools/actions/gitversion/execute@v1.1.1
+        with:
+          useConfigFile: true
+  
   build:
     name: Build and test
+    needs: [gitVersion]
     uses: mtnvencenzo/workflows/.github/workflows/api-build.yaml@main
     with:
       working_directory: './'
@@ -36,12 +61,13 @@ jobs:
       artifact_name: 'cocktails-api'
       setup_files: '["./src/Cocktails.Api/Dockerfile-CI"]' # Must be a string representation of a json array with items separated by ', '
       publish_directory_name: 'publish'
+      version: ${{ needs.gitVersion.outputs.semVer }}
     secrets:
       github_packages_pat_token: ${{ secrets.GH_PACKAGES_PAT_TOKEN_READ }}
 
   docker:
     name: Containerize app
-    needs: [build]
+    needs: [build, gitVersion]
     uses: mtnvencenzo/workflows/.github/workflows/docker-build-and-push.yaml@main
     with:
       working_directory: './'
@@ -59,7 +85,7 @@ jobs:
   terraform_deploy_prd:
     name: Terraform deploy prd
     uses: mtnvencenzo/workflows/.github/workflows/terraform-plan-and-apply.yaml@main
-    needs: [docker]
+    needs: [docker, gitVersion]
     with:
       working_directory: terraform
       environment_name: prd
@@ -78,3 +104,29 @@ jobs:
       terraform_module_repo_access_key_secret: ${{ secrets.TERRAFORM_MODULE_REPO_ACCESS_KEY_SECRET }}
       command_line_args: '-var "b2c_terraform_app_registration_client_id=${{ secrets.PRD_B2C_TERRAFORM_APP_REGISTRATION_CLIENT_ID }}" -var "b2c_terraform_app_registration_client_secret=${{ secrets.PRD_B2C_TERRAFORM_APP_REGISTRATION_CLIENT_SECRET }}"'
     
+  create_release:
+    name: Create release
+    if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    needs: [docker, gitVersion, terraform_deploy_prd]
+    steps:
+      - name: Create release
+        uses: mtnvencenzo/workflows/.github/actions/create-release@main
+        with:
+          version: ${{ needs.gitVersion.outputs.semVer }}
+
+  warmup_prd:
+    name: Warmup prd
+    permissions:
+      contents: write
+    uses: mtnvencenzo/workflows/.github/workflows/warmup-request.yaml@main
+    needs: [docker, gitVersion, terraform_deploy_prd]
+    with:
+      allow_warmup: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
+      url: https://api.cezzis.com/prd/cocktails/api/v1/health/ping
+      statusCode: 200
+      authHeader: X-Key
+    secrets:
+      authValue: ${{ secrets.PRD_DEVOPS_APIM_SUBSCRIPTION_KEY }}

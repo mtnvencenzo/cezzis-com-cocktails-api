@@ -118,6 +118,11 @@ internal static class OpenApiOptionsExtensions
                 In = ParameterLocation.Header,
                 Required = false,
                 Name = "X-Key",
+                Schema = new OpenApiSchema
+                {
+                    Type = "string",
+                    Example = new OpenApiString("1234567890-0000")
+                }
             });
 
             return Task.CompletedTask;

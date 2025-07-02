@@ -7,10 +7,8 @@ using Cocktails.Api.Apis.Integrations;
 using Cocktails.Api.Apis.LegalDocuments;
 using Cocktails.Api.Apis.LocalImages;
 using Cocktails.Api.Application.Behaviors.ApimHostKeyAuthorization;
-using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
-using Dapr.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.HttpLogging;
 
 internal static class EndpointExtensions
 {
@@ -44,13 +42,15 @@ internal static class EndpointExtensions
         if (app.Environment.IsEnvironment("local"))
         {
             // All health checks must pass for app to be considered ready to accept traffic after starting
-            app.MapHealthChecks("/health");
+            app.MapHealthChecks("/health")
+                .ExcludeFromDescription()
+                .WithHttpLogging(HttpLoggingFields.None);
 
             // Only health checks tagged with the "live" tag must pass for app to be considered alive
             app.MapHealthChecks("/alive", new HealthCheckOptions
             {
                 Predicate = r => r.Tags.Contains("live")
-            });
+            }).ExcludeFromDescription().WithHttpLogging(HttpLoggingFields.None);
         }
 
         return app;

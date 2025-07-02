@@ -6,6 +6,13 @@ X-Key: {{apimkey}}
 
 ###
 
+
+GET {{host}}/api/v1/health/version
+Accept: application/json
+X-Key: {{apimkey}}
+
+###
+
 GET {{host}}/robots.txt
 
 ###
