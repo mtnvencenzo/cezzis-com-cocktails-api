@@ -106,6 +106,9 @@ jobs:
     
   warmup_prd:
     name: Warmup prd
+    permissions:
+      contents: read
+      pull-requests: write
     uses: mtnvencenzo/workflows/.github/workflows/warmup-request.yaml@main
     needs: [docker, gitVersion, terraform_deploy_prd]
     with:
