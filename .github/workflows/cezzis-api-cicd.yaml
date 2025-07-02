@@ -112,7 +112,7 @@ jobs:
     needs: [docker, gitVersion, terraform_deploy_prd]
     steps:
       - name: Create release
-        uses: mtnvencenzo/workflows/.github/actions/create-release.yaml@main
+        uses: mtnvencenzo/workflows/.github/actions/create-release@main
         with:
           version: ${{ needs.gitVersion.outputs.semVer }}
           allow_release: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
@@ -120,8 +120,7 @@ jobs:
   warmup_prd:
     name: Warmup prd
     permissions:
-      contents: read
-      pull-requests: write
+      contents: write
     uses: mtnvencenzo/workflows/.github/workflows/warmup-request.yaml@main
     needs: [docker, gitVersion, terraform_deploy_prd]
     with:
