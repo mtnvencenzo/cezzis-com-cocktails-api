@@ -33,6 +33,12 @@ git config --global user.name "John Doe"
 git config --global user.email "johndoe@mailinator.com"
 ```
 
+#### Install jq (for curl)
+1. Run in git bash
+``` bash
+curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download/jq-win64.exe
+```
+
 #### Node Version Manager (nvm)
 1. Install nvm from [nvm-sh/nvm](https://github.com/nvm-sh/nvm#install--update-script)
 2. Create `.bash_profile` in home directory (`C:\Users\YourUserName`)
