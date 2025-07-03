@@ -10,8 +10,8 @@ module "aca_cocktails_api_availability_test" {
   domain                  = var.domain
   name_discriminator      = "api"
   sequence                = var.sequence
-  resource_group_name     = data.azurerm_resource_group.cocktails_resource_group.name
-  location                = data.azurerm_resource_group.cocktails_resource_group.location
+  resource_group_name     = data.azurerm_application_insights.appi.resource_group_name
+  location                = data.azurerm_application_insights.appi.location
   application_insights_id = data.azurerm_application_insights.appi.id
   description             = "Availability test for the cocktails api"
   http_url                = "https://${var.custom_domain.host_name}/${var.environment}/${var.domain}/api/v1/cocktails/absinthe-frappe"
