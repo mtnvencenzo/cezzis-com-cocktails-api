@@ -1,4 +1,4 @@
-module "aca_cocktails_api" {
+module "aca_cocktails_api_availability_test" {
   source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/appinsights-availability-test"
   providers = {
     azurerm = azurerm
