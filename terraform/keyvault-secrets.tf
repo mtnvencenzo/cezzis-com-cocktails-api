@@ -67,6 +67,24 @@ resource "azurerm_key_vault_secret" "cocktails_api_devops_subscription_primary_k
 }
 
 # ----------------------------------------
+# Subscription Mcp apim primary key
+# ----------------------------------------
+
+resource "random_password" "cocktails_api_mcp_subscription_keys" {
+  count   = 2
+  length  = 24
+  special = true
+  upper   = false
+}
+
+resource "azurerm_key_vault_secret" "cocktails_api_mcp_subscription_primary_key" {
+  name         = "cocktails-api-mcp-subscription-primary-key"
+  value        = random_password.cocktails_api_mcp_subscription_keys[0].result
+  key_vault_id = data.azurerm_key_vault.cocktails_keyvault.id
+  tags         = local.tags
+}
+
+# ----------------------------------------
 # Zoho Email cezzi@cezzis.com App Password
 # ----------------------------------------
 
