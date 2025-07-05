@@ -9,6 +9,7 @@ module "apim_cocktails_api_docs" {
   domain                         = var.domain
   name_discriminator             = "api-docs"
   keyvault_apimhostkey_secret_id = azurerm_key_vault_secret.cocktails_api_apimhostkey.id
+  subscription_required          = false
   backend_url_override           = "https://${module.aca_cocktails_api.ingress_fqdn}"
 
   apim_instance = {
