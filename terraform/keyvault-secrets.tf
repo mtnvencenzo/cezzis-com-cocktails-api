@@ -109,3 +109,13 @@ resource "azurerm_key_vault_secret" "cocktails_api_app_registration_graph_api_se
   key_vault_id = data.azurerm_key_vault.cocktails_keyvault.id
   tags         = local.tags
 }
+
+# ----------------------------------------
+# Misc secret for local development
+# ----------------------------------------
+resource "random_password" "cocktails_api_localusage_subscription_keys" {
+  count   = 2
+  length  = 24
+  special = true
+  upper   = false
+}
