@@ -11,9 +11,6 @@ module "apim_cocktails_api_jwtvalidate_policy" {
   providers = {
     azurerm = azurerm
   }
-
-  tags = local.tags
-
   environment        = var.environment
   domain             = var.domain
   name_discriminator = "api"
@@ -28,9 +25,6 @@ module "apim_cocktails_api_cors_policy" {
   providers = {
     azurerm = azurerm
   }
-
-  tags = local.tags
-
   environment        = var.environment
   domain             = var.domain
   name_discriminator = "api"
