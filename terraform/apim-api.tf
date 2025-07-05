@@ -1,10 +1,3 @@
-# resource "random_password" "cocktails_api_localusage_subscription_keys" {
-#   count   = 2
-#   length  = 24
-#   special = true
-#   upper   = false
-# }
-
 # module "apim_cocktails_api" {
 #   source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/apim-api"
 #   providers = {
