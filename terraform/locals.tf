@@ -36,7 +36,7 @@ locals {
   apim_anonomous_docs_operation_policy = <<XML
       <policies>
         <inbound>
-          <set-backend-service backend-id="${var.environment}-${var.domain}-api-backend" />
+          <set-backend-service backend-id="${var.environment}-${var.domain}-api-docs-backend" />
         </inbound>
         <backend><base /></backend>
         <outbound><base /></outbound>
