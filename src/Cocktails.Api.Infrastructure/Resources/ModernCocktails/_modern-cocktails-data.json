@@ -43,7 +43,7 @@
         "units": 0.5,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Preferably Pierre Ferrand Dry Curaçao",
+        "suggestions": "Preferably Pierre Ferrand Dry Cura\u00c3\u00a7ao",
         "requirement": "required"
       },
       {
@@ -70,7 +70,7 @@
         "order": 1
       },
       {
-        "displayValue": "Add aged rum, lime juice, orgeat, orange curaçao, and amaro to the shaker.",
+        "displayValue": "Add aged rum, lime juice, orgeat, orange cura\u00c3\u00a7ao, and amaro to the shaker.",
         "order": 2
       },
       {
@@ -97,7 +97,7 @@
         "uri": "modern-bitter-mai-tai-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 600
       },
       {
         "uri": "modern-bitter-mai-tai-cocktail-300x300.webp",
@@ -106,8 +106,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -116,7 +116,7 @@
     "contentFile": "Bramble",
     "content": null,
     "descriptiveTitle": "The Bramble: The Blackberry Revolution in London",
-    "description": "A sophisticated blend of gin, lemon juice, sugar syrup, and crème de mûre that has become a cornerstone of contemporary cocktail culture. Created by Dick Bradsell, this elegant libation represents the perfect marriage of classic cocktail structure and innovative flavor combinations.",
+    "description": "A sophisticated blend of gin, lemon juice, sugar syrup, and cr\u00c3\u00a8me de m\u00c3\u00bbre that has become a cornerstone of contemporary cocktail culture. Created by Dick Bradsell, this elegant libation represents the perfect marriage of classic cocktail structure and innovative flavor combinations.",
     "searchableTitles": [
       "Bramble"
     ],
@@ -192,7 +192,7 @@
         "order": 4
       },
       {
-        "displayValue": "Drizzle crème de mûre over the top of the drink.",
+        "displayValue": "Drizzle cr\u00c3\u00a8me de m\u00c3\u00bbre over the top of the drink.",
         "order": 5
       },
       {
@@ -220,8 +220,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -322,8 +322,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 6
   },
   {
@@ -425,8 +425,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -457,7 +457,7 @@
         "units": 0.5,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Preferably Kahlúa",
+        "suggestions": "Preferably Kahl\u00c3\u00baa",
         "requirement": "required"
       },
       {
@@ -518,7 +518,7 @@
         "uri": "modern-espresso-martini-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 1008
       },
       {
         "uri": "modern-espresso-martini-cocktail-300x300.webp",
@@ -527,8 +527,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 10
   },
   {
@@ -620,7 +620,7 @@
         "uri": "modern-frozen-negroni-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 800
       },
       {
         "uri": "modern-frozen-negroni-cocktail-300x300.webp",
@@ -629,8 +629,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 240
   },
   {
@@ -722,7 +722,7 @@
         "uri": "modern-gin-blossom-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 534
       },
       {
         "uri": "modern-gin-blossom-cocktail-300x300.webp",
@@ -731,8 +731,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -846,8 +846,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 10
   },
   {
@@ -856,7 +856,7 @@
     "contentFile": "LaBomba",
     "content": null,
     "descriptiveTitle": "La Bomba: The Explosive Secret of the Daiquiri",
-    "description": "An explosive evolution of the classic Daiquiri—a sophisticated blend of rum, lime juice, simple syrup, and a secret ingredient that adds depth and complexity to this beloved cocktail.",
+    "description": "An explosive evolution of the classic Daiquiri\u00e2\u20ac\u201da sophisticated blend of rum, lime juice, simple syrup, and a secret ingredient that adds depth and complexity to this beloved cocktail.",
     "searchableTitles": [
       "La Bomba",
       "Bomba"
@@ -940,7 +940,7 @@
         "uri": "modern-la-bomba-daiquiri-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 1200
       },
       {
         "uri": "modern-la-bomba-daiquiri-cocktail-300x300.webp",
@@ -949,8 +949,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1042,7 +1042,7 @@
         "uri": "modern-oaxaca-old-fashioned-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 1200
       },
       {
         "uri": "modern-oaxaca-old-fashioned-cocktail-300x300.webp",
@@ -1051,8 +1051,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1156,7 +1156,7 @@
         "uri": "modern-old-cuban-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 1200
       },
       {
         "uri": "modern-old-cuban-cocktail-300x300.webp",
@@ -1165,8 +1165,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1245,7 +1245,7 @@
         "uri": "modern-paper-plane-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 956
       },
       {
         "uri": "modern-paper-plane-cocktail-300x300.webp",
@@ -1254,8 +1254,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1367,8 +1367,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1398,7 +1398,7 @@
         "units": 0.5,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Preferably Tia Maria or Kahlúa",
+        "suggestions": "Preferably Tia Maria or Kahl\u00c3\u00baa",
         "requirement": "required"
       },
       {
@@ -1448,7 +1448,7 @@
         "uri": "modern-revolver-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 1200
       },
       {
         "uri": "modern-revolver-cocktail-300x300.webp",
@@ -1457,8 +1457,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1480,7 +1480,7 @@
         "units": 2,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Preferably Jose Cuervo Especial or Patrón Silver",
+        "suggestions": "Preferably Jose Cuervo Especial or Patr\u00c3\u00b3n Silver",
         "requirement": "required"
       },
       {
@@ -1560,8 +1560,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1645,7 +1645,7 @@
         "uri": "modern-white-negroni-cocktail-main.webp",
         "type": "main",
         "width": 800,
-        "height": 533
+        "height": 1200
       },
       {
         "uri": "modern-white-negroni-cocktail-300x300.webp",
@@ -1654,8 +1654,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 8
   },
   {
@@ -1685,7 +1685,7 @@
         "units": 1,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Preferably Kahlúa",
+        "suggestions": "Preferably Kahl\u00c3\u00baa",
         "requirement": "required"
       },
       {
@@ -1735,8 +1735,8 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-01-27T00:00:00-07:00",
-    "publishedOn": "2025-01-27T00:00:00-07:00",
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
     "prepTimeMinutes": 6
   }
 ]
