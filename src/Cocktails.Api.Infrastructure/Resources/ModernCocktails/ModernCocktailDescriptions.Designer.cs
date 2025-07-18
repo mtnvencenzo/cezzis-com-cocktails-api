@@ -60,5 +60,175 @@ namespace Cocktails.Api.Infrastructure.Resources.ModernCocktails {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] BitterMaiTai {
+            get {
+                object obj = ResourceManager.GetObject("BitterMaiTai", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Bramble {
+            get {
+                object obj = ResourceManager.GetObject("Bramble", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] ChartreuseSwizzle {
+            get {
+                object obj = ResourceManager.GetObject("ChartreuseSwizzle", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Cosmopolitan {
+            get {
+                object obj = ResourceManager.GetObject("Cosmopolitan", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] EspressoMartini {
+            get {
+                object obj = ResourceManager.GetObject("EspressoMartini", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] FrozenNegroni {
+            get {
+                object obj = ResourceManager.GetObject("FrozenNegroni", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GinBlossom {
+            get {
+                object obj = ResourceManager.GetObject("GinBlossom", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] HibiscusPunchRoyale {
+            get {
+                object obj = ResourceManager.GetObject("HibiscusPunchRoyale", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] LaBomba {
+            get {
+                object obj = ResourceManager.GetObject("LaBomba", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] OaxacaOldFashioned {
+            get {
+                object obj = ResourceManager.GetObject("OaxacaOldFashioned", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] OldCuban {
+            get {
+                object obj = ResourceManager.GetObject("OldCuban", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] PaperPlane {
+            get {
+                object obj = ResourceManager.GetObject("PaperPlane", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Penicillin {
+            get {
+                object obj = ResourceManager.GetObject("Penicillin", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Revolver {
+            get {
+                object obj = ResourceManager.GetObject("Revolver", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] TequilaSunrise {
+            get {
+                object obj = ResourceManager.GetObject("TequilaSunrise", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] WhiteNegroni {
+            get {
+                object obj = ResourceManager.GetObject("WhiteNegroni", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] WhiteRussian {
+            get {
+                object obj = ResourceManager.GetObject("WhiteRussian", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
