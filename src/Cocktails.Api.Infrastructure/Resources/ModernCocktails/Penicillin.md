@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Penicillin: A Modern Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Penicillin: The Whiskey Sour and a Shot of Medicine" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Classic
+## The Whiskey Sour and a Shot of Medicine
 
 The **Penicillin** represents a sophisticated evolution in whiskey-based cocktails—a sophisticated blend of blended Scotch, Islay Scotch, lemon juice, honey syrup, and ginger syrup that transforms the classic Whiskey Sour into something entirely new and exciting. Created by Sam Ross in the early 2000s, this innovative cocktail has become a modern classic.
 

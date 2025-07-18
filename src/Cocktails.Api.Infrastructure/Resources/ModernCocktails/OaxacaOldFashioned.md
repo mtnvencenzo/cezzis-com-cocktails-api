@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Oaxaca Old Fashioned: A Modern Twist on a Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Oaxaca Old Fashioned: When Kentucky Meets Oaxaca" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Twist on a Classic
+## When Kentucky Meets Oaxaca
 
 The **Oaxaca Old Fashioned** represents a brilliant reimagining of one of the world's most beloved cocktails—a sophisticated blend of mezcal, reposado tequila, agave nectar, and bitters that transforms the classic Old Fashioned into a celebration of Mexican spirits and flavors. Created by Phil Ward at Death & Co. in New York, this innovative cocktail has become a modern classic.
 

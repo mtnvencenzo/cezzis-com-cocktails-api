@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Espresso Martini: A Modern Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Espresso Martini: The Cocktail That Wakes You Up" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Classic
+## The Cocktail That Wakes You Up
 
 The **Espresso Martini** represents one of the most successful innovations in modern cocktail culture—a sophisticated blend of vodka, coffee liqueur, and fresh espresso that has become a global phenomenon. Created by legendary bartender Dick Bradsell in the 1980s, this innovative cocktail perfectly captures the energy and sophistication of the modern cocktail renaissance.
 

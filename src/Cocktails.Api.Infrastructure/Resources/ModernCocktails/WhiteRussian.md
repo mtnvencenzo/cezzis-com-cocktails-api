@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The White Russian: An Icon of the 1990s" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The White Russian: The Dude's Drink of Choice" width="100%" height="100%" />
 {{iba}}
 
-## An Icon of the 1990s
+## The Dude's Drink of Choice
 
 The **White Russian** stands as one of the most iconic cocktails of the late 20th century—a sophisticated blend of vodka, coffee liqueur, and cream that became synonymous with the laid-back, ironic culture of the 1990s. This creamy, indulgent cocktail transcended its humble origins to become a cultural phenomenon that defined an era.
 

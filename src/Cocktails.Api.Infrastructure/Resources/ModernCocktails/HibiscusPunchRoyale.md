@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Hibiscus Punch Royale: A Modern Tiki Masterpiece" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Hibiscus Punch Royale: The Red Flower's Royal Treatment" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Tiki Masterpiece
+## The Red Flower's Royal Treatment
 
 The **Hibiscus Punch Royale** represents a sophisticated evolution in Tiki cocktail culture—a vibrant blend of rum, hibiscus tea, citrus, and champagne that combines the tropical flavors of classic Tiki drinks with the elegance of French sparkling wine. This modern classic has become a favorite among cocktail enthusiasts who appreciate both tradition and innovation.
 

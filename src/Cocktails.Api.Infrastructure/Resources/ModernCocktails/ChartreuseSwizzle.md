@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Chartreuse Swizzle: A Modern Tiki Masterpiece" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Chartreuse Swizzle: French Monks Meet Polynesian Paradise" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Tiki Masterpiece
+## French Monks Meet Polynesian Paradise
 
 The **Chartreuse Swizzle** represents a brilliant fusion of classic Tiki culture and contemporary craft cocktail sensibilities—a sophisticated blend of Green Chartreuse, pineapple juice, lime juice, and coconut cream that has become a modern classic. Created by Marcovaldo Dionysos at the legendary Smuggler's Cove in San Francisco, this innovative cocktail showcases the versatility of one of the world's most complex liqueurs.
 

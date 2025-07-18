@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Old Cuban: A Modern Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Old Cuban: The Mojito Gets a French Kiss" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Classic
+## The Mojito Gets a French Kiss
 
 The **Old Cuban** represents a sophisticated evolution in rum-based cocktails—a sophisticated blend of aged rum, lime juice, simple syrup, mint, Angostura bitters, and champagne that combines the tropical flavors of a Mojito with the elegance of French sparkling wine. Created by Audrey Saunders at the Pegu Club in New York, this innovative cocktail has become a modern classic.
 

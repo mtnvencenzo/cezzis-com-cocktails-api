@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Paper Plane: A Modern Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Paper Plane: The Equal-Parts Revolution Takes Flight" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Classic
+## The Equal-Parts Revolution Takes Flight
 
 The **Paper Plane** represents one of the most successful innovations in modern cocktail culture—a sophisticated blend of bourbon, Aperol, Amaro Nonino, and lemon juice that has become a global phenomenon. Created by Sam Ross in the late 2000s, this innovative cocktail perfectly captures the energy and sophistication of the modern cocktail renaissance.
 

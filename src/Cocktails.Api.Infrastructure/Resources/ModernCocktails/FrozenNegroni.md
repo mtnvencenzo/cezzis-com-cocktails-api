@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Frozen Negroni: A Modern Twist on a Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Frozen Negroni: When Florence Meets the Freezer" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Twist on a Classic
+## When Florence Meets the Freezer
 
 The **Frozen Negroni** represents a brilliant reimagining of one of the world's most beloved cocktails—a frozen version of the classic Negroni that maintains the sophisticated complexity of the original while adding a refreshing, modern twist. This innovative variation has become a favorite among bartenders and cocktail enthusiasts who appreciate both tradition and innovation.
 

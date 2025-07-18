@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="La Bomba: A Modern Daiquiri Variation" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="La Bomba: The Explosive Secret of the Daiquiri" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Daiquiri Variation
+## The Explosive Secret of the Daiquiri
 
 **La Bomba** represents an explosive evolution of the classic Daiquiri—a sophisticated blend of rum, lime juice, simple syrup, and a secret ingredient that adds depth and complexity to this beloved cocktail. This modern variation has become a favorite among rum enthusiasts and cocktail connoisseurs who appreciate both tradition and innovation.
 

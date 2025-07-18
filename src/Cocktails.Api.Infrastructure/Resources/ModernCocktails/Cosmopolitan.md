@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Cosmopolitan: An Icon of the 1990s" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Cosmopolitan: The Pink Drink That Defined a Decade" width="100%" height="100%" />
 {{iba}}
 
-## An Icon of the 1990s
+## The Pink Drink That Defined a Decade
 
 The **Cosmopolitan** stands as one of the most iconic cocktails of the late 20th century—a sophisticated blend of vodka, triple sec, cranberry juice, and lime juice that became synonymous with urban sophistication and the rise of cocktail culture in the 1990s. This elegant pink-hued drink transcended its humble origins to become a cultural phenomenon that defined an era.
 

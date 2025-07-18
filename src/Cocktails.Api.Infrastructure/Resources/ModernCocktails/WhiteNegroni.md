@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The White Negroni: A Modern Twist on a Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The White Negroni: When Florence Goes French" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Twist on a Classic
+## When Florence Goes French
 
 The **White Negroni** represents a sophisticated reimagining of one of the world's most beloved cocktails—a sophisticated blend of gin, Lillet Blanc, and Suze that transforms the classic Negroni into something entirely new and exciting. Created by Wayne Collins in the early 2000s, this innovative cocktail has become a modern classic.
 

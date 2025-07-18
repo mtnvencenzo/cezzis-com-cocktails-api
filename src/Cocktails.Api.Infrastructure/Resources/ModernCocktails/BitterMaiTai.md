@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Bitter Mai Tai: A Modern Twist on a Tiki Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Bitter Mai Tai: When Tiki Meets the Bitter Revolution" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Twist on a Tiki Classic
+## When Tiki Meets the Bitter Revolution
 
 The **Bitter Mai Tai** represents a fascinating evolution in cocktail culture—a contemporary reimagining of the beloved Tiki classic that embraces the growing appreciation for bitter flavors and sophisticated complexity. This innovative variation transforms the traditionally sweet and fruity Mai Tai into a more nuanced, adult-oriented libation that bridges the gap between tropical escapism and modern craft cocktail sensibilities.
 

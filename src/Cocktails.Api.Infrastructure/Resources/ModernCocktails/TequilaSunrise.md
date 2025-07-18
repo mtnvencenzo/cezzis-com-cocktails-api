@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Tequila Sunrise: An Icon of the 1970s" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Tequila Sunrise: The Drink That Painted California Pink" width="100%" height="100%" />
 {{iba}}
 
-## An Icon of the 1970s
+## The Drink That Painted California Pink
 
 The **Tequila Sunrise** stands as one of the most iconic cocktails of the 1970s—a vibrant blend of tequila, orange juice, and grenadine that creates a stunning visual effect reminiscent of a sunrise. This colorful cocktail became synonymous with the laid-back California lifestyle and helped introduce tequila to a broader audience during a pivotal moment in cocktail culture.
 

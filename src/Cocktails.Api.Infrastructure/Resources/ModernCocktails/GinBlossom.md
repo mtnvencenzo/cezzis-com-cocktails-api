@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Gin Blossom: A Modern Gin Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Gin Blossom: The Rosy Cheeked Gin Revival" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Gin Classic
+## The Rosy Cheeked Gin Revival
 
 The **Gin Blossom** represents a sophisticated evolution in gin-based cocktails—a delicate blend of gin, apricot liqueur, and fresh lemon juice that showcases the botanical complexity of gin while adding layers of fruit-forward elegance. This modern classic has become a favorite among gin enthusiasts and cocktail connoisseurs who appreciate subtlety and balance.
 

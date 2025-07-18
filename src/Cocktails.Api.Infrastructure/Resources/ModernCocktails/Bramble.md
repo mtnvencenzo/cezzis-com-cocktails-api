@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Bramble: A Modern Gin Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Bramble: The Blackberry Revolution in London" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Gin Classic
+## The Blackberry Revolution in London
 
 The **Bramble** stands as one of the most influential cocktails of the modern era—a sophisticated blend of gin, lemon juice, sugar syrup, and crème de mûre that has become a cornerstone of contemporary cocktail culture. Created by legendary bartender Dick Bradsell in the 1980s, this elegant libation represents the perfect marriage of classic cocktail structure and innovative flavor combinations.
 

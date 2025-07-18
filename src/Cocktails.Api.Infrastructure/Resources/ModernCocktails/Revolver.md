@@ -6,10 +6,10 @@
 
 {{instructions}}
 
-<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Revolver: A Modern Classic" width="100%" height="100%" />
+<img src="{baseImageUrl}/{mainImageName}" loading="lazy" alt="The Revolver: The Beatles-Inspired Bourbon Revolution" width="100%" height="100%" />
 {{iba}}
 
-## A Modern Classic
+## The Beatles-Inspired Bourbon Revolution
 
 The **Revolver** represents a sophisticated evolution in bourbon-based cocktails—a sophisticated blend of bourbon, coffee liqueur, and orange bitters that transforms the classic Old Fashioned into something entirely new and exciting. Created by Jon Santer in the early 2000s, this innovative cocktail has become a modern classic.
 
