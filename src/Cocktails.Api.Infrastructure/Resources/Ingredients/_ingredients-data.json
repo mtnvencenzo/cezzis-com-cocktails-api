@@ -3,8 +3,12 @@
     "id": "absinthe",
     "name": "Absinthe",
     "shelfDisplay": "Absinthe",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -12,8 +16,12 @@
     "id": "agave-nectar",
     "name": "Agave Nectar",
     "shelfDisplay": "Agave Nectar",
-    "types": [ "syrup" ],
-    "applications": [ "additional" ],
+    "types": [
+      "syrup"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -21,8 +29,12 @@
     "id": "amer-picon",
     "name": "Amer Picon",
     "shelfDisplay": "Amer Picon",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -30,8 +42,12 @@
     "id": "angostura-bitters",
     "name": "Angostura Bitters",
     "shelfDisplay": "Angostura Bitters",
-    "types": [ "bitters" ],
-    "applications": [ "additional" ],
+    "types": [
+      "bitters"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -39,8 +55,12 @@
     "id": "aperol",
     "name": "Aperol",
     "shelfDisplay": "Aperol",
-    "types": [ "liqueur" ],
-    "applications": [ "base" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -48,17 +68,25 @@
     "id": "apple-cider",
     "name": "Apple Cider",
     "shelfDisplay": "Apple Cider",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
     "id": "benedictine",
-    "name": "B\u00E9n\u00E9dictine",
-    "shelfDisplay": "B\u00E9n\u00E9dictine",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "name": "B\u00e9n\u00e9dictine",
+    "shelfDisplay": "B\u00e9n\u00e9dictine",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -66,8 +94,12 @@
     "id": "black-tea",
     "name": "Black Tea",
     "shelfDisplay": "Black Tea",
-    "types": [ "herb" ],
-    "applications": [ "additional" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -75,8 +107,12 @@
     "id": "bourbon",
     "name": "Bourbon",
     "shelfDisplay": "Bourbon",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -84,13 +120,19 @@
     "id": "brandied-cherries",
     "name": "Brandied Cherries",
     "shelfDisplay": "Brandied Cherries",
-    "types": [ "fruit" ],
-    "applications": [ "additional" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "additional"
+    ],
     "variations": [
       {
         "id": "brandied-cherry",
         "name": "Brandied Cherry",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -98,10 +140,14 @@
   },
   {
     "id": "cachaca",
-    "name": "Cacha\u00E7a",
-    "shelfDisplay": "Cacha\u00E7a",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "name": "Cacha\u00e7a",
+    "shelfDisplay": "Cacha\u00e7a",
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -109,8 +155,12 @@
     "id": "campari",
     "name": "Campari",
     "shelfDisplay": "Campari",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -118,8 +168,12 @@
     "id": "cane-syrup",
     "name": "Cane Syrup",
     "shelfDisplay": "Cane Syrup",
-    "types": [ "syrup" ],
-    "applications": [ "additional" ],
+    "types": [
+      "syrup"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -127,13 +181,19 @@
     "id": "celery",
     "name": "Celery",
     "shelfDisplay": "Celery",
-    "types": [ "vegetable" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "vegetable"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "variations": [
       {
         "id": "celery-stalk",
         "name": "Celery Stalk",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -143,8 +203,12 @@
     "id": "champagne",
     "name": "Champagne",
     "shelfDisplay": "Champagne",
-    "types": [ "champagne" ],
-    "applications": [ "additional" ],
+    "types": [
+      "champagne"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -152,8 +216,12 @@
     "id": "cherry-heering",
     "name": "Cherry Heering",
     "shelfDisplay": "Cherry Heering",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -161,8 +229,12 @@
     "id": "cinnamon",
     "name": "Cinnamon",
     "shelfDisplay": "Cinnamon",
-    "types": [ "herb" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -171,8 +243,12 @@
     "parentId": "cinnamon",
     "name": "Grated Cinnamon",
     "shelfDisplay": "Grated Cinnamon",
-    "types": [ "herb" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -181,8 +257,12 @@
     "parentId": "cinnamon",
     "name": "Cinnamon Sticks",
     "shelfDisplay": "Cinnamon Sticks",
-    "types": [ "herb" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -190,17 +270,25 @@
     "id": "citrus-wheels",
     "name": "Citrus Wheels",
     "shelfDisplay": "Citrus Wheels",
-    "types": [ "fruit" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
     "id": "clement-creole-shrubb",
-    "name": "Cl\u00E9ment Cr\u00E9ole Shrubb",
-    "shelfDisplay": "Cl\u00E9ment Cr\u00E9ole Shrubb",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "name": "Cl\u00e9ment Cr\u00e9ole Shrubb",
+    "shelfDisplay": "Cl\u00e9ment Cr\u00e9ole Shrubb",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -208,8 +296,12 @@
     "id": "cocktail-onion",
     "name": "Cocktail Onion",
     "shelfDisplay": "Cocktail Onion",
-    "types": [ "vegetable" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "vegetable"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -218,8 +310,12 @@
     "eTag": null,
     "shelfDisplay": "Coconut Cream",
     "discriminator": null,
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "id": "coconut-cream",
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
@@ -228,8 +324,12 @@
     "id": "coconut-milk",
     "name": "Coconut Milk",
     "shelfDisplay": "Coconut Milk",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -237,8 +337,12 @@
     "id": "cognac",
     "name": "Cognac",
     "shelfDisplay": "Cognac",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -246,8 +350,12 @@
     "id": "cointreau",
     "name": "Cointreau",
     "shelfDisplay": "Cointreau",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -255,17 +363,25 @@
     "id": "cream",
     "name": "Cream",
     "shelfDisplay": "Cream",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
     "id": "creme-de-violette",
-    "name": "Cr\u00E8me de Violette",
-    "shelfDisplay": "Cr\u00E8me de Violette",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "name": "Cr\u00e8me de Violette",
+    "shelfDisplay": "Cr\u00e8me de Violette",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -273,13 +389,19 @@
     "id": "cucumbers",
     "name": "Cucumbers",
     "shelfDisplay": "Fresh Cucumbers",
-    "types": [ "vegetable" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "vegetable"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "variations": [
       {
         "id": "cucumber-spear",
         "name": "Cucumber Spear",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -287,19 +409,27 @@
   },
   {
     "id": "dons-mix",
-    "name": "Don\u0027s Mix",
-    "shelfDisplay": "Don\u0027s Mix",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "name": "Don's Mix",
+    "shelfDisplay": "Don's Mix",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
     "id": "dry-curacao",
-    "name": "Dry Cura\u00E7ao",
-    "shelfDisplay": "Dry Cura\u00E7ao",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "name": "Dry Cura\u00e7ao",
+    "shelfDisplay": "Dry Cura\u00e7ao",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -307,8 +437,12 @@
     "id": "dry-oloroso-sherry",
     "name": "Dry Oloroso Sherry",
     "shelfDisplay": "Dry Oloroso Sherry",
-    "types": [ "wine" ],
-    "applications": [ "base" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -316,8 +450,12 @@
     "id": "dry-prosecco",
     "name": "Dry Prosecco",
     "shelfDisplay": "Dry Prosecco",
-    "types": [ "wine" ],
-    "applications": [ "additional" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -325,8 +463,12 @@
     "id": "dry-vermouth",
     "name": "Dry Vermouth",
     "shelfDisplay": "Dry Vermouth",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -334,8 +476,12 @@
     "id": "dry-white-wine",
     "name": "Dry White Wine",
     "shelfDisplay": "Dry White Wine",
-    "types": [ "wine" ],
-    "applications": [ "additional" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -343,8 +489,12 @@
     "id": "ginger-beer",
     "name": "Ginger Beer",
     "shelfDisplay": "Ginger Beer",
-    "types": [ "beer" ],
-    "applications": [ "additional" ],
+    "types": [
+      "beer"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -353,8 +503,12 @@
     "parentId": "ginger-beer",
     "name": "Dry, Spicy Ginger Beer",
     "shelfDisplay": "Dry, Spicy Ginger Beer",
-    "types": [ "beer" ],
-    "applications": [ "additional" ],
+    "types": [
+      "beer"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -362,18 +516,26 @@
     "id": "eggs",
     "name": "Eggs",
     "shelfDisplay": "Eggs",
-    "types": [ "protein" ],
-    "applications": [ "additional" ],
+    "types": [
+      "protein"
+    ],
+    "applications": [
+      "additional"
+    ],
     "variations": [
       {
         "id": "whole-egg",
         "name": "Whole Egg",
-        "applications": [ "additional" ]
+        "applications": [
+          "additional"
+        ]
       },
       {
         "id": "egg-white",
         "name": "Egg White",
-        "applications": [ "additional" ]
+        "applications": [
+          "additional"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -383,8 +545,12 @@
     "id": "fino-sherry",
     "name": "Fino Sherry",
     "shelfDisplay": "Fino Sherry",
-    "types": [ "wine" ],
-    "applications": [ "base" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -392,8 +558,12 @@
     "id": "fruit-embellished-ice-ring",
     "name": "Fruit Embellished Ice Ring",
     "shelfDisplay": "Fruit Embellished Ice Ring",
-    "types": [ "fruit" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -401,8 +571,12 @@
     "id": "gin",
     "name": "Gin",
     "shelfDisplay": "Gin",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -410,8 +584,12 @@
     "id": "ginger-ale",
     "name": "Ginger Ale",
     "shelfDisplay": "Ginger Ale",
-    "types": [ "beer" ],
-    "applications": [ "additional" ],
+    "types": [
+      "beer"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -419,8 +597,12 @@
     "id": "grand-marnier",
     "name": "Grand Marnier",
     "shelfDisplay": "Grand Marnier",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -428,8 +610,12 @@
     "id": "grapefruit-bitters",
     "name": "Grapefruit Bitters",
     "shelfDisplay": "Grapefruit Bitters",
-    "types": [ "bitters" ],
-    "applications": [ "additional" ],
+    "types": [
+      "bitters"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -437,8 +623,12 @@
     "id": "grapefruit-juice",
     "name": "Grapefruit Juice",
     "shelfDisplay": "Grapefruit Juice",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -446,18 +636,26 @@
     "id": "grapefruit",
     "name": "Grapefruit",
     "shelfDisplay": "Grapefruit",
-    "types": [ "fruit" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "variations": [
       {
         "id": "grapefruit-peel",
         "name": "Grapefruit Peel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "grapefruit-wheel",
         "name": "Grapefruit Wheel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -467,13 +665,19 @@
     "id": "nutmeg",
     "name": "Nutmeg",
     "shelfDisplay": "Nutmeg",
-    "types": [ "herb" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "variations": [
       {
         "id": "grated-nutmeg",
         "name": "Grated Nutmeg",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -483,8 +687,12 @@
     "id": "green-chartreuse",
     "name": "Green Chartreuse",
     "shelfDisplay": "Green Chartreuse",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -492,8 +700,12 @@
     "id": "grenadine",
     "name": "Grenadine",
     "shelfDisplay": "Grenadine",
-    "types": [ "syrup" ],
-    "applications": [ "additional" ],
+    "types": [
+      "syrup"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -501,8 +713,12 @@
     "id": "guiness",
     "name": "Guiness",
     "shelfDisplay": "Guiness",
-    "types": [ "beer" ],
-    "applications": [ "base" ],
+    "types": [
+      "beer"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -510,8 +726,12 @@
     "id": "honey-syrup",
     "name": "Honey Syrup",
     "shelfDisplay": "Honey Syrup",
-    "types": [ "syrup" ],
-    "applications": [ "additional" ],
+    "types": [
+      "syrup"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -519,8 +739,12 @@
     "id": "hot-sauce",
     "name": "Hot Sauce",
     "shelfDisplay": "Hot Sauce",
-    "types": [ "sauce" ],
-    "applications": [ "additional" ],
+    "types": [
+      "sauce"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -528,8 +752,12 @@
     "id": "lemon-juice",
     "name": "Lemon Juice",
     "shelfDisplay": "Lemon Juice",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -537,38 +765,54 @@
     "id": "lemons",
     "name": "Lemons",
     "shelfDisplay": "Oranges",
-    "types": [ "fruit" ],
-    "applications": [ "additional" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "additional"
+    ],
     "variations": [
       {
         "id": "lemon-slices",
         "name": "Lemon Slices",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lemon-peel",
         "name": "Lemon Peel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lemon-twist",
         "name": "Lemon Twist",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lemon-wheel",
         "name": "Lemon Wheel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lemon-wheels",
         "name": "Lemon Wheels",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "long-curly-lemon-peel",
         "name": "Long, Curly Lemon Peel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -578,8 +822,12 @@
     "id": "lillet-blanc",
     "name": "Lillet Blanc",
     "shelfDisplay": "Lillet Blanc",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -587,8 +835,12 @@
     "id": "lime-juice",
     "name": "Lime Juice",
     "shelfDisplay": "Lime Juice",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -596,43 +848,61 @@
     "id": "limes",
     "name": "Limes",
     "shelfDisplay": "Limes",
-    "types": [ "fruit" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "variations": [
       {
         "id": "lime",
         "name": "Lime",
-        "applications": [ "muddle" ]
+        "applications": [
+          "muddle"
+        ]
       },
       {
         "id": "flaming-lime-shell",
         "name": "Flaming Lime Shell",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lime-peel",
         "name": "Lime Peel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lime-peel-coin",
         "name": "Lime Peel Coin",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lime-slice",
         "name": "Lime Slice",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lime-wedge",
         "name": "Lime Wedge",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "lime-wheel",
         "name": "Lime Wheel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -642,8 +912,12 @@
     "id": "maraschino-liqueur",
     "name": "Maraschino Liqueur",
     "shelfDisplay": "Maraschino Liqueur",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -651,8 +925,12 @@
     "id": "mexican-beer",
     "name": "Mexican Beer",
     "shelfDisplay": "Mexican Beer",
-    "types": [ "beer" ],
-    "applications": [ "additional" ],
+    "types": [
+      "beer"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -660,28 +938,40 @@
     "id": "mint",
     "name": "Mint",
     "shelfDisplay": "Fresh Mint",
-    "types": [ "herb" ],
-    "applications": [ "additional" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "additional"
+    ],
     "variations": [
       {
         "id": "bouquet-of-mint",
         "name": "Bouquet of Mint",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "mint-leaves",
         "name": "Mint Leaves",
-        "applications": [ "additional" ]
+        "applications": [
+          "additional"
+        ]
       },
       {
         "id": "mint-sprig",
         "name": "Mint Sprig",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "mint-sprigs",
         "name": "Mint Sprigs",
-        "applications": [ "additional" ]
+        "applications": [
+          "additional"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -691,8 +981,12 @@
     "id": "oloroso-sherry",
     "name": "Oloroso Sherry",
     "shelfDisplay": "Oloroso Sherry",
-    "types": [ "wine" ],
-    "applications": [ "base" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -700,8 +994,12 @@
     "id": "orange-bitters",
     "name": "Orange Bitters",
     "shelfDisplay": "Orange Bitters",
-    "types": [ "bitters" ],
-    "applications": [ "additional" ],
+    "types": [
+      "bitters"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -709,8 +1007,12 @@
     "id": "orange-flower-water",
     "name": "Orange Flower Water",
     "shelfDisplay": "Orange Flower Water",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -718,8 +1020,12 @@
     "id": "orange-juice",
     "name": "Orange Juice",
     "shelfDisplay": "Orange Juice",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -727,8 +1033,12 @@
     "id": "orange-liqueur",
     "name": "Orange Liqueur",
     "shelfDisplay": "Orange Liqueur",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -736,38 +1046,54 @@
     "id": "oranges",
     "name": "Oranges",
     "shelfDisplay": "Oranges",
-    "types": [ "fruit" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "variations": [
       {
         "id": "orange-peel",
         "name": "Orange Peel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "orange-slice",
         "name": "Orange Slice",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "orange-slices",
         "name": "Orange Slices",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "orange-wedge",
         "name": "Orange Wedge",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "orange-wheel",
         "name": "Orange Wheel",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "orange-wheels",
         "name": "Orange Wheels",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -777,8 +1103,12 @@
     "id": "orchids",
     "name": "Orchids",
     "shelfDisplay": "Orchids",
-    "types": [ "flowers" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "flowers"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -786,8 +1116,12 @@
     "id": "orgeat",
     "name": "Orgeat",
     "shelfDisplay": "Orgeat",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -795,8 +1129,12 @@
     "id": "peach-brandy",
     "name": "Peach Brandy",
     "shelfDisplay": "Peach Brandy",
-    "types": [ "spirit" ],
-    "applications": [ "additional" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -804,26 +1142,38 @@
     "id": "pepper",
     "name": "Pepper",
     "shelfDisplay": "Pepper",
-    "types": [ "herb" ],
-    "applications": [ "additional" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
     "id": "peychauds-bitters",
-    "name": "Peychaud\u0027s Bitters",
-    "shelfDisplay": "Peychaud\u0027s Bitters",
-    "types": [ "bitters" ],
-    "applications": [ "additional" ],
+    "name": "Peychaud's Bitters",
+    "shelfDisplay": "Peychaud's Bitters",
+    "types": [
+      "bitters"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
     "id": "pimms-no-1",
-    "name": "Pimm\u0027s No.1",
-    "shelfDisplay": "Pimm\u0027s No.1",
-    "types": [ "liqueur" ],
-    "applications": [ "base" ],
+    "name": "Pimm's No.1",
+    "shelfDisplay": "Pimm's No.1",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -831,8 +1181,12 @@
     "id": "pineapple-juice",
     "name": "Pineapple Juice",
     "shelfDisplay": "Pineapple Juice",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -840,18 +1194,26 @@
     "id": "pineapple",
     "name": "Pineapple",
     "shelfDisplay": "Pineapple",
-    "types": [ "fruit" ],
-    "applications": [ "additional" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "additional"
+    ],
     "variations": [
       {
         "id": "pineapple-slice",
         "name": "Pineapple Slice",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       },
       {
         "id": "pineapple-wedge",
         "name": "Pineapple Wedge",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -861,8 +1223,12 @@
     "id": "pisco",
     "name": "Pisco",
     "shelfDisplay": "Pisco",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -870,8 +1236,12 @@
     "id": "prosecco",
     "name": "Prosecco",
     "shelfDisplay": "Prosecco",
-    "types": [ "wine" ],
-    "applications": [ "base" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -879,13 +1249,19 @@
     "id": "raspberries",
     "name": "Raspberries",
     "shelfDisplay": "Raspberries",
-    "types": [ "fruit" ],
-    "applications": [ "additional" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "additional"
+    ],
     "variations": [
       {
         "id": "a-raspberry",
         "name": "A Raspberry",
-        "applications": [ "garnishment" ]
+        "applications": [
+          "garnishment"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -895,8 +1271,12 @@
     "id": "red-wine",
     "name": "Red Wine",
     "shelfDisplay": "Red Wine",
-    "types": [ "wine" ],
-    "applications": [ "additional" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -904,8 +1284,12 @@
     "name": "Rum",
     "id": "rum",
     "shelfDisplay": "Rum",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -914,8 +1298,12 @@
     "parentId": "rum",
     "name": "Light Rum",
     "shelfDisplay": "Rum (Light)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -924,8 +1312,12 @@
     "parentId": "rum",
     "name": "Gold Rum",
     "shelfDisplay": "Rum (Gold)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -934,8 +1326,12 @@
     "parentId": "rum",
     "name": "Jamaican Rum",
     "shelfDisplay": "Rum (Jamaican)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -944,8 +1340,12 @@
     "parentId": "rum",
     "name": "Dark Caribbean Rum",
     "shelfDisplay": "Rum (Dark Caribbean)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -954,8 +1354,12 @@
     "parentId": "rum",
     "name": "Dark Rum",
     "shelfDisplay": "Rum (Dark)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -964,8 +1368,12 @@
     "parentId": "rum",
     "name": "Demerara Rum",
     "shelfDisplay": "Rum (Demerara)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -974,18 +1382,26 @@
     "parentId": "rum",
     "name": "Blackstrap Rum",
     "shelfDisplay": "Rum (Blackstrap)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
     "id": "anejo-rum",
     "parentId": "rum",
-    "name": "A\u00F1ejo Rum",
-    "shelfDisplay": "Rum (A\u00F1ejo)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "name": "A\u00f1ejo Rum",
+    "shelfDisplay": "Rum (A\u00f1ejo)",
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -994,8 +1410,12 @@
     "parentId": "rum",
     "name": "Rhum Agricole",
     "shelfDisplay": "Rum (Agricole)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1004,8 +1424,12 @@
     "parentId": "rum",
     "name": "151 Proof Rum",
     "shelfDisplay": "Rum (151 Proof)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1014,8 +1438,12 @@
     "parentId": "rum",
     "name": "Virgin Islands Rum",
     "shelfDisplay": "Rum (Virgin Islands)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1024,8 +1452,12 @@
     "parentId": "rum",
     "name": "White Rhum Agricole",
     "shelfDisplay": "Rum (White Agricole)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1034,8 +1466,12 @@
     "parentId": "rum",
     "name": "White Rum",
     "shelfDisplay": "Rum (White)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1044,8 +1480,12 @@
     "parentId": "rum",
     "name": "Aged Rum",
     "shelfDisplay": "Rum (Aged)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1054,8 +1494,12 @@
     "parentId": "rum",
     "name": "Puerto Rican Rum",
     "shelfDisplay": "Rum (Puerto Rican)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1064,8 +1508,12 @@
     "parentId": "rum",
     "name": "Plantation Rum",
     "shelfDisplay": "Rum (Plantation)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1073,8 +1521,12 @@
     "id": "rye",
     "name": "Rye",
     "shelfDisplay": "Rye",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1082,8 +1534,12 @@
     "id": "salt",
     "name": "Salt",
     "shelfDisplay": "Salt",
-    "types": [ "herb" ],
-    "applications": [ "additional" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1091,8 +1547,12 @@
     "id": "scotch",
     "name": "Scotch",
     "shelfDisplay": "Scotch",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1101,8 +1561,12 @@
     "parentId": "scotch",
     "name": "Blended Scotch",
     "shelfDisplay": "Scotch (Blended)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1110,8 +1574,12 @@
     "id": "seasonal-berries",
     "name": "Seasonal Berries",
     "shelfDisplay": "Seasonal Berries",
-    "types": [ "fruit" ],
-    "applications": [ "garnishment" ],
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1119,8 +1587,12 @@
     "id": "sherry",
     "name": "Sherry",
     "shelfDisplay": "Sherry",
-    "types": [ "wine" ],
-    "applications": [ "base" ],
+    "types": [
+      "wine"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1128,18 +1600,26 @@
     "id": "simple-syrup",
     "name": "Simple Syrup",
     "shelfDisplay": "Simple Syrup",
-    "types": [ "syrup" ],
-    "applications": [ "additional" ],
+    "types": [
+      "syrup"
+    ],
+    "applications": [
+      "additional"
+    ],
     "variations": [
       {
         "id": "scant-simple-syrup",
         "name": "Scant Simple Syrup",
-        "applications": [ "additional" ]
+        "applications": [
+          "additional"
+        ]
       },
       {
         "id": "rich-simple-syrup",
         "name": "Rich Simple Syrup",
-        "applications": [ "additional" ]
+        "applications": [
+          "additional"
+        ]
       }
     ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
@@ -1149,8 +1629,12 @@
     "id": "sloe-gin",
     "name": "Sloe Gin",
     "shelfDisplay": "Sloe Gin",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1158,8 +1642,12 @@
     "id": "soda-water",
     "name": "Soda Water",
     "shelfDisplay": "Soda Water",
-    "types": [ "dilution" ],
-    "applications": [ "additional" ],
+    "types": [
+      "dilution"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1167,8 +1655,12 @@
     "id": "sugar",
     "name": "Sugar",
     "shelfDisplay": "Sugar",
-    "types": [ "herb" ],
-    "applications": [ "additional" ],
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1176,8 +1668,12 @@
     "id": "sweet-vermouth",
     "name": "Sweet Vermouth",
     "shelfDisplay": "Sweet Vermouth",
-    "types": [ "liqueur" ],
-    "applications": [ "base" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1185,8 +1681,12 @@
     "id": "tequila",
     "name": "Tequila",
     "shelfDisplay": "Tequila",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1195,8 +1695,12 @@
     "parentId": "tequila",
     "name": "Blanco Tequila",
     "shelfDisplay": "Tequila (Blanco)",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1204,8 +1708,12 @@
     "id": "tomato-juice",
     "name": "Tomato Juice",
     "shelfDisplay": "Tomato Juice",
-    "types": [ "juice" ],
-    "applications": [ "additional" ],
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1213,8 +1721,12 @@
     "id": "tonic-water",
     "name": "Tonic Water",
     "shelfDisplay": "Tonic Water",
-    "types": [ "dilution" ],
-    "applications": [ "additional" ],
+    "types": [
+      "dilution"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1222,8 +1734,12 @@
     "id": "velvet-falernum",
     "name": "Velvet Falernum",
     "shelfDisplay": "Velvet Falernum",
-    "types": [ "liqueur" ],
-    "applications": [ "additional" ],
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1231,8 +1747,12 @@
     "id": "vodka",
     "name": "Vodka",
     "shelfDisplay": "Vodka",
-    "types": [ "spirit" ],
-    "applications": [ "base" ],
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1240,8 +1760,12 @@
     "id": "water",
     "name": "Water",
     "shelfDisplay": "Water",
-    "types": [ "dilution" ],
-    "applications": [ "additional" ],
+    "types": [
+      "dilution"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
@@ -1249,9 +1773,273 @@
     "id": "worcestershire",
     "name": "Worcestershire",
     "shelfDisplay": "Worcestershire",
-    "types": [ "sauce" ],
-    "applications": [ "additional" ],
+    "types": [
+      "sauce"
+    ],
+    "applications": [
+      "additional"
+    ],
     "createdOn": "2025-04-22T20:09:40.1400166-06:00",
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
+  },
+  {
+    "id": "reposado-tequila",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Reposado Tequila",
+    "shelfDisplay": "Tequila (Reposado)",
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ]
+  },
+  {
+    "id": "orange-curacao",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Orange Cura\u00e7ao",
+    "shelfDisplay": "Orange Cura\u00e7ao",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "cherry",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Cherry",
+    "shelfDisplay": "Cherry",
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ]
+  },
+  {
+    "id": "cranberry-juice",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Cranberry Juice",
+    "shelfDisplay": "Cranberry Juice",
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "hibiscus-tea",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Hibiscus Tea",
+    "shelfDisplay": "Hibiscus Tea",
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "creme-de-mure",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Cr\u00e8me de M\u00fbre",
+    "shelfDisplay": "Cr\u00e8me de M\u00fbre",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "heavy-cream",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Heavy Cream",
+    "shelfDisplay": "Heavy Cream",
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "amaro",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Amaro",
+    "shelfDisplay": "Amaro",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "islay-scotch",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Islay Scotch",
+    "shelfDisplay": "Scotch (Islay)",
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ]
+  },
+  {
+    "id": "ginger-syrup",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Ginger Syrup",
+    "shelfDisplay": "Ginger Syrup",
+    "types": [
+      "syrup"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "espresso",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Espresso",
+    "shelfDisplay": "Espresso",
+    "types": [
+      "juice"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "apricot-liqueur",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Apricot Liqueur",
+    "shelfDisplay": "Apricot Liqueur",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "coffee-beans",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Coffee Beans",
+    "shelfDisplay": "Coffee Beans",
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "garnishment"
+    ]
+  },
+  {
+    "id": "triple-sec",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Triple Sec",
+    "shelfDisplay": "Triple Sec",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "suze",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Suze",
+    "shelfDisplay": "Suze",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "blackberries",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Blackberries",
+    "shelfDisplay": "Fresh Blackberries",
+    "types": [
+      "fruit"
+    ],
+    "applications": [
+      "garnishment"
+    ]
+  },
+  {
+    "id": "coffee-liqueur",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Coffee Liqueur",
+    "shelfDisplay": "Coffee Liqueur",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "candied-ginger",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Candied Ginger",
+    "shelfDisplay": "Candied Ginger",
+    "types": [
+      "herb"
+    ],
+    "applications": [
+      "garnishment"
+    ]
+  },
+  {
+    "id": "amaro-nonino",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Amaro Nonino",
+    "shelfDisplay": "Amaro Nonino",
+    "types": [
+      "liqueur"
+    ],
+    "applications": [
+      "additional"
+    ]
+  },
+  {
+    "id": "mezcal",
+    "createdOn": "2025-07-17T22:09:41.249-06:00",
+    "updatedOn": "2025-07-17T22:09:41.249-06:00",
+    "name": "Mezcal",
+    "shelfDisplay": "Mezcal",
+    "types": [
+      "spirit"
+    ],
+    "applications": [
+      "base"
+    ]
   }
 ]
