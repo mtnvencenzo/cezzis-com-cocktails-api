@@ -413,13 +413,13 @@
     "isIba": false,
     "images": [
       {
-        "uri": "modern-cosmopolitan-coctail-main.webp",
+        "uri": "modern-cosmopolitan-cocktail-main.webp",
         "type": "main",
         "width": 800,
         "height": 533
       },
       {
-        "uri": "modern-cosmopolitan-coctail-300x300.webp",
+        "uri": "modern-cosmopolitan-cocktail-300x300.webp",
         "type": "searchTile",
         "width": 300,
         "height": 300

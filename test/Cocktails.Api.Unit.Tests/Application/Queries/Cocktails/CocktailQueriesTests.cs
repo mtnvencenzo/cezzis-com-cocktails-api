@@ -19,12 +19,6 @@ public class CocktailQueriesTests : ServiceTestBase
     private const string firstCocktailId = "absinthe-frappe";
     private const string twentyithCocktailId = "champagne-cocktail";
     private const string fiftyithCocktailId = "mai-tai";
-    private readonly Mock<ICocktailQueries> cocktailQueriesMock = new();
-
-    public CocktailQueriesTests()
-    {
-        //cocktailQueriesMock.SetupPropertys(x => x.ite, firstCocktailId);
-    }
 
     [Fact]
     public async Task GetCocktail_ShouldReturnCocktailItem()
