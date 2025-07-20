@@ -920,7 +920,7 @@
     ],
     "ingredients": [
       {
-        "ingredientId": "guiness",
+        "ingredientId": "guinness",
         "units": 3,
         "uoM": "ounces",
         "preparation": "none",

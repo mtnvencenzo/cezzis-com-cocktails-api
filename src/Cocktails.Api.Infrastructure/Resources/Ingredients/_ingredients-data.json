@@ -710,9 +710,9 @@
     "updatedOn": "2025-04-22T20:09:40.1400166-06:00"
   },
   {
-    "id": "guiness",
-    "name": "Guiness",
-    "shelfDisplay": "Guiness",
+    "id": "guinness",
+    "name": "Guinness",
+    "shelfDisplay": "Guinness",
     "types": [
       "beer"
     ],
@@ -764,7 +764,7 @@
   {
     "id": "lemons",
     "name": "Lemons",
-    "shelfDisplay": "Oranges",
+    "shelfDisplay": "Lemons",
     "types": [
       "fruit"
     ],
