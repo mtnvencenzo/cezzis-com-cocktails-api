@@ -1819,6 +1819,15 @@
     ],
     "applications": [
       "garnishment"
+    ],
+    "variations": [
+      {
+        "id": "maraschino-cherry",
+        "name": "Maraschino Cherry",
+        "applications": [
+          "garnishment"
+        ]
+      }
     ]
   },
   {

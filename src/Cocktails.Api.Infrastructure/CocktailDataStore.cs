@@ -74,11 +74,30 @@ public class CocktailDataStore(IOptions<CocktailsApiConfig> cocktailsApiConfig, 
 
         cocktails.ForEach(x =>
         {
-            x.SetContent(ProcessMarkdown(x, cocktailsApiConfig.Value, cocktailDescriptionsResx));
+            try
+            {
+                x.SetContent(ProcessMarkdown(x, cocktailsApiConfig.Value, cocktailDescriptionsResx));
 
-            x.Images.ForEach(i => i.SetUri($"{cocktailsApiConfig.Value.BaseImageUri}/{i.Uri}"));
+                x.Images.ForEach(i => i.SetUri($"{cocktailsApiConfig.Value.BaseImageUri}/{i.Uri}"));
 
-            x.Ingredients.ForEach(ci => ci.SetBaseIngredient(ingredients.FirstOrDefault(i => i.Id == ci.IngredientId)));
+                x.Ingredients.ForEach(ci =>
+                {
+                    var ingredient = ingredients.FirstOrDefault(i => i.Id == ci.IngredientId);
+                    if (ingredient != null)
+                    {
+                        ci.SetBaseIngredient(ingredient);
+                    }
+                    else
+                    {
+                        throw new Exception($"Ingredient {ci.IngredientId} not found");
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error processing cocktail {x.Id}: {ex.Message}");
+                throw;
+            }
         });
 
         return cocktails;

@@ -2,6 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "clean",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}/Cocktails.Api.sln"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "restore",
             "command": "dotnet",
             "type": "process",
@@ -22,7 +32,7 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile",
-            "dependsOn": "restore"
+            "dependsOn": ["clean", "restore"]
         },
         {
             "label": "dapr-run",

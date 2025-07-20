@@ -17,8 +17,8 @@ using Xunit;
 public class CocktailQueriesTests : ServiceTestBase
 {
     private const string firstCocktailId = "absinthe-frappe";
-    private const string twentyithCocktailId = "clover-club";
-    private const string fiftyithCocktailId = "mojito";
+    private const string twentyithCocktailId = "champagne-cocktail";
+    private const string fiftyithCocktailId = "mai-tai";
     private readonly Mock<ICocktailQueries> cocktailQueriesMock = new();
 
     public CocktailQueriesTests()
@@ -171,7 +171,7 @@ public class CocktailQueriesTests : ServiceTestBase
         var allCocktails = repo.CachedItems.ToList();
 
         var first = allCocktails.First(x => x.Id == "bijou");
-        var second = allCocktails.First(x => x.Id == "black-velvet");
+        var second = allCocktails.First(x => x.Id == "bitter-mai-tai");
         CocktailDataIncludeModel[] includes = [CocktailDataIncludeModel.mainImages];
 
         // act

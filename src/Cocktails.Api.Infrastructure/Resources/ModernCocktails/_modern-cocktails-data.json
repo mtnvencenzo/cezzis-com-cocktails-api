@@ -89,7 +89,7 @@
     "serves": 1,
     "glassware": [
       "rocks",
-      "double-rocks"
+      "doublerocks"
     ],
     "isIba": false,
     "images": [
@@ -159,14 +159,14 @@
       {
         "ingredientId": "blackberries",
         "units": 2,
-        "uoM": "items",
-        "preparation": "fresh",
+        "uoM": "item",
+        "preparation": "none",
         "suggestions": "",
         "requirement": "required"
       },
       {
-        "ingredientId": "lemon",
-        "variationId": "lemon-slice",
+        "ingredientId": "lemons",
+        "variationId": "lemon-slices",
         "units": 1,
         "uoM": "item",
         "preparation": "none",
@@ -203,7 +203,7 @@
     "serves": 1,
     "glassware": [
       "rocks",
-      "double-rocks"
+      "doublerocks"
     ],
     "isIba": false,
     "images": [
@@ -250,7 +250,7 @@
         "ingredientId": "pineapple-juice",
         "units": 1,
         "uoM": "ounces",
-        "preparation": "fresh",
+        "preparation": "none",
         "suggestions": "",
         "requirement": "required"
       },
@@ -374,7 +374,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "orange",
+        "ingredientId": "oranges",
         "variationId": "orange-peel",
         "units": 1,
         "uoM": "item",
@@ -464,7 +464,7 @@
         "ingredientId": "espresso",
         "units": 1,
         "uoM": "ounces",
-        "preparation": "fresh",
+        "preparation": "freshlySqueezed",
         "suggestions": "Freshly brewed and cooled",
         "requirement": "required"
       },
@@ -479,7 +479,7 @@
       {
         "ingredientId": "coffee-beans",
         "units": 3,
-        "uoM": "items",
+        "uoM": "item",
         "preparation": "none",
         "suggestions": "",
         "requirement": "required"
@@ -578,7 +578,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "orange",
+        "ingredientId": "oranges",
         "variationId": "orange-peel",
         "units": 1,
         "uoM": "item",
@@ -612,7 +612,7 @@
     "serves": 1,
     "glassware": [
       "rocks",
-      "double-rocks"
+      "doublerocks"
     ],
     "isIba": false,
     "images": [
@@ -680,7 +680,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "lemon",
+        "ingredientId": "lemons",
         "variationId": "lemon-peel",
         "units": 1,
         "uoM": "item",
@@ -791,7 +791,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "lime",
+        "ingredientId": "limes",
         "variationId": "lime-wheel",
         "units": 1,
         "uoM": "item",
@@ -898,7 +898,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "lime",
+        "ingredientId": "limes",
         "variationId": "lime-wheel",
         "units": 1,
         "uoM": "item",
@@ -1000,7 +1000,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "orange",
+        "ingredientId": "oranges",
         "variationId": "orange-peel",
         "units": 1,
         "uoM": "item",
@@ -1034,7 +1034,7 @@
     "serves": 1,
     "glassware": [
       "rocks",
-      "double-rocks"
+      "doublerocks"
     ],
     "isIba": false,
     "images": [
@@ -1350,7 +1350,7 @@
     "serves": 1,
     "glassware": [
       "rocks",
-      "double-rocks"
+      "doublerocks"
     ],
     "isIba": false,
     "images": [
@@ -1410,7 +1410,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "orange",
+        "ingredientId": "oranges",
         "variationId": "orange-peel",
         "units": 1,
         "uoM": "item",
@@ -1487,7 +1487,7 @@
         "ingredientId": "orange-juice",
         "units": 4,
         "uoM": "ounces",
-        "preparation": "fresh",
+        "preparation": "freshlySqueezed",
         "suggestions": "",
         "requirement": "required"
       },
@@ -1500,7 +1500,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "orange",
+        "ingredientId": "oranges",
         "variationId": "orange-slice",
         "units": 1,
         "uoM": "item",
@@ -1603,7 +1603,7 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "orange",
+        "ingredientId": "oranges",
         "variationId": "orange-peel",
         "units": 1,
         "uoM": "item",
@@ -1637,7 +1637,7 @@
     "serves": 1,
     "glassware": [
       "rocks",
-      "double-rocks"
+      "doublerocks"
     ],
     "isIba": false,
     "images": [
@@ -1718,7 +1718,7 @@
     "serves": 1,
     "glassware": [
       "rocks",
-      "double-rocks"
+      "doublerocks"
     ],
     "isIba": false,
     "images": [

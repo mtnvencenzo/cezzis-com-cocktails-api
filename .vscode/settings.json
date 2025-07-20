@@ -16,5 +16,8 @@
     "search.exclude": {
         "**/bin": true,
         "**/obj": true
-    }
+    },
+    "dotrush.roslyn.projectOrSolutionFiles": [
+      "d:\\Github\\cezzis-com-cocktails-api\\Cocktails.Api.sln"
+    ]
 }
