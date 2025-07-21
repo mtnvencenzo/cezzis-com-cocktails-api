@@ -1,1 +1,1742 @@
-[]
+[
+  {
+    "id": "bitter-mai-tai",
+    "title": "Bitter Mai Tai",
+    "contentFile": "BitterMaiTai",
+    "content": null,
+    "descriptiveTitle": "The Bitter Mai Tai: When Tiki Meets the Bitter Revolution",
+    "description": "A sophisticated evolution of the classic Mai Tai that embraces bitter flavors and modern craft cocktail sensibilities. This variation transforms the traditionally sweet and fruity Mai Tai into a more nuanced, adult-oriented libation.",
+    "searchableTitles": [
+      "Bitter Mai Tai",
+      "Bitter Mai-Tai"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "aged-rum",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Appleton Estate 12 Year or El Dorado 12 Year",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lime-juice",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "orgeat",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "orange-curacao",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Pierre Ferrand Dry Cura\u00c3\u00a7ao",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "amaro",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Amaro Nonino or Montenegro",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "mint",
+        "variationId": "mint-sprig",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add aged rum, lime juice, orgeat, orange cura\u00c3\u00a7ao, and amaro to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a rocks glass filled with crushed ice.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with a mint sprig.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "rocks",
+      "doublerocks"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-bitter-mai-tai-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "uri": "modern-bitter-mai-tai-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "bramble",
+    "title": "Bramble",
+    "contentFile": "Bramble",
+    "content": null,
+    "descriptiveTitle": "The Bramble: The Blackberry Revolution in London",
+    "description": "A sophisticated blend of gin, lemon juice, sugar syrup, and cr\u00c3\u00a8me de m\u00c3\u00bbre that has become a cornerstone of contemporary cocktail culture. Created by Dick Bradsell, this elegant libation represents the perfect marriage of classic cocktail structure and innovative flavor combinations.",
+    "searchableTitles": [
+      "Bramble"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "gin",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Plymouth or Beefeater",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lemon-juice",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "simple-syrup",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "creme-de-mure",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Giffard or Chambord",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "blackberries",
+        "units": 2,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lemons",
+        "variationId": "lemon-slices",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add gin, lemon juice, and simple syrup to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a rocks glass filled with crushed ice.",
+        "order": 4
+      },
+      {
+        "displayValue": "Drizzle cr\u00c3\u00a8me de m\u00c3\u00bbre over the top of the drink.",
+        "order": 5
+      },
+      {
+        "displayValue": "Garnish with fresh blackberries and a lemon slice.",
+        "order": 6
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "rocks",
+      "doublerocks"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-bramble-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "uri": "modern-bramble-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "chartreuse-swizzle",
+    "title": "Chartreuse Swizzle",
+    "contentFile": "ChartreuseSwizzle",
+    "content": null,
+    "descriptiveTitle": "The Chartreuse Swizzle: French Monks Meet Polynesian Paradise",
+    "description": "A sophisticated blend of Green Chartreuse, pineapple juice, lime juice, and coconut cream that combines the tropical flavors of classic Tiki drinks with the elegance of French sparkling wine. Created by Marcovaldo Dionysos at Smuggler's Cove.",
+    "searchableTitles": [
+      "Chartreuse Swizzle"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "green-chartreuse",
+        "units": 1.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "pineapple-juice",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lime-juice",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "coconut-cream",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Coco Lopez",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "mint",
+        "variationId": "mint-sprig",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a tall glass with crushed ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add Green Chartreuse, pineapple juice, lime juice, and coconut cream to the glass.",
+        "order": 2
+      },
+      {
+        "displayValue": "Using a swizzle stick or bar spoon, swizzle the drink until well-chilled and frosted.",
+        "order": 3
+      },
+      {
+        "displayValue": "Top with more crushed ice if needed.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with a mint sprig.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "collins",
+      "highball"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-chartreuse-swizzle-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "uri": "modern-chartreuse-swizzle-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 6
+  },
+  {
+    "id": "cosmopolitan",
+    "title": "Cosmopolitan",
+    "contentFile": "Cosmopolitan",
+    "content": null,
+    "descriptiveTitle": "The Cosmopolitan: The Pink Drink That Defined a Decade",
+    "description": "A sophisticated blend of vodka, triple sec, cranberry juice, and lime juice that became synonymous with urban sophistication and the rise of cocktail culture in the 1990s. This elegant pink-hued drink transcended its humble origins to become a cultural phenomenon.",
+    "searchableTitles": [
+      "Cosmopolitan",
+      "Cosmo"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "vodka",
+        "units": 1.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Absolut Citron or Grey Goose",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "triple-sec",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Cointreau",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "cranberry-juice",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lime-juice",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "oranges",
+        "variationId": "orange-peel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add vodka, triple sec, cranberry juice, and lime juice to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with an orange peel.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-cosmopolitan-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "uri": "modern-cosmopolitan-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "espresso-martini",
+    "title": "Espresso Martini",
+    "contentFile": "EspressoMartini",
+    "content": null,
+    "descriptiveTitle": "The Espresso Martini: The Cocktail That Wakes You Up and F***s You Up",
+    "description": "A sophisticated blend of vodka, coffee liqueur, and fresh espresso that has become a global phenomenon. Created by Dick Bradsell, this innovative cocktail perfectly captures the energy and sophistication of the modern cocktail renaissance.",
+    "searchableTitles": [
+      "Espresso Martini",
+      "Coffee Martini"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "vodka",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Ketel One or Grey Goose",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "coffee-liqueur",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Kahl\u00c3\u00baa",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "espresso",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "Freshly brewed and cooled",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "simple-syrup",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "coffee-beans",
+        "units": 3,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add vodka, coffee liqueur, espresso, and simple syrup to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled and frothy, about 15-20 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with three coffee beans.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-espresso-martini-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 1008
+      },
+      {
+        "uri": "modern-espresso-martini-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 10
+  },
+  {
+    "id": "frozen-negroni",
+    "title": "Frozen Negroni",
+    "contentFile": "FrozenNegroni",
+    "content": null,
+    "descriptiveTitle": "The Frozen Negroni: When Florence Meets the Freezer",
+    "description": "A frozen version of the classic Negroni that maintains the sophisticated complexity of the original while adding a refreshing, modern twist. This innovative variation has become a favorite among bartenders and cocktail enthusiasts who appreciate both tradition and innovation.",
+    "searchableTitles": [
+      "Frozen Negroni"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "gin",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Beefeater or Tanqueray",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "sweet-vermouth",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Carpano Antica",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "campari",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "water",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "oranges",
+        "variationId": "orange-peel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Combine gin, sweet vermouth, Campari, and water in a container.",
+        "order": 1
+      },
+      {
+        "displayValue": "Pour into a shallow dish and freeze for 4-6 hours, stirring occasionally.",
+        "order": 2
+      },
+      {
+        "displayValue": "Scrape the frozen mixture with a fork to create a slushy consistency.",
+        "order": 3
+      },
+      {
+        "displayValue": "Spoon into a chilled rocks glass.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with an orange peel.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "rocks",
+      "doublerocks"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-frozen-negroni-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "uri": "modern-frozen-negroni-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 240
+  },
+  {
+    "id": "gin-blossom",
+    "title": "Gin Blossom",
+    "contentFile": "GinBlossom",
+    "content": null,
+    "descriptiveTitle": "The Gin Blossom: The Rosy Cheeked Gin Revival",
+    "description": "A delicate blend of gin, apricot liqueur, and fresh lemon juice that showcases the botanical complexity of gin while adding layers of fruit-forward elegance. This modern classic has become a favorite among gin enthusiasts and cocktail connoisseurs.",
+    "searchableTitles": [
+      "Gin Blossom"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "gin",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Plymouth or Beefeater",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "apricot-liqueur",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Rothman & Winter or Giffard",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lemon-juice",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "simple-syrup",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lemons",
+        "variationId": "lemon-peel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add gin, apricot liqueur, lemon juice, and simple syrup to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with a lemon peel.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-gin-blossom-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 534
+      },
+      {
+        "uri": "modern-gin-blossom-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "hibiscus-punch-royale",
+    "title": "Hibiscus Punch Royale",
+    "contentFile": "HibiscusPunchRoyale",
+    "content": null,
+    "descriptiveTitle": "The Hibiscus Punch Royale: The Red Flower's Royal Treatment",
+    "description": "A vibrant blend of rum, hibiscus tea, citrus, and champagne that combines the tropical flavors of classic Tiki drinks with the elegance of French sparkling wine. This modern classic has become a favorite among cocktail enthusiasts.",
+    "searchableTitles": [
+      "Hibiscus Punch Royale",
+      "Hibiscus Punch"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "aged-rum",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Appleton Estate or El Dorado",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "hibiscus-tea",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "chilled",
+        "suggestions": "Strong brewed and cooled",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lime-juice",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "simple-syrup",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "champagne",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "chilled",
+        "suggestions": "Brut champagne",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "limes",
+        "variationId": "lime-wheel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add rum, hibiscus tea, lime juice, and simple syrup to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 4
+      },
+      {
+        "displayValue": "Top with champagne.",
+        "order": 5
+      },
+      {
+        "displayValue": "Garnish with a lime wheel.",
+        "order": 6
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-hibiscus-punch-royale-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "uri": "modern-hibiscus-punch-royale-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 10
+  },
+  {
+    "id": "la-bomba",
+    "title": "La Bomba",
+    "contentFile": "LaBomba",
+    "content": null,
+    "descriptiveTitle": "La Bomba: The Explosive Secret of the Daiquiri",
+    "description": "An explosive evolution of the classic Daiquiri\u00e2\u20ac\u201da sophisticated blend of rum, lime juice, simple syrup, and a secret ingredient that adds depth and complexity to this beloved cocktail.",
+    "searchableTitles": [
+      "La Bomba",
+      "Bomba"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "white-rum",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Havana Club 3 Year or Plantation 3 Star",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lime-juice",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "simple-syrup",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "maraschino-liqueur",
+        "units": 0.25,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Luxardo",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "limes",
+        "variationId": "lime-wheel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add rum, lime juice, simple syrup, and maraschino liqueur to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with a lime wheel.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-la-bomba-daiquiri-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "uri": "modern-la-bomba-daiquiri-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "oaxaca-old-fashioned",
+    "title": "Oaxaca Old Fashioned",
+    "contentFile": "OaxacaOldFashioned",
+    "content": null,
+    "descriptiveTitle": "The Oaxaca Old Fashioned: When Kentucky Meets Oaxaca",
+    "description": "A sophisticated blend of mezcal, reposado tequila, agave nectar, and bitters that transforms the classic Old Fashioned into a celebration of Mexican spirits and flavors. Created by Phil Ward at Death & Co.",
+    "searchableTitles": [
+      "Oaxaca Old Fashioned"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "mezcal",
+        "units": 1.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Del Maguey Vida or El Silencio",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "reposado-tequila",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Siete Leguas or Fortaleza",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "agave-nectar",
+        "units": 0.25,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "angostura-bitters",
+        "units": 2,
+        "uoM": "dashes",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "oranges",
+        "variationId": "orange-peel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Add agave nectar and bitters to a rocks glass.",
+        "order": 1
+      },
+      {
+        "displayValue": "Stir to combine the agave nectar and bitters.",
+        "order": 2
+      },
+      {
+        "displayValue": "Add mezcal and reposado tequila to the glass.",
+        "order": 3
+      },
+      {
+        "displayValue": "Add a large ice cube and stir gently until well-chilled.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with an orange peel.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "rocks",
+      "doublerocks"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-oaxaca-old-fashioned-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "uri": "modern-oaxaca-old-fashioned-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "old-cuban",
+    "title": "Old Cuban",
+    "contentFile": "OldCuban",
+    "content": null,
+    "descriptiveTitle": "The Old Cuban: The Mojito Gets a French Kiss",
+    "description": "A sophisticated blend of aged rum, lime juice, simple syrup, mint, Angostura bitters, and champagne that combines the tropical flavors of a Mojito with the elegance of French sparkling wine. Created by Audrey Saunders.",
+    "searchableTitles": [
+      "Old Cuban"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "aged-rum",
+        "units": 1.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Appleton Estate 12 Year or El Dorado 12 Year",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lime-juice",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "simple-syrup",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "angostura-bitters",
+        "units": 2,
+        "uoM": "dashes",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "champagne",
+        "units": 1.5,
+        "uoM": "ounces",
+        "preparation": "chilled",
+        "suggestions": "Brut champagne",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "mint",
+        "variationId": "mint-sprig",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add aged rum, lime juice, simple syrup, and bitters to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 4
+      },
+      {
+        "displayValue": "Top with champagne.",
+        "order": 5
+      },
+      {
+        "displayValue": "Garnish with a mint sprig.",
+        "order": 6
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-old-cuban-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "uri": "modern-old-cuban-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "paper-plane",
+    "title": "Paper Plane",
+    "contentFile": "PaperPlane",
+    "content": null,
+    "descriptiveTitle": "The Paper Plane: The Equal-Parts Revolution Takes Flight",
+    "description": "A sophisticated blend of bourbon, Aperol, Amaro Nonino, and lemon juice that has become a global phenomenon. Created by Sam Ross, this innovative cocktail perfectly captures the energy and sophistication of the modern cocktail renaissance.",
+    "searchableTitles": [
+      "Paper Plane"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "bourbon",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Buffalo Trace or Four Roses",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "aperol",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "amaro-nonino",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lemon-juice",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add bourbon, Aperol, Amaro Nonino, and lemon juice to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 4
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-paper-plane-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 956
+      },
+      {
+        "uri": "modern-paper-plane-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "penicillin",
+    "title": "Penicillin",
+    "contentFile": "Penicillin",
+    "content": null,
+    "descriptiveTitle": "The Penicillin: The Whiskey Sour and a Shot of Medicine",
+    "description": "A sophisticated blend of blended Scotch, Islay Scotch, lemon juice, honey syrup, and ginger syrup that transforms the classic Whiskey Sour into something entirely new and exciting. Created by Sam Ross.",
+    "searchableTitles": [
+      "Penicillin"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "blended-scotch",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Famous Grouse or Johnnie Walker Black",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "islay-scotch",
+        "units": 0.25,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Laphroaig 10 Year or Ardbeg 10 Year",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lemon-juice",
+        "units": 0.75,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "honey-syrup",
+        "units": 0.375,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "ginger-syrup",
+        "units": 0.375,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "candied-ginger",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a cocktail shaker with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add blended Scotch, lemon juice, honey syrup, and ginger syrup to the shaker.",
+        "order": 2
+      },
+      {
+        "displayValue": "Shake vigorously until well-chilled, about 10-15 seconds.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a rocks glass filled with ice.",
+        "order": 4
+      },
+      {
+        "displayValue": "Float Islay Scotch on top.",
+        "order": 5
+      },
+      {
+        "displayValue": "Garnish with candied ginger.",
+        "order": 6
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "rocks",
+      "doublerocks"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-penicillin-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "uri": "modern-penicillin-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "revolver",
+    "title": "Revolver",
+    "contentFile": "Revolver",
+    "content": null,
+    "descriptiveTitle": "The Revolver: The Beatles-Inspired Bourbon Revolution",
+    "description": "A sophisticated blend of bourbon, coffee liqueur, and orange bitters that transforms the classic Old Fashioned into something entirely new and exciting. Created by Jon Santer, this innovative cocktail has become a modern classic.",
+    "searchableTitles": [
+      "Revolver"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "bourbon",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Bulleit or Four Roses",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "coffee-liqueur",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Tia Maria or Kahl\u00c3\u00baa",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "orange-bitters",
+        "units": 2,
+        "uoM": "dashes",
+        "preparation": "none",
+        "suggestions": "Preferably Regans'",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "oranges",
+        "variationId": "orange-peel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Add bourbon, coffee liqueur, and orange bitters to a mixing glass.",
+        "order": 1
+      },
+      {
+        "displayValue": "Fill the mixing glass with ice and stir gently until well-chilled.",
+        "order": 2
+      },
+      {
+        "displayValue": "Strain into a chilled coupe glass.",
+        "order": 3
+      },
+      {
+        "displayValue": "Garnish with an orange peel.",
+        "order": 4
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "coupe",
+      "cocktailGlass"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-revolver-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "uri": "modern-revolver-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "tequila-sunrise",
+    "title": "Tequila Sunrise",
+    "contentFile": "TequilaSunrise",
+    "content": null,
+    "descriptiveTitle": "The Tequila Sunrise: The Drink That Painted California Pink",
+    "description": "A vibrant blend of tequila, orange juice, and grenadine that creates a stunning visual effect reminiscent of a sunrise. This colorful cocktail became synonymous with the laid-back California lifestyle and helped introduce tequila to a broader audience.",
+    "searchableTitles": [
+      "Tequila Sunrise"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "tequila",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Jose Cuervo Especial or Patr\u00c3\u00b3n Silver",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "orange-juice",
+        "units": 4,
+        "uoM": "ounces",
+        "preparation": "freshlySqueezed",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "grenadine",
+        "units": 0.5,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "oranges",
+        "variationId": "orange-slice",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "cherry",
+        "variationId": "maraschino-cherry",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a highball glass with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add tequila and orange juice to the glass.",
+        "order": 2
+      },
+      {
+        "displayValue": "Stir gently to combine.",
+        "order": 3
+      },
+      {
+        "displayValue": "Slowly pour grenadine down the side of the glass to create a sunrise effect.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with an orange slice and maraschino cherry.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "highball",
+      "collins"
+    ],
+    "isIba": true,
+    "images": [
+      {
+        "uri": "modern-tequila-sunrise-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "uri": "modern-tequila-sunrise-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "white-negroni",
+    "title": "White Negroni",
+    "contentFile": "WhiteNegroni",
+    "content": null,
+    "descriptiveTitle": "The White Negroni: When Florence Goes French",
+    "description": "A sophisticated blend of gin, Lillet Blanc, and Suze that transforms the classic Negroni into something entirely new and exciting. Created by Wayne Collins, this innovative cocktail has become a modern classic.",
+    "searchableTitles": [
+      "White Negroni"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "gin",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Plymouth or Beefeater",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "lillet-blanc",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "suze",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "oranges",
+        "variationId": "orange-peel",
+        "units": 1,
+        "uoM": "item",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a mixing glass with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add gin, Lillet Blanc, and Suze to the mixing glass.",
+        "order": 2
+      },
+      {
+        "displayValue": "Stir gently until well-chilled.",
+        "order": 3
+      },
+      {
+        "displayValue": "Strain into a chilled rocks glass filled with ice.",
+        "order": 4
+      },
+      {
+        "displayValue": "Garnish with an orange peel.",
+        "order": 5
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "rocks",
+      "doublerocks"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-white-negroni-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "uri": "modern-white-negroni-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 8
+  },
+  {
+    "id": "white-russian",
+    "title": "White Russian",
+    "contentFile": "WhiteRussian",
+    "content": null,
+    "descriptiveTitle": "The White Russian: The Dude's Drink of Choice",
+    "description": "A sophisticated blend of vodka, coffee liqueur, and cream that became synonymous with the laid-back, ironic culture of the 1990s. This creamy, indulgent cocktail transcended its humble origins to become a cultural phenomenon.",
+    "searchableTitles": [
+      "White Russian"
+    ],
+    "eras": [
+      "Modern"
+    ],
+    "ingredients": [
+      {
+        "ingredientId": "vodka",
+        "units": 2,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Ketel One or Grey Goose",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "coffee-liqueur",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "Preferably Kahl\u00c3\u00baa",
+        "requirement": "required"
+      },
+      {
+        "ingredientId": "heavy-cream",
+        "units": 1,
+        "uoM": "ounces",
+        "preparation": "none",
+        "suggestions": "",
+        "requirement": "required"
+      }
+    ],
+    "instructions": [
+      {
+        "displayValue": "Fill a rocks glass with ice.",
+        "order": 1
+      },
+      {
+        "displayValue": "Add vodka and coffee liqueur to the glass.",
+        "order": 2
+      },
+      {
+        "displayValue": "Stir gently to combine.",
+        "order": 3
+      },
+      {
+        "displayValue": "Float heavy cream on top.",
+        "order": 4
+      }
+    ],
+    "serves": 1,
+    "glassware": [
+      "rocks",
+      "doublerocks"
+    ],
+    "isIba": false,
+    "images": [
+      {
+        "uri": "modern-white-russian-cocktail-main.webp",
+        "type": "main",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "uri": "modern-white-russian-cocktail-300x300.webp",
+        "type": "searchTile",
+        "width": 300,
+        "height": 300
+      }
+    ],
+    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "prepTimeMinutes": 6
+  }
+]
