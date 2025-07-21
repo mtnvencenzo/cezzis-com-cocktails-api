@@ -205,7 +205,7 @@
       "rocks",
       "doublerocks"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-bramble-cocktail-main.webp",
@@ -307,7 +307,7 @@
       "collins",
       "highball"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-chartreuse-swizzle-cocktail-main.webp",
@@ -410,7 +410,7 @@
       "coupe",
       "cocktailGlass"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-cosmopolitan-cocktail-main.webp",
@@ -512,7 +512,7 @@
       "coupe",
       "cocktailGlass"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-espresso-martini-cocktail-main.webp",
@@ -1150,7 +1150,7 @@
       "coupe",
       "cocktailGlass"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-old-cuban-cocktail-main.webp",
@@ -1239,7 +1239,7 @@
       "coupe",
       "cocktailGlass"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-paper-plane-cocktail-main.webp",
@@ -1352,7 +1352,7 @@
       "rocks",
       "doublerocks"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-penicillin-cocktail-main.webp",
@@ -1545,7 +1545,7 @@
       "highball",
       "collins"
     ],
-    "isIba": false,
+    "isIba": true,
     "images": [
       {
         "uri": "modern-tequila-sunrise-cocktail-main.webp",
