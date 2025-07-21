@@ -19,7 +19,8 @@
                 "restore",
                 "${workspaceFolder}/Cocktails.Api.sln"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "dependsOn": ["clean"]
         },
         {
             "label": "build",
@@ -32,7 +33,7 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile",
-            "dependsOn": ["clean", "restore"]
+            "dependsOn": ["restore"]
         },
         {
             "label": "dapr-run",

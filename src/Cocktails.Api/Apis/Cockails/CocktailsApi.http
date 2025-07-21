@@ -70,7 +70,7 @@ X-Key: {{apimkey}}
 // ------------------------------------------------------------
 
 
-GET {{host}}/api/v1/cocktails/sitemap
+GET {{host}}/api/v1/cocktails/seo/sitemap
 X-Key: {{apimkey}}
 
 ###
