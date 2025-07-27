@@ -7,10 +7,10 @@ This guide will help you set up Azurite in a Docker container and connect to it 
 Open PowerShell (recommended for volume mapping on Windows) and run:
 
 ```powershell
-docker run --restart=always -d --name azurite-cocktails -p 10000:10000 -v D:/Github/cezzis-com/.azurite:/workspace mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0
+docker run --restart=always -d --name azurite-cocktails -p 10000:10000 -v $HOME/.azurite/cezzis/:/workspace mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0
 ```
-- Make sure the path `D:/Github/cezzis-com/.azurite` exists on your system.
-- This will start Azurite and persist data in the `.azurite` directory.
+- Make sure the path `$HOME/.azurite/cezzis/` exists on your system.
+- This will start Azurite and persist data in the `$HOME/.azurite/cezzis/` directory.
 
 #### 2. Connect with Azure Storage Explorer
 

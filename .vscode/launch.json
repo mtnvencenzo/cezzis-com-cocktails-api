@@ -15,22 +15,58 @@
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
-                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)|\\bApplication started.*",
                 "uriFormat": "%s/scalar/v1"
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "local",
-                "ASPNETCORE_URLS": "https://localhost:7176;http://localhost:5295",
+                "ASPNETCORE_URLS": "https://localhost:7176;http://localhost:5296",
                 "DAPR_HTTP_PORT": "5295",
                 "DAPR_GRPC_PORT": "50001"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
             },
-            "logging": {
-                "moduleLoad": false
+            "justMyCode": true,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Cocktails API (Dapr - Direct)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dapr",
+            "args": [
+                "run",
+                "--app-id", "cocktails-api",
+                "--resources-path", "${workspaceFolder}/.dapr/",
+                "--app-port", "7176",
+                "--app-protocol", "https",
+                "--dapr-http-port", "5295",
+                "--dapr-grpc-port", "50001",
+                "--metrics-port", "9090",
+                "--",
+                "dotnet",
+                "run",
+                "--project", "${workspaceFolder}/src/Cocktails.Api/Cocktails.Api.csproj"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)|\\bApplication started.*",
+                "uriFormat": "%s/scalar/v1"
             },
-            "justMyCode": true
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "local",
+                "ASPNETCORE_URLS": "https://localhost:7176;http://localhost:5296",
+                "DAPR_HTTP_PORT": "5295",
+                "DAPR_GRPC_PORT": "50001"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "justMyCode": true,
+            "console": "integratedTerminal"
         }
     ]
 }
