@@ -38,7 +38,12 @@
         {
             "label": "dapr-run",
             "type": "shell",
-            "command": "dapr run --app-id cocktails-api --resources-path ${workspaceFolder}/.dapr/ --app-port 7176 --app-protocol https --dapr-http-port 5295 --dapr-grpc-port 50001 --metrics-port 9090 -- dotnet run --project ${workspaceFolder}/src/Cocktails.Api/Cocktails.Api.csproj",
+            "command": "dapr run --app-id cocktails-api --resources-path ${workspaceFolder}/.dapr/ --app-protocol https --dapr-http-port 5295 --dapr-grpc-port 50001 --metrics-port 9090",
+            //--app-port 7176 
+            // "args": [
+            //     "/c",
+            //     ""
+            // ],
             "isBackground": true,
             "dependsOn": "build",
             "problemMatcher": {
@@ -50,19 +55,28 @@
                 },
                 "background": {
                     "activeOnStart": true,
-                    "beginsPattern": ".*Starting Dapr.*|.*dapr run.*",
-                    "endsPattern": ".*You're up and running!.*|.*Started Dapr.*|.*dapr started.*|.*Application started.*|.*Now listening on.*"
+                    "beginsPattern": "Starting Dapr",
+                    "endsPattern": "You're up and running! Dapr logs will appear here."
                 }
             },
             "presentation": {
                 "reveal": "always",
-                "panel": "new",
-                "focus": false
+                "panel": "new"
             },
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            }
+            // "options": {
+            //     // "shell": {
+            //     //     "executable": "cmd.exe",
+            //     //     "args": ["/d", "/c"]
+            //     // }
+            // }
+        },
+        {
+            "label": "dapr-up",
+            "type": "shell",
+            "command": "dapr run --app-id cocktails-api --resources-path ${workspaceFolder}/.dapr/ --app-protocol https --app-port 7176 --dapr-http-port 5295 --dapr-grpc-port 50001 --metrics-port 9090 -- dotnet run -c Debug --project ${workspaceFolder}/src/Cocktails.Api/Cocktails.Api.csproj",
+            "isBackground": true,
+            "dependsOn": "build",
+            "problemMatcher": "$msCompile",
         }
     ]
 } 
