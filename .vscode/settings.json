@@ -18,6 +18,6 @@
         "**/obj": true
     },
     "dotrush.roslyn.projectOrSolutionFiles": [
-      "d:\\Github\\cezzis-com-cocktails-api\\Cocktails.Api.sln"
+      "/home/mtnvencenzo/Github/cezzis-com-cocktails-api/Cocktails.Api.sln"
     ]
 }
