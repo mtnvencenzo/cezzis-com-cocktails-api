@@ -8,20 +8,19 @@
             "name": "Cocktails API (Dapr)",
             "type": "coreclr",
             "request": "launch",
-            //"preLaunchTask": "dapr-up",
+            "preLaunchTask": "dapr-run",
             "program": "${workspaceFolder}/src/Cocktails.Api/bin/Debug/net9.0/Cocktails.Api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/Cocktails.Api",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
-                "pattern": "^Now listening on:",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
                 "uriFormat": "%s/scalar/v1"
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "local",
                 "ASPNETCORE_URLS": "https://localhost:7176;http://localhost:7177",
-                "DAPR_APP_ID": "cocktails-api",
                 "DAPR_HTTP_PORT": "5295",
                 "DAPR_GRPC_PORT": "50001"
             },
@@ -31,8 +30,7 @@
             "logging": {
                 "moduleLoad": false
             },
-            "justMyCode": true,
-            "console": "internalConsole"
+            "justMyCode": true
         }
     ]
 }
