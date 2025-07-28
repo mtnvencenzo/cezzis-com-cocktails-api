@@ -41,16 +41,7 @@ public class SeedCocktailsCommandHandler(
     {
         var availableCocktails = cocktailsDataStore.Cocktails;
         var hasChanges = false;
-        var any = false;
-
-        try
-        {
-            any = (await cocktailRepository.Items.FirstOrDefaultAsync(cancellationToken)) != null;
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(ex, "Error counting cocktails");
-        }
+        var any = (await cocktailRepository.Items.FirstOrDefaultAsync(cancellationToken)) != null;
 
         if (command.OnlyIfEmpty && any)
         {
