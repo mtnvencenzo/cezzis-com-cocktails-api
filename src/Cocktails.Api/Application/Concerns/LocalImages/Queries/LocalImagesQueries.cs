@@ -7,7 +7,7 @@ public class LocalImagesQueries(IOptions<LocalhostImagesConfig> imagesConfig) : 
 {
     public string GetImageFilePath(string imageName)
     {
-        var file = new FileInfo($"{imagesConfig.Value.Path}\\{imageName}");
+        var file = new FileInfo($"{imagesConfig.Value.Path}{imageName}");
 
         if (file.Exists)
         {

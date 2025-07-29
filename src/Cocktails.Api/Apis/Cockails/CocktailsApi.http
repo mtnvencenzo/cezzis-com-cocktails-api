@@ -47,13 +47,13 @@ X-Key: {{apimkey}}
 
 ###
 
-GET {{host}}/api/v1/cocktails/list?skip=0&take=12
+GET {{host}}/api/v1/cocktails?skip=0&take=12
 X-Key: {{apimkey}}
 
 ###
 
 
-GET {{host}}/api/v1/cocktails/list?skip=0&take=2&inc=mainImages
+GET {{host}}/api/v1/cocktails?skip=0&take=2&inc=mainImages
 X-Key: {{apimkey}}
 
 ###

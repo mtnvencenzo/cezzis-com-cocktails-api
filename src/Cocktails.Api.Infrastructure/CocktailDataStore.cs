@@ -30,10 +30,13 @@ public class CocktailDataStore(IOptions<CocktailsApiConfig> cocktailsApiConfig, 
         jsonSerializerOptions = new()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true,
             AllowTrailingCommas = true
         };
 
-        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(
+            namingPolicy: JsonNamingPolicy.CamelCase,
+            allowIntegerValues: true));
     }
 
     public ReadOnlyCollection<Cocktail> Cocktails => this.GetCocktails().AsReadOnly();

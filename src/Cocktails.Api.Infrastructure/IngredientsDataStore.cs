@@ -17,10 +17,13 @@ public class IngredientsDataStore
         jsonSerializerOptions = new()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true,
             AllowTrailingCommas = true
         };
 
-        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(
+            namingPolicy: JsonNamingPolicy.CamelCase,
+            allowIntegerValues: true));
     }
 
     public ReadOnlyCollection<Ingredient> Ingredients => this.GetIngredients().AsReadOnly();

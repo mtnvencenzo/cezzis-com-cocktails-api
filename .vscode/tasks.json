@@ -38,10 +38,23 @@
         {
             "label": "dapr-run",
             "type": "shell",
-            "command": "cmd.exe",
+            "command": "dapr",
             "args": [
-                "/c",
-                "dapr run --app-id cocktails-api --resources-path ${workspaceFolder}\\.dapr\\ --app-port 7176 --app-protocol https --dapr-http-port 5295 --dapr-grpc-port 50001 --metrics-port 9090"
+                "run",
+                "--app-id",
+                "cocktails-api",
+                "--resources-path",
+                "${workspaceFolder}/.dapr/",
+                "--app-port",
+                "7176",
+                "--app-protocol",
+                "https",
+                "--dapr-http-port",
+                "5295",
+                "--dapr-grpc-port",
+                "50001",
+                "--metrics-port",
+                "9090"
             ],
             "isBackground": true,
             "dependsOn": "build",
@@ -54,20 +67,20 @@
                 },
                 "background": {
                     "activeOnStart": true,
-                    "beginsPattern": "^Starting Dapr",
-                    "endsPattern": "^You're up and running!"
+                    "beginsPattern": "Starting Dapr",
+                    "endsPattern": "You're up and running!"
                 }
             },
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
             },
-            "options": {
-                "shell": {
-                    "executable": "cmd.exe",
-                    "args": ["/d", "/c"]
-                }
-            }
+            // "options": {
+            //     "shell": {
+            //         "executable": "cmd.exe",
+            //         "args": ["/d", "/c"]
+            //     }
+            // }
         }
     ]
 } 
