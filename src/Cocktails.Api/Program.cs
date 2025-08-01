@@ -51,7 +51,23 @@ if (app.Environment.IsEnvironment("local"))
 app.UseApplicationEndpoints();
 app.UseDefaultOpenApi();
 
-app.UseHttpsRedirection();
+// Not requiring the dev cert for open api locally
+// Had issues with cert trust on ubuntu for some reason.
+if (app.Environment.IsEnvironment("local"))
+{
+    app.UseWhen(context =>
+    {
+        return !context.Request.Path.Equals("/scalar/v1/openapi.json");
+    }, appBuilder =>
+    {
+        appBuilder.UseHttpsRedirection();
+    });
+}
+else
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseCors("origin-policy");
 app.UseAuthentication();
 app.UseAuthorization();
