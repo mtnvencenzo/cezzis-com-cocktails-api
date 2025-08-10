@@ -42,4 +42,16 @@ public class AccountCocktailRatings : Entity
         this.Ratings.Add(new AccountCocktailRatingItem(cocktailId, stars));
         return this;
     }
+    public AccountCocktailRatings AddRatings(params AccountCocktailRatingItem[] ratings)
+    {
+        if (ratings != null)
+        {
+            foreach (var rating in ratings)
+            {
+                this.AddRating(rating.CocktailId, rating.Stars);
+            }
+        }
+
+        return this;
+    }
 }

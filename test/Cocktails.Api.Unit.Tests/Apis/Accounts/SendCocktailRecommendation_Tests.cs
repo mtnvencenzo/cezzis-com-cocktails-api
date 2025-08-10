@@ -22,11 +22,11 @@ using global::Cocktails.Api.Apis.Accounts;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Application.Concerns.Accounts.Commands;
 
-public class AccountsApi_SendCocktailRecommendation_Tests : ServiceTestBase
+public class SendCocktailRecommendation_Tests : ServiceTestBase
 {
     private readonly Mock<IEventBus> eventBusMock;
 
-    public AccountsApi_SendCocktailRecommendation_Tests()
+    public SendCocktailRecommendation_Tests()
     {
         this.eventBusMock = new Mock<IEventBus>();
     }

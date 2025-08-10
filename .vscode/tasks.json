@@ -36,6 +36,17 @@
             "dependsOn": ["restore"]
         },
         {
+            "label": "test",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/Cocktails.Api.sln"
+            ],
+            "problemMatcher": "$msCompile",
+            "dependsOn": ["restore"]
+        },
+        {
             "label": "dapr-run",
             "type": "shell",
             "command": "dapr",

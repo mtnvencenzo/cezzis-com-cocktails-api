@@ -30,7 +30,7 @@ public class CocktailDbContext : DbContext, IUnitOfWork
         modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly, (t) => t.GetInterfaces().Contains(typeof(ICocktailContextEntityConfiguration)));
     }
 
-    public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
+    public virtual async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
     {
         // Dispatch Domain Events collection.
         // Choices:

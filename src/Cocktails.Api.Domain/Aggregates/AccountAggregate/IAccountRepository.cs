@@ -13,4 +13,6 @@ public interface IAccountRepository : IRepository<Account>, IReadonlyRepository<
     void Update(Account account);
 
     Task<Account> GetOrCreateLocalAccountFromIdentity(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken);
+
+    Task<Account> GetLocalAccountFromIdentity(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken);
 }

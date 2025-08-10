@@ -23,7 +23,7 @@ public class IngredientRepository(CocktailDbContext dbContext) : IIngredientRepo
                 {
                     if (cachedIngredients == null)
                     {
-                        cachedIngredients ??= Task.Run(() => dbContext.Ingredients.AsNoTracking().ToListAsync()).Result;
+                        cachedIngredients ??= Task.Run(() => (dbContext.Ingredients.AsNoTracking().ToListAsync())).Result;
                     }
                 }
             }

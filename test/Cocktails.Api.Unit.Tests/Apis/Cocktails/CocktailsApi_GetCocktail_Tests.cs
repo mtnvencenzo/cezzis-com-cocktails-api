@@ -26,21 +26,10 @@ public class CocktailsApi_GetCocktail_Tests : ServiceTestBase
         // act
         foreach (var cocktail in allCocktails)
         {
-            try
-            {
-                if (cocktail.Id == "sidecar")
-                {
-                }
+            var response = (await CocktailsApi.GetCocktail(cocktail.Id, services))?.Result as Ok<CocktailRs>;
 
-                var response = (await CocktailsApi.GetCocktail(cocktail.Id, services))?.Result as Ok<CocktailRs>;
-
-                // assert
-                AssertionHelpers.AssertCocktailModelMatches(cocktail, response?.Value?.Item, config.Value);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error processing cocktail {cocktail.Id}: {ex.Message}", ex);
-            }
+            // assert
+            AssertionHelpers.AssertCocktailModelMatches(cocktail, response?.Value?.Item, config.Value);
         }
     }
 }

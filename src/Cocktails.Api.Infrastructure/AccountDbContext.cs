@@ -13,6 +13,8 @@ public class AccountDbContext : DbContext, IUnitOfWork
 {
     private readonly IMediator mediator;
 
+    public AccountDbContext() { }
+
     public AccountDbContext(DbContextOptions<AccountDbContext> options) : base(options) { }
 
     public AccountDbContext(DbContextOptions<AccountDbContext> options, IMediator mediator) : base(options)
@@ -27,7 +29,7 @@ public class AccountDbContext : DbContext, IUnitOfWork
         modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly, (t) => t.GetInterfaces().Contains(typeof(IAccountContextEntityConfiguration)));
     }
 
-    public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
+    public virtual async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
     {
         // Dispatch Domain Events collection.
         // Choices:

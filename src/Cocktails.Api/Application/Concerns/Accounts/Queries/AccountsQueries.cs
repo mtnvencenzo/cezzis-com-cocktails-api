@@ -3,18 +3,16 @@
 using Cezzi.Applications;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
-using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
-using global::Cocktails.Api.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 public class AccountsQueries(IAccountRepository accountRepository, IAccountCocktailRatingsRepository accountCocktailRatingsRepository) : IAccountsQueries
 {
-    public async Task<AccountOwnedProfileRs> GetAccountOwnedProfile(HttpContext httpContext)
+    public async Task<AccountOwnedProfileRs> GetAccountOwnedProfile(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)
     {
         var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
-            claimsIdentity: httpContext.User?.Identity as ClaimsIdentity,
-            cancellationToken: httpContext.RequestAborted);
+            claimsIdentity: claimsIdentity,
+            cancellationToken: cancellationToken);
 
         var rs = new AccountOwnedProfileRs(
             SubjectId: account.SubjectId,
@@ -42,18 +40,18 @@ public class AccountsQueries(IAccountRepository accountRepository, IAccountCockt
         return rs;
     }
 
-    public async Task<AccountCocktailRatingsRs> GetAccountOwnedCocktailRatings(HttpContext httpContext)
+    public async Task<AccountCocktailRatingsRs> GetAccountOwnedCocktailRatings(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)
     {
         var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
-            claimsIdentity: httpContext.User?.Identity as ClaimsIdentity,
-            cancellationToken: httpContext.RequestAborted);
+            claimsIdentity: claimsIdentity,
+            cancellationToken: cancellationToken);
 
         Guard.NotNull(account, nameof(account));
 
-        var ratings = await accountCocktailRatingsRepository.Items
+        var ratings = await (accountCocktailRatingsRepository.Items
             .WithPartitionKey(account.SubjectId)
             .Where(x => x.Id == account.RatingsId)
-            .FirstOrDefaultAsync(httpContext.RequestAborted);
+            .FirstOrDefaultAsync(cancellationToken));
 
         return new AccountCocktailRatingsRs(
             Ratings: ratings != null
