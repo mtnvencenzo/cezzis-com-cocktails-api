@@ -98,7 +98,9 @@ public static class AccountsApi
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> GetAccountOwnedProfile([AsParameters] AccountsServices accountServices)
     {
-        var rs = await accountServices.Queries.GetAccountOwnedProfile(accountServices.HttpContextAccessor.HttpContext);
+        var rs = await accountServices.Queries.GetAccountOwnedProfile(
+            claimsIdentity: accountServices.HttpContextAccessor.HttpContext.User?.Identity as ClaimsIdentity,
+            cancellationToken: accountServices.HttpContextAccessor.HttpContext.RequestAborted);
 
         return TypedResults.Ok(rs);
     }
@@ -193,7 +195,9 @@ public static class AccountsApi
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public async static Task<Results<Ok<AccountCocktailRatingsRs>, JsonHttpResult<ProblemDetails>>> GetCocktailRatings([AsParameters] AccountsServices accountServices)
     {
-        var rs = await accountServices.Queries.GetAccountOwnedCocktailRatings(accountServices.HttpContextAccessor.HttpContext);
+        var rs = await accountServices.Queries.GetAccountOwnedCocktailRatings(
+            claimsIdentity: accountServices.HttpContextAccessor.HttpContext.User?.Identity as ClaimsIdentity,
+            cancellationToken: accountServices.HttpContextAccessor.HttpContext.RequestAborted);
 
         return TypedResults.Ok(rs);
     }

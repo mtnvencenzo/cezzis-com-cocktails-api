@@ -56,7 +56,7 @@ public static class ExceptionBehavior
                 Detail = string.Format("A domain error has occured: {0}", requestId)
             };
 
-            await context.Response.WriteAsJsonAsync(problemDetails).ConfigureAwait(false);
+            await context.Response.WriteAsJsonAsync(problemDetails);
 
             logger?.LogError(ex, "An unhandled domain exception occured");
         }
@@ -70,7 +70,7 @@ public static class ExceptionBehavior
                 Detail = string.Format("An unhandled error has occured: {0}", requestId)
             };
 
-            await context.Response.WriteAsJsonAsync(problemDetails).ConfigureAwait(false);
+            await context.Response.WriteAsJsonAsync(problemDetails);
 
             logger?.LogError(ex, "An unhandled exception occured");
         }

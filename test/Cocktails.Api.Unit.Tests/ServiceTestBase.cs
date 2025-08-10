@@ -2,7 +2,6 @@
 
 using Asp.Versioning;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
-using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using Cocktails.Api.Infrastructure;
 using Cocktails.Api.StartupExtensions;
 using Cocktails.Api.Unit.Tests.Mocks;
@@ -10,7 +9,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.FileProviders;
@@ -20,6 +18,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Security.Claims;
 using System.Threading;
 
 public abstract class ServiceTestBase : IDisposable
@@ -27,13 +26,20 @@ public abstract class ServiceTestBase : IDisposable
     protected readonly Mock<IHttpClientFactory> httpClientFactoryMock;
     protected readonly Mock<IHttpContextAccessor> httpContextAccessorMock;
     protected readonly Mock<CocktailDbContext> cocktailDbContextMock;
+    protected readonly Mock<AccountDbContext> accountDbContextMock;
     protected readonly CancellationTokenSource cancellationTokenSource;
     protected MockHttpContext httpContext;
+    protected ClaimsPrincipal claimsPrincipal;
     private IServiceProvider serviceProvider;
 
     public ServiceTestBase()
     {
         this.cocktailDbContextMock = new();
+        this.cocktailDbContextMock.Setup(x => x.SaveEntitiesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(true);
+
+        this.accountDbContextMock = new();
+        this.accountDbContextMock.Setup(x => x.SaveEntitiesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(true);
+
         this.cancellationTokenSource = new();
         this.httpClientFactoryMock = new();
         this.httpContextAccessorMock = new();
@@ -44,6 +50,8 @@ public abstract class ServiceTestBase : IDisposable
                 this.httpContext ??= new MockHttpContext(
                     serviceProvider: this.serviceProvider,
                     cancellationToken: this.cancellationTokenSource.Token);
+
+                this.httpContext.User = this.claimsPrincipal;
 
                 return this.httpContext;
             });
@@ -94,6 +102,7 @@ public abstract class ServiceTestBase : IDisposable
             services.Replace(new ServiceDescriptor(typeof(IHttpClientFactory), this.httpClientFactoryMock.Object));
             services.Replace(new ServiceDescriptor(typeof(IHttpContextAccessor), this.httpContextAccessorMock.Object));
             services.Replace(new ServiceDescriptor(typeof(CocktailDbContext), this.cocktailDbContextMock.Object));
+            services.Replace(new ServiceDescriptor(typeof(AccountDbContext), this.accountDbContextMock.Object));
             servicePreprocessor?.Invoke(services);
         }
 
@@ -140,7 +149,7 @@ public abstract class ServiceTestBase : IDisposable
                 var exceptionHandlerFeature = context.Features.Get<IExceptionHandlerFeature>();
                 if (exceptionHandlerFeature?.Error != null)
                 {
-                    await ExceptionBehavior.OnException(context: context, ex: exceptionHandlerFeature.Error).ConfigureAwait(false);
+                    await ExceptionBehavior.OnException(context: context, ex: exceptionHandlerFeature.Error);
                 }
             });
         });

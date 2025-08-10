@@ -23,10 +23,10 @@ public class ClaimsAccount : ValueObject
     {
         Guard.NotNull(claimsIdentity, nameof(claimsIdentity));
 
-        this.SubjectId = claimsIdentity.Claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+        this.SubjectId = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
         Guard.NotNullOrWhiteSpace(this.SubjectId, () => new CocktailsApiDomainException($"{nameof(this.SubjectId)} cannot be null or empty"));
 
-        this.GivenName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname")?.Value;
+        this.GivenName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName)?.Value;
         Guard.NotNullOrWhiteSpace(this.GivenName, () => new CocktailsApiDomainException($"{nameof(this.GivenName)} cannot be null or empty"));
 
         this.FamilyName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname")?.Value;

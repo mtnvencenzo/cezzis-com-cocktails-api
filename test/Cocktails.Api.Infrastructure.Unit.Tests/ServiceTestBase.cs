@@ -136,7 +136,7 @@ public abstract class ServiceTestBase : IDisposable
                 var exceptionHandlerFeature = context.Features.Get<IExceptionHandlerFeature>();
                 if (exceptionHandlerFeature?.Error != null)
                 {
-                    await ExceptionBehavior.OnException(context: context, ex: exceptionHandlerFeature.Error).ConfigureAwait(false);
+                    await ExceptionBehavior.OnException(context: context, ex: exceptionHandlerFeature.Error);
                 }
             });
         });

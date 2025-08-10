@@ -1,10 +1,7 @@
 ﻿namespace Cocktails.Api.Infrastructure.Repositories;
 
-using Cezzi.Applications.Extensions;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
-using Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 using Cocktails.Api.Domain.Common;
-using Cocktails.Api.Domain.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
