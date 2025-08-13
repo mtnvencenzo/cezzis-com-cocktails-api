@@ -42,6 +42,23 @@ public class AccountCocktailRatings : Entity
         this.Ratings.Add(new AccountCocktailRatingItem(cocktailId, stars));
         return this;
     }
+
+    public AccountCocktailRatings RemoveRating(string cocktailId, out int? stars)
+    {
+        stars = null;
+
+        Guard.NotNullOrWhiteSpace(cocktailId);
+
+        var rating = this.Ratings.FirstOrDefault(x => x.CocktailId == cocktailId);
+        if (rating != null)
+        {
+            stars = rating.Stars;
+            this.Ratings.Remove(rating);
+        }
+
+        return this;
+    }
+
     public AccountCocktailRatings AddRatings(params AccountCocktailRatingItem[] ratings)
     {
         if (ratings != null)

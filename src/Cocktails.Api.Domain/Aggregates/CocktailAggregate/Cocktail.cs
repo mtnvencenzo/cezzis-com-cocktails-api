@@ -450,6 +450,22 @@ public class Cocktail : Entity, IAggregateRoot
         return this;
     }
 
+    public Cocktail DecrementRating(int stars)
+    {
+        if (stars is < 1 or > 5)
+        {
+            throw new CocktailsApiDomainException($"{nameof(stars)} must be between 1 and 5");
+        }
+
+        this.Rating ??= new CocktailRating(0, 0, 0, 0, 0, 0);
+
+        _ = this.Rating.Decrement(stars);
+
+        this.SetModifiedOn(DateTimeOffset.Now);
+
+        return this;
+    }
+
     public string RegenerateHash()
     {
         var bytes = System.Text.Encoding.UTF8.GetBytes(

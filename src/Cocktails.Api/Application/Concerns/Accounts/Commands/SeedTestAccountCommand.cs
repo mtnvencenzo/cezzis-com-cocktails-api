@@ -49,9 +49,10 @@ public class SeedTestAccountCommandHandler(
         _ = await mediator.Send(updateEmailCommand, cancellationToken)
             ?? throw new InvalidOperationException("Failed to update test account email.");
 
+        // ------------------------------------------------------------------
         // If the account has favorite cocktails, start fresh and remove them
+        // ------------------------------------------------------------------
         var favorites = (await accountsQueries.GetAccountOwnedProfile(identity, cancellationToken)).FavoriteCocktails ?? [];
-
         if (favorites.Count > 0)
         {
             var manageFavoriteCocktailsCommand = new ManageFavoriteCocktailsCommand(
@@ -60,6 +61,26 @@ public class SeedTestAccountCommandHandler(
 
             _ = await mediator.Send(manageFavoriteCocktailsCommand, cancellationToken)
                 ?? throw new InvalidOperationException("Failed to remove existing favorite cocktails from test account.");
+        }
+
+        // ------------------------------------------------------------------
+        // Remove all cocktail ratings from the test account
+        // ------------------------------------------------------------------
+        var ratings = (await accountsQueries.GetAccountOwnedCocktailRatings(identity, cancellationToken)).Ratings ?? [];
+        if (ratings.Count > 0)
+        {
+            foreach (var rating in ratings)
+            {
+                var unRateCocktailCommand = new UnRateCocktailCommand(
+                    Identity: identity,
+                    CocktailId: rating.CocktailId);
+
+                var removed = await mediator.Send(unRateCocktailCommand, cancellationToken);
+                if (!removed)
+                {
+                    throw new InvalidOperationException($"Failed to remove rating for cocktail {rating.CocktailId} from test account.");
+                }
+            }
         }
 
         return true;
