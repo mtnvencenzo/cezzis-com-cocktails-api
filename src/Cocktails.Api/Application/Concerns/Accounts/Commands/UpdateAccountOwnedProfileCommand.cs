@@ -10,8 +10,6 @@ using global::Cocktails.Api.Domain.Services;
 using global::Cocktails.Common;
 using MediatR;
 using Microsoft.Extensions.Options;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
 public record UpdateAccountOwnedProfileCommand

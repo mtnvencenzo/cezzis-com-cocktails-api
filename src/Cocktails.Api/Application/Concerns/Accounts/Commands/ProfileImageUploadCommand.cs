@@ -1,6 +1,5 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
 
-using Cezzi.Applications;
 using FluentValidation;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Application.Utilities;
@@ -57,28 +56,34 @@ public class ProfileImageUploadCommandHandler(
 
         if (!string.IsNullOrWhiteSpace(imageUri))
         {
-            var cdnSwapped = new Uri(imageUri).ReplaceHostName(blobStorageConfig.Value.CdnHostName);
-            imageUri = cdnSwapped.ToString();
-            account.SetAvatarUri(cdnSwapped.ToString());
+            var cdnSwapped = new Uri(imageUri)
+                .ReplaceHostName(blobStorageConfig.Value.CdnHostName)
+                .ToString();
+
+            account.SetAvatarUri(cdnSwapped);
             await accountRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+
+            if (!string.IsNullOrWhiteSpace(previousAvatar))
+            {
+                var previousAvatarBlobName = new Uri(previousAvatar).AbsolutePath.TrimStart('/');
+                previousAvatarBlobName = new Uri(previousAvatar).AbsolutePath[previousAvatarBlobName.IndexOf(account.Id)..].TrimStart('/');
+
+                try
+                {
+                    await storageBus.DeleteBlobAsync(
+                        blobName: previousAvatarBlobName,
+                        bindingName: blobStorageConfig.Value.AccountAvatars.DaprBuildingBlock,
+                        cancellationToken: cancellationToken);
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Unable to delete previous account avatar {BlobName}", previousAvatarBlobName);
+                }
+            }
         }
-
-        if (!string.IsNullOrWhiteSpace(previousAvatar))
+        else
         {
-            var previousAvatarBlobName = new Uri(previousAvatar).AbsolutePath.TrimStart('/');
-            previousAvatarBlobName = new Uri(previousAvatar).AbsolutePath[previousAvatarBlobName.IndexOf(account.Id)..].TrimStart('/');
-
-            try
-            {
-                await storageBus.DeleteBlobAsync(
-                    blobName: previousAvatarBlobName,
-                    bindingName: blobStorageConfig.Value.AccountAvatars.DaprBuildingBlock,
-                    cancellationToken: cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(ex, "Unable to delete previous account avatar {BlobName}", previousAvatarBlobName);
-            }
+            throw new InvalidOperationException("Failed to upload profile image.");
         }
 
         return new UploadProfileImageRs(imageUri);

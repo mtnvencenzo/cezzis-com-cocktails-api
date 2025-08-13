@@ -230,13 +230,21 @@ module "apim_cocktails_api" {
       policy_xml_content  = local.apim_anonomous_operation_policy
     },
     {
-      display_name        = "Send Recommendation"
+      display_name        = "Post Send Recommendation"
       method              = "POST"
       url_template        = "/accounts/owned/profile/cocktails/recommendations"
       description         = "Send a cocktail recommendation"
       success_status_code = 202
       policy_xml_content  = local.apim_anonomous_operation_policy
-    }
+    },
+    {
+      display_name        = "Put Test Account"
+      method              = "PUT"
+      url_template        = "/accounts/test/profile"
+      description         = "Seeds and resets the e2e test account profile with default values"
+      success_status_code = 204
+      policy_xml_content  = local.apim_anonomous_operation_policy
+    },
   ]
 
   depends_on = [

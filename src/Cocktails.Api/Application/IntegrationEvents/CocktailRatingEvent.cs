@@ -1,20 +1,10 @@
 ﻿namespace Cocktails.Api.Application.IntegrationEvents;
 
 using Cezzi.Applications;
-using Cezzi.Applications.Extensions;
-using Cocktails.Api.Apis.Integrations;
-using Cocktails.Api.Application.Exceptions;
-using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using Cocktails.Api.Domain.Services;
-using Cocktails.Api.Infrastructure.Repositories;
-using Cocktails.Api.Infrastructure.Services;
-using Cocktails.Common.Emails;
 using FluentValidation;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Graph;
-using Microsoft.Graph.Models;
 using System;
 using System.Text.Json.Serialization;
 
@@ -40,6 +30,9 @@ public class CocktailRatingEvent(string ownedAccountId, string ownedAccountSubje
 
     [JsonInclude]
     public int Stars { get; } = stars;
+
+    [JsonInclude]
+    public bool DecrementRating { get; set; } = false;
 }
 
 public class CocktailRatingEventHandler(ICocktailRepository cocktailRepository) : IRequestHandler<CocktailRatingEvent, bool>
@@ -49,7 +42,15 @@ public class CocktailRatingEventHandler(ICocktailRepository cocktailRepository) 
         var cocktail = await cocktailRepository.GetAsync(command.CocktailId, cancellationToken: cancellationToken);
         Guard.NotNull(cocktail);
 
-        cocktail.IncrementRating(command.Stars);
+        if (command.DecrementRating)
+        {
+            cocktail.DecrementRating(command.Stars);
+        }
+        else
+        {
+            cocktail.IncrementRating(command.Stars);
+        }
+
         cocktailRepository.Update(cocktail);
 
         await cocktailRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);

@@ -29,7 +29,7 @@ public class ClaimsAccount : ValueObject
         this.GivenName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName)?.Value;
         Guard.NotNullOrWhiteSpace(this.GivenName, () => new CocktailsApiDomainException($"{nameof(this.GivenName)} cannot be null or empty"));
 
-        this.FamilyName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname")?.Value;
+        this.FamilyName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Surname)?.Value;
         Guard.NotNullOrWhiteSpace(this.FamilyName, () => new CocktailsApiDomainException($"{nameof(this.FamilyName)} cannot be null or empty"));
 
         this.Email = claimsIdentity.Claims.FirstOrDefault(x => x.Type == "emails")?.Value;

@@ -95,6 +95,39 @@ public class CocktailRating : ValueObject
         return this;
     }
 
+    public CocktailRating Decrement(int stars)
+    {
+        if (stars is < 1 or > 5)
+        {
+            throw new CocktailsApiDomainException($"{nameof(stars)} must be between 1 and 5");
+        }
+
+        if (stars == 1)
+        {
+            this.OneStars--;
+        }
+        else if (stars == 2)
+        {
+            this.TwoStars--;
+        }
+        else if (stars == 3)
+        {
+            this.ThreeStars--;
+        }
+        else if (stars == 4)
+        {
+            this.FourStars--;
+        }
+        else if (stars == 5)
+        {
+            this.FiveStars--;
+        }
+
+        this.RatingCount--;
+
+        return this;
+    }
+
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return this.OneStars;

@@ -202,4 +202,9 @@ public class Account : Entity, IAggregateRoot
 
         return this;
     }
+
+    public bool IsTestAccount() => this.LoginEmail.StartsWith("rvecchi+cypress", StringComparison.OrdinalIgnoreCase) ||
+                                   this.LoginEmail.StartsWith("rvecchi+e2e", StringComparison.OrdinalIgnoreCase) ||
+                                   this.LoginEmail.StartsWith("rvecchi+playwright", StringComparison.OrdinalIgnoreCase) &&
+                                   this.LoginEmail.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase);
 }
