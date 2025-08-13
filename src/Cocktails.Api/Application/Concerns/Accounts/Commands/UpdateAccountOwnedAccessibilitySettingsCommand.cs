@@ -2,16 +2,8 @@
 
 using Cezzi.Applications;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
-using global::Cocktails.Api.Application.IntegrationEvents;
-using global::Cocktails.Api.Domain;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
-using global::Cocktails.Api.Domain.Config;
-using global::Cocktails.Api.Domain.Services;
-using global::Cocktails.Common;
 using MediatR;
-using Microsoft.Extensions.Options;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
 public record UpdateAccountOwnedAccessibilitySettingsCommand

@@ -90,6 +90,12 @@ public static class AccountsApi
             .RequireScope("Account.Read")
             .RequireScope("Account.Write");
 
+        groupBuilder.MapPut("/test/profile", SeedTestAccount)
+            .AllowAnonymous()
+            .WithName(nameof(SeedTestAccount))
+            .WithDisplayName(nameof(SeedTestAccount))
+            .WithDescription("Seeds the test account profile for e2e testing purposes");
+
         return groupBuilder;
     }
 
@@ -114,7 +120,7 @@ public static class AccountsApi
 
         var result = await accountServices.Mediator.Send(command);
 
-        return TypedResults.Created<UploadProfileImageRs>(result.ImageUri, result);
+        return TypedResults.Created(result.ImageUri, result);
     }
 
     /// <summary>Updates the account profile for the user represented within the authenticated bearer token</summary>
@@ -127,7 +133,7 @@ public static class AccountsApi
 
         var result = await accountServices.Mediator.Send(command);
 
-        return TypedResults.Ok<AccountOwnedProfileRs>(result);
+        return TypedResults.Ok(result);
     }
 
     /// <summary>Updates the account profile email address for the user represented within the authenticated bearer token</summary>
@@ -140,7 +146,7 @@ public static class AccountsApi
 
         var result = await accountServices.Mediator.Send(command);
 
-        return TypedResults.Ok<AccountOwnedProfileRs>(result);
+        return TypedResults.Ok(result);
     }
 
     /// <summary>Updates the account profile accessibility settings for the user represented within the authenticated bearer token</summary>
@@ -153,7 +159,7 @@ public static class AccountsApi
 
         var result = await accountServices.Mediator.Send(command);
 
-        return TypedResults.Ok<AccountOwnedProfileRs>(result);
+        return TypedResults.Ok(result);
     }
 
     /// <summary>Manages the account profile favorite cocktails for the user represented within the authenticated bearer token</summary>
@@ -166,7 +172,7 @@ public static class AccountsApi
 
         var result = await accountServices.Mediator.Send(command);
 
-        return TypedResults.Ok<AccountOwnedProfileRs>(result);
+        return TypedResults.Ok(result);
     }
 
     /// <summary>Rates a cocktail for the account profile user represented within the authenticated bearer token</summary>
@@ -187,7 +193,7 @@ public static class AccountsApi
             return TypedResults.Conflict<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Cocktail already rated", 409));
         }
 
-        return TypedResults.Created<RateCocktailRs>("", result);
+        return TypedResults.Created("", result);
     }
 
     /// <summary>Gets the account cocktail ratings for the account profile user represented within the authenticated bearer token</summary>
@@ -216,10 +222,22 @@ public static class AccountsApi
 
         if (!commandResult)
         {
-            return TypedResults.Json<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to send recommendation", StatusCodes.Status502BadGateway), statusCode: StatusCodes.Status502BadGateway);
+            return TypedResults.Json(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to send recommendation", StatusCodes.Status502BadGateway), statusCode: StatusCodes.Status502BadGateway);
         }
 
         return TypedResults.Accepted(string.Empty);
     }
 
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> SeedTestAccount([AsParameters] AccountsServices accountServices)
+    {
+        var commandResult = await accountServices.Mediator.Send(new SeedTestAccountCommand(), accountServices.HttpContextAccessor.HttpContext.RequestAborted);
+
+        if (!commandResult)
+        {
+            return TypedResults.Json(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to seed test account", StatusCodes.Status502BadGateway), statusCode: StatusCodes.Status502BadGateway);
+        }
+
+        return TypedResults.NoContent();
+    }
 }

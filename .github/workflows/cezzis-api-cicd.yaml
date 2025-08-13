@@ -169,3 +169,14 @@ jobs:
           method: PUT
         env:
           AUTH_VALUE: ${{ secrets.PRD_DEVOPS_APIM_SUBSCRIPTION_KEY }}
+
+      - name: Seed test account
+        uses: mtnvencenzo/workflows/.github/actions/api-call@main
+        with:
+          enabled: true
+          url: https://api.cezzis.com/prd/cocktails/api/v1/accounts/test/profile
+          statusCode: 204
+          authHeader: X-Key
+          method: PUT
+        env:
+          AUTH_VALUE: ${{ secrets.PRD_DEVOPS_APIM_SUBSCRIPTION_KEY }}

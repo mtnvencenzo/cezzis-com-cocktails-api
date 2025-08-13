@@ -43,8 +43,8 @@ public class AccountRepository(AccountDbContext dbContext) : IAccountRepository
     {
         var claimsAccount = new ClaimsAccount(claimsIdentity);
 
-        var account = await (this.Items
-            .WithPartitionKey(claimsAccount.SubjectId))
+        var account = await this.Items
+            .WithPartitionKey(claimsAccount.SubjectId)
             .FirstOrDefaultAsync(x => x.SubjectId == claimsAccount.SubjectId, cancellationToken);
 
         if (account != null)

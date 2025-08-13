@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using System.Diagnostics;
 using MediatR;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
+using Cocktails.Api.Application.Concerns.Accounts.Commands;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
@@ -43,6 +44,7 @@ if (app.Environment.IsEnvironment("local"))
     var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
     await mediator.Send(new SeedIngredientsCommand(OnlyIfEmpty: true));
     await mediator.Send(new SeedCocktailsCommand(OnlyIfEmpty: true));
+    await mediator.Send(new SeedTestAccountCommand());
 }
 
 // Use cloud events to automatically unpack the message data

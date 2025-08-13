@@ -3,8 +3,6 @@
 using Cezzi.Security.Recaptcha;
 using FluentValidation;
 using global::Cocktails.Api.Application.Behaviors;
-using global::Cocktails.Api.Application.Concerns.Cocktails.Models;
-using global::Cocktails.Api.Application.Concerns.RecaptchaVerification;
 using global::Cocktails.Api.Application.IntegrationEvents;
 using global::Cocktails.Api.Domain.Config;
 using global::Cocktails.Api.Domain.Services;
@@ -12,8 +10,6 @@ using global::Cocktails.Api.Domain;
 using global::Cocktails.Common;
 using MediatR;
 using Microsoft.Extensions.Options;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
 using global::Cocktails.Common.Emails;
 using FluentValidation.Results;
 using global::Cocktails.Api.Application.Concerns.RecaptchaVerification.Commands;

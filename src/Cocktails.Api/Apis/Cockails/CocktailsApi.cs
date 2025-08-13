@@ -1,11 +1,9 @@
 ﻿namespace Cocktails.Api.Apis.Cockails;
 
 using Cocktails.Api.Application.Exceptions;
-//using Cocktails.Api.Application.Filters;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Concerns.Cocktails.Models;
 

@@ -43,6 +43,7 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<MsGraphConfig>(builder.Configuration.GetSection(MsGraphConfig.SectionName));
         builder.Services.Configure<ScalarConfig>(builder.Configuration.GetSection(ScalarConfig.SectionName));
         builder.Services.Configure<SearchConfig>(builder.Configuration.GetSection(SearchConfig.SectionName));
+        builder.Services.Configure<TestAccountConfig>(builder.Configuration.GetSection(TestAccountConfig.SectionName));
 
         builder.Services.AddCosomsContexts();
 
