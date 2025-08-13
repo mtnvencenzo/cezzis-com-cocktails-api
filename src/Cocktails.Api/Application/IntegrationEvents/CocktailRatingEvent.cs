@@ -17,7 +17,7 @@ public class CocktailRatingEvent(string ownedAccountId, string ownedAccountSubje
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
     [JsonInclude]
-    public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.UtcNow;
+    public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.Now;
 
     [JsonInclude]
     public string OwnedAccountId { get; } = ownedAccountId ?? throw new ArgumentNullException(nameof(ownedAccountId));

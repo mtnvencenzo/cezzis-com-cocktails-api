@@ -38,6 +38,7 @@ public class ManageFavoriteCocktailsCommandHandler(IAccountRepository accountRep
                     .Where(x => x.Action == CocktailFavoritingActionModel.Remove)
                     .Select(x => x.CocktailId)]);
 
+            account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
             accountRepository.Update(account);
 
             _ = await accountRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);

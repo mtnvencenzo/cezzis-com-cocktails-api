@@ -14,7 +14,7 @@ public class CocktailRecommendationEmailEvent : EmailMessage, IIntegrationEvent,
     public CocktailRecommendationEmailEvent()
     {
         this.Id = Guid.NewGuid().ToString();
-        this.CreationDate = DateTimeOffset.UtcNow;
+        this.CreationDate = DateTimeOffset.Now;
     }
 
     [JsonInclude]

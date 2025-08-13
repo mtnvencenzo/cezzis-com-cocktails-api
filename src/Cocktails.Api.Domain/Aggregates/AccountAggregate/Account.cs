@@ -58,8 +58,8 @@ public class Account : Entity, IAggregateRoot
         this.Id = Guid.NewGuid().ToString();
         this.SubjectId = claimsAccount.SubjectId;
         this.LoginEmail = claimsAccount.Email;
-        this.CreatedOn = DateTimeOffset.UtcNow;
-        this.UpdatedOn = DateTimeOffset.UtcNow;
+        this.CreatedOn = DateTimeOffset.Now;
+        this.UpdatedOn = DateTimeOffset.Now;
 
         this.SetName(givenName: claimsAccount.GivenName, claimsAccount.FamilyName);
         this.SetEmail(claimsAccount.Email);
@@ -173,6 +173,12 @@ public class Account : Entity, IAggregateRoot
             postalCode: postalCode,
             country: country);
 
+        return this;
+    }
+
+    public Account SetUpdatedOn(DateTimeOffset modifiedOn)
+    {
+        this.UpdatedOn = modifiedOn;
         return this;
     }
 

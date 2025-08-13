@@ -29,6 +29,7 @@ public class UpdateAccountOwnedAccessibilitySettingsCommandHandler(IAccountRepos
         Guard.NotNull(account);
 
         account.SetAccessibilitySettings(theme: (AccessibilityTheme)command.Request.Theme);
+        account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
 
         accountRepository.Update(account);
 

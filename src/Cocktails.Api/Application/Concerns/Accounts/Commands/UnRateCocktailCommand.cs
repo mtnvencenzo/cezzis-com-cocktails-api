@@ -72,6 +72,7 @@ public class UnRateCocktailCommandHandler(
             return false;
         }
 
+        account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
         await accountCocktailRatingsRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
         var cocktailRatingEvent = new CocktailRatingEvent(
