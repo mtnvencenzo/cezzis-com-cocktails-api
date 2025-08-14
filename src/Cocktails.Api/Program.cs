@@ -31,7 +31,9 @@ builder.AddDefaultOpenApi(apiVersioningBuilder);
 var app = builder.Build();
 
 #if DEBUG
-Debugger.Launch();
+// Needed this when using cursor and DotRush, 
+// not needed for vscode and C# toolkit
+// Debugger.Launch();
 #endif
 
 // Initialize database if needed

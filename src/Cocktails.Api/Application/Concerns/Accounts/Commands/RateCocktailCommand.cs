@@ -72,6 +72,7 @@ public class RateCocktailCommandHandler(
             if (string.IsNullOrWhiteSpace(account.RatingsId))
             {
                 account.SetRatingsId(Guid.NewGuid().ToString());
+                account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
                 accountRepository.Update(account);
             }
 
@@ -79,6 +80,7 @@ public class RateCocktailCommandHandler(
             accountCocktailRatingsRepository.Add(accountCocktailRatings);
         }
 
+        accountCocktailRatings.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
         accountCocktailRatings.AddRating(cocktailId: command.CocktailId, stars: command.Stars);
 
         await accountCocktailRatingsRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);

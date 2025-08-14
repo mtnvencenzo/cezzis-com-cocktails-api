@@ -21,8 +21,8 @@ public class AccountCocktailRecommendations : Entity
     {
         this.Id = id;
         this.SubjectId = subjectId;
-        this.CreatedOn = DateTimeOffset.UtcNow;
-        this.UpdatedOn = DateTimeOffset.UtcNow;
+        this.CreatedOn = DateTimeOffset.Now;
+        this.UpdatedOn = DateTimeOffset.Now;
     }
 
     public AccountCocktailRecommendations AddRecommendation(string name, string ingredients, string directions, string verificationCode)

@@ -29,6 +29,7 @@ public class UpdateAccountOwnedProfileEmailCommandHandler(IAccountRepository acc
         Guard.NotNull(account);
 
         account.SetEmail(email: command.Request.Email);
+        account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
 
         accountRepository.Update(account);
 

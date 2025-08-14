@@ -56,11 +56,12 @@ public class ProfileImageUploadCommandHandler(
 
         if (!string.IsNullOrWhiteSpace(imageUri))
         {
-            var cdnSwapped = new Uri(imageUri)
+            imageUri = new Uri(imageUri)
                 .ReplaceHostName(blobStorageConfig.Value.CdnHostName)
                 .ToString();
 
-            account.SetAvatarUri(cdnSwapped);
+            account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
+            account.SetAvatarUri(imageUri);
             await accountRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
             if (!string.IsNullOrWhiteSpace(previousAvatar))

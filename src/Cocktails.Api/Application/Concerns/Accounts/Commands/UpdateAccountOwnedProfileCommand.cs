@@ -39,6 +39,7 @@ public class UpdateAccountOwnedProfileCommandHandler(
 
         account.SetName(givenName: command.Request.GivenName, familyName: command.Request.FamilyName);
         account.SetDisplayName(displayName: command.Request.DisplayName);
+        account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
 
         if (command.Request.PrimaryAddress != null)
         {

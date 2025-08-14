@@ -25,8 +25,8 @@ public class AccountCocktailRatings : Entity
     {
         this.Id = id;
         this.SubjectId = subjectId;
-        this.CreatedOn = DateTimeOffset.UtcNow;
-        this.UpdatedOn = DateTimeOffset.UtcNow;
+        this.CreatedOn = DateTimeOffset.Now;
+        this.UpdatedOn = DateTimeOffset.Now;
     }
 
     public AccountCocktailRatings AddRating(string cocktailId, int stars)
@@ -69,6 +69,12 @@ public class AccountCocktailRatings : Entity
             }
         }
 
+        return this;
+    }
+
+    public AccountCocktailRatings SetUpdatedOn(DateTimeOffset modifiedOn)
+    {
+        this.UpdatedOn = modifiedOn;
         return this;
     }
 }

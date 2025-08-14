@@ -2,15 +2,12 @@
 
 using Cezzi.Applications;
 using Cezzi.Applications.Extensions;
-using Cocktails.Api.Apis.Integrations;
 using Cocktails.Api.Application.Exceptions;
 using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Services;
 using Cocktails.Api.Infrastructure.Services;
-using Cocktails.Common.Emails;
 using FluentValidation;
 using MediatR;
-using Microsoft.Graph;
 using Microsoft.Graph.Models;
 using System;
 using System.Text.Json.Serialization;
@@ -24,7 +21,7 @@ public class AccountOwnedProfileUpdatedEvent(Account ownedAccount) : IIntegratio
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
     [JsonInclude]
-    public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.UtcNow;
+    public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.Now;
 
     [JsonInclude]
     public Account OwnedAccount { get; } = ownedAccount ?? throw new ArgumentNullException(nameof(ownedAccount));

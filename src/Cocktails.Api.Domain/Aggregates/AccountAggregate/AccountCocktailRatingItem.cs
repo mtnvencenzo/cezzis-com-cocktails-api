@@ -27,8 +27,8 @@ public class AccountCocktailRatingItem : ValueObject
     {
         this.CocktailId = cocktailId;
         this.Stars = stars;
-        this.CreatedAt = DateTimeOffset.UtcNow;
-        this.UpdatedAt = DateTimeOffset.UtcNow;
+        this.CreatedAt = DateTimeOffset.Now;
+        this.UpdatedAt = DateTimeOffset.Now;
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
