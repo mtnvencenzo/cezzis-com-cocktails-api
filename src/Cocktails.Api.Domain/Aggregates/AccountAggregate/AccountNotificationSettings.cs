@@ -13,13 +13,12 @@ public class AccountNotificationSettings : ValueObject
     [JsonConstructor]
     protected AccountNotificationSettings() { }
 
-    public AccountNotificationSettings(
-        CocktailUpdateNotification newCocktails)
+    public AccountNotificationSettings(CocktailUpdateNotification cocktailUpdates)
     {
-        this.NewCocktails = newCocktails;
+        this.NewCocktails = cocktailUpdates;
     }
 
-    public AccountNotificationSettings SetNewCocktailNotification(CocktailUpdateNotification notification)
+    public AccountNotificationSettings SetUpdateCocktailNotification(CocktailUpdateNotification notification)
     {
         var value = (int)notification;
 

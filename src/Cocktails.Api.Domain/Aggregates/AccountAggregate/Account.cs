@@ -147,17 +147,15 @@ public class Account : Entity, IAggregateRoot
         return this;
     }
 
-    public Account SetNewCocktailNotificationSetting(CocktailUpdateNotification notification)
+    public Account SetUpdateCocktailNotification(CocktailUpdateNotification notification)
     {
         if (this.Notifications == null)
         {
-            this.Notifications = new AccountNotificationSettings(notification);
-        }
-        else
-        {
-            this.Notifications.SetNewCocktailNotification(notification);
+            this.Notifications = new AccountNotificationSettings(cocktailUpdates: notification);
+            return this;
         }
 
+        this.Notifications.SetUpdateCocktailNotification(notification);
         return this;
     }
 
