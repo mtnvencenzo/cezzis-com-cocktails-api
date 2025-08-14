@@ -40,6 +40,9 @@ public class Account : Entity, IAggregateRoot
     public AccountAccessibilitySettings Accessibility { get; private set; }
 
     [JsonInclude]
+    public AccountNotificationSettings Notifications { get; private set; }
+
+    [JsonInclude]
     public string ETag { get; private set; }
 
     [JsonInclude]
@@ -141,6 +144,20 @@ public class Account : Entity, IAggregateRoot
         }
 
         this.Accessibility = new AccountAccessibilitySettings(theme);
+        return this;
+    }
+
+    public Account SetNewCocktailNotificationSetting(CocktailUpdateNotification notification)
+    {
+        if (this.Notifications == null)
+        {
+            this.Notifications = new AccountNotificationSettings(notification);
+        }
+        else
+        {
+            this.Notifications.SetNewCocktailNotification(notification);
+        }
+
         return this;
     }
 

@@ -1,8 +1,6 @@
 ﻿namespace Cocktails.Api.Domain.Aggregates.AccountAggregate;
 
-using Cezzi.Applications;
 using Cocktails.Api.Domain.Common;
-using Cocktails.Api.Domain.Exceptions;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
