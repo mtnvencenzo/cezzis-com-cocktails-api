@@ -46,10 +46,10 @@ public class AccountTests
         var account = new Account(claimsAccount);
 
         // act
-        account.SetUpdateCocktailNotification(CocktailUpdateNotification.None);
+        account.SetOnNewCocktailAdditionsNotification(CocktailUpdatedNotification.Always);
 
         // assert
-        account.Notifications.NewCocktails.Should().Be(CocktailUpdateNotification.None);
+        account.Notifications.OnNewCocktailAdditions.Should().Be(CocktailUpdatedNotification.Always);
     }
 
     [Fact]

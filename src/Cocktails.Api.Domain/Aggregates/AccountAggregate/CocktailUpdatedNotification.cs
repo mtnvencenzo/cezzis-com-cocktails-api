@@ -1,7 +1,8 @@
 namespace Cocktails.Api.Domain.Aggregates.AccountAggregate;
 
-public enum CocktailUpdateNotification
+public enum CocktailUpdatedNotification
 {
     None = 0,
-    NewCocktails = 1,
+    Never = 1,
+    Always = 2,
 }

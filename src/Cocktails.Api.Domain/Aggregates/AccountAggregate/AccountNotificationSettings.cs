@@ -8,31 +8,29 @@ using System.Text.Json.Serialization;
 public class AccountNotificationSettings : ValueObject
 {
     [JsonInclude]
-    public CocktailUpdateNotification NewCocktails { get; private set; }
+    public CocktailUpdatedNotification OnNewCocktailAdditions { get; private set; }
 
     [JsonConstructor]
     protected AccountNotificationSettings() { }
 
-    public AccountNotificationSettings(CocktailUpdateNotification cocktailUpdates)
+    public AccountNotificationSettings(CocktailUpdatedNotification onNewCocktailAdditions)
     {
-        this.NewCocktails = cocktailUpdates;
+        this.SetOnNewCocktailAdditions(onNewCocktailAdditions);
     }
 
-    public AccountNotificationSettings SetUpdateCocktailNotification(CocktailUpdateNotification notification)
+    public AccountNotificationSettings SetOnNewCocktailAdditions(CocktailUpdatedNotification onNewCocktailAdditions)
     {
-        var value = (int)notification;
-
-        if (!Enum.GetValues<CocktailUpdateNotification>().Select(x => (int)x).Contains(value))
+        if (!Enum.IsDefined(typeof(CocktailUpdatedNotification), onNewCocktailAdditions))
         {
-            throw new CocktailsApiDomainException($"{nameof(CocktailUpdateNotification)} member '{notification}' not found");
+            throw new CocktailsApiDomainException($"{nameof(CocktailUpdatedNotification)} member '{onNewCocktailAdditions}' not found");
         }
 
-        this.NewCocktails = notification;
+        this.OnNewCocktailAdditions = onNewCocktailAdditions;
         return this;
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        yield return this.NewCocktails;
+        yield return this.OnNewCocktailAdditions;
     }
 }

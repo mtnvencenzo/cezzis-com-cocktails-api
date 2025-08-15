@@ -8,31 +8,31 @@ using Xunit;
 public class AccountNotificationSettingsTests
 {
     [Fact]
-    public void SetUpdateCocktailNotification_ShouldSetNotification()
+    public void SetOnNewCocktailAdditionsNotification_ShouldSetNotification()
     {
         // arrange
-        var settings = new AccountNotificationSettings(CocktailUpdateNotification.NewCocktails);
+        var settings = new AccountNotificationSettings(CocktailUpdatedNotification.Always);
 
         // act
-        var updatedSettings = settings.SetUpdateCocktailNotification(CocktailUpdateNotification.None);
+        var updatedSettings = settings.SetOnNewCocktailAdditions(CocktailUpdatedNotification.None);
 
         // assert
-        updatedSettings.NewCocktails.Should().Be(CocktailUpdateNotification.None);
+        updatedSettings.OnNewCocktailAdditions.Should().Be(CocktailUpdatedNotification.None);
     }
 
     [Fact]
     public void SetUpdateCocktailNotification_ShouldThrowException_WhenInvalidNotification()
     {
         // arrange
-        var settings = new AccountNotificationSettings(CocktailUpdateNotification.NewCocktails);
+        var settings = new AccountNotificationSettings(CocktailUpdatedNotification.Always);
 
         // act
-        var act = () => settings.SetUpdateCocktailNotification((CocktailUpdateNotification)999);
+        var act = () => settings.SetOnNewCocktailAdditions((CocktailUpdatedNotification)999);
 
         // assert
         act.Should().Throw<CocktailsApiDomainException>()
-            .WithMessage("CocktailUpdateNotification member '999' not found");
+            .WithMessage($"{nameof(CocktailUpdatedNotification)} member '999' not found");
 
-        settings.NewCocktails.Should().Be(CocktailUpdateNotification.NewCocktails);
+        settings.OnNewCocktailAdditions.Should().Be(CocktailUpdatedNotification.Always);
     }
 }
