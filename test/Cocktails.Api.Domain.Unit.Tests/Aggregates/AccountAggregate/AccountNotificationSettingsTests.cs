@@ -14,10 +14,10 @@ public class AccountNotificationSettingsTests
         var settings = new AccountNotificationSettings(CocktailUpdatedNotification.Always);
 
         // act
-        var updatedSettings = settings.SetOnNewCocktailAdditions(CocktailUpdatedNotification.None);
+        var updatedSettings = settings.SetOnNewCocktailAdditions(CocktailUpdatedNotification.Never);
 
         // assert
-        updatedSettings.OnNewCocktailAdditions.Should().Be(CocktailUpdatedNotification.None);
+        updatedSettings.OnNewCocktailAdditions.Should().Be(CocktailUpdatedNotification.Never);
     }
 
     [Fact]
