@@ -85,27 +85,6 @@ public class UpdateAccountOwnedProfileCommandHandler(
             logger.LogCritical(ex, "Failed to send email message to topic");
         }
 
-        return new AccountOwnedProfileRs(
-            SubjectId: account.SubjectId,
-            GivenName: account.GivenName,
-            FamilyName: account.FamilyName,
-            Email: account.Email,
-            LoginEmail: account.LoginEmail ?? account.Email,
-            AvatarUri: account.AvatarUri,
-            DisplayName: account.DisplayName,
-            PrimaryAddress: account.PrimaryAddress != null
-                ? new AccountAddressModel(
-                    AddressLine1: account.PrimaryAddress.AddressLine1 ?? string.Empty,
-                    AddressLine2: account.PrimaryAddress.AddressLine2 ?? string.Empty,
-                    City: account.PrimaryAddress.City ?? string.Empty,
-                    Region: account.PrimaryAddress.Region ?? string.Empty,
-                    SubRegion: account.PrimaryAddress.SubRegion ?? string.Empty,
-                    PostalCode: account.PrimaryAddress.PostalCode ?? string.Empty,
-                    Country: account.PrimaryAddress.Country ?? string.Empty)
-                : null,
-            Accessibility: account.Accessibility != null
-                ? new AccountAccessibilitySettingsModel(Theme: (DisplayThemeModel)account.Accessibility.Theme)
-                : null,
-            FavoriteCocktails: account.FavoriteCocktails ?? []);
+        return AccountOwnedProfileRs.FromAccount(account);
     }
 }

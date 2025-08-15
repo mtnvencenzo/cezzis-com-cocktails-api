@@ -1,5 +1,6 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Models;
 
+using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -47,9 +48,40 @@ public record AccountOwnedProfileRs
     [property: Description("The display name for the account visible to other users")]
     string DisplayName,
 
-    [property: Description("The accessibility settings for the account visible to other users")]
+    [property: Description("The accessibility settings for the account")]
     AccountAccessibilitySettingsModel Accessibility,
 
     [property: Description("The list of favorite cocktails")]
-    List<string> FavoriteCocktails
-);
+    List<string> FavoriteCocktails,
+
+    [property: Description("The notification settings for the account")]
+    AccountNotificationSettingsModel Notifications
+)
+{
+    public static AccountOwnedProfileRs FromAccount(Account account) => new(
+        SubjectId: account.SubjectId,
+        GivenName: account.GivenName,
+        FamilyName: account.FamilyName,
+        Email: account.Email,
+        LoginEmail: account.LoginEmail ?? account.Email,
+        AvatarUri: account.AvatarUri,
+        DisplayName: account.DisplayName,
+        PrimaryAddress: account.PrimaryAddress != null
+            ? new AccountAddressModel(
+                AddressLine1: account.PrimaryAddress.AddressLine1 ?? string.Empty,
+                AddressLine2: account.PrimaryAddress.AddressLine2 ?? string.Empty,
+                City: account.PrimaryAddress.City ?? string.Empty,
+                Region: account.PrimaryAddress.Region ?? string.Empty,
+                SubRegion: account.PrimaryAddress.SubRegion ?? string.Empty,
+                PostalCode: account.PrimaryAddress.PostalCode ?? string.Empty,
+                Country: account.PrimaryAddress.Country ?? string.Empty)
+            : null,
+        Accessibility: account.Accessibility != null
+            ? new AccountAccessibilitySettingsModel(Theme: (DisplayThemeModel)account.Accessibility.Theme)
+            : new AccountAccessibilitySettingsModel(Theme: DisplayThemeModel.Light),
+        FavoriteCocktails: account.FavoriteCocktails ?? [],
+        Notifications: account.Notifications != null
+            ? new AccountNotificationSettingsModel(
+                OnNewCocktailAdditions: (CocktailUpdatedNotificationModel)account.Notifications.OnNewCocktailAdditions)
+            : new AccountNotificationSettingsModel(CocktailUpdatedNotificationModel.Always));
+};
