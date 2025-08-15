@@ -8,7 +8,7 @@ public class AccountAccessibilitySettingsTests
     [Theory]
     [InlineData(AccessibilityTheme.Light)]
     [InlineData(AccessibilityTheme.Dark)]
-    public void SetAccessibilitySettings_ShouldUpdateAccessibility(AccessibilityTheme theme)
+    public void SetAccessibilitySettings_ShouldInitializeCorrectly(AccessibilityTheme theme)
     {
         // arrange
         var settings = new AccountAccessibilitySettings(theme: theme);
