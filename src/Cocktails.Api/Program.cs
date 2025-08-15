@@ -3,7 +3,6 @@ using Cocktails.Api.Application.Behaviors.ExceptionHandling;
 using Cocktails.Api.StartupExtensions;
 using Cocktails.Api.Infrastructure;
 using Microsoft.AspNetCore.Diagnostics;
-using System.Diagnostics;
 using MediatR;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Concerns.Accounts.Commands;

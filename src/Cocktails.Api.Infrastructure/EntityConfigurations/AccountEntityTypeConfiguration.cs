@@ -37,6 +37,14 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>,
                 x.WithOwner();
             });
 
+        builder.OwnsOne(
+            x => x.Notifications,
+            x =>
+            {
+                x.ApplyCamelCasingNamingStrategry();
+                x.WithOwner();
+            });
+
         builder.Ignore(x => x.DomainEvents);
     }
 }
