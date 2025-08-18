@@ -1,7 +1,10 @@
 ﻿namespace Cocktails.Api.Unit.Tests;
 
 using Asp.Versioning;
+using Bogus;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
+using Cocktails.Api.Domain.Aggregates.AccountAggregate;
+using Cocktails.Api.Domain.Services;
 using Cocktails.Api.Infrastructure;
 using Cocktails.Api.StartupExtensions;
 using Cocktails.Api.Unit.Tests.Mocks;
@@ -9,6 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.FileProviders;
@@ -20,17 +24,20 @@ using System.IO;
 using System.Reflection;
 using System.Security.Claims;
 using System.Threading;
+using Xunit;
 
-public abstract class ServiceTestBase : IDisposable
+public abstract class ServiceTestBase : IAsyncLifetime
 {
     protected readonly Mock<IHttpClientFactory> httpClientFactoryMock;
     protected readonly Mock<IHttpContextAccessor> httpContextAccessorMock;
     protected readonly Mock<CocktailDbContext> cocktailDbContextMock;
     protected readonly Mock<AccountDbContext> accountDbContextMock;
     protected readonly CancellationTokenSource cancellationTokenSource;
+    protected readonly Mock<IEventBus> eventBusMock;
     protected MockHttpContext httpContext;
     protected ClaimsPrincipal claimsPrincipal;
     private IServiceProvider serviceProvider;
+    private WebApplication app;
 
     public ServiceTestBase()
     {
@@ -39,6 +46,8 @@ public abstract class ServiceTestBase : IDisposable
 
         this.accountDbContextMock = new();
         this.accountDbContextMock.Setup(x => x.SaveEntitiesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(true);
+
+        this.eventBusMock = new();
 
         this.cancellationTokenSource = new();
         this.httpClientFactoryMock = new();
@@ -103,6 +112,7 @@ public abstract class ServiceTestBase : IDisposable
             services.Replace(new ServiceDescriptor(typeof(IHttpContextAccessor), this.httpContextAccessorMock.Object));
             services.Replace(new ServiceDescriptor(typeof(CocktailDbContext), this.cocktailDbContextMock.Object));
             services.Replace(new ServiceDescriptor(typeof(AccountDbContext), this.accountDbContextMock.Object));
+            services.Replace(new ServiceDescriptor(typeof(IEventBus), this.eventBusMock.Object));
             servicePreprocessor?.Invoke(services);
         }
 
@@ -127,22 +137,28 @@ public abstract class ServiceTestBase : IDisposable
             internalPreprocessor(builder.Services);
         }
 
-        var app = builder.Build();
+        var jsonSources = builder.Configuration.Sources.OfType<JsonConfigurationSource>().ToList();
+        foreach (var source in jsonSources)
+        {
+            source.ReloadOnChange = false;
+        }
 
-        var cocktailsDataStore = app.Services.GetRequiredService<CocktailDataStore>();
+        this.app = builder.Build();
+
+        var cocktailsDataStore = this.app.Services.GetRequiredService<CocktailDataStore>();
         this.cocktailDbContextMock.Setup(x => x.Cocktails).ReturnsDbSet(cocktailsDataStore.Cocktails);
 
-        var ingredientsDataStore = app.Services.GetRequiredService<IngredientsDataStore>();
+        var ingredientsDataStore = this.app.Services.GetRequiredService<IngredientsDataStore>();
         this.cocktailDbContextMock.Setup(x => x.Ingredients).ReturnsDbSet(ingredientsDataStore.Ingredients);
 
-        app.UseApplicationEndpoints();
-        app.UseDefaultOpenApi();
-        app.UseHttpsRedirection();
-        app.UseCors("origin-policy");
-        app.UseAuthentication();
-        app.UseAuthorization();
-        app.UseStaticFiles();
-        app.UseExceptionHandler((builder) =>
+        this.app.UseApplicationEndpoints();
+        this.app.UseDefaultOpenApi();
+        this.app.UseHttpsRedirection();
+        this.app.UseCors("origin-policy");
+        this.app.UseAuthentication();
+        this.app.UseAuthorization();
+        this.app.UseStaticFiles();
+        this.app.UseExceptionHandler((builder) =>
         {
             builder.Run(async (context) =>
             {
@@ -154,16 +170,17 @@ public abstract class ServiceTestBase : IDisposable
             });
         });
 
-        this.serviceProvider = app.Services;
+        this.serviceProvider = this.app.Services;
 
         return this.serviceProvider;
     }
 
     public static string GuidString() => Guid.NewGuid().ToString();
 
-    private static void Verify_NoOtherCalls() { }
-
-    public void Dispose() => Verify_NoOtherCalls();
+    private void Verify_NoOtherCalls()
+    {
+        this.eventBusMock.VerifyNoOtherCalls();
+    }
 
     protected static T GetAsParameterServices<T>(IServiceProvider serviceProvider)
     {
@@ -179,5 +196,73 @@ public abstract class ServiceTestBase : IDisposable
         }
 
         return (T)constructor.Invoke([.. instances]);
+    }
+
+    protected static (Account account, ClaimsIdentity claimsIdentity) GetAccount(string subjectId, bool onlyWithClaims = false)
+    {
+        var faker = new Faker();
+
+        var claimsIdentity = new ClaimsIdentity(
+        [
+            new(ClaimTypes.NameIdentifier, subjectId),
+            new(ClaimTypes.GivenName, new Faker().Name.FirstName()),
+            new(ClaimTypes.Surname, new Faker().Name.LastName()),
+            new("emails", faker.Internet.Email())
+        ]);
+
+        var account = new Account(new ClaimsAccount(claimsIdentity));
+
+        if (onlyWithClaims)
+        {
+            return (account, claimsIdentity);
+        }
+
+        var cocktailIds = new string[]
+        {
+            "mojito",
+            "margarita",
+            "old-fashioned",
+            "negroni",
+            "whiskey-sour",
+            "manhattan",
+            "daiquiri",
+            "cosmopolitan",
+            "pina-colada"
+        };
+
+        var numberOfFavorites = faker.Random.Int(1, cocktailIds.Length);
+
+        account
+            .SetAvatarUri(faker.Internet.Avatar())
+            .SetDisplayName(faker.Name.FullName())
+            .SetEmail(faker.Internet.Email())
+            .SetName(faker.Name.FirstName(), faker.Name.LastName())
+            .SetAccessibilitySettings(theme: AccessibilityTheme.Dark)
+            .SetOnNewCocktailAdditionsNotification(CocktailUpdatedNotification.Always)
+            .SetRatingsId(GuidString())
+            .SetUpdatedOn(DateTime.Now)
+            .ManageFavoriteCocktails(remove: [], add: [.. faker.PickRandom(cocktailIds, numberOfFavorites)])
+            .SetPrimaryAddress(
+                addressLine1: faker.Address.StreetAddress(),
+                addressLine2: faker.Address.SecondaryAddress(),
+                city: faker.Address.City(),
+                region: faker.Address.StateAbbr(),
+                subRegion: faker.Address.County(),
+                postalCode: faker.Address.ZipCode(),
+                country: faker.Address.CountryCode(Bogus.DataSets.Iso3166Format.Alpha3));
+
+        return (account, claimsIdentity);
+    }
+
+    public Task InitializeAsync() => Task.CompletedTask;
+
+    public async Task DisposeAsync()
+    {
+        this.Verify_NoOtherCalls();
+
+        if (this.app != null)
+        {
+            await this.app.DisposeAsync();
+        }
     }
 }

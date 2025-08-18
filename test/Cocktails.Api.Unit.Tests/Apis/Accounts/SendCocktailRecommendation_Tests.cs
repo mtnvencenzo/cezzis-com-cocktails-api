@@ -24,13 +24,6 @@ using global::Cocktails.Api.Application.Concerns.Accounts.Commands;
 
 public class SendCocktailRecommendation_Tests : ServiceTestBase
 {
-    private readonly Mock<IEventBus> eventBusMock;
-
-    public SendCocktailRecommendation_Tests()
-    {
-        this.eventBusMock = new Mock<IEventBus>();
-    }
-
     [Fact]
     public async Task sendrecommendation__invokes_service_bus_and_returns_correct_data()
     {
@@ -52,7 +45,7 @@ public class SendCocktailRecommendation_Tests : ServiceTestBase
             .Returns(httpClientMock.Object);
 
         // Arrange
-        var sp = this.SetupEnvironment((services) => { services.Replace(new ServiceDescriptor(typeof(IEventBus), this.eventBusMock.Object)); });
+        var sp = this.SetupEnvironment();
         var services = GetAsParameterServices<AccountsServices>(sp);
         var request = new CocktailRecommendationRq
         (

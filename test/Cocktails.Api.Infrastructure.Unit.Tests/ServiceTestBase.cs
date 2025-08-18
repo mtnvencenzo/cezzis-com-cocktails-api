@@ -3,12 +3,14 @@
 using Asp.Versioning;
 using Cezzi.Smtp;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
+using Cocktails.Api.Domain.Services;
 using Cocktails.Api.Infrastructure.Unit.Tests.Mocks;
 using Cocktails.Api.StartupExtensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.FileProviders;
@@ -18,15 +20,18 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 
-public abstract class ServiceTestBase : IDisposable
+public abstract class ServiceTestBase : IAsyncLifetime
 {
     protected readonly Mock<IHttpContextAccessor> httpContextAccessorMock;
     protected readonly Mock<ISmtpClientFactory> smtpClientFactoryMock;
     protected readonly Mock<ISmtpMailClient> smtpClientMock;
     protected readonly CancellationTokenSource cancellationTokenSource;
+    protected readonly Mock<IEventBus> eventBusMock;
     protected MockHttpContext httpContext;
     private IServiceProvider serviceProvider;
+    private WebApplication app;
 
     public ServiceTestBase()
     {
@@ -34,6 +39,7 @@ public abstract class ServiceTestBase : IDisposable
         this.httpContextAccessorMock = new Mock<IHttpContextAccessor>();
         this.smtpClientFactoryMock = new Mock<ISmtpClientFactory>();
         this.smtpClientMock = new Mock<ISmtpMailClient>();
+        this.eventBusMock = new();
 
         this.smtpClientFactoryMock
             .Setup(f => f.CreateClient(It.IsAny<string>(), It.IsAny<int>()))
@@ -92,6 +98,7 @@ public abstract class ServiceTestBase : IDisposable
         {
             services.Replace(new ServiceDescriptor(typeof(IHttpContextAccessor), this.httpContextAccessorMock.Object));
             services.Replace(new ServiceDescriptor(typeof(ISmtpClientFactory), this.smtpClientFactoryMock.Object));
+            services.Replace(new ServiceDescriptor(typeof(IEventBus), this.eventBusMock.Object));
             servicePreprocessor?.Invoke(services);
         }
 
@@ -119,17 +126,23 @@ public abstract class ServiceTestBase : IDisposable
             internalPreprocessor(builder.Services);
         }
 
-        var app = builder.Build();
+        var jsonSources = builder.Configuration.Sources.OfType<JsonConfigurationSource>().ToList();
+        foreach (var source in jsonSources)
+        {
+            source.ReloadOnChange = false;
+        }
 
-        app.UseApplicationEndpoints();
-        app.UseDefaultOpenApi();
+        this.app = builder.Build();
 
-        app.UseHttpsRedirection();
-        app.UseCors("origin-policy");
-        app.UseAuthentication();
-        app.UseAuthorization();
-        app.UseStaticFiles();
-        app.UseExceptionHandler((builder) =>
+        this.app.UseApplicationEndpoints();
+        this.app.UseDefaultOpenApi();
+
+        this.app.UseHttpsRedirection();
+        this.app.UseCors("origin-policy");
+        this.app.UseAuthentication();
+        this.app.UseAuthorization();
+        this.app.UseStaticFiles();
+        this.app.UseExceptionHandler((builder) =>
         {
             builder.Run(async (context) =>
             {
@@ -141,14 +154,27 @@ public abstract class ServiceTestBase : IDisposable
             });
         });
 
-        this.serviceProvider = app.Services;
+        this.serviceProvider = this.app.Services;
 
         return this.serviceProvider;
     }
 
     public static string GuidString() => Guid.NewGuid().ToString();
 
-    private static void Verify_NoOtherCalls() { }
+    private void Verify_NoOtherCalls()
+    {
+        this.eventBusMock.VerifyNoOtherCalls();
+    }
 
-    public void Dispose() => Verify_NoOtherCalls();
+    public Task InitializeAsync() => Task.CompletedTask;
+
+    public async Task DisposeAsync()
+    {
+        this.Verify_NoOtherCalls();
+
+        if (this.app != null)
+        {
+            await this.app.DisposeAsync();
+        }
+    }
 }

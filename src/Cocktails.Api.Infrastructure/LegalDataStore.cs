@@ -16,9 +16,9 @@ public class LegalDataStore : IUnitOfWork
 
     public ReadOnlyCollection<LegalDocument> Documents => this.GetLegalDocuments().AsReadOnly();
 
-    public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) => throw new NotImplementedException();
+    public virtual Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) => throw new NotImplementedException();
 
-    public Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default) => throw new NotImplementedException();
+    public virtual Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default) => throw new NotImplementedException();
 
     public void Dispose() { }
 

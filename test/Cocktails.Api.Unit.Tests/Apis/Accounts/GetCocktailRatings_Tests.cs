@@ -118,17 +118,4 @@ public class GetCocktailRatings_Tests : ServiceTestBase
         response.StatusCode.Should().Be(StatusCodes.Status200OK);
         response.Value.Should().BeEquivalentTo(new AccountCocktailRatingsRs(Ratings: []));
     }
-
-    private static (Account account, ClaimsIdentity claimsIdentity) GetAccount(string subjectId)
-    {
-        var claimsIdentity = new ClaimsIdentity(
-        [
-            new(ClaimTypes.NameIdentifier, subjectId),
-            new(ClaimTypes.GivenName, new Faker().Name.FirstName()),
-            new(ClaimTypes.Surname, new Faker().Name.LastName()),
-            new("emails", new Faker().Internet.Email())
-        ]);
-
-        return (new Account(new ClaimsAccount(claimsIdentity)).SetRatingsId(GuidString()), claimsIdentity);
-    }
 }

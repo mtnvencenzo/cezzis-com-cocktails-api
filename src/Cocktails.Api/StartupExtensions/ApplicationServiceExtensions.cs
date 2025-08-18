@@ -1,6 +1,5 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
-using Azure.Identity;
 using Cezzi.Security.Recaptcha;
 using Cocktails.Api.Application.Behaviors.MediatRPipelines;
 using Cocktails.Api.Application.Concerns.Accounts.Queries;
