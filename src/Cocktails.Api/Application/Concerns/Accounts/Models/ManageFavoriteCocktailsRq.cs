@@ -1,8 +1,6 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Models;
 
-using Microsoft.Identity.Client;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 #pragma warning disable format
 

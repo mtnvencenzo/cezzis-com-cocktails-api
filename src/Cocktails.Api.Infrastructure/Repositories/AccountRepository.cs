@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 public class AccountRepository(AccountDbContext dbContext) : IAccountRepository
 {
-    public IUnitOfWork UnitOfWork => dbContext;
+    public virtual IUnitOfWork UnitOfWork => dbContext;
 
     public IQueryable<Account> Items => dbContext.Accounts;
 
@@ -19,7 +19,7 @@ public class AccountRepository(AccountDbContext dbContext) : IAccountRepository
 
     public async Task<Account> GetAsync(string accountId, CancellationToken cancellationToken) => await dbContext.Accounts.FirstOrDefaultAsync(x => x.Id == accountId, cancellationToken);
 
-    public void Update(Account account) => dbContext.Entry(account).State = EntityState.Modified;
+    public virtual void Update(Account account) => dbContext.Entry(account).State = EntityState.Modified;
 
     public async Task<Account> GetOrCreateLocalAccountFromIdentity(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)
     {
