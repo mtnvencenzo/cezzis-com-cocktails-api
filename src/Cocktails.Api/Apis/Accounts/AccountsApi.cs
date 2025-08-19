@@ -278,5 +278,4 @@ public static class AccountsApi
 
         return TypedResults.Ok(result);
     }
-
 }

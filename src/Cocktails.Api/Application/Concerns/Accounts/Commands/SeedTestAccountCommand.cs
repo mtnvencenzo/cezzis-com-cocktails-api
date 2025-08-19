@@ -42,12 +42,35 @@ public class SeedTestAccountCommandHandler(
         var _ = await mediator.Send(updateAccountProfileCommand, cancellationToken)
             ?? throw new InvalidOperationException("Failed to update test account profile.");
 
+        // ------------------------------------------------------------------
+        // Change the email address back to the original test account email
+        // ------------------------------------------------------------------
         var updateEmailCommand = new UpdateAccountOwnedProfileEmailCommand(
             Request: new UpdateAccountOwnedProfileEmailRq(Email: testAccountConfig.Value.LoginEmail),
             Identity: identity);
 
         _ = await mediator.Send(updateEmailCommand, cancellationToken)
             ?? throw new InvalidOperationException("Failed to update test account email.");
+
+        // ------------------------------------------------------------------
+        // Change the email address back to the original test account email
+        // ------------------------------------------------------------------
+        var updateNotificationsCommand = new UpdateAccountOwnedNotificationSettingsCommand(
+            Request: new UpdateAccountOwnedNotificationSettingsRq(OnNewCocktailAdditions: CocktailUpdatedNotificationModel.Always),
+            Identity: identity);
+
+        _ = await mediator.Send(updateNotificationsCommand, cancellationToken)
+            ?? throw new InvalidOperationException("Failed to update test account notification settings.");
+
+        // ------------------------------------------------------------------
+        // Change the email address back to the original test account email
+        // ------------------------------------------------------------------
+        var updateAccessibilityCommand = new UpdateAccountOwnedAccessibilitySettingsCommand(
+            Request: new UpdateAccountOwnedAccessibilitySettingsRq(Theme: DisplayThemeModel.Light),
+            Identity: identity);
+
+        _ = await mediator.Send(updateAccessibilityCommand, cancellationToken)
+            ?? throw new InvalidOperationException("Failed to update test account accessibility settings.");
 
         // ------------------------------------------------------------------
         // If the account has favorite cocktails, start fresh and remove them
