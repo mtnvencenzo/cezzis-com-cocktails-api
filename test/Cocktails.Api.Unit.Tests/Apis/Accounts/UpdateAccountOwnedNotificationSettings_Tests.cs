@@ -16,12 +16,12 @@ using global::Cocktails.Api.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-public class UpdateAccountOwnedAccessibilitySettings_Tests : ServiceTestBase
+public class UpdateAccountOwnedNotificationSettings_Tests : ServiceTestBase
 {
-    public UpdateAccountOwnedAccessibilitySettings_Tests() { }
+    public UpdateAccountOwnedNotificationSettings_Tests() { }
 
     [Fact]
-    public async Task updateaccessibilitysettings__returns_matching_account()
+    public async Task updatenotificationsettings__returns_matching_account()
     {
         // Arrange
         var faker = new Faker();
@@ -35,9 +35,9 @@ public class UpdateAccountOwnedAccessibilitySettings_Tests : ServiceTestBase
         var accounts = new List<Account> { unmatchedAccount, account };
         this.accountDbContextMock.Setup(x => x.Accounts).ReturnsDbSet(accounts);
 
-        var request = new UpdateAccountOwnedAccessibilitySettingsRq
+        var request = new UpdateAccountOwnedNotificationSettingsRq
         (
-            Theme: faker.PickRandom<DisplayThemeModel>()
+            OnNewCocktailAdditions: faker.PickRandom<CocktailUpdatedNotificationModel>()
         );
 
         var updatedAccount = this.GetUpdatedAccount(account, request);
@@ -50,27 +50,27 @@ public class UpdateAccountOwnedAccessibilitySettings_Tests : ServiceTestBase
         var services = GetAsParameterServices<AccountsServices>(sp);
 
         // act
-        var response = await AccountsApi.UpdateAccountOwnedAccessibilitySettings(request, services);
+        var response = await AccountsApi.UpdateAccountOwnedNotificationSettings(request, services);
         var result = response.Result as Ok<AccountOwnedProfileRs>;
 
         // assert
         result.Should().NotBeNull();
         result.StatusCode.Should().Be(StatusCodes.Status200OK);
         result.Value.Should().BeEquivalentTo(AccountOwnedProfileRs.FromAccount(updatedAccount));
-        result.Value.Accessibility.Theme.Should().Be(request.Theme);
+        result.Value.Notifications.OnNewCocktailAdditions.Should().Be(request.OnNewCocktailAdditions);
 
         mockRepo.Verify(x => x.Update(It.Is<Account>(a => a.Id == account.Id)), Times.Once);
         mockRepo.Verify(x => x.UnitOfWork.SaveEntitiesAsync(It.IsAny<CancellationToken>()), Times.Once);
     }
 
-    private Account GetUpdatedAccount(Account account, UpdateAccountOwnedAccessibilitySettingsRq request)
+    private Account GetUpdatedAccount(Account account, UpdateAccountOwnedNotificationSettingsRq request)
     {
         var js = System.Text.Json.JsonSerializer.Serialize(account);
         var newAccount = System.Text.Json.JsonSerializer.Deserialize<Account>(js);
 
-        var theme = Enum.Parse<AccessibilityTheme>(request.Theme.ToString());
+        var onNewCocktailAdditions = Enum.Parse<CocktailUpdatedNotification>(request.OnNewCocktailAdditions.ToString());
 
-        newAccount.SetAccessibilitySettings(theme);
+        newAccount.SetOnNewCocktailAdditionsNotification(onNewCocktailAdditions);
 
         return newAccount;
     }
