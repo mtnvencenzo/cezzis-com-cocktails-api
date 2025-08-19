@@ -92,9 +92,17 @@ public static class AccountsApi
 
         groupBuilder.MapPut("/test/profile", SeedTestAccount)
             .AllowAnonymous()
+            .ExcludeFromDescription()
             .WithName(nameof(SeedTestAccount))
             .WithDisplayName(nameof(SeedTestAccount))
             .WithDescription("Seeds the test account profile for e2e testing purposes");
+
+        groupBuilder.MapPut("/owned/profile/notifications", UpdateAccountOwnedNotificationSettings)
+            .WithName(nameof(UpdateAccountOwnedNotificationSettings))
+            .WithDisplayName(nameof(UpdateAccountOwnedNotificationSettings))
+            .WithDescription("Updates the account profile notifications settings for the user represented within the authenticated bearer token")
+            .RequireScope("Account.Read")
+            .RequireScope("Account.Write");
 
         return groupBuilder;
     }
@@ -102,7 +110,8 @@ public static class AccountsApi
     /// <summary>Gets the account profile for the user represented within the authenticated bearer token</summary>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> GetAccountOwnedProfile([AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> GetAccountOwnedProfile(
+        [AsParameters] AccountsServices accountServices)
     {
         var rs = await accountServices.Queries.GetAccountOwnedProfile(
             claimsIdentity: accountServices.HttpContextAccessor.HttpContext.User?.Identity as ClaimsIdentity,
@@ -114,7 +123,9 @@ public static class AccountsApi
     /// <summary>Uploads an account profile image for to the user represented within the authenticated bearer token</summary>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Created<UploadProfileImageRs>, JsonHttpResult<ProblemDetails>>> UploadProfileImage(IFormFile file, [AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Created<UploadProfileImageRs>, JsonHttpResult<ProblemDetails>>> UploadProfileImage(
+        IFormFile file,
+        [AsParameters] AccountsServices accountServices)
     {
         var command = new ProfileImageUploadCommand(file, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
@@ -127,7 +138,9 @@ public static class AccountsApi
     /// <param name="request">The account profile information to update</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedProfile([FromBody] UpdateAccountOwnedProfileRq request, [AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedProfile(
+        [FromBody, Required, Description("The account profile update request body")] UpdateAccountOwnedProfileRq request,
+        [AsParameters] AccountsServices accountServices)
     {
         var command = new UpdateAccountOwnedProfileCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
@@ -140,7 +153,9 @@ public static class AccountsApi
     /// <param name="request">The account profile email information to update</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedProfileEmail([FromBody] UpdateAccountOwnedProfileEmailRq request, [AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedProfileEmail(
+        [FromBody, Required, Description("The account profile email update request body")] UpdateAccountOwnedProfileEmailRq request,
+        [AsParameters] AccountsServices accountServices)
     {
         var command = new UpdateAccountOwnedProfileEmailCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
@@ -153,7 +168,9 @@ public static class AccountsApi
     /// <param name="request">The account profile accessibility settings to update</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedAccessibilitySettings([FromBody] UpdateAccountOwnedAccessibilitySettingsRq request, [AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedAccessibilitySettings(
+        [FromBody, Required, Description("The account accessibility settings request body")] UpdateAccountOwnedAccessibilitySettingsRq request,
+        [AsParameters] AccountsServices accountServices)
     {
         var command = new UpdateAccountOwnedAccessibilitySettingsCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
@@ -166,7 +183,9 @@ public static class AccountsApi
     /// <param name="request">The cocktails to add or remove from the faviorites list</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> ManageFavoriteCocktails([FromBody] ManageFavoriteCocktailsRq request, [AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> ManageFavoriteCocktails(
+        [FromBody, Required, Description("The favorite cocktails management request body")] ManageFavoriteCocktailsRq request,
+        [AsParameters] AccountsServices accountServices)
     {
         var command = new ManageFavoriteCocktailsCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
@@ -179,7 +198,9 @@ public static class AccountsApi
     /// <param name="request">The cocktails and rating request</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Created<RateCocktailRs>, JsonHttpResult<ProblemDetails>, Conflict<ProblemDetails>>> RateCocktail([FromBody] RateCocktailRq request, [AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Created<RateCocktailRs>, JsonHttpResult<ProblemDetails>, Conflict<ProblemDetails>>> RateCocktail(
+        [FromBody, Required, Description("The cocktail rating request body")] RateCocktailRq request,
+        [AsParameters] AccountsServices accountServices)
     {
         var command = new RateCocktailCommand(
             CocktailId: request.CocktailId,
@@ -199,7 +220,8 @@ public static class AccountsApi
     /// <summary>Gets the account cocktail ratings for the account profile user represented within the authenticated bearer token</summary>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<AccountCocktailRatingsRs>, JsonHttpResult<ProblemDetails>>> GetCocktailRatings([AsParameters] AccountsServices accountServices)
+    public async static Task<Results<Ok<AccountCocktailRatingsRs>, JsonHttpResult<ProblemDetails>>> GetCocktailRatings(
+        [AsParameters] AccountsServices accountServices)
     {
         var rs = await accountServices.Queries.GetAccountOwnedCocktailRatings(
             claimsIdentity: accountServices.HttpContextAccessor.HttpContext.User?.Identity as ClaimsIdentity,
@@ -229,7 +251,8 @@ public static class AccountsApi
     }
 
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> SeedTestAccount([AsParameters] AccountsServices accountServices)
+    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> SeedTestAccount(
+        [AsParameters] AccountsServices accountServices)
     {
         var commandResult = await accountServices.Mediator.Send(new SeedTestAccountCommand(), accountServices.HttpContextAccessor.HttpContext.RequestAborted);
 
@@ -240,4 +263,20 @@ public static class AccountsApi
 
         return TypedResults.NoContent();
     }
+
+    /// <summary>Updates the account profile notifications settings for the user represented within the authenticated bearer token</summary>
+    /// <param name="request">The account profile notification settings to update</param>
+    /// <returns></returns>
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedNotificationSettings(
+        [FromBody, Required, Description("The account notifications request body")] UpdateAccountOwnedNotificationSettingsRq request,
+        [AsParameters] AccountsServices accountServices)
+    {
+        var command = new UpdateAccountOwnedNotificationSettingsCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
+
+        var result = await accountServices.Mediator.Send(command);
+
+        return TypedResults.Ok(result);
+    }
+
 }
