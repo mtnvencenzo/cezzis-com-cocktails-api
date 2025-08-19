@@ -2,11 +2,9 @@
 
 using Cocktails.Api.Application.Concerns.Accounts.Commands;
 using Cocktails.Api.Application.Concerns.Accounts.Models;
-using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Exceptions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Identity.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
@@ -278,5 +276,4 @@ public static class AccountsApi
 
         return TypedResults.Ok(result);
     }
-
 }
