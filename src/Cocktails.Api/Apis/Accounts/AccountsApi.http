@@ -12,7 +12,7 @@ X-Key: {{apimkey}}
 // ------------------------------------------------------------
 
 
-POST {{host}}/api/v1/owned/profile/cocktails/recommendations
+POST {{host}}/api/v1/accounts/owned/profile/cocktails/recommendations
 Content-Type: application/json
 X-Key: {{apimkey}}
 
@@ -23,6 +23,29 @@ X-Key: {{apimkey}}
     "directions": "test directions"
   },
   "verificationCode": "d"
+}
+
+###
+
+
+// ------------------------------------------------------------
+// Seed test account
+// ------------------------------------------------------------
+
+PUT {{host}}/api/v1/accounts/test/profile
+X-Key: {{apimkey}}
+
+###
+
+// ------------------------------------------------------------
+// Account notifications
+// ------------------------------------------------------------
+PUT {{host}}/api/v1/owned/profile/notifications
+Content-Type: application/json
+X-Key: {{apimkey}}
+
+{
+  "onNewCocktailAdditions": "always"
 }
 
 ###
