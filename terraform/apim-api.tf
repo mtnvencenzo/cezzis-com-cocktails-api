@@ -206,6 +206,14 @@ module "apim_cocktails_api" {
       policy_xml_content  = local.apim_anonomous_operation_policy
     },
     {
+      display_name        = "Put Account Owned Profile Notification Settings"
+      method              = "PUT"
+      url_template        = "/accounts/owned/profile/notifications"
+      description         = "Updates the account profile notification settings for the user represented within the authenticated bearer token"
+      success_status_code = 200
+      policy_xml_content  = local.apim_anonomous_operation_policy
+    },
+    {
       display_name        = "Put Account Owned Profile Cocktails Favorites"
       method              = "PUT"
       url_template        = "/accounts/owned/profile/cocktails/favorites"
