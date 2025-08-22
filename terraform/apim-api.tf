@@ -166,6 +166,14 @@ module "apim_cocktails_api" {
       policy_xml_content  = local.apim_anonomous_operation_policy
     },
     {
+      display_name        = "Login Account Owned Profile"
+      method              = "POST"
+      url_template        = "/accounts/owned/profile"
+      description         = "Logs in the logged in users account profile"
+      success_status_code = 200
+      policy_xml_content  = local.apim_anonomous_operation_policy
+    },
+    {
       display_name        = "Get Account Owned Profile"
       method              = "GET"
       url_template        = "/accounts/owned/profile"

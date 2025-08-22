@@ -5,7 +5,7 @@ using System.Security.Claims;
 
 public interface IAccountsQueries
 {
-    Task<AccountOwnedProfileRs> GetAccountOwnedProfile(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken);
+    Task<(AccountOwnedProfileRs profile, bool created)> GetAccountOwnedProfile(ClaimsIdentity claimsIdentity, bool createIfNotExists, CancellationToken cancellationToken);
 
     Task<AccountCocktailRatingsRs> GetAccountOwnedCocktailRatings(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken);
 }

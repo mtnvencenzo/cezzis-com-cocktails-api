@@ -1,5 +1,6 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
 
+using Cezzi.Applications;
 using FluentValidation;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Application.Utilities;
@@ -32,9 +33,14 @@ public class ProfileImageUploadCommandHandler(
 {
     public async Task<UploadProfileImageRs> Handle(ProfileImageUploadCommand command, CancellationToken cancellationToken)
     {
-        var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
+        var account = await accountRepository.GetLocalAccountFromIdentity(
             claimsIdentity: command.Identity,
             cancellationToken: cancellationToken);
+
+        if (account == null)
+        {
+            throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
+        }
 
         // Will be used later to destroy the previous blob
         var previousAvatar = account.AvatarUri;

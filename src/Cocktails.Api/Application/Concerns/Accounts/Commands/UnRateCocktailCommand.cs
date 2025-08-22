@@ -29,7 +29,7 @@ public class UnRateCocktailCommandHandler(
 {
     public async Task<bool> Handle(UnRateCocktailCommand command, CancellationToken cancellationToken)
     {
-        var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
+        var account = await accountRepository.GetLocalAccountFromIdentity(
             claimsIdentity: command.Identity,
             cancellationToken: cancellationToken);
 
@@ -40,7 +40,10 @@ public class UnRateCocktailCommandHandler(
             { Monikers.Cocktails.CocktailId, command?.CocktailId }
         });
 
-        Guard.NotNull(account);
+        if (account == null)
+        {
+            throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
+        }
 
         var accountCocktailRatings = !string.IsNullOrWhiteSpace(account.SubjectId)
             ? await accountCocktailRatingsRepository.Items

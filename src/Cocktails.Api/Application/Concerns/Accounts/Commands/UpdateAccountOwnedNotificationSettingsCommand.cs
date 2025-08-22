@@ -22,11 +22,14 @@ public class UpdateAccountOwnedNotificationSettingsCommandHandler(IAccountReposi
         Guard.NotNull(command, nameof(command));
         Guard.NotNull(command.Request, nameof(command.Request));
 
-        var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
+        var account = await accountRepository.GetLocalAccountFromIdentity(
             claimsIdentity: command.Identity,
             cancellationToken: cancellationToken);
 
-        Guard.NotNull(account);
+        if (account == null)
+        {
+            throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
+        }
 
         account.SetOnNewCocktailAdditionsNotification(
             onNewCocktailAdditions: Enum.Parse<CocktailUpdatedNotification>(command.Request.OnNewCocktailAdditions.ToString()));

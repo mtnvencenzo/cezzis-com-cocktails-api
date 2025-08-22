@@ -88,7 +88,7 @@ public class GetCocktailRatings_Tests : ServiceTestBase
     }
 
     [Fact]
-    public async Task getcocktailratings__returns_empty_list_for_invalid_user_without_ratings()
+    public async Task getcocktailratings__throws_ratings()
     {
         // Arrange
         var subjectId = GuidString();
@@ -111,11 +111,9 @@ public class GetCocktailRatings_Tests : ServiceTestBase
         var services = GetAsParameterServices<AccountsServices>(sp);
 
         // act
-        var response = (await AccountsApi.GetCocktailRatings(services))?.Result as Ok<AccountCocktailRatingsRs>;
+        var act = async () => await AccountsApi.GetCocktailRatings(services);
 
-        // assert
-        response.Should().NotBeNull();
-        response.StatusCode.Should().Be(StatusCodes.Status200OK);
-        response.Value.Should().BeEquivalentTo(new AccountCocktailRatingsRs(Ratings: []));
+        await act.Should().ThrowAsync<ArgumentNullException>()
+            .WithMessage("Failed to get account from identity. (Parameter 'account')");
     }
 }

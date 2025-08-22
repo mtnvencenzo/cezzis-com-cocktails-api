@@ -21,22 +21,25 @@ public class AccountRepository(AccountDbContext dbContext) : IAccountRepository
 
     public virtual void Update(Account account) => dbContext.Entry(account).State = EntityState.Modified;
 
-    public async Task<Account> GetOrCreateLocalAccountFromIdentity(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)
+    public async Task<(Account profile, bool created)> GetOrCreateLocalAccountFromIdentity(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)
     {
         var account = await this.GetLocalAccountFromIdentity(
             claimsIdentity: claimsIdentity,
             cancellationToken: cancellationToken);
 
-        if (account == null)
+        if (account != null)
         {
-            account = this.Add(new Account(new ClaimsAccount(claimsIdentity)));
-
-            _ = await this.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+            Guard.Equals(account?.SubjectId, account.SubjectId);
+            return (account, false);
         }
+
+        account = this.Add(new Account(new ClaimsAccount(claimsIdentity)));
+
+        _ = await this.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
         Guard.Equals(account?.SubjectId, account.SubjectId);
 
-        return account;
+        return (account, true);
     }
 
     public async Task<Account> GetLocalAccountFromIdentity(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)

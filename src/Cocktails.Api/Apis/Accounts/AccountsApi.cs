@@ -26,6 +26,13 @@ public static class AccountsApi
             .RequireAuthorization()
             .WithTags("Accounts");
 
+        groupBuilder.MapPost("/owned/profile", LoginAccountOwnedProfile)
+            .WithName(nameof(LoginAccountOwnedProfile))
+            .WithDisplayName(nameof(LoginAccountOwnedProfile))
+            .WithDescription("Logs in the account profile for the user represented within the authenticated bearer token")
+            .RequireScope("Account.Read")
+            .RequireScope("Account.Write");
+
         groupBuilder.MapGet("/owned/profile", GetAccountOwnedProfile)
             .WithName(nameof(GetAccountOwnedProfile))
             .WithDisplayName(nameof(GetAccountOwnedProfile))
@@ -105,17 +112,37 @@ public static class AccountsApi
         return groupBuilder;
     }
 
+    /// <summary>Login the account profile for the user represented within the authenticated bearer token</summary>
+    /// <returns></returns>
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async static Task<Results<Created<AccountOwnedProfileRs>, Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> LoginAccountOwnedProfile(
+        [AsParameters] AccountsServices accountServices)
+    {
+        var (profile, created) = await accountServices.Queries.GetAccountOwnedProfile(
+            claimsIdentity: accountServices.HttpContextAccessor.HttpContext.User?.Identity as ClaimsIdentity,
+            createIfNotExists: true,
+            cancellationToken: accountServices.HttpContextAccessor.HttpContext.RequestAborted);
+
+        if (created)
+        {
+            return TypedResults.Created("", profile);
+        }
+
+        return TypedResults.Ok(profile);
+    }
+
     /// <summary>Gets the account profile for the user represented within the authenticated bearer token</summary>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> GetAccountOwnedProfile(
         [AsParameters] AccountsServices accountServices)
     {
-        var rs = await accountServices.Queries.GetAccountOwnedProfile(
+        var (profile, _) = await accountServices.Queries.GetAccountOwnedProfile(
             claimsIdentity: accountServices.HttpContextAccessor.HttpContext.User?.Identity as ClaimsIdentity,
+            createIfNotExists: false,
             cancellationToken: accountServices.HttpContextAccessor.HttpContext.RequestAborted);
 
-        return TypedResults.Ok(rs);
+        return TypedResults.Ok(profile);
     }
 
     /// <summary>Uploads an account profile image for to the user represented within the authenticated bearer token</summary>

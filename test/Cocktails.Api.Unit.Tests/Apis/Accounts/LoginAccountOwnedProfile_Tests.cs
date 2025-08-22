@@ -15,12 +15,12 @@ using global::Cocktails.Api.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-public class GetAccountOwnedProfile_Tests : ServiceTestBase
+public class LoginAccountOwnedProfile_Tests : ServiceTestBase
 {
-    public GetAccountOwnedProfile_Tests() { }
+    public LoginAccountOwnedProfile_Tests() { }
 
     [Fact]
-    public async Task getaccountownedprofile__returns_matching_account()
+    public async Task loginaccountownedprofile__returns_matching_account()
     {
         // Arrange
         var (account, claimsIdentity) = GetAccount(GuidString());
@@ -34,7 +34,7 @@ public class GetAccountOwnedProfile_Tests : ServiceTestBase
         var services = GetAsParameterServices<AccountsServices>(sp);
 
         // act
-        var response = await AccountsApi.GetAccountOwnedProfile(services);
+        var response = await AccountsApi.LoginAccountOwnedProfile(services);
         var result = response.Result as Ok<AccountOwnedProfileRs>;
 
         // assert
@@ -44,7 +44,7 @@ public class GetAccountOwnedProfile_Tests : ServiceTestBase
     }
 
     [Fact]
-    public async Task getaccountownedprofile__returns_new_account_when_not_matched()
+    public async Task loginaccountownedprofile__returns_new_account_when_not_matched()
     {
         // Arrange
         var subjectId = GuidString();
@@ -66,12 +66,12 @@ public class GetAccountOwnedProfile_Tests : ServiceTestBase
         var services = GetAsParameterServices<AccountsServices>(sp);
 
         // act
-        var response = await AccountsApi.GetAccountOwnedProfile(services);
-        var result = response.Result as Ok<AccountOwnedProfileRs>;
+        var response = await AccountsApi.LoginAccountOwnedProfile(services);
+        var result = response.Result as Created<AccountOwnedProfileRs>;
 
         // assert
         result.Should().NotBeNull();
-        result.StatusCode.Should().Be(StatusCodes.Status200OK);
+        result.StatusCode.Should().Be(StatusCodes.Status201Created);
         result.Value.Should().BeEquivalentTo(AccountOwnedProfileRs.FromAccount(unmatchedAccount));
     }
 }
