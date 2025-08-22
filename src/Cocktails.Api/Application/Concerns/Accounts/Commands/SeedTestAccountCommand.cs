@@ -75,7 +75,9 @@ public class SeedTestAccountCommandHandler(
         // ------------------------------------------------------------------
         // If the account has favorite cocktails, start fresh and remove them
         // ------------------------------------------------------------------
-        var favorites = (await accountsQueries.GetAccountOwnedProfile(identity, cancellationToken)).FavoriteCocktails ?? [];
+        var (profile, _) = await accountsQueries.GetAccountOwnedProfile(identity, false, cancellationToken);
+
+        var favorites = profile.FavoriteCocktails ?? [];
         if (favorites.Count > 0)
         {
             var manageFavoriteCocktailsCommand = new ManageFavoriteCocktailsCommand(

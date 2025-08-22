@@ -31,11 +31,14 @@ public class UpdateAccountOwnedProfileCommandHandler(
         Guard.NotNull(command, nameof(command));
         Guard.NotNull(command.Request, nameof(command.Request));
 
-        var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
+        var account = await accountRepository.GetLocalAccountFromIdentity(
             claimsIdentity: command.Identity,
             cancellationToken: cancellationToken);
 
-        Guard.NotNull(account);
+        if (account == null)
+        {
+            throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
+        }
 
         account.SetName(givenName: command.Request.GivenName, familyName: command.Request.FamilyName);
         account.SetDisplayName(displayName: command.Request.DisplayName);

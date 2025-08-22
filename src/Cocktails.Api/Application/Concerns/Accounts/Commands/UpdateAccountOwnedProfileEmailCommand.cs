@@ -22,11 +22,14 @@ public class UpdateAccountOwnedProfileEmailCommandHandler(IAccountRepository acc
         Guard.NotNull(command, nameof(command));
         Guard.NotNull(command.Request, nameof(command.Request));
 
-        var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
+        var account = await accountRepository.GetLocalAccountFromIdentity(
             claimsIdentity: command.Identity,
             cancellationToken: cancellationToken);
 
-        Guard.NotNull(account);
+        if (account == null)
+        {
+            throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
+        }
 
         account.SetEmail(email: command.Request.Email);
         account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);

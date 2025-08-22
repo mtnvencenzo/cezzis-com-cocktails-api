@@ -8,27 +8,46 @@ using System.Security.Claims;
 
 public class AccountsQueries(IAccountRepository accountRepository, IAccountCocktailRatingsRepository accountCocktailRatingsRepository) : IAccountsQueries
 {
-    public async Task<AccountOwnedProfileRs> GetAccountOwnedProfile(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)
+    public async Task<(AccountOwnedProfileRs profile, bool created)> GetAccountOwnedProfile(ClaimsIdentity claimsIdentity, bool createIfNotExists, CancellationToken cancellationToken)
     {
-        var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
-            claimsIdentity: claimsIdentity,
-            cancellationToken: cancellationToken);
+        if (createIfNotExists)
+        {
+            var (account, created) = await accountRepository.GetOrCreateLocalAccountFromIdentity(
+                claimsIdentity: claimsIdentity,
+                cancellationToken: cancellationToken);
 
-        return AccountOwnedProfileRs.FromAccount(account);
+            return (AccountOwnedProfileRs.FromAccount(account), created);
+        }
+        else
+        {
+            var account = await accountRepository.GetLocalAccountFromIdentity(
+                claimsIdentity: claimsIdentity,
+                cancellationToken: cancellationToken);
+
+            if (account != null)
+            {
+                return (AccountOwnedProfileRs.FromAccount(account), false);
+            }
+        }
+
+        return (null, false);
     }
 
     public async Task<AccountCocktailRatingsRs> GetAccountOwnedCocktailRatings(ClaimsIdentity claimsIdentity, CancellationToken cancellationToken)
     {
-        var account = await accountRepository.GetOrCreateLocalAccountFromIdentity(
+        var account = await accountRepository.GetLocalAccountFromIdentity(
             claimsIdentity: claimsIdentity,
             cancellationToken: cancellationToken);
 
-        Guard.NotNull(account, nameof(account));
+        if (account == null)
+        {
+            throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
+        }
 
-        var ratings = await (accountCocktailRatingsRepository.Items
+        var ratings = await accountCocktailRatingsRepository.Items
             .WithPartitionKey(account.SubjectId)
             .Where(x => x.Id == account.RatingsId)
-            .FirstOrDefaultAsync(cancellationToken));
+            .FirstOrDefaultAsync(cancellationToken);
 
         return new AccountCocktailRatingsRs(
             Ratings: ratings != null
