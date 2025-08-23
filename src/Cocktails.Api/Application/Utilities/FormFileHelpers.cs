@@ -1,14 +1,14 @@
 ﻿namespace Cocktails.Api.Application.Utilities;
 
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Cocktails.Api.Domain.Services;
 using System.Threading;
 
 public static class FormFileHelpers
 {
-    public static async Task<byte[]> GetFileBytes(this IFormFile formFile, CancellationToken cancellationToken)
+    public static async Task<byte[]> GetFileBytes(this IFileAccessor fileAccessor, CancellationToken cancellationToken)
     {
         using var ms = new MemoryStream();
-        using var s = formFile.OpenReadStream();
+        using var s = fileAccessor.GetStream();
         await s.CopyToAsync(ms, cancellationToken);
 
         return ms.ToArray();

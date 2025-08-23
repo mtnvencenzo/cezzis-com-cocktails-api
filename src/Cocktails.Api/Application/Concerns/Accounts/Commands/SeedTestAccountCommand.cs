@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using System.Security.Claims;
 using global::Cocktails.Api.Application.Concerns.Accounts.Queries;
+using global::Cocktails.Api.Infrastructure.Resources.Test;
 
 public record SeedTestAccountCommand() : IRequest<bool>;
 
@@ -106,6 +107,14 @@ public class SeedTestAccountCommandHandler(
                     throw new InvalidOperationException($"Failed to remove rating for cocktail {rating.CocktailId} from test account.");
                 }
             }
+        }
+
+        var profileImageCommand = new ProfileImageUploadCommand(new CypressUser(), identity);
+        var result = await mediator.Send(profileImageCommand, cancellationToken);
+
+        if (string.IsNullOrWhiteSpace(result.ImageUri))
+        {
+            throw new InvalidOperationException($"Failed to upload profile image for test account.");
         }
 
         return true;

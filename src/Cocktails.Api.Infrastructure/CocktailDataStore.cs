@@ -3,9 +3,7 @@
 using Cezzi.Applications.Extensions;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using Cocktails.Api.Domain.Aggregates.IngredientAggregate;
-using Cocktails.Api.Domain.Common;
 using Cocktails.Api.Domain.Config;
-using Cocktails.Api.Infrastructure.Resources;
 using Cocktails.Api.Infrastructure.Resources.ModernCocktails;
 using Cocktails.Api.Infrastructure.Resources.TraditionalCocktails;
 using Microsoft.Extensions.Options;
@@ -16,7 +14,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 public class CocktailDataStore(IOptions<CocktailsApiConfig> cocktailsApiConfig, IngredientsDataStore ingredientDataStore)
 {

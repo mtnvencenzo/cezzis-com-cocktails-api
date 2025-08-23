@@ -9,6 +9,7 @@ using Microsoft.Identity.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Security.Claims;
+using Cocktails.Api.Infrastructure.Services;
 
 /// <summary>
 /// 
@@ -152,7 +153,7 @@ public static class AccountsApi
         IFormFile file,
         [AsParameters] AccountsServices accountServices)
     {
-        var command = new ProfileImageUploadCommand(file, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
+        var command = new ProfileImageUploadCommand(new FormFileAccessor(file), accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
         var result = await accountServices.Mediator.Send(command);
 
@@ -236,7 +237,7 @@ public static class AccountsApi
 
         if (result == null)
         {
-            return TypedResults.Conflict<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Cocktail already rated", 409));
+            return TypedResults.Conflict(ProblemDetailsExtensions.CreateValidationProblemDetails("Cocktail already rated", 409));
         }
 
         return TypedResults.Created("", result);
