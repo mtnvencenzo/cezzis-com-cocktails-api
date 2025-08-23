@@ -18,7 +18,7 @@ public record ProfileImageUploadCommand
 (
     [property: Required()]
     [property: Description("The profile image uploaded file")]
-    IFormFile FormFile,
+    IFileAccessor FileAccessor,
 
     [property: Description("The claims identity for the user")]
     ClaimsIdentity Identity
@@ -45,12 +45,12 @@ public class ProfileImageUploadCommandHandler(
         // Will be used later to destroy the previous blob
         var previousAvatar = account.AvatarUri;
 
-        var bytes = await command.FormFile.GetFileBytes(cancellationToken);
+        var bytes = await command.FileAccessor.GetFileBytes(cancellationToken);
 
         var imageUri = await storageBus.UpsertBlobAsync(
             data: bytes,
-            blobName: $"{account.Id}/{Guid.NewGuid()}{Path.GetExtension(command.FormFile.FileName)?.ToLower()}",
-            contentType: command.FormFile.ContentType,
+            blobName: $"{account.Id}/{Guid.NewGuid()}{Path.GetExtension(command.FileAccessor.GetFileName())?.ToLower()}",
+            contentType: command.FileAccessor.GetContentType(),
             contentDisposition: null,
             bindingName: blobStorageConfig.Value.AccountAvatars.DaprBuildingBlock,
             cancellationToken: cancellationToken,
@@ -102,7 +102,7 @@ public class ProfileImageUploadCommandValidator : AbstractValidator<ProfileImage
     /// <summary></summary>
     public ProfileImageUploadCommandValidator()
     {
-        this.RuleFor(command => command.FormFile).NotNull().WithMessage("Uploaded profile image file cannot be null");
-        this.RuleFor(command => command.FormFile.Length).GreaterThan(0).WithMessage("Uploaded profile image file cannot be empty");
+        this.RuleFor(command => command.FileAccessor).NotNull().WithMessage("Uploaded profile image file cannot be null");
+        this.RuleFor(command => command.FileAccessor.GetLength()).GreaterThan(0).WithMessage("Uploaded profile image file cannot be empty");
     }
 }
