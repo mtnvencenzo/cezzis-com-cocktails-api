@@ -4,7 +4,6 @@ using Cezzi.Applications;
 using Cezzi.Applications.Extensions;
 using Cocktails.Api.Domain.Common;
 using Cocktails.Api.Domain.Exceptions;
-using System.Security.Claims;
 using System.Text.Json.Serialization;
 
 public class Account : Entity, IAggregateRoot

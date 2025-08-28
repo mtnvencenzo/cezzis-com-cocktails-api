@@ -70,13 +70,13 @@ module "apim_cocktails_api" {
     },
     {
       name          = "${title(var.environment)} Cezzis.Com Devops ${title(var.domain)} Api Subscription"
-      primary_key   = random_password.cocktails_api_devops_subscription_keys[0].result
-      secondary_key = random_password.cocktails_api_devops_subscription_keys[1].result
+      primary_key   = random_password.cocktails_api_devops_subscription_keys_iter1[0].result
+      secondary_key = random_password.cocktails_api_devops_subscription_keys_iter1[1].result
     },
     {
       name          = "${title(var.environment)} Cezzis.Com LocalUsage ${title(var.domain)} Api Subscription"
-      primary_key   = random_password.cocktails_api_localusage_subscription_keys[0].result
-      secondary_key = random_password.cocktails_api_localusage_subscription_keys[1].result
+      primary_key   = random_password.cocktails_api_localusage_subscription_keys_iter1[0].result
+      secondary_key = random_password.cocktails_api_localusage_subscription_keys_iter1[1].result
     },
     {
       name          = "${title(var.environment)} Cezzis.Com McpUsage ${title(var.domain)} Api Subscription"

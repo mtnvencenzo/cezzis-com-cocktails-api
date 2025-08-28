@@ -21,7 +21,7 @@ module "aca_cocktails_api_availability_test" {
   headers = [
     {
       name  = "X-Key"
-      value = random_password.cocktails_api_devops_subscription_keys[0].result
+      value = random_password.cocktails_api_devops_subscription_keys_iter1[0].result
     }
   ]
 }
