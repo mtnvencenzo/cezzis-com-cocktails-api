@@ -17,7 +17,14 @@ docker ps
 
 Note that the data explorer runs on the 1234 port http://localhost:1234/
 
-The db runs on 8081
+The db runs on 8081 and its good practice to trust the certificate issued from CosmosDb
+
+``` Trust the cosmos cert
+curl --insecure https://localhost:8081/_explorer/emulator.pem > ~/emulatorcert.crt
+sudo cp ~/emulatorcert.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+
+```
 
 Https is required - see the --protocol https argument.  Note that we are disabling the certificate check in the cosmos setup when running locally though.
 
@@ -48,8 +55,6 @@ Https is required - see the --protocol https argument.  Note that we are disabli
 - Create container called **cocktails-ingredient** *(w/partionKey=/id)*
 
 
-
-   
 - Connection string:
    ```
    AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;

@@ -47,7 +47,7 @@ internal static class ApplicationServiceExtensions
         builder.Services.AddCosomsContexts();
 
         builder.Services.AddScoped<IMsGraphClient, MsGraphClient>();
-        builder.Services.AddScoped<GraphServiceClient>((sp) =>
+        builder.Services.AddScoped((sp) =>
         {
             var options = sp.GetRequiredService<IOptions<MsGraphConfig>>().Value;
 

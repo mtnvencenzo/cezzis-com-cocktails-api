@@ -1,11 +1,8 @@
 using Asp.Versioning;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
 using Cocktails.Api.StartupExtensions;
-using Cocktails.Api.Infrastructure;
 using Microsoft.AspNetCore.Diagnostics;
-using MediatR;
-using Cocktails.Api.Application.Concerns.Cocktails.Commands;
-using Cocktails.Api.Application.Concerns.Accounts.Commands;
+using Cocktails.Api.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
@@ -29,23 +26,12 @@ builder.AddDefaultOpenApi(apiVersioningBuilder);
 // -------------
 var app = builder.Build();
 
-#if DEBUG
-// Needed this when using cursor and DotRush, 
-// not needed for vscode and C# toolkit
-// Debugger.Launch();
-#endif
-
 // Initialize database if needed
 if (app.Environment.IsEnvironment("local"))
 {
     using var scope = app.Services.CreateScope();
-    var initializer = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
-    await initializer.InitializeAsync();
-
-    var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
-    await mediator.Send(new SeedIngredientsCommand(OnlyIfEmpty: true));
-    await mediator.Send(new SeedCocktailsCommand(OnlyIfEmpty: true));
-    await mediator.Send(new SeedTestAccountCommand());
+    await scope.ServiceProvider.GetRequiredService<StorageInitializer>().InitializeAsync();
+    await scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().InitializeAsync();
 }
 
 // Use cloud events to automatically unpack the message data

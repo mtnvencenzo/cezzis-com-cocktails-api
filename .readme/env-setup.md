@@ -225,7 +225,8 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
        b2cClientId: '84744194-da27-410f-ae0e-74f5589d4c96'
        b2cUserObjectId: '41598664-1466-4e3e-b28c-dfe9837e462e'
        b2cUserEmail: 'rvecchi+cypress@gmail.com'
-       b2cUserPassword: '$(e2e-cypress-user-password)'
+       cypressUserPassword: '$(e2e-cypress-user-password)'
+       cypressApiKey: ''
    ```
 
 > **Note**: 
