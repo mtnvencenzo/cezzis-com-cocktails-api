@@ -5,6 +5,7 @@ using Cocktails.Api.Domain.Config;
 using Cocktails.Api.Infrastructure;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
+using Cocktails.Api.Infrastructure.Services;
 
 internal static class CosmosExtensions
 {

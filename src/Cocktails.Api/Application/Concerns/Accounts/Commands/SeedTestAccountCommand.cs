@@ -12,6 +12,7 @@ public record SeedTestAccountCommand() : IRequest<bool>;
 
 public class SeedTestAccountCommandHandler(
     IMediator mediator,
+    IAccountsQueries accountQueries,
     IOptions<TestAccountConfig> testAccountConfig,
     IAccountsQueries accountsQueries) : IRequestHandler<SeedTestAccountCommand, bool>
 {
@@ -24,6 +25,11 @@ public class SeedTestAccountCommandHandler(
             new (ClaimTypes.Surname, testAccountConfig.Value.FamilyName),
             new ("emails", testAccountConfig.Value.LoginEmail ?? testAccountConfig.Value.LoginEmail)
         ]);
+
+        await accountQueries.GetAccountOwnedProfile(
+            claimsIdentity: identity,
+            createIfNotExists: true,
+            cancellationToken: cancellationToken);
 
         var updateAccountProfileCommand = new UpdateAccountOwnedProfileCommand(
             Request: new UpdateAccountOwnedProfileRq(
