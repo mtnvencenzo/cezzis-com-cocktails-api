@@ -100,10 +100,10 @@ public abstract class ServiceTestBase : IAsyncLifetime
 #pragma warning restore CS0618 // Type or member is obsolete
 
         var listener = new DiagnosticListener("Microsoft.AspNetCore");
-        builder.Services.AddSingleton<DiagnosticListener>(listener);
+        builder.Services.AddSingleton(listener);
         builder.Services.AddSingleton<DiagnosticSource>(listener);
 
-        builder.AddServiceDefaults();
+        builder.AddServiceDefaults("cocktails-api-unit-tests");
         builder.AddApplicationServices();
 
         void internalPreprocessor(IServiceCollection services)

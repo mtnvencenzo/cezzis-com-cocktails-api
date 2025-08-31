@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Cocktails.Api.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.AddServiceDefaults();
+builder.AddServiceDefaults("cocktails-api");
 builder.AddApplicationServices();
 
 var apiVersioningBuilder = builder.Services.AddApiVersioning((o) =>

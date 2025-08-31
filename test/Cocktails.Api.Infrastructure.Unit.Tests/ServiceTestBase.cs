@@ -102,7 +102,7 @@ public abstract class ServiceTestBase : IAsyncLifetime
             servicePreprocessor?.Invoke(services);
         }
 
-        builder.AddServiceDefaults();
+        builder.AddServiceDefaults("cocktails-api-unit-tests");
         builder.AddApplicationServices();
 
         var apiVersioningBuilder = builder.Services.AddApiVersioning((o) =>
