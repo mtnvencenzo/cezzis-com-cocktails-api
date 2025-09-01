@@ -2,7 +2,6 @@
 
 using FluentAssertions;
 using global::Cocktails.Api.Apis.LegalDocuments;
-using global::Cocktails.Api.Application.Concerns.LegalDocuments;
 using global::Cocktails.Api.Application.Concerns.LegalDocuments.Models;
 using global::Cocktails.Api.Infrastructure.Resources.Legal;
 using Microsoft.AspNetCore.Http.HttpResults;

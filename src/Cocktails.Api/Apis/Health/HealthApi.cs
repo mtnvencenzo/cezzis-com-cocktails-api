@@ -40,6 +40,8 @@ public static class HealthApi
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public static Ok<PingRs> GetPing([AsParameters] HealthServices healthServices)
     {
+        healthServices.Logger.LogInformation("Checking ping status");
+
         var ping = healthServices.Queries.GetPing();
 
         return TypedResults.Ok(ping);
