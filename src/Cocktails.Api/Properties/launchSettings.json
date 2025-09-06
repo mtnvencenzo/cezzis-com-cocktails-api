@@ -8,9 +8,7 @@
       "launchUrl": "/",
       "applicationUrl": "https://localhost:7176;http://localhost:7177",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "local",
-        "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=044ef31e-de88-4a3b-8ded-a9b635a91ee6;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=1b0a6de5-e5e1-42ca-a525-cc6aeeeea20e",
-        "OTEL_EXPORTER_OTLP_ENDPOINT": "http://localhost:4317"
+        "ASPNETCORE_ENVIRONMENT": "local"
       }
     },
     "dapr": {
