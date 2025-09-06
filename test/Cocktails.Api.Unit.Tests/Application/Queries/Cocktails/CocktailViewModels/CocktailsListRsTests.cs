@@ -2,7 +2,6 @@ namespace Cocktails.Api.Unit.Tests.Application.Queries.Cocktails.CocktailViewMod
 
 using AutoBogus;
 using FluentAssertions;
-using global::Cocktails.Api.Application.Concerns.Cocktails;
 using global::Cocktails.Api.Application.Concerns.Cocktails.Models;
 using System.Collections.Generic;
 using Xunit;

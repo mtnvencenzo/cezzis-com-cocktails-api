@@ -1,7 +1,6 @@
 namespace Cocktails.Api.Unit.Tests.Application.Queries.Health.HealthViewModels;
 
 using FluentAssertions;
-using global::Cocktails.Api.Application.Concerns.Health;
 using global::Cocktails.Api.Application.Concerns.Health.Models;
 using Xunit;
 

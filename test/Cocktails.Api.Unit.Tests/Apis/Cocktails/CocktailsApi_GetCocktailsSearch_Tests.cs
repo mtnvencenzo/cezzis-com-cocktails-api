@@ -2,7 +2,6 @@
 
 using FluentAssertions;
 using global::Cocktails.Api.Apis.Cockails;
-using global::Cocktails.Api.Application.Concerns.Cocktails;
 using global::Cocktails.Api.Application.Concerns.Cocktails.Models;
 using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using global::Cocktails.Api.Domain.Config;

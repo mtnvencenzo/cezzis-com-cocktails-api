@@ -2,7 +2,6 @@ namespace Cocktails.Api.Unit.Tests.Apis.Health;
 
 using FluentAssertions;
 using global::Cocktails.Api.Apis.Health;
-using global::Cocktails.Api.Application.Concerns.Health;
 using global::Cocktails.Api.Application.Concerns.Health.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Xunit;

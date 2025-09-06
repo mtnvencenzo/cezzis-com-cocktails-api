@@ -1,7 +1,6 @@
 namespace Cocktails.Api.Unit.Tests.Application.Queries.Cocktails.CocktailViewModels;
 
 using FluentAssertions;
-using global::Cocktails.Api.Application.Concerns.Cocktails;
 using global::Cocktails.Api.Application.Concerns.Cocktails.Models;
 using Xunit;
 

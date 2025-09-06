@@ -1,7 +1,6 @@
 ﻿namespace Cocktails.Api.Unit.Tests.Application.Queries.LegalDocuments;
 
 using FluentAssertions;
-using global::Cocktails.Api.Application.Concerns.LegalDocuments;
 using global::Cocktails.Api.Application.Concerns.LegalDocuments.Models;
 using global::Cocktails.Api.Application.Concerns.LegalDocuments.Queries;
 using global::Cocktails.Api.Domain.Aggregates.LegalDocumentAggregate;
