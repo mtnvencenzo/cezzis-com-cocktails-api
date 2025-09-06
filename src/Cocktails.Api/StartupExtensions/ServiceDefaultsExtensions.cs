@@ -1,18 +1,16 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
+using Cezzi.OTel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using OpenTelemetry.Trace;
 
 internal static class ServiceDefaultsExtensions
 {
-    private readonly static string[] ExcludedOTelRoutes = ["/metrics", "/alive", "/health", "/api/v1/health/ping"];
-
-    internal static IHostApplicationBuilder AddServiceDefaults(this IHostApplicationBuilder builder, string serviceName)
+    internal static IHostApplicationBuilder AddServiceDefaults(this IHostApplicationBuilder builder)
     {
         builder.AddBasicServiceDefaults();
 
-        builder.AddApplicationOpenTelemetry(serviceName);
+        builder.AddApplicationOpenTelemetry();
 
         builder.Services.AddHttpCors(builder.Configuration);
 

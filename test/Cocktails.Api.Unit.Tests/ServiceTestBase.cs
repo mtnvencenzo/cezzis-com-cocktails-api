@@ -103,7 +103,7 @@ public abstract class ServiceTestBase : IAsyncLifetime
         builder.Services.AddSingleton(listener);
         builder.Services.AddSingleton<DiagnosticSource>(listener);
 
-        builder.AddServiceDefaults("cocktails-api-unit-tests");
+        builder.AddServiceDefaults();
         builder.AddApplicationServices();
 
         void internalPreprocessor(IServiceCollection services)
