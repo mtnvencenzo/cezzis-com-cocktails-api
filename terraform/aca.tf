@@ -183,18 +183,6 @@ module "aca_cocktails_api" {
 
   env_vars = [
     {
-      name  = "APPLICATIONINSIGHTS_CONNECTION_STRING"
-      value = data.azurerm_application_insights.appi.connection_string
-    },
-    {
-      name  = "APPLICATIONINSIGHTS_INSTRUMENTATIONKEY"
-      value = data.azurerm_application_insights.appi.instrumentation_key
-    },
-    {
-      name  = "ApplicationInsightsAgent_EXTENSION_VERSION"
-      value = "~2"
-    },
-    {
       name  = "AllowedOrigins"
       value = join(",", var.allowed_origins)
     },
