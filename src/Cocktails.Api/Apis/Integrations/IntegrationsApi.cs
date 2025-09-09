@@ -4,7 +4,6 @@ using Cocktails.Api.Application.IntegrationEvents;
 using Cocktails.Api.Domain;
 using Cocktails.Api.Domain.Config;
 using Dapr;
-using FluentAssertions.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
