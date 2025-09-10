@@ -2,15 +2,12 @@ namespace Cocktails.Api.Unit.Tests.Application.Queries.Cocktails;
 
 using FluentAssertions;
 using global::Cocktails.Api.Apis.Cockails;
-using global::Cocktails.Api.Application.Concerns.Cocktails;
 using global::Cocktails.Api.Application.Concerns.Cocktails.Models;
-using global::Cocktails.Api.Application.Concerns.Cocktails.Queries;
 using global::Cocktails.Api.Application.Utilities;
 using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using global::Cocktails.Api.Domain.Config;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Moq;
 using System.Threading.Tasks;
 using Xunit;
 

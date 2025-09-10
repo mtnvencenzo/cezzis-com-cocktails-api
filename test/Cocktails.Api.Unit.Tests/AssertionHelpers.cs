@@ -1,9 +1,10 @@
-﻿namespace Cocktails.Api.Application.Utilities;
+﻿namespace Cocktails.Api.Unit.Tests;
 
 using Cocktails.Api.Application.Concerns.Cocktails.Models;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using Cocktails.Api.Domain.Config;
 using FluentAssertions;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
 public static class AssertionHelpers

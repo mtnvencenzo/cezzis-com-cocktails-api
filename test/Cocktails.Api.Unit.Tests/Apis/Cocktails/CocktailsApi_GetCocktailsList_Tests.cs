@@ -2,12 +2,9 @@
 
 using FluentAssertions;
 using global::Cocktails.Api.Apis.Cockails;
-using global::Cocktails.Api.Application.Concerns.Cocktails;
 using global::Cocktails.Api.Application.Concerns.Cocktails.Models;
 using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using global::Cocktails.Api.Domain.Config;
-using global::Cocktails.Api.Infrastructure.Resources;
-using global::Cocktails.Api.Infrastructure.Resources.TraditionalCocktails;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;

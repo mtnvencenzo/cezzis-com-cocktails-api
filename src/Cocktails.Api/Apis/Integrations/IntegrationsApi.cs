@@ -1,23 +1,14 @@
 ﻿namespace Cocktails.Api.Apis.Integrations;
 
-using Cocktails.Api.Application.Exceptions;
 using Cocktails.Api.Application.IntegrationEvents;
 using Cocktails.Api.Domain;
 using Cocktails.Api.Domain.Config;
-using Cocktails.Common;
 using Dapr;
-using FluentAssertions.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Microsoft.Graph;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
 using System.Threading;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public static class IntegrationsApi
 {

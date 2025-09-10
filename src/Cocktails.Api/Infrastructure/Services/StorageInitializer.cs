@@ -27,7 +27,7 @@ public class StorageInitializer(
                 {
                     await blobServiceClient.CreateBlobContainerAsync(
                         blobContainerName: config.Value.AccountAvatars.ContainerName,
-                        publicAccessType: Azure.Storage.Blobs.Models.PublicAccessType.Blob);
+                        publicAccessType: Azure.Storage.Blobs.Models.PublicAccessType.BlobContainer);
 
                     logger.LogInformation("Created storage container {ContainerId}", config.Value.AccountAvatars.ContainerName);
                 }

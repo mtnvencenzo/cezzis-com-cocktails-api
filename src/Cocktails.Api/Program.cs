@@ -1,8 +1,8 @@
 using Asp.Versioning;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
 using Cocktails.Api.StartupExtensions;
-using Microsoft.AspNetCore.Diagnostics;
 using Cocktails.Api.Infrastructure.Services;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
