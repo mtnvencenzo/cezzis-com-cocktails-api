@@ -228,7 +228,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "OTel__OtlpExporter__Endpoint"
-      value = data.azurerm_container_app.otel_collector.ingress[0].fqdn
+      value = "https://${data.azurerm_container_app.otel_collector.ingress[0].fqdn}"
     },
     {
       name  = "Scalar__AuthorizationCodeFlow__ClientId"
