@@ -227,6 +227,10 @@ module "aca_cocktails_api" {
       value = "https://${var.cezzis_site_hostname}/cocktails/:id"
     },
     {
+      name  = "OTel__OtlpExporter__Endpoint"
+      value = "http://${data.azurerm_container_app.otel_collector.name}.internal:4317"
+    },
+    {
       name  = "Scalar__AuthorizationCodeFlow__ClientId"
       value = var.cezzis_web_client_id
     },
