@@ -3,6 +3,7 @@
 using Cezzi.OTel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using OpenTelemetry.Resources;
 
 internal static class ServiceDefaultsExtensions
 {
@@ -10,7 +11,20 @@ internal static class ServiceDefaultsExtensions
     {
         builder.AddBasicServiceDefaults();
 
-        builder.AddApplicationOpenTelemetry();
+        builder.AddApplicationOpenTelemetry(
+            resourceConfigurator: (r) =>
+            {
+                return r.AddAttributes(new Dictionary<string, object>
+                {
+                    ["cz_unit"] = "Cocktails",
+                    ["cz_product"] = "Cezzis.Com'",
+                    ["cz_product_segment"] = "UX",
+                    ["cz_appname"] = "Cocktails",
+                    ["cz_appclass"] = "Cocktails.Api",
+                    ["cz_appenv"] = builder.Environment.EnvironmentName?.ToLowerInvariant() ?? "unknown"
+                });
+            }
+        );
 
         builder.Services.AddHttpCors(builder.Configuration);
 
