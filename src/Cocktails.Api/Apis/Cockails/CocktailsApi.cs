@@ -13,7 +13,7 @@ using Cocktails.Api.Application.Concerns.Cocktails.Models;
 public static class CocktailsApi
 {
     /// <summary>
-    /// 
+    /// Cocktails api v1 routes
     /// </summary>
     /// <param name="app"></param>
     /// <returns></returns>

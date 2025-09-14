@@ -11,20 +11,7 @@ internal static class ServiceDefaultsExtensions
     {
         builder.AddBasicServiceDefaults();
 
-        builder.AddApplicationOpenTelemetry(
-            resourceConfigurator: (r) =>
-            {
-                return r.AddAttributes(new Dictionary<string, object>
-                {
-                    ["app.unit"] = "cocktails",
-                    ["app_product"] = "cezzis.com",
-                    ["app_product_segment"] = "backend",
-                    ["app_name"] = "cezzis-com-cocktails-api",
-                    ["app_class"] = "api",
-                    ["app_env"] = builder.Environment.EnvironmentName?.ToLowerInvariant() ?? "unknown"
-                });
-            }
-        );
+        builder.AddOTelTelemetry();
 
         builder.Services.AddHttpCors(builder.Configuration);
 
