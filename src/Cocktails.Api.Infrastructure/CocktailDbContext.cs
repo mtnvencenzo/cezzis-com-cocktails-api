@@ -6,7 +6,6 @@ using Cocktails.Api.Domain.Common;
 using Cocktails.Api.Infrastructure.EntityConfigurations;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 

@@ -11,7 +11,13 @@ internal static class ServiceDefaultsExtensions
     {
         builder.AddBasicServiceDefaults();
 
+        AppContext.SetSwitch("Azure.Experimental.EnableActivitySource", true);
+
         builder.AddApplicationOpenTelemetry(
+            traceConfigurator: (t) =>
+            {
+                return t.AddSource("Azure.*");
+            },
             resourceConfigurator: (r) =>
             {
                 return r.AddAttributes(new Dictionary<string, object>
