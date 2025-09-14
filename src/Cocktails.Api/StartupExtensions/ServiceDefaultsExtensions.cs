@@ -16,12 +16,12 @@ internal static class ServiceDefaultsExtensions
             {
                 return r.AddAttributes(new Dictionary<string, object>
                 {
-                    ["cz_unit"] = "Cocktails",
-                    ["cz_product"] = "Cezzis.Com'",
-                    ["cz_product_segment"] = "UX",
-                    ["cz_appname"] = "Cocktails",
-                    ["cz_appclass"] = "Cocktails.Api",
-                    ["cz_appenv"] = builder.Environment.EnvironmentName?.ToLowerInvariant() ?? "unknown"
+                    ["app.unit"] = "cocktails",
+                    ["app_product"] = "cezzis.com",
+                    ["app_product_segment"] = "backend",
+                    ["app_name"] = "cezzis-com-cocktails-api",
+                    ["app_class"] = "api",
+                    ["app_env"] = builder.Environment.EnvironmentName?.ToLowerInvariant() ?? "unknown"
                 });
             }
         );
