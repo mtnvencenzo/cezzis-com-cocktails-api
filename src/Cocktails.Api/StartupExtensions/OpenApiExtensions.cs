@@ -1,7 +1,6 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
 using Asp.Versioning;
-using Cocktails.Api.Apis.Cockails;
 using Cocktails.Api.Domain.Config;
 using Microsoft.Extensions.Options;
 using Scalar.AspNetCore;

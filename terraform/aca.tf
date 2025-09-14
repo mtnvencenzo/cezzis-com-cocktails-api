@@ -231,8 +231,8 @@ module "aca_cocktails_api" {
       value = "https://${data.azurerm_container_app.otel_collector.ingress[0].fqdn}"
     },
     {
-      name  = "OTel__OtlpExporter__ApiKey"
-      value = data.azurerm_key_vault_secret.otel_collector_api_key.value
+      name  = "OTel__OtlpExporter__Headers"
+      value = "Authorization=Bearer ${data.azurerm_key_vault_secret.otel_collector_api_key.value}"
     },
     {
       name  = "Scalar__AuthorizationCodeFlow__ClientId"
