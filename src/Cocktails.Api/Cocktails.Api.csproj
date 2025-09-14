@@ -31,7 +31,7 @@
     <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.9.0" />
     <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="9.4.2" />
     <PackageReference Include="Microsoft.Identity.Web" Version="3.14.1" />
-    <PackageReference Include="Cezzi.OTel" Version="1.0.23" />
+    <PackageReference Include="Cezzi.OTel" Version="1.0.24" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.8.3" />
   </ItemGroup>
 
