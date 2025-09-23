@@ -266,7 +266,7 @@ module "apim_cocktails_api" {
   ]
 
   depends_on = [
-    module.api_b2c_tenant,
+    # module.api_b2c_tenant,
     module.apim_cocktails_api_jwtvalidate_policy,
     module.apim_cocktails_api_cors_policy,
   azurerm_key_vault_access_policy.apim_keyvault_policy]
