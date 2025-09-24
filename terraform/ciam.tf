@@ -7,7 +7,7 @@ module "api_ciam_tenant" {
   tenant_domain_name = var.ciam_tenant_domain_name
   sub                = var.sub
   sequence           = var.sequence
-  ciam_tenant_name    = var.ciam_tenant_name
+  ciam_tenant_name   = var.ciam_tenant_name
 
   login_subdomain          = var.login_subdomain
   cdn_frontdoor_profile_id = data.azurerm_cdn_frontdoor_profile.global_shared_cdn.id
