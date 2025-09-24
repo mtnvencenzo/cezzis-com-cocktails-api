@@ -17,7 +17,7 @@ module "apim_cocktails_api_jwtvalidate_policy" {
   apim_instance_id   = data.azurerm_api_management.apim_shared.id
   oidc_config_url    = "https://${var.b2c_tenant_name}.b2clogin.com/${var.b2c_tenant_name}.onmicrosoft.com/${var.b2c_signin_policy}/v2.0/.well-known/openid-configuration"
   audiences = [
-    "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_client_id
+    module.api_b2c_tenant.cocktails_api_app_registration_client_id
   ]
   issuers = ["https://${var.b2c_tenant_name}.b2clogin.com/${var.b2c_tenant_id}/v2.0/"]
 }

@@ -196,7 +196,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "AzureAdB2C__ClientId"
-      value = "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_client_id
+      value = module.api_b2c_tenant.cocktails_api_app_registration_client_id
     },
     {
       name  = "AzureAdB2C__SignUpSignInPolicyId"
@@ -204,7 +204,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "AzureAdB2C__Audience"
-      value = "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_client_id
+      value = module.api_b2c_tenant.cocktails_api_app_registration_client_id
     },
     {
       name  = "BlobStorage__AccountAvatars__DaprBuildingBlock"
@@ -328,7 +328,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "MsGraph__ClientId"
-      value = "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_client_id
+      value = module.api_b2c_tenant.cocktails_api_app_registration_client_id
     },
     {
       name  = "MsGraph__TenantId"
