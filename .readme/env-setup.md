@@ -171,8 +171,8 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
 - Manages resource groups and service principals
 - Run build pipeline for resource group setup
 
-#### B2C Tenant Setup
-- Follow [B2C Setup Guide](./Readme-b2c.md)
+#### Entra External Id Tenant Setup
+- Follow [CIAM Setup Guide](./Readme-ciam.md)
 
 #### Infrastructure Setup
 1. **Shared Infrastructure**
@@ -190,7 +190,7 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
    - Manual steps:
      - Update Google reCAPTCHA site secret
      - Configure pipeline warmup stage
-     - Grant Admin Consent in B2C tenant
+     - Grant Admin Consent in Entra External Id tenant
      - Note API app registration client_id and scopes
 
 4. **Cocktails.Frontend**
@@ -199,7 +199,7 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
      - Update Google reCAPTCHA site key
      - Configure Zoho email app password
      - Create container app custom domain bindings
-     - Grant Admin Consent in B2C tenant
+     - Grant Admin Consent in Entra External Id tenant
      - Update pipeline with app registration client_id
 
 5. **Cocktails.Images**
@@ -220,11 +220,11 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
    - template: ui-cypress.yml
      parameters:
        baseUrl: 'https://www.cezzis.com'
-       b2cUrl: 'https://login.cezzis.com/'
-       b2cTenantId: 'fb512a9c-5b44-41ab-8042-6465769f16c9'
-       b2cClientId: '84744194-da27-410f-ae0e-74f5589d4c96'
-       b2cUserObjectId: '41598664-1466-4e3e-b28c-dfe9837e462e'
-       b2cUserEmail: 'rvecchi+cypress@gmail.com'
+       ciamUrl: 'https://login.cezzis.com/'
+       ciamTenantId: 'fb512a9c-5b44-41ab-8042-6465769f16c9'
+       ciamClientId: '84744194-da27-410f-ae0e-74f5589d4c96'
+       ciamUserObjectId: '41598664-1466-4e3e-b28c-dfe9837e462e'
+       ciamUserEmail: 'rvecchi+cypress@gmail.com'
        cypressUserPassword: '$(e2e-cypress-user-password)'
        cypressApiKey: ''
    ```

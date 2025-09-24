@@ -1,4 +1,4 @@
-module "frontdoor_endpoint_to_b2c_tenant" {
+module "frontdoor_endpoint_to_ciam_tenant" {
   source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/frontdoor-cdn-endpoint-with-origin"
 
   sub                      = var.sub
@@ -7,7 +7,7 @@ module "frontdoor_endpoint_to_b2c_tenant" {
   domain                   = "${var.domain}login"
   sequence                 = var.sequence
   cdn_frontdoor_profile_id = var.cdn_frontdoor_profile_id
-  origin_host_name         = "${var.b2c_tenant_name}.b2clogin.com"
+  origin_host_name         = "${var.ciam_tenant_name}.b2clogin.com"
 
   caching_rule = {
     disabled = true

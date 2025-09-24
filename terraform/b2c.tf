@@ -1,13 +1,13 @@
-module "api_b2c_tenant" {
-  source             = "./b2c_tenant"
+module "api_ciam_tenant" {
+  source             = "./ciam_tenant"
   environment        = var.environment
   region             = var.region
   domain             = var.domain
-  tenant_id          = var.b2c_tenant_id
-  tenant_domain_name = var.b2c_tenant_domain_name
+  tenant_id          = var.ciam_tenant_id
+  tenant_domain_name = var.ciam_tenant_domain_name
   sub                = var.sub
   sequence           = var.sequence
-  b2c_tenant_name    = var.b2c_tenant_name
+  ciam_tenant_name    = var.ciam_tenant_name
 
   login_subdomain          = var.login_subdomain
   cdn_frontdoor_profile_id = data.azurerm_cdn_frontdoor_profile.global_shared_cdn.id

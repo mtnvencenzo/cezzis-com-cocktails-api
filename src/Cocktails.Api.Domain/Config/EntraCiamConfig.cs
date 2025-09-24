@@ -1,8 +1,8 @@
 ﻿namespace Cocktails.Api.Domain.Config;
 
-public class AzureAdB2cConfig
+public class EntraCiamConfig
 {
-    public const string SectionName = "AzureAdB2C";
+    public const string SectionName = "EntraCIAM";
 
     public string Instance { get; set; }
     public string Domain { get; set; }

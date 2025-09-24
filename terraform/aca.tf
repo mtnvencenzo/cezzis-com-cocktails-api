@@ -187,24 +187,24 @@ module "aca_cocktails_api" {
       value = join(",", var.allowed_origins)
     },
     {
-      name  = "AzureAdB2C__Instance"
+      name  = "EntraCIAM__Instance"
       value = "https://${var.login_subdomain}.cezzis.com"
     },
     {
-      name  = "AzureAdB2C__Domain"
-      value = "${var.b2c_tenant_name}.onmicrosoft.com"
+      name  = "EntraCIAM__Domain"
+      value = "${var.ciam_tenant_name}.onmicrosoft.com"
     },
     {
-      name  = "AzureAdB2C__ClientId"
-      value = module.api_b2c_tenant.cocktails_api_app_registration_client_id
+      name  = "EntraCIAM__ClientId"
+      value = module.api_ciam_tenant.cocktails_api_app_registration_client_id
     },
     {
-      name  = "AzureAdB2C__SignUpSignInPolicyId"
-      value = var.b2c_signin_policy
+      name  = "EntraCIAM__SignUpSignInPolicyId"
+      value = var.ciam_signin_policy
     },
     {
-      name  = "AzureAdB2C__Audience"
-      value = module.api_b2c_tenant.cocktails_api_app_registration_client_id
+      name  = "EntraCIAM__Audience"
+      value = module.api_ciam_tenant.cocktails_api_app_registration_client_id
     },
     {
       name  = "BlobStorage__AccountAvatars__DaprBuildingBlock"
@@ -240,11 +240,11 @@ module "aca_cocktails_api" {
     },
     {
       name  = "Scalar__AuthorizationCodeFlow__Scopes__0"
-      value = "https://${var.b2c_tenant_domain_name}/cocktailsapi/Account.Read"
+      value = "https://${var.ciam_tenant_domain_name}/cocktailsapi/Account.Read"
     },
     {
       name  = "Scalar__AuthorizationCodeFlow__Scopes__1"
-      value = "https://${var.b2c_tenant_domain_name}/cocktailsapi/Account.Write"
+      value = "https://${var.ciam_tenant_domain_name}/cocktailsapi/Account.Write"
     },
     {
       name  = "CosmosDb__ConnectionString"
@@ -328,11 +328,11 @@ module "aca_cocktails_api" {
     },
     {
       name  = "MsGraph__ClientId"
-      value = module.api_b2c_tenant.cocktails_api_app_registration_client_id
+      value = module.api_ciam_tenant.cocktails_api_app_registration_client_id
     },
     {
       name  = "MsGraph__TenantId"
-      value = var.b2c_tenant_id
+      value = var.ciam_tenant_id
     }
   ]
 

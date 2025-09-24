@@ -59,32 +59,32 @@ variable "global_domain" {
   default     = "shared"
 }
 
-variable "b2c_tenant_id" {
+variable "ciam_tenant_id" {
   type        = string
-  description = "The b2c tenant id for this environment"
+  description = "The ciam tenant id for this environment"
 }
 
-variable "b2c_tenant_name" {
+variable "ciam_tenant_name" {
   type        = string
-  description = "The b2c tenant name (typeically the first part of the hostname)"
+  description = "The ciam tenant name (typeically the first part of the hostname)"
 }
 
-variable "b2c_signin_policy" {
+variable "ciam_signin_policy" {
   type        = string
   description = "The main signin policy for the cocktails webapp"
-  default     = "B2C_1_SignInSignUp_Policy"
+  default     = "sisu-p"
 }
 
-variable "b2c_tenant_domain_name" {
+variable "ciam_tenant_domain_name" {
   type        = string
-  description = "The b2c tenant domain name for this environment"
+  description = "The ciam tenant domain name for this environment"
 }
 
-variable "b2c_terraform_app_registration_client_id" {
+variable "ciam_terraform_app_registration_client_id" {
   type = string
 }
 
-variable "b2c_terraform_app_registration_client_secret" {
+variable "ciam_terraform_app_registration_client_secret" {
   type = string
 }
 

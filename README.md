@@ -15,7 +15,7 @@
 - **Storage**: Azure Blob Storage for images
 
 ### Security & Authentication
-- **Authentication**: Azure B2C
+- **Authentication**: Azure Entra External Identities
 - **Authorization**: OAuth 2.0 with OpenID Connect
 - **API Security**: Azure App Registrations
 - **Secrets Management**: Azure Key Vault
@@ -85,7 +85,7 @@ Full API documentation is available at: [Scalar API Documentation](https://api.c
 
 ## 🔒 Security Features
 
-- Azure B2C authentication
+- Azure Entra External Identites authentication
 - HTTPS enforcement
 - API versioning
 - Rate limiting

@@ -15,11 +15,11 @@ module "apim_cocktails_api_jwtvalidate_policy" {
   domain             = var.domain
   name_discriminator = "api"
   apim_instance_id   = data.azurerm_api_management.apim_shared.id
-  oidc_config_url    = "https://${var.b2c_tenant_name}.b2clogin.com/${var.b2c_tenant_name}.onmicrosoft.com/${var.b2c_signin_policy}/v2.0/.well-known/openid-configuration"
+  oidc_config_url    = "https://${var.ciam_tenant_name}.b2clogin.com/${var.ciam_tenant_name}.onmicrosoft.com/${var.ciam_signin_policy}/v2.0/.well-known/openid-configuration"
   audiences = [
-    module.api_b2c_tenant.cocktails_api_app_registration_client_id
+    module.api_ciam_tenant.cocktails_api_app_registration_client_id
   ]
-  issuers = ["https://${var.b2c_tenant_name}.b2clogin.com/${var.b2c_tenant_id}/v2.0/"]
+  issuers = ["https://${var.ciam_tenant_name}.b2clogin.com/${var.ciam_tenant_id}/v2.0/"]
 }
 
 module "apim_cocktails_api_cors_policy" {
@@ -266,7 +266,7 @@ module "apim_cocktails_api" {
   ]
 
   depends_on = [
-    # module.api_b2c_tenant,
+    # module.api_ciam_tenant,
     module.apim_cocktails_api_jwtvalidate_policy,
     module.apim_cocktails_api_cors_policy,
   azurerm_key_vault_access_policy.apim_keyvault_policy]

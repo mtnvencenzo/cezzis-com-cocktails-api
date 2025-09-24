@@ -20,10 +20,10 @@ locals {
       </policies>
     XML
 
-  apim_b2c_auth_operation_policy = <<XML
+  apim_ciam_auth_operation_policy = <<XML
       <policies>
         <inbound>
-          <include-fragment fragment-id="${var.environment}-${var.domain}-api-b2c-policy" />
+          <include-fragment fragment-id="${var.environment}-${var.domain}-api-ciam-policy" />
           <set-backend-service backend-id="${var.environment}-${var.domain}-api-backend" />
           <include-fragment fragment-id="${var.environment}-${var.domain}-api-cors-policy" />
         </inbound>

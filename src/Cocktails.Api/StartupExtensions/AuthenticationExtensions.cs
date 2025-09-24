@@ -7,17 +7,17 @@ internal static class AuthenticationExtensions
 {
     internal static IServiceCollection AddDefaultAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
-        // Adds Microsoft Identity platform (Azure AD B2C) support to protect this Api
+        // Adds Microsoft Identity platform (Azure Entra Ext Id) support to protect this Api
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddMicrosoftIdentityWebApi(
                 (jwtOptions) =>
                 {
-                    configuration.Bind("AzureAdB2C", jwtOptions);
+                    configuration.Bind("EntraCIAM", jwtOptions);
                     jwtOptions.TokenValidationParameters.NameClaimType = "name";
                 },
                 (identityOptions) =>
                 {
-                    configuration.Bind("AzureAdB2C", identityOptions);
+                    configuration.Bind("EntraCIAM", identityOptions);
                     identityOptions.WithSpaAuthCode = true;
                 });
 

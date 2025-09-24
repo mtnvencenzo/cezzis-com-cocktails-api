@@ -275,8 +275,8 @@ internal static class OpenApiOptionsExtensions
     {
         public Task TransformAsync(OpenApiDocument document, OpenApiDocumentTransformerContext context, CancellationToken cancellationToken)
         {
-            var azureAdB2cConfig = new AzureAdB2cConfig();
-            configuration.Bind(AzureAdB2cConfig.SectionName, azureAdB2cConfig);
+            var entraCiamConfig = new EntraCiamConfig();
+            configuration.Bind(EntraCiamConfig.SectionName, entraCiamConfig);
 
             var scalarConfig = new ScalarConfig();
             configuration.Bind(ScalarConfig.SectionName, scalarConfig);
@@ -294,8 +294,8 @@ internal static class OpenApiOptionsExtensions
                 {
                     AuthorizationCode = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri($"{azureAdB2cConfig.Instance}/{azureAdB2cConfig.Domain}/{azureAdB2cConfig.SignUpSignInPolicyId}/oauth2/v2.0/authorize"),
-                        TokenUrl = new Uri($"{azureAdB2cConfig.Instance}/{azureAdB2cConfig.Domain}/{azureAdB2cConfig.SignUpSignInPolicyId}/oauth2/v2.0/token"),
+                        AuthorizationUrl = new Uri($"{entraCiamConfig.Instance}/{entraCiamConfig.Domain}/{entraCiamConfig.SignUpSignInPolicyId}/oauth2/v2.0/authorize"),
+                        TokenUrl = new Uri($"{entraCiamConfig.Instance}/{entraCiamConfig.Domain}/{entraCiamConfig.SignUpSignInPolicyId}/oauth2/v2.0/token"),
                         Scopes = scopes,
                         Extensions = new Dictionary<string, IOpenApiExtension>
                         {
