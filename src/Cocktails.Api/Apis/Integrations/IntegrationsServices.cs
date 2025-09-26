@@ -1,17 +1,17 @@
 ﻿namespace Cocktails.Api.Apis.Integrations;
 
+using Cocktails.Api.Infrastructure.Services;
 using MediatR;
-using Microsoft.Graph;
 
 /// <summary></summary>
 /// <param name="mediator"></param>
 /// <param name="httpContextAccessor"></param>
-/// <param name="graphServiceClient"></param>
+/// <param name="auth0ManagementClient"></param>
 /// <param name="logger"></param>
 public class IntegrationsServices(
     IMediator mediator,
     IHttpContextAccessor httpContextAccessor,
-    GraphServiceClient graphServiceClient,
+    IAuth0ManagementClient auth0ManagementClient,
     ILogger<IntegrationsServices> logger)
 {
     public IMediator Mediator { get; } = mediator ?? throw new ArgumentNullException(nameof(mediator));
@@ -20,5 +20,5 @@ public class IntegrationsServices(
 
     public IHttpContextAccessor HttpContextAccessor { get; } = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
 
-    public GraphServiceClient GraphServiceClient { get; } = graphServiceClient ?? throw new ArgumentNullException(nameof(graphServiceClient));
+    public IAuth0ManagementClient Auth0ManagementClient { get; } = auth0ManagementClient ?? throw new ArgumentNullException(nameof(auth0ManagementClient));
 }

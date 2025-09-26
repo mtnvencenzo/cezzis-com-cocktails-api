@@ -6,6 +6,7 @@ resource "azurerm_key_vault_access_policy" "apim_keyvault_policy" {
   secret_permissions = ["Get", "List"]
 }
 
+# Auth0 JWT Validation Policy for APIM
 module "apim_cocktails_api_jwtvalidate_policy" {
   source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/apim-jwtvalidate-policy-fragment"
   providers = {
@@ -15,11 +16,11 @@ module "apim_cocktails_api_jwtvalidate_policy" {
   domain             = var.domain
   name_discriminator = "api"
   apim_instance_id   = data.azurerm_api_management.apim_shared.id
-  oidc_config_url    = "https://${var.ciam_tenant_name}.b2clogin.com/${var.ciam_tenant_name}.onmicrosoft.com/${var.ciam_signin_policy}/v2.0/.well-known/openid-configuration"
+  oidc_config_url    = "https://${var.auth0_domain}/.well-known/openid-configuration"
   audiences = [
-    module.api_ciam_tenant.cocktails_api_app_registration_client_id
+    var.auth0_audience
   ]
-  issuers = ["https://${var.ciam_tenant_name}.b2clogin.com/${var.ciam_tenant_id}/v2.0/"]
+  issuers = ["https://${var.auth0_domain}/"]
 }
 
 module "apim_cocktails_api_cors_policy" {

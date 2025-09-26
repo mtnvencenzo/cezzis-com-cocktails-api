@@ -15,9 +15,9 @@
 - **Storage**: Azure Blob Storage for images
 
 ### Security & Authentication
-- **Authentication**: Azure Entra External Identities
+- **Authentication**: Auth0
 - **Authorization**: OAuth 2.0 with OpenID Connect
-- **API Security**: Azure App Registrations
+- **API Security**: Auth0 API Management with custom scopes
 - **Secrets Management**: Azure Key Vault
 
 ### Infrastructure
@@ -60,8 +60,32 @@ README.md
 
 2. **Environment Setup**
    See [Environment Setup Guide](.readme/env-setup.md) for detailed instructions on configuring your development environment.
+   
+   For Auth0 configuration, see [Auth0 Setup Guide](.readme/readme-auth0.md).
 
-3. **Local Development**
+3. **Auth0 Configuration**
+   Configure your Auth0 settings in `appsettings.local.json`:
+   ```json
+   {
+     "Auth0": {
+       "Domain": "your-domain.auth0.com",
+       "Audience": "your-api-identifier",
+       "ClientId": "your-client-id",
+       "ClientSecret": "your-client-secret"
+     },
+     "Scalar": {
+       "AuthorizationCodeFlow": {
+         "ClientId": "your-frontend-client-id",
+         "Scopes": [
+           "read:owned-account",
+           "write:owned-account"
+         ]
+       }
+     }
+   }
+   ```
+
+4. **Local Development**
    ```bash
    # Restore dependencies
    dotnet restore
@@ -70,7 +94,7 @@ README.md
    dotnet run --project src/Cocktails.Api
    ```
 
-4. **Testing**
+5. **Testing**
    ```bash
    # Run all tests
    dotnet test
@@ -85,13 +109,14 @@ Full API documentation is available at: [Scalar API Documentation](https://api.c
 
 ## 🔒 Security Features
 
-- Azure Entra External Identites authentication
+- Auth0 authentication with JWT tokens
 - HTTPS enforcement
 - API versioning
 - Rate limiting
 - Input validation
 - SQL injection prevention
 - XSS protection
+- Custom scope-based authorization (`read:account`, `write:account`)
 
 ## 📈 Monitoring
 

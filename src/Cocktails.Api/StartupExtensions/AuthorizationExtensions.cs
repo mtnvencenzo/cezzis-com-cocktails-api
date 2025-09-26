@@ -11,6 +11,10 @@ internal static class AuthorizationExtensions
         services.AddTransient<ApimHostKeyRequirementHandler>();
         services.AddTransient<IAuthorizationHandler, ApimHostKeyRequirementHandler>();
 
+        // Adding Auth0 scope authorization
+        services.AddTransient<ScopeAuthorizationHandler>();
+        services.AddTransient<IAuthorizationHandler, ScopeAuthorizationHandler>();
+
         services.AddAuthorizationBuilder()
             .AddPolicy(ApimHostKeyRequirement.PolicyName, (o) =>
             {

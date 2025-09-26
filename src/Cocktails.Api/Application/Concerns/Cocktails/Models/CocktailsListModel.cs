@@ -3,7 +3,6 @@
 using global::Cocktails.Api.Application.Behaviors;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using Microsoft.Graph.Models;
 
 #pragma warning disable format
 

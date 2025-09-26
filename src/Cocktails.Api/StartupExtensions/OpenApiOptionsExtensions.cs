@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
-using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
@@ -78,7 +77,7 @@ internal static class OpenApiOptionsExtensions
 
             var scopes = requiredScopesMetadatas
                 .SelectMany(x => x.AcceptedScope)
-                .Where(x => availableScopes.FirstOrDefault(av => av.EndsWith($"/{x}")) != null)
+                .Where(x => availableScopes.Any(av => av.Contains(x)))
                 .ToList();
 
             operation.Security =
@@ -275,8 +274,8 @@ internal static class OpenApiOptionsExtensions
     {
         public Task TransformAsync(OpenApiDocument document, OpenApiDocumentTransformerContext context, CancellationToken cancellationToken)
         {
-            var entraCiamConfig = new EntraCiamConfig();
-            configuration.Bind(EntraCiamConfig.SectionName, entraCiamConfig);
+            var auth0Config = new Auth0Config();
+            configuration.Bind(Auth0Config.SectionName, auth0Config);
 
             var scalarConfig = new ScalarConfig();
             configuration.Bind(ScalarConfig.SectionName, scalarConfig);
@@ -284,7 +283,7 @@ internal static class OpenApiOptionsExtensions
             var scopes = new Dictionary<string, string>();
             scalarConfig.AuthorizationCodeFlow.Scopes.ForEach(x =>
             {
-                scopes.Add(x, x[(x.LastIndexOf("/") + 1)..]);
+                scopes.Add(x, x);
             });
 
             var securityScheme = new OpenApiSecurityScheme
@@ -294,8 +293,8 @@ internal static class OpenApiOptionsExtensions
                 {
                     AuthorizationCode = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri($"{entraCiamConfig.Instance}/{entraCiamConfig.Domain}/{entraCiamConfig.SignUpSignInPolicyId}/oauth2/v2.0/authorize"),
-                        TokenUrl = new Uri($"{entraCiamConfig.Instance}/{entraCiamConfig.Domain}/{entraCiamConfig.SignUpSignInPolicyId}/oauth2/v2.0/token"),
+                        AuthorizationUrl = new Uri($"https://{auth0Config.Domain}/authorize"),
+                        TokenUrl = new Uri($"https://{auth0Config.Domain}/oauth/token"),
                         Scopes = scopes,
                         Extensions = new Dictionary<string, IOpenApiExtension>
                         {

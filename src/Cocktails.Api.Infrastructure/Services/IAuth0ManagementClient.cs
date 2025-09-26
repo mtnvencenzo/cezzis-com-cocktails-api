@@ -1,8 +1,8 @@
 ﻿namespace Cocktails.Api.Infrastructure.Services;
 
-using Microsoft.Graph.Models;
+using Auth0.ManagementApi.Models;
 
-public interface IMsGraphClient
+public interface IAuth0ManagementClient
 {
     Task<User> GetUser(string subjectId, CancellationToken cancellationToken);
 
