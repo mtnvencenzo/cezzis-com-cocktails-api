@@ -135,18 +135,6 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
    - For detailed configuration and troubleshooting, see the [Cosmos Emulator Setup Guide](./readme-cosmos.md)
 
 
-### Visual Studio Integration
-
-#### Git Bash in Visual Studio
-1. **Terminal Integration**
-   - Tools > Options > Environment > Terminal
-   - Add Git Bash path to `sh.exe`
-   ![Terminal Setup](./adding-git-bash-to-visualstudio-terminal.png)
-
-2. **External Tools**
-   - Tools > External Tools
-   - Add Git Bash path to `git-bash.exe`
-   ![External Tools](./adding-git-bash-to-visualstudio-external-tools.png)
 
 ### Dapr Installation
 1. Download latest MSI from [Dapr CLI Releases](https://github.com/dapr/cli/releases)

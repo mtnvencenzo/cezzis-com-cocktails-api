@@ -59,33 +59,25 @@ variable "global_domain" {
   default     = "shared"
 }
 
-variable "ciam_tenant_id" {
+# Auth0 Configuration Variables
+variable "auth0_domain" {
   type        = string
-  description = "The ciam tenant id for this environment"
+  description = "Auth0 domain (e.g., your-domain.auth0.com)"
 }
 
-variable "ciam_tenant_name" {
+variable "auth0_audience" {
   type        = string
-  description = "The ciam tenant name (typeically the first part of the hostname)"
+  description = "Auth0 API identifier/audience"
 }
 
-variable "ciam_signin_policy" {
+variable "auth0_client_id" {
   type        = string
-  description = "The main signin policy for the cocktails webapp"
-  default     = "sisu-p"
+  description = "Auth0 API client ID"
 }
 
-variable "ciam_tenant_domain_name" {
+variable "auth0_frontend_client_id" {
   type        = string
-  description = "The ciam tenant domain name for this environment"
-}
-
-variable "ciam_terraform_app_registration_client_id" {
-  type = string
-}
-
-variable "ciam_terraform_app_registration_client_secret" {
-  type = string
+  description = "Auth0 frontend/SPA client ID for Swagger/Scalar UI"
 }
 
 variable "image_tag" {

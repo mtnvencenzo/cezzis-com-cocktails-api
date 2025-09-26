@@ -17,8 +17,6 @@ using Cocktails.Api.Infrastructure;
 using Cocktails.Api.Infrastructure.Repositories;
 using Cocktails.Api.Infrastructure.Services;
 using FluentValidation;
-using Microsoft.Extensions.Options;
-using Microsoft.Graph;
 
 internal static class ApplicationServiceExtensions
 {
@@ -39,35 +37,16 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<ZohoEmailConfig>(builder.Configuration.GetSection(ZohoEmailConfig.SectionName));
         builder.Services.Configure<BlobStorageConfig>(builder.Configuration.GetSection(BlobStorageConfig.SectionName));
         builder.Services.Configure<CosmosDbConfig>(builder.Configuration.GetSection(CosmosDbConfig.SectionName));
-        builder.Services.Configure<MsGraphConfig>(builder.Configuration.GetSection(MsGraphConfig.SectionName));
         builder.Services.Configure<ScalarConfig>(builder.Configuration.GetSection(ScalarConfig.SectionName));
         builder.Services.Configure<SearchConfig>(builder.Configuration.GetSection(SearchConfig.SectionName));
         builder.Services.Configure<TestAccountConfig>(builder.Configuration.GetSection(TestAccountConfig.SectionName));
+        builder.Services.Configure<Auth0Config>(builder.Configuration.GetSection(Auth0Config.SectionName));
 
         builder.Services.AddCosomsContexts();
 
-        builder.Services.AddScoped<IMsGraphClient, MsGraphClient>();
-        builder.Services.AddScoped((sp) =>
-        {
-            var options = sp.GetRequiredService<IOptions<MsGraphConfig>>().Value;
-
-            var clientSecretCredential = new Azure.Identity.ClientSecretCredential(
-                tenantId: options.TenantId,
-                clientId: options.ClientId,
-                clientSecret: options.ClientSecret);
-
-            return new GraphServiceClient(
-            tokenCredential: clientSecretCredential,
-            scopes: ["https://graph.microsoft.com/.default"]);
-
-            // NOTE: Use Default scope for client credentials
-            // ---------------------------------------------------------------------------------------------------------------
-            // The error "AADSTS1002012: The provided value for scope User.ReadWrite.All is not valid. Client credential flows
-            // must have a scope value with /" indicates an issue with the scope used in a client credential flow for Azure
-            // Active Directory authentication.You need to use the.default scope, not individual permissions, for client
-            // credentials. 
-            // ---------------------------------------------------------------------------------------------------------------
-        });
+        builder.Services.AddScoped<IAuth0ManagementClient, Auth0ManagementClient>();
+        builder.Services.AddSingleton<IAuth0ManagementTokenService, Auth0ManagementTokenService>();
+        builder.Services.AddScoped<IAuth0ManagementClient, Auth0ManagementClient>();
 
         builder.Services.AddZohoEmail();
 
