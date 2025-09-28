@@ -15,7 +15,8 @@ internal static class AuthenticationExtensions
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
             {
-                options.Authority = $"https://{auth0Config.Domain}/";
+                // Fix: Domain already includes https://, don't add it again
+                options.Authority = auth0Config.Domain.TrimEnd('/') + "/";
                 options.Audience = auth0Config.Audience;
                 options.RequireHttpsMetadata = true;
 
@@ -27,14 +28,8 @@ internal static class AuthenticationExtensions
                     ValidateLifetime = true,
                     RequireExpirationTime = true,
                     ValidateIssuerSigningKey = true,
-                    ClockSkew = TimeSpan.FromMinutes(5),
-                    IssuerSigningKeyResolver = (token, securityToken, kid, parameters) =>
-                    {
-                        // Fetch the JWKS from Auth0 to validate the token signature
-                        var jwksUri = $"{auth0Config.Domain}.well-known/jwks.json";
-                        var jwks = new JsonWebKeySet(new HttpClient().GetStringAsync(jwksUri).Result);
-                        return jwks.Keys;
-                    }
+                    ClockSkew = TimeSpan.FromMinutes(5)
+                    // Remove the custom IssuerSigningKeyResolver - let the middleware handle JWKS automatically
                 };
 
                 options.Events = new JwtBearerEvents
@@ -42,6 +37,12 @@ internal static class AuthenticationExtensions
                     OnTokenValidated = context =>
                     {
                         // Optional: Add custom claims processing here
+                        return Task.CompletedTask;
+                    },
+                    OnAuthenticationFailed = context =>
+                    {
+                        // Add debugging for authentication failures
+                        Console.WriteLine($"JWT Auth Failed: {context.Exception.Message}");
                         return Task.CompletedTask;
                     }
                 };

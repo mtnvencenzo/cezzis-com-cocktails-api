@@ -3,12 +3,17 @@
 using Cezzi.Applications;
 using Cocktails.Api.Domain.Common;
 using Cocktails.Api.Domain.Exceptions;
-using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 
 public class ClaimsAccount : ValueObject
 {
+    public const string ClaimNamespace = "https://www.cezzis.com";
+    public const string ClaimType_GivenName = $"{ClaimNamespace}/given_name";
+    public const string ClaimType_FamilyName = $"{ClaimNamespace}/family_name";
+    public const string ClaimType_Email = $"{ClaimNamespace}/email";
+    public const string ClaimType_DisplayName = $"{ClaimNamespace}/display_name";
+
     public string SubjectId { get; private set; }
 
     public string Email { get; private set; }
@@ -23,17 +28,14 @@ public class ClaimsAccount : ValueObject
     {
         Guard.NotNull(claimsIdentity, nameof(claimsIdentity));
 
-        this.SubjectId = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+        this.SubjectId = claimsIdentity.Name;
         Guard.NotNullOrWhiteSpace(this.SubjectId, () => new CocktailsApiDomainException($"{nameof(this.SubjectId)} cannot be null or empty"));
 
-        this.GivenName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName)?.Value;
-        Guard.NotNullOrWhiteSpace(this.GivenName, () => new CocktailsApiDomainException($"{nameof(this.GivenName)} cannot be null or empty"));
+        this.GivenName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimType_GivenName)?.Value;
 
-        this.FamilyName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Surname)?.Value;
-        Guard.NotNullOrWhiteSpace(this.FamilyName, () => new CocktailsApiDomainException($"{nameof(this.FamilyName)} cannot be null or empty"));
+        this.FamilyName = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimType_FamilyName)?.Value;
 
-        this.Email = claimsIdentity.Claims.FirstOrDefault(x => x.Type == "emails")?.Value;
-        Guard.NotNullOrWhiteSpace(this.Email, () => new CocktailsApiDomainException($"{nameof(this.FamilyName)} cannot be null or empty"));
+        this.Email = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimType_Email)?.Value;
 
         this.ClaimsIdentity = claimsIdentity;
     }

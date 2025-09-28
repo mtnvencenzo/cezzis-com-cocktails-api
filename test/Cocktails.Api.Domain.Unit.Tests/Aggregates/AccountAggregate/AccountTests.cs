@@ -67,7 +67,7 @@ public class AccountTests
     }
 
     [Fact]
-    public void SetName_ShouldUpdateGivenNameAndFamilyName()
+    public void SetGivenName_ShouldUpdateGivenName()
     {
         // arrange
         var accountId = Guid.NewGuid().ToString();
@@ -81,11 +81,31 @@ public class AccountTests
         var account = new Account(claimsAccount);
 
         // act
-        account.SetName("Jane", "Smith");
+        account.SetGivenName("Jane");
 
         // assert
         account.GivenName.Should().Be("Jane");
-        account.FamilyName.Should().Be("Smith");
+    }
+
+    [Fact]
+    public void SetFamilyName_ShouldUpdateFamilyName()
+    {
+        // arrange
+        var accountId = Guid.NewGuid().ToString();
+        var claimsAccount = new ClaimsAccount(new ClaimsIdentity(
+        [
+            new(ClaimTypes.NameIdentifier, accountId),
+            new(ClaimTypes.GivenName, "John"),
+            new(ClaimTypes.Surname, "Doe"),
+            new("emails", "test@test.com")
+        ]));
+        var account = new Account(claimsAccount);
+
+        // act
+        account.SetFamilyName("Jane");
+
+        // assert
+        account.FamilyName.Should().Be("Jane");
     }
 
     [Fact]

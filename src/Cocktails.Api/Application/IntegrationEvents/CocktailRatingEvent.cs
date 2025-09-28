@@ -67,7 +67,7 @@ public class CocktailRatingEventValidator : AbstractValidator<CocktailRatingEven
         this.RuleLevelCascadeMode = CascadeMode.Stop;
 
         this.RuleFor(x => x.OwnedAccountId).NotEmpty().MinimumLength(Guid.NewGuid().ToString().Length);
-        this.RuleFor(x => x.OwnedAccountSubjectId).NotEmpty().MinimumLength(Guid.NewGuid().ToString().Length);
+        this.RuleFor(x => x.OwnedAccountSubjectId).NotEmpty();
         this.RuleFor(x => x.CocktailId).NotEmpty();
         this.RuleFor(x => x.Stars).InclusiveBetween(1, 5);
     }

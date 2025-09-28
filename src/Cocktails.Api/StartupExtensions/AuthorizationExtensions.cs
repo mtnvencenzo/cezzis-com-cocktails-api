@@ -15,12 +15,34 @@ internal static class AuthorizationExtensions
         services.AddTransient<ScopeAuthorizationHandler>();
         services.AddTransient<IAuthorizationHandler, ScopeAuthorizationHandler>();
 
-        services.AddAuthorizationBuilder()
+        var authorizationBuilder = services.AddAuthorizationBuilder()
             .AddPolicy(ApimHostKeyRequirement.PolicyName, (o) =>
             {
                 o.AddRequirements(new ApimHostKeyRequirement());
             });
 
+        // Register scope-based policies - colons in names are perfectly fine
+        RegisterScopePolicies(authorizationBuilder);
+
         return services;
+    }
+
+    private static void RegisterScopePolicies(AuthorizationBuilder authorizationBuilder)
+    {
+        // Define all the scopes used in your application
+        var scopes = new[]
+        {
+            "read:owned-account",
+            "write:owned-account"
+        };
+
+        foreach (var scope in scopes)
+        {
+            var policyName = $"scope:{scope}"; // Results in "scope:read:owned-account", etc.
+            authorizationBuilder.AddPolicy(policyName, policy =>
+            {
+                policy.AddRequirements(new ScopeAuthorizationAttribute(scope));
+            });
+        }
     }
 }

@@ -293,8 +293,8 @@ internal static class OpenApiOptionsExtensions
                 {
                     AuthorizationCode = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri($"https://{auth0Config.Domain}/authorize"),
-                        TokenUrl = new Uri($"https://{auth0Config.Domain}/oauth/token"),
+                        AuthorizationUrl = new Uri($"{auth0Config.Domain}/authorize"),
+                        TokenUrl = new Uri($"{auth0Config.Domain}/oauth/token"),
                         Scopes = scopes,
                         Extensions = new Dictionary<string, IOpenApiExtension>
                         {

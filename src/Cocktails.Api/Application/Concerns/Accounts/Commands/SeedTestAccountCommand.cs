@@ -7,6 +7,7 @@ using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using System.Security.Claims;
 using global::Cocktails.Api.Application.Concerns.Accounts.Queries;
 using global::Cocktails.Api.Infrastructure.Resources.Test;
+using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
 
 public record SeedTestAccountCommand() : IRequest<bool>;
 
@@ -20,10 +21,11 @@ public class SeedTestAccountCommandHandler(
     {
         var identity = new ClaimsIdentity([
             new (ClaimTypes.NameIdentifier, testAccountConfig.Value.SubjectId),
-            new (ClaimTypes.Name, testAccountConfig.Value.DisplayName),
-            new (ClaimTypes.GivenName, testAccountConfig.Value.GivenName),
-            new (ClaimTypes.Surname, testAccountConfig.Value.FamilyName),
-            new ("emails", testAccountConfig.Value.LoginEmail ?? testAccountConfig.Value.LoginEmail)
+            new (ClaimTypes.Name, testAccountConfig.Value.SubjectId),
+            new (ClaimsAccount.ClaimType_GivenName, testAccountConfig.Value.GivenName),
+            new (ClaimsAccount.ClaimType_FamilyName, testAccountConfig.Value.FamilyName),
+            new (ClaimsAccount.ClaimType_DisplayName, testAccountConfig.Value.DisplayName),
+            new (ClaimsAccount.ClaimType_Email, testAccountConfig.Value.LoginEmail ?? testAccountConfig.Value.LoginEmail)
         ]);
 
         await accountQueries.GetAccountOwnedProfile(
