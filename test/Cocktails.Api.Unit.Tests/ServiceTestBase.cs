@@ -205,9 +205,10 @@ public abstract class ServiceTestBase : IAsyncLifetime
         var claimsIdentity = new ClaimsIdentity(
         [
             new(ClaimTypes.NameIdentifier, subjectId),
-            new(ClaimTypes.GivenName, new Faker().Name.FirstName()),
-            new(ClaimTypes.Surname, new Faker().Name.LastName()),
-            new("emails", faker.Internet.Email())
+            new(ClaimTypes.Name, subjectId),
+            new(ClaimsAccount.ClaimType_GivenName, new Faker().Name.FirstName()),
+            new(ClaimsAccount.ClaimType_FamilyName, new Faker().Name.LastName()),
+            new(ClaimsAccount.ClaimType_Email, faker.Internet.Email())
         ]);
 
         var account = new Account(new ClaimsAccount(claimsIdentity));

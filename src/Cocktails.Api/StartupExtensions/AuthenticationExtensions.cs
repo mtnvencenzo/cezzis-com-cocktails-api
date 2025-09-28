@@ -15,7 +15,6 @@ internal static class AuthenticationExtensions
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
             {
-                // Fix: Domain already includes https://, don't add it again
                 options.Authority = auth0Config.Domain.TrimEnd('/') + "/";
                 options.Audience = auth0Config.Audience;
                 options.RequireHttpsMetadata = true;
