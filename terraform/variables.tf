@@ -84,19 +84,9 @@ variable "image_tag" {
   type = string
 }
 
-# variable "rvecchi_user_account_object_id" {
-#   type = string
-#   description = "The object id of the user account for rvecchi"
-#   default = "83829dad-b43d-486f-9a35-a037afa75d84"
-# }
-
 variable "cezzis_site_hostname" {
   type        = string
   description = "The preferred hostname for the website.  (www.cezzis.com)"
-}
-
-variable "cezzis_web_client_id" {
-  type = string
 }
 
 variable "pubsub_sb_topics_cocktails_email" {
