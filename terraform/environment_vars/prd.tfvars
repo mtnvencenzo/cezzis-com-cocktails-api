@@ -18,7 +18,7 @@ allowed_origins = [
 login_subdomain = "login"
 
 # Auth0 Configuration
-auth0_domain              = "your-domain.auth0.com"
-auth0_audience           = "https://api.yourapp.com"  # Your API Identifier
-auth0_client_id          = "your-api-client-id"
-auth0_frontend_client_id = "your-spa-client-id"  # For Swagger/Scalar UI
+auth0_domain              = "cezzis.us.auth0.com"
+auth0_audience           = "https://cezzis-cocktails-api"  # Your API Identifier
+auth0_client_id          = "JtxZM9RiJVHejv6xqkFYdFtdfUrX6N09" # M2M Client Api for API
+auth0_frontend_client_id = "HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb"  # For Swagger/Scalar UI
