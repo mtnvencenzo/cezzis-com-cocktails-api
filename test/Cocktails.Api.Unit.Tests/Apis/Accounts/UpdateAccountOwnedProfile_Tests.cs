@@ -88,7 +88,8 @@ public class UpdateAccountOwnedProfile_Tests : ServiceTestBase
         var js = System.Text.Json.JsonSerializer.Serialize(account);
         var newAccount = System.Text.Json.JsonSerializer.Deserialize<Account>(js);
 
-        newAccount.SetName(givenName: request.GivenName, familyName: request.FamilyName);
+        newAccount.SetGivenName(givenName: request.GivenName);
+        newAccount.SetFamilyName(familyName: request.FamilyName);
         newAccount.SetDisplayName(displayName: request.DisplayName);
         newAccount.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
         newAccount.SetPrimaryAddress(

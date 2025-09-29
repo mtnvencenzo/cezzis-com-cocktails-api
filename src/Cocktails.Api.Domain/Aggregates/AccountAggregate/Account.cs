@@ -63,25 +63,38 @@ public class Account : Entity, IAggregateRoot
         this.CreatedOn = DateTimeOffset.Now;
         this.UpdatedOn = DateTimeOffset.Now;
 
-        this.SetName(givenName: claimsAccount.GivenName, claimsAccount.FamilyName);
+        if (!string.IsNullOrWhiteSpace(claimsAccount.GivenName))
+        {
+            this.SetGivenName(givenName: claimsAccount.GivenName);
+        }
+
+        if (!string.IsNullOrWhiteSpace(claimsAccount.FamilyName))
+        {
+            this.SetFamilyName(familyName: claimsAccount.FamilyName);
+        }
+
         this.SetEmail(claimsAccount.Email);
     }
 
-    public Account SetName(string givenName, string familyName)
+    public Account SetGivenName(string givenName)
     {
         if (string.IsNullOrWhiteSpace(givenName))
         {
             throw new CocktailsApiDomainException($"{nameof(givenName)} not specified");
         }
 
+        this.GivenName = givenName;
+        return this;
+    }
+
+    public Account SetFamilyName(string familyName)
+    {
         if (string.IsNullOrWhiteSpace(familyName))
         {
             throw new CocktailsApiDomainException($"{familyName} not specified");
         }
 
-        this.GivenName = givenName;
         this.FamilyName = familyName;
-
         return this;
     }
 

@@ -1,5 +1,6 @@
 ﻿namespace Cocktails.Api.Application.IntegrationEvents;
 
+using Auth0.ManagementApi.Models;
 using Cezzi.Applications;
 using Cezzi.Applications.Extensions;
 using Cocktails.Api.Application.Exceptions;
@@ -8,7 +9,6 @@ using Cocktails.Api.Domain.Services;
 using Cocktails.Api.Infrastructure.Services;
 using FluentValidation;
 using MediatR;
-using Microsoft.Graph.Models;
 using System;
 using System.Text.Json.Serialization;
 
@@ -28,7 +28,7 @@ public class AccountOwnedProfileUpdatedEvent(Account ownedAccount) : IIntegratio
 }
 
 public class AccountProfileUpdatedEventHandler(
-    IMsGraphClient msGraphClient,
+    IAuth0ManagementClient auth0ManagementClient,
     ILogger<AccountProfileUpdatedEventHandler> logger) : IRequestHandler<AccountOwnedProfileUpdatedEvent, bool>
 {
     public async Task<bool> Handle(AccountOwnedProfileUpdatedEvent command, CancellationToken cancellationToken)
@@ -38,19 +38,22 @@ public class AccountProfileUpdatedEventHandler(
 
         try
         {
-            await msGraphClient.PatchUser(
+            await auth0ManagementClient.PatchUser(
                 subjectId: command.OwnedAccount.SubjectId,
                 cancellationToken: cancellationToken,
                 user: new User
                 {
-                    GivenName = command.OwnedAccount.GivenName,
-                    Surname = command.OwnedAccount.FamilyName,
-                    DisplayName = command.OwnedAccount.DisplayName.NullIfNullOrWhiteSpace() ?? $"{command.OwnedAccount.GivenName} {command.OwnedAccount.FamilyName}",
-                    StreetAddress = command.OwnedAccount.PrimaryAddress?.AddressLine1.NullIfNullOrWhiteSpace(),
-                    City = command.OwnedAccount.PrimaryAddress?.City.NullIfNullOrWhiteSpace(),
-                    State = command.OwnedAccount.PrimaryAddress?.Region.NullIfNullOrWhiteSpace(),
-                    PostalCode = command.OwnedAccount.PrimaryAddress?.PostalCode.NullIfNullOrWhiteSpace(),
-                    Country = command.OwnedAccount.PrimaryAddress?.Country.NullIfNullOrWhiteSpace()
+                    FirstName = command.OwnedAccount.GivenName,
+                    LastName = command.OwnedAccount.FamilyName,
+                    FullName = command.OwnedAccount.DisplayName.NullIfNullOrWhiteSpace() ?? $"{command.OwnedAccount.GivenName} {command.OwnedAccount.FamilyName}",
+                    UserMetadata = new Dictionary<string, object>
+                    {
+                        ["StreetAddress"] = command.OwnedAccount.PrimaryAddress?.AddressLine1.NullIfNullOrWhiteSpace(),
+                        ["City"] = command.OwnedAccount.PrimaryAddress?.City.NullIfNullOrWhiteSpace(),
+                        ["State"] = command.OwnedAccount.PrimaryAddress?.Region.NullIfNullOrWhiteSpace(),
+                        ["PostalCode"] = command.OwnedAccount.PrimaryAddress?.PostalCode.NullIfNullOrWhiteSpace(),
+                        ["Country"] = command.OwnedAccount.PrimaryAddress?.Country.NullIfNullOrWhiteSpace(),
+                    }
                 });
 
             return true;

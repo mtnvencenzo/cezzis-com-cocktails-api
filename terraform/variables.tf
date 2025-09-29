@@ -59,52 +59,34 @@ variable "global_domain" {
   default     = "shared"
 }
 
-variable "b2c_tenant_id" {
+# Auth0 Configuration Variables
+variable "auth0_domain" {
   type        = string
-  description = "The b2c tenant id for this environment"
+  description = "Auth0 domain (e.g., your-domain.auth0.com)"
 }
 
-variable "b2c_tenant_name" {
+variable "auth0_audience" {
   type        = string
-  description = "The b2c tenant name (typeically the first part of the hostname)"
+  description = "Auth0 API identifier/audience"
 }
 
-variable "b2c_signin_policy" {
+variable "auth0_client_id" {
   type        = string
-  description = "The main signin policy for the cocktails webapp"
-  default     = "B2C_1_SignInSignUp_Policy"
+  description = "Auth0 API client ID"
 }
 
-variable "b2c_tenant_domain_name" {
+variable "auth0_frontend_client_id" {
   type        = string
-  description = "The b2c tenant domain name for this environment"
-}
-
-variable "b2c_terraform_app_registration_client_id" {
-  type = string
-}
-
-variable "b2c_terraform_app_registration_client_secret" {
-  type = string
+  description = "Auth0 frontend/SPA client ID for Swagger/Scalar UI"
 }
 
 variable "image_tag" {
   type = string
 }
 
-# variable "rvecchi_user_account_object_id" {
-#   type = string
-#   description = "The object id of the user account for rvecchi"
-#   default = "83829dad-b43d-486f-9a35-a037afa75d84"
-# }
-
 variable "cezzis_site_hostname" {
   type        = string
   description = "The preferred hostname for the website.  (www.cezzis.com)"
-}
-
-variable "cezzis_web_client_id" {
-  type = string
 }
 
 variable "pubsub_sb_topics_cocktails_email" {

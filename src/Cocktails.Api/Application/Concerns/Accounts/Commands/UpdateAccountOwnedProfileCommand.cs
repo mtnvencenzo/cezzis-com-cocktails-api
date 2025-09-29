@@ -40,7 +40,8 @@ public class UpdateAccountOwnedProfileCommandHandler(
             throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
         }
 
-        account.SetName(givenName: command.Request.GivenName, familyName: command.Request.FamilyName);
+        account.SetGivenName(givenName: command.Request.GivenName);
+        account.SetFamilyName(familyName: command.Request.FamilyName);
         account.SetDisplayName(displayName: command.Request.DisplayName);
         account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
 

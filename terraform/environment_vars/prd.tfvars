@@ -1,9 +1,5 @@
 environment                    = "prd"
-b2c_tenant_id                  = "fb512a9c-5b44-41ab-8042-6465769f16c9"
-b2c_tenant_name                = "cezzis"
-b2c_tenant_domain_name         = "cezzis.onmicrosoft.com"
 cezzis_site_hostname           = "www.cezzis.com"
-cezzis_web_client_id           = "84744194-da27-410f-ae0e-74f5589d4c96"
 cocktail_images_route_hostname = "cdn.cezzis.com"
 
 custom_domain = {
@@ -20,3 +16,9 @@ allowed_origins = [
 ]
 
 login_subdomain = "login"
+
+# Auth0 Configuration
+auth0_domain             = "cezzis.us.auth0.com"
+auth0_audience           = "https://cezzis-cocktails-api"     # Your API Identifier
+auth0_client_id          = "JtxZM9RiJVHejv6xqkFYdFtdfUrX6N09" # M2M Client Api for API
+auth0_frontend_client_id = "HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb" # For Swagger/Scalar UI

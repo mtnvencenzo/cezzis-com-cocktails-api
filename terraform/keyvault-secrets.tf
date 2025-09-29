@@ -100,14 +100,17 @@ resource "azurerm_key_vault_secret" "zoho_email_cezzi_email_app_password" {
 }
 
 # ----------------------------------------
-# Cocktails API App Registration Graph API Secret
+# Auth0 Client Secret
 # ----------------------------------------
-
-resource "azurerm_key_vault_secret" "cocktails_api_app_registration_graph_api_secret" {
-  name         = "cocktails-api-app-registration-graph-api-secret"
-  value        = "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_graph_api_secret
+resource "azurerm_key_vault_secret" "auth0_client_secret" {
+  name         = "auth0-client-secret"
+  value        = "n/a"
   key_vault_id = data.azurerm_key_vault.cocktails_keyvault.id
   tags         = local.tags
+
+  lifecycle {
+    ignore_changes = [value]
+  }
 }
 
 # ----------------------------------------

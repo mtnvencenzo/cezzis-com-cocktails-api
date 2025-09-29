@@ -176,8 +176,8 @@ module "aca_cocktails_api" {
       key_vault_secret_name = azurerm_key_vault_secret.zoho_email_cezzi_email_app_password.name
     },
     {
-      name                  = "graph-api-client-registration-secret"
-      key_vault_secret_name = azurerm_key_vault_secret.cocktails_api_app_registration_graph_api_secret.name
+      name                  = "auth0-client-secret"
+      key_vault_secret_name = azurerm_key_vault_secret.auth0_client_secret.name
     }
   ]
 
@@ -187,24 +187,16 @@ module "aca_cocktails_api" {
       value = join(",", var.allowed_origins)
     },
     {
-      name  = "AzureAdB2C__Instance"
-      value = "https://${var.login_subdomain}.cezzis.com"
+      name  = "Auth0__Domain"
+      value = var.auth0_domain
     },
     {
-      name  = "AzureAdB2C__Domain"
-      value = "${var.b2c_tenant_name}.onmicrosoft.com"
+      name  = "Auth0__Audience"
+      value = var.auth0_audience
     },
     {
-      name  = "AzureAdB2C__ClientId"
-      value = "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_client_id
-    },
-    {
-      name  = "AzureAdB2C__SignUpSignInPolicyId"
-      value = var.b2c_signin_policy
-    },
-    {
-      name  = "AzureAdB2C__Audience"
-      value = "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_client_id
+      name  = "Auth0__ClientId"
+      value = var.auth0_client_id
     },
     {
       name  = "BlobStorage__AccountAvatars__DaprBuildingBlock"
@@ -236,15 +228,15 @@ module "aca_cocktails_api" {
     },
     {
       name  = "Scalar__AuthorizationCodeFlow__ClientId"
-      value = var.cezzis_web_client_id
+      value = var.auth0_frontend_client_id
     },
     {
       name  = "Scalar__AuthorizationCodeFlow__Scopes__0"
-      value = "https://${var.b2c_tenant_domain_name}/cocktailsapi/Account.Read"
+      value = "read:owned-account"
     },
     {
       name  = "Scalar__AuthorizationCodeFlow__Scopes__1"
-      value = "https://${var.b2c_tenant_domain_name}/cocktailsapi/Account.Write"
+      value = "write:owned-account"
     },
     {
       name  = "CosmosDb__ConnectionString"
@@ -325,14 +317,6 @@ module "aca_cocktails_api" {
     {
       name  = "ZohoEmail__DefaultSender__EmailAddress"
       value = var.zoho_email_sender_address
-    },
-    {
-      name  = "MsGraph__ClientId"
-      value = "00000000-0000-0000-0000-000000000000" # module.api_b2c_tenant.cocktails_api_app_registration_client_id
-    },
-    {
-      name  = "MsGraph__TenantId"
-      value = var.b2c_tenant_id
     }
   ]
 
@@ -350,8 +334,8 @@ module "aca_cocktails_api" {
       secret_name = "zoho-email-cezzi-app-password"
     },
     {
-      name        = "MsGraph__ClientSecret"
-      secret_name = "graph-api-client-registration-secret"
+      name        = "Auth0__ClientSecret"
+      secret_name = "auth0-client-secret"
     }
   ]
 }

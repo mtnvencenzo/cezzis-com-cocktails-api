@@ -15,10 +15,11 @@ public class AccountTests
         var accountId = Guid.NewGuid().ToString();
         var claimsAccount = new ClaimsAccount(new ClaimsIdentity(
         [
+            new(ClaimTypes.Name, accountId),
             new(ClaimTypes.NameIdentifier, accountId),
-            new(ClaimTypes.GivenName, "John"),
-            new(ClaimTypes.Surname, "Doe"),
-            new("emails", "test@test.com")
+            new(ClaimsAccount.ClaimType_GivenName, "John"),
+            new(ClaimsAccount.ClaimType_FamilyName, "Doe"),
+            new(ClaimsAccount.ClaimType_Email, "test@test.com")
         ]));
 
         // act
@@ -38,11 +39,13 @@ public class AccountTests
         var accountId = Guid.NewGuid().ToString();
         var claimsAccount = new ClaimsAccount(new ClaimsIdentity(
         [
+            new(ClaimTypes.Name, accountId),
             new(ClaimTypes.NameIdentifier, accountId),
-            new(ClaimTypes.GivenName, "John"),
-            new(ClaimTypes.Surname, "Doe"),
-            new("emails", "test@test.com")
+            new(ClaimsAccount.ClaimType_GivenName, "John"),
+            new(ClaimsAccount.ClaimType_FamilyName, "Doe"),
+            new(ClaimsAccount.ClaimType_Email, "test@test.com")
         ]));
+
         var account = new Account(claimsAccount);
 
         // act
@@ -67,25 +70,47 @@ public class AccountTests
     }
 
     [Fact]
-    public void SetName_ShouldUpdateGivenNameAndFamilyName()
+    public void SetGivenName_ShouldUpdateGivenName()
     {
         // arrange
         var accountId = Guid.NewGuid().ToString();
         var claimsAccount = new ClaimsAccount(new ClaimsIdentity(
         [
+            new(ClaimTypes.Name, accountId),
             new(ClaimTypes.NameIdentifier, accountId),
-            new(ClaimTypes.GivenName, "John"),
-            new(ClaimTypes.Surname, "Doe"),
-            new("emails", "test@test.com")
+            new(ClaimsAccount.ClaimType_GivenName, "John"),
+            new(ClaimsAccount.ClaimType_FamilyName, "Doe"),
+            new(ClaimsAccount.ClaimType_Email, "test@test.com")
         ]));
         var account = new Account(claimsAccount);
 
         // act
-        account.SetName("Jane", "Smith");
+        account.SetGivenName("Jane");
 
         // assert
         account.GivenName.Should().Be("Jane");
-        account.FamilyName.Should().Be("Smith");
+    }
+
+    [Fact]
+    public void SetFamilyName_ShouldUpdateFamilyName()
+    {
+        // arrange
+        var accountId = Guid.NewGuid().ToString();
+        var claimsAccount = new ClaimsAccount(new ClaimsIdentity(
+        [
+            new(ClaimTypes.Name, accountId),
+            new(ClaimTypes.NameIdentifier, accountId),
+            new(ClaimsAccount.ClaimType_GivenName, "John"),
+            new(ClaimsAccount.ClaimType_FamilyName, "Doe"),
+            new(ClaimsAccount.ClaimType_Email, "test@test.com")
+        ]));
+        var account = new Account(claimsAccount);
+
+        // act
+        account.SetFamilyName("Jane");
+
+        // assert
+        account.FamilyName.Should().Be("Jane");
     }
 
     [Fact]
@@ -95,10 +120,11 @@ public class AccountTests
         var accountId = Guid.NewGuid().ToString();
         var claimsAccount = new ClaimsAccount(new ClaimsIdentity(
         [
+            new(ClaimTypes.Name, accountId),
             new(ClaimTypes.NameIdentifier, accountId),
-            new(ClaimTypes.GivenName, "John"),
-            new(ClaimTypes.Surname, "Doe"),
-            new("emails", "test@test.com")
+            new(ClaimsAccount.ClaimType_GivenName, "John"),
+            new(ClaimsAccount.ClaimType_FamilyName, "Doe"),
+            new(ClaimsAccount.ClaimType_Email, "test@test.com")
         ]));
         var account = new Account(claimsAccount);
 
@@ -116,10 +142,11 @@ public class AccountTests
         var accountId = Guid.NewGuid().ToString();
         var claimsAccount = new ClaimsAccount(new ClaimsIdentity(
         [
+            new(ClaimTypes.Name, accountId),
             new(ClaimTypes.NameIdentifier, accountId),
-            new(ClaimTypes.GivenName, "John"),
-            new(ClaimTypes.Surname, "Doe"),
-            new("emails", "test@test.com")
+            new(ClaimsAccount.ClaimType_GivenName, "John"),
+            new(ClaimsAccount.ClaimType_FamilyName, "Doe"),
+            new(ClaimsAccount.ClaimType_Email, "test@test.com")
         ]));
         var account = new Account(claimsAccount);
 
