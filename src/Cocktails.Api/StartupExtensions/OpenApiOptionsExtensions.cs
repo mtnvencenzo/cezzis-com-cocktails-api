@@ -3,6 +3,7 @@
 using Asp.Versioning.ApiExplorer;
 using Cocktails.Api.Application.Behaviors;
 using Cocktails.Api.Domain.Config;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.Extensions.Options;
@@ -280,22 +281,17 @@ internal static class OpenApiOptionsExtensions
             var scalarConfig = new ScalarConfig();
             configuration.Bind(ScalarConfig.SectionName, scalarConfig);
 
-            var scopes = new Dictionary<string, string>();
-            scalarConfig.AuthorizationCodeFlow.Scopes.ForEach(x =>
-            {
-                scopes.Add(x, x);
-            });
-
             var securityScheme = new OpenApiSecurityScheme
             {
+                OpenIdConnectUrl = new Uri($"{auth0Config.Domain}/.well-known/openid-configuration"),
                 Type = SecuritySchemeType.OAuth2,
                 Flows = new OpenApiOAuthFlows
                 {
                     AuthorizationCode = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri($"{auth0Config.Domain}/authorize"),
+                        AuthorizationUrl = new Uri($"{auth0Config.Domain}/authorize?audience={auth0Config.Audience}"),
                         TokenUrl = new Uri($"{auth0Config.Domain}/oauth/token"),
-                        Scopes = scopes,
+                        Scopes = scalarConfig.AuthorizationCodeFlow.Scopes.ToDictionary(x => x, x => x),
                         Extensions = new Dictionary<string, IOpenApiExtension>
                         {
                             { "x-defaultClientId", new OpenApiString(scalarConfig.AuthorizationCodeFlow.ClientId) },
@@ -303,6 +299,14 @@ internal static class OpenApiOptionsExtensions
                         }
                     }
                 },
+                In = ParameterLocation.Header,
+                Scheme = JwtBearerDefaults.AuthenticationScheme,
+                BearerFormat = "JWT",
+                Reference = new OpenApiReference
+                {
+                    Id = "oauth2",
+                    Type = ReferenceType.SecurityScheme
+                }
             };
 
             document.Components ??= new();

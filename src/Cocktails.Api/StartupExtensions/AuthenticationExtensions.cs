@@ -28,7 +28,6 @@ internal static class AuthenticationExtensions
                     RequireExpirationTime = true,
                     ValidateIssuerSigningKey = true,
                     ClockSkew = TimeSpan.FromMinutes(5)
-                    // Remove the custom IssuerSigningKeyResolver - let the middleware handle JWKS automatically
                 };
 
                 options.Events = new JwtBearerEvents

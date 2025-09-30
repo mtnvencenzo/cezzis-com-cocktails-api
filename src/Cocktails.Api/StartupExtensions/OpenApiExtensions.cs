@@ -45,7 +45,6 @@ internal static class OpenApiExtensions
     internal static IApplicationBuilder UseDefaultOpenApi(this WebApplication app)
     {
         var cocktailsApiOptions = app.Services.GetRequiredService<IOptions<CocktailsApiConfig>>();
-
         var openApiPattern = "/scalar/{documentName}/openapi.json";
 
         app.MapOpenApi(pattern: openApiPattern);
