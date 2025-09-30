@@ -46,8 +46,6 @@ internal static class ApplicationServiceExtensions
 
         builder.Services.AddScoped<IAuth0ManagementClient, Auth0ManagementClient>();
         builder.Services.AddSingleton<IAuth0ManagementTokenService, Auth0ManagementTokenService>();
-        builder.Services.AddScoped<IAuth0ManagementClient, Auth0ManagementClient>();
-
         builder.Services.AddZohoEmail();
 
         // add the authentication and authorization services to DI

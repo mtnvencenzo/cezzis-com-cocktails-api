@@ -53,7 +53,7 @@ public class Auth0ManagementClient(
     {
         var managementApiClient = new ManagementApiClient(
             await auth0ManagementTokenService.GetManagementApiTokenAsync(),
-            new Uri($"{auth0Config.Value.Domain}/api/v2/"));
+            new Uri($"{auth0Config.Value.ManagementDomain}/api/v2/"));
 
         return managementApiClient.Users;
     }

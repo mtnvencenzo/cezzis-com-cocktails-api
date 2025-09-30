@@ -107,7 +107,7 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
 Add to your `.tfvars` files:
 
 ```hcl
-auth0_domain              = "cezzis.us.auth0.com"
+auth0_domain              = "login.cezzis.com"
 auth0_audience           = "https://api.cocktails.com"
 auth0_client_id          = "your-m2m-client-id"
 auth0_frontend_client_id = "your-spa-client-id"
