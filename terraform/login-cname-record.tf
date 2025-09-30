@@ -1,7 +1,7 @@
 module "login_cname_record" {
   source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/dns-sub-domain-record"
 
-  dnszone {
+  dns_zone {
     resource_group_name = data.azurerm_dns_zone.cezzis_dns_zone.resource_group_name
     name                = data.azurerm_dns_zone.cezzis_dns_zone.name
   }
