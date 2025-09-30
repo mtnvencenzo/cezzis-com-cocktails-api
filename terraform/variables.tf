@@ -65,6 +65,11 @@ variable "auth0_domain" {
   description = "Auth0 domain (e.g., your-domain.auth0.com)"
 }
 
+variable "auth0_management_domain" {
+  type        = string
+  description = "Auth0 Management domain (e.g., your-domain.auth0.com)"
+}
+
 variable "auth0_audience" {
   type        = string
   description = "Auth0 API identifier/audience"
