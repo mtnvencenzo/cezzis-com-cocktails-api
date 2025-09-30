@@ -80,6 +80,16 @@ variable "auth0_frontend_client_id" {
   description = "Auth0 frontend/SPA client ID for Swagger/Scalar UI"
 }
 
+variable "auth0_custom_domain_cname" {
+  type        = string
+  description = "Auth0 custom domain (e.g., ...auth0.com)"
+}
+
+variable "auth0_custom_domain_subdomain" {
+  type        = string
+  description = "Auth0 custom domain (e.g., login)"
+}
+
 variable "image_tag" {
   type = string
 }
@@ -154,8 +164,4 @@ variable "custom_domain" {
     host_name                     = string
     custom_domain_verification_id = string
   })
-}
-
-variable "login_subdomain" {
-  type = string
 }
