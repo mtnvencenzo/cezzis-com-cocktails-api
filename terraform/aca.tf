@@ -188,7 +188,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "Auth0__Domain"
-      value = var.auth0_domain
+      value = "https://${var.auth0_domain}"
     },
     {
       name  = "Auth0__Audience"
