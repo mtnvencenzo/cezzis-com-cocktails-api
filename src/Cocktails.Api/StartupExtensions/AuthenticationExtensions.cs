@@ -39,8 +39,9 @@ internal static class AuthenticationExtensions
                     },
                     OnAuthenticationFailed = context =>
                     {
-                        // Add debugging for authentication failures
-                        Console.WriteLine($"JWT Auth Failed: {context.Exception.Message}");
+                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Auth0Config>>();
+                        logger.LogError(context.Exception, $"JWT Auth Failed");
+
                         return Task.CompletedTask;
                     }
                 };

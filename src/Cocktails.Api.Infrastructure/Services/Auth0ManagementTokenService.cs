@@ -25,10 +25,10 @@ public class Auth0ManagementTokenService(IOptions<Auth0Config> auth0Config) : IA
 
         try
         {
-            var data = $"grant_type=client_credentials&client_id={this.auth0Config.Value.ClientId}&client_secret={this.auth0Config.Value.ClientSecret}&audience={Uri.EscapeDataString(this.auth0Config.Value.Domain)}%2Fapi%2Fv2%2F";
+            var data = $"grant_type=client_credentials&client_id={this.auth0Config.Value.ClientId}&client_secret={this.auth0Config.Value.ClientSecret}&audience={Uri.EscapeDataString(this.auth0Config.Value.ManagementDomain)}%2Fapi%2Fv2%2F";
 
             var content = new StringContent(data, Encoding.UTF8, "application/x-www-form-urlencoded");
-            var response = await client.PostAsync($"{this.auth0Config.Value.Domain}/oauth/token", content);
+            var response = await client.PostAsync($"{this.auth0Config.Value.ManagementDomain}/oauth/token", content);
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
