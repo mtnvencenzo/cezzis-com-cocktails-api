@@ -18,9 +18,9 @@ allowed_origins = [
 
 # Auth0 Configuration
 auth0_domain                  = "login.cezzis.com"                 # Your Auth0 Domain
-auth0_management_domain       = "cezzis.us.auth0.com"              # Your Auth0 Management Domain
 auth0_audience                = "https://cezzis-cocktails-api"     # Your API Identifier
-auth0_client_id               = "JtxZM9RiJVHejv6xqkFYdFtdfUrX6N09" # M2M Client Api for API
+auth0_management_domain       = "cezzis.us.auth0.com"              # Your Auth0 Management Domain
+auth0_management_client_id    = "JtxZM9RiJVHejv6xqkFYdFtdfUrX6N09" # M2M Client Api for API
 auth0_frontend_client_id      = "HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb" # For Swagger/Scalar UI
 auth0_custom_domain_cname     = "cezzis-cd-skhnnuczfndoqumy.edge.tenants.us.auth0.com"
 auth0_custom_domain_subdomain = "login"

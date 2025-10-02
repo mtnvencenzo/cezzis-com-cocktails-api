@@ -1,12 +1,13 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
 using Asp.Versioning.ApiExplorer;
+using Auth0.ManagementApi.Models;
 using Cocktails.Api.Application.Behaviors;
+using Cocktails.Api.Application.Behaviors.Authorization;
 using Cocktails.Api.Domain.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.OpenApi;
-using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Interfaces;
@@ -57,8 +58,6 @@ internal static class OpenApiOptionsExtensions
     {
         options.AddOperationTransformer((operation, context, cancellationToken) =>
         {
-            var scalarConfig = context.ApplicationServices.GetRequiredService<IOptions<ScalarConfig>>();
-
             var metadata = context.Description.ActionDescriptor.EndpointMetadata;
 
             var requiredScopesMetadatas = metadata.OfType<IAuthRequiredScopeMetadata>();
@@ -74,7 +73,7 @@ internal static class OpenApiOptionsExtensions
                 Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "oauth2" }
             };
 
-            var availableScopes = scalarConfig.Value.AuthorizationCodeFlow.Scopes;
+            var availableScopes = AuthScopes.All();
 
             var scopes = requiredScopesMetadatas
                 .SelectMany(x => x.AcceptedScope)
@@ -278,9 +277,6 @@ internal static class OpenApiOptionsExtensions
             var auth0Config = new Auth0Config();
             configuration.Bind(Auth0Config.SectionName, auth0Config);
 
-            var scalarConfig = new ScalarConfig();
-            configuration.Bind(ScalarConfig.SectionName, scalarConfig);
-
             var securityScheme = new OpenApiSecurityScheme
             {
                 OpenIdConnectUrl = new Uri($"{auth0Config.Domain}/.well-known/openid-configuration"),
@@ -291,10 +287,10 @@ internal static class OpenApiOptionsExtensions
                     {
                         AuthorizationUrl = new Uri($"{auth0Config.Domain}/authorize?audience={auth0Config.Audience}"),
                         TokenUrl = new Uri($"{auth0Config.Domain}/oauth/token"),
-                        Scopes = scalarConfig.AuthorizationCodeFlow.Scopes.ToDictionary(x => x, x => x),
+                        Scopes = AuthScopes.All().ToDictionary(s => s, s => s),
                         Extensions = new Dictionary<string, IOpenApiExtension>
                         {
-                            { "x-defaultClientId", new OpenApiString(scalarConfig.AuthorizationCodeFlow.ClientId) },
+                            { "x-defaultClientId", new OpenApiString(auth0Config.ClientId) },
                             { "x-usePkce", new OpenApiString("SHA-256") }
                         }
                     }
