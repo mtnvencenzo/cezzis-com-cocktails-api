@@ -37,7 +37,6 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<ZohoEmailConfig>(builder.Configuration.GetSection(ZohoEmailConfig.SectionName));
         builder.Services.Configure<BlobStorageConfig>(builder.Configuration.GetSection(BlobStorageConfig.SectionName));
         builder.Services.Configure<CosmosDbConfig>(builder.Configuration.GetSection(CosmosDbConfig.SectionName));
-        builder.Services.Configure<ScalarConfig>(builder.Configuration.GetSection(ScalarConfig.SectionName));
         builder.Services.Configure<SearchConfig>(builder.Configuration.GetSection(SearchConfig.SectionName));
         builder.Services.Configure<TestAccountConfig>(builder.Configuration.GetSection(TestAccountConfig.SectionName));
         builder.Services.Configure<Auth0Config>(builder.Configuration.GetSection(Auth0Config.SectionName));

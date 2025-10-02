@@ -7,4 +7,6 @@ public interface IAuth0ManagementClient
     Task<User> GetUser(string subjectId, CancellationToken cancellationToken);
 
     Task PatchUser(string subjectId, User user, CancellationToken cancellationToken);
+
+    Task InitiateChangePasswordFlow(string email, CancellationToken cancellationToken);
 }

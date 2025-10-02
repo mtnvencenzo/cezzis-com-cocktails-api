@@ -1,5 +1,7 @@
 ﻿namespace Cocktails.Api.Infrastructure.Services;
 
+using Auth0.AuthenticationApi;
+using Auth0.AuthenticationApi.Models;
 using Auth0.ManagementApi;
 using Auth0.ManagementApi.Clients;
 using Auth0.ManagementApi.Models;
@@ -46,6 +48,27 @@ public class Auth0ManagementClient(
         catch (Exception ex)
         {
             throw new InvalidOperationException($"Failed to update user {subjectId} in Auth0.", ex);
+        }
+    }
+
+    public async Task InitiateChangePasswordFlow(string email, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var auth0Client = new AuthenticationApiClient(new Uri(auth0Config.Value.Domain));
+
+            var request = new ChangePasswordRequest
+            {
+                Email = email,
+                ClientId = auth0Config.Value.ClientId,
+                Connection = auth0Config.Value.DatabaseConnectionName
+            };
+
+            await auth0Client.ChangePasswordAsync(request, cancellationToken: cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException($"Failed to initiate change password flow for user {email} in Auth0.", ex);
         }
     }
 

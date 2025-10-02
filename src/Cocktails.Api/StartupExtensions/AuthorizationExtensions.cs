@@ -1,6 +1,7 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
 using Cocktails.Api.Application.Behaviors.ApimHostKeyAuthorization;
+using Cocktails.Api.Application.Behaviors.Authorization;
 using Microsoft.AspNetCore.Authorization;
 
 internal static class AuthorizationExtensions
@@ -29,14 +30,7 @@ internal static class AuthorizationExtensions
 
     private static void RegisterScopePolicies(AuthorizationBuilder authorizationBuilder)
     {
-        // Define all the scopes used in your application
-        var scopes = new[]
-        {
-            "read:owned-account",
-            "write:owned-account"
-        };
-
-        foreach (var scope in scopes)
+        foreach (var scope in AuthScopes.All())
         {
             var policyName = $"scope:{scope}"; // Results in "scope:read:owned-account", etc.
             authorizationBuilder.AddPolicy(policyName, policy =>

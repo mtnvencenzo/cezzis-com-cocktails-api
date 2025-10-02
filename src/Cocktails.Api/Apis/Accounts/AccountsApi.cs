@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Security.Claims;
 using Cocktails.Api.Infrastructure.Services;
+using Cocktails.Api.Application.Behaviors.Authorization;
 
 /// <summary>
 /// 
@@ -31,70 +32,70 @@ public static class AccountsApi
             .WithName(nameof(LoginAccountOwnedProfile))
             .WithDisplayName(nameof(LoginAccountOwnedProfile))
             .WithDescription("Logs in the account profile for the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         groupBuilder.MapGet("/owned/profile", GetAccountOwnedProfile)
             .WithName(nameof(GetAccountOwnedProfile))
             .WithDisplayName(nameof(GetAccountOwnedProfile))
             .WithDescription("Gets the account profile for the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount);
 
         groupBuilder.MapPut("/owned/profile", UpdateAccountOwnedProfile)
             .WithName(nameof(UpdateAccountOwnedProfile))
             .WithDisplayName(nameof(UpdateAccountOwnedProfile))
             .WithDescription("Updates the account profile for the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         groupBuilder.MapPut("/owned/profile/email", UpdateAccountOwnedProfileEmail)
             .WithName(nameof(UpdateAccountOwnedProfileEmail))
             .WithDisplayName(nameof(UpdateAccountOwnedProfileEmail))
             .WithDescription("Updates the account profile email address for the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         groupBuilder.MapPut("/owned/profile/accessibility", UpdateAccountOwnedAccessibilitySettings)
             .WithName(nameof(UpdateAccountOwnedAccessibilitySettings))
             .WithDisplayName(nameof(UpdateAccountOwnedAccessibilitySettings))
             .WithDescription("Updates the account profile accessibility settings for the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         groupBuilder.MapPost("/owned/profile/image", UploadProfileImage)
             .WithName(nameof(UploadProfileImage))
             .WithDisplayName(nameof(UploadProfileImage))
             .WithDescription("Uploads an account profile image for to the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account")
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount)
             .DisableAntiforgery();
 
         groupBuilder.MapPut("/owned/profile/cocktails/favorites", ManageFavoriteCocktails)
             .WithName(nameof(ManageFavoriteCocktails))
             .WithDisplayName(nameof(ManageFavoriteCocktails))
             .WithDescription("Manages the account profile favorite cocktails list for the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         groupBuilder.MapPost("/owned/profile/cocktails/ratings", RateCocktail)
             .WithName(nameof(RateCocktail))
             .WithDisplayName(nameof(RateCocktail))
             .WithDescription("Rates a cocktail for the account profile user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         groupBuilder.MapGet("/owned/profile/cocktails/ratings", GetCocktailRatings)
             .WithName(nameof(GetCocktailRatings))
             .WithDisplayName(nameof(GetCocktailRatings))
             .WithDescription("Gets the account cocktail ratings for the account profile user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount);
 
         groupBuilder.MapPost("/owned/profile/cocktails/recommendations", SendCocktailRecommendation)
             .WithName(nameof(SendCocktailRecommendation))
             .WithDisplayName(nameof(SendCocktailRecommendation))
             .WithDescription("Sends a cocktail recommendation for review")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         groupBuilder.MapPut("/test/profile", SeedTestAccount)
             .AllowAnonymous()
@@ -107,8 +108,8 @@ public static class AccountsApi
             .WithName(nameof(UpdateAccountOwnedNotificationSettings))
             .WithDisplayName(nameof(UpdateAccountOwnedNotificationSettings))
             .WithDescription("Updates the account profile notifications settings for the user represented within the authenticated bearer token")
-            .RequireScope("read:owned-account")
-            .RequireScope("write:owned-account");
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
 
         return groupBuilder;
     }

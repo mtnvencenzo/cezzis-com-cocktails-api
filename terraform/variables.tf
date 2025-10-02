@@ -75,9 +75,9 @@ variable "auth0_audience" {
   description = "Auth0 API identifier/audience"
 }
 
-variable "auth0_client_id" {
+variable "auth0_management_client_id" {
   type        = string
-  description = "Auth0 API client ID"
+  description = "Auth0 Management API client ID"
 }
 
 variable "auth0_frontend_client_id" {

@@ -191,16 +191,20 @@ module "aca_cocktails_api" {
       value = "https://${var.auth0_domain}"
     },
     {
-      name  = "Auth0__ManagementDomain"
-      value = "https://${var.auth0_management_domain}"
+      name  = "Auth0__ClientId"
+      value = "https://${var.auth0_frontend_client_id}"
     },
     {
       name  = "Auth0__Audience"
       value = var.auth0_audience
     },
     {
-      name  = "Auth0__ClientId"
-      value = var.auth0_client_id
+      name  = "Auth0__ManagementDomain"
+      value = "https://${var.auth0_management_domain}"
+    },
+    {
+      name  = "Auth0__ManagementM2MClientId"
+      value = var.auth0_management_client_id
     },
     {
       name  = "BlobStorage__AccountAvatars__DaprBuildingBlock"
@@ -229,18 +233,6 @@ module "aca_cocktails_api" {
     {
       name  = "OTel__OtlpExporter__Headers"
       value = "Authorization=Bearer ${data.azurerm_key_vault_secret.otel_collector_api_key.value}"
-    },
-    {
-      name  = "Scalar__AuthorizationCodeFlow__ClientId"
-      value = var.auth0_frontend_client_id
-    },
-    {
-      name  = "Scalar__AuthorizationCodeFlow__Scopes__0"
-      value = "read:owned-account"
-    },
-    {
-      name  = "Scalar__AuthorizationCodeFlow__Scopes__1"
-      value = "write:owned-account"
     },
     {
       name  = "CosmosDb__ConnectionString"
@@ -338,7 +330,7 @@ module "aca_cocktails_api" {
       secret_name = "zoho-email-cezzi-app-password"
     },
     {
-      name        = "Auth0__ClientSecret"
+      name        = "Auth0__ManagementM2MClientSecret"
       secret_name = "auth0-client-secret"
     }
   ]
