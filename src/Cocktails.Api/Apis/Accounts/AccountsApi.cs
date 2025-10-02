@@ -111,6 +111,13 @@ public static class AccountsApi
             .RequireScope(AuthScopes.ReadOwnedAccount)
             .RequireScope(AuthScopes.WriteOwnedAccount);
 
+        groupBuilder.MapPut("/owned/profile/password", ChangeAccountOwnedPassword)
+            .WithName(nameof(ChangeAccountOwnedPassword))
+            .WithDisplayName(nameof(ChangeAccountOwnedPassword))
+            .WithDescription("Initiates the change password authentication flow for the user represented within the authenticated bearer token")
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
+
         return groupBuilder;
     }
 
@@ -304,5 +311,20 @@ public static class AccountsApi
         var result = await accountServices.Mediator.Send(command);
 
         return TypedResults.Ok(result);
+    }
+
+    /// <summary>Initiates the password change authentication flow for the user represented within the authenticated bearer token</summary>
+    /// <param name="request">The account profile email information to update</param>
+    /// <returns></returns>
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> ChangeAccountOwnedPassword(
+        [FromBody, Required, Description("The account password update request body")] ChangeAccountOwnedPasswordRq request,
+        [AsParameters] AccountsServices accountServices)
+    {
+        var command = new ChangeAccountOwnedPasswordCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
+
+        var result = await accountServices.Mediator.Send(command);
+
+        return TypedResults.NoContent();
     }
 }
