@@ -1,4 +1,4 @@
-namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
+﻿namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
 
 using Cezzi.Applications;
 using FluentValidation;
@@ -13,22 +13,24 @@ using MediatR;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
 
-public record ChangeAccountOwnedPasswordCommand
+public record ChangeAccountOwnedEmailCommand
 (
-    ChangeAccountOwnedPasswordRq Request,
+    ChangeAccountOwnedEmailRq Request,
+
+    bool UpdateIdentityProvider,
 
     ClaimsIdentity Identity
 
-) : IRequest<bool>;
+) : IRequest<AccountOwnedProfileRs>;
 
-public class ChangeAccountOwnedPasswordCommandHandler(
+public class ChangeAccountOwnedEmailCommandHandler(
     IAccountRepository accountRepository,
     IEventBus eventBus,
     IOptions<PubSubConfig> pubSubConfig,
-    ILogger<ChangeAccountOwnedPasswordCommandHandler> logger)
-    : IRequestHandler<ChangeAccountOwnedPasswordCommand, bool>
+    ILogger<ChangeAccountOwnedEmailCommandHandler> logger)
+    : IRequestHandler<ChangeAccountOwnedEmailCommand, AccountOwnedProfileRs>
 {
-    public async Task<bool> Handle(ChangeAccountOwnedPasswordCommand command, CancellationToken cancellationToken)
+    public async Task<AccountOwnedProfileRs> Handle(ChangeAccountOwnedEmailCommand command, CancellationToken cancellationToken)
     {
         Guard.NotNull(command, nameof(command));
         Guard.NotNull(command.Request, nameof(command.Request));
@@ -42,47 +44,54 @@ public class ChangeAccountOwnedPasswordCommandHandler(
             throw new ArgumentNullException(nameof(account), "Failed to get account from identity.");
         }
 
-        if (!string.Equals(account.Email, command.Request.Email, StringComparison.OrdinalIgnoreCase))
+        account.SetEmail(email: command.Request.Email);
+        account.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
+
+        accountRepository.Update(account);
+
+        _ = await accountRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+
+        // If not updating the identity provider then return early
+        if (!command.UpdateIdentityProvider)
         {
-            throw new ArgumentException("The email provided does not match the account email.");
+            return AccountOwnedProfileRs.FromAccount(account);
         }
 
         // Send async event for the identity provider to be updated
-        // with the password change.
-        var updatePasswordEvent = new ChangeAccountOwnedPasswordEvent(
+        // with the email change.
+        var updateEmailEvent = new ChangeAccountOwnedEmailEvent(
             ownedAccountId: account.Id,
             ownedAccountSubjectId: account.SubjectId,
             email: command.Request.Email);
-
         try
         {
             await eventBus.PublishAsync(
-                @event: updatePasswordEvent,
+                @event: updateEmailEvent,
                 contentType: "application/json",
-                messageLabel: pubSubConfig.Value.AccountPasswordPublisher.Subject,
-                configName: pubSubConfig.Value.AccountPasswordPublisher.DaprBuildingBlock,
-                topicName: pubSubConfig.Value.AccountPasswordPublisher.TopicName,
+                messageLabel: pubSubConfig.Value.AccountEmailPublisher.Subject,
+                configName: pubSubConfig.Value.AccountEmailPublisher.DaprBuildingBlock,
+                topicName: pubSubConfig.Value.AccountEmailPublisher.TopicName,
                 cancellationToken: cancellationToken);
         }
         catch (Exception ex)
         {
-            var rawMessage = EventSerializer.ToJsonString(updatePasswordEvent);
+            var rawMessage = EventSerializer.ToJsonString(updateEmailEvent);
 
             using var messageScope = logger.BeginScope(new Dictionary<string, object>
             {
                 { Monikers.App.ObjectGraph, rawMessage }
             });
 
-            logger.LogCritical(ex, "Failed to send account password update event to topic");
+            logger.LogCritical(ex, "Failed to send account email update event to topic");
         }
 
-        return true;
+        return AccountOwnedProfileRs.FromAccount(account);
     }
 }
 
-public class ChangeAccountOwnedPasswordCommandValidator : AbstractValidator<ChangeAccountOwnedPasswordCommand>, IValidator<ChangeAccountOwnedPasswordCommand>
+public class ChangeAccountOwnedEmailCommandValidator : AbstractValidator<ChangeAccountOwnedEmailCommand>, IValidator<ChangeAccountOwnedEmailCommand>
 {
-    public ChangeAccountOwnedPasswordCommandValidator()
+    public ChangeAccountOwnedEmailCommandValidator()
     {
         this.RuleLevelCascadeMode = CascadeMode.Stop;
 

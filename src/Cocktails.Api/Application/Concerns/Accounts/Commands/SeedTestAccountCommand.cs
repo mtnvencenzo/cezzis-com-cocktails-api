@@ -46,6 +46,7 @@ public class SeedTestAccountCommandHandler(
                     SubRegion: "",
                     PostalCode: testAccountConfig.Value.PostalCode,
                     Country: testAccountConfig.Value.Country)),
+            UpdateIdentityProvider: false,
             Identity: identity);
 
         var _ = await mediator.Send(updateAccountProfileCommand, cancellationToken)
@@ -54,8 +55,9 @@ public class SeedTestAccountCommandHandler(
         // ------------------------------------------------------------------
         // Change the email address back to the original test account email
         // ------------------------------------------------------------------
-        var updateEmailCommand = new UpdateAccountOwnedProfileEmailCommand(
-            Request: new UpdateAccountOwnedProfileEmailRq(Email: testAccountConfig.Value.LoginEmail),
+        var updateEmailCommand = new ChangeAccountOwnedEmailCommand(
+            Request: new ChangeAccountOwnedEmailRq(Email: testAccountConfig.Value.LoginEmail),
+            UpdateIdentityProvider: false,
             Identity: identity);
 
         _ = await mediator.Send(updateEmailCommand, cancellationToken)

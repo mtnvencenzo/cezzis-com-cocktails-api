@@ -1,13 +1,13 @@
-﻿namespace Cocktails.Api.Application.IntegrationEvents;
+﻿namespace Cocktails.Api.Application.Concerns.Integrations.Events;
 
 using Auth0.ManagementApi.Models;
 using Cezzi.Applications;
 using Cezzi.Applications.Extensions;
-using Cocktails.Api.Application.Exceptions;
-using Cocktails.Api.Domain.Aggregates.AccountAggregate;
-using Cocktails.Api.Domain.Services;
-using Cocktails.Api.Infrastructure.Services;
 using FluentValidation;
+using global::Cocktails.Api.Application.Exceptions;
+using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
+using global::Cocktails.Api.Domain.Services;
+using global::Cocktails.Api.Infrastructure.Services;
 using MediatR;
 using System;
 using System.Text.Json.Serialization;

@@ -35,7 +35,7 @@ public class UpdateAccountOwnedProfileEmail_Tests : ServiceTestBase
         var accounts = new List<Account> { unmatchedAccount, account };
         this.accountDbContextMock.Setup(x => x.Accounts).ReturnsDbSet(accounts);
 
-        var request = new UpdateAccountOwnedProfileEmailRq
+        var request = new ChangeAccountOwnedEmailRq
         (
             Email: faker.Internet.Email()
         );
@@ -50,7 +50,7 @@ public class UpdateAccountOwnedProfileEmail_Tests : ServiceTestBase
         var services = GetAsParameterServices<AccountsServices>(sp);
 
         // act
-        var response = await AccountsApi.UpdateAccountOwnedProfileEmail(request, services);
+        var response = await AccountsApi.ChangeAccountOwnedEmail(request, services);
         var result = response.Result as Ok<AccountOwnedProfileRs>;
 
         // assert
@@ -62,7 +62,7 @@ public class UpdateAccountOwnedProfileEmail_Tests : ServiceTestBase
         mockRepo.Verify(x => x.UnitOfWork.SaveEntitiesAsync(It.IsAny<CancellationToken>()), Times.Once);
     }
 
-    private Account GetUpdatedAccount(Account account, UpdateAccountOwnedProfileEmailRq request)
+    private Account GetUpdatedAccount(Account account, ChangeAccountOwnedEmailRq request)
     {
         var js = System.Text.Json.JsonSerializer.Serialize(account);
         var newAccount = System.Text.Json.JsonSerializer.Deserialize<Account>(js);

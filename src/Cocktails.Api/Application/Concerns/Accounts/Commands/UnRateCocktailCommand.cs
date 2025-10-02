@@ -1,8 +1,6 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
 
-using Cezzi.Applications;
-using global::Cocktails.Api.Application.Concerns.Accounts.Models;
-using global::Cocktails.Api.Application.IntegrationEvents;
+using global::Cocktails.Api.Application.Concerns.Integrations.Events;
 using global::Cocktails.Api.Domain;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
@@ -91,8 +89,8 @@ public class UnRateCocktailCommandHandler(
         {
             await eventBus.PublishAsync(
                 @event: cocktailRatingEvent,
-                messageLabel: "cocktail-ratings-svc",
                 contentType: "application/json",
+                messageLabel: pubSubConfig.Value.CocktailRatingPublisher.Subject,
                 configName: pubSubConfig.Value.CocktailRatingPublisher.DaprBuildingBlock,
                 topicName: pubSubConfig.Value.CocktailRatingPublisher.TopicName,
                 cancellationToken: cancellationToken);

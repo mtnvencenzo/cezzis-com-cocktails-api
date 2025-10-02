@@ -1,10 +1,10 @@
-﻿namespace Cocktails.Api.Application.IntegrationEvents;
+﻿namespace Cocktails.Api.Application.Concerns.Integrations.Events;
 
-using Cocktails.Api.Application.Exceptions;
-using Cocktails.Api.Domain.Services;
-using Cocktails.Api.Infrastructure.Services;
-using Cocktails.Common.Emails;
 using FluentValidation;
+using global::Cocktails.Api.Application.Exceptions;
+using global::Cocktails.Api.Domain.Services;
+using global::Cocktails.Api.Infrastructure.Services;
+using global::Cocktails.Common.Emails;
 using MediatR;
 using System;
 using System.Text.Json.Serialization;

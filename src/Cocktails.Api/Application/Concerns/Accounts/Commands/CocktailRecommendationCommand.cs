@@ -3,7 +3,6 @@
 using Cezzi.Security.Recaptcha;
 using FluentValidation;
 using global::Cocktails.Api.Application.Behaviors;
-using global::Cocktails.Api.Application.IntegrationEvents;
 using global::Cocktails.Api.Domain.Config;
 using global::Cocktails.Api.Domain.Services;
 using global::Cocktails.Api.Domain;
@@ -15,6 +14,7 @@ using FluentValidation.Results;
 using global::Cocktails.Api.Application.Concerns.RecaptchaVerification.Commands;
 using global::Cocktails.Api.Application.Utilities;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
+using global::Cocktails.Api.Application.Concerns.Integrations.Events;
 
 public record CocktailRecommendationCommand
 (
@@ -79,8 +79,8 @@ public class CocktailRecommendationCommandHandler(
         {
             await this.eventBus.PublishAsync(
                 @event: cocktailRecommendationEvent,
-                messageLabel: "email-svc",
                 contentType: "application/json",
+                messageLabel: this.pubSubConfig.EmailPublisher.Subject,
                 configName: this.pubSubConfig.EmailPublisher.DaprBuildingBlock,
                 topicName: this.pubSubConfig.EmailPublisher.TopicName,
                 cancellationToken: cancellationToken);

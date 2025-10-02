@@ -36,7 +36,9 @@ public class Auth0ManagementClient(
             FirstName = user.FirstName,
             LastName = user.LastName,
             FullName = user.FullName,
-            UserMetadata = user.UserMetadata
+            UserMetadata = user.UserMetadata,
+            ClientId = auth0Config.Value.ClientId,
+            Connection = auth0Config.Value.DatabaseConnectionName
         };
 
         try
@@ -69,6 +71,50 @@ public class Auth0ManagementClient(
         catch (Exception ex)
         {
             throw new InvalidOperationException($"Failed to initiate change password flow for user {email} in Auth0.", ex);
+        }
+    }
+
+    public async Task ChangeUserEmail(string subjectId, string email, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var usersClient = await this.GetUsersClient();
+
+            var userEmailRequest = new UserUpdateRequest
+            {
+                Email = email,
+                EmailVerified = false,
+                VerifyEmail = true,
+                ClientId = auth0Config.Value.ClientId,
+                Connection = auth0Config.Value.DatabaseConnectionName
+            };
+
+            await usersClient.UpdateAsync(subjectId, userEmailRequest, cancellationToken: cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException($"Failed to initiate change email flow for user {email} in Auth0.", ex);
+        }
+    }
+
+    public async Task ChangeUserUsername(string subjectId, string username, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var usersClient = await this.GetUsersClient();
+
+            var userEmailRequest = new UserUpdateRequest
+            {
+                UserName = username,
+                ClientId = auth0Config.Value.ClientId,
+                Connection = auth0Config.Value.DatabaseConnectionName
+            };
+
+            await usersClient.UpdateAsync(subjectId, userEmailRequest, cancellationToken: cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException($"Failed to initiate change username flow for user {username} in Auth0.", ex);
         }
     }
 
