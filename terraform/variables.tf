@@ -75,6 +75,12 @@ variable "auth0_audience" {
   description = "Auth0 API identifier/audience"
 }
 
+variable "auth0_database_connection_name" {
+  type        = string
+  description = "Auth0 Database Connection Name"
+  default     = "Username-Password-Authentication"
+}
+
 variable "auth0_management_client_id" {
   type        = string
   description = "Auth0 Management API client ID"

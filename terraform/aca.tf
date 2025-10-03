@@ -233,6 +233,10 @@ module "aca_cocktails_api" {
       value = var.auth0_audience
     },
     {
+      name  = "Auth0__DatabaseConnectionName"
+      value = var.auth0_database_connection_name
+    },
+    {
       name  = "Auth0__ManagementDomain"
       value = "https://${var.auth0_management_domain}"
     },
