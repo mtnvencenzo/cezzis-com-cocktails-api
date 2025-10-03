@@ -6,6 +6,7 @@ using Cocktails.Api.Application.Behaviors.ExceptionHandling;
 using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Services;
 using Cocktails.Api.Infrastructure;
+using Cocktails.Api.Infrastructure.Services;
 using Cocktails.Api.StartupExtensions;
 using Cocktails.Api.Unit.Tests.Mocks;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +33,7 @@ public abstract class ServiceTestBase : IAsyncLifetime
     protected readonly Mock<IHttpContextAccessor> httpContextAccessorMock;
     protected readonly Mock<CocktailDbContext> cocktailDbContextMock;
     protected readonly Mock<AccountDbContext> accountDbContextMock;
+    protected readonly Mock<IAuth0ManagementClient> auth0ManagementClientMock;
     protected readonly CancellationTokenSource cancellationTokenSource;
     protected readonly Mock<IEventBus> eventBusMock;
     protected MockHttpContext httpContext;
@@ -46,6 +48,8 @@ public abstract class ServiceTestBase : IAsyncLifetime
 
         this.accountDbContextMock = new();
         this.accountDbContextMock.Setup(x => x.SaveEntitiesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(true);
+
+        this.auth0ManagementClientMock = new();
 
         this.eventBusMock = new();
 
@@ -112,6 +116,7 @@ public abstract class ServiceTestBase : IAsyncLifetime
             services.Replace(new ServiceDescriptor(typeof(IHttpContextAccessor), this.httpContextAccessorMock.Object));
             services.Replace(new ServiceDescriptor(typeof(CocktailDbContext), this.cocktailDbContextMock.Object));
             services.Replace(new ServiceDescriptor(typeof(AccountDbContext), this.accountDbContextMock.Object));
+            services.Replace(new ServiceDescriptor(typeof(IAuth0ManagementClient), this.auth0ManagementClientMock.Object));
             services.Replace(new ServiceDescriptor(typeof(IEventBus), this.eventBusMock.Object));
             servicePreprocessor?.Invoke(services);
         }
@@ -180,6 +185,7 @@ public abstract class ServiceTestBase : IAsyncLifetime
     private void Verify_NoOtherCalls()
     {
         this.eventBusMock.VerifyNoOtherCalls();
+        this.auth0ManagementClientMock.VerifyNoOtherCalls();
     }
 
     protected static T GetAsParameterServices<T>(IServiceProvider serviceProvider)
