@@ -314,7 +314,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "PubSub__AccountEmailPublisher__DaprBuildingBlock"
-      value = var.pubsub_sb_topics_cocktails_account_email
+      value = var.pubsub_sb_topics_cocktails_account
     },
     {
       name  = "PubSub__AccountEmailPublisher__TopicName"
@@ -330,7 +330,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "PubSub__AccountPasswordPublisher__DaprBuildingBlock"
-      value = var.pubsub_sb_topics_cocktails_account_password
+      value = var.pubsub_sb_topics_cocktails_account
     },
     {
       name  = "PubSub__AccountPasswordPublisher__TopicName"
