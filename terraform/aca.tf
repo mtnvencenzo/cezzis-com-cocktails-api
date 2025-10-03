@@ -75,6 +75,23 @@ module "aca_cocktails_api" {
         ]
       },
       {
+        name           = var.pubsub_sb_topics_cocktails_account
+        component_type = "pubsub.azure.servicebus.topics"
+        metadata = [
+          {
+            name = "azureClientId"
+          },
+          {
+            name  = "namespaceName"
+            value = "${data.azurerm_servicebus_namespace.servicebus_namespace.name}.servicebus.windows.net"
+          },
+          {
+            name  = "topicName"
+            value = module.cocktails_servicebus_account_topic.name
+          }
+        ]
+      },
+      {
         name           = var.pubsub_sb_queues_cocktails_account
         component_type = "pubsub.azure.servicebus.queues"
         metadata = [
@@ -92,8 +109,8 @@ module "aca_cocktails_api" {
         ]
       },
       {
-        name           = var.pubsub_sb_topics_cocktails_account
-        component_type = "pubsub.azure.servicebus.topics"
+        name           = var.pubsub_sb_queues_cocktails_account_email
+        component_type = "pubsub.azure.servicebus.queues"
         metadata = [
           {
             name = "azureClientId"
@@ -103,8 +120,25 @@ module "aca_cocktails_api" {
             value = "${data.azurerm_servicebus_namespace.servicebus_namespace.name}.servicebus.windows.net"
           },
           {
-            name  = "topicName"
-            value = module.cocktails_servicebus_account_topic.name
+            name  = "queueName"
+            value = module.cocktails_servicebus_account_email_queue.name
+          }
+        ]
+      },
+      {
+        name           = var.pubsub_sb_queues_cocktails_account_password
+        component_type = "pubsub.azure.servicebus.queues"
+        metadata = [
+          {
+            name = "azureClientId"
+          },
+          {
+            name  = "namespaceName"
+            value = "${data.azurerm_servicebus_namespace.servicebus_namespace.name}.servicebus.windows.net"
+          },
+          {
+            name  = "queueName"
+            value = module.cocktails_servicebus_account_password_queue.name
           }
         ]
       },
@@ -277,6 +311,38 @@ module "aca_cocktails_api" {
     {
       name  = "PubSub__AccountSubscriber__QueueName"
       value = module.cocktails_servicebus_account_queue.name
+    },
+    {
+      name  = "PubSub__AccountEmailPublisher__DaprBuildingBlock"
+      value = var.pubsub_sb_topics_cocktails_account_email
+    },
+    {
+      name  = "PubSub__AccountEmailPublisher__TopicName"
+      value = module.cocktails_servicebus_account_topic.name
+    },
+    {
+      name  = "PubSub__AccountEmailSubscriber__DaprBuildingBlock"
+      value = var.pubsub_sb_queues_cocktails_account_email
+    },
+    {
+      name  = "PubSub__AccountEmailSubscriber__QueueName"
+      value = module.cocktails_servicebus_account_email_queue.name
+    },
+    {
+      name  = "PubSub__AccountPasswordPublisher__DaprBuildingBlock"
+      value = var.pubsub_sb_topics_cocktails_account_password
+    },
+    {
+      name  = "PubSub__AccountPasswordPublisher__TopicName"
+      value = module.cocktails_servicebus_account_topic.name
+    },
+    {
+      name  = "PubSub__AccountPasswordSubscriber__DaprBuildingBlock"
+      value = var.pubsub_sb_queues_cocktails_account_password
+    },
+    {
+      name  = "PubSub__AccountPasswordSubscriber__QueueName"
+      value = module.cocktails_servicebus_account_password_queue.name
     },
     {
       name  = "PubSub__CocktailRatingPublisher__DaprBuildingBlock"
