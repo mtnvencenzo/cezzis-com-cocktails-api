@@ -15,7 +15,7 @@ using Moq;
 using global::Cocktails.Api.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using global::Cocktails.Api.Application.IntegrationEvents;
+using global::Cocktails.Api.Application.Concerns.Integrations.Events;
 
 public class RateCocktail_Tests : ServiceTestBase
 {

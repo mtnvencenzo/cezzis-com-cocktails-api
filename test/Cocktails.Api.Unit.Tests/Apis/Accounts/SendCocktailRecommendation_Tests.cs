@@ -17,10 +17,10 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Xunit;
-using global::Cocktails.Api.Application.IntegrationEvents;
 using global::Cocktails.Api.Apis.Accounts;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Application.Concerns.Accounts.Commands;
+using global::Cocktails.Api.Application.Concerns.Integrations.Events;
 
 public class SendCocktailRecommendation_Tests : ServiceTestBase
 {

@@ -124,6 +124,16 @@ variable "pubsub_sb_queues_cocktails_account" {
   default = "pubsub-sb-queues-cocktails-account"
 }
 
+variable "pubsub_sb_queues_cocktails_account_email" {
+  type    = string
+  default = "pubsub-sb-queues-cocktails-account-email"
+}
+
+variable "pubsub_sb_queues_cocktails_account_password" {
+  type    = string
+  default = "pubsub-sb-queues-cocktails-account-password"
+}
+
 variable "pubsub_sb_topics_cocktail_ratings" {
   type    = string
   default = "pubsub-sb-topics-cocktail-ratings"

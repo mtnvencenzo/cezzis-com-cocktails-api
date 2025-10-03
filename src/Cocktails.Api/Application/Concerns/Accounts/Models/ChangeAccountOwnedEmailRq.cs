@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 #pragma warning disable format
 
 [type: Description("The account owned profile upload email request inforamtion")]
-public record UpdateAccountOwnedProfileEmailRq
+public record ChangeAccountOwnedEmailRq
 (
     // <example>tester@cezzis.com</example>
     [property: Required()]

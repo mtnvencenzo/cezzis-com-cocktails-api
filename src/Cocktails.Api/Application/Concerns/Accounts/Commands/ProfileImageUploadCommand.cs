@@ -1,6 +1,5 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
 
-using Cezzi.Applications;
 using FluentValidation;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Application.Utilities;

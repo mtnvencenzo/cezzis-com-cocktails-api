@@ -12,6 +12,14 @@ public class PubSubConfig
 
     public DaprServiceBusSubscriberConfig AccountSubscriber { get; set; }
 
+    public DaprServiceBusSubscriberConfig AccountEmailSubscriber { get; set; }
+
+    public DaprServiceBusPublisherConfig AccountEmailPublisher { get; set; }
+
+    public DaprServiceBusSubscriberConfig AccountPasswordSubscriber { get; set; }
+
+    public DaprServiceBusPublisherConfig AccountPasswordPublisher { get; set; }
+
     public DaprServiceBusPublisherConfig CocktailRatingPublisher { get; set; }
 
     public DaprServiceBusSubscriberConfig CocktailRatingSubscriber { get; set; }

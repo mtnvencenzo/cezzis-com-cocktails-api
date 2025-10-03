@@ -1,9 +1,9 @@
-﻿namespace Cocktails.Api.Application.IntegrationEvents;
+﻿namespace Cocktails.Api.Application.Concerns.Integrations.Events;
 
 using Cezzi.Applications;
-using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
-using Cocktails.Api.Domain.Services;
 using FluentValidation;
+using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
+using global::Cocktails.Api.Domain.Services;
 using MediatR;
 using System;
 using System.Text.Json.Serialization;

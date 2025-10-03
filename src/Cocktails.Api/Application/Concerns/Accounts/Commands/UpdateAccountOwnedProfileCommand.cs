@@ -2,7 +2,7 @@
 
 using Cezzi.Applications;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
-using global::Cocktails.Api.Application.IntegrationEvents;
+using global::Cocktails.Api.Application.Concerns.Integrations.Events;
 using global::Cocktails.Api.Domain;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using global::Cocktails.Api.Domain.Config;
@@ -15,6 +15,8 @@ using System.Security.Claims;
 public record UpdateAccountOwnedProfileCommand
 (
     UpdateAccountOwnedProfileRq Request,
+
+    bool UpdateIdentityProvider,
 
     ClaimsIdentity Identity
 
@@ -65,14 +67,20 @@ public class UpdateAccountOwnedProfileCommandHandler(
 
         _ = await accountRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
+        // If not updating the identity provider then return early
+        if (!command.UpdateIdentityProvider)
+        {
+            return AccountOwnedProfileRs.FromAccount(account);
+        }
+
         var accountUpdatedEvent = new AccountOwnedProfileUpdatedEvent(account);
 
         try
         {
             await eventBus.PublishAsync(
                 @event: accountUpdatedEvent,
-                messageLabel: "account-svc",
                 contentType: "application/json",
+                messageLabel: pubSubConfig.Value.AccountPublisher.Subject,
                 configName: pubSubConfig.Value.AccountPublisher.DaprBuildingBlock,
                 topicName: pubSubConfig.Value.AccountPublisher.TopicName,
                 cancellationToken: cancellationToken);

@@ -48,9 +48,9 @@ public static class AccountsApi
             .RequireScope(AuthScopes.ReadOwnedAccount)
             .RequireScope(AuthScopes.WriteOwnedAccount);
 
-        groupBuilder.MapPut("/owned/profile/email", UpdateAccountOwnedProfileEmail)
-            .WithName(nameof(UpdateAccountOwnedProfileEmail))
-            .WithDisplayName(nameof(UpdateAccountOwnedProfileEmail))
+        groupBuilder.MapPut("/owned/profile/email", ChangeAccountOwnedEmail)
+            .WithName(nameof(ChangeAccountOwnedEmail))
+            .WithDisplayName(nameof(ChangeAccountOwnedEmail))
             .WithDescription("Updates the account profile email address for the user represented within the authenticated bearer token")
             .RequireScope(AuthScopes.ReadOwnedAccount)
             .RequireScope(AuthScopes.WriteOwnedAccount);
@@ -118,6 +118,13 @@ public static class AccountsApi
             .RequireScope(AuthScopes.ReadOwnedAccount)
             .RequireScope(AuthScopes.WriteOwnedAccount);
 
+        groupBuilder.MapPut("/owned/profile/username", ChangeAccountOwnedUsername)
+            .WithName(nameof(ChangeAccountOwnedUsername))
+            .WithDisplayName(nameof(ChangeAccountOwnedUsername))
+            .WithDescription("Initiates the change username authentication flow for the user represented within the authenticated bearer token")
+            .RequireScope(AuthScopes.ReadOwnedAccount)
+            .RequireScope(AuthScopes.WriteOwnedAccount);
+
         return groupBuilder;
     }
 
@@ -176,7 +183,7 @@ public static class AccountsApi
         [FromBody, Required, Description("The account profile update request body")] UpdateAccountOwnedProfileRq request,
         [AsParameters] AccountsServices accountServices)
     {
-        var command = new UpdateAccountOwnedProfileCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
+        var command = new UpdateAccountOwnedProfileCommand(request, true, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
         var result = await accountServices.Mediator.Send(command);
 
@@ -187,11 +194,11 @@ public static class AccountsApi
     /// <param name="request">The account profile email information to update</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> UpdateAccountOwnedProfileEmail(
-        [FromBody, Required, Description("The account profile email update request body")] UpdateAccountOwnedProfileEmailRq request,
+    public async static Task<Results<Ok<AccountOwnedProfileRs>, JsonHttpResult<ProblemDetails>>> ChangeAccountOwnedEmail(
+        [FromBody, Required, Description("The account profile email update request body")] ChangeAccountOwnedEmailRq request,
         [AsParameters] AccountsServices accountServices)
     {
-        var command = new UpdateAccountOwnedProfileEmailCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
+        var command = new ChangeAccountOwnedEmailCommand(request, true, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
         var result = await accountServices.Mediator.Send(command);
 
@@ -314,7 +321,7 @@ public static class AccountsApi
     }
 
     /// <summary>Initiates the password change authentication flow for the user represented within the authenticated bearer token</summary>
-    /// <param name="request">The account profile email information to update</param>
+    /// <param name="request">The account profile password information to update</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> ChangeAccountOwnedPassword(
@@ -322,6 +329,21 @@ public static class AccountsApi
         [AsParameters] AccountsServices accountServices)
     {
         var command = new ChangeAccountOwnedPasswordCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
+
+        var result = await accountServices.Mediator.Send(command);
+
+        return TypedResults.NoContent();
+    }
+
+    /// <summary>Initiates the username change authentication flow for the user represented within the authenticated bearer token</summary>
+    /// <param name="request">The account profile username information to update</param>
+    /// <returns></returns>
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> ChangeAccountOwnedUsername(
+        [FromBody, Required, Description("The account username update request body")] ChangeAccountOwnedUsernameRq request,
+        [AsParameters] AccountsServices accountServices)
+    {
+        var command = new ChangeAccountOwnedUsernameCommand(request, accountServices.HttpContextAccessor.HttpContext?.User?.Identity as ClaimsIdentity);
 
         var result = await accountServices.Mediator.Send(command);
 

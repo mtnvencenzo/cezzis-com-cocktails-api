@@ -17,12 +17,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using global::Cocktails.Api.Application.Concerns.Integrations.Events;
 
-public class UpdateAccountOwnedProfile_Tests : ServiceTestBase
+public class ChangeAccountOwnedEmail_Tests : ServiceTestBase
 {
-    public UpdateAccountOwnedProfile_Tests() { }
+    public ChangeAccountOwnedEmail_Tests() { }
 
     [Fact]
-    public async Task updateownedaccountprofile__returns_matching_account()
+    public async Task changeaccountownedemail__returns_matching_account()
     {
         // Arrange
         var faker = new Faker();
@@ -36,21 +36,9 @@ public class UpdateAccountOwnedProfile_Tests : ServiceTestBase
         var accounts = new List<Account> { unmatchedAccount, account };
         this.accountDbContextMock.Setup(x => x.Accounts).ReturnsDbSet(accounts);
 
-        var request = new UpdateAccountOwnedProfileRq
+        var request = new ChangeAccountOwnedEmailRq
         (
-            GivenName: faker.Name.FirstName(),
-            FamilyName: faker.Name.LastName(),
-            DisplayName: faker.Name.FullName(),
-            PrimaryAddress: new AccountAddressModel
-            (
-                AddressLine1: faker.Address.StreetAddress(),
-                AddressLine2: faker.Address.SecondaryAddress(),
-                City: faker.Address.City(),
-                Region: faker.Address.StateAbbr(),
-                SubRegion: faker.Address.County(),
-                PostalCode: faker.Address.ZipCode(),
-                Country: faker.Address.CountryCode(Bogus.DataSets.Iso3166Format.Alpha3)
-            )
+            Email: account.Email
         );
 
         var updatedAccount = this.GetUpdatedAccount(account, request);
@@ -63,7 +51,7 @@ public class UpdateAccountOwnedProfile_Tests : ServiceTestBase
         var services = GetAsParameterServices<AccountsServices>(sp);
 
         // act
-        var response = await AccountsApi.UpdateAccountOwnedProfile(request, services);
+        var response = await AccountsApi.ChangeAccountOwnedEmail(request, services);
         var result = response.Result as Ok<AccountOwnedProfileRs>;
 
         // assert
@@ -75,31 +63,23 @@ public class UpdateAccountOwnedProfile_Tests : ServiceTestBase
         mockRepo.Verify(x => x.UnitOfWork.SaveEntitiesAsync(It.IsAny<CancellationToken>()), Times.Once);
 
         this.eventBusMock.Verify(x => x.PublishAsync(
-            It.Is<AccountOwnedProfileUpdatedEvent>(x => x.OwnedAccount.Id == updatedAccount.Id),
-            "account-svc",
-            "pubsub-sb-topics-cocktails-account",
-            "fake-sbt-vec-eus-loc-cocktails-account-001",
-            "application/json",
+            It.Is<ChangeAccountOwnedEmailEvent>(x =>
+                x.Email == request.Email &&
+                x.OwnedAccountId == account.Id &&
+                x.OwnedAccountSubjectId == account.SubjectId),
+                "account-email-svc",
+                "pubsub-sb-topics-cocktails-account-email",
+                "fake-sbt-vec-eus-loc-cocktails-account-email-001",
+                "application/json",
             It.IsAny<CancellationToken>()), Times.Once);
     }
 
-    private Account GetUpdatedAccount(Account account, UpdateAccountOwnedProfileRq request)
+    private Account GetUpdatedAccount(Account account, ChangeAccountOwnedEmailRq request)
     {
         var js = System.Text.Json.JsonSerializer.Serialize(account);
         var newAccount = System.Text.Json.JsonSerializer.Deserialize<Account>(js);
 
-        newAccount.SetGivenName(givenName: request.GivenName);
-        newAccount.SetFamilyName(familyName: request.FamilyName);
-        newAccount.SetDisplayName(displayName: request.DisplayName);
-        newAccount.SetUpdatedOn(modifiedOn: DateTimeOffset.Now);
-        newAccount.SetPrimaryAddress(
-            addressLine1: request.PrimaryAddress?.AddressLine1,
-            addressLine2: request.PrimaryAddress?.AddressLine2,
-            city: request.PrimaryAddress?.City,
-            region: request.PrimaryAddress?.Region,
-            subRegion: request.PrimaryAddress?.SubRegion,
-            postalCode: request.PrimaryAddress?.PostalCode,
-            country: request.PrimaryAddress?.Country);
+        newAccount.SetEmail(request.Email);
 
         return newAccount;
     }

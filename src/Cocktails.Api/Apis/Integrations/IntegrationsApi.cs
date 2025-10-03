@@ -1,6 +1,6 @@
 ﻿namespace Cocktails.Api.Apis.Integrations;
 
-using Cocktails.Api.Application.IntegrationEvents;
+using Cocktails.Api.Application.Concerns.Integrations.Events;
 using Cocktails.Api.Domain;
 using Cocktails.Api.Domain.Config;
 using Dapr;
@@ -16,6 +16,8 @@ public static class IntegrationsApi
     {
         var emailSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.EmailSubscriber;
         var accountSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.AccountSubscriber;
+        var accountEmailSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.AccountEmailSubscriber;
+        var accountPasswordSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.AccountPasswordSubscriber;
         var cocktailRatingSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.CocktailRatingSubscriber;
 
         var groupBuilder = app.MapGroup("/integrations")
@@ -35,6 +37,18 @@ public static class IntegrationsApi
             .WithDisplayName(nameof(UpdateIdentityProfile))
             .WithDescription("Syncs an account profile with the identity provider")
             .WithTopic(accountSubscriberOptions.DaprBuildingBlock, accountSubscriberOptions.QueueName);
+
+        groupBuilder.MapPost("/accounts/owned/profile/email", UpdateIdentityProfileEmail)
+            .WithName(nameof(UpdateIdentityProfileEmail))
+            .WithDisplayName(nameof(UpdateIdentityProfileEmail))
+            .WithDescription("Syncs an account profile email with the identity provider")
+            .WithTopic(accountEmailSubscriberOptions.DaprBuildingBlock, accountEmailSubscriberOptions.QueueName);
+
+        groupBuilder.MapPost("/accounts/owned/profile/password", UpdateIdentityProfilePassword)
+            .WithName(nameof(UpdateIdentityProfilePassword))
+            .WithDisplayName(nameof(UpdateIdentityProfilePassword))
+            .WithDescription("Syncs an account profile password with the identity provider")
+            .WithTopic(accountPasswordSubscriberOptions.DaprBuildingBlock, accountPasswordSubscriberOptions.QueueName);
 
         groupBuilder.MapPost("/cocktails/ratings", UpdateCocktailRating)
             .WithName(nameof(UpdateCocktailRating))
@@ -76,6 +90,54 @@ public static class IntegrationsApi
     /// <returns></returns>
     public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> UpdateIdentityProfile(
         [FromBody] CloudEvent<AccountOwnedProfileUpdatedEvent> cloudEvent,
+        [AsParameters] IntegrationsServices integrationServices,
+        CancellationToken cancellationToken)
+    {
+        using var logScope = integrationServices.Logger.BeginScope(new Dictionary<string, object>
+        {
+            { Monikers.ServiceBus.MsgId, cloudEvent?.Data?.Id },
+            { Monikers.ServiceBus.MsgCorrelationId, cloudEvent?.Data?.CorrelationId },
+            { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
+        });
+
+        _ = await integrationServices.Mediator.Send(
+            request: cloudEvent.Data,
+            cancellationToken: cancellationToken);
+
+        return TypedResults.Ok();
+    }
+
+    /// <summary>Syncs an account profile email with the identity provider</summary>
+    /// <param name="cloudEvent"></param>
+    /// <param name="integrationServices"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> UpdateIdentityProfileEmail(
+        [FromBody] CloudEvent<ChangeAccountOwnedEmailEvent> cloudEvent,
+        [AsParameters] IntegrationsServices integrationServices,
+        CancellationToken cancellationToken)
+    {
+        using var logScope = integrationServices.Logger.BeginScope(new Dictionary<string, object>
+        {
+            { Monikers.ServiceBus.MsgId, cloudEvent?.Data?.Id },
+            { Monikers.ServiceBus.MsgCorrelationId, cloudEvent?.Data?.CorrelationId },
+            { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
+        });
+
+        _ = await integrationServices.Mediator.Send(
+            request: cloudEvent.Data,
+            cancellationToken: cancellationToken);
+
+        return TypedResults.Ok();
+    }
+
+    /// <summary>Initiates the password change flow on the identity provider</summary>
+    /// <param name="cloudEvent"></param>
+    /// <param name="integrationServices"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> UpdateIdentityProfilePassword(
+        [FromBody] CloudEvent<ChangeAccountOwnedPasswordEvent> cloudEvent,
         [AsParameters] IntegrationsServices integrationServices,
         CancellationToken cancellationToken)
     {
