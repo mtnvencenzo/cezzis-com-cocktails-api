@@ -1,6 +1,6 @@
 # 📝 Description
 
-*Please include a summary of the changes and the related issue. Please also include relevant motivation and context. List any dependencies that are required for this change.*
+<!--Please include a summary of the changes and the related issue. Please also include relevant motivation and context. List any dependencies that are required for this change.-->
 
 - Issue # (issue)
 
@@ -19,7 +19,7 @@ What type of change was this related to?
 
 ## 🧪 How Has This Been Tested?
 
-*Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration*
+<!--Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration-->
 
 - [ ] Unit tests added
 - [ ] Integration tests added
@@ -43,7 +43,7 @@ What type of change was this related to?
 
 ## 🚀 Deployment Notes
 
-*Any special deployment considerations*
+<!--Any special deployment considerations-->
 
 - [ ] Has Messaging infrastructure
 - [ ] Has configuration changes (env, appsettings, etc)
@@ -54,4 +54,4 @@ What type of change was this related to?
 
 ## 📸 Screenshots or other relevant information
 
-*Please provide any screenshots or other relavant information that will aid the reviewer in understanding the changes.*
+<!--Please provide any screenshots or other relavant information that will aid the reviewer in understanding the changes.-->
