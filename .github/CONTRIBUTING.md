@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed:
 
 ### 🗂️ Project Structure
 
-```
+```text
 ├── src/
 │   ├── Cocktails.Api/                 # ASP.NET Core minimal API
 │   ├── Cocktails.Api.Domain/          # Domain model and services

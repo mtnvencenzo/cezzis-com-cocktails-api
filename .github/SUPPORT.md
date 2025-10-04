@@ -141,8 +141,8 @@ Need professional support or custom development?
 
 ### 📬 Contact Options
 
-- 📧 **Email**: support@cezzis.com
-- 💼 **Business Inquiries**: marketing@cezzis.com
+- 📧 **Email**: [support@cezzis.com](mailto:support@cezzis.com)
+- 💼 **Business Inquiries**: [marketing@cezzis.com](mailto:marketing@cezzis.com)
 - 🌐 **Website**: [www.cezzis.com](https://www.cezzis.com)
 
 ### 🛠️ Services Available

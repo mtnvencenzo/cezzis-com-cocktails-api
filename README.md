@@ -57,7 +57,7 @@ Infrastructure is provisioned with Terraform (`/terraform`) and deployed into Az
 - **CI/CD**: GitHub Workflows
 
 ## 🏗️ Project Structure
-```
+```text
 src/
 ├── Cocktails.Api/                 # Main API project
 ├── Cocktails.Api.Domain/          # Domain layer
@@ -73,7 +73,7 @@ terraform/
 ```
 
 ## 🚀 Development Setup
- **Public documentation**: https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1
+ **Public documentation**: [https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1](https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1)
 1) Prerequisites
    - .NET SDK 9.0
    - Optional: Dapr CLI (sidecar), Docker (container builds), Azure CLI / Terraform (infrastructure)
@@ -111,7 +111,7 @@ terraform/
      ```bash
      dotnet run --project src/Cocktails.Api/Cocktails.Api.csproj
      ```
-   - Local API docs: https://localhost:7176/scalar/v1
+   - Local API docs: [https://localhost:7176/scalar/v1](https://localhost:7176/scalar/v1)
    - Optional Dapr: task available in `.vscode/tasks.json` (sidecar ports and HTTPS configured)
 
 5) Testing
@@ -125,7 +125,7 @@ terraform/
 
 ## 📚 API Documentation
 
-Public documentation: https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1
+Public documentation: [https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1](https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1)
 
 ## 📦 Build & Deployment
 
