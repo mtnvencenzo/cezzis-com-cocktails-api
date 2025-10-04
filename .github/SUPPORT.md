@@ -27,12 +27,12 @@ Before asking for help, please check our documentation:
 If you have questions about using Cezzis Cocktails API:
 
 1. **GitHub Discussions** 💬
-   - [Start a discussion](../../discussions)
+   - [Start a discussion](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/discussions)
    - Browse existing discussions
    - Best for: General questions, ideas, show-and-tell
 
 2. **GitHub Issues** 🐛
-   - [Create an issue](../../issues/new/choose)
+   - [Create an issue](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/issues/new/choose)
    - Use our issue templates
    - Best for: Bug reports and feature requests
 
@@ -56,7 +56,7 @@ Found a bug? Help us fix it!
 
 ### 📮 How to Report
 
-1. Use our **[Bug Report Template](../../issues/new?template=bug_report.md)**
+1. Use our **[Bug Report Template](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/issues/new?template=bug_report.md)**
 2. Provide detailed information:
    - Steps to reproduce
    - Expected behavior
@@ -83,7 +83,7 @@ Have an idea for improving Cezzis Cocktails API?
 
 ### 📨 How to Request
 
-1. Use our **[User Story Template](../../issues/new?template=user-story-template.md)**
+1. Use our **[User Story Template](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/issues/new?template=user-story-template.md)**
 2. Provide clear information:
    - What problem does it solve?
    - How would it work?
@@ -157,7 +157,7 @@ Need professional support or custom development?
 
 - 🚀 **Status**: Active development
 - 🎯 **Maintainer**: [@mtnvencenzo](https://github.com/mtnvencenzo)
-- 📈 **Roadmap**: See [Issues](../../issues) and [Projects](../../projects)
+- 📈 **Roadmap**: See [Issues](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/issues) and [Projects](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/projects)
 
 ## 🙏 Thank You
 
