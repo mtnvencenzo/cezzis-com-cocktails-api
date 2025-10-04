@@ -3,21 +3,22 @@
 ## 🛠️ Technology Stack
 
 ### Core Framework
-- **Framework**: .NET Core 9.0
-- **API Style**: RESTful with OpenAPI/Swagger documentation
-- **Architecture**: Clean Architecture with CQRS pattern
+- **Framework**: .NET 9.0
+- **API Style**: RESTful with OpenAPI (Scalar UI)
+- **Architecture**: Clean Architecture + CQRS (MediatR)
 - **Domain**: Domain-Driven Design (DDD) principles
-- **API Implementation**: Minimal APIs with endpoint routing and versioning
+- **API Implementation**: Minimal APIs with endpoint routing and API versioning (aspnet-api-versioning)
 
 ### Data Layer
-- **Database**: Azure Cosmos DB (SQL API)
-- **State Management**: Dapr
+- **Database**: Azure Cosmos DB (SQL API) via EF Core Cosmos provider
+- **Search**: Azure AI Search
 - **Storage**: Azure Blob Storage for images
+- **Integration**: Dapr (pub/sub) for messaging via Azure Service Bus
 
 ### Security & Authentication
-- **Authentication**: Auth0
-- **Authorization**: OAuth 2.0 with OpenID Connect
-- **API Security**: Auth0 API Management with custom scopes
+- **Authentication**: Auth0 (OAuth 2.0 / OpenID Connect) with JWT Bearer
+- **Authorization**: Scope-based policies (e.g., `read:owned-account`, `write:owned-account`)
+- **Gateway**: Azure API Management (APIM) backend integration
 - **Secrets Management**: Azure Key Vault
 
 ### Infrastructure
@@ -25,38 +26,40 @@
 - **Orchestration**: Azure Container Apps
 - **API Gateway**: Azure API Management
 - **CDN**: Azure Front Door
-- **Service Mesh**: Dapr
-- **Monitoring**: Application Insights
+- **Sidecar**: Dapr
+- **Observability**: OpenTelemetry + Application Insights
 
 ### Development Tools
-- **IDE**: Visual Studio 2022
+- **IDE**: VS Code / Visual Studio
 - **Package Manager**: NuGet
 - **Testing**: xUnit, Moq
-- **API Documentation**: Swagger/OpenAPI
+- **API Documentation**: OpenAPI + Scalar
 - **CI/CD**: GitHub Workflows
 
 ## 🏗️ Project Structure
 ```
 src/
-├── Cocktails.Api/           # Main API project
-├── Cocktails.Application/   # Application layer
-├── Cocktails.Domain/        # Domain layer
-└── Cocktails.Infrastructure/# Infrastructure layer
+├── Cocktails.Api/                 # Main API project
+├── Cocktails.Api.Domain/          # Domain layer
+└── Cocktails.Api.Infrastructure/  # Infrastructure layer
 
-tests/
-├── Cocktails.Api.Tests/     # API tests
-└── Cocktails.Unit.Tests/    # Unit tests
-README.md
+test/
+├── Cocktails.Api.Unit.Tests/
+├── Cocktails.Api.Domain.Unit.Tests/
+└── Cocktails.Api.Infrastructure.Unit.Tests/
+
+terraform/
+└── ...                            # Azure resources (APIM, ACA, AI Search, Key Vault, etc.)
 ```
 
 ## 🚀 Development Setup
 
 1. **Prerequisites**
-   - .NET Core SDK 9.0
-   - Visual Studio 2022
-   - Docker Desktop
-   - Azure CLI
-   - Dapr CLI
+  - .NET SDK 9.0
+  - VS Code or Visual Studio (optional)
+  - Dapr CLI (optional, for sidecar)
+  - Docker (optional, for container builds)
+  - Azure CLI / Terraform (optional, for infra)
 
 2. **Environment Setup**
    See [Environment Setup Guide](.readme/env-setup.md) for detailed instructions on configuring your development environment.
@@ -64,14 +67,13 @@ README.md
    For Auth0 configuration, see [Auth0 Setup Guide](.readme/readme-auth0.md).
 
 3. **Auth0 Configuration**
-   Configure your Auth0 settings in `appsettings.local.json`:
+   Configure your Auth0 settings in `src/Cocktails.Api/appsettings.local.json`:
    ```json
    {
      "Auth0": {
-       "Domain": "your-domain.auth0.com",
-       "Audience": "your-api-identifier",
-       "ClientId": "your-client-id",
-       "ClientSecret": "your-client-secret"
+       "Domain": "https://your-tenant.auth0.com",
+       "Audience": "https://your-api-identifier",
+       "ClientId": "your-client-id"
      },
      "Scalar": {
        "AuthorizationCodeFlow": {
@@ -91,8 +93,11 @@ README.md
    dotnet restore
    
    # Run the application
-   dotnet run --project src/Cocktails.Api
+  dotnet run --project src/Cocktails.Api/Cocktails.Api.csproj
    ```
+
+  - Local API docs: https://localhost:7176/scalar/v1
+  - Optional Dapr (task available in .vscode/tasks.json): `dapr run --app-id cocktails-api --resources-path ./.dapr --app-port 7176 --app-protocol https --dapr-http-port 5295`
 
 5. **Testing**
    ```bash
@@ -100,7 +105,7 @@ README.md
    dotnet test
    
    # Run specific test project
-   dotnet test tests/Cocktails.Unit.Tests
+  dotnet test test/Cocktails.Api.Unit.Tests
    ```
 
 ## 📚 API Documentation
@@ -109,22 +114,19 @@ Full API documentation is available at: [Scalar API Documentation](https://api.c
 
 ## 🔒 Security Features
 
-- Auth0 authentication with JWT tokens
+- JWT Bearer authentication (Auth0)
+- Scope-based authorization (e.g., `read:owned-account`, `write:owned-account`)
 - HTTPS enforcement
+- CORS policy
 - API versioning
-- Rate limiting
-- Input validation
-- SQL injection prevention
-- XSS protection
-- Custom scope-based authorization (`read:account`, `write:account`)
+- Input validation via FluentValidation
+- APIM host key protection for backend integration
 
-## 📈 Monitoring
+## 📈 Observability
 
-- Application Insights integration
+- OpenTelemetry via `Cezzi.OTel` (traces/metrics/logs)
+- Azure Monitor / Application Insights
 - Health checks
-- Performance monitoring
-- Error tracking
-- Custom metrics
 
 ## 🤝 Contributing
 
