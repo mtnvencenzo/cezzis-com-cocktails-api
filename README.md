@@ -84,6 +84,8 @@ terraform/
 3) Environment Setup
    - See the Environment Setup Guide: `.readme/env-setup.md`
    - For Auth0 configuration, see: `.readme/readme-auth0.md`
+   - Storage emulator (Azurite): `.readme/readme-azurite.md`
+   - Cosmos DB emulator: `.readme/readme-cosmos.md`
    - Local Auth0 settings are read from `src/Cocktails.Api/appsettings.local.json`:
      ```json
      {
