@@ -159,9 +159,6 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
 - Manages resource groups and service principals
 - Run build pipeline for resource group setup
 
-#### Entra External Id Tenant Setup
-- Follow [CIAM Setup Guide](./Readme-ciam.md)
-
 #### Infrastructure Setup
 1. **Shared Infrastructure**
    - Run pipeline for shared resources
@@ -178,8 +175,6 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
    - Manual steps:
      - Update Google reCAPTCHA site secret
      - Configure pipeline warmup stage
-     - Grant Admin Consent in Entra External Id tenant
-     - Note API app registration client_id and scopes
 
 4. **Cocktails.Frontend**
    - Verify terraform environment variables
@@ -187,7 +182,6 @@ curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download
      - Update Google reCAPTCHA site key
      - Configure Zoho email app password
      - Create container app custom domain bindings
-     - Grant Admin Consent in Entra External Id tenant
      - Update pipeline with app registration client_id
 
 5. **Cocktails.Images**
