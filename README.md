@@ -3,6 +3,16 @@
 Part of the broader Cezzis.com digital experience for discovering and sharing cocktail recipes with a broad
 community of cocktail enthusiasts and aficionados.
 
+[![CI](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/actions/workflows/cezzis-api-cicd.yaml/badge.svg?branch=main)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/actions/workflows/cezzis-api-cicd.yaml)
+[![Release](https://img.shields.io/github/v/release/mtnvencenzo/cezzis-com-cocktails-api?include_prereleases)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/releases)
+[![License](https://img.shields.io/badge/license-Proprietary-lightgrey)](LICENSE)
+![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet&logoColor=white)
+[![Last commit](https://img.shields.io/github/last-commit/mtnvencenzo/cezzis-com-cocktails-api?branch=main)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/commits/main)
+[![Issues](https://img.shields.io/github/issues/mtnvencenzo/cezzis-com-cocktails-api)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/issues)
+[![Docs](https://img.shields.io/badge/docs-OpenAPI%20Scalar-blue)](https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1)
+[![Project](https://img.shields.io/badge/project-Cezzis.com%20Cocktails-181717?logo=github&logoColor=white)](https://github.com/users/mtnvencenzo/projects/2)
+[![Website](https://img.shields.io/badge/website-cezzis.com-2ea44f?logo=google-chrome&logoColor=white)](https://www.cezzis.com)
+
 ## 🧩 Cezzis.com Project Ecosystem
 
 This backend works alongside several sibling repositories:
@@ -82,10 +92,10 @@ terraform/
    - Run `dotnet restore` at the repo root
 
 3) Environment Setup
-   - See the Environment Setup Guide: `.readme/env-setup.md`
-   - For Auth0 configuration, see: `.readme/readme-auth0.md`
-   - Storage emulator (Azurite): `.readme/readme-azurite.md`
-   - Cosmos DB emulator: `.readme/readme-cosmos.md`
+  - See the Environment Setup Guide: [Environment Setup Guide](.readme/env-setup.md)
+  - For Auth0 configuration, see: [Auth0 Setup](.readme/readme-auth0.md)
+  - Storage emulator (Azurite): [Azurite guide](.readme/readme-azurite.md)
+  - Cosmos DB emulator: [Cosmos DB guide](.readme/readme-cosmos.md)
    - Local Auth0 settings are read from `src/Cocktails.Api/appsettings.local.json`:
      ```json
      {
@@ -157,11 +167,11 @@ Public documentation: [https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v
 
 ## 🌐 Community & Support
 
-- 🤝 Contributing Guide – see `.github/CONTRIBUTING.md`
-- 🤗 Code of Conduct – see `.github/CODE_OF_CONDUCT.md`
-- 🆘 Support Guide – see `.github/SUPPORT.md`
-- 🔒 Security Policy – see `.github/SECURITY.md`
+- 🤝 Contributing Guide – see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+- 🤗 Code of Conduct – see [CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md)
+- 🆘 Support Guide – see [SUPPORT.md](.github/SUPPORT.md)
+- 🔒 Security Policy – see [SECURITY.md](.github/SECURITY.md)
 
 ## 📄 License
 
-This project is proprietary software. All rights reserved. See `LICENSE` for details.
+This project is proprietary software. All rights reserved. See [LICENSE](LICENSE) for details.

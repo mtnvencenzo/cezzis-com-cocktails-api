@@ -1,217 +1,131 @@
-# Environment Setup Guide
+# Cocktails API Environment Setup
+
+This guide is focused on local development for the Cocktails API and the minimum supporting services you may need (storage, database emulator, optional Dapr). Frontend, Cypress, or other projects are out of scope here.
 
 ## Table of Contents
-- [Repository Overview](#repository-overview)
-- [Environment Setup](#environment-setup)
-- [Application Deployment](#application-deployment)
-  - [Pipeline and Tenant Setup](#pipeline-and-tenant-setup)
-  - [Cypress Setup](#cypress-setup)
+- [Scope](#scope)
+- [Prerequisites](#prerequisites)
+- [Install and verify tooling](#install-and-verify-tooling)
+- [Local services (optional)](#local-services-optional)
+  - [Azurite (Blob Storage emulator)](#azurite-blob-storage-emulator)
+  - [Cosmos DB Emulator (Linux container)](#cosmos-db-emulator-linux-container)
+  - [Dapr (optional)](#dapr-optional)
+- [Run the API locally](#run-the-api-locally)
+- [Troubleshooting](#troubleshooting)
+- [Related docs](#related-docs)
 
-## Repository Overview
-Repository for all artifacts, solutions and projects for the cocktails website.
+## Scope
+Local developer setup for the Cocktails API only. Use this when you want to run and test the API on your machine, optionally with local emulators.
 
-## Environment Setup
+## Prerequisites
+- Git
+- .NET SDK 9.0
+- Docker Engine (for emulators/Dapr)
+- Azure CLI (optional, for cloud auth/tasks)
+- Terraform CLI (optional, for infrastructure workflows)
+- jq (optional, for JSON parsing in scripts)
+- VS Code or your preferred editor
 
-### Required Software
-1. **Visual Studio**
-2. **Cursor or VS Code**
-3. **Chocolatey**
-   - Install from [chocolatey.org](https://chocolatey.org/install)
+## Install and verify tooling
 
-### Development Tools
+Below are Linux-friendly pointers. If you use a different distro, consult the official docs.
 
-#### Terraform
+- .NET 9 SDK: see Microsoft docs for your distro
+  - https://learn.microsoft.com/dotnet/core/install/linux
+  - Verify: `dotnet --info`
+
+- Docker Engine: https://docs.docker.com/engine/install/
+  - Verify: `docker --version`
+
+- Azure CLI: https://learn.microsoft.com/cli/azure/install-azure-cli
+  - Verify: `az version`
+
+- Terraform: https://developer.hashicorp.com/terraform/install
+  - Verify: `terraform -version`
+
+- jq: on Debian/Ubuntu: `sudo apt-get update && sudo apt-get install -y jq`
+  - Verify: `jq --version`
+
+- Git config (recommended for Linux):
+  ```bash
+  git config --global core.autocrlf input
+  git config --global user.name "Your Name"
+  git config --global user.email "you@example.com"
+  ```
+
+## Local services (optional)
+You can run the API entirely against cloud services, but for local/offline work these emulators help.
+
+### Azurite (Blob Storage emulator)
 ```bash
-choco install terraform
+docker pull mcr.microsoft.com/azure-storage/azurite
+docker run --restart=always -d \
+  --name azurite-cocktails \
+  -p 10000:10000 \
+  -v "$(pwd)/.azurite:/data" \
+  mcr.microsoft.com/azure-storage/azurite \
+  azurite-blob --blobHost 0.0.0.0 --location /data
 ```
+- See details and troubleshooting: [Azurite guide](./readme-azurite.md)
 
-#### Git Configuration
+### Cosmos DB Emulator (Linux container)
 ```bash
-# Set Git configuration
-git config --global core.autocrlf true
-git config --global user.name "John Doe"
-git config --global user.email "johndoe@mailinator.com"
+docker pull mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview
+docker run --restart=always -d \
+  --name cosmos-cocktails \
+  -p 8081:8081 -p 1234:1234 \
+  mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview \
+  --protocol https
+
+docker ps
+```
+- See details and troubleshooting: [Cosmos Emulator guide](./readme-cosmos.md)
+
+### Dapr (optional)
+- Install Dapr CLI: https://docs.dapr.io/getting-started/install-dapr-cli/
+- Initialize (requires Docker):
+  ```bash
+  dapr init
+  dapr --version
+  docker ps
+  ```
+- More info: [Dapr guide](./readme-dapr.md)
+
+## Run the API locally
+1) Restore and build
+```bash
+dotnet restore
+dotnet build
 ```
 
-#### Install jq (for curl)
-1. Run in git bash
-``` bash
-curl -L -o /usr/bin/jq.exe https://github.com/jqlang/jq/releases/latest/download/jq-win64.exe
+2) Trust HTTPS dev certs (first time on a machine)
+```bash
+dotnet dev-certs https --trust
 ```
 
-#### Node Version Manager (nvm)
-1. Install nvm from [nvm-sh/nvm](https://github.com/nvm-sh/nvm#install--update-script)
-2. Create `.bash_profile` in home directory (`C:\Users\YourUserName`)
-3. Run in Git Bash:
-   ```bash
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
-   ```
-4. Add to environment variables if needed: `C:\Program Files\Git\bin`
-5. Configure nvm:
-   ```bash
-   export NVM_DIR="$HOME/.nvm"
-   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-   [ -s "$NVM_DIR/bash_completion.sh" ] && \. "$NVM_DIR/bash_completion.sh"
-   ```
-6. Verify installation:
-   ```bash
-   nvm -v
-   nvm install node
-   node -v
-   ```
+3) Configure local settings
+- See [Auth0 Setup](./readme-auth0.md) for configuring `src/Cocktails.Api/appsettings.local.json`.
+- If using emulators, ensure connection strings match the guides above.
 
-#### Docker Setup
-1. **Enable Virtualization**
-   - Check Task Manager > Performance tab > Virtualization: Enabled
+4) Run the API
+```bash
+dotnet run --project src/Cocktails.Api/Cocktails.Api.csproj
+```
+- Local API docs: https://localhost:7176/scalar/v1
 
-2. **Install WSL**
-   ```powershell
-   # Run in PowerShell as Administrator
-   wsl --install
-   ```
-   - Enable Windows Features:
-     - Virtual Machine Platform
-     - Windows Hypervisor Platform
-     - Windows Subsystem for Linux
-   ```powershell
-   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-   ```
-   - Download and install [Linux Kernel Update Package](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4--download-the-linux-kernel-update-package)
-   ```powershell
-   wsl --set-default-version 2
-   ```
+5) Run tests
+```bash
+dotnet test
+```
 
-3. **Install Docker Desktop**
-   - Download from [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
-   - Add user to docker-users group (if needed):
-   ```powershell
-   net localgroup docker-users "domain\YourUserName" /ADD
-   ```
+## Troubleshooting
+- Port already in use: stop conflicting processes or change exposed ports.
+- HTTPS trust issues: re-run `dotnet dev-certs https --trust` and restart your browser.
+- Docker cannot pull images: check network/proxy, then `docker login` if needed.
+- Cosmos emulator cert/errors: follow the [Cosmos Emulator guide](./readme-cosmos.md) steps for certs.
 
-4. **NPM Authentication**
-   ```bash
-   npm install -g vsts-npm-auth
-   vsts-npm-auth -config .npmrc
-   ```
-
-5. **Install Yarn**
-   ```bash
-   npm install -g yarn
-   ```
-
-#### Azure Tools
-1. **Azure CLI**
-   - Install from [Microsoft Docs](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
-   - Or via PowerShell:
-   ```powershell
-   $ProgressPreference = 'SilentlyContinue'
-   Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi
-   Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
-   Remove-Item .\AzureCLI.msi
-   ```
-
-2. **Azure Functions Core Tools**
-   ```bash
-   choco install azure-functions-core-tools -y
-   ```
-   - Update in Visual Studio: Tools > Options > Projects and Solutions > Azure Functions
-
-3. **Azurite (Azure Storage Emulator)**
-   - Pull and run the Azurite Docker image:
-   ```bash
-   docker pull mcr.microsoft.com/azure-storage/azurite
-   docker run --restart=always -d --name azurite-cocktails -p 10000:10000 -v <absolute-path-to-repo-code>.azurite:/workspace mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0
-   ```
-   - For detailed configuration and troubleshooting, see the [Azurite Setup Guide](./readme-azurite.md)
-
-3. **Cosmos Db (Emulator)**
-   - Pull and run the Cosmos Emulator (for Linux) Docker image:
-   ```bash
-   docker pull mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview
-   docker run --restart=always -d --name cosmos-cocktails -p 8081:8081 -p 1234:1234 mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview --protocol https
-
-   docker ps
-   ```
-   - For detailed configuration and troubleshooting, see the [Cosmos Emulator Setup Guide](./readme-cosmos.md)
-
-
-
-### Dapr Installation
-1. Download latest MSI from [Dapr CLI Releases](https://github.com/dapr/cli/releases)
-2. Start Docker Desktop
-3. Initialize Dapr:
-   ```bash
-   dapr init
-   ```
-   ![Dapr Init](./dapr-init-gitbash.png)
-4. Verify installation:
-   ```bash
-   dapr --version
-   docker ps
-   ```
-   ![Dapr Docker](./dapr-init-dockerdesktop.png)
-
-## Application Deployment
-
-### Pipeline and Tenant Setup
-
-#### ADO Terraform Project
-- Manages resource groups and service principals
-- Run build pipeline for resource group setup
-
-#### Infrastructure Setup
-1. **Shared Infrastructure**
-   - Run pipeline for shared resources
-   - Creates DNS Zone for cezzis.com
-
-2. **Cocktails.SharedInfrastructure**
-   - Sets up environment keyvaults
-   - Configures subnet access
-   - Establishes container registry password
-
-3. **Cocktails.Api**
-   - Verify terraform environment variables
-   - Creates API and app registration
-   - Manual steps:
-     - Update Google reCAPTCHA site secret
-     - Configure pipeline warmup stage
-
-4. **Cocktails.Frontend**
-   - Verify terraform environment variables
-   - Manual steps:
-     - Update Google reCAPTCHA site key
-     - Configure Zoho email app password
-     - Create container app custom domain bindings
-     - Update pipeline with app registration client_id
-
-5. **Cocktails.Images**
-   - Verify terraform environment variables
-   - Configure allowed origins if needed
-
-### Cypress Setup
-
-1. **Create Test Account**
-   - Register new account on website
-   - Note username and password
-
-2. **Configure Keyvault**
-   - Update `e2e-cypress-user-password` secret
-
-3. **Update Pipeline Configuration**
-   ```yaml
-   - template: ui-cypress.yml
-     parameters:
-       baseUrl: 'https://www.cezzis.com'
-       ciamUrl: 'https://login.cezzis.com/'
-       ciamTenantId: 'fb512a9c-5b44-41ab-8042-6465769f16c9'
-       ciamClientId: '84744194-da27-410f-ae0e-74f5589d4c96'
-       ciamUserObjectId: '41598664-1466-4e3e-b28c-dfe9837e462e'
-       ciamUserEmail: 'rvecchi+cypress@gmail.com'
-       cypressUserPassword: '$(e2e-cypress-user-password)'
-       cypressApiKey: ''
-   ```
-
-> **Note**: 
-> - Get user object_id from Azure tenant
-> - Use frontend app registration client_id
-> - Pipeline should now run successfully with Cypress tests
+## Related docs
+- [Auth0 Setup](./readme-auth0.md)
+- [Azurite guide](./readme-azurite.md)
+- [Cosmos Emulator guide](./readme-cosmos.md)
+- [Dapr guide](./readme-dapr.md)
