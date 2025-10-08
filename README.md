@@ -25,6 +25,8 @@ This backend works alongside several sibling repositories:
 - [cocktails-shared-infra](https://github.com/mtnvencenzo/cezzis-com-cocktails-shared-infra) – Terraform compositions specific to the cocktails platform
 - [shared-infrastructure](https://github.com/mtnvencenzo/shared-infrastructure) – Global Terraform modules that underpin multiple Cezzis.com workloads
 
+![Complete Diagram](./assets/cezzis-com-api-interactions.drawio.svg)
+
 ## ☁️ Cloud-Native Footprint (Azure)
 
 Infrastructure is provisioned with Terraform (`/terraform`) and deployed into Azure using shared modules:
