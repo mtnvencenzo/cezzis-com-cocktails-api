@@ -1,0 +1,30 @@
+{
+    "rest-client.enableTelemetry": false,
+    "rest-client.environmentVariables": {
+        "local": {
+          "host": "https://localhost:7176",
+          "apimkey": ""
+        },
+        "prod-apim": {
+          "host": "https://api.cezzis.com/prd/cocktails",
+          "apimkey": ""
+        }
+    },
+    "dotnet.defaultSolution": "Cocktails.Api.sln",
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    },
+    "search.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    },
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/GitTools/GitVersion/main/schemas/6.3/GitVersion.json": "GitVersion.yml"
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true
+    }
+}
