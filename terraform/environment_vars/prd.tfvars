@@ -24,3 +24,6 @@ auth0_management_client_id    = "JtxZM9RiJVHejv6xqkFYdFtdfUrX6N09" # M2M Client 
 auth0_frontend_client_id      = "HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb" # For Swagger/Scalar UI
 auth0_custom_domain_cname     = "cezzis-cd-skhnnuczfndoqumy.edge.tenants.us.auth0.com"
 auth0_custom_domain_subdomain = "login"
+
+cosmosdb_reader_role_id      = "00000000-0000-0000-0000-000000000002"
+cosmosdb_contributor_role_id = "00000000-0000-0000-0000-000000000003"
