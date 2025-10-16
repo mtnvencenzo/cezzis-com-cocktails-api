@@ -278,11 +278,13 @@ module "aca_cocktails_api" {
     },
     {
       name  = "CosmosDb__AccountEndpoint"
-      value = module.cocktails_cosmosdb_account.cosmosdb_enpdpoint
+      value = ""
+      #value = module.cocktails_cosmosdb_account.cosmosdb_enpdpoint
     },
     {
       name  = "CosmosDb__DatabaseName"
-      value = var.cocktails_cosmosdb_database_name
+      value = ""
+      #value = var.cocktails_cosmosdb_database_name
     },
     {
       name  = "PubSub__EmailPublisher__DaprBuildingBlock"
