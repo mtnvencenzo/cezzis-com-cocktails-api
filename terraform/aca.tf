@@ -278,8 +278,7 @@ module "aca_cocktails_api" {
     },
     {
       name  = "CosmosDb__AccountEndpoint"
-      value = ""
-      #value = data.azurerm_cosmosdb_account.cosmosdb_account.endpoint
+      value = data.azurerm_cosmosdb_account.cosmosdb_account.endpoint
     },
     {
       name  = "CosmosDb__DatabaseName"
@@ -411,13 +410,11 @@ module "aca_cocktails_api" {
     },
     {
       name  = "Search__Endpoint"
-      value = ""
-      #value = module.ai_search_cosmos_index.fqdn_host_name
+      value = module.ai_search_cosmos_index.fqdn_host_name
     },
     {
       name  = "Search__IndexName"
-      value = ""
-      #value = module.ai_search_cosmos_index.index_name
+      value = module.ai_search_cosmos_index.index_name
     },
     {
       name  = "Search__QueryKey"

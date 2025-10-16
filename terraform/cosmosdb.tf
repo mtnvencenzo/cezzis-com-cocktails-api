@@ -1,55 +1,55 @@
-# module "cocktails_cosmos_containers" {
-#   source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/cosmos-db-sql-containers"
+module "cocktails_cosmos_containers" {
+  source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/cosmos-db-sql-containers"
 
-#   resource_group_name   = data.azurerm_resource_group.global_shared_resource_group.name
-#   cosmosdb_account_name = data.azurerm_cosmosdb_account.cosmosdb_account.name
-#   database_name         = data.azurerm_cosmosdb_sql_database.sql_db.name
+  resource_group_name   = data.azurerm_resource_group.global_shared_resource_group.name
+  cosmosdb_account_name = data.azurerm_cosmosdb_account.cosmosdb_account.name
+  database_name         = data.azurerm_cosmosdb_sql_database.sql_db.name
 
-#   containers = [
-#     {
-#       name                  = "cezzis-${var.environment}-accounts-account"
-#       partition_key_paths   = ["/subjectId"]
-#       partition_key_version = 1
-#       indexing_mode         = "consistent"
-#       indexing_path         = "/*"
-#       unique_key_paths      = []
-#     },
-#     {
-#       name                  = "cezzis-${var.environment}-cocktails-cocktail"
-#       partition_key_paths   = ["/id"]
-#       partition_key_version = 1
-#       indexing_mode         = "consistent"
-#       indexing_path         = "/*"
-#       unique_key_paths      = []
-#     },
-#     {
-#       name                  = "cezzis-${var.environment}-cocktails-ingredient"
-#       partition_key_paths   = ["/id"]
-#       partition_key_version = 1
-#       indexing_mode         = "consistent"
-#       indexing_path         = "/*"
-#       unique_key_paths      = []
-#     }
-#   ]
-# }
+  containers = [
+    {
+      name                  = "cezzis-${var.environment}-accounts-account"
+      partition_key_paths   = ["/subjectId"]
+      partition_key_version = 1
+      indexing_mode         = "consistent"
+      indexing_path         = "/*"
+      unique_key_paths      = []
+    },
+    {
+      name                  = "cezzis-${var.environment}-cocktails-cocktail"
+      partition_key_paths   = ["/id"]
+      partition_key_version = 1
+      indexing_mode         = "consistent"
+      indexing_path         = "/*"
+      unique_key_paths      = []
+    },
+    {
+      name                  = "cezzis-${var.environment}-cocktails-ingredient"
+      partition_key_paths   = ["/id"]
+      partition_key_version = 1
+      indexing_mode         = "consistent"
+      indexing_path         = "/*"
+      unique_key_paths      = []
+    }
+  ]
+}
 
-# module "cocktails_cosmos_role_assignments" {
-#   source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/cosmos-db-sql-role-assignments"
+module "cocktails_cosmos_role_assignments" {
+  source = "git::ssh://git@github.com/mtnvencenzo/Terraform-Modules.git//modules/cosmos-db-sql-role-assignments"
 
-#   resource_group_name   = data.azurerm_resource_group.global_shared_resource_group.name
-#   cosmosdb_account_name = data.azurerm_cosmosdb_account.cosmosdb_account.name
-#   database_id           = data.azurerm_cosmosdb_sql_database.sql_db.id
+  resource_group_name   = data.azurerm_resource_group.global_shared_resource_group.name
+  cosmosdb_account_name = data.azurerm_cosmosdb_account.cosmosdb_account.name
+  database_id           = data.azurerm_cosmosdb_sql_database.sql_db.id
 
-#   database_role_assignments = [
-#     {
-#       name               = "24d5c255-8508-4ea2-941e-7044fe5db968" # must be a uuid
-#       role_definition_id = var.cosmosdb_reader_role_id
-#       principal_id       = module.aca_cocktails_api.managed_identity_principal_id
-#     },
-#     {
-#       name               = "37c0645e-bc81-43cd-9607-2377e2660d2a" # must be a uuid
-#       role_definition_id = var.cosmosdb_contributor_role_id
-#       principal_id       = module.aca_cocktails_api.managed_identity_principal_id
-#     }
-#   ]
-# }
+  database_role_assignments = [
+    {
+      name               = "24d5c255-8508-4ea2-941e-7044fe5db968" # must be a uuid
+      role_definition_id = var.cosmosdb_reader_role_id
+      principal_id       = module.aca_cocktails_api.managed_identity_principal_id
+    },
+    {
+      name               = "37c0645e-bc81-43cd-9607-2377e2660d2a" # must be a uuid
+      role_definition_id = var.cosmosdb_contributor_role_id
+      principal_id       = module.aca_cocktails_api.managed_identity_principal_id
+    }
+  ]
+}
