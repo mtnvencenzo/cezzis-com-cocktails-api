@@ -92,14 +92,14 @@ data "azurerm_container_app" "otel_collector" {
   resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
 }
 
-# # CosmosDB Shared Account
-# data "azurerm_cosmosdb_account" "cosmosdb_account" {
-#   name                = "cosmos-${var.sub}-${var.region}-${var.global_environment}-shared-${var.sequence}"
-#   resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
-# }
+# CosmosDB Shared Account
+data "azurerm_cosmosdb_account" "cosmosdb_account" {
+  name                = "cosmos-${var.sub}-${var.region}-${var.global_environment}-shared-${var.sequence}"
+  resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
+}
 
-# data "azurerm_cosmosdb_sql_database" "sql_db" {
-#   name                = var.cocktails_cosmosdb_database_name
-#   resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
-#   account_name        = data.azurerm_cosmosdb_account.cosmosdb_account.name
-# }
+data "azurerm_cosmosdb_sql_database" "sql_db" {
+  name                = var.cocktails_cosmosdb_database_name
+  resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
+  account_name        = data.azurerm_cosmosdb_account.cosmosdb_account.name
+}
