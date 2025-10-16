@@ -98,8 +98,20 @@ data "azurerm_cosmosdb_account" "cosmosdb_account" {
   resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
 }
 
-data "azurerm_cosmosdb_sql_database" "sql_db" {
+data "azurerm_cosmosdb_sql_database" "cosmosdb_shared_db" {
   name                = var.cocktails_cosmosdb_database_name
   resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
   account_name        = data.azurerm_cosmosdb_account.cosmosdb_account.name
+}
+
+data "azurerm_cosmosdb_sql_role_definition" "cosmosdb_contributor_role" {
+  resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
+  account_name        = data.azurerm_cosmosdb_account.cosmosdb_account.name
+  role_definition_id  = var.cosmosdb_contributor_role_id
+}
+
+data "azurerm_cosmosdb_sql_role_definition" "cosmosdb_reader_role" {
+  resource_group_name = data.azurerm_resource_group.global_shared_resource_group.name
+  account_name        = data.azurerm_cosmosdb_account.cosmosdb_account.name
+  role_definition_id  = var.cosmosdb_reader_role_id
 }

@@ -189,10 +189,10 @@ variable "cocktails_cosmosdb_database_name" {
 
 variable "cosmosdb_reader_role_id" {
   type    = string
-  default = "00000000-0000-0000-0000-000000000002"
+  default = "3eb65bfe-1406-b164-d00d-92c1eb506153"
 }
 
 variable "cosmosdb_contributor_role_id" {
   type    = string
-  default = "00000000-0000-0000-0000-000000000003"
+  default = "87b63e98-de0d-b47b-9736-691d9009a19a"
 }
