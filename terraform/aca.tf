@@ -278,11 +278,55 @@ module "aca_cocktails_api" {
     },
     {
       name  = "CosmosDb__AccountEndpoint"
-      value = module.cocktails_cosmosdb_account.cosmosdb_enpdpoint
+      value = data.azurerm_cosmosdb_account.cosmosdb_account.endpoint
     },
     {
       name  = "CosmosDb__DatabaseName"
       value = var.cocktails_cosmosdb_database_name
+    },
+    {
+      name  = "CosmosDb__CocktailsContainerName"
+      value = "cezzis-${var.environment}-cocktails-cocktail"
+    },
+    {
+      name  = "CosmosDb__IngredientsContainerName"
+      value = "cezzis-${var.environment}-cocktails-ingredient"
+    },
+    {
+      name  = "CosmosDb__AccountsContainerName"
+      value = "cezzis-${var.environment}-accounts-account"
+    },
+    {
+      name  = "Dapr__HttpPort"
+      value = "3500"
+    },
+    {
+      name  = "Dapr__GrpcPort"
+      value = "50001"
+    },
+    {
+      name  = "Dapr__EnableProfiling"
+      value = "true"
+    },
+    {
+      name  = "Dapr__ProfilePort"
+      value = "7777"
+    },
+    {
+      name  = "PubSub__EmailPublisher__DaprBuildingBlock"
+      value = var.pubsub_sb_topics_cocktails_email
+    },
+    {
+      name  = "PubSub__EmailPublisher__TopicName"
+      value = module.cocktails_servicebus_email_topic.name
+    },
+    {
+      name  = "PubSub__EmailSubscriber__DaprBuildingBlock"
+      value = var.pubsub_sb_queues_cocktails_email
+    },
+    {
+      name  = "PubSub__EmailSubscriber__QueueName"
+      value = module.cocktails_servicebus_email_queue.name
     },
     {
       name  = "PubSub__EmailPublisher__DaprBuildingBlock"

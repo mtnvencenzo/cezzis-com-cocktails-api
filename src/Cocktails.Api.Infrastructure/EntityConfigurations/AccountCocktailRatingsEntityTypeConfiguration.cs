@@ -3,14 +3,16 @@
 using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Text.Json;
 
 public class AccountCocktailRatingsEntityTypeConfiguration : IEntityTypeConfiguration<AccountCocktailRatings>, IAccountContextEntityConfiguration
 {
     public void Configure(EntityTypeBuilder<AccountCocktailRatings> builder)
     {
+        var containerName = Environment.GetEnvironmentVariable("CosmosDb__AccountsContainerName")
+            ?? throw new ArgumentNullException("CosmosDb__AccountsContainerName");
+
         builder
-            .ToContainer("accounts-account")
+            .ToContainer(containerName)
             .HasPartitionKey(x => x.SubjectId)
             .ApplyCamelCasingNamingStrategry()
             .HasKey(x => x.Id);
