@@ -278,7 +278,8 @@ module "aca_cocktails_api" {
     },
     {
       name  = "CosmosDb__AccountEndpoint"
-      value = data.azurerm_cosmosdb_account.cosmosdb_account.endpoint
+      value = ""
+      #value = data.azurerm_cosmosdb_account.cosmosdb_account.endpoint
     },
     {
       name  = "CosmosDb__DatabaseName"
