@@ -1,18 +1,19 @@
 ﻿namespace Cocktails.Api.Infrastructure.EntityConfigurations;
 
-using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 public class CocktailEntityTypeConfiguration : IEntityTypeConfiguration<Cocktail>, ICocktailContextEntityConfiguration
 {
+
     public void Configure(EntityTypeBuilder<Cocktail> builder)
     {
+        var containerName = Environment.GetEnvironmentVariable("CosmosDb__CocktailsContainerName")
+            ?? throw new ArgumentNullException("CosmosDb__CocktailsContainerName");
+
         builder
-            .ToContainer("cocktails-cocktail")
+            .ToContainer(containerName)
             .HasPartitionKey(x => x.Id)
             .HasKey(x => x.Id);
 

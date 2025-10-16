@@ -9,8 +9,11 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>,
 {
     public void Configure(EntityTypeBuilder<Account> builder)
     {
+        var containerName = Environment.GetEnvironmentVariable("CosmosDb__AccountsContainerName")
+            ?? throw new ArgumentNullException("CosmosDb__AccountsContainerName");
+
         builder
-            .ToContainer("accounts-account")
+            .ToContainer(containerName)
             .HasPartitionKey(x => x.SubjectId)
             .ApplyCamelCasingNamingStrategry()
             .HasKey(x => x.Id);

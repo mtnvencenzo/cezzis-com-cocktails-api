@@ -174,15 +174,25 @@ variable "allowed_origins" {
   default = []
 }
 
-variable "cocktails_cosmosdb_database_name" {
-  type    = string
-  default = "cocktails-db"
-}
-
 variable "custom_domain" {
   type = object({
     sub_domain                    = string
     host_name                     = string
     custom_domain_verification_id = string
   })
+}
+
+variable "cocktails_cosmosdb_database_name" {
+  type    = string
+  default = "shared-db"
+}
+
+variable "cosmosdb_reader_role_id" {
+  type    = string
+  default = "3eb65bfe-1406-b164-d00d-92c1eb506153"
+}
+
+variable "cosmosdb_contributor_role_id" {
+  type    = string
+  default = "87b63e98-de0d-b47b-9736-691d9009a19a"
 }

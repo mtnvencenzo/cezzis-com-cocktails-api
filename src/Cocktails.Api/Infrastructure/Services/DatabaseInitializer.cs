@@ -40,9 +40,9 @@ public class DatabaseInitializer(
             }
 
             logger.LogInformation("Creating containers if they don't exist");
-            await this.CreateContainer(accountCosmosClient, config.Value.DatabaseName, "accounts-account", "/subjectId");
-            await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, "cocktails-cocktail", "/id");
-            await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, "cocktails-ingredient", "/id");
+            await this.CreateContainer(accountCosmosClient, config.Value.DatabaseName, config.Value.AccountsContainerName, "/subjectId");
+            await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, config.Value.CocktailsContainerName, "/id");
+            await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, config.Value.IngredientsContainerName, "/id");
 
             logger.LogInformation("Seeding data");
             await mediator.Send(new SeedIngredientsCommand(OnlyIfEmpty: true));

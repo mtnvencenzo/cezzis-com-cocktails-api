@@ -50,9 +50,9 @@ Https is required - see the --protocol https argument.  Note that we are disabli
 
 ## Setup the database
 - Create a db called **cocktails-db**
-- Create container called **accounts-account** *(w/partionkey=/subjectId)*
-- Create container called **cocktails-cocktail** *(w/partionKey=/id)*
-- Create container called **cocktails-ingredient** *(w/partionKey=/id)*
+- Create container called **cezzis-\<env\>-accounts-account** *(w/partionkey=/subjectId)*
+- Create container called **cezzis-\<env\>-cocktails-cocktail** *(w/partionKey=/id)*
+- Create container called **cezzis-\<env\>-cocktails-ingredient** *(w/partionKey=/id)*
 
 
 - Connection string:

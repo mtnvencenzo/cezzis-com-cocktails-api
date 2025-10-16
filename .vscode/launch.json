@@ -22,7 +22,11 @@
                 "ASPNETCORE_ENVIRONMENT": "local",
                 "ASPNETCORE_URLS": "https://localhost:7176;http://localhost:7177",
                 "DAPR_HTTP_PORT": "5295",
-                "DAPR_GRPC_PORT": "50001"
+                "DAPR_GRPC_PORT": "50001",
+                // these container names must be here for EF Entity Type Configured to work
+                "CosmosDb__CocktailsContainerName": "cezzis-local-cocktails-cocktail",
+                "CosmosDb__IngredientsContainerName": "cezzis-local-cocktails-ingredient",
+                "CosmosDb__AccountsContainerName": "cezzis-local-accounts-account"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
