@@ -7,7 +7,7 @@
         },
         "prod-apim": {
           "host": "https://api.cezzis.com/prd/cocktails",
-          "apimkey": ""
+          "apimkey": "x361#{=j]@m3d><oi#3t4a5z"
         }
     },
     "dotnet.defaultSolution": "Cocktails.Api.sln",
