@@ -52,4 +52,6 @@ module "cocktails_cosmos_role_assignments" {
       principal_id       = module.aca_cocktails_api.managed_identity_principal_id
     }
   ]
+
+  depends_on = [module.cocktails_cosmos_containers]
 }

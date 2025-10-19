@@ -450,7 +450,6 @@ module "aca_cocktails_api" {
   ]
 
   depends_on = [
-    module.cocktails_cosmos_containers,
-    module.cocktails_cosmos_role_assignments
+    module.cocktails_cosmos_containers
   ]
 }
