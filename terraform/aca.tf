@@ -448,4 +448,9 @@ module "aca_cocktails_api" {
       secret_name = "auth0-client-secret"
     }
   ]
+
+  depends_on = [
+    module.cocktails_cosmos_containers,
+    module.cocktails_cosmos_role_assignments
+  ]
 }
