@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.7">
   <diagram id="elastic-stack-diagram" name="Elastic Stack Architecture">
-    <mxGraphModel dx="906" dy="491" grid="1" gridSize="11" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="719" dy="372" grid="1" gridSize="11" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -25,7 +25,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="eHzWIXnUUWUC3OV752Zy-94" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;OpenTelemtery via Grpc&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="eHzWIXnUUWUC3OV752Zy-93" vertex="1" connectable="0">
+        <mxCell id="eHzWIXnUUWUC3OV752Zy-94" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;OTel via Http/protobuf&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="eHzWIXnUUWUC3OV752Zy-93" vertex="1" connectable="0">
           <mxGeometry x="-0.5379" y="2" relative="1" as="geometry">
             <mxPoint x="6" y="-10" as="offset" />
           </mxGeometry>
@@ -41,7 +41,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="eHzWIXnUUWUC3OV752Zy-92" value="OpenTelemtery via Grpc" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" parent="eHzWIXnUUWUC3OV752Zy-91" vertex="1" connectable="0">
+        <mxCell id="eHzWIXnUUWUC3OV752Zy-92" value="OTel via Http/protobuf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" parent="eHzWIXnUUWUC3OV752Zy-91" vertex="1" connectable="0">
           <mxGeometry x="-0.1137" y="-2" relative="1" as="geometry">
             <mxPoint x="12" y="-4" as="offset" />
           </mxGeometry>
@@ -214,8 +214,8 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="544" y="319" />
-              <mxPoint x="687" y="319" />
-              <mxPoint x="687" y="454" />
+              <mxPoint x="682" y="319" />
+              <mxPoint x="682" y="454" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -284,8 +284,16 @@
         <mxCell id="eHzWIXnUUWUC3OV752Zy-105" value="Implicit User &amp;gt; Auth&lt;div&gt;Authorization Code &amp;gt; API&lt;/div&gt;&lt;div&gt;Device Flow &amp;gt; MCP/LLM&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="eHzWIXnUUWUC3OV752Zy-106" vertex="1">
           <mxGeometry x="136" width="130.22" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="DRkd63o85t19rOmhndDE-7" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;fontColor=none;labelBorderColor=#000066;textOpacity=30;noLabel=1;strokeColor=#CC0000;opacity=90;shadow=0;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+        <mxCell id="DRkd63o85t19rOmhndDE-7" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;fontColor=none;labelBorderColor=#000066;textOpacity=30;noLabel=1;strokeColor=#CC0000;opacity=90;shadow=0;dashed=1;dashPattern=8 8;" parent="1" vertex="1">
           <mxGeometry x="473" y="224.87" width="124.72" height="100.78" as="geometry" />
+        </mxCell>
+        <mxCell id="PS6ImIJTn3wHpI6E-aGu-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.072;entryY=0.785;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="eHzWIXnUUWUC3OV752Zy-15" target="eHzWIXnUUWUC3OV752Zy-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="418" />
+              <mxPoint x="660" y="462" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
