@@ -1,4 +1,4 @@
-mode: Mainline
+mode: ContinuousDelivery
 tag-prefix: "[vV]"
 increment: Inherit
 major-version-bump-message: '\\+semver:\\s?(breaking|major)'

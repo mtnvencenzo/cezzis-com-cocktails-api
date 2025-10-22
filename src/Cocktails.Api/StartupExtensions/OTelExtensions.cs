@@ -10,7 +10,7 @@ internal static class OTelExtensions
         AppContext.SetSwitch("Azure.Experimental.EnableActivitySource", true);
 
         builder.AddApplicationOpenTelemetry(
-            traceConfigurator: (t) =>
+            configureTracing: (t) =>
             {
                 return t.AddSource(
                     "Azure.Core",
@@ -21,17 +21,19 @@ internal static class OTelExtensions
                     "Azure.Search.Documents"
                 );
             },
-            resourceConfigurator: (r) =>
+            configureResource: (resourceBuilder) =>
             {
-                return r.AddAttributes(new Dictionary<string, object>
-                {
-                    ["app.unit"] = "cocktails",
-                    ["app.product"] = "cezzis.com",
-                    ["app.product_segment"] = "backend",
-                    ["app.name"] = "cezzis-com-cocktails-api",
-                    ["app.class"] = "api",
-                    ["app.env"] = builder.Environment.EnvironmentName?.ToLowerInvariant() ?? "unknown"
-                });
+                return resourceBuilder
+                    .WithElasticApm(builder.Environment.EnvironmentName)
+                    .AddAttributes(new Dictionary<string, object>
+                    {
+                        ["app.unit"] = "cocktails",
+                        ["app.product"] = "cezzis.com",
+                        ["app.product_segment"] = "backend",
+                        ["app.name"] = "cezzis-com-cocktails-api",
+                        ["app.class"] = "api",
+                        ["app.env"] = builder.Environment.EnvironmentName?.ToLowerInvariant() ?? "unknown"
+                    });
             }
         );
 
