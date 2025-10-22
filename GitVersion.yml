@@ -1,5 +1,5 @@
 mode: ContinuousDelivery
-tag-prefix: "[vV]"
+tag-prefix: ""
 increment: Inherit
 major-version-bump-message: '\\+semver:\\s?(breaking|major)'
 minor-version-bump-message: '\\+semver:\\s?(feature|minor)'
