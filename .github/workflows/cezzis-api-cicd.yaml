@@ -121,8 +121,12 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git fetch --tags
-          git tag ${{ needs.gitVersion.outputs.semVer }}
-          git push origin ${{ needs.gitVersion.outputs.semVer }}
+          if git rev-parse ${{ needs.gitVersion.outputs.semVer }} >/dev/null 2>&1; then
+            echo "Tag ${{ needs.gitVersion.outputs.semVer }} already exists. Skipping tag creation."
+          else
+            git tag ${{ needs.gitVersion.outputs.semVer }}
+            git push origin ${{ needs.gitVersion.outputs.semVer }}
+          fi
 
   verify_prd:
     name: Verify prd
