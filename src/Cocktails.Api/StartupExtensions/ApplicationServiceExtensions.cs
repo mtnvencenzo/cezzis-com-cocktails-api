@@ -94,7 +94,7 @@ internal static class ApplicationServiceExtensions
         // add in recaptcha validation to DI
         builder.Services.UseRecaptcha(builder.Configuration);
 
-        // add in infrastructure services
+        // add in infrastructure services to DI
         builder.Services.AddTransient<IRequestHeaderAccessor, RequestHeaderAccessor>();
     }
 }
