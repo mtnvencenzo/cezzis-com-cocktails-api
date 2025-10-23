@@ -115,18 +115,6 @@ jobs:
         uses: mtnvencenzo/workflows/.github/actions/create-release@main
         with:
           version: ${{ needs.gitVersion.outputs.semVer }}
-      - name: Tag release commit
-        if: ${{ github.ref_name == 'main' }}
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git fetch --tags
-          if git rev-parse ${{ needs.gitVersion.outputs.semVer }} >/dev/null 2>&1; then
-            echo "Tag ${{ needs.gitVersion.outputs.semVer }} already exists. Skipping tag creation."
-          else
-            git tag ${{ needs.gitVersion.outputs.semVer }}
-            git push origin ${{ needs.gitVersion.outputs.semVer }}
-          fi
 
   verify_prd:
     name: Verify prd
