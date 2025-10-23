@@ -27,7 +27,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     outputs:
-      semVer: ${{ steps.gitVersion.outputs.semVer }}
+      semVer: ${{ steps.gitVersion.outputs.MajorMinorPatch }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
