@@ -32,6 +32,7 @@ if (app.Environment.IsEnvironment("local"))
     using var scope = app.Services.CreateScope();
     await scope.ServiceProvider.GetRequiredService<StorageInitializer>().InitializeAsync();
     await scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().InitializeAsync();
+    await scope.ServiceProvider.GetRequiredService<KafkaInitializer>().InitializeAsync();
 }
 
 // Use cloud events to automatically unpack the message data

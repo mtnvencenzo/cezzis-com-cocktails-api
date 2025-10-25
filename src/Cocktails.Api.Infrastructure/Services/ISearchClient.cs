@@ -1,9 +1,20 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
-using Azure.Search.Documents.Models;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 
 public interface ISearchClient
 {
-    Task<List<Cocktail>> SearchAsync(List<Cocktail> cocktails, string query, int skip = 0, int take = 20, CancellationToken cancellationToken = default);
+    /// <summary>Searches cocktails based on the provided query.</summary>
+    /// <param name="cocktails"></param>
+    /// <param name="query"></param>
+    /// <param name="skip"></param>
+    /// <param name="take"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<List<Cocktail>> SearchAsync(
+        List<Cocktail> cocktails,
+        string query,
+        int skip = 0,
+        int take = 20,
+        CancellationToken cancellationToken = default);
 }

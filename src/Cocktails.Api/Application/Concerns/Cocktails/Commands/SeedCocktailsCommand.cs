@@ -5,16 +5,8 @@ using MediatR;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Text;
-using Cezzi.Applications.Extensions;
-using global::Cocktails.Api.Domain.Config;
-using global::Cocktails.Api.Infrastructure.Resources;
-using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using global::Cocktails.Api.Infrastructure.Resources.TraditionalCocktails;
-using global::Cocktails.Api.Infrastructure.Resources.ModernCocktails;
 using global::Cocktails.Api.Infrastructure;
-using global::Cocktails.Api.Domain.Aggregates.IngredientAggregate;
-using global::Cocktails.Api.Infrastructure.Resources.Ingredients;
 
 public record SeedCocktailsCommand(bool OnlyIfEmpty = false) : IRequest<bool>;
 
