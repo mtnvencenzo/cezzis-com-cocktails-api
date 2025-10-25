@@ -52,7 +52,7 @@ resource "azurerm_key_vault_secret" "cocktails_api_cezzis_com_subscription_prima
 # Subscription Devops apim primary key
 # ----------------------------------------
 
-resource "random_password" "cocktails_api_devops_subscription_keys_iter1" {
+resource "random_password" "cocktails_api_devops_subscription_keys_iter2" {
   count   = 2
   length  = 24
   special = true
@@ -61,7 +61,7 @@ resource "random_password" "cocktails_api_devops_subscription_keys_iter1" {
 
 resource "azurerm_key_vault_secret" "cocktails_api_devops_subscription_primary_key" {
   name         = "cocktails-api-devops-subscription-primary-key"
-  value        = random_password.cocktails_api_devops_subscription_keys_iter1[0].result
+  value        = random_password.cocktails_api_devops_subscription_keys_iter2[0].result
   key_vault_id = data.azurerm_key_vault.cocktails_keyvault.id
   tags         = local.tags
 }
