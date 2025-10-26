@@ -37,7 +37,7 @@ internal static class KafkaExtensions
             //     Debug = "security,broker,protocol"
             // };
 
-            return new ProducerBuilder<Null, List<Cocktail>>(producerConfig).Build();
+            return new ProducerBuilder<Null, string>(producerConfig).Build();
         });
 
         return services;

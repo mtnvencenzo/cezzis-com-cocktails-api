@@ -8,7 +8,7 @@ using Microsoft.Extensions.Options;
 
 /// <summary>Kafka publisher for cocktails.</summary>
 public class KafkaCocktailPublisher(
-    IProducer<Null, List<Cocktail>> kafkaProducer,
+    IProducer<Null, string> kafkaProducer,
     IOptions<KafkaConfig> kafkaConfig,
     ILogger<KafkaCocktailPublisher> logger) : ICocktailPublisher
 {
@@ -20,18 +20,14 @@ public class KafkaCocktailPublisher(
         List<Cocktail> cocktails,
         CancellationToken cancellationToken = default)
     {
-        if (cocktails.Count == 0)
+        if (cocktails is null || cocktails.Count == 0)
         {
             logger.LogInformation("No cocktails to publish.");
             return;
         }
 
-        var message = new Message<Null, List<Cocktail>>
-        {
-            Key = null,
-            Value = cocktails
-        };
-
+        var payload = System.Text.Json.JsonSerializer.Serialize(cocktails);
+        var message = new Message<Null, string> { Key = null, Value = payload };
         await kafkaProducer.ProduceAsync(kafkaConfig.Value.CocktailsTopic, message, cancellationToken);
 
         logger.LogInformation("Published {CocktailCount} cocktails to Kafka topic", cocktails.Count);

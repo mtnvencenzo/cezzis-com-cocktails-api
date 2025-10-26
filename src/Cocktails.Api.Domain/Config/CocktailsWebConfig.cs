@@ -3,5 +3,5 @@ public class CocktailsWebConfig
 {
     public const string SectionName = "CocktailsWeb";
 
-    public SiteMapConfig SiteMap { get; set; }
+    public required SiteMapConfig SiteMap { get; set; }
 }

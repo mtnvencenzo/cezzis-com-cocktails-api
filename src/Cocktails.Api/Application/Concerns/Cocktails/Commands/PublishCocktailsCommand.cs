@@ -14,7 +14,7 @@ public class PublishCocktailsCommandHandler(
 {
     public async Task<bool> Handle(PublishCocktailsCommand command, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Publishing cocktails in {BatchItemCount} batches", command.BatchItemCount);
+        logger.LogInformation("Publishing cocktails with batch size of {BatchItemCount}", command.BatchItemCount);
 
         var offset = 0;
         var cocktails = await cocktailRepository.Items
@@ -24,13 +24,18 @@ public class PublishCocktailsCommandHandler(
 
         while (cocktails.Count > 0)
         {
-            await cocktailPublisher.PublishNextBatchAsync(cocktails, cancellationToken);
-            offset += command.BatchItemCount;
+            try
+            {
+                await cocktailPublisher.PublishNextBatchAsync(cocktails, cancellationToken);
+                logger.LogInformation("Published batch of {Count} cocktails", cocktails.Count);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Failed to publish batch at offset {Offset}", offset);
+                throw;
+            }
 
-            cocktails = await cocktailRepository.Items
-                .Skip(offset)
-                .Take(command.BatchItemCount)
-                .ToListAsync(cancellationToken);
+            offset += command.BatchItemCount;
         }
 
         logger.LogInformation("Finished publishing cocktails.");

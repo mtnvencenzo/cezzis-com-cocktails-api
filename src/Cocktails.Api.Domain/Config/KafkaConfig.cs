@@ -4,7 +4,7 @@ public class KafkaConfig
 {
     public const string SectionName = "Kafka";
 
-    public string CocktailsTopic { get; set; }
+    public required string CocktailsTopic { get; set; }
 
-    public string BootstrapServers { get; set; }
+    public required string BootstrapServers { get; set; }
 }
