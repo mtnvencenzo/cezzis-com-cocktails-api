@@ -6,6 +6,7 @@ public class AuthScopes
 {
     public const string ReadOwnedAccount = "read:owned-account";
     public const string WriteOwnedAccount = "write:owned-account";
+    public const string AdminCezziCocktails = "admin:cezzi-cocktails";
 
     public static string[] All()
     {

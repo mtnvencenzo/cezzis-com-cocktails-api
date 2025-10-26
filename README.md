@@ -111,7 +111,8 @@ terraform/
            "ClientId": "your-frontend-client-id",
            "Scopes": [
              "read:owned-account",
-             "write:owned-account"
+             "write:owned-account",
+             "admin:cezzi-cocktails"
            ]
          }
        }
