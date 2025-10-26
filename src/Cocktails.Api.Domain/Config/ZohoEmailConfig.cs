@@ -4,9 +4,9 @@ public class ZohoEmailConfig
 {
     public const string SectionName = "ZohoEmail";
 
-    public required string SmtpHost { get; set; }
+    public string SmtpHost { get; set; }
 
-    public required int SmtpPort { get; set; }
+    public int SmtpPort { get; set; }
 
-    public required ZohoEmailSenderConfig DefaultSender { get; set; }
+    public ZohoEmailSenderConfig DefaultSender { get; set; }
 }

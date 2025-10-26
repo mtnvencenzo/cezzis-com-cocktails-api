@@ -17,13 +17,20 @@ public class PublishCocktailsCommandHandler(
         logger.LogInformation("Publishing cocktails with batch size of {BatchItemCount}", command.BatchItemCount);
 
         var offset = 0;
-        var cocktails = await cocktailRepository.Items
-            .Skip(offset)
-            .Take(command.BatchItemCount)
-            .ToListAsync(cancellationToken);
+        List<Cocktail> cocktails;
 
-        while (cocktails.Count > 0)
+        do
         {
+            cocktails = await cocktailRepository.CachedItems
+                .Skip(offset)
+                .Take(command.BatchItemCount)
+                .ToListAsync(cancellationToken);
+
+            if (cocktails.Count == 0)
+            {
+                break;
+            }
+
             try
             {
                 await cocktailPublisher.PublishNextBatchAsync(cocktails, cancellationToken);
@@ -36,7 +43,8 @@ public class PublishCocktailsCommandHandler(
             }
 
             offset += command.BatchItemCount;
-        }
+
+        } while (cocktails.Count > 0);
 
         logger.LogInformation("Finished publishing cocktails.");
 

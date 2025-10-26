@@ -2,7 +2,7 @@
 
 public class ZohoEmailSenderConfig
 {
-    public required string EmailAddress { get; set; }
+    public string EmailAddress { get; set; }
 
-    public required string AppPassword { get; set; }
+    public string AppPassword { get; set; }
 }
