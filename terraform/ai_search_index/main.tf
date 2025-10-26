@@ -17,6 +17,7 @@ module "ai_search_cocktails_index_simple" {
   # https://learn.microsoft.com/en-us/rest/api/searchservice/create-data-source
   cosmos_datasource_json = jsonencode({
     "name" : var.datasource_name,
+    "description" : null,
     "type" : "cosmosdb",
     "credentials" : {
       "connectionString" : "ResourceId=${var.cosmosdb_account_id};Database=${var.cosmos_database_name};IdentityAuthType=AccessToken"
@@ -28,7 +29,9 @@ module "ai_search_cocktails_index_simple" {
     "dataChangeDetectionPolicy" : {
       "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
       "highWaterMarkColumnName" : "_ts"
-    }
+    },
+    "dataDeletionDetectionPolicy" : null,
+    "encryptionKey" : null
   })
 
   # https://learn.microsoft.com/en-us/rest/api/searchservice/create-indexer
