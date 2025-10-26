@@ -32,7 +32,7 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
    - Add the following scopes:
      - `read:owned-account` - Read account information
      - `write:owned-account` - Write account information,
-     - `admin:cezzi-cocktails` - Write account information,
+     - `admin:cezzi-cocktails` - Admin access to cocktails publishing,
    - Save changes
 
 ## Step 2: Create Auth0 Applications

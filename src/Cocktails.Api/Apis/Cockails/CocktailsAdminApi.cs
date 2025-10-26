@@ -7,9 +7,7 @@ using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Behaviors.Authorization;
 using Cocktails.Api.StartupExtensions;
 
-/// <summary>
-/// 
-/// </summary>
+/// <summary>Provides administrative endpoints for cocktail management, including batch publishing operations.</summary>
 public static class CocktailsAdminApi
 {
     /// <summary>
@@ -42,7 +40,7 @@ public static class CocktailsAdminApi
 
         if (!commandResult)
         {
-            return TypedResults.Json<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to publish cocktails", StatusCodes.Status502BadGateway), statusCode: StatusCodes.Status502BadGateway);
+            return TypedResults.Json<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to publish cocktails", StatusCodes.Status500InternalServerError), statusCode: StatusCodes.Status500InternalServerError);
         }
 
         return TypedResults.NoContent();
