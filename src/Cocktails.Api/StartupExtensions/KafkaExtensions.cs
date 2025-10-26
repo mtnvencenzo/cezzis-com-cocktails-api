@@ -4,7 +4,6 @@ using Cocktails.Api.Domain.Config;
 using Microsoft.Extensions.Options;
 using Confluent.Kafka;
 using Cocktails.Api.Infrastructure.Services;
-using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 
 internal static class KafkaExtensions
 {
@@ -36,8 +35,11 @@ internal static class KafkaExtensions
             //     SslCaLocation = "cacert.pem",
             //     Debug = "security,broker,protocol"
             // };
+            var logger = sp.GetRequiredService<ILoggerFactory>().CreateLogger("KafkaProducer");
 
-            return new ProducerBuilder<Null, string>(producerConfig).Build();
+            return new ProducerBuilder<Null, string>(producerConfig)
+                .SetErrorHandler((_, e) => logger.LogError("Kafka producer error: {Reason} (IsFatal={IsFatal})", e.Reason, e.IsFatal))
+                .Build();
         });
 
         return services;
