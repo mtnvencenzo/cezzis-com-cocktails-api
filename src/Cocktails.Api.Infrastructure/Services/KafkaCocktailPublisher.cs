@@ -28,7 +28,11 @@ public class KafkaCocktailPublisher(
 
         var payload = System.Text.Json.JsonSerializer.Serialize(cocktails);
         var message = new Message<Null, string> { Key = null, Value = payload };
-        await kafkaProducer.ProduceAsync(kafkaConfig.Value.CocktailsTopic, message, cancellationToken);
+
+        await kafkaProducer.ProduceAsync(
+            topic: kafkaConfig.Value.CocktailsTopic,
+            message: message,
+            cancellationToken: cancellationToken);
 
         logger.LogInformation("Published {CocktailCount} cocktails to Kafka topic", cocktails.Count);
     }

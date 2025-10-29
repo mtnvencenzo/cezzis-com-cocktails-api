@@ -1,6 +1,8 @@
 ﻿namespace Cocktails.Api.Apis.Integrations;
 
+using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Concerns.Integrations.Events;
+using Cocktails.Api.Application.Exceptions;
 using Cocktails.Api.Domain;
 using Cocktails.Api.Domain.Config;
 using Dapr;
@@ -172,9 +174,27 @@ public static class IntegrationsApi
             { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
         });
 
-        _ = await integrationServices.Mediator.Send(
+        var success = await integrationServices.Mediator.Send(
             request: cloudEvent.Data,
             cancellationToken: cancellationToken);
+
+        // If the update occured successfully, republish the cocktail
+        // to the event broker for external system integrations (re-embed the cocktail)
+        if (success)
+        {
+            var commandResult = await integrationServices.Mediator.Send(
+                request: new PublishCocktailsCommand(
+                    BatchItemCount: 1,
+                    CocktailIds: [cloudEvent.Data.CocktailId]
+                ),
+                integrationServices.HttpContextAccessor.HttpContext.RequestAborted);
+
+            if (!commandResult)
+            {
+                integrationServices.Logger.LogError("Failed to publish cocktails batch");
+                return TypedResults.Json(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to publish cocktails", StatusCodes.Status500InternalServerError), statusCode: StatusCodes.Status500InternalServerError);
+            }
+        }
 
         return TypedResults.Ok();
     }

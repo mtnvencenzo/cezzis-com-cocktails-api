@@ -5,7 +5,7 @@ using global::Cocktails.Api.Infrastructure.Services;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-public record PublishCocktailsCommand(int BatchItemCount = 1) : IRequest<bool>;
+public record PublishCocktailsCommand(int BatchItemCount = 1, string[] CocktailIds = null) : IRequest<bool>;
 
 public class PublishCocktailsCommandHandler(
     ICocktailRepository cocktailRepository,
@@ -19,12 +19,16 @@ public class PublishCocktailsCommandHandler(
         var offset = 0;
         List<Cocktail> cocktails;
 
+        var cocktailIds = command.CocktailIds != null && command.CocktailIds.Length > 0
+            ? command.CocktailIds
+            : [];
+
         do
         {
-            cocktails = await cocktailRepository.CachedItems
+            cocktails = [.. cocktailRepository.CachedItems
+                .Where(c => cocktailIds.Length == 0 || cocktailIds.Contains(c.Id))
                 .Skip(offset)
-                .Take(command.BatchItemCount)
-                .ToListAsync(cancellationToken);
+                .Take(command.BatchItemCount)];
 
             if (cocktails.Count == 0)
             {

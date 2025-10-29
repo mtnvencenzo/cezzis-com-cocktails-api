@@ -25,7 +25,7 @@ public class KafkaInitializer(
                     logger.LogInformation("Topic {Topic} does not exist and will be created.", kafkaConfig.Value.CocktailsTopic);
                     await adminClient.CreateTopicsAsync(
                     [
-                        new() { Name = kafkaConfig.Value.CocktailsTopic, ReplicationFactor = -1, NumPartitions = -1 }
+                        new() { Name = kafkaConfig.Value.CocktailsTopic, ReplicationFactor = -1, NumPartitions = 4 }
                     ]);
 
                     logger.LogInformation("Topic {Topic} created successfully.", kafkaConfig.Value.CocktailsTopic);

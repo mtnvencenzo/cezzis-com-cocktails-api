@@ -7,14 +7,10 @@ using System.ComponentModel;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Concerns.Cocktails.Models;
 
-/// <summary>
-/// 
-/// </summary>
+/// <summary>The anonymous cocktails api endpoints</summary>
 public static class CocktailsApi
 {
-    /// <summary>
-    /// Cocktails api v1 routes
-    /// </summary>
+    /// <summary>Cocktails api v1 routes</summary>
     /// <param name="app"></param>
     /// <returns></returns>
     public static RouteGroupBuilder MapCocktailsApiV1(this IEndpointRouteBuilder app)
@@ -32,11 +28,6 @@ public static class CocktailsApi
             .WithName(nameof(SeedCocktails))
             .WithDisplayName(nameof(SeedCocktails))
             .WithDescription("Seeds the cocktails in the database");
-
-        groupBuilder.MapPut("/pub", PublishCocktails)
-            .WithName(nameof(PublishCocktails))
-            .WithDisplayName(nameof(PublishCocktails))
-            .WithDescription("Publishes the cocktails to an event stream");
 
         groupBuilder.MapGet("/{id}", GetCocktail)
             .WithName(nameof(GetCocktail))
@@ -190,22 +181,6 @@ public static class CocktailsApi
         if (!commandResult)
         {
             return TypedResults.Json<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to seed cocktails", StatusCodes.Status502BadGateway), statusCode: StatusCodes.Status502BadGateway);
-        }
-
-        return TypedResults.NoContent();
-    }
-
-    /// <summary>Publishes the cocktails to an event stream</summary>
-    /// <param name="cocktailsServices">The required services</param>
-    /// <returns></returns>
-    [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> PublishCocktails([AsParameters] CocktailsServices cocktailsServices)
-    {
-        var commandResult = await cocktailsServices.Mediator.Send(new PublishCocktailsCommand(BatchItemCount: 1), cocktailsServices.HttpContextAccessor.HttpContext.RequestAborted);
-
-        if (!commandResult)
-        {
-            return TypedResults.Json<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to publish cocktails", StatusCodes.Status502BadGateway), statusCode: StatusCodes.Status502BadGateway);
         }
 
         return TypedResults.NoContent();

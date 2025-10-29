@@ -10,9 +10,7 @@ using Cocktails.Api.StartupExtensions;
 /// <summary>Provides administrative endpoints for cocktail management, including batch publishing operations.</summary>
 public static class CocktailsAdminApi
 {
-    /// <summary>
-    /// Cocktails api v1 routes
-    /// </summary>
+    /// <summary>Cocktails admin api v1 routes</summary>
     /// <param name="app"></param>
     /// <returns></returns>
     public static RouteGroupBuilder MapCocktailsAdminApiV1(this IEndpointRouteBuilder app)
@@ -36,13 +34,17 @@ public static class CocktailsAdminApi
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> PublishCocktails([AsParameters] CocktailsServices cocktailsServices)
     {
+        cocktailsServices.Logger.LogInformation("Initiating cocktails batch publish with {BatchItemCount} items", 1);
+
         var commandResult = await cocktailsServices.Mediator.Send(new PublishCocktailsCommand(BatchItemCount: 1), cocktailsServices.HttpContextAccessor.HttpContext.RequestAborted);
 
         if (!commandResult)
         {
-            return TypedResults.Json<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to publish cocktails", StatusCodes.Status500InternalServerError), statusCode: StatusCodes.Status500InternalServerError);
+            cocktailsServices.Logger.LogError("Failed to publish cocktails batch");
+            return TypedResults.Json(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to publish cocktails", StatusCodes.Status500InternalServerError), statusCode: StatusCodes.Status500InternalServerError);
         }
 
+        cocktailsServices.Logger.LogInformation("Successfully published cocktails batch");
         return TypedResults.NoContent();
     }
 }

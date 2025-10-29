@@ -19,6 +19,12 @@ internal static class KafkaExtensions
             var producerConfig = new ProducerConfig
             {
                 BootstrapServers = kafkaConfig.BootstrapServers,
+                Acks = Acks.All,
+                EnableIdempotence = true,
+                MessageSendMaxRetries = 3,
+                RetryBackoffMs = 1000,
+                LingerMs = 5,
+                BatchSize = 32 * 1024, // 32 KB
             };
 
             // https://github.com/confluentinc/confluent-kafka-dotnet/issues/1482
