@@ -4,9 +4,9 @@ public class CocktailsApiConfig
 {
     public const string SectionName = "CocktailsApi";
 
-    public string BaseImageUri { get; set; }
+    public required string BaseImageUri { get; set; }
 
-    public string BaseOpenApiUri { get; set; }
+    public required string BaseOpenApiUri { get; set; }
 
-    public string ApimHostKey { get; set; }
+    public required string ApimHostKey { get; set; }
 }

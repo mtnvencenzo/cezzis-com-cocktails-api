@@ -7,14 +7,10 @@ using System.ComponentModel;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Concerns.Cocktails.Models;
 
-/// <summary>
-/// 
-/// </summary>
+/// <summary>The anonymous cocktails api endpoints</summary>
 public static class CocktailsApi
 {
-    /// <summary>
-    /// Cocktails api v1 routes
-    /// </summary>
+    /// <summary>Cocktails api v1 routes</summary>
     /// <param name="app"></param>
     /// <returns></returns>
     public static RouteGroupBuilder MapCocktailsApiV1(this IEndpointRouteBuilder app)

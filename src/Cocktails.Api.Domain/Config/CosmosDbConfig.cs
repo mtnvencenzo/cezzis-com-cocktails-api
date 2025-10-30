@@ -8,11 +8,11 @@ public class CosmosDbConfig
 
     public string AccountEndpoint { get; set; }
 
-    public string DatabaseName { get; set; }
+    public required string DatabaseName { get; set; }
 
-    public string CocktailsContainerName { get; set; }
+    public required string CocktailsContainerName { get; set; }
 
-    public string IngredientsContainerName { get; set; }
+    public required string IngredientsContainerName { get; set; }
 
-    public string AccountsContainerName { get; set; }
+    public required string AccountsContainerName { get; set; }
 }

@@ -24,6 +24,7 @@ internal static class EndpointExtensions
             .RequireAuthorization(ApimHostKeyRequirement.PolicyName);
 
         cocktailsApi.MapCocktailsApiV1();
+        cocktailsApi.MapCocktailsAdminApiV1();
         cocktailsApi.MapHealthApiV1();
         cocktailsApi.MapLegalDocumentsApiV1();
         cocktailsApi.MapLocalImagesApiV1();

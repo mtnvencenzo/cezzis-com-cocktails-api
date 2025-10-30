@@ -4,11 +4,11 @@ public class SearchConfig
 {
     public const string SectionName = "Search";
 
-    public Uri Endpoint { get; set; }
+    public required Uri Endpoint { get; set; }
 
-    public string IndexName { get; set; }
+    public required string IndexName { get; set; }
 
-    public string QueryKey { get; set; }
+    public required string QueryKey { get; set; }
 
-    public bool UseSearchIndex { get; set; }
+    public required bool UseSearchIndex { get; set; }
 }

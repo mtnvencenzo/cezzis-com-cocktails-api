@@ -11,6 +11,10 @@ public class AzSearchClient : ISearchClient
 {
     private readonly SearchClient searchClient;
 
+    /// <summary>Initializes a new instance of the <see cref="AzSearchClient"/> class.</summary>
+    /// <param name="endpoint">The search service endpoint.</param>
+    /// <param name="indexName">The search index name.</param>
+    /// <param name="key">The query key (optional).</param>
     public AzSearchClient(Uri endpoint, string indexName, string key = null)
     {
         var options = new SearchClientOptions();
@@ -35,6 +39,13 @@ public class AzSearchClient : ISearchClient
         }
     }
 
+    /// <summary>Searches cocktails based on the provided query.</summary>
+    /// <param name="cocktails">The list of cocktails to search through.</param>
+    /// <param name="query">The search query string.</param>
+    /// <param name="skip">The number of results to skip for pagination.</param>
+    /// <param name="take">The maximum number of results to return.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>A list of cocktails matching the search query.</returns>
     public async Task<List<Cocktail>> SearchAsync(List<Cocktail> cocktails, string query, int skip = 0, int take = 20, CancellationToken cancellationToken = default)
     {
         var options = new SearchOptions

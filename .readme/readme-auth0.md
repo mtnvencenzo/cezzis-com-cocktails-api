@@ -31,7 +31,8 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
    - In your newly created API, go to the **Scopes** tab
    - Add the following scopes:
      - `read:owned-account` - Read account information
-     - `write:owned-account` - Write account information
+     - `write:owned-account` - Write account information,
+     - `admin:cezzi-cocktails` - Admin access to cocktails publishing,
    - Save changes
 
 ## Step 2: Create Auth0 Applications
@@ -50,6 +51,7 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
    - Select the scopes you want this application to have:
      - `read:owned-account`
      - `write:owned-account`
+     - `admin:cezzi-cocktails`
    - Click **Authorize**
 
 3. **Note Credentials**
@@ -95,7 +97,8 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
       "ClientId": "your-spa-client-id",
       "Scopes": [
         "read:owned-account",
-        "write:owned-account"
+        "write:owned-account",
+        "admin:cezzi-cocktails"
       ]
     }
   }
@@ -183,25 +186,6 @@ auth0_frontend_client_id = "your-spa-client-id"
    - Verify scopes are properly defined in your Auth0 API
    - Check that the application has been granted the required scopes
    - Ensure scope names match exactly (case-sensitive)
-
-## Migration from Azure B2C
-
-If migrating from Azure B2C:
-
-1. **Update Frontend Applications**
-   - Replace Azure MSAL with Auth0 SDK
-   - Update authentication endpoints
-   - Change scope format from `Account.Read` to `read:owned-account`
-
-2. **Database Migration**
-   - Export user data from Azure B2C (if needed)
-   - Import users to Auth0 (optional)
-   - Consider using Auth0's import features
-
-3. **Gradual Migration**
-   - You can run both systems in parallel during migration
-   - Use feature flags to gradually switch users to Auth0
-   - Monitor authentication metrics during transition
 
 ## Resources
 

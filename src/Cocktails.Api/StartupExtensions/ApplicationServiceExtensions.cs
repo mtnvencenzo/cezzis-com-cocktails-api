@@ -40,6 +40,7 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<SearchConfig>(builder.Configuration.GetSection(SearchConfig.SectionName));
         builder.Services.Configure<TestAccountConfig>(builder.Configuration.GetSection(TestAccountConfig.SectionName));
         builder.Services.Configure<Auth0Config>(builder.Configuration.GetSection(Auth0Config.SectionName));
+        builder.Services.Configure<KafkaConfig>(builder.Configuration.GetSection(KafkaConfig.SectionName));
 
         builder.Services.AddCosomsContexts();
 
@@ -62,6 +63,9 @@ internal static class ApplicationServiceExtensions
 
         // Add search client to DI
         builder.Services.AddSearchClient();
+
+        // Add Kafka to DI
+        builder.Services.AddKafka();
 
         // Add mediator and commands to DI
         builder.Services.AddMediatR(cfg =>

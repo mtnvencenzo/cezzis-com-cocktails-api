@@ -2,7 +2,7 @@
 
 public class DaprServiceBusSubscriberConfig
 {
-    public string DaprBuildingBlock { get; set; }
+    public required string DaprBuildingBlock { get; set; }
 
-    public string QueueName { get; set; }
+    public required string QueueName { get; set; }
 }
