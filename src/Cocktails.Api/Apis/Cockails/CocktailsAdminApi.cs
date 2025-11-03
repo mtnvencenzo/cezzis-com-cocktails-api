@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Behaviors.Authorization;
 using Cocktails.Api.StartupExtensions;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+using Cocktails.Api.Application.Concerns.Cocktails.Models;
 
 /// <summary>Provides administrative endpoints for cocktail management, including batch publishing operations.</summary>
 public static class CocktailsAdminApi
@@ -32,11 +35,16 @@ public static class CocktailsAdminApi
     /// <param name="cocktailsServices">The required services</param>
     /// <returns></returns>
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> PublishCocktails([AsParameters] CocktailsServices cocktailsServices)
+    public async static Task<Results<NoContent, JsonHttpResult<ProblemDetails>>> PublishCocktails(
+        [FromBody, Required, Description("The request to publish cocktails to external systems")] PublishCocktailsRq request,
+        [AsParameters] CocktailsServices cocktailsServices)
     {
         cocktailsServices.Logger.LogInformation("Initiating cocktails batch publish with {BatchItemCount} items", 1);
 
-        var commandResult = await cocktailsServices.Mediator.Send(new PublishCocktailsCommand(BatchItemCount: 1), cocktailsServices.HttpContextAccessor.HttpContext.RequestAborted);
+        var commandResult = await cocktailsServices.Mediator.Send(new PublishCocktailsCommand(
+            BatchItemCount: 1,
+            CocktailIds: [.. request.CocktailIds]
+        ), cocktailsServices.HttpContextAccessor.HttpContext.RequestAborted);
 
         if (!commandResult)
         {

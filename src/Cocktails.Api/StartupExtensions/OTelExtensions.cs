@@ -1,6 +1,7 @@
 namespace Cocktails.Api.StartupExtensions;
 
 using Cezzi.OTel;
+using Confluent.Kafka.Extensions.OpenTelemetry;
 using OpenTelemetry.Resources;
 
 internal static class OTelExtensions
@@ -9,17 +10,28 @@ internal static class OTelExtensions
     {
         AppContext.SetSwitch("Azure.Experimental.EnableActivitySource", true);
 
+        builder.Services
+            .AddHttpClient("OtlpMetricExporter")
+            .RemoveAllLoggers();
+        builder.Services
+            .AddHttpClient("OtlpTraceExporter")
+            .RemoveAllLoggers();
+
         builder.AddApplicationOpenTelemetry(
             configureTracing: (t) =>
             {
-                return t.AddSource(
-                    "Azure.Core",
-                    "Azure.Identity",
-                    "Microsoft.Azure.Cosmos",
-                    "Azure.Cosmos.Client",
-                    "Azure.Storage.Blobs",
-                    "Azure.Search.Documents"
-                );
+                t.AddConfluentKafkaInstrumentation();
+
+                return t
+                    .AddConfluentKafkaInstrumentation()
+                    .AddSource(
+                        "Azure.Core",
+                        "Azure.Identity",
+                        "Microsoft.Azure.Cosmos",
+                        "Azure.Cosmos.Client",
+                        "Azure.Storage.Blobs",
+                        "Azure.Search.Documents"
+                    );
             },
             configureResource: (resourceBuilder) =>
             {

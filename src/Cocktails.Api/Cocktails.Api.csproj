@@ -28,6 +28,7 @@
     <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="9.5.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10" />
     <PackageReference Include="Cezzi.OTel" Version="1.0.25" />
+    <PackageReference Include="Confluent.Kafka.Extensions.OpenTelemetry" Version="0.4.0" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.9.0" />
   </ItemGroup>
 

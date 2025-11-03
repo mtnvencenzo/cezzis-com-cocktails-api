@@ -3,6 +3,7 @@
 using Cocktails.Api.Domain.Config;
 using Microsoft.Extensions.Options;
 using Confluent.Kafka;
+using Confluent.Kafka.Extensions.Diagnostics;
 using Cocktails.Api.Infrastructure.Services;
 
 internal static class KafkaExtensions
@@ -45,7 +46,7 @@ internal static class KafkaExtensions
 
             return new ProducerBuilder<Null, string>(producerConfig)
                 .SetErrorHandler((_, e) => logger.LogError("Kafka producer error: {Reason} (IsFatal={IsFatal})", e.Reason, e.IsFatal))
-                .Build();
+                .BuildWithInstrumentation();
         });
 
         return services;
