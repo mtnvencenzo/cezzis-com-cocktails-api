@@ -118,7 +118,8 @@ jobs:
 
   verify_prd:
     name: Verify prd
-    if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
+    # if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
+    if: ${{ 'disabled' == 'yes' }} # disabled for now until re-deployed to an environment
     permissions:
       contents: write
     runs-on: ubuntu-latest
