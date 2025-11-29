@@ -87,7 +87,7 @@ jobs:
     uses: mtnvencenzo/workflows/.github/workflows/terraform-plan-and-apply.yaml@main
     needs: [docker, gitVersion]
     with:
-      lint_only: true # disabled for now until re-deployed to an environment
+      lint_only: false # if true, terraform plan and apply will not be ran
       working_directory: terraform
       environment_name: prd
       allow_deploy: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
