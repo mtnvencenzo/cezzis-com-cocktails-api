@@ -68,9 +68,9 @@ data "azurerm_virtual_network" "global_virtual_network" {
 #   resource_group_name = data.azurerm_resource_group.cocktails_resource_group.name
 # }
 
-# data "azurerm_resource_group" "cocktails_global_resource_group" {
-#   name = "rg-${var.sub}-${var.region}-${var.global_environment}-${var.domain}-${var.sequence}"
-# }
+data "azurerm_resource_group" "cocktails_global_resource_group" {
+  name = "rg-${var.sub}-${var.region}-${var.global_environment}-${var.domain}-${var.sequence}"
+}
 
 data "azurerm_dns_zone" "cezzis_dns_zone" {
   name                = "cezzis.com"
