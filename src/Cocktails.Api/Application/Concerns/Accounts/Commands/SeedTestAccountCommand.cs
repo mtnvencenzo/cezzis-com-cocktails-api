@@ -92,7 +92,7 @@ public class SeedTestAccountCommandHandler(
         if (favorites.Count > 0)
         {
             var manageFavoriteCocktailsCommand = new ManageFavoriteCocktailsCommand(
-                Request: new ManageFavoriteCocktailsRq(CocktailActions: favorites.Select(c => new CocktailFavoriteActionModel(CocktailId: c, Action: CocktailFavoritingActionModel.Remove)).ToList()),
+                Request: new ManageFavoriteCocktailsRq(CocktailActions: [.. favorites.Select(c => new CocktailFavoriteActionModel(CocktailId: c, Action: CocktailFavoritingActionModel.Remove))]),
                 Identity: identity);
 
             _ = await mediator.Send(manageFavoriteCocktailsCommand, cancellationToken)
