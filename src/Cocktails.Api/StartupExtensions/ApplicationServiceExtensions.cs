@@ -4,6 +4,7 @@ using Cezzi.Security.Recaptcha;
 using Cocktails.Api.Application.Behaviors.MediatRPipelines;
 using Cocktails.Api.Application.Concerns.Accounts.Queries;
 using Cocktails.Api.Application.Concerns.Cocktails.Queries;
+using Cocktails.Api.Application.Concerns.Cocktails.Services;
 using Cocktails.Api.Application.Concerns.Health.Queries;
 using Cocktails.Api.Application.Concerns.LegalDocuments.Queries;
 using Cocktails.Api.Application.Concerns.LocalImages.Queries;
@@ -80,6 +81,7 @@ internal static class ApplicationServiceExtensions
         builder.Services.AddScoped<ILegalDocumentQueries, LegalDocumentQueries>();
         builder.Services.AddScoped<ILocalImagesQueries, LocalImagesQueries>();
         builder.Services.AddScoped<IAccountsQueries, AccountsQueries>();
+        builder.Services.AddScoped<ICocktailModelConverter, CocktailModelConverter>();
 
         // Add validators for the MediatR validation pipeline behavior (validators based on FluentValidation library)
         builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);

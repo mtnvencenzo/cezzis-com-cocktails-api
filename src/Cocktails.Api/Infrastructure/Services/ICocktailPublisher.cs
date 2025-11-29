@@ -1,6 +1,6 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
-using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
+using Cocktails.Api.Application.Concerns.Cocktails.Models;
 
 /// <summary>Defines a contract for publishing cocktails in batches.</summary>
 public interface ICocktailPublisher
@@ -10,6 +10,6 @@ public interface ICocktailPublisher
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns></returns>
     Task PublishNextBatchAsync(
-        List<Cocktail> cocktails,
+        List<CocktailModel> cocktails,
         CancellationToken cancellationToken = default);
 }

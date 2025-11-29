@@ -1,15 +1,17 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
-using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
+using Cocktails.Api.Application.Concerns.Cocktails.Models;
 using Cocktails.Api.Domain.Config;
 using Confluent.Kafka;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Text.Json;
 
 /// <summary>Kafka publisher for cocktails.</summary>
 public class KafkaCocktailPublisher(
     IProducer<Null, string> kafkaProducer,
     IOptions<KafkaConfig> kafkaConfig,
+    IOptions<Microsoft.AspNetCore.Mvc.JsonOptions> jsonOptions,
     ILogger<KafkaCocktailPublisher> logger) : ICocktailPublisher
 {
     /// <summary>Publishes the next batch of cocktails.</summary>
@@ -17,7 +19,7 @@ public class KafkaCocktailPublisher(
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns></returns>
     public async Task PublishNextBatchAsync(
-        List<Cocktail> cocktails,
+        List<CocktailModel> cocktails,
         CancellationToken cancellationToken = default)
     {
         if (cocktails is null || cocktails.Count == 0)
@@ -26,7 +28,7 @@ public class KafkaCocktailPublisher(
             return;
         }
 
-        var payload = System.Text.Json.JsonSerializer.Serialize(cocktails);
+        var payload = JsonSerializer.Serialize(cocktails, jsonOptions.Value.JsonSerializerOptions);
         var message = new Message<Null, string> { Key = null, Value = payload };
 
         await kafkaProducer.ProduceAsync(
