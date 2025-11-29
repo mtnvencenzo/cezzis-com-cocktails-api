@@ -80,14 +80,12 @@ public class ManageFavoriteCocktails_Tests : ServiceTestBase
         var newAccount = System.Text.Json.JsonSerializer.Deserialize<Account>(js);
 
         newAccount.ManageFavoriteCocktails(
-            add: request.CocktailActions
+            add: [.. request.CocktailActions
                 .Where(x => x.Action == CocktailFavoritingActionModel.Add)
-                .Select(x => x.CocktailId)
-                .ToList(),
-            remove: request.CocktailActions
+                .Select(x => x.CocktailId)],
+            remove: [.. request.CocktailActions
                 .Where(x => x.Action == CocktailFavoritingActionModel.Remove)
-                .Select(x => x.CocktailId)
-                .ToList()
+                .Select(x => x.CocktailId)]
         );
 
         return newAccount;

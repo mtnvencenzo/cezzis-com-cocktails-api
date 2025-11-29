@@ -1,4 +1,5 @@
 ﻿namespace Cocktails.Api.Infrastructure.Unit.Tests.Mocks;
+
 using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
