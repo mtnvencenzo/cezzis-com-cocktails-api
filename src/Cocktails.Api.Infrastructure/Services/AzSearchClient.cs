@@ -1,10 +1,10 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
-using Azure.Search.Documents;
-using Azure.Identity;
-using Azure.Search.Documents.Models;
-using Azure.Core;
 using Azure;
+using Azure.Core;
+using Azure.Identity;
+using Azure.Search.Documents;
+using Azure.Search.Documents.Models;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 
 public class AzSearchClient : ISearchClient

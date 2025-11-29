@@ -10,6 +10,8 @@
           "apimkey": ""
         }
     },
+    "omnisharp.enableRoslynAnalyzers": true,
+    "omnisharp.enableEditorConfigSupport": true,
     "dotnet.defaultSolution": "Cocktails.Api.sln",
     "files.exclude": {
         "**/bin": true,

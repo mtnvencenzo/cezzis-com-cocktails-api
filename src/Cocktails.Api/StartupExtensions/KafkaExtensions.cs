@@ -1,10 +1,10 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
 using Cocktails.Api.Domain.Config;
-using Microsoft.Extensions.Options;
+using Cocktails.Api.Infrastructure.Services;
 using Confluent.Kafka;
 using Confluent.Kafka.Extensions.Diagnostics;
-using Cocktails.Api.Infrastructure.Services;
+using Microsoft.Extensions.Options;
 
 internal static class KafkaExtensions
 {

@@ -1,6 +1,5 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Queries;
 
-using Cezzi.Applications;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Microsoft.EntityFrameworkCore;

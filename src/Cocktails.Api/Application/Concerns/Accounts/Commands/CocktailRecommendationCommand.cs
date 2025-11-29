@@ -2,19 +2,19 @@
 
 using Cezzi.Security.Recaptcha;
 using FluentValidation;
-using global::Cocktails.Api.Application.Behaviors;
-using global::Cocktails.Api.Domain.Config;
-using global::Cocktails.Api.Domain.Services;
-using global::Cocktails.Api.Domain;
-using global::Cocktails.Common;
-using MediatR;
-using Microsoft.Extensions.Options;
-using global::Cocktails.Common.Emails;
 using FluentValidation.Results;
-using global::Cocktails.Api.Application.Concerns.RecaptchaVerification.Commands;
-using global::Cocktails.Api.Application.Utilities;
+using global::Cocktails.Api.Application.Behaviors;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
 using global::Cocktails.Api.Application.Concerns.Integrations.Events;
+using global::Cocktails.Api.Application.Concerns.RecaptchaVerification.Commands;
+using global::Cocktails.Api.Application.Utilities;
+using global::Cocktails.Api.Domain;
+using global::Cocktails.Api.Domain.Config;
+using global::Cocktails.Api.Domain.Services;
+using global::Cocktails.Common;
+using global::Cocktails.Common.Emails;
+using MediatR;
+using Microsoft.Extensions.Options;
 
 public record CocktailRecommendationCommand
 (

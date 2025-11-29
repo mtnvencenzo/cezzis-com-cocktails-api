@@ -1,12 +1,11 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Cocktails.Commands;
 
 using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
-using MediatR;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using global::Cocktails.Api.Infrastructure;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 public record SeedCocktailsCommand(bool OnlyIfEmpty = false) : IRequest<bool>;
 

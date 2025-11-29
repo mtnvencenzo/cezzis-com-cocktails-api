@@ -1,9 +1,9 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Logging;
-using Cocktails.Api.Domain.Config;
 using Azure.Storage.Blobs;
+using Cocktails.Api.Domain.Config;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 public class StorageInitializer(
     IOptions<BlobStorageConfig> config,

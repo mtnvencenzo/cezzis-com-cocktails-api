@@ -1,14 +1,13 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Cocktails.Commands;
 
-using MediatR;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Text;
-using Cezzi.Applications.Extensions;
-using global::Cocktails.Api.Infrastructure;
 using global::Cocktails.Api.Domain.Aggregates.IngredientAggregate;
-using Microsoft.EntityFrameworkCore;
+using global::Cocktails.Api.Infrastructure;
 using global::Cocktails.Api.Infrastructure.Resources.Ingredients;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 public record SeedIngredientsCommand(bool OnlyIfEmpty = false) : IRequest<bool>;
 

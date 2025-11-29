@@ -1,6 +1,5 @@
 using Cocktails.Api.Domain.Config;
 using Confluent.Kafka;
-using Confluent.Kafka.Admin;
 using Microsoft.Extensions.Options;
 
 public class KafkaInitializer(

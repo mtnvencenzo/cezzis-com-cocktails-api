@@ -1,13 +1,13 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
 
-using MediatR;
-using global::Cocktails.Api.Domain.Config;
-using Microsoft.Extensions.Options;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
-using System.Security.Claims;
 using global::Cocktails.Api.Application.Concerns.Accounts.Queries;
-using global::Cocktails.Api.Infrastructure.Resources.Test;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
+using global::Cocktails.Api.Domain.Config;
+using global::Cocktails.Api.Infrastructure.Resources.Test;
+using MediatR;
+using Microsoft.Extensions.Options;
+using System.Security.Claims;
 
 public record SeedTestAccountCommand() : IRequest<bool>;
 

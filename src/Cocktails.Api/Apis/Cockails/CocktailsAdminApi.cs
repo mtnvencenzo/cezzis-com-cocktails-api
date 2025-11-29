@@ -1,14 +1,14 @@
 ﻿namespace Cocktails.Api.Apis.Cockails;
 
+using Cocktails.Api.Application.Behaviors.Authorization;
+using Cocktails.Api.Application.Concerns.Cocktails.Commands;
+using Cocktails.Api.Application.Concerns.Cocktails.Models;
 using Cocktails.Api.Application.Exceptions;
+using Cocktails.Api.StartupExtensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Cocktails.Api.Application.Concerns.Cocktails.Commands;
-using Cocktails.Api.Application.Behaviors.Authorization;
-using Cocktails.Api.StartupExtensions;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using Cocktails.Api.Application.Concerns.Cocktails.Models;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>Provides administrative endpoints for cocktail management, including batch publishing operations.</summary>
 public static class CocktailsAdminApi
