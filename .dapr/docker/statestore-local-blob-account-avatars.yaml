@@ -13,9 +13,9 @@ spec:
   - name: storageAccessKey
     value: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==  # Azurite default key
   - name: endpoint
-    value: http://127.0.0.1:10000
+    value: http://azurite:10000
   - name: containerName
     value: account-avatars
 
 scopes:
-- cocktails-api
+  - cocktails-api-docker

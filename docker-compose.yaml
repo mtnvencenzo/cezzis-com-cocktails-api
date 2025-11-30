@@ -1,4 +1,3 @@
-version: '3.8'
 name: cezzis
 services:
   cocktails-api:
@@ -11,8 +10,14 @@ services:
       - DAPR_HTTP_PORT=3500
       - DAPR_GRPC_PORT=50001
       - DOTNET_ENVIRONMENT=docker
+      - ASPNETCORE_ENVIRONMENT=docker
+      - CosmosDb__CocktailsContainerName=cezzis-docker-cocktails-cocktail
+      - CosmosDb__IngredientsContainerName=cezzis-docker-cocktails-ingredient
+      - CosmosDb__AccountsContainerName=cezzis-docker-accounts-account
     networks:
       - cezzis-network
+      - elastic-stack_elastic-network
+      - azure-stack_azure-network
     depends_on:
       - dapr-sidecar-cocktails-api
 
@@ -26,6 +31,7 @@ services:
       ./daprd
         --app-id cocktails-api-docker
         --app-port 8080
+        --app-protocol http
         --dapr-http-port 3500
         --dapr-grpc-port 50001
         --components-path /components
@@ -37,12 +43,26 @@ services:
       - ./.dapr/docker:/components
     networks:
       - cezzis-network
+      - dapr-stack_dapr-network
+      - azure-stack_azure-network
 
 networks:
   cezzis-network:
     driver: bridge
-
-
   
+  azure-stack_azure-network:
+    external: true
+    name: azure-stack_azure-network
+
+  dapr-stack_dapr-network:
+    external: true
+    name: dapr-stack_dapr-network
+
+  kafka-stack_kafka-stack:
+    external: true
+    
+  elastic-stack_elastic-network:
+    external: true
+    name: elastic-stack_elastic-network
 
 #volumes:
