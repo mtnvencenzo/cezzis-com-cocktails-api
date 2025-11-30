@@ -74,7 +74,7 @@ jobs:
       allow_build_and_push: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
       artifact_name: 'cocktails-api'
       docker_file_name: 'Dockerfile-CI'
-      image_tag: '${{ github.sha }}'
+      image_tags: '${{ github.sha }},${{ needs.gitVersion.outputs.semVer }},latest'
       acr_registry_login_server: 'acrveceusgloshared001.azurecr.io'
       acr_image_repository: 'cocktailsapi'
 
