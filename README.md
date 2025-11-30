@@ -157,35 +157,13 @@ terraform/
   ```bash
   docker run -d \
     --name cocktails-api \
-    -p 8000:80
-    -p 8001:443
-    -v "$PWD/certs:/https:ro"
+    -p 7177:80 \
+    -p 7176:443 \
+    -v "$PWD/.certs:/https:ro" \
+    -e DAPR_HTTP_PORT=3500 \
+    -e DAPR_GRPC_PORT=50001 \
+    -e DOTNET_ENVIRONMENT=docker \
     -e ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx \
-    -e AllowedOrigins=http://localhost:4000,https://localhost:4001 \
-    -e Auth0__Domain= \
-    -e Auth0__ClientId= \
-    -e Auth0__Audience= \
-    -e Auth0__DatabaseConnectionName= \
-    -e Auth0__ManagementDomain= \
-    -e Auth0__ManagementM2MClientId= \
-    -e Auth0__ManagementM2MClientSecret= \
-    -e BlobStorage__CdnHostName= \
-    -e BlobStorage__AccountAvatars__DaprBuildingBlock= \
-    -e BlobStorage__AccountAvatars__ConnectionString= \
-    -e BlobStorage__AccountAvatarsCdnHostName= \
-    -e BlobStorage__AccountAvatars__ContainerName= \
-    -e CocktailsApi__BaseImageUri= \
-    -e CocktailsApi__BaseOpenApiUri= \
-    -e CocktailsApi__ApimHostKey= \
-    -e CocktailsWeb__SiteMap__CockailsPageFormat= \
-    -e CosmosDb__ConnectionString= \
-    -e CosmosDb__AccountEndpoint= \
-    -e CosmosDb__DatabaseName= \
-    -e CosmosDb__CocktailsContainerName= \
-    -e CosmosDb__IngredientsContainerName= \
-    -e CosmosDb__AccountsContainerName= \
-    -e Kafka__BootstrapServers= \
-    -e Kafka__CocktailsTopic= \
     cocktails-api:latest
   ```
 
