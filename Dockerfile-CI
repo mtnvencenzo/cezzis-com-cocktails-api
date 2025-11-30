@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 EXPOSE 8080
 WORKDIR /App
-COPY ./publish .
+COPY ./src/Cocktails.Api/publish .
 ENTRYPOINT ["dotnet", "Cocktails.Api.dll"]

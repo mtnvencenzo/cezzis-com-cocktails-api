@@ -59,7 +59,7 @@ jobs:
       test_project_path: './Cocktails.Api.sln'
       publish_project_path: './src/Cocktails.Api/Cocktails.Api.csproj'
       artifact_name: 'cocktails-api'
-      setup_files: '["./src/Cocktails.Api/Dockerfile-CI"]' # Must be a string representation of a json array with items separated by ', '
+      setup_files: '["./Dockerfile-CI"]' # Must be a string representation of a json array with items separated by ', '
       publish_directory_name: 'publish'
       version: ${{ needs.gitVersion.outputs.semVer }}
     secrets:
