@@ -68,5 +68,3 @@ node_modules/
 
 #Dapr
 /**/.dapr/logs/
-
-Nuget.Docker.Config
