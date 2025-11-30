@@ -68,3 +68,5 @@ node_modules/
 
 #Dapr
 /**/.dapr/logs/
+
+docker-compose.override.yaml
