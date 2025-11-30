@@ -135,6 +135,59 @@ terraform/
    dotnet test test/Cocktails.Api.Unit.Tests
    ```
 
+6) Docker
+  Create tls certificates for local docker setup
+  ```bash
+  dotnet dev-certs https -ep ./certsaspnetapp.pfx -p password
+  dotnet dev-certs https --trust
+  ```
+
+  Build the image
+  ```bash
+  sudo docker image build \
+    -f ./Dockerfile \
+    -t cocktails-api:latest \
+    --rm \
+    --build-arg GH_PACKAGES_PAT_TOKEN_READ=$GH_PACKAGES_PAT_TOKEN_READ \
+    .
+  ```
+
+  Run the image
+  ```bash
+  docker run -d \
+    --name cocktails-api \
+    -p 8000:80
+    -p 8001:443
+    -v "$PWD/certs:/https:ro"
+    -e ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx \
+    -e AllowedOrigins=http://localhost:4000,https://localhost:4001 \
+    -e Auth0__Domain= \
+    -e Auth0__ClientId= \
+    -e Auth0__Audience= \
+    -e Auth0__DatabaseConnectionName= \
+    -e Auth0__ManagementDomain= \
+    -e Auth0__ManagementM2MClientId= \
+    -e Auth0__ManagementM2MClientSecret= \
+    -e BlobStorage__CdnHostName= \
+    -e BlobStorage__AccountAvatars__DaprBuildingBlock= \
+    -e BlobStorage__AccountAvatars__ConnectionString= \
+    -e BlobStorage__AccountAvatarsCdnHostName= \
+    -e BlobStorage__AccountAvatars__ContainerName= \
+    -e CocktailsApi__BaseImageUri= \
+    -e CocktailsApi__BaseOpenApiUri= \
+    -e CocktailsApi__ApimHostKey= \
+    -e CocktailsWeb__SiteMap__CockailsPageFormat= \
+    -e CosmosDb__ConnectionString= \
+    -e CosmosDb__AccountEndpoint= \
+    -e CosmosDb__DatabaseName= \
+    -e CosmosDb__CocktailsContainerName= \
+    -e CosmosDb__IngredientsContainerName= \
+    -e CosmosDb__AccountsContainerName= \
+    -e Kafka__BootstrapServers= \
+    -e Kafka__CocktailsTopic= \
+    cocktails-api:latest
+  ```
+
 ## 📚 API Documentation
 
 Public documentation: [https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1](https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1)

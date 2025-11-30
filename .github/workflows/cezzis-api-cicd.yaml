@@ -30,18 +30,18 @@ jobs:
       semVer: ${{ steps.gitVersion.outputs.MajorMinorPatch }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with: 
           fetch-depth: 0
       
-      - name: Install GetVersion
-        uses: gittools/actions/gitversion/setup@v4.1.0
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v4.2.0
         with:
           versionSpec: "6.x"
 
       - name: Use GitVersion
         id: gitVersion
-        uses: gittools/actions/gitversion/execute@v4.1.0
+        uses: gittools/actions/gitversion/execute@v4.2.0
         with:
           configFilePath: ./GitVersion.yml
   
@@ -59,7 +59,7 @@ jobs:
       test_project_path: './Cocktails.Api.sln'
       publish_project_path: './src/Cocktails.Api/Cocktails.Api.csproj'
       artifact_name: 'cocktails-api'
-      setup_files: '["./src/Cocktails.Api/Dockerfile-CI"]' # Must be a string representation of a json array with items separated by ', '
+      setup_files: '["./Dockerfile-CI"]' # Must be a string representation of a json array with items separated by ', '
       publish_directory_name: 'publish'
       version: ${{ needs.gitVersion.outputs.semVer }}
     secrets:
@@ -74,7 +74,7 @@ jobs:
       allow_build_and_push: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
       artifact_name: 'cocktails-api'
       docker_file_name: 'Dockerfile-CI'
-      image_tag: '${{ github.sha }}'
+      image_tags: '${{ github.sha }},${{ needs.gitVersion.outputs.semVer }},latest'
       acr_registry_login_server: 'acrveceusgloshared001.azurecr.io'
       acr_image_repository: 'cocktailsapi'
 

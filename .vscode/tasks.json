@@ -55,7 +55,7 @@
                 "--app-id",
                 "cocktails-api",
                 "--resources-path",
-                "${workspaceFolder}/.dapr/",
+                "${workspaceFolder}/.dapr/local/",
                 "--app-port",
                 "7176",
                 "--app-protocol",

@@ -22,6 +22,12 @@
     "yaml.schemas": {
         "https://raw.githubusercontent.com/GitTools/GitVersion/main/schemas/6.3/GitVersion.json": "GitVersion.yml"
     },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.cs": "${capture}.http",
+        "*.json": "${capture}.*.json,${capture}.*.json.user",
+        "*.resx": "${capture}.Designer.cs"
+    },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,

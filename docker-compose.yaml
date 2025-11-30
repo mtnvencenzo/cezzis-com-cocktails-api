@@ -1,0 +1,44 @@
+version: '3.8'
+name: cezzis
+services:
+  cocktails-api:
+    image: acrveceusgloshared001.azurecr.io/cocktailsapi:latest
+    container_name: cocktails-api
+    ports:
+      - "7177:8080"
+      - "7176:443"
+    environment:
+      - DAPR_HTTP_PORT=3500
+      - DAPR_GRPC_PORT=50001
+    networks:
+      - cezzis-network
+    depends_on:
+      - dapr-sidecar-cocktails-api
+
+  dapr-sidecar-cocktails-api:
+    image: daprio/daprd:latest
+    container_name: dapr-sidecar-cocktails-api
+    ports:
+      - "3500:3500"
+      - "50001:50001"
+    command: >
+      ./daprd
+        --app-id cocktails-api-docker
+        --app-port 8080
+        --dapr-http-port 3500
+        --dapr-grpc-port 50001
+        --components-path /components
+        --enable-metrics false
+        --enable-api-logging false
+        --placement-host-address ''
+        --scheduler-host-address ''
+    volumes:
+      - ./.dapr/docker:/components
+    networks:
+      - cezzis-network
+
+networks:
+  cezzis-network:
+    driver: bridge
+
+#volumes:
