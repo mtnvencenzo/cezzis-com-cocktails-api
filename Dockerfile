@@ -1,8 +1,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /App
 
+ARG GH_PACKAGES_PAT_TOKEN_READ
+ENV GH_PACKAGES_PAT_TOKEN_READ=${GH_PACKAGES_PAT_TOKEN_READ}
+
 COPY ./Directory.Build.props ./
-COPY ./Nuget.Docker.Config ./Nuget.Config
+COPY ./Nuget.Config ./Nuget.Config
 COPY ./.editorconfig ./
 COPY ./src/ .
 

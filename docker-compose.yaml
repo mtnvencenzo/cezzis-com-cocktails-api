@@ -33,7 +33,7 @@ services:
         --placement-host-address ''
         --scheduler-host-address ''
     volumes:
-      - ./dapr:/components
+      - ./.dapr/docker:/components
     networks:
       - cezzis-network
 

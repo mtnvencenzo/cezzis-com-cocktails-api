@@ -144,7 +144,12 @@ terraform/
 
   Build the image
   ```bash
-  sudo docker image build -f ./Dockerfile -t cocktails-api:latest --rm .
+  sudo docker image build \
+    -f ./Dockerfile \
+    -t cocktails-api:latest \
+    --rm \
+    --build-arg GH_PACKAGES_PAT_TOKEN_READ=$GH_PACKAGES_PAT_TOKEN_READ \
+    .
   ```
 
   Run the image
