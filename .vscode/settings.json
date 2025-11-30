@@ -26,7 +26,8 @@
     "explorer.fileNesting.patterns": {
         "*.cs": "${capture}.http",
         "*.json": "${capture}.*.json,${capture}.*.json.user",
-        "*.resx": "${capture}.Designer.cs"
+        "*.resx": "${capture}.Designer.cs",
+        "*.yaml": "${capture}.override.yaml"
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
