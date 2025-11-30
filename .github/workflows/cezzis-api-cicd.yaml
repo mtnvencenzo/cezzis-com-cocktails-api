@@ -30,11 +30,11 @@ jobs:
       semVer: ${{ steps.gitVersion.outputs.MajorMinorPatch }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with: 
           fetch-depth: 0
       
-      - name: Install GetVersion
+      - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v4.2.0
         with:
           versionSpec: "6.x"
