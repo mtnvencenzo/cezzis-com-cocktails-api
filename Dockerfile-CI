@@ -1,5 +1,10 @@
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
+
 EXPOSE 8080
+EXPOSE 7177
+EXPOSE 443
+EXPOSE 7176
+
 WORKDIR /App
 COPY ./publish .
 ENTRYPOINT ["dotnet", "Cocktails.Api.dll"]

@@ -11,10 +11,9 @@ services:
       - DAPR_GRPC_PORT=50001
       - DOTNET_ENVIRONMENT=docker
       - ASPNETCORE_ENVIRONMENT=docker
-      - ASPNETCORE_HTTPS_PORTS=443
-      - ASPNETCORE_URLS=http://0.0.0.0:8080;https://0.0.0.0:443
+      - ASPNETCORE_HTTPS_PORTS=7176
+      - ASPNETCORE_URLS=http://0.0.0.0:7177;https://0.0.0.0:7176
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
       - CosmosDb__CocktailsContainerName=cezzis-docker-cocktails-cocktail
       - CosmosDb__IngredientsContainerName=cezzis-docker-cocktails-ingredient
       - CosmosDb__AccountsContainerName=cezzis-docker-accounts-account
@@ -36,7 +35,7 @@ services:
     command: >
       ./daprd
         --app-id cocktails-api-docker
-        --app-port 8080
+        --app-port 7177
         --app-protocol http
         --dapr-http-port 3500
         --dapr-grpc-port 50001
@@ -45,11 +44,8 @@ services:
         --enable-api-logging false
         --placement-host-address ''
         --scheduler-host-address ''
-    environment:
-      - SSL_CERT_DIR=/certs
     volumes:
       - ./.dapr/docker:/components
-      - "$PWD/.certs:/certs:ro"
     networks:
       - cezzis-network
       - dapr-stack_dapr-network
