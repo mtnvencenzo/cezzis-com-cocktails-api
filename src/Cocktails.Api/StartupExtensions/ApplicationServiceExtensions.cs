@@ -56,8 +56,8 @@ internal static class ApplicationServiceExtensions
         // Register the dapr client
         builder.Services.AddDaprClient(dapr =>
         {
-            dapr.UseHttpEndpoint($"http://localhost:{builder.Configuration.GetValue<int>("DAPR_HTTP_PORT", 5295)}");
-            dapr.UseGrpcEndpoint($"http://localhost:{builder.Configuration.GetValue<int>("DAPR_GRPC_PORT", 50001)}");
+            dapr.UseHttpEndpoint($"http://dapr-sidecar-cocktails-api:{builder.Configuration.GetValue<int>("DAPR_HTTP_PORT", 3500)}");
+            dapr.UseGrpcEndpoint($"http://dapr-sidecar-cocktails-api:{builder.Configuration.GetValue<int>("DAPR_GRPC_PORT", 50001)}");
         });
 
         // Add dapr serice bus messaging to DI
