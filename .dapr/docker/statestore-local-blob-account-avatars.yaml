@@ -18,4 +18,4 @@ spec:
     value: account-avatars
 
 scopes:
-  - cocktails-api-docker
+  - cocktails-api

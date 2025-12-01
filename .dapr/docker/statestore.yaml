@@ -14,4 +14,4 @@ spec:
     value: "false"
 
 scopes:
-  - cocktails-api-docker
+  - cocktails-api
