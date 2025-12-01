@@ -31,7 +31,7 @@ if (Environment.GetEnvironmentVariable("SEED_ON_STARTUP") == "true")
 {
     using var scope = app.Services.CreateScope();
     await scope.ServiceProvider.GetRequiredService<StorageInitializer>().InitializeAsync();
-    await scope.ServiceProvider.GetRequiredService<KafkaInitializer>().InitializeAsync();
+    //await scope.ServiceProvider.GetRequiredService<KafkaInitializer>().InitializeAsync();
     await scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().InitializeAsync();
 }
 
