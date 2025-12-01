@@ -43,15 +43,15 @@ app.UseDefaultOpenApi();
 
 // Not requiring the dev cert for open api locally
 // Had issues with cert trust on ubuntu for some reason.
-if (app.Environment.IsEnvironment("local"))
+if (app.Environment.IsEnvironment("local") || app.Environment.IsEnvironment("docker"))
 {
-    app.UseWhen(context =>
-    {
-        return !context.Request.Path.Equals("/scalar/v1/openapi.json");
-    }, appBuilder =>
-    {
-        appBuilder.UseHttpsRedirection();
-    });
+    // app.UseWhen(context =>
+    // {
+    //     return !context.Request.Path.Equals("/scalar/v1/openapi.json");
+    // }, appBuilder =>
+    // {
+    //     appBuilder.UseHttpsRedirection();
+    // });
 }
 else
 {

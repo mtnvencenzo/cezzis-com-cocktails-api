@@ -45,8 +45,11 @@ services:
         --enable-api-logging false
         --placement-host-address ''
         --scheduler-host-address ''
+    environment:
+      - SSL_CERT_DIR=/certs
     volumes:
       - ./.dapr/docker:/components
+      - "$PWD/.certs:/certs:ro"
     networks:
       - cezzis-network
       - dapr-stack_dapr-network
