@@ -11,9 +11,15 @@ services:
       - DAPR_GRPC_PORT=50001
       - DOTNET_ENVIRONMENT=docker
       - ASPNETCORE_ENVIRONMENT=docker
+      - ASPNETCORE_HTTPS_PORTS=443
+      - ASPNETCORE_URLS=http://0.0.0.0:8080;https://0.0.0.0:443
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
       - CosmosDb__CocktailsContainerName=cezzis-docker-cocktails-cocktail
       - CosmosDb__IngredientsContainerName=cezzis-docker-cocktails-ingredient
       - CosmosDb__AccountsContainerName=cezzis-docker-accounts-account
+    volumes:
+      - "$PWD/.certs:/https:ro"
     networks:
       - cezzis-network
       - elastic-stack_elastic-network

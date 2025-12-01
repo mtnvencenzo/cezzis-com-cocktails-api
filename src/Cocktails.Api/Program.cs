@@ -27,7 +27,7 @@ builder.AddDefaultOpenApi(apiVersioningBuilder);
 var app = builder.Build();
 
 // Initialize database if needed
-if (app.Environment.IsEnvironment("local"))
+if (Environment.GetEnvironmentVariable("SEED_ON_STARTUP") == "true")
 {
     using var scope = app.Services.CreateScope();
     await scope.ServiceProvider.GetRequiredService<StorageInitializer>().InitializeAsync();
