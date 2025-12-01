@@ -139,8 +139,8 @@ terraform/
 6) Docker
   Create tls certificates for local docker setup
   ```bash
-  dotnet dev-certs https -ep ./certsaspnetapp.pfx -p password
-  dotnet dev-certs https --trust
+dotnet dev-certs https -ep ./.certs/aspnetapp.pfx -p password
+dotnet dev-certs https --trust
   ```
 
   Build the image
