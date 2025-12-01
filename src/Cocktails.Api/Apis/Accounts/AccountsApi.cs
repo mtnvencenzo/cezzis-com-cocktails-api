@@ -1,16 +1,16 @@
 ﻿namespace Cocktails.Api.Apis.Accounts;
 
+using Cocktails.Api.Application.Behaviors.Authorization;
 using Cocktails.Api.Application.Concerns.Accounts.Commands;
 using Cocktails.Api.Application.Concerns.Accounts.Models;
 using Cocktails.Api.Application.Exceptions;
+using Cocktails.Api.Infrastructure.Services;
 using Cocktails.Api.StartupExtensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
-using Cocktails.Api.Infrastructure.Services;
-using Cocktails.Api.Application.Behaviors.Authorization;
 
 /// <summary>
 /// 

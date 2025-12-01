@@ -18,7 +18,6 @@ public static class HealthApi
     public static RouteGroupBuilder MapHealthApiV1(this IEndpointRouteBuilder app)
     {
         var groupBuilder = app.MapGroup("/health")
-            .WithName(nameof(GetPing))
             .ExcludeFromDescription()
             .AllowAnonymous();
 

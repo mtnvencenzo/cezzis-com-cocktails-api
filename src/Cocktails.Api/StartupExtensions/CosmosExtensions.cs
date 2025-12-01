@@ -3,9 +3,9 @@
 using Azure.Identity;
 using Cocktails.Api.Domain.Config;
 using Cocktails.Api.Infrastructure;
-using Microsoft.Extensions.Options;
-using Microsoft.EntityFrameworkCore;
 using Cocktails.Api.Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 internal static class CosmosExtensions
 {

@@ -16,7 +16,7 @@ module "ai_search_cocktails_index_simple" {
 
   # https://learn.microsoft.com/en-us/rest/api/searchservice/create-data-source
   cosmos_datasource_json = jsonencode({
-    "name" : "${var.datasource_name}",
+    "name" : var.datasource_name,
     "description" : null,
     "type" : "cosmosdb",
     "credentials" : {

@@ -1,20 +1,20 @@
 namespace Cocktails.Api.Unit.Tests.Apis.Accounts;
 
+using Bogus;
 using FluentAssertions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
-using System.Threading.Tasks;
-using Xunit;
 using global::Cocktails.Api.Apis.Accounts;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
-using System.Security.Claims;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
-using Moq.EntityFrameworkCore;
-using Bogus;
-using Moq;
 using global::Cocktails.Api.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Moq;
+using Moq.EntityFrameworkCore;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Xunit;
 
 public class UpdateAccountOwnedNotificationSettings_Tests : ServiceTestBase
 {

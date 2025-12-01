@@ -1,6 +1,5 @@
 ﻿namespace Cocktails.Api.Application.Behaviors;
 
-using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using System;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;

@@ -1,5 +1,5 @@
 ﻿namespace Cocktails.Api.Apis.LegalDocuments;
-using Cocktails.Api.Application.Concerns.LegalDocuments;
+
 using Cocktails.Api.Application.Concerns.LegalDocuments.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.HttpResults;

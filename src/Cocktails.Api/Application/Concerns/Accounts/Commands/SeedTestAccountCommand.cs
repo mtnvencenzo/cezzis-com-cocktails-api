@@ -1,13 +1,13 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Accounts.Commands;
 
-using MediatR;
-using global::Cocktails.Api.Domain.Config;
-using Microsoft.Extensions.Options;
 using global::Cocktails.Api.Application.Concerns.Accounts.Models;
-using System.Security.Claims;
 using global::Cocktails.Api.Application.Concerns.Accounts.Queries;
-using global::Cocktails.Api.Infrastructure.Resources.Test;
 using global::Cocktails.Api.Domain.Aggregates.AccountAggregate;
+using global::Cocktails.Api.Domain.Config;
+using global::Cocktails.Api.Infrastructure.Resources.Test;
+using MediatR;
+using Microsoft.Extensions.Options;
+using System.Security.Claims;
 
 public record SeedTestAccountCommand() : IRequest<bool>;
 
@@ -92,7 +92,7 @@ public class SeedTestAccountCommandHandler(
         if (favorites.Count > 0)
         {
             var manageFavoriteCocktailsCommand = new ManageFavoriteCocktailsCommand(
-                Request: new ManageFavoriteCocktailsRq(CocktailActions: favorites.Select(c => new CocktailFavoriteActionModel(CocktailId: c, Action: CocktailFavoritingActionModel.Remove)).ToList()),
+                Request: new ManageFavoriteCocktailsRq(CocktailActions: [.. favorites.Select(c => new CocktailFavoriteActionModel(CocktailId: c, Action: CocktailFavoritingActionModel.Remove))]),
                 Identity: identity);
 
             _ = await mediator.Send(manageFavoriteCocktailsCommand, cancellationToken)

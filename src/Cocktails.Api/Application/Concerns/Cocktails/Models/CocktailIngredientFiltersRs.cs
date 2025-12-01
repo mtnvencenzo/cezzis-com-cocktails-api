@@ -1,7 +1,7 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Cocktails.Models;
 
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 #pragma warning disable format
 

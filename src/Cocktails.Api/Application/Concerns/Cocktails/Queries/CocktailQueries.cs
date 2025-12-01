@@ -1,13 +1,12 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Cocktails.Queries;
 
 using Cezzi.Applications.Extensions;
-using Cocktails;
 using global::Cocktails.Api.Application.Concerns.Cocktails.Models;
+using global::Cocktails.Api.Application.Concerns.Cocktails.Services;
 using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using global::Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 using global::Cocktails.Api.Domain.Config;
 using global::Cocktails.Api.Infrastructure.Services;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -17,6 +16,7 @@ using System.Threading.Tasks;
 
 public class CocktailQueries(
     ICocktailRepository cocktailRepository,
+    ICocktailModelConverter cocktailModelConverter,
     IOptions<CocktailsWebConfig> cocktailWebConfig,
     ISearchClient searchClient) : ICocktailQueries
 {
@@ -51,69 +51,9 @@ public class CocktailQueries(
             return Task.FromResult(null as CocktailRs);
         }
 
-        var glasswareConverter = TypeDescriptor.GetConverter(typeof(GlasswareTypeModel));
-        var uomConverter = TypeDescriptor.GetConverter(typeof(UofMTypeModel));
-        var ingredientTypeConverter = TypeDescriptor.GetConverter(typeof(IngredientTypeModel));
-        var ingredientApplicationConverter = TypeDescriptor.GetConverter(typeof(IngredientApplicationModel));
-        var preparationTypeConverter = TypeDescriptor.GetConverter(typeof(PreparationTypeModel));
-        var requirementTypeConverter = TypeDescriptor.GetConverter(typeof(IngredientRequirementTypeModel));
-
         var rs = new CocktailRs
         (
-            Item: item != null
-                ? new CocktailModel
-                (
-                    Content: item.Content?
-                        .Replace("{{ingredients}}", item.GetIngredientsMarkDownDescription())
-                        .Replace("{{instructions}}", item.GetInstructionsMarkDownDescription())
-                        .Replace("{{iba}}", item.GetIbaDescription()),
-                    Glassware: [.. item.Glassware.Select(x => (GlasswareTypeModel)glasswareConverter.ConvertFrom(Enum.Parse<GlasswareType>(x, true)))],
-                    Id: item.Id,
-                    Serves: item.Serves,
-                    Tags: [.. item.Eras],
-                    SearchableTitles: [.. item.SearchableTitles],
-                    Title: item.Title,
-                    DescriptiveTitle: item.DescriptiveTitle,
-                    Description: !string.IsNullOrWhiteSpace(item.Description)
-                        ? item.Description
-                        : item.DescriptiveTitle,
-                    IsIba: item.IsIba,
-                    ModifiedOn: item.ModifiedOn,
-                    PublishedOn: item.PublishedOn,
-                    PrepTimeMinutes: item.PrepTimeMinutes,
-                    Rating: item.Rating != null
-                        ? new CocktailRatingModel(item.Rating.OneStars, item.Rating.TwoStars, item.Rating.ThreeStars, item.Rating.FourStars, item.Rating.FiveStars, item.Rating.TotalStars, item.Rating.Rating, item.Rating.RatingCount)
-                        : new CocktailRatingModel(0, 0, 0, 0, 0, 0, 0, 0),
-                    Instructions: [.. item.Instructions.OrderBy(x => x.Order).Select(x => new InstructionStepModel
-                    (
-                        Display: x.DisplayValue,
-                        Order: x.Order
-                    ))],
-                    MainImages: [.. item.Images.Where(x => x.Type == CocktailImageType.Main).Select(x => new CocktailImageModel
-                    (
-                        Uri: x.Uri,
-                        Width: x.Width,
-                        Height: x.Height
-                    ))],
-                    SearchTiles: [.. item.Images.Where(x => x.Type == CocktailImageType.SearchTile).Select(x => new CocktailImageModel2
-                    (
-                        Uri: x.Uri,
-                        Width: x.Width,
-                        Height: x.Height
-                    ))],
-                    Ingredients: [.. item.Ingredients.Select(x => new IngredientModel
-                    (
-                        UoM: (UofMTypeModel)uomConverter.ConvertFrom(x.UoM),
-                        Name: x.Name,
-                        Preparation: (PreparationTypeModel)preparationTypeConverter.ConvertFrom(x.Preparation),
-                        Requirement: (IngredientRequirementTypeModel)requirementTypeConverter.ConvertFrom(x.Requirement),
-                        Suggestions: x.Suggestions?.ToString() ?? string.Empty,
-                        Types: [.. x.Types.Select(x => (IngredientTypeModel)ingredientTypeConverter.ConvertFrom(Enum.Parse<IngredientType>(x, true)))],
-                        Applications: [.. x.Applications.Select(x => (IngredientApplicationModel)ingredientApplicationConverter.ConvertFrom(Enum.Parse<IngredientApplication>(x, true)))],
-                        Units: x.Units,
-                        Display: x.GetDisplayValue()
-                    ))]
-                ) : null
+            Item: cocktailModelConverter.ToCocktailModel(item)
         );
 
         return Task.FromResult(rs);

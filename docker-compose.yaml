@@ -12,7 +12,7 @@ services:
       - DOTNET_ENVIRONMENT=docker
       - ASPNETCORE_ENVIRONMENT=docker
       - ASPNETCORE_HTTPS_PORTS=443
-      - SEED_ON_STARTUP=true
+      - ASPNETCORE_URLS=http://0.0.0.0:8080;https://0.0.0.0:443
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - ASPNETCORE_Kestrel__Certificates__Default__Password=password
       - CosmosDb__CocktailsContainerName=cezzis-docker-cocktails-cocktail

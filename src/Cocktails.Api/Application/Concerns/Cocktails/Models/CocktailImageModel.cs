@@ -1,8 +1,8 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Cocktails.Models;
 
 using global::Cocktails.Api.Application.Behaviors;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 #pragma warning disable format
 

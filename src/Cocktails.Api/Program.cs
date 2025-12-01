@@ -1,7 +1,7 @@
 using Asp.Versioning;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
-using Cocktails.Api.StartupExtensions;
 using Cocktails.Api.Infrastructure.Services;
+using Cocktails.Api.StartupExtensions;
 using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +31,7 @@ if (Environment.GetEnvironmentVariable("SEED_ON_STARTUP") == "true")
 {
     using var scope = app.Services.CreateScope();
     await scope.ServiceProvider.GetRequiredService<StorageInitializer>().InitializeAsync();
+    //await scope.ServiceProvider.GetRequiredService<KafkaInitializer>().InitializeAsync();
     await scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().InitializeAsync();
 }
 

@@ -1,4 +1,5 @@
 ﻿namespace Cocktails.Api.Domain.Services;
+
 using System.Threading;
 using System.Threading.Tasks;
 

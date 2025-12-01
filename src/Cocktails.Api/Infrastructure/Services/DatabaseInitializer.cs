@@ -1,13 +1,13 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Logging;
-using Microsoft.Azure.Cosmos;
+using Cocktails.Api.Application.Concerns.Accounts.Commands;
+using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Domain.Config;
 using MediatR;
-using Cocktails.Api.Application.Concerns.Cocktails.Commands;
-using Cocktails.Api.Application.Concerns.Accounts.Commands;
+using Microsoft.Azure.Cosmos;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 public class DatabaseInitializer(
     IOptions<CosmosDbConfig> config,
