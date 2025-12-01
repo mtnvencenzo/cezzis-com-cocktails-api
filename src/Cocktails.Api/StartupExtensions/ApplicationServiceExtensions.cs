@@ -42,6 +42,7 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<TestAccountConfig>(builder.Configuration.GetSection(TestAccountConfig.SectionName));
         builder.Services.Configure<Auth0Config>(builder.Configuration.GetSection(Auth0Config.SectionName));
         builder.Services.Configure<KafkaConfig>(builder.Configuration.GetSection(KafkaConfig.SectionName));
+        builder.Services.Configure<DaprConfig>(builder.Configuration.GetSection(DaprConfig.SectionName));
 
         builder.Services.AddCosomsContexts();
 
@@ -53,12 +54,8 @@ internal static class ApplicationServiceExtensions
         builder.Services.AddDefaultAuthentication(builder.Configuration);
         builder.Services.AddDefaultAuthorization();
 
-        // Register the dapr client
-        builder.Services.AddDaprClient(dapr =>
-        {
-            dapr.UseHttpEndpoint($"http://dapr-sidecar-cocktails-api:{builder.Configuration.GetValue<int>("DAPR_HTTP_PORT", 3500)}");
-            dapr.UseGrpcEndpoint($"http://dapr-sidecar-cocktails-api:{builder.Configuration.GetValue<int>("DAPR_GRPC_PORT", 50001)}");
-        });
+        // Add dapr client to DI
+        builder.Services.AddDaprClient();
 
         // Add dapr serice bus messaging to DI
         builder.Services.AddEventBus(builder.Configuration);

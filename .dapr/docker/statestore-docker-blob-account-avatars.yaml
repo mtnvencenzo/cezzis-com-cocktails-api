@@ -2,7 +2,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 
 metadata:
-  name: statestore-local-blob-account-avatars
+  name: statestore-docker-blob-account-avatars
 
 spec:
   type: bindings.azure.blobstorage
