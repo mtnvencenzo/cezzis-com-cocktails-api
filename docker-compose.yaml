@@ -58,8 +58,8 @@ services:
     image: acrveceusgloshared001.azurecr.io/cocktailsweb:latest
     container_name: cocktails-web
     ports:
-      - "4001:80"
-      - "4000:443"
+      - "4000:80"
+      - "4001:443"
     environment:
       - VITE_NODE_ENV=docker
       - VITE_PORT=4001
