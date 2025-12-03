@@ -13,7 +13,7 @@ spec:
   - name: storageAccessKey
     value: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==  # Azurite default key
   - name: endpoint
-    value: http://localhost:10000
+    value: https://localhost:10000
   - name: containerName
     value: account-avatars
 
