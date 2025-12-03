@@ -1,9 +1,7 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
-using Cezzi.OTel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using OpenTelemetry.Resources;
 
 internal static class ServiceDefaultsExtensions
 {

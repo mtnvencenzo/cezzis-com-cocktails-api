@@ -25,6 +25,10 @@ services:
           cp /https/azurite.crt /usr/local/share/ca-certificates/ &&
           update-ca-certificates
         fi &&
+        if [ -f /https/otel-collector.crt ]; then
+          cp /https/otel-collector.crt /usr/local/share/ca-certificates/ &&
+          update-ca-certificates
+        fi &&
         exec dotnet Cocktails.Api.dll
       "
     networks:
@@ -45,8 +49,8 @@ services:
     command: >
       ./daprd
         --app-id cocktails-api
-        --app-port 7177
-        --app-protocol http
+        --app-port 7176
+        --app-protocol https
         --dapr-http-port 3500
         --dapr-grpc-port 50001
         --components-path /components
@@ -54,8 +58,6 @@ services:
         --enable-api-logging false
         --placement-host-address ''
         --scheduler-host-address ''
-        --enable-app-health-check true
-        --app-health-check-path /api/v1/health/ping
         --app-channel-address cocktails-api
     volumes:
       - ./.dapr/docker:/components
@@ -74,6 +76,13 @@ services:
     environment:
       - VITE_NODE_ENV=docker
       - VITE_PORT=4001
+      - VITE_TELEMETRY_URL=https://localhost:50052
+      - VITE_AUTH0_DOMAIN=login.cezzis.com
+      - VITE_AUTH0_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
+      - VITE_AUTH0_REDIRECT_URI=https://localhost:4001/iam/auth/redirect/
+      - VITE_AUTH0_COCKTAILS_API_AUDIENCE=https://cezzis-cocktails-api
+      - VITE_COCKTAILS_API_URL=https://localhost:7176
+      - VITE_COCKTAILS_IMAGE_URL=https://localhost:7176/api/v1/images
     volumes:
       - "$HOME/Github/cezzis-com-cocktails-web/cocktails.web/.certs:/etc/nginx/certs:ro"
     networks:

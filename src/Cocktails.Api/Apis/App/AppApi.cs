@@ -15,7 +15,7 @@ public static class AppApi
     /// </summary>
     /// <param name="app"></param>
     /// <returns></returns>
-    public static RouteGroupBuilder MapInitApiV1(this IEndpointRouteBuilder app)
+    public static RouteGroupBuilder MapAppApiV1(this IEndpointRouteBuilder app)
     {
         var groupBuilder = app.MapGroup("/app")
             .AllowAnonymous();
