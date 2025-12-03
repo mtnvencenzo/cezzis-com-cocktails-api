@@ -64,7 +64,7 @@ services:
       - "$PWD/.certs/dapr-sidecar-cocktails-api:/certs:ro"
     networks:
       - cezzis-network
-      - dapr-stack_dapr-network
+      - redis-stack_redis-network
       - azure-stack_azure-network
 
   cocktails-web:
@@ -99,9 +99,9 @@ networks:
     external: true
     name: azure-stack_azure-network
 
-  dapr-stack_dapr-network:
+  redis-stack_redis-network:
     external: true
-    name: dapr-stack_dapr-network
+    name: redis-stack_redis-network
 
   kafka-stack_kafka-stack:
     external: true
@@ -109,5 +109,3 @@ networks:
   elastic-stack_elastic-network:
     external: true
     name: elastic-stack_elastic-network
-
-#volumes:
