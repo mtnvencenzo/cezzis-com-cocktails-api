@@ -86,6 +86,45 @@ services:
     depends_on:
       - cocktails-api
 
+  cocktails-mcp:
+    image: acrveceusgloshared001.azurecr.io/cocktailsmcp:latest
+    container_name: cocktails-mcp
+    ports:
+      - "7999:7999"
+    environment:
+      - PORT=7999
+      - AUTH0_AUDIENCE=https://cezzis-cocktails-api
+      - AUTH0_CLIENT_ID=6pNnUIHVbyakv27TtICiLyAQbXYxNjOQ
+      - AUTH0_DOMAIN=login.cezzis.com
+      - AUTH0_SCOPES="openid offline_access profile email read:owned-account write:owned-account"
+      - COCKTAILS_API_HOST=https://cocktails-api:7176
+      - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
+      - COSMOS_CONNECTION_STRING=AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;
+      - COSMOS_CONTAINER_NAME=cezzis-local-device-auth
+      - COSMOS_DATABASE_NAME=cocktails-db
+      - LOG_LEVEL=info
+      - OTLP_ENDPOINT=https://otel-collector:50052
+      - OTLP_INSECURE=false
+      - OTLP_LOG_ENABLED=true
+      - OTLP_METRICS_ENABLED=false
+      - OTLP_TRACE_ENABLED=true
+    volumes:
+      - "$PWD/.certs/cocktails-mcp:/certs:ro"
+    user: root
+    entrypoint: >
+      sh -c "
+        if ls /certs/*.crt 1> /dev/null 2>&1; then
+          apk add --no-cache ca-certificates &&
+          cp /certs/*.crt /usr/local/share/ca-certificates/ &&
+          update-ca-certificates
+        fi &&
+        exec su -s /bin/sh app -c '/cezzis-cocktails'
+      "
+    networks:
+      - cezzis-network
+      - elastic-stack_elastic-network
+      - azure-stack_azure-network
+
 
 networks:
   cezzis-network:
