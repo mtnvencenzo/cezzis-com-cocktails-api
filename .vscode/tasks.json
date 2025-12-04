@@ -57,15 +57,15 @@
                 "--resources-path",
                 "${workspaceFolder}/.dapr/local/",
                 "--app-port",
-                "7176",
+                "7178",
                 "--app-protocol",
                 "https",
                 "--dapr-http-port",
                 "5295",
                 "--dapr-grpc-port",
-                "50001",
+                "50003",
                 "--metrics-port",
-                "9090"
+                "9091"
             ],
             "isBackground": true,
             "dependsOn": "build",

@@ -104,17 +104,16 @@ services:
       - COCKTAILS_API_HOST=https://cocktails-api:7176
       - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
       - COSMOS_CONNECTION_STRING=AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;
-      - COSMOS_CONTAINER_NAME=cezzis-local-device-auth
+      - COSMOS_CONTAINER_NAME=cezzis-docker-device-auth
       - COSMOS_DATABASE_NAME=cocktails-db
       - LOG_LEVEL=info
       - OTLP_ENDPOINT=https://otel-collector:50052
       - OTLP_INSECURE=false
-      - OTLP_LOG_ENABLED=true
       - OTLP_METRICS_ENABLED=false
-      - OTLP_TRACE_ENABLED=true
+      - TLS_CERT_FILE=/certs/cocktails-mcp.crt
+      - TLS_KEY_FILE=/certs/cocktails-mcp.key
     volumes:
-      - "$PWD/.certs/cocktails-mcp:/certs:ro"
-    user: root
+      - "$HOME/Github/cezzis-com-cocktails-mcp/.certs:/certs:ro"
     entrypoint: >
       sh -c "
         if ls /certs/*.crt 1> /dev/null 2>&1; then
@@ -122,7 +121,7 @@ services:
           cp /certs/*.crt /usr/local/share/ca-certificates/ &&
           update-ca-certificates
         fi &&
-        exec su -s /bin/sh app -c '/cezzis-cocktails'
+        exec /cezzis-cocktails
       "
     networks:
       - cezzis-network

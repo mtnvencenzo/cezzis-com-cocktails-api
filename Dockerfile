@@ -22,7 +22,7 @@ ENV ASPNETCORE_URLS="https://+;http://+"
 ENV ASPNETCORE_ENVIRONMENT="docker"
 ENV ASPNETCORE_HTTPS_PORTS=443
 ENV ASPNETCORE_Kestrel__Certificates__Default__Password="password"
-ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/https/cocktails-api.pfx
 
 WORKDIR /App
 COPY --from=build /App/out .

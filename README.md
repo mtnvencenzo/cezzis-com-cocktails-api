@@ -124,7 +124,7 @@ terraform/
      ```bash
      dotnet run --project src/Cocktails.Api/Cocktails.Api.csproj
      ```
-   - Local API docs: [https://localhost:7176/scalar/v1](https://localhost:7176/scalar/v1)
+   - Local API docs: [https://localhost:7178/scalar/v1](https://localhost:7178/scalar/v1)
    - Optional Dapr: task available in `.vscode/tasks.json` (sidecar ports and HTTPS configured)
 
 5) Testing

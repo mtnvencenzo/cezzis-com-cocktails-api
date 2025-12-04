@@ -30,7 +30,7 @@ internal static class CosmosExtensions
                 // -------------------------------------------------------------------------------------
                 // These options are for development purposes only. Since not planning 
                 // on using connection strings in real environments, changing the options to work with local 
-                // cosmos emulator.  (Note: disabling cert checks!)
+                // cosmos emulator.  (Note: uncomment code to disable cert checks! if needed
                 // -------------------------------------------------------------------------------------
                 optionsBuilder.UseCosmos(
                     connectionString: options.ConnectionString,
@@ -39,15 +39,15 @@ internal static class CosmosExtensions
                     {
                         options.ConnectionMode(Microsoft.Azure.Cosmos.ConnectionMode.Gateway);
                         options.LimitToEndpoint(true);
-                        options.HttpClientFactory(() =>
-                        {
-                            HttpMessageHandler httpMessageHandler = new HttpClientHandler()
-                            {
-                                ServerCertificateCustomValidationCallback = (req, cert, chain, errors) => true
-                            };
+                        // options.HttpClientFactory(() =>
+                        // {
+                        //     HttpMessageHandler httpMessageHandler = new HttpClientHandler()
+                        //     {
+                        //         ServerCertificateCustomValidationCallback = (req, cert, chain, errors) => true
+                        //     };
 
-                            return new HttpClient(httpMessageHandler);
-                        });
+                        //     return new HttpClient(httpMessageHandler);
+                        // });
                     });
             }
             else

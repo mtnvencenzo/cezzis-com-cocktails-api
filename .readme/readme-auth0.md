@@ -124,7 +124,7 @@ auth0_frontend_client_id = "your-spa-client-id"
    ```
 
 2. **Access Swagger UI**
-   - Navigate to `https://localhost:7176/scalar/v1`
+   - Navigate to `https://localhost:7178/scalar/v1`
    - Click on the **Authorize** button
    - You should be redirected to Auth0 for authentication
 
