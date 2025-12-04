@@ -3,6 +3,7 @@ services:
   cocktails-api:
     image: acrveceusgloshared001.azurecr.io/cocktailsapi:latest
     container_name: cocktails-api
+    restart: unless-stopped
     ports:
       - "7177:7177"
       - "7176:7176"
@@ -37,6 +38,7 @@ services:
   dapr-sidecar-cocktails-api:
     image: daprio/daprd:latest
     container_name: dapr-sidecar-cocktails-api
+    restart: unless-stopped
     ports:
       - "3500:3500"
       - "50001:50001"
@@ -66,6 +68,7 @@ services:
   cocktails-web:
     image: acrveceusgloshared001.azurecr.io/cocktailsweb:latest
     container_name: cocktails-web
+    restart: unless-stopped
     ports:
       - "4000:80"
       - "4001:443"
@@ -89,6 +92,7 @@ services:
   cocktails-mcp:
     image: acrveceusgloshared001.azurecr.io/cocktailsmcp:latest
     container_name: cocktails-mcp
+    restart: unless-stopped
     ports:
       - "7999:7999"
     environment:
