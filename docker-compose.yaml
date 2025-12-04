@@ -21,12 +21,8 @@ services:
       - "/home/mtnvencenzo/Github/cezzis-com-cocktails-images/Images/Main:/data/cocktail/images:ro"
     entrypoint: >
       sh -c "
-        if [ -f /https/azurite.crt ]; then
-          cp /https/azurite.crt /usr/local/share/ca-certificates/ &&
-          update-ca-certificates
-        fi &&
-        if [ -f /https/otel-collector.crt ]; then
-          cp /https/otel-collector.crt /usr/local/share/ca-certificates/ &&
+        if ls /https/*.crt 1> /dev/null 2>&1; then
+          cp /https/*.crt /usr/local/share/ca-certificates/ &&
           update-ca-certificates
         fi &&
         exec dotnet Cocktails.Api.dll
