@@ -8,6 +8,7 @@ public record InitializeAppCommand(bool OnlyIfEmpty = false) : IRequest<bool>;
 public class InitializeAppCommandHandler(
     StorageInitializer storageInitializer,
     DatabaseInitializer databaseInitializer,
+    KafkaInitializer kafkaInitializer,
     ILogger<InitializeAppCommandHandler> logger) : IRequestHandler<InitializeAppCommand, bool>
 {
     public async Task<bool> Handle(InitializeAppCommand command, CancellationToken cancellationToken)
@@ -17,8 +18,8 @@ public class InitializeAppCommandHandler(
         logger.LogInformation("Initializing Storage");
         await storageInitializer.InitializeAsync();
 
-        // logger.LogInformation("Initializing Kafka");
-        // await kafkaInitializer.InitializeAsync();
+        logger.LogInformation("Initializing Kafka");
+        await kafkaInitializer.InitializeAsync();
 
         logger.LogInformation("Initializing Database");
         await databaseInitializer.InitializeAsync();

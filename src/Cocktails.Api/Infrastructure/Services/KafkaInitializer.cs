@@ -14,7 +14,16 @@ public class KafkaInitializer(
 
             try
             {
-                using var adminClient = new AdminClientBuilder(new AdminClientConfig { BootstrapServers = kafkaConfig.Value.BootstrapServers }).Build();
+                using var adminClient = new AdminClientBuilder(new AdminClientConfig
+                {
+                    BootstrapServers = kafkaConfig.Value.BootstrapServers,
+                    SslCaLocation = !string.IsNullOrWhiteSpace(kafkaConfig.Value.SslCaLocation)
+                        ? kafkaConfig.Value.SslCaLocation
+                        : null,
+                    SecurityProtocol = !string.IsNullOrWhiteSpace(kafkaConfig.Value.SslCaLocation)
+                        ? SecurityProtocol.Ssl
+                        : SecurityProtocol.Plaintext
+                }).Build();
 
                 var metadata = adminClient.GetMetadata(TimeSpan.FromSeconds(10));
                 logger.LogInformation("Connected to Kafka cluster: {ClusterId}", metadata.OriginatingBrokerId);

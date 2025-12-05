@@ -7,4 +7,6 @@ public class KafkaConfig
     public required string CocktailsTopic { get; set; }
 
     public required string BootstrapServers { get; set; }
+
+    public string SslCaLocation { get; set; }
 }
