@@ -22,7 +22,9 @@ public class KafkaInitializer(
                         : null,
                     SecurityProtocol = !string.IsNullOrWhiteSpace(kafkaConfig.Value.SslCaLocation)
                         ? SecurityProtocol.Ssl
-                        : SecurityProtocol.Plaintext
+                        : SecurityProtocol.Plaintext,
+                    SslEndpointIdentificationAlgorithm = SslEndpointIdentificationAlgorithm.None,
+                    Debug = "security,broker,protocol"
                 }).Build();
 
                 var metadata = adminClient.GetMetadata(TimeSpan.FromSeconds(10));

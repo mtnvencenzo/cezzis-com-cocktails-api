@@ -26,6 +26,7 @@ internal static class KafkaExtensions
                 SecurityProtocol = !string.IsNullOrWhiteSpace(kafkaConfig.SslCaLocation)
                     ? SecurityProtocol.Ssl
                     : SecurityProtocol.Plaintext,
+                SslEndpointIdentificationAlgorithm = SslEndpointIdentificationAlgorithm.None,
                 Acks = Acks.All,
                 EnableIdempotence = true,
                 MessageSendMaxRetries = 3,
