@@ -65,10 +65,17 @@
                 "--dapr-grpc-port",
                 "50003",
                 "--metrics-port",
-                "9091"
+                "9091",
+                "--scheduler-host-address",
+                "localhost:50007",
             ],
             "isBackground": true,
             "dependsOn": "build",
+            "options": {
+                "env": {
+                    "SSL_CERT_DIR": "${env:HOME}/Github/dev-certs/azurite-local"
+                }
+            },
             "problemMatcher": {
                 "pattern": {
                     "regexp": ".",
@@ -85,13 +92,7 @@
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
-            },
-            // "options": {
-            //     "shell": {
-            //         "executable": "cmd.exe",
-            //         "args": ["/d", "/c"]
-            //     }
-            // }
+            }
         }
     ]
 } 
