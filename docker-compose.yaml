@@ -1,8 +1,9 @@
 name: cezzis
 services:
   cocktails-api:
-    image: acrveceusgloshared001.azurecr.io/cocktailsapi:latest
+    hostname: cocktails-api.docker.local
     container_name: cocktails-api
+    image: acrveceusgloshared001.azurecr.io/cocktailsapi:latest
     restart: unless-stopped
     ports:
       - "7177:7177"
@@ -12,17 +13,17 @@ services:
       - ASPNETCORE_ENVIRONMENT=docker
       - ASPNETCORE_HTTPS_PORTS=7176
       - ASPNETCORE_URLS=http://0.0.0.0:7177;https://0.0.0.0:7176
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/cocktails-api.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/docker-local.pfx
       - CosmosDb__CocktailsContainerName=cezzis-docker-cocktails-cocktail
       - CosmosDb__IngredientsContainerName=cezzis-docker-cocktails-ingredient
       - CosmosDb__AccountsContainerName=cezzis-docker-accounts-account
-      - Kafka__BootstrapServers=kafka-broker-1:9093
-      - Kafka__SslCaLocation=/https/kafka.crt
+      - Kafka__BootstrapServers=kafka-broker-1.docker.local:19093
+      - Kafka__SslCaLocation=/https/docker-local.crt
       - LocalhostImages__Enabled=true
       - LocalhostImages__Path=/data/cocktail/images/
     volumes:
-      - "$PWD/.certs/cocktails-api:/https:ro"
-      - "/home/mtnvencenzo/Github/cezzis-com-cocktails-images/Images/Main:/data/cocktail/images:ro"
+      - ${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/https:ro
+      - /home/mtnvencenzo/Github/cezzis-com-cocktails-images/Images/Main:/data/cocktail/images:ro
     entrypoint: >
       sh -c "
         if ls /https/*.crt 1> /dev/null 2>&1; then
@@ -32,16 +33,19 @@ services:
         exec dotnet Cocktails.Api.dll
       "
     networks:
-      - cezzis-network
-      - elastic-stack_elastic-network
-      - azure-stack_azure-network
-      - kafka-stack_kafka-network
+      cezzis-network:
+        aliases:
+          - cocktails-api.docker.local
+      elastic-stack_elastic-network:
+      azure-stack_azure-network:
+      kafka-stack_kafka-network:
     depends_on:
       - dapr-sidecar-cocktails-api
 
   dapr-sidecar-cocktails-api:
-    image: daprio/daprd:latest
+    hostname: dapr-sidecar-cocktails-api.docker.local
     container_name: dapr-sidecar-cocktails-api
+    image: daprio/daprd:latest
     restart: unless-stopped
     ports:
       - "3500:3500"
@@ -63,16 +67,20 @@ services:
         --app-channel-address cocktails-api
     volumes:
       - ./.dapr/docker:/components
-      - "$PWD/.certs/dapr-sidecar-cocktails-api:/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/certs:ro"
     networks:
-      - cezzis-network
-      - redis-stack_redis-network
-      - azure-stack_azure-network
-      - kafka-stack_kafka-network
+      cezzis-network:
+        aliases:
+          - dapr-sidecar-cocktails-api.docker.local
+      elastic-stack_elastic-network:
+      redis-stack_redis-network:
+      azure-stack_azure-network:
+      kafka-stack_kafka-network:
 
   cocktails-web:
-    image: acrveceusgloshared001.azurecr.io/cocktailsweb:latest
+    hostname: cocktails-web.docker.local
     container_name: cocktails-web
+    image: acrveceusgloshared001.azurecr.io/cocktailsweb:latest
     restart: unless-stopped
     ports:
       - "4000:80"
@@ -88,15 +96,18 @@ services:
       - VITE_COCKTAILS_API_URL=https://localhost:7176
       - VITE_COCKTAILS_IMAGE_URL=https://localhost:7176/api/v1/images
     volumes:
-      - "$HOME/Github/cezzis-com-cocktails-web/cocktails.web/.certs:/etc/nginx/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/etc/nginx/certs:ro"
     networks:
-      - cezzis-network
+      cezzis-network:
+        aliases:
+          - cocktails-web.docker.local
     depends_on:
       - cocktails-api
 
   cocktails-mcp:
-    image: acrveceusgloshared001.azurecr.io/cocktailsmcp:latest
+    hostname: cocktails-mcp.docker.local
     container_name: cocktails-mcp
+    image: acrveceusgloshared001.azurecr.io/cocktailsmcp:latest
     restart: unless-stopped
     ports:
       - "7999:7999"
@@ -107,19 +118,19 @@ services:
       - AUTH0_CLIENT_ID=6pNnUIHVbyakv27TtICiLyAQbXYxNjOQ
       - AUTH0_DOMAIN=login.cezzis.com
       - AUTH0_SCOPES="openid offline_access profile email read:owned-account write:owned-account"
-      - COCKTAILS_API_HOST=https://cocktails-api:7176
-      - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
-      - COSMOS_CONNECTION_STRING=AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;
+      - COCKTAILS_API_HOST=https://cocktails-api.docker.local:7176
+      - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb.docker.local:8081/
+      - COSMOS_CONNECTION_STRING=AccountEndpoint=https://cosmosdb.docker.local:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;
       - COSMOS_CONTAINER_NAME=cezzis-docker-device-auth
       - COSMOS_DATABASE_NAME=cocktails-db
       - LOG_LEVEL=info
-      - OTLP_ENDPOINT=https://otel-collector:50052
+      - OTLP_ENDPOINT=https://otel-collector.docker.local:50052
       - OTLP_INSECURE=false
       - OTLP_METRICS_ENABLED=false
-      - TLS_CERT_FILE=/certs/cocktails-mcp.crt
-      - TLS_KEY_FILE=/certs/cocktails-mcp.key
+      - TLS_CERT_FILE=/certs/docker-local.crt
+      - TLS_KEY_FILE=/certs/docker-local.key
     volumes:
-      - "$HOME/Github/cezzis-com-cocktails-mcp/.certs:/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/certs:ro"
     entrypoint: >
       sh -c "
         if ls /certs/*.crt 1> /dev/null 2>&1; then
@@ -130,9 +141,11 @@ services:
         exec /cezzis-cocktails
       "
     networks:
-      - cezzis-network
-      - elastic-stack_elastic-network
-      - azure-stack_azure-network
+      cezzis-network:
+        aliases:
+          - cocktails-mcp.docker.local
+      elastic-stack_elastic-network:
+      azure-stack_azure-network:
 
 
 networks:
