@@ -22,7 +22,9 @@ services:
       - LocalhostImages__Enabled=true
       - LocalhostImages__Path=/data/cocktail/images/
     volumes:
-      - ${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/https:ro
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}/docker-local.pfx:/https/docker-local.pfx:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}/docker-local.crt:/https/docker-local.crt:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local}/azurite-local.crt:/https/azurite-local.crt:ro"
       - /home/mtnvencenzo/Github/cezzis-com-cocktails-images/Images/Main:/data/cocktail/images:ro
     entrypoint: >
       sh -c "
@@ -64,10 +66,11 @@ services:
         --enable-api-logging false
         --placement-host-address ''
         --scheduler-host-address ''
-        --app-channel-address cocktails-api
+        --app-channel-address cocktails-api.docker.local
     volumes:
       - ./.dapr/docker:/components
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/azurite-local.crt}:/certs/azurite-local.crt:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/docker-local.crt}:/certs/docker-local.crt:ro"
     networks:
       cezzis-network:
         aliases:
@@ -96,13 +99,11 @@ services:
       - VITE_COCKTAILS_API_URL=https://localhost:7176
       - VITE_COCKTAILS_IMAGE_URL=https://localhost:7176/api/v1/images
     volumes:
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/etc/nginx/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}:/etc/nginx/certs:ro"
     networks:
       cezzis-network:
         aliases:
           - cocktails-web.docker.local
-    depends_on:
-      - cocktails-api
 
   cocktails-mcp:
     hostname: cocktails-mcp.docker.local
@@ -130,7 +131,7 @@ services:
       - TLS_CERT_FILE=/certs/docker-local.crt
       - TLS_KEY_FILE=/certs/docker-local.key
     volumes:
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}:/certs:ro"
     entrypoint: >
       sh -c "
         if ls /certs/*.crt 1> /dev/null 2>&1; then
