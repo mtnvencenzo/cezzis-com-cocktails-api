@@ -22,7 +22,7 @@ services:
       - LocalhostImages__Enabled=true
       - LocalhostImages__Path=/data/cocktail/images/
     volumes:
-      - ${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/https:ro
+      - ${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/https:ro
       - /home/mtnvencenzo/Github/cezzis-com-cocktails-images/Images/Main:/data/cocktail/images:ro
     entrypoint: >
       sh -c "
@@ -67,7 +67,7 @@ services:
         --app-channel-address cocktails-api
     volumes:
       - ./.dapr/docker:/components
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/certs:ro"
     networks:
       cezzis-network:
         aliases:
@@ -96,7 +96,7 @@ services:
       - VITE_COCKTAILS_API_URL=https://localhost:7176
       - VITE_COCKTAILS_IMAGE_URL=https://localhost:7176/api/v1/images
     volumes:
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/etc/nginx/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/etc/nginx/certs:ro"
     networks:
       cezzis-network:
         aliases:
@@ -130,7 +130,7 @@ services:
       - TLS_CERT_FILE=/certs/docker-local.crt
       - TLS_KEY_FILE=/certs/docker-local.key
     volumes:
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs}:/certs:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/docker-local-certs/certs}:/certs:ro"
     entrypoint: >
       sh -c "
         if ls /certs/*.crt 1> /dev/null 2>&1; then
