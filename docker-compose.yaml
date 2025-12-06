@@ -59,7 +59,7 @@ services:
         --app-protocol https
         --dapr-http-port 3500
         --dapr-grpc-port 50001
-        --components-path /components
+        --resources-path /components
         --enable-metrics false
         --enable-api-logging false
         --placement-host-address ''
