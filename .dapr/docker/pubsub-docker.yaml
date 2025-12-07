@@ -16,4 +16,4 @@ spec:
       value: "true"
 
 scopes:
-  - cocktails-api
+  - cocktails-api-dapr

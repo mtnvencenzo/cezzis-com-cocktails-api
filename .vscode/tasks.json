@@ -53,9 +53,11 @@
             "args": [
                 "run",
                 "--app-id",
-                "cocktails-api",
+                "cocktails-api-dapr",
                 "--resources-path",
                 "${workspaceFolder}/.dapr/local/",
+                "--config",
+                "${workspaceFolder}/.dapr/local/config.yaml",
                 "--app-port",
                 "7178",
                 "--app-protocol",
@@ -67,13 +69,15 @@
                 "--metrics-port",
                 "9091",
                 "--scheduler-host-address",
-                "localhost:50007",
+                "localhost:50007"
             ],
             "isBackground": true,
-            "dependsOn": "build",
+            "dependsOn": ["build", "copy-certs"],
             "options": {
                 "env": {
-                    "SSL_CERT_DIR": "${env:HOME}/Github/dev-certs/azurite-local"
+                    "SSL_CERT_DIR": "${workspaceFolder}/.certs/",
+                    "OTEL_EXPORTER_OTLP_HEADERS": "Authorization=Bearer bd97d99d-f52d-4827-84d5-3760cbc2c8ea",
+                    "OTEL_RESOURCE_ATTRIBUTES": "deployment.environment=local"
                 }
             },
             "problemMatcher": {
@@ -93,6 +97,13 @@
                 "reveal": "always",
                 "panel": "new"
             }
+        },
+        {
+            "label": "copy-certs",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/copy-certs.sh",
+            "args": ["${workspaceFolder}"],
+            "problemMatcher": []
         }
     ]
 } 

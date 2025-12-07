@@ -54,14 +54,17 @@ services:
       - "50001:50001"
     environment:
       - SSL_CERT_DIR=/certs
+      - OTEL_EXPORTER_OTLP_HEADERS=Authorization=Bearer bd97d99d-f52d-4827-84d5-3760cbc2c8ea
+      - OTEL_RESOURCE_ATTRIBUTES=deployment.environment=docker
     command: >
       ./daprd
-        --app-id cocktails-api
+        --app-id cocktails-api-dapr
         --app-port 7176
         --app-protocol https
         --dapr-http-port 3500
         --dapr-grpc-port 50001
         --resources-path /components
+        --config /components/config.yaml
         --enable-metrics false
         --enable-api-logging false
         --placement-host-address ''
@@ -70,7 +73,7 @@ services:
     volumes:
       - ./.dapr/docker:/components
       - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/azurite-local.crt}:/certs/azurite-local.crt:ro"
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/docker-local.crt}:/certs/docker-local.crt:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local/docker-local.crt}:/certs/docker-local.crt:ro"
     networks:
       cezzis-network:
         aliases:

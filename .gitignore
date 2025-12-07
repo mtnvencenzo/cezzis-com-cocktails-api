@@ -70,3 +70,6 @@ node_modules/
 /**/.dapr/logs/
 
 docker-compose.override.yaml
+
+.certs/*
+!.certs/README.md
