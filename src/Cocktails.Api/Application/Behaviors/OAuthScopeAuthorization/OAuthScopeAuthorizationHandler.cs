@@ -6,12 +6,6 @@ public class OAuthScopeAuthorizationHandler : AuthorizationHandler<OAuthScopeAut
 {
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, OAuthScopeAuthorizationAttribute requirement)
     {
-        // Debug logging to understand what's happening
-        var hasIdentity = context.User.Identity != null;
-        var isAuthenticated = context.User.Identity?.IsAuthenticated == true;
-        var identityType = context.User.Identity?.AuthenticationType;
-        var claimCount = context.User.Claims.Count();
-
         if (context.User.Identity?.IsAuthenticated != true)
         {
             context.Fail();
