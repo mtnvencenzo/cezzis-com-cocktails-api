@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Options;
 
-public class AccountEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<Account>, IAccountContextEntityConfiguration
+public class AccountEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<Account>
 {
     public void Configure(EntityTypeBuilder<Account> builder)
     {

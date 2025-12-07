@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Options;
 
-public class CocktailEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<Cocktail>, ICocktailContextEntityConfiguration
+public class CocktailEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<Cocktail>
 {
     public void Configure(EntityTypeBuilder<Cocktail> builder)
     {

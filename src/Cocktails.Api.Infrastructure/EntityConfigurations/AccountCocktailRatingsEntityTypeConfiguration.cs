@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Options;
 
-public class AccountCocktailRatingsEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<AccountCocktailRatings>, IAccountContextEntityConfiguration
+public class AccountCocktailRatingsEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<AccountCocktailRatings>
 {
     public void Configure(EntityTypeBuilder<AccountCocktailRatings> builder)
     {

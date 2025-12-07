@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Options;
 using Cocktails.Api.Domain.Config;
 
-public class IngredientEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<Ingredient>, ICocktailContextEntityConfiguration
+public class IngredientEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<Ingredient>
 {
     public void Configure(EntityTypeBuilder<Ingredient> builder)
     {

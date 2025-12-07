@@ -32,7 +32,6 @@ public class CocktailDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfiguration(new CocktailEntityTypeConfiguration(this.cosmosDbConfig));
         modelBuilder.ApplyConfiguration(new IngredientEntityTypeConfiguration(this.cosmosDbConfig));
-        modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly, (t) => t.GetInterfaces().Contains(typeof(ICocktailContextEntityConfiguration)));
     }
 
     public virtual async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
