@@ -8,9 +8,15 @@ public class DaprConfig
 
     public string GrpcEndpoint { get; set; }
 
-    public string ApiToken { get; set; }
+    /// <summary>The Dapr sidecar API token used to secure communication between the application and the Dapr sidecar.
+    /// </summary>
+    /// <remarks>Dapr sidecar token (sent from app to sidecar)</remarks>
+    public string DaprAppToken { get; set; }
 
-    public string AppToken { get; set; }
+    /// <summary>The Dapr application API token used to secure communication between the application and the Dapr sidecar.
+    /// </summary>
+    /// <remarks>Application API token (sent from sidecar to app)</remarks>
+    public string AppApiToken { get; set; }
 
     public bool InitJobEnabled { get; set; } = true;
 }

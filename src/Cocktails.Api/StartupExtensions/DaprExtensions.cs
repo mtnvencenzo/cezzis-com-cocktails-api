@@ -26,9 +26,9 @@ internal static class DaprExtensions
         {
             var opts = sp.GetRequiredService<IOptions<DaprConfig>>().Value;
 
-            if (!string.IsNullOrWhiteSpace(opts.ApiToken))
+            if (!string.IsNullOrWhiteSpace(opts.DaprAppToken))
             {
-                builder.UseDaprApiToken(opts.ApiToken);
+                builder.UseDaprApiToken(opts.DaprAppToken);
             }
 
             if (!string.IsNullOrWhiteSpace(opts.HttpEndpoint))
@@ -48,9 +48,9 @@ internal static class DaprExtensions
         {
             var opts = sp.GetRequiredService<IOptions<DaprConfig>>().Value;
 
-            if (!string.IsNullOrWhiteSpace(opts.ApiToken))
+            if (!string.IsNullOrWhiteSpace(opts.DaprAppToken))
             {
-                builder.UseDaprApiToken(opts.ApiToken);
+                builder.UseDaprApiToken(opts.DaprAppToken);
             }
 
             if (!string.IsNullOrWhiteSpace(opts.HttpEndpoint))

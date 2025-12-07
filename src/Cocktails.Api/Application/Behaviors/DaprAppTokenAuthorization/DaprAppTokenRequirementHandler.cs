@@ -15,12 +15,12 @@ public class DaprAppTokenRequirementHandler(
 
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, DaprAppTokenRequirement requirement)
     {
-        if (!string.IsNullOrWhiteSpace(daprConfig.Value.AppToken))
+        if (!string.IsNullOrWhiteSpace(daprConfig.Value.AppApiToken))
         {
             var headerValue = requestHeaderAccessor.GetHeaderValue(DaprAppTokenHeaderName);
             if (string.IsNullOrWhiteSpace(headerValue) || !CryptographicOperations.FixedTimeEquals(
                 System.Text.Encoding.UTF8.GetBytes(headerValue),
-                System.Text.Encoding.UTF8.GetBytes(daprConfig.Value.AppToken)))
+                System.Text.Encoding.UTF8.GetBytes(daprConfig.Value.AppApiToken)))
             {
                 logger.LogWarning("Dapr APP token authorization failed due to invalid supplied token");
                 context.Fail();
