@@ -12,7 +12,7 @@ public static class JobsApi
     public static RouteGroupBuilder MapJobsApi(this IEndpointRouteBuilder app)
     {
         // The `/job` path is required by dapr scheduler
-        // and must be used from the rooot of the application (no versioning)
+        // and must be used from the root of the application (no versioning)
         var groupBuilder = app.MapGroup("/job")
             .WithTags("Jobs")
             .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
