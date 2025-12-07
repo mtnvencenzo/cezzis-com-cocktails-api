@@ -6,8 +6,14 @@ public class KafkaInitializer(
     IOptions<KafkaConfig> kafkaConfig,
     ILogger<KafkaInitializer> logger)
 {
-    public async Task InitializeAsync()
+    public async Task InitializeAsync(bool createObjects, CancellationToken cancellationToken)
     {
+        if (!createObjects)
+        {
+            logger.LogInformation("Kafka initialization skipped (createObjects is false)");
+            return;
+        }
+
         try
         {
             logger.LogInformation("Starting kafka initialization");
@@ -29,6 +35,12 @@ public class KafkaInitializer(
 
                 var metadata = adminClient.GetMetadata(TimeSpan.FromSeconds(10));
                 logger.LogInformation("Connected to Kafka cluster: {ClusterId}", metadata.OriginatingBrokerId);
+
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    logger.LogWarning("Kafka initialization cancelled");
+                    return;
+                }
 
                 if (!metadata.Topics.Any(t => t.Topic == kafkaConfig.Value.CocktailsTopic))
                 {

@@ -7,4 +7,10 @@ public class DaprConfig
     public string HttpEndpoint { get; set; }
 
     public string GrpcEndpoint { get; set; }
+
+    public string ApiToken { get; set; }
+
+    public string AppToken { get; set; }
+
+    public bool InitJobEnabled { get; set; } = true;
 }

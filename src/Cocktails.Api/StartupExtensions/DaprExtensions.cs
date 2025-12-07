@@ -2,27 +2,88 @@
 
 using Cocktails.Api.Domain.Config;
 using Microsoft.Extensions.Options;
+using Dapr.Jobs;
+using Dapr.Jobs.Extensions;
+using Dapr.Jobs.Models;
+using Cocktails.Api.Application.Behaviors.DaprAppTokenAuthorization;
+using Microsoft.AspNetCore.Authorization;
 
 internal static class DaprExtensions
 {
     internal static IServiceCollection AddDaprClient(this IServiceCollection services)
     {
+        services.AddTransient<DaprAppTokenRequirementHandler>();
+        services.AddTransient<IAuthorizationHandler, DaprAppTokenRequirementHandler>();
+
+        var authorizationBuilder = services.AddAuthorizationBuilder()
+            .AddPolicy(DaprAppTokenRequirement.PolicyName, (o) =>
+            {
+                o.AddRequirements(new DaprAppTokenRequirement());
+            });
 
         // Register the dapr client
-        services.AddDaprClient((sp, dapr) =>
+        services.AddDaprClient((sp, builder) =>
         {
-            var config = sp.GetRequiredService<IOptions<DaprConfig>>().Value;
+            var opts = sp.GetRequiredService<IOptions<DaprConfig>>().Value;
 
-            if (!string.IsNullOrWhiteSpace(config.HttpEndpoint))
+            if (!string.IsNullOrWhiteSpace(opts.ApiToken))
             {
-                dapr.UseHttpEndpoint(config.HttpEndpoint);
+                builder.UseDaprApiToken(opts.ApiToken);
             }
 
-            if (!string.IsNullOrWhiteSpace(config.GrpcEndpoint))
+            if (!string.IsNullOrWhiteSpace(opts.HttpEndpoint))
             {
-                dapr.UseGrpcEndpoint(config.GrpcEndpoint);
+                builder.UseHttpEndpoint(opts.HttpEndpoint);
+            }
+
+            if (!string.IsNullOrWhiteSpace(opts.GrpcEndpoint))
+            {
+                builder.UseGrpcEndpoint(opts.GrpcEndpoint);
             }
         });
+
+        // Register the dapr jobs client
+        // Unfortunately there is no generic extension method to register custom dapr clients
+        services.AddDaprJobsClient((sp, builder) =>
+        {
+            var opts = sp.GetRequiredService<IOptions<DaprConfig>>().Value;
+
+            if (!string.IsNullOrWhiteSpace(opts.ApiToken))
+            {
+                builder.UseDaprApiToken(opts.ApiToken);
+            }
+
+            if (!string.IsNullOrWhiteSpace(opts.HttpEndpoint))
+            {
+                builder.UseHttpEndpoint(opts.HttpEndpoint);
+            }
+
+            if (!string.IsNullOrWhiteSpace(opts.GrpcEndpoint))
+            {
+                builder.UseGrpcEndpoint(opts.GrpcEndpoint);
+            }
+        });
+
         return services;
     }
+
+#pragma warning disable DAPR_JOBS // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    internal static async Task<IApplicationBuilder> UseDaprJobs(this IApplicationBuilder app)
+    {
+        var jobClient = app.ApplicationServices.GetRequiredService<DaprJobsClient>();
+        var daprConfig = app.ApplicationServices.GetRequiredService<IOptions<DaprConfig>>().Value;
+
+        if (daprConfig.InitJobEnabled)
+        {
+            await jobClient.ScheduleJobAsync(
+                jobName: "initialize-app",
+                schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
+                startingFrom: DateTimeOffset.UtcNow,
+                repeats: 1,
+                overwrite: true);
+        }
+
+        return app;
+    }
+#pragma warning restore DAPR_JOBS // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 }

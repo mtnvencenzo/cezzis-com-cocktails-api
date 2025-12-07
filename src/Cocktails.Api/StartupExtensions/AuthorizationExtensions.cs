@@ -1,7 +1,7 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
 using Cocktails.Api.Application.Behaviors.ApimHostKeyAuthorization;
-using Cocktails.Api.Application.Behaviors.Authorization;
+using Cocktails.Api.Application.Behaviors.OAuthScopeAuthorization;
 using Microsoft.AspNetCore.Authorization;
 
 internal static class AuthorizationExtensions
@@ -13,8 +13,8 @@ internal static class AuthorizationExtensions
         services.AddTransient<IAuthorizationHandler, ApimHostKeyRequirementHandler>();
 
         // Adding Auth0 scope authorization
-        services.AddTransient<ScopeAuthorizationHandler>();
-        services.AddTransient<IAuthorizationHandler, ScopeAuthorizationHandler>();
+        services.AddTransient<OAuthScopeAuthorizationHandler>();
+        services.AddTransient<IAuthorizationHandler, OAuthScopeAuthorizationHandler>();
 
         var authorizationBuilder = services.AddAuthorizationBuilder()
             .AddPolicy(ApimHostKeyRequirement.PolicyName, (o) =>
@@ -35,7 +35,7 @@ internal static class AuthorizationExtensions
             var policyName = $"scope:{scope}"; // Results in "scope:read:owned-account", etc.
             authorizationBuilder.AddPolicy(policyName, policy =>
             {
-                policy.AddRequirements(new ScopeAuthorizationAttribute(scope));
+                policy.AddRequirements(new OAuthScopeAuthorizationAttribute(scope));
             });
         }
     }

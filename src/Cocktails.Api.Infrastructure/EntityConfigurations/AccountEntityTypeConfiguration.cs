@@ -1,15 +1,16 @@
 ﻿namespace Cocktails.Api.Infrastructure.EntityConfigurations;
 
 using Cocktails.Api.Domain.Aggregates.AccountAggregate;
+using Cocktails.Api.Domain.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Text.Json;
+using Microsoft.Extensions.Options;
 
-public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>, IAccountContextEntityConfiguration
+public class AccountEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<Account>
 {
     public void Configure(EntityTypeBuilder<Account> builder)
     {
-        var containerName = Environment.GetEnvironmentVariable("CosmosDb__AccountsContainerName")
+        var containerName = cosmosDbConfig.Value.AccountsContainerName
             ?? throw new ArgumentNullException("CosmosDb__AccountsContainerName");
 
         builder

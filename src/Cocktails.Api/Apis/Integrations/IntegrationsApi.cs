@@ -1,5 +1,6 @@
 ﻿namespace Cocktails.Api.Apis.Integrations;
 
+using Cocktails.Api.Application.Behaviors.DaprAppTokenAuthorization;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Concerns.Integrations.Events;
 using Cocktails.Api.Application.Exceptions;
@@ -14,7 +15,7 @@ using System.Threading;
 
 public static class IntegrationsApi
 {
-    public static RouteGroupBuilder MapIntegrationsApiApiV1(this IEndpointRouteBuilder app)
+    public static RouteGroupBuilder MapIntegrationsApi(this IEndpointRouteBuilder app)
     {
         var emailSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.EmailSubscriber;
         var accountSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.AccountSubscriber;
@@ -25,7 +26,7 @@ public static class IntegrationsApi
         var groupBuilder = app.MapGroup("/integrations")
             .WithTags("Integrations")
             .ExcludeFromDescription()
-            .AllowAnonymous();
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
         groupBuilder.MapPost("/zoho/email", SendZohoEmail)
             .WithName(nameof(SendZohoEmail))

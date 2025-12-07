@@ -4,6 +4,7 @@ using Cocktails.Api.Apis.Accounts;
 using Cocktails.Api.Apis.Cockails;
 using Cocktails.Api.Apis.Health;
 using Cocktails.Api.Apis.Integrations;
+using Cocktails.Api.Apis.Jobs;
 using Cocktails.Api.Apis.LegalDocuments;
 using Cocktails.Api.Apis.LocalImages;
 using Cocktails.Api.Application.Behaviors.ApimHostKeyAuthorization;
@@ -15,7 +16,8 @@ internal static class EndpointExtensions
     internal static WebApplication UseApplicationEndpoints(this WebApplication app)
     {
         var rootApi = app.UseDefaultEndpoints();
-        rootApi.MapIntegrationsApiApiV1();
+        rootApi.MapIntegrationsApi();
+        rootApi.MapJobsApi();
         rootApi.MapSubscribeHandler();
 
         var cocktailsApi = app.NewVersionedApi("Cocktails")

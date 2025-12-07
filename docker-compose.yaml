@@ -14,9 +14,6 @@ services:
       - ASPNETCORE_HTTPS_PORTS=7176
       - ASPNETCORE_URLS=http://0.0.0.0:7177;https://0.0.0.0:7176
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/docker-local.pfx
-      - CosmosDb__CocktailsContainerName=cezzis-docker-cocktails-cocktail
-      - CosmosDb__IngredientsContainerName=cezzis-docker-cocktails-ingredient
-      - CosmosDb__AccountsContainerName=cezzis-docker-accounts-account
       - Kafka__BootstrapServers=kafka-broker-1.docker.local:19093
       - Kafka__SslCaLocation=/https/docker-local.crt
       - LocalhostImages__Enabled=true
@@ -43,45 +40,6 @@ services:
       kafka-stack_kafka-network:
     depends_on:
       - dapr-sidecar-cocktails-api
-
-  dapr-sidecar-cocktails-api:
-    hostname: dapr-sidecar-cocktails-api.docker.local
-    container_name: dapr-sidecar-cocktails-api
-    image: daprio/daprd:latest
-    restart: unless-stopped
-    ports:
-      - "3500:3500"
-      - "50001:50001"
-    environment:
-      - SSL_CERT_DIR=/certs
-      - OTEL_EXPORTER_OTLP_HEADERS=Authorization=Bearer bd97d99d-f52d-4827-84d5-3760cbc2c8ea
-      - OTEL_RESOURCE_ATTRIBUTES=deployment.environment=docker
-    command: >
-      ./daprd
-        --app-id cocktails-api-dapr
-        --app-port 7176
-        --app-protocol https
-        --dapr-http-port 3500
-        --dapr-grpc-port 50001
-        --resources-path /components
-        --config /components/config.yaml
-        --enable-metrics false
-        --enable-api-logging false
-        --placement-host-address ''
-        --scheduler-host-address ''
-        --app-channel-address cocktails-api.docker.local
-    volumes:
-      - ./.dapr/docker:/components
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/azurite-local.crt}:/certs/azurite-local.crt:ro"
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local/docker-local.crt}:/certs/docker-local.crt:ro"
-    networks:
-      cezzis-network:
-        aliases:
-          - dapr-sidecar-cocktails-api.docker.local
-      elastic-stack_elastic-network:
-      redis-stack_redis-network:
-      azure-stack_azure-network:
-      kafka-stack_kafka-network:
 
   cocktails-web:
     hostname: cocktails-web.docker.local
@@ -150,6 +108,66 @@ services:
           - cocktails-mcp.docker.local
       elastic-stack_elastic-network:
       azure-stack_azure-network:
+
+  dapr-sidecar-cocktails-api:
+    hostname: dapr-sidecar-cocktails-api.docker.local
+    container_name: dapr-sidecar-cocktails-api
+    image: daprio/daprd:latest
+    restart: unless-stopped
+    ports:
+      - "3500:3500"
+      - "50001:50001"
+    environment:
+      - SSL_CERT_DIR=/certs
+      - OTEL_EXPORTER_OTLP_HEADERS=Authorization=Bearer bd97d99d-f52d-4827-84d5-3760cbc2c8ea
+      - OTEL_RESOURCE_ATTRIBUTES=deployment.environment=docker
+      - DAPR_APP_TOKEN=0d235ec9-161f-4d92-86e2-ed8f907ef465
+      - APP_API_TOKEN=1abf64ac-76bd-4922-ac1d-3732d09a71db
+    command: >
+      ./daprd
+        --app-id cocktails-api-dapr
+        --app-port 7176
+        --app-protocol https
+        --dapr-http-port 3500
+        --dapr-grpc-port 50001
+        --resources-path /components
+        --config /components/config.yaml
+        --enable-metrics false
+        --enable-api-logging false
+        --placement-host-address ''
+        --scheduler-host-address 'dapr-scheduler-cezzis.docker.local:50004'
+        --app-channel-address cocktails-api.docker.local
+    volumes:
+      - ./.dapr/docker:/components
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/azurite-local.crt}:/certs/azurite-local.crt:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local/docker-local.crt}:/certs/docker-local.crt:ro"
+    networks:
+      cezzis-network:
+        aliases:
+          - dapr-sidecar-cocktails-api.docker.local
+      elastic-stack_elastic-network:
+      redis-stack_redis-network:
+      azure-stack_azure-network:
+      kafka-stack_kafka-network:
+    depends_on:
+      - dapr-scheduler
+
+  dapr-scheduler:
+    hostname: dapr-scheduler-cezzis.docker.local
+    container_name: dapr-scheduler-cezzis
+    image: daprio/dapr:latest
+    command: ["./scheduler", "--port", "50004", "--etcd-data-dir", "/data"]
+    ports:
+      - "50004:50004"
+      - "52378:2379"
+    restart: unless-stopped
+    networks:
+      cezzis-network:
+        aliases:
+          - dapr-scheduler-cezzis.docker.local
+    volumes:
+      - vol_scheduler:/data
+    user: "0:0"
 
 
 networks:

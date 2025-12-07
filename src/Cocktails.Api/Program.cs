@@ -1,6 +1,5 @@
 using Asp.Versioning;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
-using Cocktails.Api.Infrastructure.Services;
 using Cocktails.Api.StartupExtensions;
 using Microsoft.AspNetCore.Diagnostics;
 
@@ -26,38 +25,12 @@ builder.AddDefaultOpenApi(apiVersioningBuilder);
 // -------------
 var app = builder.Build();
 
-// Initialize database if needed
-if (Environment.GetEnvironmentVariable("SEED_ON_STARTUP") == "true")
-{
-    using var scope = app.Services.CreateScope();
-    await scope.ServiceProvider.GetRequiredService<StorageInitializer>().InitializeAsync();
-    await scope.ServiceProvider.GetRequiredService<KafkaInitializer>().InitializeAsync();
-    await scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().InitializeAsync();
-}
-
 // Use cloud events to automatically unpack the message data
 // app.UseCloudEvents();
 
 app.UseApplicationEndpoints();
 app.UseDefaultOpenApi();
-
-// Not requiring the dev cert for open api locally
-// Had issues with cert trust on ubuntu for some reason.
-if (app.Environment.IsEnvironment("local") || app.Environment.IsEnvironment("docker"))
-{
-    // app.UseWhen(context =>
-    // {
-    //     return !context.Request.Path.Equals("/scalar/v1/openapi.json");
-    // }, appBuilder =>
-    // {
-    //     appBuilder.UseHttpsRedirection();
-    // });
-}
-else
-{
-    app.UseHttpsRedirection();
-}
-
+app.UseHttpsRedirection();
 app.UseCors("origin-policy");
 app.UseAuthentication();
 app.UseAuthorization();
@@ -73,6 +46,8 @@ app.UseExceptionHandler((builder) =>
         }
     });
 });
+
+await app.UseDaprJobs();
 
 app.Run();
 

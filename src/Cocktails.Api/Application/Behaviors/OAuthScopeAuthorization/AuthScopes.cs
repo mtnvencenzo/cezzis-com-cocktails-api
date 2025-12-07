@@ -1,4 +1,4 @@
-namespace Cocktails.Api.Application.Behaviors.Authorization;
+namespace Cocktails.Api.Application.Behaviors.OAuthScopeAuthorization;
 
 using System.Reflection;
 

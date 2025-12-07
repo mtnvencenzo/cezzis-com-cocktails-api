@@ -2,31 +2,35 @@
 
 using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Common;
+using Cocktails.Api.Domain.Config;
 using Cocktails.Api.Infrastructure.EntityConfigurations;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
+using Microsoft.Extensions.Options;
 using System.Threading;
 using System.Threading.Tasks;
 
 public class AccountDbContext : DbContext, IUnitOfWork
 {
     private readonly IMediator mediator;
+    private readonly IOptions<CosmosDbConfig> cosmosDbConfig;
 
     public AccountDbContext() { }
 
     public AccountDbContext(DbContextOptions<AccountDbContext> options) : base(options) { }
 
-    public AccountDbContext(DbContextOptions<AccountDbContext> options, IMediator mediator) : base(options)
+    public AccountDbContext(DbContextOptions<AccountDbContext> options, IMediator mediator, IOptions<CosmosDbConfig> cosmosDbConfig) : base(options)
     {
         this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        this.cosmosDbConfig = cosmosDbConfig ?? throw new ArgumentNullException(nameof(cosmosDbConfig));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly, (t) => t.GetInterfaces().Contains(typeof(IAccountContextEntityConfiguration)));
+        modelBuilder.ApplyConfiguration(new AccountEntityTypeConfiguration(this.cosmosDbConfig));
+        modelBuilder.ApplyConfiguration(new AccountCocktailRatingsEntityTypeConfiguration(this.cosmosDbConfig));
     }
 
     public virtual async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
