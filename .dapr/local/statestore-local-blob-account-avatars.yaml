@@ -15,7 +15,7 @@ spec:
   - name: endpoint
     value: https://127.0.0.1:10000
   - name: containerName
-    value: account-avatars
+    value: account-avatars-local
 
 scopes:
   - cocktails-api-dapr

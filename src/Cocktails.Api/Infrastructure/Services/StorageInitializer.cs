@@ -1,6 +1,7 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using Cocktails.Api.Domain.Config;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -39,13 +40,22 @@ public class StorageInitializer(
                 {
                     await blobServiceClient.CreateBlobContainerAsync(
                         blobContainerName: config.Value.AccountAvatars.ContainerName,
-                        publicAccessType: Azure.Storage.Blobs.Models.PublicAccessType.BlobContainer,
+                        publicAccessType: PublicAccessType.BlobContainer,
                         cancellationToken: cancellationToken);
 
                     logger.LogInformation("Created storage container {ContainerId}", config.Value.AccountAvatars.ContainerName);
                 }
                 else
                 {
+                    var accessType = await containerClient.GetAccessPolicyAsync(cancellationToken: cancellationToken);
+
+                    if (accessType.Value.BlobPublicAccess != PublicAccessType.BlobContainer)
+                    {
+                        await containerClient.SetAccessPolicyAsync(
+                            accessType: PublicAccessType.BlobContainer,
+                            cancellationToken: cancellationToken);
+                    }
+
                     logger.LogInformation("Storage container {ContainerId} already exists", config.Value.AccountAvatars.ContainerName);
                 }
             }
