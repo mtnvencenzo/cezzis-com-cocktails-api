@@ -4,6 +4,7 @@ using Cocktails.Api.Domain.Config;
 using Cocktails.Api.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
+using System.Security.Cryptography;
 
 public class ApimHostKeyRequirementHandler(
     IOptions<CocktailsApiConfig> cocktailsApiConfig,
@@ -18,7 +19,9 @@ public class ApimHostKeyRequirementHandler(
         {
             var headerValue = requestHeaderAccessor.GetHeaderValue(ApimHostKeyHeaderName);
 
-            if (string.IsNullOrWhiteSpace(headerValue) || headerValue != cocktailsApiConfig.Value.ApimHostKey)
+            if (string.IsNullOrWhiteSpace(headerValue) || !CryptographicOperations.FixedTimeEquals(
+                System.Text.Encoding.UTF8.GetBytes(headerValue),
+                System.Text.Encoding.UTF8.GetBytes(cocktailsApiConfig.Value.ApimHostKey)))
             {
                 logger.LogWarning("Host key authorization failed due to invalid supplied host key");
                 context.Fail();

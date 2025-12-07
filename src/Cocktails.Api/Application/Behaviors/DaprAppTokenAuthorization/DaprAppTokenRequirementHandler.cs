@@ -4,6 +4,7 @@ using Cocktails.Api.Domain.Config;
 using Cocktails.Api.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
+using System.Security.Cryptography;
 
 public class DaprAppTokenRequirementHandler(
     IOptions<DaprConfig> daprConfig,
@@ -17,7 +18,9 @@ public class DaprAppTokenRequirementHandler(
         if (!string.IsNullOrWhiteSpace(daprConfig.Value.AppToken))
         {
             var headerValue = requestHeaderAccessor.GetHeaderValue(DaprAppTokenHeaderName);
-            if (string.IsNullOrWhiteSpace(headerValue) || headerValue != daprConfig.Value.AppToken)
+            if (string.IsNullOrWhiteSpace(headerValue) || !CryptographicOperations.FixedTimeEquals(
+                System.Text.Encoding.UTF8.GetBytes(headerValue),
+                System.Text.Encoding.UTF8.GetBytes(daprConfig.Value.AppToken)))
             {
                 logger.LogWarning("Dapr APP token authorization failed due to invalid supplied token");
                 context.Fail();
