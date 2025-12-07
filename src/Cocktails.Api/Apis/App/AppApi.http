@@ -1,7 +1,0 @@
-
-
-PUT {{host}}/api/v1/app/initialize
-Accept: application/json
-X-Key: {{apimkey}}
-
-###

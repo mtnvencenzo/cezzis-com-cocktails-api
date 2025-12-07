@@ -2,10 +2,8 @@
 
 using global::Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 using global::Cocktails.Api.Infrastructure;
-using global::Cocktails.Api.Infrastructure.Resources.Ingredients;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 

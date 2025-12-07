@@ -9,8 +9,14 @@ public class StorageInitializer(
     IOptions<BlobStorageConfig> config,
     ILogger<StorageInitializer> logger)
 {
-    public async Task InitializeAsync()
+    public async Task InitializeAsync(bool createObjects, CancellationToken cancellationToken)
     {
+        if (!createObjects)
+        {
+            logger.LogInformation("Storage initialization skipped (createObjects is false)");
+            return;
+        }
+
         try
         {
             logger.LogInformation("Starting storage initialization");
@@ -21,13 +27,20 @@ public class StorageInitializer(
 
                 var containerClient = blobServiceClient.GetBlobContainerClient(config.Value.AccountAvatars.ContainerName);
 
-                var exists = await containerClient.ExistsAsync();
+                var exists = await containerClient.ExistsAsync(cancellationToken);
+
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    logger.LogWarning("Storage initialization cancelled");
+                    return;
+                }
 
                 if (!exists)
                 {
                     await blobServiceClient.CreateBlobContainerAsync(
                         blobContainerName: config.Value.AccountAvatars.ContainerName,
-                        publicAccessType: Azure.Storage.Blobs.Models.PublicAccessType.BlobContainer);
+                        publicAccessType: Azure.Storage.Blobs.Models.PublicAccessType.BlobContainer,
+                        cancellationToken: cancellationToken);
 
                     logger.LogInformation("Created storage container {ContainerId}", config.Value.AccountAvatars.ContainerName);
                 }

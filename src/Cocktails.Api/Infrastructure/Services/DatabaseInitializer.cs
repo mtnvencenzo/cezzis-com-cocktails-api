@@ -16,37 +16,50 @@ public class DatabaseInitializer(
     IMediator mediator,
     ILogger<DatabaseInitializer> logger)
 {
-    public async Task InitializeAsync()
+    public async Task InitializeAsync(bool createObjects, bool seedDataOnlyIfEmpty, CancellationToken cancellationToken)
     {
         try
         {
             logger.LogInformation("Starting database initialization for database: {DatabaseName}", config.Value.DatabaseName);
 
-            var cocktailCosmosClient = cocktailDbContext.Database.GetCosmosClient();
-            var accountCosmosClient = accountDbContext.Database.GetCosmosClient();
-
-            try
+            if (createObjects)
             {
-                var cocktailDatabase = await cocktailCosmosClient.CreateDatabaseIfNotExistsAsync(config.Value.DatabaseName);
-                logger.LogInformation("Database created/verified: {DatabaseId}", cocktailDatabase.Database.Id);
+                var cocktailCosmosClient = cocktailDbContext.Database.GetCosmosClient();
+                var accountCosmosClient = accountDbContext.Database.GetCosmosClient();
 
-                var accountDatabase = await accountCosmosClient.CreateDatabaseIfNotExistsAsync(config.Value.DatabaseName);
-                logger.LogInformation("Database created/verified: {DatabaseId}", accountDatabase.Database.Id);
+                try
+                {
+                    var cocktailDatabase = await cocktailCosmosClient.CreateDatabaseIfNotExistsAsync(config.Value.DatabaseName);
+                    logger.LogInformation("Database created/verified: {DatabaseId}", cocktailDatabase.Database.Id);
+
+                    var accountDatabase = await accountCosmosClient.CreateDatabaseIfNotExistsAsync(config.Value.DatabaseName);
+                    logger.LogInformation("Database created/verified: {DatabaseId}", accountDatabase.Database.Id);
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Error creating database: {Message}", ex.Message);
+                    throw;
+                }
+
+                logger.LogInformation("Creating containers if they don't exist");
+                await this.CreateContainer(accountCosmosClient, config.Value.DatabaseName, config.Value.AccountsContainerName, "/subjectId");
+                await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, config.Value.CocktailsContainerName, "/id");
+                await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, config.Value.IngredientsContainerName, "/id");
             }
-            catch (Exception ex)
+            else
             {
-                logger.LogError(ex, "Error creating database: {Message}", ex.Message);
-                throw;
+                logger.LogInformation("Database object creation skipped (createObjects is false)");
             }
 
-            logger.LogInformation("Creating containers if they don't exist");
-            await this.CreateContainer(accountCosmosClient, config.Value.DatabaseName, config.Value.AccountsContainerName, "/subjectId");
-            await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, config.Value.CocktailsContainerName, "/id");
-            await this.CreateContainer(cocktailCosmosClient, config.Value.DatabaseName, config.Value.IngredientsContainerName, "/id");
+            if (cancellationToken.IsCancellationRequested)
+            {
+                logger.LogWarning("Database initialization cancelled");
+                return;
+            }
 
             logger.LogInformation("Seeding data");
-            await mediator.Send(new SeedIngredientsCommand(OnlyIfEmpty: true));
-            await mediator.Send(new SeedCocktailsCommand(OnlyIfEmpty: true));
+            await mediator.Send(new SeedIngredientsCommand(OnlyIfEmpty: seedDataOnlyIfEmpty));
+            await mediator.Send(new SeedCocktailsCommand(OnlyIfEmpty: seedDataOnlyIfEmpty));
             await mediator.Send(new SeedTestAccountCommand());
 
             logger.LogInformation("Database initialization completed successfully.");

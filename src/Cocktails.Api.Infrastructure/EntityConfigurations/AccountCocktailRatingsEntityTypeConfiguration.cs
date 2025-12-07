@@ -1,14 +1,16 @@
 ﻿namespace Cocktails.Api.Infrastructure.EntityConfigurations;
 
 using Cocktails.Api.Domain.Aggregates.AccountAggregate;
+using Cocktails.Api.Domain.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.Extensions.Options;
 
-public class AccountCocktailRatingsEntityTypeConfiguration : IEntityTypeConfiguration<AccountCocktailRatings>, IAccountContextEntityConfiguration
+public class AccountCocktailRatingsEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbConfig) : IEntityTypeConfiguration<AccountCocktailRatings>, IAccountContextEntityConfiguration
 {
     public void Configure(EntityTypeBuilder<AccountCocktailRatings> builder)
     {
-        var containerName = Environment.GetEnvironmentVariable("CosmosDb__AccountsContainerName")
+        var containerName = cosmosDbConfig.Value.AccountsContainerName
             ?? throw new ArgumentNullException("CosmosDb__AccountsContainerName");
 
         builder
