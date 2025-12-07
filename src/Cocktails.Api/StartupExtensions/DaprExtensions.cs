@@ -72,15 +72,24 @@ internal static class DaprExtensions
     {
         var jobClient = app.ApplicationServices.GetRequiredService<DaprJobsClient>();
         var daprConfig = app.ApplicationServices.GetRequiredService<IOptions<DaprConfig>>().Value;
+        var logger = app.ApplicationServices.GetRequiredService<ILoggerFactory>()
+            .CreateLogger(nameof(DaprExtensions));
 
         if (daprConfig.InitJobEnabled)
         {
-            await jobClient.ScheduleJobAsync(
-                jobName: "initialize-app",
-                schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
-                startingFrom: DateTimeOffset.UtcNow,
-                repeats: 1,
-                overwrite: true);
+            try
+            {
+                await jobClient.ScheduleJobAsync(
+                    jobName: "initialize-app",
+                    schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
+                    startingFrom: DateTimeOffset.UtcNow,
+                    repeats: 1,
+                    overwrite: true);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Failed to schedule initialize-app job.");
+            }
         }
 
         return app;
