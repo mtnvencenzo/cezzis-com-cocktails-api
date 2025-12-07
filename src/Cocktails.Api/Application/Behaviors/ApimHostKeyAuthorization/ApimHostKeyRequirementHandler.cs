@@ -21,8 +21,8 @@ public class ApimHostKeyRequirementHandler(
             if (string.IsNullOrWhiteSpace(headerValue) || headerValue != cocktailsApiConfig.Value.ApimHostKey)
             {
                 logger.LogWarning("Host key authorization failed due to invalid supplied host key");
-
                 context.Fail();
+                return Task.CompletedTask;
             }
         }
         else

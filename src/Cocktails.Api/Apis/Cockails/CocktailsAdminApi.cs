@@ -1,6 +1,6 @@
 ﻿namespace Cocktails.Api.Apis.Cockails;
 
-using Cocktails.Api.Application.Behaviors.Authorization;
+using Cocktails.Api.Application.Behaviors.OAuthScopeAuthorization;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Application.Concerns.Cocktails.Models;
 using Cocktails.Api.Application.Exceptions;

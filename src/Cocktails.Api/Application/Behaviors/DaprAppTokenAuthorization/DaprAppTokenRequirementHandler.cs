@@ -20,8 +20,8 @@ public class DaprAppTokenRequirementHandler(
             if (string.IsNullOrWhiteSpace(headerValue) || headerValue != daprConfig.Value.AppToken)
             {
                 logger.LogWarning("Dapr APP token authorization failed due to invalid supplied token");
-
                 context.Fail();
+                return Task.CompletedTask;
             }
         }
         else

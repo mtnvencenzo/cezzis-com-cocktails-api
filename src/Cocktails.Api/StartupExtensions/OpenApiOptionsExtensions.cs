@@ -1,9 +1,8 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
 using Asp.Versioning.ApiExplorer;
-using Auth0.ManagementApi.Models;
 using Cocktails.Api.Application.Behaviors;
-using Cocktails.Api.Application.Behaviors.Authorization;
+using Cocktails.Api.Application.Behaviors.OAuthScopeAuthorization;
 using Cocktails.Api.Domain.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
