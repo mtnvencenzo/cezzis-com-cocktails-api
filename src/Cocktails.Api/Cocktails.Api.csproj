@@ -18,19 +18,19 @@
 
   <ItemGroup>
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
-    <PackageReference Include="Azure.Identity" Version="1.17.0" />
+    <PackageReference Include="Azure.Identity" Version="1.17.1" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.26.0" />
-    <PackageReference Include="Dapr.AspNetCore" Version="1.16.0" />
+    <PackageReference Include="Dapr.AspNetCore" Version="1.16.1" />
     <PackageReference Include="Dapr.Jobs" Version="1.16.1" />
-    <PackageReference Include="FluentValidation" Version="12.0.0" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
     <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.10.0" />
     <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="9.5.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10" />
     <PackageReference Include="Cezzi.OTel" Version="1.0.25" />
     <PackageReference Include="Confluent.Kafka.Extensions.OpenTelemetry" Version="0.4.0" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.9.0" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.11.2" />
   </ItemGroup>
 
   <ItemGroup>
