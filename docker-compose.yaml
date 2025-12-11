@@ -65,6 +65,8 @@ services:
       cezzis-network:
         aliases:
           - cocktails-web.docker.local
+    depends_on:
+      - infra-bootstrapper
 
   cocktails-mcp:
     hostname: cocktails-mcp.docker.local
@@ -108,6 +110,40 @@ services:
           - cocktails-mcp.docker.local
       elastic-stack_elastic-network:
       azure-stack_azure-network:
+    depends_on:
+      - infra-bootstrapper
+
+  infra-bootstrapper:
+    container_name: infra-bootstrapper
+    image: acrveceusgloshared001.azurecr.io/cezziscombootstrapper:latest
+    restart: unless-stopped
+    environment:
+      - ENV=docker
+      - ACCOUNT_AVATARS_CONTAINER_NAME=account-avatars
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1.docker.local:19093
+      - OTEL_EXPORTER_OTLP_ENDPOINT=https://otel-collector.docker.local:50052
+      - OTEL_SERVICE_NAME=cezzis_com_bootstrapper
+      - OTEL_SERVICE_NAMESPACE=cezzis
+      - SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+      - OTEL_CERTIFICATE_FILE_PATH=/usr/local/share/ca-certificates/docker-local.crt
+    volumes:
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local/docker-local.crt}:/usr/local/share/ca-certificates/docker-local.crt:ro"
+      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/azurite-local.crt}:/usr/local/share/ca-certificates/azurite-local.crt:ro"
+    entrypoint: >
+      sh -c "
+        update-ca-certificates &&
+        cezzis-com-bootstrapper;
+        tail -f /dev/null
+      "
+    networks:
+      cezzis-network:
+        aliases:
+          - infra-bootstrapper.docker.local
+      elastic-stack_elastic-network:
+      azure-stack_azure-network:
+      kafka-stack_kafka-network:
+      rabbitmq-stack_rabbitmq-network:
 
   dapr-sidecar-cocktails-api:
     hostname: dapr-sidecar-cocktails-api.docker.local
@@ -151,6 +187,7 @@ services:
       kafka-stack_kafka-network:
     depends_on:
       - dapr-scheduler
+      - infra-bootstrapper
 
   dapr-scheduler:
     hostname: dapr-scheduler-cezzis.docker.local
@@ -188,6 +225,10 @@ networks:
   elastic-stack_elastic-network:
     external: true
     name: elastic-stack_elastic-network
+
+  rabbitmq-stack_rabbitmq-network:
+    external: true
+    name: rabbitmq-stack_rabbitmq-network
 
 volumes:
   vol_scheduler:
