@@ -119,14 +119,18 @@ services:
     restart: unless-stopped
     environment:
       - ENV=docker
+      - SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
       - ACCOUNT_AVATARS_CONTAINER_NAME=account-avatars
       - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1.docker.local:19093
+      - KAFKA_COCKTAILS_UPDATE_TOPIC_NAME=cocktails-update-topic
+      - KAFKA_DEFAULT_TOPIC_PARTITIONS=4
+      - KAFKA_SECURITY_PROTOCOL=SSL
+      - KAFKA_SSL_CA_LOCATION=/usr/local/share/ca-certificates/docker-local.crt
       - OTEL_EXPORTER_OTLP_ENDPOINT=https://otel-collector.docker.local:50052
       - OTEL_SERVICE_NAME=cezzis_com_bootstrapper
       - OTEL_SERVICE_NAMESPACE=cezzis
-      - SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-      - OTEL_CERTIFICATE_FILE_PATH=/usr/local/share/ca-certificates/docker-local.crt
+      
     volumes:
       - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local/docker-local.crt}:/usr/local/share/ca-certificates/docker-local.crt:ro"
       - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/azurite-local.crt}:/usr/local/share/ca-certificates/azurite-local.crt:ro"

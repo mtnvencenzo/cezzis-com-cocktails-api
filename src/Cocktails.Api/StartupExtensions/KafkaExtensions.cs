@@ -11,7 +11,6 @@ internal static class KafkaExtensions
     internal static IServiceCollection AddKafka(this IServiceCollection services)
     {
         services.AddTransient<ICocktailPublisher, KafkaCocktailPublisher>();
-        services.AddScoped<KafkaInitializer>();
 
         services.AddSingleton((sp) =>
         {

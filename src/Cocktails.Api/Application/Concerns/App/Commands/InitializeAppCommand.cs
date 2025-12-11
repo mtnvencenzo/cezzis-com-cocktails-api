@@ -7,15 +7,11 @@ public record InitializeAppCommand(bool SeedDataOnlyIfEmpty = false, bool Create
 
 public class InitializeAppCommandHandler(
     DatabaseInitializer databaseInitializer,
-    KafkaInitializer kafkaInitializer,
     ILogger<InitializeAppCommandHandler> logger) : IRequestHandler<InitializeAppCommand, bool>
 {
     public async Task<bool> Handle(InitializeAppCommand command, CancellationToken cancellationToken)
     {
         logger.LogInformation("Initializing application");
-
-        logger.LogInformation("Initializing Kafka");
-        await kafkaInitializer.InitializeAsync(command.CreateObjects, cancellationToken);
 
         logger.LogInformation("Initializing Database");
         await databaseInitializer.InitializeAsync(command.CreateObjects, command.SeedDataOnlyIfEmpty, cancellationToken);
