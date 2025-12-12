@@ -93,6 +93,7 @@ public class UnRateCocktailCommandHandler(
                 messageLabel: pubSubConfig.Value.CocktailRatingPublisher.Subject,
                 configName: pubSubConfig.Value.CocktailRatingPublisher.DaprBuildingBlock,
                 topicName: pubSubConfig.Value.CocktailRatingPublisher.TopicName,
+                correlationId: cocktailRatingEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }
         catch (Exception ex)

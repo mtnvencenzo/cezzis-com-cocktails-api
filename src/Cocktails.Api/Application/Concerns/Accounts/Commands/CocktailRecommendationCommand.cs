@@ -83,6 +83,7 @@ public class CocktailRecommendationCommandHandler(
                 messageLabel: this.pubSubConfig.EmailPublisher.Subject,
                 configName: this.pubSubConfig.EmailPublisher.DaprBuildingBlock,
                 topicName: this.pubSubConfig.EmailPublisher.TopicName,
+                correlationId: cocktailRecommendationEvent.CorrelationId,
                 cancellationToken: cancellationToken);
 
             return true;

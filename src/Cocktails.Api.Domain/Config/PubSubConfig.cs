@@ -23,4 +23,6 @@ public class PubSubConfig
     public required DaprServiceBusPublisherConfig CocktailRatingPublisher { get; set; }
 
     public required DaprServiceBusSubscriberConfig CocktailRatingSubscriber { get; set; }
+
+    public required DaprServiceBusPublisherConfig CocktailUpdatesPublisher { get; set; }
 }

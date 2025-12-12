@@ -33,7 +33,7 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile",
-            "dependsOn": ["restore"]
+            // "dependsOn": ["restore"]
         },
         {
             "label": "test",
@@ -69,7 +69,9 @@
                 "--metrics-port",
                 "9091",
                 "--scheduler-host-address",
-                "localhost:50006"
+                "localhost:50006",
+                "--log-level",
+                "debug",
             ],
             "isBackground": true,
             "dependsOn": ["build", "copy-certs"],

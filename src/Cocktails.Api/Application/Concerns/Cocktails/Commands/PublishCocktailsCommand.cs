@@ -1,15 +1,20 @@
 namespace Cocktails.Api.Application.Concerns.Cocktails.Commands;
 
 using global::Cocktails.Api.Application.Concerns.Cocktails.Services;
+using global::Cocktails.Api.Domain;
 using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
-using global::Cocktails.Api.Infrastructure.Services;
+using global::Cocktails.Api.Domain.Config;
+using global::Cocktails.Api.Domain.Services;
+using global::Cocktails.Common;
 using MediatR;
+using Microsoft.Extensions.Options;
 
 public record PublishCocktailsCommand(int BatchItemCount = 1, string[] CocktailIds = null) : IRequest<bool>;
 
 public class PublishCocktailsCommandHandler(
     ICocktailRepository cocktailRepository,
-    ICocktailPublisher cocktailPublisher,
+    IEventBus eventBus,
+    IOptions<PubSubConfig> pubSubConfig,
     ICocktailModelConverter cocktailModelConverter,
     ILogger<PublishCocktailsCommandHandler> logger) : IRequestHandler<PublishCocktailsCommand, bool>
 {
@@ -42,12 +47,26 @@ public class PublishCocktailsCommandHandler(
 
             try
             {
-                await cocktailPublisher.PublishNextBatchAsync(cocktailModels, cancellationToken);
+                await eventBus.PublishAsync(
+                    @event: cocktailModels,
+                    contentType: "application/json",
+                    messageLabel: pubSubConfig.Value.CocktailUpdatesPublisher.Subject,
+                    configName: pubSubConfig.Value.CocktailUpdatesPublisher.DaprBuildingBlock,
+                    topicName: pubSubConfig.Value.CocktailUpdatesPublisher.TopicName,
+                    cancellationToken: cancellationToken);
+
                 logger.LogInformation("Published batch of {Count} cocktails", cocktails.Count);
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Failed to publish batch at offset {Offset}", offset);
+                var rawMessage = EventSerializer.ToJsonString(cocktailModels);
+
+                using var messageScope = logger.BeginScope(new Dictionary<string, object>
+                {
+                    { Monikers.App.ObjectGraph, rawMessage }
+                });
+
+                logger.LogCritical(ex, "Failed to publish batch at offset {Offset}", offset);
                 throw;
             }
 

@@ -62,6 +62,7 @@ public class ChangeAccountOwnedPasswordCommandHandler(
                 messageLabel: pubSubConfig.Value.AccountPasswordPublisher.Subject,
                 configName: pubSubConfig.Value.AccountPasswordPublisher.DaprBuildingBlock,
                 topicName: pubSubConfig.Value.AccountPasswordPublisher.TopicName,
+                correlationId: updatePasswordEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }
         catch (Exception ex)

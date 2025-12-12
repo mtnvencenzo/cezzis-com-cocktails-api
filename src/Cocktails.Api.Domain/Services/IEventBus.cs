@@ -11,5 +11,6 @@ public interface IEventBus
         string configName,
         string topicName,
         string contentType = null,
-        CancellationToken cancellationToken = default) where T : IIntegrationEvent;
+        string correlationId = null,
+        CancellationToken cancellationToken = default) where T : class;
 }

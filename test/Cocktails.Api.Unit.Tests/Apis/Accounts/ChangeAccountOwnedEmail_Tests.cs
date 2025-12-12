@@ -71,6 +71,7 @@ public class ChangeAccountOwnedEmail_Tests : ServiceTestBase
                 "pubsub-sb-topics-cocktails-account-email",
                 "fake-sbt-vec-eus-loc-cocktails-account-email-001",
                 "application/json",
+                It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
             It.IsAny<CancellationToken>()), Times.Once);
     }
 

@@ -34,7 +34,7 @@ public static class JobsApi
         CancellationToken cancellationToken)
     {
         _ = await jobsServices.Mediator.Send(
-            request: new InitializeAppCommand(SeedDataOnlyIfEmpty: true, CreateObjects: true),
+            request: new InitializeAppCommand(SeedDataOnlyIfEmpty: true),
             cancellationToken: cancellationToken);
 
         return TypedResults.Ok();
