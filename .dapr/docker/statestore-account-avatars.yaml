@@ -13,7 +13,7 @@ spec:
   - name: storageAccessKey
     value: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==  # Azurite default key
   - name: endpoint
-    value: https://azurite-docker-local:10000 #azurite does not support multipart hostnames
+    value: http://azurite:10000 #azurite does not support multipart hostnames
   - name: containerName
     value: account-avatars
 

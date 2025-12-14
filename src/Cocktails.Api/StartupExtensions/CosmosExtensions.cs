@@ -39,15 +39,15 @@ internal static class CosmosExtensions
                     {
                         options.ConnectionMode(Microsoft.Azure.Cosmos.ConnectionMode.Gateway);
                         options.LimitToEndpoint(true);
-                        // options.HttpClientFactory(() =>
-                        // {
-                        //     HttpMessageHandler httpMessageHandler = new HttpClientHandler()
-                        //     {
-                        //         ServerCertificateCustomValidationCallback = (req, cert, chain, errors) => true
-                        //     };
+                        options.HttpClientFactory(() =>
+                        {
+                            HttpMessageHandler httpMessageHandler = new HttpClientHandler()
+                            {
+                                ServerCertificateCustomValidationCallback = (req, cert, chain, errors) => true
+                            };
 
-                        //     return new HttpClient(httpMessageHandler);
-                        // });
+                            return new HttpClient(httpMessageHandler);
+                        });
                     });
             }
             else
