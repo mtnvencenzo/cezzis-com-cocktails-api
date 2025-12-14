@@ -2,7 +2,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 
 metadata:
-  name: statestore-local-blob-account-avatars
+  name: statestore-account-avatars
 
 spec:
   type: bindings.azure.blobstorage
@@ -13,9 +13,9 @@ spec:
   - name: storageAccessKey
     value: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==  # Azurite default key
   - name: endpoint
-    value: https://127.0.0.1:10000
+    value: http://azurite:10000 #azurite does not support multipart hostnames
   - name: containerName
-    value: account-avatars-local
+    value: account-avatars
 
 scopes:
   - cocktails-api-dapr

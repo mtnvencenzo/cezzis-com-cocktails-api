@@ -89,6 +89,7 @@ public class RateCocktail_Tests : ServiceTestBase
             "pubsub-sb-topics-cocktails-rating",
             "fake-sbt-vec-eus-loc-cocktails-rating-001",
             "application/json",
+            It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
             It.IsAny<CancellationToken>()), Times.Once);
     }
 }

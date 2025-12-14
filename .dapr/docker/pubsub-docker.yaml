@@ -9,11 +9,11 @@ spec:
   version: v1
   metadata:
     - name: redisHost
-      value: redis.docker.local:6379
+      value: redis:6379
     - name: redisPassword
       value: ""
     - name: enableTLS
-      value: "true"
+      value: "false"
 
 scopes:
   - cocktails-api-dapr

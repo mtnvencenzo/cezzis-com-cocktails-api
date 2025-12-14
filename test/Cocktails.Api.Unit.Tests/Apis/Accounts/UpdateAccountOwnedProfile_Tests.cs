@@ -80,6 +80,7 @@ public class UpdateAccountOwnedProfile_Tests : ServiceTestBase
             "pubsub-sb-topics-cocktails-account",
             "fake-sbt-vec-eus-loc-cocktails-account-001",
             "application/json",
+            It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
             It.IsAny<CancellationToken>()), Times.Once);
     }
 

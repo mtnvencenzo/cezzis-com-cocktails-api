@@ -27,18 +27,21 @@ public class DaprEventBus(
         string configName,
         string topicName,
         string contentType = null,
-        CancellationToken cancellationToken = default) where T : IIntegrationEvent
+        string correlationId = null,
+        CancellationToken cancellationToken = default) where T : class
     {
         Guard.NotDefault(@event, nameof(@event));
         Guard.NotNullOrWhiteSpace(messageLabel, nameof(messageLabel));
         Guard.NotNullOrWhiteSpace(configName, nameof(configName));
         Guard.NotNullOrWhiteSpace(topicName, nameof(topicName));
 
+        var useableCorrelationId = correlationId ?? Guid.NewGuid().ToString();
+
         using var logScope = this.logger.BeginScope(new Dictionary<string, object>
         {
             { Monikers.ServiceBus.MsgId, messageLabel },
             { Monikers.ServiceBus.MsgSubject, messageLabel },
-            { Monikers.ServiceBus.MsgCorrelationId, @event.CorrelationId },
+            { Monikers.ServiceBus.MsgCorrelationId, useableCorrelationId },
             { Monikers.ServiceBus.Topic, topicName }
         });
 
@@ -49,7 +52,7 @@ public class DaprEventBus(
             cancellationToken: cancellationToken,
             metadata: new Dictionary<string, string>
             {
-                { "CorrelationId", @event.CorrelationId },
+                { "CorrelationId", useableCorrelationId },
                 { "ContentType", contentType },
                 { "Label", messageLabel }
             });

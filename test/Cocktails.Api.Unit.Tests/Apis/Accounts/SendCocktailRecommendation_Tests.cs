@@ -81,6 +81,7 @@ public class SendCocktailRecommendation_Tests : ServiceTestBase
                 It.Is<string>(x => x == "pubsub-sb-topics-cocktails-email"),
                 It.Is<string>(x => x == "fake-sbt-vec-eus-loc-cocktails-email-001"),
                 It.Is<string>(x => x == "application/json"),
+                It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
                 It.Is<CancellationToken>(x => x == this.httpContext.RequestAborted)), Times.Once());
 
         this.eventBusMock.VerifyNoOtherCalls();
@@ -273,6 +274,7 @@ public class SendCocktailRecommendation_Tests : ServiceTestBase
                 It.IsAny<string>(),
                 It.IsAny<string>(),
                 It.IsAny<string>(),
+                It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
                 It.IsAny<CancellationToken>()))
             .Throws(new Exception("Send failed"));
 
@@ -313,6 +315,7 @@ public class SendCocktailRecommendation_Tests : ServiceTestBase
                 It.Is<string>(x => x == "pubsub-sb-topics-cocktails-email"),
                 It.Is<string>(x => x == "fake-sbt-vec-eus-loc-cocktails-email-001"),
                 It.Is<string>(x => x == "application/json"),
+                It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
                 It.Is<CancellationToken>(x => x == this.httpContext.RequestAborted)), Times.Once());
 
         this.eventBusMock.VerifyNoOtherCalls();

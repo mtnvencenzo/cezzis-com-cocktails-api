@@ -1,7 +1,6 @@
 name: cezzis
 services:
   cocktails-api:
-    hostname: cocktails-api.docker.local
     container_name: cocktails-api
     image: acrveceusgloshared001.azurecr.io/cocktailsapi:latest
     restart: unless-stopped
@@ -14,14 +13,10 @@ services:
       - ASPNETCORE_HTTPS_PORTS=7176
       - ASPNETCORE_URLS=http://0.0.0.0:7177;https://0.0.0.0:7176
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/docker-local.pfx
-      - Kafka__BootstrapServers=kafka-broker-1.docker.local:19093
-      - Kafka__SslCaLocation=/https/docker-local.crt
       - LocalhostImages__Enabled=true
       - LocalhostImages__Path=/data/cocktail/images/
     volumes:
       - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}/docker-local.pfx:/https/docker-local.pfx:ro"
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}/docker-local.crt:/https/docker-local.crt:ro"
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local}/azurite-local.crt:/https/azurite-local.crt:ro"
       - /home/mtnvencenzo/Github/cezzis-com-cocktails-images/Images/Main:/data/cocktail/images:ro
     entrypoint: >
       sh -c "
@@ -32,17 +27,11 @@ services:
         exec dotnet Cocktails.Api.dll
       "
     networks:
-      cezzis-network:
-        aliases:
-          - cocktails-api.docker.local
-      elastic-stack_elastic-network:
-      azure-stack_azure-network:
-      kafka-stack_kafka-network:
+      app-internal-network:
     depends_on:
       - dapr-sidecar-cocktails-api
 
   cocktails-web:
-    hostname: cocktails-web.docker.local
     container_name: cocktails-web
     image: acrveceusgloshared001.azurecr.io/cocktailsweb:latest
     restart: unless-stopped
@@ -52,7 +41,7 @@ services:
     environment:
       - VITE_NODE_ENV=docker
       - VITE_PORT=4001
-      - VITE_TELEMETRY_URL=https://localhost:50052
+      - VITE_TELEMETRY_URL=http://localhost:4318
       - VITE_AUTH0_DOMAIN=login.cezzis.com
       - VITE_AUTH0_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
       - VITE_AUTH0_REDIRECT_URI=https://localhost:4001/iam/auth/redirect/
@@ -62,12 +51,11 @@ services:
     volumes:
       - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}:/etc/nginx/certs:ro"
     networks:
-      cezzis-network:
-        aliases:
-          - cocktails-web.docker.local
+      app-internal-network:
+    depends_on:
+      - infra-bootstrapper
 
   cocktails-mcp:
-    hostname: cocktails-mcp.docker.local
     container_name: cocktails-mcp
     image: acrveceusgloshared001.azurecr.io/cocktailsmcp:latest
     restart: unless-stopped
@@ -80,37 +68,51 @@ services:
       - AUTH0_CLIENT_ID=6pNnUIHVbyakv27TtICiLyAQbXYxNjOQ
       - AUTH0_DOMAIN=login.cezzis.com
       - AUTH0_SCOPES="openid offline_access profile email read:owned-account write:owned-account"
-      - COCKTAILS_API_HOST=https://cocktails-api.docker.local:7176
-      - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb.docker.local:8081/
-      - COSMOS_CONNECTION_STRING=AccountEndpoint=https://cosmosdb.docker.local:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;
+      - COCKTAILS_API_HOST=http://cocktails-api:7177
+      - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
+      - COSMOS_CONNECTION_STRING=AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;
       - COSMOS_CONTAINER_NAME=cezzis-docker-device-auth
       - COSMOS_DATABASE_NAME=cocktails-db
       - LOG_LEVEL=info
-      - OTLP_ENDPOINT=https://otel-collector.docker.local:50052
-      - OTLP_INSECURE=false
+      - OTLP_ENDPOINT=http://otel-collector:4318
+      - OTLP_INSECURE=true
       - OTLP_METRICS_ENABLED=false
-      - TLS_CERT_FILE=/certs/docker-local.crt
-      - TLS_KEY_FILE=/certs/docker-local.key
-    volumes:
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}:/certs:ro"
     entrypoint: >
       sh -c "
-        if ls /certs/*.crt 1> /dev/null 2>&1; then
-          apk add --no-cache ca-certificates &&
-          cp /certs/*.crt /usr/local/share/ca-certificates/ &&
-          update-ca-certificates
-        fi &&
         exec /cezzis-cocktails
       "
     networks:
-      cezzis-network:
-        aliases:
-          - cocktails-mcp.docker.local
-      elastic-stack_elastic-network:
-      azure-stack_azure-network:
+      app-internal-network:
+    depends_on:
+      - infra-bootstrapper
+
+  infra-bootstrapper:
+    container_name: infra-bootstrapper
+    image: acrveceusgloshared001.azurecr.io/cezziscombootstrapper:latest
+    restart: unless-stopped
+    environment:
+      - ENV=docker
+      - ACCOUNT_AVATARS_CONTAINER_NAME=account-avatars
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
+      - KAFKA_COCKTAILS_UPDATE_TOPIC_NAME=cocktails-update-topic
+      - KAFKA_DEFAULT_TOPIC_PARTITIONS=4
+      - KAFKA_SECURITY_PROTOCOL=PLAINTEXT
+      - COSMOSDB_ACCOUNT_KEY=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+      - COSMOSDB_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
+      - COSMOSDB_COCKTAILS_DATABASE_NAME=cocktails-db
+      - COSMOSDB_COCKTAILS_CONTAINER_DEFS=cezzis-cocktails-cocktail:/id,cezzis-cocktails-ingredient:/id,cezzis-accounts-account:/subjectId
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_SERVICE_NAME=cezzis_com_bootstrapper
+      - OTEL_SERVICE_NAMESPACE=cezzis
+    entrypoint: >
+      sh -c "
+        cezzis-com-bootstrapper;
+        tail -f /dev/null
+      "
+    networks:
+      app-internal-network:
 
   dapr-sidecar-cocktails-api:
-    hostname: dapr-sidecar-cocktails-api.docker.local
     container_name: dapr-sidecar-cocktails-api
     image: daprio/daprd:latest
     restart: unless-stopped
@@ -118,7 +120,6 @@ services:
       - "3500:3500"
       - "50001:50001"
     environment:
-      - SSL_CERT_DIR=/certs
       - OTEL_EXPORTER_OTLP_HEADERS=Authorization=Bearer bd97d99d-f52d-4827-84d5-3760cbc2c8ea
       - OTEL_RESOURCE_ATTRIBUTES=deployment.environment=docker
       - DAPR_APP_TOKEN=1abf64ac-76bd-4922-ac1d-3732d09a71db
@@ -126,8 +127,8 @@ services:
     command: >
       ./daprd
         --app-id cocktails-api-dapr
-        --app-port 7176
-        --app-protocol https
+        --app-port 7177
+        --app-protocol http
         --dapr-http-port 3500
         --dapr-grpc-port 50001
         --resources-path /components
@@ -135,25 +136,17 @@ services:
         --enable-metrics false
         --enable-api-logging false
         --placement-host-address ''
-        --scheduler-host-address 'dapr-scheduler-cezzis.docker.local:50004'
-        --app-channel-address cocktails-api.docker.local
+        --scheduler-host-address 'dapr-scheduler:50004'
+        --app-channel-address cocktails-api
     volumes:
       - ./.dapr/docker:/components
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/azurite-local/azurite-local.crt}:/certs/azurite-local.crt:ro"
-      - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local/docker-local.crt}:/certs/docker-local.crt:ro"
     networks:
-      cezzis-network:
-        aliases:
-          - dapr-sidecar-cocktails-api.docker.local
-      elastic-stack_elastic-network:
-      redis-stack_redis-network:
-      azure-stack_azure-network:
-      kafka-stack_kafka-network:
+      app-internal-network:
     depends_on:
       - dapr-scheduler
+      - infra-bootstrapper
 
   dapr-scheduler:
-    hostname: dapr-scheduler-cezzis.docker.local
     container_name: dapr-scheduler-cezzis
     image: daprio/dapr:latest
     command: ["./scheduler", "--port", "50004", "--etcd-data-dir", "/data"]
@@ -161,33 +154,17 @@ services:
       - "50004:50004"
       - "52378:2379"
     restart: unless-stopped
-    networks:
-      cezzis-network:
-        aliases:
-          - dapr-scheduler-cezzis.docker.local
     volumes:
       - vol_scheduler:/data
+    networks:
+      app-internal-network:
     user: "0:0"
 
 
 networks:
-  cezzis-network:
-    driver: bridge
-  
-  azure-stack_azure-network:
+  app-internal-network:
     external: true
-    name: azure-stack_azure-network
-
-  redis-stack_redis-network:
-    external: true
-    name: redis-stack_redis-network
-
-  kafka-stack_kafka-network:
-    external: true
-    
-  elastic-stack_elastic-network:
-    external: true
-    name: elastic-stack_elastic-network
+    name: app-internal-network
 
 volumes:
   vol_scheduler:

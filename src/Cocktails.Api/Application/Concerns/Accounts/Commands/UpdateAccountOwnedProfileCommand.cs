@@ -83,6 +83,7 @@ public class UpdateAccountOwnedProfileCommandHandler(
                 messageLabel: pubSubConfig.Value.AccountPublisher.Subject,
                 configName: pubSubConfig.Value.AccountPublisher.DaprBuildingBlock,
                 topicName: pubSubConfig.Value.AccountPublisher.TopicName,
+                correlationId: accountUpdatedEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }
         catch (Exception ex)

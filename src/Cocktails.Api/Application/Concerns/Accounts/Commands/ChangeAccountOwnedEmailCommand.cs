@@ -71,6 +71,7 @@ public class ChangeAccountOwnedEmailCommandHandler(
                 messageLabel: pubSubConfig.Value.AccountEmailPublisher.Subject,
                 configName: pubSubConfig.Value.AccountEmailPublisher.DaprBuildingBlock,
                 topicName: pubSubConfig.Value.AccountEmailPublisher.TopicName,
+                correlationId: updateEmailEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }
         catch (Exception ex)

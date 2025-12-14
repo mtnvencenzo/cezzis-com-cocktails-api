@@ -66,9 +66,6 @@ internal static class ApplicationServiceExtensions
         // Add search client to DI
         builder.Services.AddSearchClient();
 
-        // Add Kafka to DI
-        builder.Services.AddKafka();
-
         // Add mediator and commands to DI
         builder.Services.AddMediatR(cfg =>
         {

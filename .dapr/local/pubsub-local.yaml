@@ -13,7 +13,7 @@ spec:
     - name: redisPassword
       value: ""
     - name: enableTLS
-      value: "true"
+      value: "false"
 
 scopes:
   - cocktails-api-dapr
