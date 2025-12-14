@@ -30,7 +30,6 @@ var app = builder.Build();
 
 app.UseApplicationEndpoints();
 app.UseDefaultOpenApi();
-app.UseHttpsRedirection();
 app.UseCors("origin-policy");
 app.UseAuthentication();
 app.UseAuthorization();
@@ -46,6 +45,11 @@ app.UseExceptionHandler((builder) =>
         }
     });
 });
+
+if (Environment.GetEnvironmentVariable("FORCE_HTTPS") != "false")
+{
+    app.UseHttpsRedirection();
+}
 
 await app.UseDaprJobs();
 

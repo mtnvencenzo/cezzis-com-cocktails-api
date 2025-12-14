@@ -22,7 +22,8 @@
                 "ASPNETCORE_ENVIRONMENT": "local",
                 "ASPNETCORE_URLS": "https://localhost:7178;http://localhost:7179",
                 "DAPR_HTTP_PORT": "5295",
-                "DAPR_GRPC_PORT": "50003"
+                "DAPR_GRPC_PORT": "50003",
+                "FORCE_HTTPS": "false"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
