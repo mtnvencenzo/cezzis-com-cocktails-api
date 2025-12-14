@@ -103,7 +103,7 @@ services:
       - COSMOSDB_COCKTAILS_DATABASE_NAME=cocktails-db
       - COSMOSDB_COCKTAILS_CONTAINER_DEFS=cezzis-cocktails-cocktail:/id,cezzis-cocktails-ingredient:/id,cezzis-accounts-account:/subjectId
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
-      - OTEL_SERVICE_NAME=cezzis_com_bootstrapper
+      - OTEL_SERVICE_NAME=cezzis-com-bootstrapper
       - OTEL_SERVICE_NAMESPACE=cezzis
     entrypoint: >
       sh -c "
