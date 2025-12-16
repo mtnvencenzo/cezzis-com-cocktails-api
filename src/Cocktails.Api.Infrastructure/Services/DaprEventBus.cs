@@ -2,22 +2,18 @@
 
 using Cezzi.Applications;
 using Cocktails.Api.Domain;
-using Cocktails.Api.Domain.Config;
 using Cocktails.Api.Domain.Services;
 using Dapr.Client;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 public class DaprEventBus(
-    IOptions<PubSubConfig> pubSubConfig,
     DaprClient daprClient,
     ILogger<DaprEventBus> logger) : IEventBus
 {
-    private readonly PubSubConfig pubSubConfig = pubSubConfig?.Value ?? throw new ArgumentNullException(nameof(pubSubConfig));
     private readonly DaprClient daprClient = daprClient ?? throw new ArgumentNullException(nameof(daprClient));
     private readonly ILogger logger = logger ?? throw new ArgumentNullException(nameof(logger));
 

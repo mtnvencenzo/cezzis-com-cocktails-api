@@ -15,19 +15,6 @@ public class SeedCocktailsCommandHandler(
     IMediator mediator,
     ILogger<SeedCocktailsCommandHandler> logger) : IRequestHandler<SeedCocktailsCommand, bool>
 {
-    private readonly static JsonSerializerOptions jsonSerializerOptions;
-
-    static SeedCocktailsCommandHandler()
-    {
-        jsonSerializerOptions = new()
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            AllowTrailingCommas = true
-        };
-
-        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
-    }
-
     public async Task<bool> Handle(SeedCocktailsCommand command, CancellationToken cancellationToken)
     {
         var availableCocktails = cocktailsDataStore.Cocktails;

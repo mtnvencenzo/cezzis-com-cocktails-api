@@ -14,19 +14,6 @@ public class SeedIngredientsCommandHandler(
     IngredientsDataStore ingredientsDataStore,
     ILogger<SeedIngredientsCommandHandler> logger) : IRequestHandler<SeedIngredientsCommand, bool>
 {
-    private readonly static JsonSerializerOptions jsonSerializerOptions;
-
-    static SeedIngredientsCommandHandler()
-    {
-        jsonSerializerOptions = new()
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            AllowTrailingCommas = true
-        };
-
-        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
-    }
-
     public async Task<bool> Handle(SeedIngredientsCommand command, CancellationToken cancellationToken)
     {
         var availableIngredients = ingredientsDataStore.Ingredients.ToList();

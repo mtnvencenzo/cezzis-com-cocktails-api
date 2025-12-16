@@ -25,6 +25,9 @@ internal static class DaprExtensions
         services.AddDaprClient((sp, builder) =>
         {
             var opts = sp.GetRequiredService<IOptions<DaprConfig>>().Value;
+            var jsonOptions = sp.GetRequiredService<IOptions<Microsoft.AspNetCore.Mvc.JsonOptions>>().Value;
+
+            builder.UseJsonSerializationOptions(jsonOptions.JsonSerializerOptions);
 
             if (!string.IsNullOrWhiteSpace(opts.DaprAppToken))
             {
