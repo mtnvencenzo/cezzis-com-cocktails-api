@@ -4,10 +4,10 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Cezzi.Applications" Version="1.0.11" />
-    <PackageReference Include="Cezzi.Security" Version="1.0.12" />
-    <PackageReference Include="Cezzi.Security.Recaptcha" Version="1.0.11" />
-    <PackageReference Include="Cocktails.Common" Version="1.0.4" />
+    <PackageReference Include="Cezzi.Applications" Version="1.0.21" />
+    <PackageReference Include="Cezzi.Security" Version="1.0.22" />
+    <PackageReference Include="Cezzi.Security.Recaptcha" Version="1.0.21" />
+    <PackageReference Include="Cocktails.Common" Version="1.0.9" />
     <PackageReference Include="MediatR" Version="14.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
