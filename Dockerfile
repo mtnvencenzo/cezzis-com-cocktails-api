@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /App
 
 ARG GH_PACKAGES_PAT_TOKEN_READ
@@ -14,7 +14,7 @@ RUN ls -la
 RUN dotnet restore ./Cocktails.Api/Cocktails.Api.csproj --configfile ./Nuget.Config
 RUN dotnet publish ./Cocktails.Api/Cocktails.Api.csproj -c Release -o ./out
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
 EXPOSE 8080
 EXPOSE 443
 

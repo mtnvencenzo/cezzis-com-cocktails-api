@@ -48,10 +48,10 @@ jobs:
   build:
     name: Build and test
     needs: [gitVersion]
-    uses: mtnvencenzo/workflows/.github/workflows/api-build.yaml@main
+    uses: mtnvencenzo/workflows/.github/workflows/dotnet-build.yaml@main
     with:
       working_directory: './'
-      dotnet_version: '9.x'
+      dotnet_version: '10.x'
       nuget_file_path: './Nuget.Config'
       github_nuget_feed_name: 'github-mtnvencenzo'
       github_nuget_feed_source: 'https://nuget.pkg.github.com/mtnvencenzo/index.json'
