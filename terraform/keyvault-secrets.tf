@@ -114,6 +114,27 @@ resource "azurerm_key_vault_secret" "auth0_client_secret" {
 }
 
 # ----------------------------------------
+# Rabbit Mq User Password Secret
+# ----------------------------------------
+resource "random_password" "cocktails_api_rabbitmq_user_password" {
+  count   = 1
+  length  = 24
+  special = true
+  upper   = true
+}
+
+resource "azurerm_key_vault_secret" "cocktails_api_rabbitmq_user_password_secret" {
+  name         = "rabbitmq-user-password"
+  value        = random_password.cocktails_api_rabbitmq_user_password[0].result
+  key_vault_id = data.azurerm_key_vault.cocktails_keyvault.id
+  tags         = local.tags
+
+  lifecycle {
+    ignore_changes = [value]
+  }
+}
+
+# ----------------------------------------
 # Misc secret for local development
 # ----------------------------------------
 resource "random_password" "cocktails_api_localusage_subscription_keys_iter1" {
