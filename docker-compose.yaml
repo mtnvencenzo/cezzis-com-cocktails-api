@@ -16,6 +16,8 @@ services:
       - LocalhostImages__Enabled=true
       - LocalhostImages__Path=/data/cocktail/images/
       - FORCE_HTTPS=false
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     volumes:
       - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}/docker-local.pfx:/https/docker-local.pfx:ro"
       - /home/mtnvencenzo/Github/cezzis-com-cocktails-images/Images/Main:/data/cocktail/images:ro
@@ -49,6 +51,8 @@ services:
       - VITE_AUTH0_COCKTAILS_API_AUDIENCE=https://cezzis-cocktails-api
       - VITE_COCKTAILS_API_URL=http://localhost:7177
       - VITE_COCKTAILS_IMAGE_URL=http://localhost:7177/api/v1/images
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     volumes:
       - "${DOCKER_LOCAL_CERT_PATH:-$HOME/Github/dev-certs/docker-local}:/etc/nginx/certs:ro"
     networks:
@@ -78,6 +82,8 @@ services:
       - OTLP_ENDPOINT=http://otel-collector:4318
       - OTLP_INSECURE=true
       - OTLP_METRICS_ENABLED=false
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     entrypoint: >
       sh -c "
         exec /cezzis-cocktails
@@ -108,6 +114,8 @@ services:
       - LLM_HOST=http://ollama:11434
       - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
       - LANGFUSE_PUBLIC_KEY=pk-lf-2199c1e7-5d78-4c2a-a5a5-9be5b21b3c1b
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     networks:
       app-internal-network:
     depends_on:
@@ -134,6 +142,8 @@ services:
       - LLM_HOST=http://ollama:11434
       - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
       - LANGFUSE_PUBLIC_KEY=pk-lf-2199c1e7-5d78-4c2a-a5a5-9be5b21b3c1b
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     networks:
       app-internal-network:
     depends_on:
@@ -160,6 +170,8 @@ services:
       - QDRANT_VECTOR_SIZE=768
       - QDRANT_USE_HTTPS=false
       - HUGGINGFACE_INFERENCE_MODEL=http://tei:8989
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     networks:
       app-internal-network:
     depends_on:
@@ -183,6 +195,8 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cezzis-com-bootstrapper
       - OTEL_SERVICE_NAMESPACE=cezzis
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     entrypoint: >
       sh -c "
         cezzis-com-bootstrapper;
