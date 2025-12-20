@@ -34,6 +34,23 @@ services:
     depends_on:
       - dapr-sidecar-cocktails-api
 
+  cocktails-aisearch:
+    container_name: cocktails-aisearch
+    image: acrveceusgloshared001.azurecr.io/cezziscomcocktailsaisearch:latest
+    restart: unless-stopped
+    ports:
+      - "8010:8010"
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_SERVICE_NAME=cocktails-aisearch
+      - OTEL_SERVICE_NAMESPACE=cezzis
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      app-internal-network:
+    depends_on:
+      - infra-bootstrapper
+
   cocktails-web:
     container_name: cocktails-web
     image: acrveceusgloshared001.azurecr.io/cocktailsweb:latest
