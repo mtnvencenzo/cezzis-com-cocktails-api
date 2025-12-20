@@ -26,7 +26,7 @@ builder.AddDefaultOpenApi(apiVersioningBuilder);
 var app = builder.Build();
 
 // Use cloud events to automatically unpack the message data
-// app.UseCloudEvents();
+// app.UseCloudEvents(); // test 
 
 app.UseApplicationEndpoints();
 app.UseDefaultOpenApi();
