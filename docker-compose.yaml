@@ -87,6 +87,84 @@ services:
     depends_on:
       - infra-bootstrapper
 
+  cocktails-ingestion-extraction-agent:
+    container_name: cocktails-ingestion-extraction-agent
+    image: acrveceusgloshared001.azurecr.io/cocktailsingestionextractionagent:latest
+    restart: unless-stopped
+    environment:
+      - ENV=docker
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
+      - KAFKA_CONSUMER_GROUP=cocktails-ingestion-extraction-agent
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_SERVICE_NAME=cocktails-ingestion-extraction-agent
+      - OTEL_SERVICE_NAMESPACE=cezzis
+      - EXTRACTION_AGENT_ENABLED=true
+      - EXTRACTION_AGENT_KAFKA_TOPIC_NAME=cocktails-update-topic
+      - EXTRACTION_AGENT_KAFKA_NUM_CONSUMERS=1
+      - EXTRACTION_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-extraction-results
+      - EXTRACTION_AGENT_KAFKA_MAX_POLL_INTERVAL_MS=300000
+      - EXTRACTION_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
+      - EXTRACTION_AGENT_MODEL="qwen3:8b"
+      - LLM_HOST=http://ollama:11434
+      - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
+      - LANGFUSE_PUBLIC_KEY=pk-lf-2199c1e7-5d78-4c2a-a5a5-9be5b21b3c1b
+    networks:
+      app-internal-network:
+    depends_on:
+      - infra-bootstrapper
+
+  cocktails-ingestion-chunking-agent:
+    container_name: cocktails-ingestion-chunking-agent
+    image: acrveceusgloshared001.azurecr.io/cocktailsingestionchunkingagent:latest
+    restart: unless-stopped
+    environment:
+      - ENV=docker
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
+      - KAFKA_CONSUMER_GROUP=cocktails-ingestion-chunking-agent
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_SERVICE_NAME=cocktails-ingestion-chunking-agent
+      - OTEL_SERVICE_NAMESPACE=cezzis
+      - CHUNKING_AGENT_ENABLED=true
+      - CHUNKING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-extraction-results
+      - CHUNKING_AGENT_KAFKA_NUM_CONSUMERS=1
+      - CHUNKING_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-chunking-results
+      - CHUNKING_AGENT_KAFKA_MAX_POLL_INTERVAL_MS=1200000
+      - CHUNKING_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
+      - CHUNKING_AGENT_LLM_MODEL=qwen3:8b
+      - LLM_HOST=http://ollama:11434
+      - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
+      - LANGFUSE_PUBLIC_KEY=pk-lf-2199c1e7-5d78-4c2a-a5a5-9be5b21b3c1b
+    networks:
+      app-internal-network:
+    depends_on:
+      - infra-bootstrapper
+
+  cocktails-ingestion-embedding-agent:
+    container_name: cocktails-ingestion-embedding-agent
+    image: acrveceusgloshared001.azurecr.io/cocktailsingestionembeddingagent:latest
+    restart: unless-stopped
+    environment:
+      - ENV=docker
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
+      - KAFKA_CONSUMER_GROUP=cocktails-ingestion-embedding-agent
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_SERVICE_NAME=cocktails-ingestion-embedding-agent
+      - OTEL_SERVICE_NAMESPACE=cezzis
+      - EMBEDDING_AGENT_ENABLED=true
+      - EMBEDDING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-chunking-results
+      - EMBEDDING_AGENT_KAFKA_NUM_CONSUMERS=1
+      - QDRANT_HOST=http://qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_API_KEY=
+      - QDRANT_COLLECTION_NAME=cocktails
+      - QDRANT_VECTOR_SIZE=768
+      - QDRANT_USE_HTTPS=false
+      - HUGGINGFACE_INFERENCE_MODEL=http://tei:8989
+    networks:
+      app-internal-network:
+    depends_on:
+      - infra-bootstrapper
+
   infra-bootstrapper:
     container_name: infra-bootstrapper
     image: acrveceusgloshared001.azurecr.io/cezziscombootstrapper:latest
@@ -95,7 +173,7 @@ services:
       - ENV=docker
       - ACCOUNT_AVATARS_CONTAINER_NAME=account-avatars
       - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
-      - KAFKA_COCKTAILS_UPDATE_TOPIC_NAME=cocktails-update-topic
+      - KAFKA_COCKTAILS_TOPIC_DEFS=cocktails-update-topic,cocktails-ingestion-extraction-results,cocktails-ingestion-chunking-results
       - KAFKA_DEFAULT_TOPIC_PARTITIONS=4
       - KAFKA_SECURITY_PROTOCOL=PLAINTEXT
       - COSMOSDB_ACCOUNT_KEY=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
