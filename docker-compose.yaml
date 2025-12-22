@@ -217,7 +217,7 @@ services:
       - RABBITMQ_ADMIN_USERNAME=admin
       - RABBITMQ_APP_USERNAME=cezzis-app-user-prd
       - RABBITMQ_APP_CONFIG_FILE_PATH=/config/rabbitmq.json
-      - QDRANT_HOST=localhost
+      - QDRANT_HOST=qdrant
       - QDRANT_PORT=6333
       - QDRANT_API_KEY=
       - QDRANT_COLLECTION_NAME=cocktails-prd
