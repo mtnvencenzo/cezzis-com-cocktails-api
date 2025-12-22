@@ -37,16 +37,16 @@
     <Content Update="appsettings.unittest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="appsettings.local.json">
+    <Content Update="appsettings.loc.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="appsettings.local.json.user">
+    <Content Update="appsettings.loc.json.user">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="appsettings.docker.json">
+    <Content Update="appsettings.prd.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="appsettings.docker.json.user">
+    <Content Update="appsettings.prd.json.user">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
