@@ -9,7 +9,7 @@ services:
       - "7176:7176"
     environment:
       - SEED_ON_STARTUP=true
-      - ASPNETCORE_ENVIRONMENT=docker
+      - ASPNETCORE_ENVIRONMENT=prd
       - ASPNETCORE_HTTPS_PORTS=7176
       - ASPNETCORE_URLS=http://0.0.0.0:7177;https://0.0.0.0:7176
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/docker-local.pfx
@@ -59,7 +59,7 @@ services:
       - "4000:443"
       - "4001:80"
     environment:
-      - VITE_NODE_ENV=docker
+      - VITE_NODE_ENV=prd
       - VITE_PORT=4001
       - VITE_TELEMETRY_URL=http://localhost:4318
       - VITE_AUTH0_DOMAIN=login.cezzis.com
@@ -84,7 +84,7 @@ services:
     ports:
       - "7999:7999"
     environment:
-      - ENV=docker
+      - ENV=prd
       - PORT=7999
       - AUTH0_AUDIENCE=https://cezzis-cocktails-api
       - AUTH0_CLIENT_ID=6pNnUIHVbyakv27TtICiLyAQbXYxNjOQ
@@ -92,9 +92,8 @@ services:
       - AUTH0_SCOPES="openid offline_access profile email read:owned-account write:owned-account"
       - COCKTAILS_API_HOST=http://cocktails-api:7177
       - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
-      - COSMOS_CONNECTION_STRING=AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;
-      - COSMOS_CONTAINER_NAME=cezzis-docker-device-auth
-      - COSMOS_DATABASE_NAME=cocktails-db
+      - COSMOS_CONTAINER_NAME=cezzis-device-auth
+      - COSMOS_DATABASE_NAME=cocktails-db-prd
       - LOG_LEVEL=info
       - OTLP_ENDPOINT=http://otel-collector:4318
       - OTLP_INSECURE=true
@@ -115,16 +114,16 @@ services:
     image: acrveceusgloshared001.azurecr.io/cocktailsingestionextractionagent:latest
     restart: unless-stopped
     environment:
-      - ENV=docker
+      - ENV=prd
       - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
       - KAFKA_CONSUMER_GROUP=cocktails-ingestion-extraction-agent
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-ingestion-extraction-agent
       - OTEL_SERVICE_NAMESPACE=cezzis
       - EXTRACTION_AGENT_ENABLED=true
-      - EXTRACTION_AGENT_KAFKA_TOPIC_NAME=cocktails-update-topic
+      - EXTRACTION_AGENT_KAFKA_TOPIC_NAME=cocktails-update-topic-prd
       - EXTRACTION_AGENT_KAFKA_NUM_CONSUMERS=1
-      - EXTRACTION_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-extraction-results
+      - EXTRACTION_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-extraction-results-prd
       - EXTRACTION_AGENT_KAFKA_MAX_POLL_INTERVAL_MS=300000
       - EXTRACTION_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
       - EXTRACTION_AGENT_MODEL="qwen3:8b"
@@ -143,16 +142,16 @@ services:
     image: acrveceusgloshared001.azurecr.io/cocktailsingestionchunkingagent:latest
     restart: unless-stopped
     environment:
-      - ENV=docker
+      - ENV=prd
       - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
       - KAFKA_CONSUMER_GROUP=cocktails-ingestion-chunking-agent
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-ingestion-chunking-agent
       - OTEL_SERVICE_NAMESPACE=cezzis
       - CHUNKING_AGENT_ENABLED=true
-      - CHUNKING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-extraction-results
+      - CHUNKING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-extraction-results-prd
       - CHUNKING_AGENT_KAFKA_NUM_CONSUMERS=1
-      - CHUNKING_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-chunking-results
+      - CHUNKING_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-chunking-results-prd
       - CHUNKING_AGENT_KAFKA_MAX_POLL_INTERVAL_MS=1200000
       - CHUNKING_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
       - CHUNKING_AGENT_LLM_MODEL=qwen3:8b
@@ -171,19 +170,19 @@ services:
     image: acrveceusgloshared001.azurecr.io/cocktailsingestionembeddingagent:latest
     restart: unless-stopped
     environment:
-      - ENV=docker
+      - ENV=prd
       - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
       - KAFKA_CONSUMER_GROUP=cocktails-ingestion-embedding-agent
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-ingestion-embedding-agent
       - OTEL_SERVICE_NAMESPACE=cezzis
       - EMBEDDING_AGENT_ENABLED=true
-      - EMBEDDING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-chunking-results
+      - EMBEDDING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-chunking-results-prd
       - EMBEDDING_AGENT_KAFKA_NUM_CONSUMERS=1
       - QDRANT_HOST=http://qdrant
       - QDRANT_PORT=6333
       - QDRANT_API_KEY=
-      - QDRANT_COLLECTION_NAME=cocktails
+      - QDRANT_COLLECTION_NAME=cocktails-prd
       - QDRANT_VECTOR_SIZE=768
       - QDRANT_USE_HTTPS=false
       - HUGGINGFACE_INFERENCE_MODEL=http://tei:8989
@@ -199,21 +198,35 @@ services:
     image: acrveceusgloshared001.azurecr.io/cezziscombootstrapper:latest
     restart: unless-stopped
     environment:
-      - ENV=docker
-      - ACCOUNT_AVATARS_CONTAINER_NAME=account-avatars
+      - ENV=prd
+      - ACCOUNT_AVATARS_CONTAINER_NAME=account-avatars-prd
       - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
-      - KAFKA_COCKTAILS_TOPIC_DEFS=cocktails-update-topic,cocktails-ingestion-extraction-results,cocktails-ingestion-chunking-results
+      - KAFKA_COCKTAILS_TOPIC_DEFS=cocktails-update-topic-prd,cocktails-ingestion-extraction-results-prd,cocktails-ingestion-chunking-results-prd
       - KAFKA_DEFAULT_TOPIC_PARTITIONS=4
       - KAFKA_SECURITY_PROTOCOL=PLAINTEXT
-      - COSMOSDB_ACCOUNT_KEY=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
       - COSMOSDB_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
-      - COSMOSDB_COCKTAILS_DATABASE_NAME=cocktails-db
+      - COSMOSDB_COCKTAILS_DATABASE_NAME=cocktails-db-prd
       - COSMOSDB_COCKTAILS_CONTAINER_DEFS=cezzis-cocktails-cocktail:/id,cezzis-cocktails-ingredient:/id,cezzis-accounts-account:/subjectId
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cezzis-com-bootstrapper
       - OTEL_SERVICE_NAMESPACE=cezzis
+      - RABBITMQ_VHOST=cezzis-prd
+      - RABBITMQ_HOST=http://rabbitmq
+      - RABBITMQ_PORT=5671
+      - RABBITMQ_ADMIN_PORT=15672
+      - RABBITMQ_ADMIN_USERNAME=admin
+      - RABBITMQ_APP_USERNAME=cezzis-app-user-prd
+      - RABBITMQ_APP_CONFIG_FILE_PATH=/config/rabbitmq.json
+      - QDRANT_HOST=localhost
+      - QDRANT_PORT=6333
+      - QDRANT_API_KEY=
+      - QDRANT_COLLECTION_NAME=cocktails-prd
+      - QDRANT_VECTOR_SIZE=768
+      - QDRANT_USE_HTTPS=false
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+    volumes:
+      - /home/mtnvencenzo/Github/cezzis-com-local-bootstrapper/rabbitmq.json:/config/rabbitmq.json:ro
     entrypoint: >
       sh -c "
         cezzis-com-bootstrapper;
@@ -230,10 +243,7 @@ services:
       - "3500:3500"
       - "50001:50001"
     environment:
-      - OTEL_EXPORTER_OTLP_HEADERS=Authorization=Bearer bd97d99d-f52d-4827-84d5-3760cbc2c8ea
       - OTEL_RESOURCE_ATTRIBUTES=deployment.environment=docker
-      - DAPR_APP_TOKEN=1abf64ac-76bd-4922-ac1d-3732d09a71db
-      - APP_API_TOKEN=0d235ec9-161f-4d92-86e2-ed8f907ef465
     command: >
       ./daprd
         --app-id cocktails-api-dapr
