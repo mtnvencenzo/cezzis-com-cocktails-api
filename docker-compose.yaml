@@ -126,10 +126,11 @@ services:
       - EXTRACTION_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-extraction-results-prd
       - EXTRACTION_AGENT_KAFKA_MAX_POLL_INTERVAL_MS=300000
       - EXTRACTION_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
-      - EXTRACTION_AGENT_MODEL="qwen3:8b"
+      - EXTRACTION_AGENT_LLM_MODEL="qwen3:8b"
+      - EXTRACTION_AGENT_USE_LLM=false
       - LLM_HOST=http://ollama:11434
       - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
-      - LANGFUSE_PUBLIC_KEY=pk-lf-2199c1e7-5d78-4c2a-a5a5-9be5b21b3c1b
+      - LANGFUSE_PUBLIC_KEY=pk-lf-94d15762-3559-47d1-a226-394bc83fa96a
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
@@ -157,7 +158,7 @@ services:
       - CHUNKING_AGENT_LLM_MODEL=qwen3:8b
       - LLM_HOST=http://ollama:11434
       - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
-      - LANGFUSE_PUBLIC_KEY=pk-lf-2199c1e7-5d78-4c2a-a5a5-9be5b21b3c1b
+      - LANGFUSE_PUBLIC_KEY=pk-lf-94d15762-3559-47d1-a226-394bc83fa96a
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
