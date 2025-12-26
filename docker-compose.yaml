@@ -155,12 +155,15 @@ services:
       - CHUNKING_AGENT_KAFKA_RESULTS_TOPIC_NAME=cocktails-ingestion-chunking-results-prd
       - CHUNKING_AGENT_KAFKA_MAX_POLL_INTERVAL_MS=1200000
       - CHUNKING_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
-      - CHUNKING_AGENT_LLM_MODEL=qwen3:8b
+      - CHUNKING_AGENT_LLM_MODEL=qwen2.5:7b
+      - CHUNKING_AGENT_LOG_DIR=/chunking-agent/logs/
       - LLM_HOST=http://ollama:11434
       - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
       - LANGFUSE_PUBLIC_KEY=pk-lf-94d15762-3559-47d1-a226-394bc83fa96a
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+    volumes:
+      - /home/mtnvencenzo/cocktail-logs/prd/ingestion/chunking-agent:/chunking-agent/logs
     networks:
       app-internal-network:
     depends_on:
