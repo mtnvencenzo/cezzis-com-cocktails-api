@@ -19,6 +19,7 @@ spec:
       value: "false"
     - name: direction
       value: "input"
+      
 scopes:
   - cocktails-api-dapr
 

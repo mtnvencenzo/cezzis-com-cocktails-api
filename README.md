@@ -6,7 +6,7 @@ community of cocktail enthusiasts and aficionados.
 [![CI](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/actions/workflows/cezzis-api-cicd.yaml/badge.svg?branch=main)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/actions/workflows/cezzis-api-cicd.yaml)
 [![Release](https://img.shields.io/github/v/release/mtnvencenzo/cezzis-com-cocktails-api?include_prereleases)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/releases)
 [![License](https://img.shields.io/badge/license-Proprietary-lightgrey)](LICENSE)
-![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 [![Last commit](https://img.shields.io/github/last-commit/mtnvencenzo/cezzis-com-cocktails-api?branch=main)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/commits/main)
 [![Issues](https://img.shields.io/github/issues/mtnvencenzo/cezzis-com-cocktails-api)](https://github.com/mtnvencenzo/cezzis-com-cocktails-api/issues)
 [![Docs](https://img.shields.io/badge/docs-OpenAPI%20Scalar-blue)](https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1)
@@ -43,7 +43,7 @@ Infrastructure is provisioned with Terraform (`/terraform`) and deployed into Az
 ## 🛠️ Technology Stack
 
 ### Core Framework
-- **Framework**: .NET 9.0 
+- **Framework**: .NET 10.0 
 - **API Style**: RESTful with OpenAPI (Scalar UI)  
 - **Architecture**: Clean Architecture + CQRS (MediatR)  
 - **Domain**: Domain-Driven Design (DDD) principles 
@@ -87,7 +87,7 @@ terraform/
 ## 🚀 Development Setup
  **Public documentation**: [https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1](https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v1)
 1) Prerequisites
-   - .NET SDK 9.0
+  - .NET SDK 10.0
    - Optional: Dapr CLI (sidecar), Docker (container builds), Azure CLI / Terraform (infrastructure)
 
 2) Install Dependencies
