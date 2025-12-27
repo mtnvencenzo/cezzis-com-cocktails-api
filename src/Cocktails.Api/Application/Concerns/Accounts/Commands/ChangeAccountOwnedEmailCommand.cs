@@ -70,7 +70,7 @@ public class ChangeAccountOwnedEmailCommandHandler(
                 contentType: "application/json",
                 messageLabel: pubSubConfig.Value.AccountEmailPublisher.Subject,
                 configName: pubSubConfig.Value.AccountEmailPublisher.DaprBuildingBlock,
-                topicName: pubSubConfig.Value.AccountEmailPublisher.TopicName,
+                topicName: pubSubConfig.Value.AccountEmailPublisher.TopicName ?? pubSubConfig.Value.AccountEmailPublisher.DaprBuildingBlock,
                 correlationId: updateEmailEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }

@@ -68,6 +68,7 @@ node_modules/
 
 #Dapr
 /**/.dapr/logs/
+env-secrets.json
 
 docker-compose.override.yaml
 

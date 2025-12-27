@@ -76,9 +76,9 @@ public class UpdateAccountOwnedProfile_Tests : ServiceTestBase
 
         this.eventBusMock.Verify(x => x.PublishAsync(
             It.Is<AccountOwnedProfileUpdatedEvent>(x => x.OwnedAccount.Id == updatedAccount.Id),
-            "account-svc",
-            "pubsub-sb-topics-cocktails-account",
-            "fake-sbt-vec-eus-loc-cocktails-account-001",
+            "account.owned.profile.updated",
+            "pubsub-account-updates-topic",
+            "account-updates-topic",
             "application/json",
             It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
             It.IsAny<CancellationToken>()), Times.Once);

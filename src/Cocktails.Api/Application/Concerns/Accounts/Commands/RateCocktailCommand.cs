@@ -100,7 +100,7 @@ public class RateCocktailCommandHandler(
                 contentType: "application/json",
                 messageLabel: pubSubConfig.Value.CocktailRatingPublisher.Subject,
                 configName: pubSubConfig.Value.CocktailRatingPublisher.DaprBuildingBlock,
-                topicName: pubSubConfig.Value.CocktailRatingPublisher.TopicName,
+                topicName: pubSubConfig.Value.CocktailRatingPublisher.TopicName ?? pubSubConfig.Value.CocktailRatingPublisher.DaprBuildingBlock,
                 correlationId: cocktailRatingEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }

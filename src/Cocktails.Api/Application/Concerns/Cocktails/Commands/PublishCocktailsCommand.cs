@@ -52,7 +52,7 @@ public class PublishCocktailsCommandHandler(
                     contentType: "application/json",
                     messageLabel: pubSubConfig.Value.CocktailUpdatesPublisher.Subject,
                     configName: pubSubConfig.Value.CocktailUpdatesPublisher.DaprBuildingBlock,
-                    topicName: pubSubConfig.Value.CocktailUpdatesPublisher.TopicName,
+                    topicName: pubSubConfig.Value.CocktailUpdatesPublisher.TopicName ?? pubSubConfig.Value.CocktailUpdatesPublisher.DaprBuildingBlock,
                     cancellationToken: cancellationToken);
 
                 logger.LogInformation("Published batch of {Count} cocktails", cocktails.Count);

@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "dapr-run",
-            "program": "${workspaceFolder}/src/Cocktails.Api/bin/Debug/net9.0/Cocktails.Api.dll",
+            "program": "${workspaceFolder}/src/Cocktails.Api/bin/Debug/net10.0/Cocktails.Api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/Cocktails.Api",
             "stopAtEntry": false,

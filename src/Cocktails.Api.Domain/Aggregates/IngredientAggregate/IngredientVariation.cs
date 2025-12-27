@@ -41,4 +41,16 @@ public class IngredientVariation : Entity
             ? [.. applications.Distinct()]
             : throw new CocktailsApiDomainException($"{nameof(applications)} must contain at least one specified application");
     }
+
+    public bool IsSameAs(IngredientVariation other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+
+        return this.Name == other.Name
+            && this.Applications.Count == other.Applications.Count
+            && !this.Applications.Except(other.Applications).Any();
+    }
 }

@@ -65,9 +65,9 @@ public class ChangeAccountOwnedPassword_Tests : ServiceTestBase
                 x.Email == request.Email &&
                 x.OwnedAccountId == account.Id &&
                 x.OwnedAccountSubjectId == account.SubjectId),
-                "account-password-svc",
-                "pubsub-sb-topics-cocktails-account-password",
-                "fake-sbt-vec-eus-loc-cocktails-account-password-001",
+                "account.owned.password.updated",
+                "pubsub-account-updates-topic",
+                "account-updates-topic",
                 "application/json",
                 It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
             It.IsAny<CancellationToken>()), Times.Once);

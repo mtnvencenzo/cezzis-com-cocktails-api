@@ -1,7 +1,6 @@
 ﻿namespace Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 
 using Cezzi.Applications.Extensions;
-using Cezzi.Applications.Text;
 using Cocktails.Api.Domain.Common;
 using Cocktails.Api.Domain.Exceptions;
 using System.Collections.Generic;
@@ -34,9 +33,6 @@ public class Ingredient : Entity, IAggregateRoot
 
     [JsonInclude]
     public string Discriminator { get; private set; }
-
-    [JsonInclude]
-    public string Hash { get; private set; }
 
     [JsonIgnore]
     public List<string> Types => this.types;
@@ -112,11 +108,55 @@ public class Ingredient : Entity, IAggregateRoot
             .SetTypes(from.types ?? [])
             .SetApplications(from.applications ?? [])
             .SetParentId(from.ParentId)
-            .SetVariations(from.variations ?? [])
-            .SetHash(from.Hash);
+            .SetVariations(from.variations ?? []);
 
         this.UpdatedOn = DateTimeOffset.Now;
         return this;
+    }
+
+    public bool IsSameAs(Ingredient other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+
+        if (this.Id != other.Id ||
+            this.Name != other.Name ||
+            this.ParentId != other.ParentId ||
+            this.ShelfDisplay != other.ShelfDisplay ||
+            this.types.Count != other.types.Count ||
+            this.applications.Count != other.applications.Count ||
+            this.variations.Count != other.variations.Count)
+        {
+            return false;
+        }
+
+        for (var i = 0; i < this.types.Count; i++)
+        {
+            if (this.types[i] != other.types[i])
+            {
+                return false;
+            }
+        }
+
+        for (var i = 0; i < this.applications.Count; i++)
+        {
+            if (this.applications[i] != other.applications[i])
+            {
+                return false;
+            }
+        }
+
+        for (var i = 0; i < this.variations.Count; i++)
+        {
+            if (!this.variations[i].IsSameAs(other.variations[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private Ingredient SetParentId(string parentId)
@@ -186,29 +226,5 @@ public class Ingredient : Entity, IAggregateRoot
         }
 
         return this;
-    }
-
-    private Ingredient SetHash(string hash)
-    {
-        this.Hash = !string.IsNullOrWhiteSpace(hash)
-            ? hash
-            : throw new CocktailsApiDomainException($"{nameof(hash)} cannot be null or empty");
-
-        return this;
-    }
-
-    public string RegenerateHash()
-    {
-        var bytes = System.Text.Encoding.UTF8.GetBytes(
-            string.Join(',', this.types) +
-            string.Join(',', this.applications) +
-            this.Id +
-            this.Name +
-            this.ParentId ?? string.Empty +
-            this.ShelfDisplay +
-            string.Join(',', this.variations.Select(x => x.Id + x.Name + string.Join(',', x.Applications ?? []))));
-
-        this.Hash = Base64.Encode(bytes).GetHashCode().ToString();
-        return this.Hash;
     }
 }

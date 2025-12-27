@@ -27,6 +27,17 @@ public class CocktailInstructionStep : ValueObject
             : throw new CocktailsApiDomainException($"{nameof(order)} must be greater than or equal to zero");
     }
 
+    public bool IsSameAs(CocktailInstructionStep other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+
+        return this.DisplayValue == other.DisplayValue
+            && this.Order == other.Order;
+    }
+
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return this.DisplayValue;

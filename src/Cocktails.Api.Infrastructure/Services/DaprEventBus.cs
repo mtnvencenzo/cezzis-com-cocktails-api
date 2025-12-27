@@ -50,7 +50,8 @@ public class DaprEventBus(
             {
                 { "CorrelationId", useableCorrelationId },
                 { "ContentType", contentType },
-                { "Label", messageLabel }
+                { "Label", messageLabel },      // for servicebus
+                { "routingKey", messageLabel }  // for rabbitmq
             });
 
         this.logger.LogInformation("Message published {Label}", messageLabel);

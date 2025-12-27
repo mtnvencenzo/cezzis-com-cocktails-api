@@ -82,7 +82,7 @@ public class UpdateAccountOwnedProfileCommandHandler(
                 contentType: "application/json",
                 messageLabel: pubSubConfig.Value.AccountPublisher.Subject,
                 configName: pubSubConfig.Value.AccountPublisher.DaprBuildingBlock,
-                topicName: pubSubConfig.Value.AccountPublisher.TopicName,
+                topicName: pubSubConfig.Value.AccountPublisher.TopicName ?? pubSubConfig.Value.AccountPublisher.DaprBuildingBlock,
                 correlationId: accountUpdatedEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }

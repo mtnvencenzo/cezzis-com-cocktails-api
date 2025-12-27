@@ -6342,15 +6342,6 @@
         "requirement": "required"
       },
       {
-        "ingredientId": "mint",
-        "variationId": "mint-sprig",
-        "units": 1,
-        "uoM": "item",
-        "preparation": "none",
-        "suggestions": "",
-        "requirement": "required"
-      },
-      {
         "ingredientId": "angostura-bitters",
         "units": 4,
         "uoM": "dashes",
@@ -8307,15 +8298,6 @@
         "ingredientId": "lemons",
         "variationId": "lemon-wheels",
         "units": 2,
-        "uoM": "item",
-        "preparation": "none",
-        "suggestions": "",
-        "requirement": "required"
-      },
-      {
-        "ingredientId": "mint",
-        "variationId": "mint-sprig",
-        "units": 1,
         "uoM": "item",
         "preparation": "none",
         "suggestions": "",

@@ -2,7 +2,7 @@
     "rest-client.enableTelemetry": false,
     "rest-client.environmentVariables": {
         "local": {
-          "host": "https://localhost:7178",
+          "host": "http://localhost:7179",
           "apimkey": ""
         },
         "prod-apim": {

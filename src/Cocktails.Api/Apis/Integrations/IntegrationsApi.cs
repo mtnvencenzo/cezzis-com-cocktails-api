@@ -28,36 +28,57 @@ public static class IntegrationsApi
             .ExcludeFromDescription()
             .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
-        groupBuilder.MapPost("/zoho/email", SendZohoEmail)
+        // ==============================================================================================================================
+        // Some things to note with dapr
+        // - dapr can only POST and not PUT
+        // - returning a 200 OK is required for dapr to consider the message processed successfully (it will aknowledge the message on the broker side)
+        // - Pubsub allows for custom routes but Bindings do not. For bindings, the route must exactly match the dapr building block component name
+        // - Servicebus allowed for pubsub to existing queues with custom routes, RabbitMQ does not,  Rabbit requires the use of bindings for existing queues
+        // - WIth bindings, you do not specify the topic/queue name in the MapPost, as that is handled by the dapr component configuration
+        // ------------------------------------------------------------------
+        // Here's a pubsub example for reference:
+        // groupBuilder.MapPost("/accounts/owned/profile", UpdateIdentityProfile)
+        //     .WithName(nameof(UpdateIdentityProfile))
+        //     .WithDisplayName(nameof(UpdateIdentityProfile))
+        //     .WithDescription("Syncs an account profile with the identity provider")
+        //     .WithTopic(accountSubscriberOptions.DaprBuildingBlock, accountSubscriberOptions.QueueName);
+        // ==============================================================================================================================
+
+        app.MapPost($"/{emailSubscriberOptions.DaprBuildingBlock}", SendZohoEmail)
             .WithName(nameof(SendZohoEmail))
             .WithDisplayName(nameof(SendZohoEmail))
             .WithDescription("Sends a zoho email message to zoho's smtp servers")
-            .WithTopic(emailSubscriberOptions.DaprBuildingBlock, emailSubscriberOptions.QueueName);
+            .ExcludeFromDescription()
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
         // dapr can only POST and not PUT
-        groupBuilder.MapPost("/accounts/owned/profile", UpdateIdentityProfile)
+        app.MapPost($"/{accountSubscriberOptions.DaprBuildingBlock}", UpdateIdentityProfile)
             .WithName(nameof(UpdateIdentityProfile))
             .WithDisplayName(nameof(UpdateIdentityProfile))
             .WithDescription("Syncs an account profile with the identity provider")
-            .WithTopic(accountSubscriberOptions.DaprBuildingBlock, accountSubscriberOptions.QueueName);
+            .ExcludeFromDescription()
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
-        groupBuilder.MapPost("/accounts/owned/profile/email", UpdateIdentityProfileEmail)
+        app.MapPost($"/{accountEmailSubscriberOptions.DaprBuildingBlock}", UpdateIdentityProfileEmail)
             .WithName(nameof(UpdateIdentityProfileEmail))
             .WithDisplayName(nameof(UpdateIdentityProfileEmail))
             .WithDescription("Syncs an account profile email with the identity provider")
-            .WithTopic(accountEmailSubscriberOptions.DaprBuildingBlock, accountEmailSubscriberOptions.QueueName);
+            .ExcludeFromDescription()
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
-        groupBuilder.MapPost("/accounts/owned/profile/password", UpdateIdentityProfilePassword)
+        app.MapPost($"/{accountPasswordSubscriberOptions.DaprBuildingBlock}", UpdateIdentityProfilePassword)
             .WithName(nameof(UpdateIdentityProfilePassword))
             .WithDisplayName(nameof(UpdateIdentityProfilePassword))
             .WithDescription("Syncs an account profile password with the identity provider")
-            .WithTopic(accountPasswordSubscriberOptions.DaprBuildingBlock, accountPasswordSubscriberOptions.QueueName);
+            .ExcludeFromDescription()
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
-        groupBuilder.MapPost("/cocktails/ratings", UpdateCocktailRating)
+        app.MapPost($"/{cocktailRatingSubscriberOptions.DaprBuildingBlock}", UpdateCocktailRating)
             .WithName(nameof(UpdateCocktailRating))
             .WithDisplayName(nameof(UpdateCocktailRating))
             .WithDescription("Updates the rating on a cocktail for a single user account rating")
-            .WithTopic(cocktailRatingSubscriberOptions.DaprBuildingBlock, cocktailRatingSubscriberOptions.QueueName);
+            .ExcludeFromDescription()
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
         return groupBuilder;
     }

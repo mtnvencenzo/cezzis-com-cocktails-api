@@ -111,7 +111,7 @@ dotnet dev-certs https --trust
 ```bash
 dotnet run --project src/Cocktails.Api/Cocktails.Api.csproj
 ```
-- Local API docs: https://localhost:7178/scalar/v1
+- Local API docs: http://localhost:7179/scalar/v1
 
 5) Run tests
 ```bash

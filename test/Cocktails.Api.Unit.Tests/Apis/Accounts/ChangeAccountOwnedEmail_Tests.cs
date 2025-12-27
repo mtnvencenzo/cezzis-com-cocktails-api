@@ -67,9 +67,9 @@ public class ChangeAccountOwnedEmail_Tests : ServiceTestBase
                 x.Email == request.Email &&
                 x.OwnedAccountId == account.Id &&
                 x.OwnedAccountSubjectId == account.SubjectId),
-                "account-email-svc",
-                "pubsub-sb-topics-cocktails-account-email",
-                "fake-sbt-vec-eus-loc-cocktails-account-email-001",
+                "account.owned.email.updated",
+                "pubsub-account-updates-topic",
+                "account-updates-topic",
                 "application/json",
                 It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
             It.IsAny<CancellationToken>()), Times.Once);

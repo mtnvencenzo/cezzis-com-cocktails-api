@@ -9,4 +9,6 @@ public class CocktailsApiConfig
     public required string BaseOpenApiUri { get; set; }
 
     public required string ApimHostKey { get; set; }
+
+    public bool SeedDataOnlyIfEmpty { get; set; } = true;
 }

@@ -97,9 +97,6 @@ public class Cocktail : Entity, IAggregateRoot
     [JsonInclude]
     public CocktailRating Rating { get; private set; }
 
-    [JsonInclude]
-    public string Hash { get; private set; }
-
     [JsonIgnore]
     public IList<string> SearchableTitles => this.searchableTitles;
 
@@ -155,8 +152,7 @@ public class Cocktail : Entity, IAggregateRoot
             .SetContentFile(from.ContentFile)
             .SetImages([.. from.images])
             .SetInstructions([.. from.instructions])
-            .SetIngredients([.. from.ingredients])
-            .SetHash(from.Hash);
+            .SetIngredients([.. from.ingredients]);
 
         this.SetModifiedOn(DateTimeOffset.Now);
         return this;
@@ -340,15 +336,6 @@ public class Cocktail : Entity, IAggregateRoot
         return this;
     }
 
-    private Cocktail SetHash(string hash)
-    {
-        this.Hash = !string.IsNullOrWhiteSpace(hash)
-            ? hash
-            : throw new CocktailsApiDomainException($"{nameof(hash)} cannot be null or empty");
-
-        return this;
-    }
-
     public string GetIngredientsMarkDownDescription()
     {
         var ingredients = this.Ingredients
@@ -466,27 +453,117 @@ public class Cocktail : Entity, IAggregateRoot
         return this;
     }
 
-    public string RegenerateHash()
+    public bool IsSameAs(Cocktail other)
     {
-        var bytes = System.Text.Encoding.UTF8.GetBytes(
-            string.Join(',', this.glassware) +
-            this.Content +
-            this.ContentFile +
-            this.Description +
-            this.DescriptiveTitle +
-            string.Join(',', this.Eras) +
-            this.Id +
-            this.IsIba.ToString() +
-            this.PrepTimeMinutes.ToString() +
-            this.PublishedOn.ToString() +
-            string.Join(',', this.searchableTitles) +
-            this.Serves.ToString() +
-            this.Title +
-            string.Join(',', this.ingredients.Select(x => x.GenerateHash())) +
-            string.Join(',', this.instructions.Select(x => x.Order.ToString() + x.DisplayValue)) +
-            string.Join(',', this.images.Select(x => x.Type.ToString() + x.Height.ToString() + x.Width.ToString() + x.Uri.ToString())));
+        if (other == null)
+        {
+            return false;
+        }
 
-        this.Hash = Base64.Encode(bytes).GetHashCode().ToString();
-        return this.Hash;
+        if (string.Join(',', this.glassware) != string.Join(',', other.glassware))
+        {
+            return false;
+        }
+
+        if (this.Content != other.Content)
+        {
+            return false;
+        }
+
+        if (this.ContentFile != other.ContentFile)
+        {
+            return false;
+        }
+
+        if (this.Description != other.Description)
+        {
+            return false;
+        }
+
+        if (this.DescriptiveTitle != other.DescriptiveTitle)
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.Eras) != string.Join(',', other.Eras))
+        {
+            return false;
+        }
+
+        if (this.Id != other.Id)
+        {
+            return false;
+        }
+
+        if (this.IsIba != other.IsIba)
+        {
+            return false;
+        }
+
+        if (this.PrepTimeMinutes != other.PrepTimeMinutes)
+        {
+            return false;
+        }
+
+        if (this.PublishedOn != other.PublishedOn)
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.searchableTitles) != string.Join(',', other.searchableTitles))
+        {
+            return false;
+        }
+
+        if (this.Serves != other.Serves)
+        {
+            return false;
+        }
+
+        if (this.Title != other.Title)
+        {
+            return false;
+        }
+
+        if (this.ingredients.Count != other.ingredients.Count)
+        {
+            return false;
+        }
+
+        for (var i = 0; i < this.ingredients.Count; i++)
+        {
+            if (!this.ingredients[i].IsSameAs(other.ingredients[i]))
+            {
+                return false;
+            }
+        }
+
+        if (this.instructions.Count != other.instructions.Count)
+        {
+            return false;
+        }
+
+        for (var i = 0; i < this.instructions.Count; i++)
+        {
+            if (!this.instructions[i].IsSameAs(other.instructions[i]))
+            {
+                return false;
+            }
+        }
+
+        if (this.images.Count != other.images.Count)
+        {
+            return false;
+        }
+
+        for (var i = 0; i < this.images.Count; i++)
+        {
+            if (!this.images[i].IsSameAs(other.images[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
