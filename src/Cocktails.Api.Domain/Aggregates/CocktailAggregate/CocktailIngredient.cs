@@ -434,6 +434,22 @@ public class CocktailIngredient : ValueObject
 
     public string GetDisplayValue() => $"{this.GetMeasurementDisplay()} {this.Name} {this.GetIngredientSuffix()}".Trim();
 
+    public bool IsSameAs(CocktailIngredient other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+
+        return this.IngredientId == other.IngredientId
+            && this.VariationId == other.VariationId
+            && this.Units == other.Units
+            && this.UoM == other.UoM
+            && this.Preparation == other.Preparation
+            && this.Suggestions == other.Suggestions
+            && this.Requirement == other.Requirement;
+    }
+
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return this.IngredientId;

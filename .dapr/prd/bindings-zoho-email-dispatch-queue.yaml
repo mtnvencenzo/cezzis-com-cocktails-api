@@ -2,23 +2,23 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 
 metadata:
-  name: pubsub-cocktail-user-actions-topic
+  name: bindings-zoho-email-dispatch-queue
 
 spec:
-  type: pubsub.rabbitmq
+  type: bindings.rabbitmq
   version: v1
   metadata:
-    - name: exchangeName
-      value: "cocktail-user-actions-topic"
-    - name: exchangeKind
-      value: "topic"
-    - name: connectionString
+    - name: queueName
+      value: "zoho-email-dispatch-queue"
+    - name: host
       secretKeyRef:
         name: rabbitmq_connectionstring
     - name: durable
       value: "true"
     - name: deletedWhenUnused
       value: "false"
+    - name: direction
+      value: "input"
 scopes:
   - cocktails-api-dapr
 

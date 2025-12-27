@@ -85,9 +85,9 @@ public class RateCocktail_Tests : ServiceTestBase
             It.Is<CocktailRatingEvent>(x =>
                 x.CocktailId == request.CocktailId &&
                 x.Stars == request.Stars),
-            "cocktail-ratings-svc",
-            "pubsub-sb-topics-cocktails-rating",
-            "fake-sbt-vec-eus-loc-cocktails-rating-001",
+            "cocktail.user.rated",
+            "pubsub-cocktail-user-actions-topic",
+            "cocktail-user-actions-topic",
             "application/json",
             It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
             It.IsAny<CancellationToken>()), Times.Once);

@@ -61,7 +61,7 @@ public class ChangeAccountOwnedPasswordCommandHandler(
                 contentType: "application/json",
                 messageLabel: pubSubConfig.Value.AccountPasswordPublisher.Subject,
                 configName: pubSubConfig.Value.AccountPasswordPublisher.DaprBuildingBlock,
-                topicName: pubSubConfig.Value.AccountPasswordPublisher.TopicName,
+                topicName: pubSubConfig.Value.AccountPasswordPublisher.TopicName ?? pubSubConfig.Value.AccountPasswordPublisher.DaprBuildingBlock,
                 correlationId: updatePasswordEvent.CorrelationId,
                 cancellationToken: cancellationToken);
         }

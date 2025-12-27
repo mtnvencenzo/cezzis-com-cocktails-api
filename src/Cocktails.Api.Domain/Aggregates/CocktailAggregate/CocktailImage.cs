@@ -48,6 +48,19 @@ public class CocktailImage : ValueObject
         return this;
     }
 
+    public bool IsSameAs(CocktailImage other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+
+        return this.Uri == other.Uri
+            && this.Type == other.Type
+            && this.Width == other.Width
+            && this.Height == other.Height;
+    }
+
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return this.Uri;

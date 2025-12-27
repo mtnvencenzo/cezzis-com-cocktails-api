@@ -77,9 +77,9 @@ public class SendCocktailRecommendation_Tests : ServiceTestBase
                     x.To.First().Address == "cezzi@cezzis.com" &&
                     x.To.First().DisplayName == "Caesar" &&
                     x.Body.Contains(request.Recommendation.GetRecommendation())),
-                It.Is<string>(x => x == "email-svc"),
-                It.Is<string>(x => x == "pubsub-sb-topics-cocktails-email"),
-                It.Is<string>(x => x == "fake-sbt-vec-eus-loc-cocktails-email-001"),
+                It.Is<string>(x => x == "cocktail.user.recommendation"),
+                It.Is<string>(x => x == "pubsub-cocktail-user-actions-topic"),
+                It.Is<string>(x => x == "cocktail-user-actions-topic"),
                 It.Is<string>(x => x == "application/json"),
                 It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
                 It.Is<CancellationToken>(x => x == this.httpContext.RequestAborted)), Times.Once());
@@ -311,9 +311,9 @@ public class SendCocktailRecommendation_Tests : ServiceTestBase
                     x.To.First().Address == "cezzi@cezzis.com" &&
                     x.To.First().DisplayName == "Caesar" &&
                     x.Body.Contains(request.Recommendation.GetRecommendation())),
-                It.Is<string>(x => x == "email-svc"),
-                It.Is<string>(x => x == "pubsub-sb-topics-cocktails-email"),
-                It.Is<string>(x => x == "fake-sbt-vec-eus-loc-cocktails-email-001"),
+                It.Is<string>(x => x == "cocktail.user.recommendation"),
+                It.Is<string>(x => x == "pubsub-cocktail-user-actions-topic"),
+                It.Is<string>(x => x == "cocktail-user-actions-topic"),
                 It.Is<string>(x => x == "application/json"),
                 It.Is<string>(s => !string.IsNullOrWhiteSpace(s)),
                 It.Is<CancellationToken>(x => x == this.httpContext.RequestAborted)), Times.Once());

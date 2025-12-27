@@ -4,8 +4,6 @@ using global::Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 using global::Cocktails.Api.Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 public record SeedIngredientsCommand(bool OnlyIfEmpty = false) : IRequest<bool>;
 
@@ -36,23 +34,27 @@ public class SeedIngredientsCommandHandler(
             if (existing == null)
             {
                 ingredientRepository.Add(ingredient);
-                logger.LogInformation("Adding ingredient {IngredientId}", ingredient.Id);
+                logger.LogInformation("Adding ingredient {ingredient_id}", ingredient.Id);
                 hasChanges = true;
             }
             else
             {
-                if (existing.Hash != ingredient.RegenerateHash())
+                if (existing.IsSameAs(ingredient) == false)
                 {
-                    logger.LogInformation("Updating ingredient {IngredientId}", ingredient.Id);
+                    logger.LogInformation("Updating ingredient {ingredient_id}", ingredient.Id);
                     existing.MergeUpdate(ingredient);
                     hasChanges = true;
+                }
+                else
+                {
+                    logger.LogInformation("No update needed for ingredient {ingredient_id}", ingredient.Id);
                 }
             }
         }
 
         foreach (var delete in toDelete)
         {
-            logger.LogInformation("Deleting ingredient {IngredientId}", delete.Id);
+            logger.LogInformation("Deleting ingredient {ingredient_id}", delete.Id);
             ingredientRepository.Delete(delete);
             hasChanges = true;
         }

@@ -4,8 +4,6 @@ using global::Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using global::Cocktails.Api.Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 public record SeedCocktailsCommand(bool OnlyIfEmpty = false) : IRequest<bool>;
 
@@ -18,7 +16,7 @@ public class SeedCocktailsCommandHandler(
     public async Task<bool> Handle(SeedCocktailsCommand command, CancellationToken cancellationToken)
     {
         var availableCocktails = cocktailsDataStore.Cocktails;
-        var hasChanges = false;
+        var modifiedCocktails = new List<string>();
         var any = (await cocktailRepository.Items.FirstOrDefaultAsync(cancellationToken)) != null;
 
         if (command.OnlyIfEmpty && any)
@@ -26,39 +24,36 @@ public class SeedCocktailsCommandHandler(
             return false;
         }
 
-        var modifiedCocktails = new List<string>();
-
         foreach (var cocktail in availableCocktails)
         {
             var existing = await cocktailRepository.Items.FirstOrDefaultAsync(x => x.Id == cocktail.Id, cancellationToken);
 
             if (existing == null)
             {
-                logger.LogInformation("Adding cocktail {CocktailId}", cocktail.Id);
+                logger.LogInformation("Adding cocktail {cocktail_id}", cocktail.Id);
                 cocktailRepository.Add(cocktail);
                 modifiedCocktails.Add(cocktail.Id);
-                hasChanges = true;
             }
             else
             {
-                if (existing.Hash != cocktail.RegenerateHash())
+                if (existing.IsSameAs(cocktail) == false)
                 {
-                    logger.LogInformation("Updating cocktail {CocktailId}", cocktail.Id);
+                    logger.LogInformation("Updating cocktail {cocktail_id}", cocktail.Id);
                     existing.MergeUpdate(cocktail);
                     modifiedCocktails.Add(cocktail.Id);
-                    hasChanges = true;
+                }
+                else
+                {
+                    logger.LogInformation("No update needed for cocktail {cocktail_id}", cocktail.Id);
                 }
             }
         }
 
-        if (hasChanges)
+        if (modifiedCocktails.Count > 0)
         {
             await cocktailRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
             cocktailRepository.ClearCache();
-        }
 
-        if (modifiedCocktails.Count > 0)
-        {
             // If the update occured successfully, republish the cocktail
             // to the event broker for external system integrations (re-embed the cocktail)
             var commandResult = await mediator.Send(
