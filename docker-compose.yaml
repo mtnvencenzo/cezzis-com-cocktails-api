@@ -44,6 +44,13 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-aisearch
       - OTEL_SERVICE_NAMESPACE=cezzis
+      - QDRANT_HOST=http://qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_API_KEY=
+      - QDRANT_COLLECTION_NAME=cocktails-prd
+      - QDRANT_VECTOR_SIZE=768
+      - QDRANT_USE_HTTPS=false
+      - HUGGINGFACE_INFERENCE_MODEL=http://tei:8989
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
@@ -183,19 +190,15 @@ services:
       - EMBEDDING_AGENT_ENABLED=true
       - EMBEDDING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-chunking-results-prd
       - EMBEDDING_AGENT_KAFKA_NUM_CONSUMERS=1
-      - QDRANT_HOST=http://qdrant
-      - QDRANT_PORT=6333
-      - QDRANT_API_KEY=
-      - QDRANT_COLLECTION_NAME=cocktails-prd
-      - QDRANT_VECTOR_SIZE=768
-      - QDRANT_USE_HTTPS=false
-      - HUGGINGFACE_INFERENCE_MODEL=http://tei:8989
+      - AISEARCH_API_BASE_URL=http://cocktails-aisearch:8010
+      - AISEARCH_API_TIMEOUT_SECONDS=60
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
       app-internal-network:
     depends_on:
       - infra-bootstrapper
+      - cocktails-aisearch
 
   infra-bootstrapper:
     container_name: infra-bootstrapper
