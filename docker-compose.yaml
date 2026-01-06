@@ -41,6 +41,7 @@ services:
     ports:
       - "8010:8010"
     environment:
+      - COCKTAILS_AISEARCH_ALLOWED_ORIGINS=http://localhost:4001,http://localhost:4002
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-aisearch
       - OTEL_SERVICE_NAMESPACE=cezzis
@@ -50,6 +51,9 @@ services:
       - QDRANT_COLLECTION_NAME=cocktails-prd
       - QDRANT_VECTOR_SIZE=768
       - QDRANT_USE_HTTPS=false
+      - QDRANT_SEMANTIC_SEARCH_LIMIT=200
+      - QDRANT_SEMANTIC_SEARCH_SCORE_THRESHOLD=0.2
+      - QDRANT_SEMANTIC_SEARCH_TOTAL_SCORE_THRESHOLD=0.5
       - HUGGINGFACE_INFERENCE_MODEL=http://tei:8989
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
@@ -75,6 +79,7 @@ services:
       - VITE_AUTH0_COCKTAILS_API_AUDIENCE=https://cezzis-cocktails-api
       - VITE_COCKTAILS_API_URL=http://localhost:7177
       - VITE_COCKTAILS_IMAGE_URL=http://localhost:7177/api/v1/images
+      - VITE_AISEARCH_API_URL=http://localhost:8010
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     volumes:
