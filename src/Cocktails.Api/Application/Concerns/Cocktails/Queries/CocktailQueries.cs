@@ -214,73 +214,73 @@ public class CocktailQueries(
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Spirit, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel2($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Liqueurs: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Liqueur.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Liqueur, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel3($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Fruits: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Fruit.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Fruit, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel4($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Vegetables: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Vegetable.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Vegetable, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel5($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             HerbsAndFlowers: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Herb.ToString(), StringComparer.OrdinalIgnoreCase) || x.Types.Contains(IngredientType.Flowers.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, x.Types.Contains(IngredientType.Herb.ToString(), StringComparer.OrdinalIgnoreCase) ? IngredientType.Herb : IngredientType.Flowers, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel6($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             SyrupsAndSauces: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Syrup.ToString(), StringComparer.OrdinalIgnoreCase) || x.Types.Contains(IngredientType.Sauce.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, x.Types.Contains(IngredientType.Syrup.ToString(), StringComparer.OrdinalIgnoreCase) ? IngredientType.Syrup : IngredientType.Sauce, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel7($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Bitters: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Bitters.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Bitters, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel8($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Proteins: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Protein.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Protein, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel9($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Juices: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Juice.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Juice, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel10($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Dilutions: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Dilution.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, IngredientType.Dilution, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel11($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             BeerWineChampagne: [.. ingredients
                 .Where(x => x.Types.Contains(IngredientType.Beer.ToString(), StringComparer.OrdinalIgnoreCase) || x.Types.Contains(IngredientType.Wine.ToString(), StringComparer.OrdinalIgnoreCase) || x.Types.Contains(IngredientType.Champagne.ToString(), StringComparer.OrdinalIgnoreCase))
                 .Select(x => new IngredientFilter(x.IngredientId, x.Types.Contains(IngredientType.Beer.ToString(), StringComparer.OrdinalIgnoreCase) ? IngredientType.Beer : x.Types.Contains(IngredientType.Wine.ToString(), StringComparer.OrdinalIgnoreCase) ? IngredientType.Wine : IngredientType.Champagne, x.BaseName))
                 .DistinctBy(x => x.Name)
                 .OrderBy(x => x.Name)
-                .Select(x => new IngredientFilterModel12($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
+                .Select(x => new IngredientFilterModel($"{x.Type.ToString().ToLower()}-{x.Id.ToLower()}", x.Name))],
             Eras: [.. allCocktails
                 .SelectMany(x => x.Eras)
                 .Select(x => x)
                 .Distinct()
                 .OrderBy(x => x)
-                .Select(x => new IngredientFilterModel13($"era-{x.ToLower().Replace(" ", "-")}", x))]
+                .Select(x => new IngredientFilterModel($"era-{x.ToLower().Replace(" ", "-")}", x))]
         );
 
         return Task.FromResult(filters);

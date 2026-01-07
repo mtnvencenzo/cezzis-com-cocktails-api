@@ -15,49 +15,49 @@ public record CocktailIngredientFiltersRs
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against spirits")]
-    IEnumerable<IngredientFilterModel2> Spirits,
+    IEnumerable<IngredientFilterModel> Spirits,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against liqueurs")]
-    IEnumerable<IngredientFilterModel3> Liqueurs,
+    IEnumerable<IngredientFilterModel> Liqueurs,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against friuts")]
-    IEnumerable<IngredientFilterModel4> Fruits,
+    IEnumerable<IngredientFilterModel> Fruits,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against vegetables")]
-    IEnumerable<IngredientFilterModel5> Vegetables,
+    IEnumerable<IngredientFilterModel> Vegetables,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against herbs and flowers")]
-    IEnumerable<IngredientFilterModel6> HerbsAndFlowers,
+    IEnumerable<IngredientFilterModel> HerbsAndFlowers,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against syrups and sauces")]
-    IEnumerable<IngredientFilterModel7> SyrupsAndSauces,
+    IEnumerable<IngredientFilterModel> SyrupsAndSauces,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against bitters")]
-    IEnumerable<IngredientFilterModel8> Bitters,
+    IEnumerable<IngredientFilterModel> Bitters,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against proteins")]
-    IEnumerable<IngredientFilterModel9> Proteins,
+    IEnumerable<IngredientFilterModel> Proteins,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against juices")]
-    IEnumerable<IngredientFilterModel10> Juices,
+    IEnumerable<IngredientFilterModel> Juices,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against dilutions")]
-    IEnumerable<IngredientFilterModel11> Dilutions,
+    IEnumerable<IngredientFilterModel> Dilutions,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against beers, wines and champagnes")]
-    IEnumerable<IngredientFilterModel12> BeerWineChampagne,
+    IEnumerable<IngredientFilterModel> BeerWineChampagne,
 
     [property: Required()]
     [property: Description("The cocktail ingredient filters for searching against eras when cocktails were established")]
-    IEnumerable<IngredientFilterModel13> Eras
+    IEnumerable<IngredientFilterModel> Eras
 );

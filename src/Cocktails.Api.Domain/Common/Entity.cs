@@ -1,7 +1,5 @@
 ﻿namespace Cocktails.Api.Domain.Common;
 
-using Cocktails.Api.Domain.Aggregates.AccountAggregate;
-using MediatR;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
