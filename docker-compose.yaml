@@ -43,6 +43,10 @@ services:
     environment:
       - COCKTAILS_AISEARCH_ALLOWED_ORIGINS=http://localhost:4001,http://localhost:4002
       - APIM_HOST_KEY=
+      - AUTH0_DOMAIN=login.cezzis.com
+      - AUTH0_API_AUDIENCE=https://cezzis-aisearch-api
+      - AUTH0_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
+      - AUTH0_ISSUER=https://login.cezzis.com/
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-aisearch
       - OTEL_SERVICE_NAMESPACE=cezzis
@@ -188,11 +192,15 @@ services:
     restart: unless-stopped
     environment:
       - ENV=prd
-      - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
-      - KAFKA_CONSUMER_GROUP=cocktails-ingestion-embedding-agent
+      - OAUTH_DOMAIN=login.cezzis.com
+      - OAUTH_CLIENT_ID=akyprIvjnc1g1KHkCeHzzuvuYmf8cz88
+      - OAUTH_AUDIENCE=https://cezzis-aisearch-api
+      - OAUTH_WRITE_EMBEDDINGS_SCOPE=write:embeddings
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-ingestion-embedding-agent
       - OTEL_SERVICE_NAMESPACE=cezzis
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-broker-1:19092
+      - KAFKA_CONSUMER_GROUP=cocktails-ingestion-embedding-agent
       - EMBEDDING_AGENT_ENABLED=true
       - EMBEDDING_AGENT_KAFKA_TOPIC_NAME=cocktails-ingestion-chunking-results-prd
       - EMBEDDING_AGENT_KAFKA_NUM_CONSUMERS=1
