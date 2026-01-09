@@ -44,7 +44,7 @@ services:
       - COCKTAILS_AISEARCH_ALLOWED_ORIGINS=http://localhost:4001,http://localhost:4002
       - APIM_HOST_KEY=
       - AUTH0_DOMAIN=login.cezzis.com
-      - AUTH0_API_AUDIENCE=https://cezzis-aisearch-api
+      - AUTH0_AUDIENCE=https://cezzis-aisearch-api
       - AUTH0_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
       - AUTH0_ISSUER=https://login.cezzis.com/
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
