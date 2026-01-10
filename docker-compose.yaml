@@ -41,12 +41,13 @@ services:
     ports:
       - "8010:8010"
     environment:
+      - ENV=prd
       - COCKTAILS_AISEARCH_ALLOWED_ORIGINS=http://localhost:4001,http://localhost:4002
       - APIM_HOST_KEY=
-      - AUTH0_DOMAIN=login.cezzis.com
-      - AUTH0_AUDIENCE=https://cezzis-aisearch-api
-      - AUTH0_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
-      - AUTH0_ISSUER=https://login.cezzis.com/
+      - OAUTH_DOMAIN=login.cezzis.com
+      - OAUTH_AUDIENCE=https://cezzis-aisearch-api
+      - OAUTH_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
+      - OAUTH_ISSUER=https://login.cezzis.com/
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-aisearch
       - OTEL_SERVICE_NAMESPACE=cezzis
@@ -145,13 +146,15 @@ services:
       - EXTRACTION_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
       - EXTRACTION_AGENT_LLM_MODEL="qwen3:8b"
       - EXTRACTION_AGENT_USE_LLM=false
-      - LLM_HOST=http://ollama:11434
+      - LLM_HOST=http://host.docker.internal:11434
       - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
       - LANGFUSE_PUBLIC_KEY=pk-lf-94d15762-3559-47d1-a226-394bc83fa96a
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
       app-internal-network:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - infra-bootstrapper
 
@@ -174,7 +177,7 @@ services:
       - CHUNKING_AGENT_KAFKA_AUTO_OFFSET_RESET=earliest
       - CHUNKING_AGENT_LLM_MODEL=qwen2.5:7b
       - CHUNKING_AGENT_LOG_DIR=/chunking-agent/logs/
-      - LLM_HOST=http://ollama:11434
+      - LLM_HOST=http://host.docker.internal:11434
       - LANGFUSE_BASE_URL=https://us.cloud.langfuse.com
       - LANGFUSE_PUBLIC_KEY=pk-lf-94d15762-3559-47d1-a226-394bc83fa96a
     labels:
@@ -183,6 +186,8 @@ services:
       - /home/mtnvencenzo/cocktail-logs/prd/ingestion/chunking-agent:/chunking-agent/logs
     networks:
       app-internal-network:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - infra-bootstrapper
 
