@@ -8,7 +8,6 @@ using global::Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 using global::Cocktails.Api.Domain.Config;
 using global::Cocktails.Api.Infrastructure.Services;
 using Microsoft.Extensions.Options;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Threading;
@@ -57,80 +56,6 @@ public class CocktailQueries(
         );
 
         return Task.FromResult(rs);
-    }
-
-    public async Task<CocktailsListRs> GetCocktailsList(
-        string freeText,
-        int skip = 0,
-        int take = 20,
-        bool allowExcessiveTake = false,
-        List<string> filters = null,
-        CocktailDataIncludeModel[] include = null,
-        string[] matches = null,
-        bool matchExclusive = false,
-        bool useSearchIndex = false,
-        CancellationToken cancellationToken = default)
-    {
-        var useMatches = matches;
-
-        if (matchExclusive && useMatches == null)
-        {
-            useMatches = [];
-        }
-        else if (!matchExclusive && matches != null && matches.Length == 0)
-        {
-            useMatches = null;
-        }
-
-        var cocktails = useSearchIndex && !string.IsNullOrWhiteSpace(freeText)
-            ? await this.GetCocktails(string.Empty, 0, 2000, true, filters, useMatches, cancellationToken)
-            : await this.GetCocktails(freeText, skip, take, allowExcessiveTake, filters, useMatches, cancellationToken);
-
-        cocktails = useSearchIndex && !string.IsNullOrWhiteSpace(freeText)
-            ? await this.FilterCocktailsWithSearchIndex(cocktails, freeText, skip, take, cancellationToken)
-            : cocktails;
-
-        var glasswareConverter = TypeDescriptor.GetConverter(typeof(GlasswareTypeModel));
-        var uomConverter = TypeDescriptor.GetConverter(typeof(UofMTypeModel));
-        var ingredientTypeConverter = TypeDescriptor.GetConverter(typeof(IngredientTypeModel));
-        var ingredientApplicationConverter = TypeDescriptor.GetConverter(typeof(IngredientApplicationModel));
-        var preparationTypeConverter = TypeDescriptor.GetConverter(typeof(PreparationTypeModel));
-        var requirementTypeConverter = TypeDescriptor.GetConverter(typeof(IngredientRequirementTypeModel));
-
-        return new CocktailsListRs
-        (
-            Items: [.. cocktails.Select(x => new CocktailsListModel
-            (
-                Id: x.Id,
-                Title: x.Title,
-                IsIba: x.IsIba,
-                Rating: x.Rating != null ? x.Rating.Rating : 0,
-                PrepTimeMinutes: x.PrepTimeMinutes,
-                Glassware: [.. x.Glassware.Select(x => (GlasswareTypeModel)glasswareConverter.ConvertFrom(Enum.Parse<GlasswareType>(x, true)))],
-                Serves: x.Serves,
-                MainImages: include?.Contains(CocktailDataIncludeModel.mainImages) ?? false
-                    ? x.Images.Where(x => x.Type == CocktailImageType.Main).Select(x => x.Uri).ToList()
-                    : null,
-                SearchTiles: include?.Contains(CocktailDataIncludeModel.searchTiles) ?? false
-                    ? x.Images.Where(x => x.Type == CocktailImageType.SearchTile).Select(x => x.Uri).ToList()
-                    : null,
-                DescriptiveTitle: include?.Contains(CocktailDataIncludeModel.descriptiveTitle) ?? false
-                    ? x.DescriptiveTitle ?? string.Empty
-                    : null,
-                Ingredients: [.. x.Ingredients.Select(x => new IngredientModel
-                (
-                    UoM: (UofMTypeModel)uomConverter.ConvertFrom(x.UoM),
-                    Name: x.Name,
-                    Preparation: (PreparationTypeModel)preparationTypeConverter.ConvertFrom(x.Preparation),
-                    Requirement: (IngredientRequirementTypeModel)requirementTypeConverter.ConvertFrom(x.Requirement),
-                    Suggestions: x.Suggestions?.ToString() ?? string.Empty,
-                    Types: [.. x.Types.Select(x => (IngredientTypeModel)ingredientTypeConverter.ConvertFrom(Enum.Parse<IngredientType>(x, true)))],
-                    Applications: [.. x.Applications.Select(x => (IngredientApplicationModel)ingredientApplicationConverter.ConvertFrom(Enum.Parse<IngredientApplication>(x, true)))],
-                    Units: x.Units,
-                    Display: x.GetDisplayValue()
-                ))]
-            ))]
-        );
     }
 
     private async Task<List<Cocktail>> FilterCocktailsWithSearchIndex(

@@ -67,41 +67,6 @@ public static class AssertionHelpers
         ingredients[3].Preparation.Should().Be(PreparationTypeModel.None);
     }
 
-    public static void AssertCocktailListItem(Cocktail expected, CocktailsListModel actual, CocktailDataIncludeModel[] includes)
-    {
-        actual.Should().NotBeNull();
-        actual.Id.Should().Be(expected.Id);
-        actual.Title.Should().Be(expected.Title);
-        actual.IsIba.Should().Be(expected.IsIba);
-
-        if (includes.Contains(CocktailDataIncludeModel.descriptiveTitle))
-        {
-            actual.DescriptiveTitle.Should().Be(expected.DescriptiveTitle);
-        }
-        else
-        {
-            actual.DescriptiveTitle.Should().BeNull();
-        }
-
-        if (includes.Contains(CocktailDataIncludeModel.mainImages))
-        {
-            actual.MainImages.Should().HaveSameCount(expected.Images.Where(x => x.Type == CocktailImageType.Main));
-        }
-        else
-        {
-            actual.MainImages.Should().BeNull();
-        }
-
-        if (includes.Contains(CocktailDataIncludeModel.searchTiles))
-        {
-            actual.SearchTiles.Should().HaveSameCount(expected.Images.Where(x => x.Type == CocktailImageType.SearchTile));
-        }
-        else
-        {
-            actual.SearchTiles.Should().BeNull();
-        }
-    }
-
     public static void AssertCocktailModelMatches(Cocktail expected, CocktailModel actual, CocktailsApiConfig config)
     {
         expected.Should().NotBeNull();

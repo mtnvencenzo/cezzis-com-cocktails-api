@@ -19,11 +19,6 @@ public static class CocktailsApi
             .WithTags("Cocktails")
             .AllowAnonymous();
 
-        groupBuilder.MapGet("/", GetCocktailsList)
-            .WithName(nameof(GetCocktailsList))
-            .WithDisplayName(nameof(GetCocktailsList))
-            .WithDescription("Search the cocktail recipes");
-
         groupBuilder.MapPut("/", SeedCocktails)
             .WithName(nameof(SeedCocktails))
             .WithDisplayName(nameof(SeedCocktails))
@@ -76,42 +71,6 @@ public static class CocktailsApi
         }
 
         return TypedResults.Json<ProblemDetails>(ProblemDetailsExtensions.CreateValidationProblemDetails("Cocktail receipe not found", StatusCodes.Status404NotFound), statusCode: StatusCodes.Status404NotFound);
-    }
-
-    /// <summary>Searches the cocktail recipes</summary>
-    /// <param name="freeText">The free text search term to match against</param>
-    /// <param name="skip">The number of cocktail recipes to skip from the paged response</param>
-    /// <param name="take">The number of cocktail recipes to return</param>
-    /// <param name="cocktailsServices">The required services</param>
-    /// <param name="matches">A list of cocktail ids that can be included in the list</param>
-    /// <param name="matchExclusive">Whether or not the supplied matches must be exclusively returned</param>
-    /// <param name="include">The list of extension objects to include for each cocktail recipe</param>
-    /// <param name="filters">An optional list of filters to use when quering the cocktail recipes</param>
-    /// <returns></returns>
-    [ProducesDefaultResponseType(typeof(ProblemDetails))]
-    public async static Task<Results<Ok<CocktailsListRs>, JsonHttpResult<ProblemDetails>>> GetCocktailsList(
-        [FromQuery, Description("The free text search term to match against")] string freeText,
-        [FromQuery, Description("The number of cocktail recipes to skip from the paged response")] int? skip,
-        [FromQuery, Description("The number of cocktail recipes to return")] int? take,
-        [AsParameters] CocktailsServices cocktailsServices,
-        [FromQuery(Name = "m"), Description("A list of cocktails that can be included in the list")] string[] matches = null,
-        [FromQuery(Name = "match-exclusive"), Description("Whether or not the supplied matches must be exclusively returned")] bool? matchExclusive = false,
-        [FromQuery(Name = "inc"), Description("The list of extension objects to include for each cocktail recipe")] CocktailDataIncludeModel[] include = null,
-        [FromQuery(Name = "sf"), Description("An optional list of filters to use when quering the cocktail recipes")] string[] filters = null)
-    {
-        var rs = await cocktailsServices.Queries.GetCocktailsList(
-            freeText: freeText ?? string.Empty,
-            skip: skip ?? 0,
-            take: take ?? 20,
-            false,
-            filters: filters?.ToList() ?? [],
-            include: include,
-            matches: matches,
-            matchExclusive: matchExclusive ?? false,
-            useSearchIndex: cocktailsServices.SearchConfig.Value.UseSearchIndex,
-            cancellationToken: cocktailsServices.HttpContextAccessor.HttpContext.RequestAborted);
-
-        return TypedResults.Ok(rs);
     }
 
     /// <summary>Get the available cocktail ingredient filters to be used while performing a search</summary>

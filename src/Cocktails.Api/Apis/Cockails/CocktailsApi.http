@@ -37,21 +37,6 @@ X-Key: {{apimkey}}
 
 ###
 
-// ------------------------------------------------------------
-// Cocktails List
-// ------------------------------------------------------------
-
-
-GET {{host}}/api/v1/cocktails?freeText=las
-X-Key: {{apimkey}}
-
-###
-
-GET {{host}}/api/v1/cocktails?skip=0&take=12
-X-Key: {{apimkey}}
-
-###
-
 
 GET {{host}}/api/v1/cocktails?skip=0&take=2&inc=mainImages
 X-Key: {{apimkey}}
