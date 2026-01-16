@@ -68,6 +68,30 @@ services:
     depends_on:
       - infra-bootstrapper
 
+  cocktails-accounts:
+    container_name: cocktails-accounts
+    image: acrveceusgloshared001.azurecr.io/cezziscomaccountsapi:latest
+    restart: unless-stopped
+    ports:
+      - "8016:8016"
+    environment:
+      - ENV=prd
+      - ACCOUNTS_API_ALLOWED_ORIGINS=http://localhost:4001,http://localhost:4002
+      - APIM_HOST_KEY=
+      - OAUTH_DOMAIN=login.cezzis.com
+      - OAUTH_AUDIENCE=https://cezzis-accounts-api
+      - OAUTH_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
+      - OAUTH_ISSUER=https://login.cezzis.com/
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_SERVICE_NAME=cocktails-accounts
+      - OTEL_SERVICE_NAMESPACE=cezzis
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      app-internal-network:
+    depends_on:
+      - infra-bootstrapper
+
   cocktails-web:
     container_name: cocktails-web
     image: acrveceusgloshared001.azurecr.io/cocktailsweb:latest
@@ -234,7 +258,7 @@ services:
       - KAFKA_SECURITY_PROTOCOL=PLAINTEXT
       - COSMOSDB_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
       - COSMOSDB_COCKTAILS_DATABASE_NAME=cocktails-db-prd
-      - COSMOSDB_COCKTAILS_CONTAINER_DEFS=cezzis-cocktails-cocktail:/id,cezzis-cocktails-ingredient:/id,cezzis-accounts-account:/subjectId
+      - COSMOSDB_COCKTAILS_CONTAINER_DEFS=cezzis-cocktails-cocktail:/id,cezzis-cocktails-ingredient:/id,cezzis-accounts-account:/subjectId,cezzis-device-auth:/id
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cezzis-com-bootstrapper
       - OTEL_SERVICE_NAMESPACE=cezzis
