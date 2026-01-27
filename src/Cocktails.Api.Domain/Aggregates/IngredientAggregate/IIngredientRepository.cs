@@ -1,6 +1,5 @@
 ﻿namespace Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 
-using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Common;
 
 public interface IIngredientRepository : IRepository<Ingredient>, IReadonlyRepository<Ingredient>

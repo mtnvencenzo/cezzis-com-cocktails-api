@@ -2,13 +2,11 @@
 
 using Cezzi.Security.Recaptcha;
 using Cocktails.Api.Application.Behaviors.MediatRPipelines;
-using Cocktails.Api.Application.Concerns.Accounts.Queries;
 using Cocktails.Api.Application.Concerns.Cocktails.Queries;
 using Cocktails.Api.Application.Concerns.Cocktails.Services;
 using Cocktails.Api.Application.Concerns.Health.Queries;
 using Cocktails.Api.Application.Concerns.LegalDocuments.Queries;
 using Cocktails.Api.Application.Concerns.LocalImages.Queries;
-using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 using Cocktails.Api.Domain.Aggregates.HealthAggregate;
 using Cocktails.Api.Domain.Aggregates.IngredientAggregate;
@@ -35,7 +33,6 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<CocktailsWebConfig>(builder.Configuration.GetSection(CocktailsWebConfig.SectionName));
         builder.Services.Configure<EmailHandlingConfig>(builder.Configuration.GetSection(EmailHandlingConfig.SectionName));
         builder.Services.Configure<LocalhostImagesConfig>(builder.Configuration.GetSection(LocalhostImagesConfig.SectionName));
-        builder.Services.Configure<ZohoEmailConfig>(builder.Configuration.GetSection(ZohoEmailConfig.SectionName));
         builder.Services.Configure<BlobStorageConfig>(builder.Configuration.GetSection(BlobStorageConfig.SectionName));
         builder.Services.Configure<CosmosDbConfig>(builder.Configuration.GetSection(CosmosDbConfig.SectionName));
         builder.Services.Configure<SearchConfig>(builder.Configuration.GetSection(SearchConfig.SectionName));
@@ -45,10 +42,6 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<DaprConfig>(builder.Configuration.GetSection(DaprConfig.SectionName));
 
         builder.Services.AddCosomsContexts();
-
-        builder.Services.AddScoped<IAuth0ManagementClient, Auth0ManagementClient>();
-        builder.Services.AddSingleton<IAuth0ManagementTokenService, Auth0ManagementTokenService>();
-        builder.Services.AddZohoEmail();
 
         // add the authentication and authorization services to DI
         builder.Services.AddDefaultAuthentication(builder.Configuration);
@@ -78,7 +71,6 @@ internal static class ApplicationServiceExtensions
         builder.Services.AddScoped<IHealthQueries, HealthQueries>();
         builder.Services.AddScoped<ILegalDocumentQueries, LegalDocumentQueries>();
         builder.Services.AddScoped<ILocalImagesQueries, LocalImagesQueries>();
-        builder.Services.AddScoped<IAccountsQueries, AccountsQueries>();
         builder.Services.AddScoped<ICocktailModelConverter, CocktailModelConverter>();
 
         // Add validators for the MediatR validation pipeline behavior (validators based on FluentValidation library)
@@ -89,8 +81,6 @@ internal static class ApplicationServiceExtensions
         builder.Services.AddScoped<IngredientsDataStore>();
         builder.Services.AddScoped<ICocktailRepository, CocktailRepository>();
         builder.Services.AddScoped<IIngredientRepository, IngredientRepository>();
-        builder.Services.AddScoped<IAccountRepository, AccountRepository>();
-        builder.Services.AddScoped<IAccountCocktailRatingsRepository, AccountCocktailRatingsRepository>();
         builder.Services.AddScoped<LegalDataStore>();
         builder.Services.AddScoped<ILegalDocumentRepository, LegalDocumentRepository>();
         builder.Services.AddScoped<IHealthRepository, HealthRepository>();

@@ -1,9 +1,7 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
-using Cocktails.Api.Apis.Accounts;
 using Cocktails.Api.Apis.Cockails;
 using Cocktails.Api.Apis.Health;
-using Cocktails.Api.Apis.Integrations;
 using Cocktails.Api.Apis.Jobs;
 using Cocktails.Api.Apis.LegalDocuments;
 using Cocktails.Api.Apis.LocalImages;
@@ -16,7 +14,6 @@ internal static class EndpointExtensions
     internal static WebApplication UseApplicationEndpoints(this WebApplication app)
     {
         var rootApi = app.UseDefaultEndpoints();
-        rootApi.MapIntegrationsApi();
         rootApi.MapJobsApi();
         rootApi.MapSubscribeHandler();
 
@@ -30,7 +27,6 @@ internal static class EndpointExtensions
         cocktailsApi.MapHealthApiV1();
         cocktailsApi.MapLegalDocumentsApiV1();
         cocktailsApi.MapLocalImagesApiV1();
-        cocktailsApi.MapAccountsApiV1();
 
         return app;
     }

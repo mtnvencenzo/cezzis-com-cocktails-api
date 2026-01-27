@@ -3,10 +3,8 @@
 using Asp.Versioning;
 using Bogus;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
-using Cocktails.Api.Domain.Aggregates.AccountAggregate;
 using Cocktails.Api.Domain.Services;
 using Cocktails.Api.Infrastructure;
-using Cocktails.Api.Infrastructure.Services;
 using Cocktails.Api.StartupExtensions;
 using Cocktails.Api.Unit.Tests.Mocks;
 using Microsoft.AspNetCore.Builder;
@@ -32,8 +30,6 @@ public abstract class ServiceTestBase : IAsyncLifetime
     protected readonly Mock<IHttpClientFactory> httpClientFactoryMock;
     protected readonly Mock<IHttpContextAccessor> httpContextAccessorMock;
     protected readonly Mock<CocktailDbContext> cocktailDbContextMock;
-    protected readonly Mock<AccountDbContext> accountDbContextMock;
-    protected readonly Mock<IAuth0ManagementClient> auth0ManagementClientMock;
     protected readonly CancellationTokenSource cancellationTokenSource;
     protected readonly Mock<IEventBus> eventBusMock;
     protected MockHttpContext httpContext;
@@ -45,11 +41,6 @@ public abstract class ServiceTestBase : IAsyncLifetime
     {
         this.cocktailDbContextMock = new();
         this.cocktailDbContextMock.Setup(x => x.SaveEntitiesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(true);
-
-        this.accountDbContextMock = new();
-        this.accountDbContextMock.Setup(x => x.SaveEntitiesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(true);
-
-        this.auth0ManagementClientMock = new();
 
         this.eventBusMock = new();
 
@@ -115,8 +106,6 @@ public abstract class ServiceTestBase : IAsyncLifetime
             services.Replace(new ServiceDescriptor(typeof(IHttpClientFactory), this.httpClientFactoryMock.Object));
             services.Replace(new ServiceDescriptor(typeof(IHttpContextAccessor), this.httpContextAccessorMock.Object));
             services.Replace(new ServiceDescriptor(typeof(CocktailDbContext), this.cocktailDbContextMock.Object));
-            services.Replace(new ServiceDescriptor(typeof(AccountDbContext), this.accountDbContextMock.Object));
-            services.Replace(new ServiceDescriptor(typeof(IAuth0ManagementClient), this.auth0ManagementClientMock.Object));
             services.Replace(new ServiceDescriptor(typeof(IEventBus), this.eventBusMock.Object));
             servicePreprocessor?.Invoke(services);
         }
@@ -185,7 +174,6 @@ public abstract class ServiceTestBase : IAsyncLifetime
     private void Verify_NoOtherCalls()
     {
         this.eventBusMock.VerifyNoOtherCalls();
-        this.auth0ManagementClientMock.VerifyNoOtherCalls();
     }
 
     protected static T GetAsParameterServices<T>(IServiceProvider serviceProvider)
@@ -203,65 +191,6 @@ public abstract class ServiceTestBase : IAsyncLifetime
 
         return (T)constructor.Invoke([.. instances]);
     }
-
-    protected static (Account account, ClaimsIdentity claimsIdentity) GetAccount(string subjectId, bool onlyWithClaims = false)
-    {
-        var faker = new Faker();
-
-        var claimsIdentity = new ClaimsIdentity(
-        [
-            new(ClaimTypes.NameIdentifier, subjectId),
-            new(ClaimTypes.Name, subjectId),
-            new(ClaimsAccount.ClaimType_GivenName, new Faker().Name.FirstName()),
-            new(ClaimsAccount.ClaimType_FamilyName, new Faker().Name.LastName()),
-            new(ClaimsAccount.ClaimType_Email, faker.Internet.Email())
-        ]);
-
-        var account = new Account(new ClaimsAccount(claimsIdentity));
-
-        if (onlyWithClaims)
-        {
-            return (account, claimsIdentity);
-        }
-
-        var cocktailIds = new string[]
-        {
-            "mojito",
-            "margarita",
-            "old-fashioned",
-            "negroni",
-            "whiskey-sour",
-            "manhattan",
-            "daiquiri",
-            "cosmopolitan",
-            "pina-colada"
-        };
-
-        var numberOfFavorites = faker.Random.Int(1, cocktailIds.Length);
-
-        account
-            .SetAvatarUri(faker.Internet.Avatar())
-            .SetDisplayName(faker.Name.FullName())
-            .SetEmail(faker.Internet.Email())
-            .SetGivenName(faker.Name.FirstName())
-            .SetFamilyName(faker.Name.LastName())
-            .SetAccessibilitySettings(theme: AccessibilityTheme.Dark)
-            .SetOnNewCocktailAdditionsNotification(CocktailUpdatedNotification.Always)
-            .SetRatingsId(GuidString())
-            .SetUpdatedOn(DateTime.Now)
-            .ManageFavoriteCocktails(remove: [], add: [.. faker.PickRandom(cocktailIds, numberOfFavorites)])
-            .SetPrimaryAddress(
-                addressLine1: faker.Address.StreetAddress(),
-                addressLine2: faker.Address.SecondaryAddress(),
-                city: faker.Address.City(),
-                region: faker.Address.StateAbbr(),
-                subRegion: faker.Address.County(),
-                postalCode: faker.Address.ZipCode(),
-                country: faker.Address.CountryCode(Bogus.DataSets.Iso3166Format.Alpha3));
-
-        return (account, claimsIdentity);
-    }
-
     public Task InitializeAsync() => Task.CompletedTask;
 
     public async Task DisposeAsync()
