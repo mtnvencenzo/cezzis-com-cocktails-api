@@ -1,0 +1,94 @@
+namespace Cocktails.Api.Apis.Integrations;
+
+using Cocktails.Api.Application.Behaviors.DaprAppTokenAuthorization;
+using Cocktails.Api.Application.Concerns.Cocktails.Commands;
+using Cocktails.Api.Application.Concerns.Integrations.Events;
+using Cocktails.Api.Application.Exceptions;
+using Cocktails.Api.Domain;
+using Cocktails.Api.Domain.Config;
+using Dapr;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using System.Threading;
+
+public static class IntegrationsApi
+{
+    public static RouteGroupBuilder MapIntegrationsApi(this IEndpointRouteBuilder app)
+    {
+        var cocktailRatingSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.CocktailRatingSubscriber;
+
+        var groupBuilder = app.MapGroup("/integrations")
+            .WithTags("Integrations")
+            .ExcludeFromDescription()
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
+
+        // ==============================================================================================================================
+        // Some things to note with dapr
+        // - dapr can only POST and not PUT
+        // - returning a 200 OK is required for dapr to consider the message processed successfully (it will aknowledge the message on the broker side)
+        // - Pubsub allows for custom routes but Bindings do not. For bindings, the route must exactly match the dapr building block component name
+        // - Servicebus allowed for pubsub to existing queues with custom routes, RabbitMQ does not,  Rabbit requires the use of bindings for existing queues
+        // - WIth bindings, you do not specify the topic/queue name in the MapPost, as that is handled by the dapr component configuration
+        // ------------------------------------------------------------------
+        // Here's a pubsub example for reference:
+        // groupBuilder.MapPost("/accounts/owned/profile", UpdateIdentityProfile)
+        //     .WithName(nameof(UpdateIdentityProfile))
+        //     .WithDisplayName(nameof(UpdateIdentityProfile))
+        //     .WithDescription("Syncs an account profile with the identity provider")
+        //     .WithTopic(accountSubscriberOptions.DaprBuildingBlock, accountSubscriberOptions.QueueName);
+        // ==============================================================================================================================
+
+        app.MapPost($"/{cocktailRatingSubscriberOptions.DaprBuildingBlock}", UpdateCocktailRating)
+            .WithName(nameof(UpdateCocktailRating))
+            .WithDisplayName(nameof(UpdateCocktailRating))
+            .WithDescription("Updates the rating on a cocktail for a single user account rating")
+            .ExcludeFromDescription()
+            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
+
+        return groupBuilder;
+    }
+
+    /// <summary>Updates the rating on a cocktail for a single user account rating</summary>
+    /// <param name="cloudEvent"></param>
+    /// <param name="integrationServices"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> UpdateCocktailRating(
+        [FromBody] CloudEvent<CocktailRatingEvent> cloudEvent,
+        [AsParameters] IntegrationsServices integrationServices,
+        CancellationToken cancellationToken)
+    {
+        using var logScope = integrationServices.Logger.BeginScope(new Dictionary<string, object>
+        {
+            { Monikers.ServiceBus.MsgId, cloudEvent?.Data?.Id },
+            { Monikers.ServiceBus.MsgCorrelationId, cloudEvent?.Data?.CorrelationId },
+            { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
+        });
+
+        var success = await integrationServices.Mediator.Send(
+            request: cloudEvent.Data,
+            cancellationToken: cancellationToken);
+
+        // If the update occured successfully, republish the cocktail
+        // to the event broker for external system integrations (re-embed the cocktail)
+        if (success)
+        {
+            var commandResult = await integrationServices.Mediator.Send(
+                request: new PublishCocktailsCommand(
+                    BatchItemCount: 1,
+                    CocktailIds: [cloudEvent.Data.CocktailId]
+                ),
+                integrationServices.HttpContextAccessor.HttpContext.RequestAborted);
+
+            if (!commandResult)
+            {
+                integrationServices.Logger.LogError("Failed to publish cocktails batch");
+                return TypedResults.Json(ProblemDetailsExtensions.CreateValidationProblemDetails("Failed to publish cocktails", StatusCodes.Status500InternalServerError), statusCode: StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        return TypedResults.Ok();
+    }
+}
