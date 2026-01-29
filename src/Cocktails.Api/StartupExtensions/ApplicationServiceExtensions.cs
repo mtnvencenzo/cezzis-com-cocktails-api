@@ -33,9 +33,7 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<CocktailsWebConfig>(builder.Configuration.GetSection(CocktailsWebConfig.SectionName));
         builder.Services.Configure<EmailHandlingConfig>(builder.Configuration.GetSection(EmailHandlingConfig.SectionName));
         builder.Services.Configure<LocalhostImagesConfig>(builder.Configuration.GetSection(LocalhostImagesConfig.SectionName));
-        builder.Services.Configure<BlobStorageConfig>(builder.Configuration.GetSection(BlobStorageConfig.SectionName));
         builder.Services.Configure<CosmosDbConfig>(builder.Configuration.GetSection(CosmosDbConfig.SectionName));
-        builder.Services.Configure<SearchConfig>(builder.Configuration.GetSection(SearchConfig.SectionName));
         builder.Services.Configure<TestAccountConfig>(builder.Configuration.GetSection(TestAccountConfig.SectionName));
         builder.Services.Configure<Auth0Config>(builder.Configuration.GetSection(Auth0Config.SectionName));
         builder.Services.Configure<KafkaConfig>(builder.Configuration.GetSection(KafkaConfig.SectionName));
@@ -52,12 +50,6 @@ internal static class ApplicationServiceExtensions
 
         // Add dapr serice bus messaging to DI
         builder.Services.AddEventBus(builder.Configuration);
-
-        // Add dapr blob storage to DI
-        builder.Services.AddStorageBus();
-
-        // Add search client to DI
-        builder.Services.AddSearchClient();
 
         // Add mediator and commands to DI
         builder.Services.AddMediatR(cfg =>

@@ -79,7 +79,7 @@ public static class CocktailsApi
     [ProducesDefaultResponseType(typeof(ProblemDetails))]
     public async static Task<Results<Ok<CocktailIngredientFiltersRs>, JsonHttpResult<ProblemDetails>>> GetCocktailIngredientFilters([AsParameters] CocktailsServices cocktailsServices)
     {
-        var rs = await cocktailsServices.Queries.GetCocktailIngredientFilters(cocktailsServices.HttpContextAccessor.HttpContext.RequestAborted);
+        var rs = await cocktailsServices.Queries.GetCocktailIngredientFilters();
 
         return TypedResults.Ok(rs);
     }

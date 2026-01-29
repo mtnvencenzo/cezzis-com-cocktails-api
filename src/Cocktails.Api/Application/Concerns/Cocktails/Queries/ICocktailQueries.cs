@@ -10,7 +10,7 @@ public interface ICocktailQueries
 
     Task<string> GetCocktailsSiteMap(CancellationToken cancellationToken = default);
 
-    Task<CocktailIngredientFiltersRs> GetCocktailIngredientFilters(CancellationToken cancellationToken = default);
+    Task<CocktailIngredientFiltersRs> GetCocktailIngredientFilters();
 
     Task<CocktailIndexNowRs> GetCocktailsIndexNowResult(CancellationToken cancellationToken = default);
 }
