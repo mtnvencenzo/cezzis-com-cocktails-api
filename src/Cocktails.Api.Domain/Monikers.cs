@@ -11,9 +11,7 @@ public static class Monikers
         Api = new ApiMonikers();
         ServiceBus = new ServiceBusMonikers();
         Cocktails = new CocktailsMonikers();
-        Email = new EmailMonikers();
         Azure = new AzMonikers();
-        Account = new AccountMonikers();
     }
 
     public static AppMonikers App { get; }
@@ -25,8 +23,4 @@ public static class Monikers
     public static ServiceBusMonikers ServiceBus { get; }
 
     public static CocktailsMonikers Cocktails { get; }
-
-    public static EmailMonikers Email { get; }
-
-    public static AccountMonikers Account { get; }
 }

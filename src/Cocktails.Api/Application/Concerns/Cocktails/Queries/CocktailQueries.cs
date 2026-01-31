@@ -16,8 +16,7 @@ using System.Threading.Tasks;
 public class CocktailQueries(
     ICocktailRepository cocktailRepository,
     ICocktailModelConverter cocktailModelConverter,
-    IOptions<CocktailsWebConfig> cocktailWebConfig,
-    ISearchClient searchClient) : ICocktailQueries
+    IOptions<CocktailsWebConfig> cocktailWebConfig) : ICocktailQueries
 {
     private readonly static Dictionary<string, GlasswareType> GlasswareDisplayNameMapping;
 
@@ -56,18 +55,6 @@ public class CocktailQueries(
         );
 
         return Task.FromResult(rs);
-    }
-
-    private async Task<List<Cocktail>> FilterCocktailsWithSearchIndex(
-        List<Cocktail> cocktails,
-        string freeText,
-        int skip = 0,
-        int take = 20,
-        CancellationToken cancellationToken = default)
-    {
-        var searchResults = await searchClient.SearchAsync(cocktails, freeText, skip, take, cancellationToken: cancellationToken);
-
-        return searchResults;
     }
 
     public Task<string> GetCocktailsSiteMap(CancellationToken cancellationToken = default)
@@ -113,7 +100,7 @@ public class CocktailQueries(
         return Task.FromResult(sitemap);
     }
 
-    public Task<CocktailIngredientFiltersRs> GetCocktailIngredientFilters(CancellationToken cancellationToken = default)
+    public Task<CocktailIngredientFiltersRs> GetCocktailIngredientFilters()
     {
         var allCocktails = cocktailRepository.CachedItems.ToList();
 

@@ -17,16 +17,4 @@ public class MonikersTests
         // Assert
         result.Should().BeOfType<ServiceBusMonikers>();
     }
-
-    [Fact]
-    public void Email_ShouldReturnInstanceOfEmailMonikers()
-    {
-        // Arrange
-
-        // Act
-        var result = Monikers.Email;
-
-        // Assert
-        result.Should().BeOfType<EmailMonikers>();
-    }
 }

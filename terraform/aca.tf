@@ -175,23 +175,6 @@
 #             value = module.cocktails_servicebus_cocktail_ratings_topic.name
 #           }
 #         ]
-#       },
-#       {
-#         name           = var.binding_cocktails_blob_account_avatars
-#         component_type = "bindings.azure.blobstorage"
-#         metadata = [
-#           {
-#             name = "azureClientId"
-#           },
-#           {
-#             name  = "containerName"
-#             value = var.account_avatars_storage_container
-#           },
-#           {
-#             name  = "accountName"
-#             value = data.azurerm_storage_account.cocktails_storage_account.name
-#           }
-#         ]
 #       }
 #     ]
 #   }
@@ -231,26 +214,6 @@
 #     {
 #       name  = "Auth0__Audience"
 #       value = var.auth0_audience
-#     },
-#     {
-#       name  = "Auth0__DatabaseConnectionName"
-#       value = var.auth0_database_connection_name
-#     },
-#     {
-#       name  = "Auth0__ManagementDomain"
-#       value = "https://${var.auth0_management_domain}"
-#     },
-#     {
-#       name  = "Auth0__ManagementM2MClientId"
-#       value = var.auth0_management_client_id
-#     },
-#     {
-#       name  = "BlobStorage__AccountAvatars__DaprBuildingBlock"
-#       value = var.binding_cocktails_blob_account_avatars
-#     },
-#     {
-#       name  = "BlobStorage__CdnHostName"
-#       value = var.cocktail_images_route_hostname
 #     },
 #     {
 #       name  = "CocktailsApi__BaseImageUri"
@@ -311,94 +274,6 @@
 #     {
 #       name  = "Dapr__ProfilePort"
 #       value = "7777"
-#     },
-#     {
-#       name  = "PubSub__EmailPublisher__DaprBuildingBlock"
-#       value = var.pubsub_sb_topics_cocktails_email
-#     },
-#     {
-#       name  = "PubSub__EmailPublisher__TopicName"
-#       value = module.cocktails_servicebus_email_topic.name
-#     },
-#     {
-#       name  = "PubSub__EmailSubscriber__DaprBuildingBlock"
-#       value = var.pubsub_sb_queues_cocktails_email
-#     },
-#     {
-#       name  = "PubSub__EmailSubscriber__QueueName"
-#       value = module.cocktails_servicebus_email_queue.name
-#     },
-#     {
-#       name  = "PubSub__EmailPublisher__DaprBuildingBlock"
-#       value = var.pubsub_sb_topics_cocktails_email
-#     },
-#     {
-#       name  = "PubSub__EmailPublisher__TopicName"
-#       value = module.cocktails_servicebus_email_topic.name
-#     },
-#     {
-#       name  = "PubSub__EmailSubscriber__DaprBuildingBlock"
-#       value = var.pubsub_sb_queues_cocktails_email
-#     },
-#     {
-#       name  = "PubSub__EmailSubscriber__QueueName"
-#       value = module.cocktails_servicebus_email_queue.name
-#     },
-#     {
-#       name  = "PubSub__AccountPublisher__DaprBuildingBlock"
-#       value = var.pubsub_sb_topics_cocktails_account
-#     },
-#     {
-#       name  = "PubSub__AccountPublisher__TopicName"
-#       value = module.cocktails_servicebus_account_topic.name
-#     },
-#     {
-#       name  = "PubSub__AccountSubscriber__DaprBuildingBlock"
-#       value = var.pubsub_sb_queues_cocktails_account
-#     },
-#     {
-#       name  = "PubSub__AccountSubscriber__QueueName"
-#       value = module.cocktails_servicebus_account_queue.name
-#     },
-#     {
-#       name  = "PubSub__AccountEmailPublisher__DaprBuildingBlock"
-#       value = var.pubsub_sb_topics_cocktails_account
-#     },
-#     {
-#       name  = "PubSub__AccountEmailPublisher__TopicName"
-#       value = module.cocktails_servicebus_account_topic.name
-#     },
-#     {
-#       name  = "PubSub__AccountEmailSubscriber__DaprBuildingBlock"
-#       value = var.pubsub_sb_queues_cocktails_account_email
-#     },
-#     {
-#       name  = "PubSub__AccountEmailSubscriber__QueueName"
-#       value = module.cocktails_servicebus_account_email_queue.name
-#     },
-#     {
-#       name  = "PubSub__AccountPasswordPublisher__DaprBuildingBlock"
-#       value = var.pubsub_sb_topics_cocktails_account
-#     },
-#     {
-#       name  = "PubSub__AccountPasswordPublisher__TopicName"
-#       value = module.cocktails_servicebus_account_topic.name
-#     },
-#     {
-#       name  = "PubSub__AccountPasswordSubscriber__DaprBuildingBlock"
-#       value = var.pubsub_sb_queues_cocktails_account_password
-#     },
-#     {
-#       name  = "PubSub__AccountPasswordSubscriber__QueueName"
-#       value = module.cocktails_servicebus_account_password_queue.name
-#     },
-#     {
-#       name  = "PubSub__CocktailRatingPublisher__DaprBuildingBlock"
-#       value = var.pubsub_sb_topics_cocktail_ratings
-#     },
-#     {
-#       name  = "PubSub__CocktailRatingPublisher__TopicName"
-#       value = module.cocktails_servicebus_cocktail_ratings_topic.name
 #     },
 #     {
 #       name  = "PubSub__CocktailRatingSubscriber__DaprBuildingBlock"

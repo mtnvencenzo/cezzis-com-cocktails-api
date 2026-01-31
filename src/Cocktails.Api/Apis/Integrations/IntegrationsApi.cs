@@ -1,4 +1,4 @@
-﻿namespace Cocktails.Api.Apis.Integrations;
+namespace Cocktails.Api.Apis.Integrations;
 
 using Cocktails.Api.Application.Behaviors.DaprAppTokenAuthorization;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
@@ -17,10 +17,6 @@ public static class IntegrationsApi
 {
     public static RouteGroupBuilder MapIntegrationsApi(this IEndpointRouteBuilder app)
     {
-        var emailSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.EmailSubscriber;
-        var accountSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.AccountSubscriber;
-        var accountEmailSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.AccountEmailSubscriber;
-        var accountPasswordSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.AccountPasswordSubscriber;
         var cocktailRatingSubscriberOptions = app.ServiceProvider.GetRequiredService<IOptions<PubSubConfig>>().Value.CocktailRatingSubscriber;
 
         var groupBuilder = app.MapGroup("/integrations")
@@ -44,35 +40,6 @@ public static class IntegrationsApi
         //     .WithTopic(accountSubscriberOptions.DaprBuildingBlock, accountSubscriberOptions.QueueName);
         // ==============================================================================================================================
 
-        app.MapPost($"/{emailSubscriberOptions.DaprBuildingBlock}", SendZohoEmail)
-            .WithName(nameof(SendZohoEmail))
-            .WithDisplayName(nameof(SendZohoEmail))
-            .WithDescription("Sends a zoho email message to zoho's smtp servers")
-            .ExcludeFromDescription()
-            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
-
-        // dapr can only POST and not PUT
-        app.MapPost($"/{accountSubscriberOptions.DaprBuildingBlock}", UpdateIdentityProfile)
-            .WithName(nameof(UpdateIdentityProfile))
-            .WithDisplayName(nameof(UpdateIdentityProfile))
-            .WithDescription("Syncs an account profile with the identity provider")
-            .ExcludeFromDescription()
-            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
-
-        app.MapPost($"/{accountEmailSubscriberOptions.DaprBuildingBlock}", UpdateIdentityProfileEmail)
-            .WithName(nameof(UpdateIdentityProfileEmail))
-            .WithDisplayName(nameof(UpdateIdentityProfileEmail))
-            .WithDescription("Syncs an account profile email with the identity provider")
-            .ExcludeFromDescription()
-            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
-
-        app.MapPost($"/{accountPasswordSubscriberOptions.DaprBuildingBlock}", UpdateIdentityProfilePassword)
-            .WithName(nameof(UpdateIdentityProfilePassword))
-            .WithDisplayName(nameof(UpdateIdentityProfilePassword))
-            .WithDescription("Syncs an account profile password with the identity provider")
-            .ExcludeFromDescription()
-            .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
-
         app.MapPost($"/{cocktailRatingSubscriberOptions.DaprBuildingBlock}", UpdateCocktailRating)
             .WithName(nameof(UpdateCocktailRating))
             .WithDisplayName(nameof(UpdateCocktailRating))
@@ -81,102 +48,6 @@ public static class IntegrationsApi
             .RequireAuthorization(DaprAppTokenRequirement.PolicyName);
 
         return groupBuilder;
-    }
-
-    /// <summary>Sends an email message to zoho email servers</summary>
-    /// <param name="cloudEvent"></param>
-    /// <param name="integrationServices"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> SendZohoEmail(
-        [FromBody] CloudEvent<CocktailRecommendationEmailEvent> cloudEvent,
-        [AsParameters] IntegrationsServices integrationServices,
-        CancellationToken cancellationToken)
-    {
-        using var logScope = integrationServices.Logger.BeginScope(new Dictionary<string, object>
-        {
-            { Monikers.ServiceBus.MsgId, cloudEvent?.Data?.Id },
-            { Monikers.ServiceBus.MsgCorrelationId, cloudEvent?.Data?.CorrelationId },
-            { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
-        });
-
-        _ = await integrationServices.Mediator.Send(
-            request: cloudEvent.Data,
-            cancellationToken: cancellationToken);
-
-        return TypedResults.Ok();
-    }
-
-    /// <summary>Syncs an account profile with the identity provider</summary>
-    /// <param name="cloudEvent"></param>
-    /// <param name="integrationServices"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> UpdateIdentityProfile(
-        [FromBody] CloudEvent<AccountOwnedProfileUpdatedEvent> cloudEvent,
-        [AsParameters] IntegrationsServices integrationServices,
-        CancellationToken cancellationToken)
-    {
-        using var logScope = integrationServices.Logger.BeginScope(new Dictionary<string, object>
-        {
-            { Monikers.ServiceBus.MsgId, cloudEvent?.Data?.Id },
-            { Monikers.ServiceBus.MsgCorrelationId, cloudEvent?.Data?.CorrelationId },
-            { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
-        });
-
-        _ = await integrationServices.Mediator.Send(
-            request: cloudEvent.Data,
-            cancellationToken: cancellationToken);
-
-        return TypedResults.Ok();
-    }
-
-    /// <summary>Syncs an account profile email with the identity provider</summary>
-    /// <param name="cloudEvent"></param>
-    /// <param name="integrationServices"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> UpdateIdentityProfileEmail(
-        [FromBody] CloudEvent<ChangeAccountOwnedEmailEvent> cloudEvent,
-        [AsParameters] IntegrationsServices integrationServices,
-        CancellationToken cancellationToken)
-    {
-        using var logScope = integrationServices.Logger.BeginScope(new Dictionary<string, object>
-        {
-            { Monikers.ServiceBus.MsgId, cloudEvent?.Data?.Id },
-            { Monikers.ServiceBus.MsgCorrelationId, cloudEvent?.Data?.CorrelationId },
-            { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
-        });
-
-        _ = await integrationServices.Mediator.Send(
-            request: cloudEvent.Data,
-            cancellationToken: cancellationToken);
-
-        return TypedResults.Ok();
-    }
-
-    /// <summary>Initiates the password change flow on the identity provider</summary>
-    /// <param name="cloudEvent"></param>
-    /// <param name="integrationServices"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    public async static Task<Results<Ok, JsonHttpResult<ProblemDetails>>> UpdateIdentityProfilePassword(
-        [FromBody] CloudEvent<ChangeAccountOwnedPasswordEvent> cloudEvent,
-        [AsParameters] IntegrationsServices integrationServices,
-        CancellationToken cancellationToken)
-    {
-        using var logScope = integrationServices.Logger.BeginScope(new Dictionary<string, object>
-        {
-            { Monikers.ServiceBus.MsgId, cloudEvent?.Data?.Id },
-            { Monikers.ServiceBus.MsgCorrelationId, cloudEvent?.Data?.CorrelationId },
-            { Monikers.ServiceBus.MsgSubject, cloudEvent?.Subject }
-        });
-
-        _ = await integrationServices.Mediator.Send(
-            request: cloudEvent.Data,
-            cancellationToken: cancellationToken);
-
-        return TypedResults.Ok();
     }
 
     /// <summary>Updates the rating on a cocktail for a single user account rating</summary>

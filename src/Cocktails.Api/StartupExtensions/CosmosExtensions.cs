@@ -11,7 +11,6 @@ internal static class CosmosExtensions
 {
     internal static IServiceCollection AddCosomsContexts(this IServiceCollection services)
     {
-        services.AddDbContext<AccountDbContext>();
         services.AddDbContext<CocktailDbContext>();
         services.AddScoped<DatabaseInitializer>();
 

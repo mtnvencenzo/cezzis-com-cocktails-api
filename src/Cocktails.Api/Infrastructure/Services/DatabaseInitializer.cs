@@ -1,6 +1,5 @@
 namespace Cocktails.Api.Infrastructure.Services;
 
-using Cocktails.Api.Application.Concerns.Accounts.Commands;
 using Cocktails.Api.Application.Concerns.Cocktails.Commands;
 using Cocktails.Api.Domain.Config;
 using MediatR;
@@ -20,7 +19,6 @@ public class DatabaseInitializer(
 
             await mediator.Send(new SeedIngredientsCommand(OnlyIfEmpty: seedDataOnlyIfEmpty), cancellationToken);
             await mediator.Send(new SeedCocktailsCommand(OnlyIfEmpty: seedDataOnlyIfEmpty), cancellationToken);
-            await mediator.Send(new SeedTestAccountCommand(), cancellationToken);
 
             logger.LogInformation("Database initialization completed successfully.");
         }

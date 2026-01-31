@@ -1,6 +1,5 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
-using Cocktails.Api.Apis.Accounts;
 using Cocktails.Api.Apis.Cockails;
 using Cocktails.Api.Apis.Health;
 using Cocktails.Api.Apis.Integrations;
@@ -30,7 +29,6 @@ internal static class EndpointExtensions
         cocktailsApi.MapHealthApiV1();
         cocktailsApi.MapLegalDocumentsApiV1();
         cocktailsApi.MapLocalImagesApiV1();
-        cocktailsApi.MapAccountsApiV1();
 
         return app;
     }

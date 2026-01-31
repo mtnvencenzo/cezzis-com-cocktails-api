@@ -17,20 +17,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.1" />
     <PackageReference Include="Azure.Identity" Version="1.17.1" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.26.0" />
     <PackageReference Include="Dapr.AspNetCore" Version="1.16.1" />
     <PackageReference Include="Dapr.Jobs" Version="1.16.1" />
     <PackageReference Include="FluentValidation" Version="12.1.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
-    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0" />
-    <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="10.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.2.0" />
+    <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="10.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.2" />
     <PackageReference Include="Cezzi.OTel" Version="1.0.34" />
     <PackageReference Include="Confluent.Kafka.Extensions.OpenTelemetry" Version="0.4.0" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.11.8" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.12.27" />
   </ItemGroup>
 
   <ItemGroup>
