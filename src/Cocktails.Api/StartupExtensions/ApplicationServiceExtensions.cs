@@ -33,7 +33,6 @@ internal static class ApplicationServiceExtensions
         builder.Services.Configure<CocktailsWebConfig>(builder.Configuration.GetSection(CocktailsWebConfig.SectionName));
         builder.Services.Configure<LocalhostImagesConfig>(builder.Configuration.GetSection(LocalhostImagesConfig.SectionName));
         builder.Services.Configure<CosmosDbConfig>(builder.Configuration.GetSection(CosmosDbConfig.SectionName));
-        builder.Services.Configure<TestAccountConfig>(builder.Configuration.GetSection(TestAccountConfig.SectionName));
         builder.Services.Configure<Auth0Config>(builder.Configuration.GetSection(Auth0Config.SectionName));
         builder.Services.Configure<KafkaConfig>(builder.Configuration.GetSection(KafkaConfig.SectionName));
         builder.Services.Configure<DaprConfig>(builder.Configuration.GetSection(DaprConfig.SectionName));
