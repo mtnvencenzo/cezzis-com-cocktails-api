@@ -350,7 +350,7 @@ services:
         --enable-api-logging false
         --placement-host-address ''
         --scheduler-host-address 'dapr-scheduler:50004'
-        --app-channel-address accounts-api
+        --app-channel-address cocktails-accounts
     volumes:
       - ../cezzis-com-accounts-api/.dapr/prd:/components
     networks:
