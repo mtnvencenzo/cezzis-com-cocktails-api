@@ -5,7 +5,6 @@ using MediatR;
 /// <summary></summary>
 /// <param name="mediator"></param>
 /// <param name="httpContextAccessor"></param>
-/// <param name="auth0ManagementClient"></param>
 /// <param name="logger"></param>
 public class IntegrationsServices(
     IMediator mediator,

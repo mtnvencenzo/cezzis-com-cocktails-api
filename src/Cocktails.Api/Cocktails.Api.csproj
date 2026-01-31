@@ -29,7 +29,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.2" />
     <PackageReference Include="Cezzi.OTel" Version="1.0.34" />
     <PackageReference Include="Confluent.Kafka.Extensions.OpenTelemetry" Version="0.4.0" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.12.21" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.12.27" />
   </ItemGroup>
 
   <ItemGroup>

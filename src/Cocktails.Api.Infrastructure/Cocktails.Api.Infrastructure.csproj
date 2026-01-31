@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Auth0.AuthenticationApi" Version="7.43.1" />
+    <PackageReference Include="Auth0.AuthenticationApi" Version="7.44.0" />
     <PackageReference Include="Azure.Identity" Version="1.17.1" />
     <PackageReference Include="Cezzi.Applications" Version="1.0.21" />
     <PackageReference Include="Cezzi.Smtp" Version="1.0.21" />
