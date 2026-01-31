@@ -289,8 +289,10 @@ internal static class OpenApiOptionsExtensions
                         Scopes = AuthScopes.All().ToDictionary(s => s, s => s),
                         Extensions = new Dictionary<string, IOpenApiExtension>
                         {
-                            { "x-defaultClientId", new OpenApiString(auth0Config.ClientId) },
-                            { "x-usePkce", new OpenApiString("SHA-256") }
+                            { "x-usePkce", new OpenApiString("SHA-256") },
+                            { "x-scalar-client-id", new OpenApiString(auth0Config.ClientId) },
+                            { "x-scalar-credentials-location", new OpenApiString("body") },
+                            { "x-defaultClientId", new OpenApiString(auth0Config.ClientId) }
                         }
                     }
                 },
