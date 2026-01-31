@@ -13,6 +13,4 @@ public class CosmosDbConfig
     public required string CocktailsContainerName { get; set; }
 
     public required string IngredientsContainerName { get; set; }
-
-    public required string AccountsContainerName { get; set; }
 }

@@ -175,23 +175,6 @@
 #             value = module.cocktails_servicebus_cocktail_ratings_topic.name
 #           }
 #         ]
-#       },
-#       {
-#         name           = var.binding_cocktails_blob_account_avatars
-#         component_type = "bindings.azure.blobstorage"
-#         metadata = [
-#           {
-#             name = "azureClientId"
-#           },
-#           {
-#             name  = "containerName"
-#             value = var.account_avatars_storage_container
-#           },
-#           {
-#             name  = "accountName"
-#             value = data.azurerm_storage_account.cocktails_storage_account.name
-#           }
-#         ]
 #       }
 #     ]
 #   }
@@ -231,26 +214,6 @@
 #     {
 #       name  = "Auth0__Audience"
 #       value = var.auth0_audience
-#     },
-#     {
-#       name  = "Auth0__DatabaseConnectionName"
-#       value = var.auth0_database_connection_name
-#     },
-#     {
-#       name  = "Auth0__ManagementDomain"
-#       value = "https://${var.auth0_management_domain}"
-#     },
-#     {
-#       name  = "Auth0__ManagementM2MClientId"
-#       value = var.auth0_management_client_id
-#     },
-#     {
-#       name  = "BlobStorage__AccountAvatars__DaprBuildingBlock"
-#       value = var.binding_cocktails_blob_account_avatars
-#     },
-#     {
-#       name  = "BlobStorage__CdnHostName"
-#       value = var.cocktail_images_route_hostname
 #     },
 #     {
 #       name  = "CocktailsApi__BaseImageUri"

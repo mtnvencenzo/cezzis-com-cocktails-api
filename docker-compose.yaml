@@ -78,6 +78,9 @@ services:
       - ENV=prd
       - ACCOUNTS_API_ALLOWED_ORIGINS=http://localhost:4001,http://localhost:4002
       - APIM_HOST_KEY=
+      - AUTH0_MANAGEMENT_DOMAIN=https://cezzis.us.auth0.com
+      - AUTH0_MANAGEMENT_M2M_CLIENT_ID=JtxZM9RiJVHejv6xqkFYdFtdfUrX6N09
+      - AUTH0_DATABASE_CONNECTION_NAME=Username-Password-Authentication
       - OAUTH_DOMAIN=login.cezzis.com
       - OAUTH_AUDIENCE=https://cezzis-accounts-api
       - OAUTH_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
@@ -85,12 +88,17 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cocktails-accounts
       - OTEL_SERVICE_NAMESPACE=cezzis
+      - DAPR_HTTP_PORT=5396
+      - DAPR_GRPC_PORT=51006
+      - ZOHO_SMTP_HOST=smtppro.zoho.com
+      - ZOHO_SMTP_PORT=587
+      - ZOHO_DEFAULT_SENDER_EMAIL=cezzi@cezzis.com
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
       app-internal-network:
     depends_on:
-      - infra-bootstrapper
+      - dapr-sidecar-accounts-api
 
   cocktails-web:
     container_name: cocktails-web
@@ -107,9 +115,11 @@ services:
       - VITE_AUTH0_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
       - VITE_AUTH0_REDIRECT_URI=http://localhost:4001/iam/auth/redirect/
       - VITE_AUTH0_COCKTAILS_API_AUDIENCE=https://cezzis-cocktails-api
+      - VITE_AUTH0_ACCOUNTS_API_AUDIENCE=https://cezzis-accounts-api
       - VITE_COCKTAILS_API_URL=http://localhost:7177
       - VITE_COCKTAILS_IMAGE_URL=http://localhost:7177/api/v1/images
       - VITE_AISEARCH_API_URL=http://localhost:8010
+      - VITE_ACCOUNTS_API_URL=http://localhost:8016
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     volumes:
@@ -311,7 +321,38 @@ services:
         --scheduler-host-address 'dapr-scheduler:50004'
         --app-channel-address cocktails-api
     volumes:
-      - ./.dapr/prd:/components
+      - ../cezzis-com-cocktails-api/.dapr/prd:/components
+    networks:
+      app-internal-network:
+    depends_on:
+      - dapr-scheduler
+      - infra-bootstrapper
+
+  dapr-sidecar-accounts-api:
+    container_name: dapr-sidecar-accounts-api
+    image: daprio/daprd:latest
+    restart: unless-stopped
+    ports:
+      - "5396:5396"
+      - "51006:51006"
+    environment:
+      - OTEL_RESOURCE_ATTRIBUTES=deployment.environment=prd
+    command: >
+      ./daprd
+        --app-id accounts-api-dapr
+        --app-port 8016
+        --app-protocol http
+        --dapr-http-port 5396
+        --dapr-grpc-port 51006
+        --resources-path /components
+        --config /components/config.yaml
+        --enable-metrics false
+        --enable-api-logging false
+        --placement-host-address ''
+        --scheduler-host-address 'dapr-scheduler:50004'
+        --app-channel-address accounts-api
+    volumes:
+      - ../cezzis-com-accounts-api/.dapr/prd:/components
     networks:
       app-internal-network:
     depends_on:
