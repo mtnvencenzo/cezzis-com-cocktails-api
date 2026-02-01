@@ -90,6 +90,7 @@ services:
       - OTEL_SERVICE_NAME=cocktails-accounts
       - OTEL_SERVICE_NAMESPACE=cezzis
       - DAPR_INIT_JOB_ENABLED=true
+      - DAPR_HOST=dapr-sidecar-accounts-api
       - DAPR_HTTP_PORT=5396
       - DAPR_GRPC_PORT=51006
       - ZOHO_SMTP_HOST=smtppro.zoho.com
