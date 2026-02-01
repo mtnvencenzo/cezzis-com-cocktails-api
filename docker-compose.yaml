@@ -82,6 +82,7 @@ services:
       - AUTH0_MANAGEMENT_DOMAIN=https://cezzis.us.auth0.com
       - AUTH0_MANAGEMENT_M2M_CLIENT_ID=JtxZM9RiJVHejv6xqkFYdFtdfUrX6N09
       - AUTH0_DATABASE_CONNECTION_NAME=Username-Password-Authentication
+      - BLOB_STORAGE_CDN_HOSTNAME=localhost:10000
       - OAUTH_DOMAIN=login.cezzis.com
       - OAUTH_AUDIENCE=https://cezzis-accounts-api
       - OAUTH_CLIENT_ID=HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb
