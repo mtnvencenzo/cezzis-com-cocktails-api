@@ -144,12 +144,15 @@ services:
     environment:
       - ENV=prd
       - PORT=7999
+      - ACCOUNTS_API_HOST=http://cocktails-accounts:8016
+      - ACCOUNTS_API_XKEY=
       - AISEARCH_API_HOST=http://cocktails-aisearch:8010
       - AISEARCH_API_XKEY=
-      - AUTH0_AUDIENCE=https://cezzis-cocktails-api
+      - AUTH0_ACCOUNTS_API_AUDIENCE=https://cezzis-accounts-api
       - AUTH0_CLIENT_ID=6pNnUIHVbyakv27TtICiLyAQbXYxNjOQ
       - AUTH0_DOMAIN=login.cezzis.com
       - AUTH0_SCOPES="openid offline_access profile email read:owned-account write:owned-account"
+      - CEZZIS_BASE_URL=http://localhost:4001
       - COCKTAILS_API_HOST=http://cocktails-api:7177
       - COSMOS_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
       - COSMOS_CONTAINER_NAME=cezzis-device-auth

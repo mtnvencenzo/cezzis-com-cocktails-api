@@ -30,8 +30,6 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
 3. **Configure API Scopes**
    - In your newly created API, go to the **Scopes** tab
    - Add the following scopes:
-     - `read:owned-account` - Read account information
-     - `write:owned-account` - Write account information,
      - `admin:cezzi-cocktails` - Admin access to cocktails publishing,
    - Save changes
 
@@ -49,8 +47,6 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
 
 2. **Configure Permissions**
    - Select the scopes you want this application to have:
-     - `read:owned-account`
-     - `write:owned-account`
      - `admin:cezzi-cocktails`
    - Click **Authorize**
 
@@ -96,8 +92,6 @@ The Cocktails API uses Auth0 for authentication and authorization. This provides
     "AuthorizationCodeFlow": {
       "ClientId": "your-spa-client-id",
       "Scopes": [
-        "read:owned-account",
-        "write:owned-account",
         "admin:cezzi-cocktails"
       ]
     }

@@ -57,7 +57,7 @@ Infrastructure is provisioned with Terraform (`/terraform`) and deployed into Az
 
 ### Authentication & Security
 - **Authentication**: Auth0 (OAuth 2.0 / OIDC) with JWT Bearer
-- **Authorization**: Scope-based policies (e.g., `read:owned-account`, `write:owned-account`)
+- **Authorization**: Scope-based policies (e.g., `admin:cezzi-cocktails`)
 - **Gateway**: Azure API Management (APIM) backend integration
 - **Secrets**: Azure Key Vault
 
@@ -187,7 +187,7 @@ Public documentation: [https://api.cezzis.com/prd/cocktails/api-docs/v1/scalar/v
 ## 🔒 Security Features
 
 - JWT Bearer authentication (Auth0)
-- Scope-based authorization (e.g., `read:owned-account`, `write:owned-account`)
+- Scope-based authorization (e.g., `admin:cezzi-cocktails`)
 - HTTPS enforcement and CORS policy
 - API versioning
 - Input validation via FluentValidation
