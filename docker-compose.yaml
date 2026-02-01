@@ -271,7 +271,7 @@ services:
       - KAFKA_SECURITY_PROTOCOL=PLAINTEXT
       - COSMOSDB_ACCOUNT_ENDPOINT=https://cosmosdb:8081/
       - COSMOSDB_COCKTAILS_DATABASE_NAME=cocktails-db-prd
-      - COSMOSDB_COCKTAILS_CONTAINER_DEFS=cezzis-cocktails-cocktail:/id,cezzis-cocktails-ingredient:/id,cezzis-accounts-account:/subjectId,cezzis-device-auth:/id
+      - COSMOSDB_COCKTAILS_CONTAINER_DEFS=cezzis-cocktails-cocktail:/id,cezzis-cocktails-ingredient:/id,cezzis-device-auth:/id
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=cezzis-com-bootstrapper
       - OTEL_SERVICE_NAMESPACE=cezzis
