@@ -53,7 +53,7 @@ public class CocktailModelConverter : ICocktailModelConverter
                     Width: x.Width,
                     Height: x.Height
                 ))],
-                SearchTiles: [.. item.Images.Where(x => x.Type == CocktailImageType.SearchTile).Select(x => new CocktailImageModel
+                SearchTiles: [.. item.Images.Where(x => x.Type == CocktailImageType.SearchTile).Select(x => new CocktailImageModel2
                 (
                     Uri: x.Uri,
                     Width: x.Width,
