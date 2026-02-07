@@ -53,7 +53,7 @@ public class CocktailModelConverter : ICocktailModelConverter
                     Width: x.Width,
                     Height: x.Height
                 ))],
-                SearchTiles: [.. item.Images.Where(x => x.Type == CocktailImageType.SearchTile).Select(x => new CocktailImageModel2
+                SearchTiles: [.. item.Images.Where(x => x.Type == CocktailImageType.SearchTile).Select(x => new CocktailImageModel
                 (
                     Uri: x.Uri,
                     Width: x.Width,
@@ -70,7 +70,20 @@ public class CocktailModelConverter : ICocktailModelConverter
                     Applications: [.. x.Applications.Select(x => (IngredientApplicationModel)ingredientApplicationConverter.ConvertFrom(Enum.Parse<IngredientApplication>(x, true)))],
                     Units: x.Units,
                     Display: x.GetDisplayValue()
-                ))]
+                ))],
+                Keywords: new CocktailKeywordsModel(
+                    KeywordsBaseSpirit: [.. item.KeywordsBaseSpirit ?? []],
+                    KeywordsSpiritSubtype: [.. item.KeywordsSpiritSubtype ?? []],
+                    KeywordsFlavorProfile: [.. item.KeywordsFlavorProfile ?? []],
+                    KeywordsCocktailFamily: [.. item.KeywordsCocktailFamily ?? []],
+                    KeywordsTechnique: [.. item.KeywordsTechnique ?? []],
+                    KeywordsStrength: item.KeywordsStrength,
+                    KeywordsTemperature: item.KeywordsTemperature,
+                    KeywordsSeason: [.. item.KeywordsSeason ?? []],
+                    KeywordsOccasion: [.. item.KeywordsOccasion ?? []],
+                    KeywordsMood: [.. item.KeywordsMood ?? []],
+                    KeywordsSearchTerms: [.. item.KeywordsSearchTerms ?? []]
+                )
             ) : null;
     }
 }

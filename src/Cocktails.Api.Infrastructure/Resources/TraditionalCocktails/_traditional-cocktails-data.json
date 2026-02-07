@@ -1,13 +1,13 @@
 [
   {
     "id": "absinthe-frappe",
-    "title": "Absinthe Frapp\u00E9",
+    "title": "Absinthe Frapp\u00e9",
     "contentFile": "AbsintheFrappe",
     "content": null,
-    "descriptiveTitle": "The Absinthe Frapp\u00E9: A New Orleans Classic",
-    "description": "\u0022A smooth, low-alcohol cocktail made with fino sherry, sweet vermouth, and a hint of orange bitters, inspired by the 1884 Broadway musical \u0027Adonis\u0027. Perfect as a pre-dinner cocktail.",
+    "descriptiveTitle": "The Absinthe Frapp\u00e9: A New Orleans Classic",
+    "description": "\"A smooth, low-alcohol cocktail made with fino sherry, sweet vermouth, and a hint of orange bitters, inspired by the 1884 Broadway musical 'Adonis'. Perfect as a pre-dinner cocktail.",
     "searchableTitles": [
-      "Absinthe Frapp\u00E9"
+      "Absinthe Frapp\u00e9"
     ],
     "eras": [
       "Traditional"
@@ -81,9 +81,45 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "absinthe"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "herbal",
+      "anise",
+      "sweet",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "frappe"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "aperitif"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "exotic"
+    ],
+    "keywordsSearchTerms": [
+      "New Orleans",
+      "anise",
+      "mint",
+      "crushed ice"
+    ]
   },
   {
     "id": "adonis",
@@ -91,7 +127,7 @@
     "content": null,
     "contentFile": "Adonis",
     "descriptiveTitle": "The Adonis Cocktail: A New York Legend",
-    "description": "A smooth, low-alcohol cocktail made with fino sherry, sweet vermouth, and a hint of orange bitters, inspired by the 1884 Broadway musical \u0027Adonis\u0027. Perfect as a pre-dinner cocktail.",
+    "description": "A smooth, low-alcohol cocktail made with fino sherry, sweet vermouth, and a hint of orange bitters, inspired by the 1884 Broadway musical 'Adonis'. Perfect as a pre-dinner cocktail.",
     "searchableTitles": [
       "Adonis"
     ],
@@ -120,7 +156,7 @@
         "units": 2,
         "uoM": "dashes",
         "preparation": "none",
-        "suggestions": "Preferably Regans\u0027",
+        "suggestions": "Preferably Regans'",
         "requirement": "required"
       },
       {
@@ -167,9 +203,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "sherry"
+    ],
+    "keywordsSpiritSubtype": [
+      "fino-sherry"
+    ],
+    "keywordsFlavorProfile": [
+      "dry",
+      "aromatic",
+      "citrus",
+      "low-proof"
+    ],
+    "keywordsCocktailFamily": [
+      "aperitif"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "afternoon"
+    ],
+    "keywordsMood": [
+      "elegant",
+      "refined"
+    ],
+    "keywordsSearchTerms": [
+      "sherry cocktail",
+      "low alcohol",
+      "Broadway",
+      "pre-dinner",
+      "1884"
+    ]
   },
   {
     "id": "airmail",
@@ -177,7 +251,7 @@
     "content": null,
     "contentFile": "AirMail",
     "descriptiveTitle": "The AirMail Cocktail: A Sparkling Tribute to Aviation",
-    "description": "A vintage cocktail combining gold rum, honey syrup, lime juice, and brut champagne, garnished with a lime twist. Created in the 1930s to commemorate the advent of airmail, it\u0027s a delightful mix of sweet, sour, and bubbly flavors.",
+    "description": "A vintage cocktail combining gold rum, honey syrup, lime juice, and brut champagne, garnished with a lime twist. Created in the 1930s to commemorate the advent of airmail, it's a delightful mix of sweet, sour, and bubbly flavors.",
     "searchableTitles": [
       "AirMail"
     ],
@@ -263,9 +337,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "gold-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "citrus",
+      "effervescent",
+      "honey"
+    ],
+    "keywordsCocktailFamily": [
+      "champagne-cocktail"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "topped"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "celebration",
+      "brunch"
+    ],
+    "keywordsMood": [
+      "festive",
+      "elegant"
+    ],
+    "keywordsSearchTerms": [
+      "champagne",
+      "honey",
+      "1930s",
+      "sparkling",
+      "aviation history"
+    ]
   },
   {
     "id": "americano",
@@ -349,9 +462,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "campari"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "sweet",
+      "effervescent",
+      "herbal"
+    ],
+    "keywordsCocktailFamily": [
+      "negroni-family",
+      "aperitif"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "afternoon",
+      "casual"
+    ],
+    "keywordsMood": [
+      "relaxed",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "Italian",
+      "Milano-Torino",
+      "Campari",
+      "sweet vermouth",
+      "soda water",
+      "1860s"
+    ]
   },
   {
     "id": "aperol-spritz",
@@ -435,9 +588,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "aperol"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "sweet",
+      "citrus",
+      "effervescent",
+      "light"
+    ],
+    "keywordsCocktailFamily": [
+      "spritz"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "spring"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "brunch",
+      "afternoon",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "cheerful",
+      "relaxed",
+      "social"
+    ],
+    "keywordsSearchTerms": [
+      "Italian",
+      "prosecco",
+      "orange",
+      "spritz",
+      "summer drink"
+    ]
   },
   {
     "id": "aviation",
@@ -445,7 +639,7 @@
     "content": null,
     "contentFile": "Aviation",
     "descriptiveTitle": "The Aviation Cocktail: A Sky-High Elixir",
-    "description": "A classic cocktail made with gin, maraschino liqueur, cr\u00E8me de violette, and fresh lemon juice. Named for its pale blue color, reminiscent of the sky, and known for its smooth, floral flavor.",
+    "description": "A classic cocktail made with gin, maraschino liqueur, cr\u00e8me de violette, and fresh lemon juice. Named for its pale blue color, reminiscent of the sky, and known for its smooth, floral flavor.",
     "searchableTitles": [
       "Aviation"
     ],
@@ -474,7 +668,7 @@
         "units": 0.25,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Preferably Rothman \u0026 Winter",
+        "suggestions": "Preferably Rothman & Winter",
         "requirement": "required"
       },
       {
@@ -529,9 +723,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "floral",
+      "citrus",
+      "sweet",
+      "delicate"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "date-night",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "elegant",
+      "romantic"
+    ],
+    "keywordsSearchTerms": [
+      "creme de violette",
+      "maraschino",
+      "Luxardo",
+      "purple cocktail",
+      "blue cocktail"
+    ]
   },
   {
     "id": "bamboo",
@@ -539,7 +771,7 @@
     "content": null,
     "contentFile": "Bamboo",
     "descriptiveTitle": "The Bamboo Cocktail: A Zen Elixir",
-    "description": "A sophisticated, low-alcohol cocktail made with dry sherry and dry vermouth, accented with a dash of orange bitters. Created in the late 19th century, it\u0027s an elegant choice for any time of day.",
+    "description": "A sophisticated, low-alcohol cocktail made with dry sherry and dry vermouth, accented with a dash of orange bitters. Created in the late 19th century, it's an elegant choice for any time of day.",
     "searchableTitles": [
       "Bamboo"
     ],
@@ -632,19 +864,57 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "sherry"
+    ],
+    "keywordsSpiritSubtype": [
+      "fino-sherry"
+    ],
+    "keywordsFlavorProfile": [
+      "dry",
+      "aromatic",
+      "citrus",
+      "low-proof",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "aperitif"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "afternoon"
+    ],
+    "keywordsMood": [
+      "refined",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "sherry cocktail",
+      "low alcohol",
+      "dry vermouth",
+      "19th century"
+    ]
   },
   {
     "id": "bees-knees",
-    "title": "Bee\u0027s Knees",
+    "title": "Bee's Knees",
     "content": null,
     "contentFile": "BeesKnees",
-    "descriptiveTitle": "The Bee\u0027s Knees Cocktail: A Roaring Twenties Delight",
-    "description": "A delightful Prohibition-era cocktail made with gin, fresh lemon juice, and honey syrup. Its name reflects its \u0027top-notch\u0027 taste and the use of honey to mask the rough edges of bathtub gin.",
+    "descriptiveTitle": "The Bee's Knees Cocktail: A Roaring Twenties Delight",
+    "description": "A delightful Prohibition-era cocktail made with gin, fresh lemon juice, and honey syrup. Its name reflects its 'top-notch' taste and the use of honey to mask the rough edges of bathtub gin.",
     "searchableTitles": [
-      "Bee\u0027s Knees"
+      "Bee's Knees"
     ],
     "eras": [
       "Traditional"
@@ -718,9 +988,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "citrus",
+      "honey",
+      "smooth"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "evening",
+      "casual"
+    ],
+    "keywordsMood": [
+      "cheerful",
+      "elegant"
+    ],
+    "keywordsSearchTerms": [
+      "Prohibition",
+      "honey syrup",
+      "1920s",
+      "Roaring Twenties",
+      "bathtub gin"
+    ]
   },
   {
     "id": "bicicletta",
@@ -803,9 +1112,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "campari"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "dry",
+      "effervescent",
+      "citrus",
+      "light"
+    ],
+    "keywordsCocktailFamily": [
+      "spritz",
+      "aperitif"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "afternoon",
+      "casual"
+    ],
+    "keywordsMood": [
+      "relaxed",
+      "carefree"
+    ],
+    "keywordsSearchTerms": [
+      "Italian",
+      "white wine",
+      "Campari",
+      "bicycle"
+    ]
   },
   {
     "id": "bijou",
@@ -813,7 +1160,7 @@
     "content": null,
     "contentFile": "Bijou",
     "descriptiveTitle": "Bijou Cocktail: A Jewel of the Bar",
-    "description": "A classic cocktail crafted with gin, sweet vermouth, and green Chartreuse, garnished with a cherry or lemon twist. Named \u0027bijou\u0027 for the French word \u0027jewel,\u0027 representing the cocktail\u0027s vibrant colors.",
+    "description": "A classic cocktail crafted with gin, sweet vermouth, and green Chartreuse, garnished with a cherry or lemon twist. Named 'bijou' for the French word 'jewel,' representing the cocktail's vibrant colors.",
     "searchableTitles": [
       "Bijou"
     ],
@@ -873,7 +1220,7 @@
         "order": 2
       },
       {
-        "displayValue": "Strain into a chilled Nick \u0026 Nora glass.",
+        "displayValue": "Strain into a chilled Nick & Nora glass.",
         "order": 3
       },
       {
@@ -901,9 +1248,46 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "herbal",
+      "sweet",
+      "complex",
+      "bitter"
+    ],
+    "keywordsCocktailFamily": [
+      "stirred-spirit"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "Chartreuse",
+      "jewel",
+      "French",
+      "sweet vermouth"
+    ]
   },
   {
     "id": "black-velvet",
@@ -911,7 +1295,7 @@
     "content": null,
     "contentFile": "BlackVelvet",
     "descriptiveTitle": "Black Velvet: A Cocktail of Mourning Turned Celebration",
-    "description": "A luxurious blend of stout beer and champagne, creating a unique, creamy, and effervescent cocktail. Invented in 1861 to mourn the death of Prince Albert, it\u0027s a sophisticated choice for special occasions.",
+    "description": "A luxurious blend of stout beer and champagne, creating a unique, creamy, and effervescent cocktail. Invented in 1861 to mourn the death of Prince Albert, it's a sophisticated choice for special occasions.",
     "searchableTitles": [
       "Black Velvet"
     ],
@@ -967,9 +1351,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "champagne"
+    ],
+    "keywordsSpiritSubtype": [
+      "stout"
+    ],
+    "keywordsFlavorProfile": [
+      "creamy",
+      "effervescent",
+      "rich",
+      "malty"
+    ],
+    "keywordsCocktailFamily": [
+      "beer-cocktail"
+    ],
+    "keywordsTechnique": [
+      "built",
+      "layered"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "celebration",
+      "evening"
+    ],
+    "keywordsMood": [
+      "festive",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "Guinness",
+      "champagne",
+      "stout",
+      "Prince Albert",
+      "1861",
+      "Victorian"
+    ]
   },
   {
     "id": "blood-and-sand",
@@ -1056,9 +1480,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "scotch"
+    ],
+    "keywordsSpiritSubtype": [
+      "blended-scotch"
+    ],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "sweet",
+      "citrus",
+      "rich"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "bold"
+    ],
+    "keywordsSearchTerms": [
+      "Cherry Heering",
+      "orange juice",
+      "Rudolph Valentino",
+      "1922 film",
+      "equal parts"
+    ]
   },
   {
     "id": "bloody-mary",
@@ -1174,17 +1637,56 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "vodka"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "savory",
+      "spicy",
+      "tangy",
+      "umami"
+    ],
+    "keywordsCocktailFamily": [
+      "savory-cocktail"
+    ],
+    "keywordsTechnique": [
+      "built",
+      "stirred"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "brunch",
+      "morning",
+      "casual"
+    ],
+    "keywordsMood": [
+      "bold",
+      "restorative"
+    ],
+    "keywordsSearchTerms": [
+      "tomato juice",
+      "Worcestershire",
+      "hot sauce",
+      "brunch",
+      "hangover cure",
+      "celery"
+    ]
   },
   {
     "id": "boulevardier",
     "title": "Boulevardier",
     "content": null,
     "contentFile": "Boulevardier",
-    "descriptiveTitle": "The Boulevardier Cocktail: A Negroni\u0027s Bourbon Cousin",
-    "description": "A sophisticated cocktail made with bourbon, sweet vermouth, and Campari. Created in the 1920s by an American expat in Paris, it\u0027s a relative of the Negroni with a warm, rich twist.",
+    "descriptiveTitle": "The Boulevardier Cocktail: A Negroni's Bourbon Cousin",
+    "description": "A sophisticated cocktail made with bourbon, sweet vermouth, and Campari. Created in the 1920s by an American expat in Paris, it's a relative of the Negroni with a warm, rich twist.",
     "searchableTitles": [
       "Boulevardier"
     ],
@@ -1265,9 +1767,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "sweet",
+      "rich",
+      "warm"
+    ],
+    "keywordsCocktailFamily": [
+      "negroni-family"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "date-night"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "Campari",
+      "Negroni cousin",
+      "Paris",
+      "1920s",
+      "American expat"
+    ]
   },
   {
     "id": "brooklyn",
@@ -1345,9 +1886,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "complex",
+      "dry",
+      "herbal"
+    ],
+    "keywordsCocktailFamily": [
+      "manhattan-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "adventurous"
+    ],
+    "keywordsSearchTerms": [
+      "Amer Picon",
+      "maraschino",
+      "New York",
+      "borough cocktail",
+      "rye whiskey"
+    ]
   },
   {
     "id": "brown-derby",
@@ -1355,7 +1934,7 @@
     "content": null,
     "contentFile": "BrownDerby",
     "descriptiveTitle": "The Brown Derby Cocktail: A Hollywood Classic",
-    "description": "A refreshing cocktail made with bourbon, fresh grapefruit juice, and honey syrup. Named after the iconic Brown Derby restaurants in Los Angeles, it\u0027s a delicious nod to old Hollywood glamour.",
+    "description": "A refreshing cocktail made with bourbon, fresh grapefruit juice, and honey syrup. Named after the iconic Brown Derby restaurants in Los Angeles, it's a delicious nod to old Hollywood glamour.",
     "searchableTitles": [
       "Brown Derby"
     ],
@@ -1434,17 +2013,53 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "honey"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "glamorous",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "grapefruit",
+      "honey",
+      "Hollywood",
+      "Los Angeles",
+      "Brown Derby restaurant"
+    ]
   },
   {
     "id": "caipirinha",
     "title": "Caipirinha",
     "content": null,
     "contentFile": "Caipirinha",
-    "descriptiveTitle": "Caipirinha: Brazil\u0027s Spirited National Cocktail",
-    "description": "A vibrant Brazilian cocktail made with cacha\u00E7a, fresh lime, and sugar, served over ice. The national cocktail of Brazil, it\u0027s a zesty and refreshing way to enjoy the country\u0027s signature spirit.",
+    "descriptiveTitle": "Caipirinha: Brazil's Spirited National Cocktail",
+    "description": "A vibrant Brazilian cocktail made with cacha\u00e7a, fresh lime, and sugar, served over ice. The national cocktail of Brazil, it's a zesty and refreshing way to enjoy the country's signature spirit.",
     "searchableTitles": [
       "Caipirinha"
     ],
@@ -1489,11 +2104,11 @@
     ],
     "instructions": [
       {
-        "displayValue": "Muddle the lime and sugar in a glass to release the lime\u0027s juice and essential oils.",
+        "displayValue": "Muddle the lime and sugar in a glass to release the lime's juice and essential oils.",
         "order": 1
       },
       {
-        "displayValue": "Fill the glass with cracked ice and pour the cacha\u00E7a over the ice.",
+        "displayValue": "Fill the glass with cracked ice and pour the cacha\u00e7a over the ice.",
         "order": 2
       },
       {
@@ -1520,9 +2135,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "cachaca"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "smash"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "built"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "casual",
+      "afternoon"
+    ],
+    "keywordsMood": [
+      "fun",
+      "lively",
+      "tropical"
+    ],
+    "keywordsSearchTerms": [
+      "Brazil",
+      "Brazilian",
+      "lime",
+      "sugar",
+      "national cocktail",
+      "cachaca"
+    ]
   },
   {
     "id": "champagne-cocktail",
@@ -1530,7 +2185,7 @@
     "content": null,
     "contentFile": "ChampagneCocktail",
     "descriptiveTitle": "Champagne Cocktail: A Timeless Elegance",
-    "description": "A timeless cocktail made with champagne, a sugar cube, Angostura bitters, and a lemon twist. Popular since the mid-19th century, it\u0027s a simple yet elegant cocktail perfect for celebrations.",
+    "description": "A timeless cocktail made with champagne, a sugar cube, Angostura bitters, and a lemon twist. Popular since the mid-19th century, it's a simple yet elegant cocktail perfect for celebrations.",
     "searchableTitles": [
       "Champagne Cocktail"
     ],
@@ -1605,19 +2260,57 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "champagne"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "effervescent",
+      "sweet",
+      "aromatic",
+      "elegant"
+    ],
+    "keywordsCocktailFamily": [
+      "champagne-cocktail"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "celebration",
+      "new-years",
+      "wedding",
+      "toast"
+    ],
+    "keywordsMood": [
+      "festive",
+      "elegant",
+      "celebratory"
+    ],
+    "keywordsSearchTerms": [
+      "sugar cube",
+      "Angostura bitters",
+      "19th century",
+      "sparkling"
+    ]
   },
   {
     "id": "charles-Dickenss-punch",
-    "title": "Charles Dickens\u0027s Punch",
+    "title": "Charles Dickens's Punch",
     "content": null,
     "contentFile": "CharlesDickensPunch",
     "descriptiveTitle": "Charles Dickens Punch: A Victorian Classic",
     "description": "A warm, flavorful punch made with rum, brandy, lemon juice, and a blend of spices. Inspired by Charles Dickens, who was known to enjoy this delightful concoction.",
     "searchableTitles": [
-      "Charles Dickens\u0027s Punch"
+      "Charles Dickens's Punch"
     ],
     "eras": [
       "Traditional"
@@ -1726,9 +2419,52 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum",
+      "cognac"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "warm",
+      "spiced",
+      "sweet",
+      "citrus",
+      "rich"
+    ],
+    "keywordsCocktailFamily": [
+      "punch"
+    ],
+    "keywordsTechnique": [
+      "stirred",
+      "heated"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "warm",
+    "keywordsSeason": [
+      "winter",
+      "fall"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "holiday",
+      "gathering"
+    ],
+    "keywordsMood": [
+      "festive",
+      "warming",
+      "communal"
+    ],
+    "keywordsSearchTerms": [
+      "Charles Dickens",
+      "Victorian",
+      "punch bowl",
+      "tea",
+      "nutmeg",
+      "batch cocktail"
+    ]
   },
   {
     "id": "clover-club",
@@ -1736,7 +2472,7 @@
     "content": null,
     "contentFile": "CloverClub",
     "descriptiveTitle": "Clover Club: A Pink-Hued Classic",
-    "description": "A classic pre-Prohibition cocktail made with gin, raspberry syrup, lemon juice, and egg white. Named after a Philadelphia men\u0027s club, it\u0027s a smooth, frothy, and slightly tart cocktail.",
+    "description": "A classic pre-Prohibition cocktail made with gin, raspberry syrup, lemon juice, and egg white. Named after a Philadelphia men's club, it's a smooth, frothy, and slightly tart cocktail.",
     "searchableTitles": [
       "Clover Club"
     ],
@@ -1833,9 +2569,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "tart",
+      "sweet",
+      "creamy"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "dry-shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "date-night"
+    ],
+    "keywordsMood": [
+      "elegant",
+      "romantic"
+    ],
+    "keywordsSearchTerms": [
+      "raspberry",
+      "egg white",
+      "Philadelphia",
+      "pre-Prohibition",
+      "pink cocktail",
+      "frothy"
+    ]
   },
   {
     "id": "corpse-reviver-no-2",
@@ -1843,7 +2618,7 @@
     "content": null,
     "contentFile": "CorpseReviverNo2",
     "descriptiveTitle": "Corpse Reviver No. 2: A Pre-Prohibition Elixir",
-    "description": "A revitalizing cocktail made with gin, Cointreau, Lillet Blanc, fresh lemon juice, and a dash of absinthe. Known as a hangover cure from the 1930s, it\u0027s a balanced and refreshing mix.",
+    "description": "A revitalizing cocktail made with gin, Cointreau, Lillet Blanc, fresh lemon juice, and a dash of absinthe. Known as a hangover cure from the 1930s, it's a balanced and refreshing mix.",
     "searchableTitles": [
       "Corpse Reviver No. 2"
     ],
@@ -1939,9 +2714,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "herbal",
+      "anise",
+      "complex",
+      "crisp"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "brunch",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "restorative",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "Lillet Blanc",
+      "Cointreau",
+      "absinthe",
+      "hangover cure",
+      "1930s",
+      "Savoy"
+    ]
   },
   {
     "id": "daiquiri",
@@ -1949,7 +2762,7 @@
     "content": null,
     "contentFile": "Daiquiri",
     "descriptiveTitle": "Daiquiri: The Quintessence of Rum Cocktails",
-    "description": "A simple, refreshing cocktail made with white rum, fresh lime juice, and simple syrup. Originating in Cuba, it\u0027s a classic favorite that\u0027s both crisp and tangy.",
+    "description": "A simple, refreshing cocktail made with white rum, fresh lime juice, and simple syrup. Originating in Cuba, it's a classic favorite that's both crisp and tangy.",
     "searchableTitles": [
       "Daiquiri"
     ],
@@ -2021,19 +2834,60 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "light-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "crisp",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "casual",
+      "evening",
+      "afternoon"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "fun"
+    ],
+    "keywordsSearchTerms": [
+      "Cuba",
+      "Cuban",
+      "lime",
+      "simple syrup",
+      "rum cocktail"
+    ]
   },
   {
     "id": "daniel-websters-punch",
-    "title": "Daniel Webster\u0027s Punch",
+    "title": "Daniel Webster's Punch",
     "content": null,
     "contentFile": "DanielWebstersPunch",
-    "descriptiveTitle": "Daniel Webster\u0027s Punch: A Potent Elixir",
-    "description": "A robust, historical punch made with brandy, port, Madeira wine, and spices. Named after the American statesman, it\u0027s a rich and warming cocktail for festive gatherings.",
+    "descriptiveTitle": "Daniel Webster's Punch: A Potent Elixir",
+    "description": "A robust, historical punch made with brandy, port, Madeira wine, and spices. Named after the American statesman, it's a rich and warming cocktail for festive gatherings.",
     "searchableTitles": [
-      "Daniel Webster\u0027s Punch"
+      "Daniel Webster's Punch"
     ],
     "eras": [
       "Traditional"
@@ -2139,19 +2993,63 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum",
+      "cognac"
+    ],
+    "keywordsSpiritSubtype": [
+      "jamaican-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "rich",
+      "complex",
+      "sweet",
+      "citrus",
+      "warm"
+    ],
+    "keywordsCocktailFamily": [
+      "punch"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "warm",
+    "keywordsSeason": [
+      "winter",
+      "fall"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "holiday",
+      "gathering"
+    ],
+    "keywordsMood": [
+      "festive",
+      "warming",
+      "communal"
+    ],
+    "keywordsSearchTerms": [
+      "Daniel Webster",
+      "sherry",
+      "red wine",
+      "champagne",
+      "batch cocktail",
+      "punch bowl"
+    ]
   },
   {
     "id": "dark-n-stormy",
-    "title": "Dark \u0027n\u0027 Stormy",
+    "title": "Dark 'n' Stormy",
     "content": null,
     "contentFile": "DarkNStormy",
-    "descriptiveTitle": "Dark \u0027n\u0027 Stormy: Bermuda\u0027s Signature Cocktail",
-    "description": "A bold and spicy cocktail made with dark rum and ginger beer, garnished with a lime wedge. Originating in Bermuda, it\u0027s known for its distinctive, stormy appearance.",
+    "descriptiveTitle": "Dark 'n' Stormy: Bermuda's Signature Cocktail",
+    "description": "A bold and spicy cocktail made with dark rum and ginger beer, garnished with a lime wedge. Originating in Bermuda, it's known for its distinctive, stormy appearance.",
     "searchableTitles": [
-      "Dark \u0027n\u0027 Stormy"
+      "Dark 'n' Stormy"
     ],
     "eras": [
       "Traditional"
@@ -2224,9 +3122,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "dark-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "spicy",
+      "sweet",
+      "ginger",
+      "bold"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "casual",
+      "afternoon",
+      "evening"
+    ],
+    "keywordsMood": [
+      "bold",
+      "relaxed"
+    ],
+    "keywordsSearchTerms": [
+      "Bermuda",
+      "ginger beer",
+      "Goslings",
+      "dark rum",
+      "stormy"
+    ]
   },
   {
     "id": "de-la-louisiane",
@@ -2234,7 +3172,7 @@
     "content": null,
     "contentFile": "DeLaLouisiane",
     "descriptiveTitle": "De La Louisiane: New Orleans in a Glass",
-    "description": "A complex New Orleans classic made with rye whiskey, sweet vermouth, Benedictine, absinthe, and Peychaud\u0027s bitters. Rich and aromatic, it\u0027s a tribute to the city\u0027s vibrant cocktail history.",
+    "description": "A complex New Orleans classic made with rye whiskey, sweet vermouth, Benedictine, absinthe, and Peychaud's bitters. Rich and aromatic, it's a tribute to the city's vibrant cocktail history.",
     "searchableTitles": [
       "De La Louisiane"
     ],
@@ -2294,7 +3232,7 @@
     ],
     "instructions": [
       {
-        "displayValue": "Add the rye whiskey, sweet vermouth, B\u00E9n\u00E9dictine, absinthe, and Peychaud\u0027s bitters into a mixing glass with ice.",
+        "displayValue": "Add the rye whiskey, sweet vermouth, B\u00e9n\u00e9dictine, absinthe, and Peychaud's bitters into a mixing glass with ice.",
         "order": 1
       },
       {
@@ -2330,9 +3268,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "herbal",
+      "complex",
+      "aromatic",
+      "rich",
+      "anise"
+    ],
+    "keywordsCocktailFamily": [
+      "stirred-spirit",
+      "manhattan-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "New Orleans",
+      "Benedictine",
+      "absinthe",
+      "Peychaud's",
+      "Louisiana"
+    ]
   },
   {
     "id": "death-in-the-afternoon",
@@ -2340,7 +3319,7 @@
     "content": null,
     "contentFile": "DeathInTheAfternoon",
     "descriptiveTitle": "Death in the Afternoon: A Potent Pairing",
-    "description": "A potent cocktail made with absinthe and chilled champagne. Created by Ernest Hemingway, it\u0027s a unique, effervescent cocktail with a strong, herbal kick.",
+    "description": "A potent cocktail made with absinthe and chilled champagne. Created by Ernest Hemingway, it's a unique, effervescent cocktail with a strong, herbal kick.",
     "searchableTitles": [
       "Death In The Afternoon"
     ],
@@ -2402,9 +3381,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "absinthe",
+      "champagne"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "herbal",
+      "anise",
+      "effervescent",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "champagne-cocktail"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "celebration"
+    ],
+    "keywordsMood": [
+      "bold",
+      "literary",
+      "adventurous"
+    ],
+    "keywordsSearchTerms": [
+      "Hemingway",
+      "Ernest Hemingway",
+      "absinthe",
+      "champagne",
+      "literary cocktail"
+    ]
   },
   {
     "id": "florodora",
@@ -2412,7 +3429,7 @@
     "content": null,
     "contentFile": "Florodora",
     "descriptiveTitle": "Florodora Cocktail: A Broadway-Inspired Refreshment",
-    "description": "A refreshing, fruity cocktail made with gin, raspberry syrup, lime juice, and ginger ale. Named after the popular 1900 musical, it\u0027s a delightful mix of sweet and tart flavors.",
+    "description": "A refreshing, fruity cocktail made with gin, raspberry syrup, lime juice, and ginger ale. Named after the popular 1900 musical, it's a delightful mix of sweet and tart flavors.",
     "searchableTitles": [
       "Florodora"
     ],
@@ -2521,9 +3538,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "sweet",
+      "tart",
+      "effervescent",
+      "ginger"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "spring"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "casual",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "cheerful",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "raspberry",
+      "ginger ale",
+      "Broadway",
+      "1900 musical",
+      "pink cocktail"
+    ]
   },
   {
     "id": "french-75",
@@ -2531,7 +3587,7 @@
     "content": null,
     "contentFile": "French75",
     "descriptiveTitle": "French 75: A Toast to History",
-    "description": "A sophisticated cocktail made with gin, fresh lemon juice, simple syrup, and champagne. Created during World War I, it\u0027s named after the French 75mm field gun and packs a potent punch.",
+    "description": "A sophisticated cocktail made with gin, fresh lemon juice, simple syrup, and champagne. Created during World War I, it's named after the French 75mm field gun and packs a potent punch.",
     "searchableTitles": [
       "French 75"
     ],
@@ -2619,9 +3675,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "cognac"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "effervescent",
+      "elegant",
+      "crisp"
+    ],
+    "keywordsCocktailFamily": [
+      "champagne-cocktail",
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "topped"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "celebration",
+      "dinner-party",
+      "evening"
+    ],
+    "keywordsMood": [
+      "festive",
+      "elegant",
+      "celebratory"
+    ],
+    "keywordsSearchTerms": [
+      "champagne",
+      "World War I",
+      "French 75mm gun",
+      "Harry's New York Bar",
+      "Paris"
+    ]
   },
   {
     "id": "garibaldi",
@@ -2629,7 +3725,7 @@
     "content": null,
     "contentFile": "Garibaldi",
     "descriptiveTitle": "The Garibaldi Cocktail: A Toast to Italian Unification",
-    "description": "A vibrant Italian cocktail made with Campari and freshly squeezed orange juice. Named after the Italian revolutionary, it\u0027s a bright and refreshing aperitif.",
+    "description": "A vibrant Italian cocktail made with Campari and freshly squeezed orange juice. Named after the Italian revolutionary, it's a bright and refreshing aperitif.",
     "searchableTitles": [
       "Garibaldi"
     ],
@@ -2669,7 +3765,7 @@
         "order": 1
       },
       {
-        "displayValue": "Squeeze fresh orange juice and aerate it to create a \u0027fluffy\u0027 texture.",
+        "displayValue": "Squeeze fresh orange juice and aerate it to create a 'fluffy' texture.",
         "order": 2
       },
       {
@@ -2704,17 +3800,55 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "campari"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "citrus",
+      "sweet",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "aperitif"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "brunch",
+      "aperitif",
+      "afternoon"
+    ],
+    "keywordsMood": [
+      "cheerful",
+      "bright"
+    ],
+    "keywordsSearchTerms": [
+      "Italian",
+      "orange juice",
+      "Campari",
+      "Italian unification",
+      "fluffy OJ"
+    ]
   },
   {
     "id": "gibson",
     "title": "Gibson",
     "content": null,
     "contentFile": "Gibson",
-    "descriptiveTitle": "The Gibson Cocktail: A Martini\u0027s Elegant Cousin",
-    "description": "A classic cocktail made with gin and dry vermouth, garnished with a cocktail onion. Known for its savory twist, it\u0027s a sophisticated variant of the martini.",
+    "descriptiveTitle": "The Gibson Cocktail: A Martini's Elegant Cousin",
+    "description": "A classic cocktail made with gin and dry vermouth, garnished with a cocktail onion. Known for its savory twist, it's a sophisticated variant of the martini.",
     "searchableTitles": [
       "Gibson"
     ],
@@ -2785,9 +3919,44 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "dry",
+      "savory",
+      "crisp",
+      "clean"
+    ],
+    "keywordsCocktailFamily": [
+      "martini-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "refined"
+    ],
+    "keywordsSearchTerms": [
+      "cocktail onion",
+      "martini",
+      "dry vermouth",
+      "savory"
+    ]
   },
   {
     "id": "gimlet",
@@ -2795,7 +3964,7 @@
     "content": null,
     "contentFile": "Gimlet",
     "descriptiveTitle": "The Gimlet Cocktail: A Sip of Naval History",
-    "description": "A simple, zesty cocktail made with gin and lime cordial. Popularized by British naval officers, it\u0027s a refreshing and slightly sweet cocktail with a sharp lime flavor.",
+    "description": "A simple, zesty cocktail made with gin and lime cordial. Popularized by British naval officers, it's a refreshing and slightly sweet cocktail with a sharp lime flavor.",
     "searchableTitles": [
       "Gimlet"
     ],
@@ -2876,9 +4045,45 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "casual"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "clean"
+    ],
+    "keywordsSearchTerms": [
+      "lime cordial",
+      "Royal Navy",
+      "British naval",
+      "simple"
+    ]
   },
   {
     "id": "gin-and-tonic",
@@ -2886,7 +4091,7 @@
     "content": null,
     "contentFile": "GinAndTonic",
     "descriptiveTitle": "The Gin and Tonic: A Refreshing Tale of Malaria Prevention",
-    "description": "A timeless and refreshing cocktail made with gin and tonic water, garnished with a lime wedge. Invented by British colonialists, it\u0027s a perfect balance of bitter and botanical notes.",
+    "description": "A timeless and refreshing cocktail made with gin and tonic water, garnished with a lime wedge. Invented by British colonialists, it's a perfect balance of bitter and botanical notes.",
     "searchableTitles": [
       "Gin And Tonic"
     ],
@@ -2957,9 +4162,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "citrus",
+      "effervescent",
+      "botanical",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "casual",
+      "afternoon",
+      "evening"
+    ],
+    "keywordsMood": [
+      "relaxed",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "tonic water",
+      "quinine",
+      "British",
+      "colonial",
+      "G&T",
+      "lime"
+    ]
   },
   {
     "id": "gin-daisy",
@@ -2967,7 +4212,7 @@
     "content": null,
     "contentFile": "GinDaisy",
     "descriptiveTitle": "The Gin Daisy: A Blossoming Classic",
-    "description": "A bright and floral cocktail made with gin, lemon juice, grenadine, and soda water. A precursor to the modern margarita, it\u0027s a vibrant, effervescent cocktail with a rosy hue.",
+    "description": "A bright and floral cocktail made with gin, lemon juice, grenadine, and soda water. A precursor to the modern margarita, it's a vibrant, effervescent cocktail with a rosy hue.",
     "searchableTitles": [
       "Gin Daisy"
     ],
@@ -3055,9 +4300,46 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "floral",
+      "citrus",
+      "sweet",
+      "effervescent"
+    ],
+    "keywordsCocktailFamily": [
+      "daisy"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "topped"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "cheerful",
+      "elegant"
+    ],
+    "keywordsSearchTerms": [
+      "orange liqueur",
+      "soda water",
+      "margarita ancestor",
+      "Victorian"
+    ]
   },
   {
     "id": "gin-fizz",
@@ -3065,7 +4347,7 @@
     "content": null,
     "contentFile": "GinFizz",
     "descriptiveTitle": "The Gin Fizz: A Refreshing and Classic Cocktail",
-    "description": "A classic cocktail made with gin, fresh lemon juice, simple syrup, and soda water. Known for its frothy texture, it\u0027s a refreshing and bubbly treat for any occasion.",
+    "description": "A classic cocktail made with gin, fresh lemon juice, simple syrup, and soda water. Known for its frothy texture, it's a refreshing and bubbly treat for any occasion.",
     "searchableTitles": [
       "Gin Fizz"
     ],
@@ -3160,9 +4442,46 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "effervescent",
+      "frothy"
+    ],
+    "keywordsCocktailFamily": [
+      "fizz"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "dry-shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "brunch"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "lively"
+    ],
+    "keywordsSearchTerms": [
+      "soda water",
+      "lemon",
+      "fizzy",
+      "bubbly"
+    ]
   },
   {
     "id": "gin-rickey",
@@ -3170,7 +4489,7 @@
     "content": null,
     "contentFile": "GinRickey",
     "descriptiveTitle": "The Gin Rickey: A Refreshing Highball with a Political Twist",
-    "description": "A refreshing cocktail made with gin, fresh lime juice, and soda water. Originating in Washington D.C. in the late 19th century, it\u0027s a crisp and bubbly cocktail perfect for hot days.",
+    "description": "A refreshing cocktail made with gin, fresh lime juice, and soda water. Originating in Washington D.C. in the late 19th century, it's a crisp and bubbly cocktail perfect for hot days.",
     "searchableTitles": [
       "Gin Rickey"
     ],
@@ -3249,9 +4568,45 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "dry",
+      "citrus",
+      "effervescent",
+      "crisp"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "casual"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "clean"
+    ],
+    "keywordsSearchTerms": [
+      "lime",
+      "soda water",
+      "Washington DC",
+      "no sugar",
+      "unsweetened"
+    ]
   },
   {
     "id": "gin-sour",
@@ -3259,7 +4614,7 @@
     "content": null,
     "contentFile": "GinSour",
     "descriptiveTitle": "The Gin Sour: A Classic Cocktail with a Tangy Twist",
-    "description": "A classic cocktail made with gin, fresh lemon juice, and simple syrup. Known for its balance of sweet and sour, it\u0027s a timeless favorite in the world of sours.",
+    "description": "A classic cocktail made with gin, fresh lemon juice, and simple syrup. Known for its balance of sweet and sour, it's a timeless favorite in the world of sours.",
     "searchableTitles": [
       "Gin Sour"
     ],
@@ -3343,9 +4698,44 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "smooth"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "casual"
+    ],
+    "keywordsMood": [
+      "classic",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "lemon",
+      "simple syrup",
+      "egg white",
+      "sour cocktail"
+    ]
   },
   {
     "id": "hemingway-daiquiri",
@@ -3441,9 +4831,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "white-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "tart",
+      "dry",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "daiquiri-variant",
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "adventurous",
+      "literary"
+    ],
+    "keywordsSearchTerms": [
+      "Hemingway",
+      "Papa Doble",
+      "maraschino",
+      "Luxardo",
+      "grapefruit",
+      "no sugar"
+    ]
   },
   {
     "id": "improved-whiskey-cocktail",
@@ -3451,7 +4882,7 @@
     "content": null,
     "contentFile": "ImprovedWhiskeyCocktail",
     "descriptiveTitle": "The Improved Whiskey Cocktail: A Refined Classic",
-    "description": "A historic cocktail made with whiskey, absinthe, maraschino liqueur, and a dash of bitters. An \u0027improved\u0027 version of the classic whiskey cocktail, offering a complex blend of flavors.",
+    "description": "A historic cocktail made with whiskey, absinthe, maraschino liqueur, and a dash of bitters. An 'improved' version of the classic whiskey cocktail, offering a complex blend of flavors.",
     "searchableTitles": [
       "Improved Whiskey Cocktail"
     ],
@@ -3558,9 +4989,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "herbal",
+      "anise",
+      "complex",
+      "aromatic"
+    ],
+    "keywordsCocktailFamily": [
+      "old-fashioned-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "maraschino",
+      "absinthe",
+      "Angostura",
+      "Peychaud's",
+      "19th century"
+    ]
   },
   {
     "id": "jungle-bird",
@@ -3568,7 +5039,7 @@
     "content": null,
     "contentFile": "JungleBird",
     "descriptiveTitle": "The Jungle Bird: A Tropical Rum Cocktail",
-    "description": "A tropical cocktail made with dark rum, Campari, pineapple juice, lime juice, and simple syrup. Created in the 1970s in Malaysia, it\u0027s a vibrant and slightly bitter cocktail.",
+    "description": "A tropical cocktail made with dark rum, Campari, pineapple juice, lime juice, and simple syrup. Created in the 1970s in Malaysia, it's a vibrant and slightly bitter cocktail.",
     "searchableTitles": [
       "Jungle Bird"
     ],
@@ -3664,9 +5135,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "dark-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "tropical",
+      "sweet",
+      "fruity",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "tiki-bar",
+      "party",
+      "evening"
+    ],
+    "keywordsMood": [
+      "adventurous",
+      "fun",
+      "tropical"
+    ],
+    "keywordsSearchTerms": [
+      "Campari",
+      "pineapple",
+      "tiki cocktail",
+      "Kuala Lumpur",
+      "bitter tiki"
+    ]
   },
   {
     "id": "last-word",
@@ -3674,7 +5186,7 @@
     "content": null,
     "contentFile": "LastWord",
     "descriptiveTitle": "The Last Word: A Prohibition-Era Gin Classic",
-    "description": "A pre-Prohibition cocktail made with gin, green Chartreuse, maraschino liqueur, and fresh lime juice. Known for its perfectly balanced and herbal flavors, it\u0027s a must-try classic.",
+    "description": "A pre-Prohibition cocktail made with gin, green Chartreuse, maraschino liqueur, and fresh lime juice. Known for its perfectly balanced and herbal flavors, it's a must-try classic.",
     "searchableTitles": [
       "Last Word"
     ],
@@ -3762,9 +5274,45 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "herbal",
+      "citrus",
+      "sweet",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "equal-parts"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "bold"
+    ],
+    "keywordsSearchTerms": [
+      "Chartreuse",
+      "maraschino",
+      "Prohibition",
+      "equal parts",
+      "Detroit Athletic Club"
+    ]
   },
   {
     "id": "mai-tai",
@@ -3772,7 +5320,7 @@
     "content": null,
     "contentFile": "MaiTai",
     "descriptiveTitle": "The Mai Tai: A Tropical Tiki Classic",
-    "description": "A famous tiki cocktail made with rum, lime juice, orgeat syrup, and orange cura\u00E7ao. Created in the 1940s, it\u0027s a symbol of tropical paradise.",
+    "description": "A famous tiki cocktail made with rum, lime juice, orgeat syrup, and orange cura\u00e7ao. Created in the 1940s, it's a symbol of tropical paradise.",
     "searchableTitles": [
       "Mai Tai"
     ],
@@ -3785,7 +5333,7 @@
         "units": 0.5,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Preferably Neisson L\u0027Esprit",
+        "suggestions": "Preferably Neisson L'Esprit",
         "requirement": "required"
       },
       {
@@ -3817,7 +5365,7 @@
         "units": 0.5,
         "uoM": "ounces",
         "preparation": "none",
-        "suggestions": "Or Orange Cura\u00E7ao",
+        "suggestions": "Or Orange Cura\u00e7ao",
         "requirement": "required"
       },
       {
@@ -3861,7 +5409,7 @@
         "order": 1
       },
       {
-        "displayValue": "Add the rum, orange cura\u00E7ao, lime juice, and orgeat syrup.",
+        "displayValue": "Add the rum, orange cura\u00e7ao, lime juice, and orgeat syrup.",
         "order": 2
       },
       {
@@ -3896,9 +5444,53 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "white-rum",
+      "gold-rum",
+      "aged-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "tropical",
+      "sweet",
+      "citrus",
+      "nutty",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "tiki-bar",
+      "party",
+      "pool-party"
+    ],
+    "keywordsMood": [
+      "fun",
+      "tropical",
+      "festive"
+    ],
+    "keywordsSearchTerms": [
+      "Trader Vic",
+      "orgeat",
+      "curacao",
+      "tiki",
+      "Polynesian",
+      "1944"
+    ]
   },
   {
     "id": "manhattan",
@@ -3906,7 +5498,7 @@
     "content": null,
     "contentFile": "Manhattan",
     "descriptiveTitle": "The Manhattan: A Timeless Whiskey Classic",
-    "description": "A timeless cocktail made with rye whiskey, sweet vermouth, and Angostura bitters, garnished with a cherry. Created in the late 19th century, it\u0027s a staple of classic cocktail culture.",
+    "description": "A timeless cocktail made with rye whiskey, sweet vermouth, and Angostura bitters, garnished with a cherry. Created in the late 19th century, it's a staple of classic cocktail culture.",
     "searchableTitles": [
       "Manhattan"
     ],
@@ -3985,9 +5577,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "bitter",
+      "rich",
+      "warm",
+      "aromatic"
+    ],
+    "keywordsCocktailFamily": [
+      "stirred-spirit"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "dinner-party",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "classic",
+      "refined"
+    ],
+    "keywordsSearchTerms": [
+      "sweet vermouth",
+      "Angostura",
+      "cherry",
+      "New York",
+      "whiskey cocktail"
+    ]
   },
   {
     "id": "margarita",
@@ -3995,7 +5628,7 @@
     "content": null,
     "contentFile": "Margarita",
     "descriptiveTitle": "The Margarita: A Refreshing Tequila Classic",
-    "description": "A popular cocktail made with tequila, lime juice, and triple sec, often served with a salted rim. Believed to have originated in the 1930s or 1940s, it\u0027s a zesty and refreshing cocktail.",
+    "description": "A popular cocktail made with tequila, lime juice, and triple sec, often served with a salted rim. Believed to have originated in the 1930s or 1940s, it's a zesty and refreshing cocktail.",
     "searchableTitles": [
       "Margarita"
     ],
@@ -4093,9 +5726,52 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "tequila"
+    ],
+    "keywordsSpiritSubtype": [
+      "blanco-tequila"
+    ],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "salty",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "casual",
+      "mexican-food"
+    ],
+    "keywordsMood": [
+      "fun",
+      "festive",
+      "lively"
+    ],
+    "keywordsSearchTerms": [
+      "Cointreau",
+      "lime",
+      "salt rim",
+      "agave",
+      "Mexico",
+      "Mexican"
+    ]
   },
   {
     "id": "martinez",
@@ -4103,7 +5779,7 @@
     "content": null,
     "contentFile": "Martinez",
     "descriptiveTitle": "The Martinez Cocktail: A Stirred Slice of History",
-    "description": "A precursor to the martini, made with gin, sweet vermouth, maraschino liqueur, and a dash of bitters. Dating back to the late 19th century, it\u0027s a rich and complex cocktail.",
+    "description": "A precursor to the martini, made with gin, sweet vermouth, maraschino liqueur, and a dash of bitters. Dating back to the late 19th century, it's a rich and complex cocktail.",
     "searchableTitles": [
       "Martinez"
     ],
@@ -4191,9 +5867,45 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "herbal",
+      "rich",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "martini-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "classic"
+    ],
+    "keywordsSearchTerms": [
+      "martini precursor",
+      "sweet vermouth",
+      "maraschino",
+      "Angostura",
+      "19th century"
+    ]
   },
   {
     "id": "martini",
@@ -4281,9 +5993,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "dry",
+      "crisp",
+      "clean",
+      "botanical"
+    ],
+    "keywordsCocktailFamily": [
+      "martini"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "dinner-party",
+      "date-night"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "classic",
+      "refined"
+    ],
+    "keywordsSearchTerms": [
+      "dry vermouth",
+      "olive",
+      "lemon peel",
+      "James Bond",
+      "iconic"
+    ]
   },
   {
     "id": "mexican-firing-squad",
@@ -4291,7 +6041,7 @@
     "content": null,
     "contentFile": "MexicanFiringSquad",
     "descriptiveTitle": "The Mexican Firing Squad: A Tequila Tale of Adventure",
-    "description": "A bold cocktail made with tequila, lime juice, grenadine, and Angostura bitters. Originating from Mexico City in the 1930s, it\u0027s a vibrant and spicy cocktail.",
+    "description": "A bold cocktail made with tequila, lime juice, grenadine, and Angostura bitters. Originating from Mexico City in the 1930s, it's a vibrant and spicy cocktail.",
     "searchableTitles": [
       "Mexican Firing Squad"
     ],
@@ -4386,9 +6136,46 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "tequila"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "tart",
+      "citrus",
+      "spicy"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "evening"
+    ],
+    "keywordsMood": [
+      "bold",
+      "lively"
+    ],
+    "keywordsSearchTerms": [
+      "grenadine",
+      "Angostura bitters",
+      "lime",
+      "Mexico",
+      "Charles Baker"
+    ]
   },
   {
     "id": "michelada",
@@ -4503,9 +6290,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "beer"
+    ],
+    "keywordsSpiritSubtype": [
+      "mexican-beer"
+    ],
+    "keywordsFlavorProfile": [
+      "savory",
+      "spicy",
+      "citrus",
+      "salty",
+      "tangy"
+    ],
+    "keywordsCocktailFamily": [
+      "beer-cocktail",
+      "savory-cocktail"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "brunch",
+      "casual",
+      "bbq"
+    ],
+    "keywordsMood": [
+      "bold",
+      "restorative",
+      "casual"
+    ],
+    "keywordsSearchTerms": [
+      "tomato juice",
+      "Mexican beer",
+      "hot sauce",
+      "lime",
+      "hangover cure"
+    ]
   },
   {
     "id": "millionaire-cocktail",
@@ -4513,7 +6342,7 @@
     "content": null,
     "contentFile": "MillionaireCocktail",
     "descriptiveTitle": "The Millionaire Cocktail: A Rich Blend of History and Flavor",
-    "description": "A luxurious cocktail made with bourbon, Grand Marnier, grenadine, and absinthe. Known for its rich and complex flavors, it\u0027s a cocktail that lives up to its name.",
+    "description": "A luxurious cocktail made with bourbon, Grand Marnier, grenadine, and absinthe. Known for its rich and complex flavors, it's a cocktail that lives up to its name.",
     "searchableTitles": [
       "Millionaire Cocktail"
     ],
@@ -4618,9 +6447,46 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "citrus",
+      "herbal",
+      "rich",
+      "creamy"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "celebration"
+    ],
+    "keywordsMood": [
+      "glamorous",
+      "indulgent"
+    ],
+    "keywordsSearchTerms": [
+      "Grand Marnier",
+      "grenadine",
+      "absinthe",
+      "egg white",
+      "frothy"
+    ]
   },
   {
     "id": "mint-julep",
@@ -4628,7 +6494,7 @@
     "content": null,
     "contentFile": "MintJulep",
     "descriptiveTitle": "The Mint Julep: A Refreshing Bourbon Classic",
-    "description": "A classic Southern cocktail made with bourbon, fresh mint, sugar, and crushed ice. Traditionally associated with the Kentucky Derby, it\u0027s a refreshing and aromatic cocktail.s",
+    "description": "A classic Southern cocktail made with bourbon, fresh mint, sugar, and crushed ice. Traditionally associated with the Kentucky Derby, it's a refreshing and aromatic cocktail.s",
     "searchableTitles": [
       "Mint Julep"
     ],
@@ -4713,9 +6579,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "minty",
+      "sweet",
+      "refreshing",
+      "cool"
+    ],
+    "keywordsCocktailFamily": [
+      "julep"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "Kentucky Derby",
+      "afternoon",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "Southern",
+      "elegant",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "Kentucky Derby",
+      "mint",
+      "crushed ice",
+      "Southern",
+      "julep tin"
+    ]
   },
   {
     "id": "mojito",
@@ -4723,7 +6629,7 @@
     "content": null,
     "contentFile": "Mojito",
     "descriptiveTitle": "The Mojito: A Cuban Classic",
-    "description": "A vibrant Cuban cocktail made with white rum, fresh lime juice, mint leaves, sugar, and soda water. Known for its refreshing taste, it\u0027s a perfect summer cocktail.",
+    "description": "A vibrant Cuban cocktail made with white rum, fresh lime juice, mint leaves, sugar, and soda water. Known for its refreshing taste, it's a perfect summer cocktail.",
     "searchableTitles": [
       "Mojito"
     ],
@@ -4833,9 +6739,53 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "light-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "minty",
+      "citrus",
+      "sweet",
+      "effervescent",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "built"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "casual",
+      "afternoon",
+      "pool-party"
+    ],
+    "keywordsMood": [
+      "fun",
+      "tropical",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "Cuba",
+      "Havana",
+      "mint",
+      "lime",
+      "soda water",
+      "Ernest Hemingway"
+    ]
   },
   {
     "id": "moscow-mule",
@@ -4843,7 +6793,7 @@
     "content": null,
     "contentFile": "MoscowMule",
     "descriptiveTitle": "The Moscow Mule: A Refreshing Vodka Classic",
-    "description": "A refreshing cocktail made with vodka, ginger beer, and lime juice, served in a copper mug. Invented in the 1940s, it\u0027s a classic with a spicy kick.",
+    "description": "A refreshing cocktail made with vodka, ginger beer, and lime juice, served in a copper mug. Invented in the 1940s, it's a classic with a spicy kick.",
     "searchableTitles": [
       "Moscow Mule"
     ],
@@ -4922,9 +6872,46 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "vodka"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "spicy",
+      "citrus",
+      "ginger",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "mule"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "casual",
+      "afternoon",
+      "evening"
+    ],
+    "keywordsMood": [
+      "relaxed",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "copper mug",
+      "ginger beer",
+      "lime",
+      "1940s"
+    ]
   },
   {
     "id": "negroni",
@@ -4932,7 +6919,7 @@
     "content": null,
     "contentFile": "Negroni",
     "descriptiveTitle": "The Negroni: A Bitter-Sweet Italian Classic",
-    "description": "A bold and bitter cocktail made with gin, Campari, and sweet vermouth, garnished with an orange peel. Created in the early 20th century, it\u0027s a favorite among aperitif lovers.",
+    "description": "A bold and bitter cocktail made with gin, Campari, and sweet vermouth, garnished with an orange peel. Created in the early 20th century, it's a favorite among aperitif lovers.",
     "searchableTitles": [
       "Negroni"
     ],
@@ -5013,9 +7000,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "sweet",
+      "herbal",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "negroni"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "bold",
+      "classic"
+    ],
+    "keywordsSearchTerms": [
+      "Campari",
+      "sweet vermouth",
+      "Italian",
+      "Florence",
+      "Count Negroni",
+      "bitter cocktail"
+    ]
   },
   {
     "id": "negroni-sbagliato",
@@ -5023,7 +7049,7 @@
     "content": null,
     "contentFile": "NegroniSbagliato",
     "descriptiveTitle": "The Negroni Sbagliato: A Sparkling Twist on a Classic",
-    "description": "A twist on the classic Negroni, made with prosecco instead of gin. Invented by mistake in the 1970s in Milan, it\u0027s a lighter, bubbly version of the original.",
+    "description": "A twist on the classic Negroni, made with prosecco instead of gin. Invented by mistake in the 1970s in Milan, it's a lighter, bubbly version of the original.",
     "searchableTitles": [
       "Negroni Sbagliato"
     ],
@@ -5103,9 +7129,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "prosecco"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "sweet",
+      "effervescent",
+      "light"
+    ],
+    "keywordsCocktailFamily": [
+      "negroni-variant",
+      "spritz"
+    ],
+    "keywordsTechnique": [
+      "stirred",
+      "topped"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "afternoon",
+      "casual"
+    ],
+    "keywordsMood": [
+      "relaxed",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "mistaken Negroni",
+      "prosecco",
+      "Campari",
+      "Italian",
+      "low alcohol"
+    ]
   },
   {
     "id": "new-york-sour",
@@ -5191,9 +7257,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "fruity",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "floated"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "striking"
+    ],
+    "keywordsSearchTerms": [
+      "red wine float",
+      "wine",
+      "layered",
+      "whiskey sour",
+      "New York"
+    ]
   },
   {
     "id": "old-pal",
@@ -5201,7 +7307,7 @@
     "content": null,
     "contentFile": "OldPal",
     "descriptiveTitle": "The Old Pal: A Toast to Friendship and Whiskey",
-    "description": "A variation of the Boulevardier, made with rye whiskey, dry vermouth, and Campari. Known for its dry and slightly bitter profile, it\u0027s a sophisticated and bold cocktail.",
+    "description": "A variation of the Boulevardier, made with rye whiskey, dry vermouth, and Campari. Known for its dry and slightly bitter profile, it's a sophisticated and bold cocktail.",
     "searchableTitles": [
       "Old Pal"
     ],
@@ -5285,9 +7391,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "dry",
+      "complex",
+      "herbal"
+    ],
+    "keywordsCocktailFamily": [
+      "negroni-family"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "bold"
+    ],
+    "keywordsSearchTerms": [
+      "Campari",
+      "dry vermouth",
+      "Boulevardier cousin",
+      "Harry MacElhone",
+      "Paris"
+    ]
   },
   {
     "id": "old-fashioned",
@@ -5295,7 +7439,7 @@
     "content": null,
     "contentFile": "OldFashioned",
     "descriptiveTitle": "The Old Fashioned: A Timeless Classic",
-    "description": "A timeless cocktail made with whiskey, sugar, Angostura bitters, and a twist of citrus. Originating in the early 19th century, it\u0027s the epitome of classic cocktail simplicity.",
+    "description": "A timeless cocktail made with whiskey, sugar, Angostura bitters, and a twist of citrus. Originating in the early 19th century, it's the epitome of classic cocktail simplicity.",
     "searchableTitles": [
       "Old-Fashioned"
     ],
@@ -5398,9 +7542,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "bitter",
+      "citrus",
+      "aromatic",
+      "rich"
+    ],
+    "keywordsCocktailFamily": [
+      "old-fashioned"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "stirred",
+      "built"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "nightcap",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "classic",
+      "contemplative",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "Angostura bitters",
+      "sugar",
+      "orange peel",
+      "whiskey",
+      "bourbon",
+      "timeless"
+    ]
   },
   {
     "id": "pain-killer",
@@ -5408,7 +7594,7 @@
     "content": null,
     "contentFile": "PainKiller",
     "descriptiveTitle": "The Painkiller: A Sip of Tropical History",
-    "description": "A tropical cocktail made with dark rum, pineapple juice, orange juice, and cream of coconut, garnished with nutmeg. Created in the British Virgin Islands, it\u0027s a rich and creamy island favorite.",
+    "description": "A tropical cocktail made with dark rum, pineapple juice, orange juice, and cream of coconut, garnished with nutmeg. Created in the British Virgin Islands, it's a rich and creamy island favorite.",
     "searchableTitles": [
       "Pain Killer"
     ],
@@ -5504,9 +7690,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "virgin-islands-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "tropical",
+      "sweet",
+      "creamy",
+      "coconut",
+      "fruity"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "pool-party",
+      "tiki-bar",
+      "casual"
+    ],
+    "keywordsMood": [
+      "fun",
+      "tropical",
+      "indulgent"
+    ],
+    "keywordsSearchTerms": [
+      "Pusser's",
+      "British Virgin Islands",
+      "Soggy Dollar Bar",
+      "pineapple",
+      "coconut cream"
+    ]
   },
   {
     "id": "paloma",
@@ -5514,7 +7741,7 @@
     "content": null,
     "contentFile": "Paloma",
     "descriptiveTitle": "The Paloma: A Refreshing Tequila Classic",
-    "description": "A refreshing Mexican cocktail made with tequila, fresh lime juice, and grapefruit soda. Known for its bright and tangy flavors, it\u0027s a popular alternative to the margarita.",
+    "description": "A refreshing Mexican cocktail made with tequila, fresh lime juice, and grapefruit soda. Known for its bright and tangy flavors, it's a popular alternative to the margarita.",
     "searchableTitles": [
       "Paloma"
     ],
@@ -5625,9 +7852,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "tequila"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "tart",
+      "effervescent",
+      "refreshing",
+      "bitter"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "casual",
+      "party",
+      "bbq"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "fun",
+      "lively"
+    ],
+    "keywordsSearchTerms": [
+      "grapefruit",
+      "Mexico",
+      "Mexican",
+      "lime",
+      "soda water",
+      "tequila cocktail"
+    ]
   },
   {
     "id": "pegu-club",
@@ -5635,7 +7902,7 @@
     "content": null,
     "contentFile": "PeguClub",
     "descriptiveTitle": "The Pegu Club: A Gin-Based Tropical Escape",
-    "description": "A classic gin cocktail made with gin, orange cura\u00E7ao, lime juice, and Angostura bitters. Named after a British colonial club in Burma, it\u0027s a tart and slightly spicy cocktail.",
+    "description": "A classic gin cocktail made with gin, orange cura\u00e7ao, lime juice, and Angostura bitters. Named after a British colonial club in Burma, it's a tart and slightly spicy cocktail.",
     "searchableTitles": [
       "Pegu Club"
     ],
@@ -5731,9 +7998,46 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "bitter",
+      "aromatic",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "exotic",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "curacao",
+      "Burma",
+      "Myanmar",
+      "Angostura",
+      "orange bitters",
+      "colonial"
+    ]
   },
   {
     "id": "philadelphia-fish-house-punch",
@@ -5741,7 +8045,7 @@
     "content": null,
     "contentFile": "PhiladelphiaFishHousePunch",
     "descriptiveTitle": "Philadelphia Fish House Punch: A Colonial American Classic",
-    "description": "A historic punch made with rum, cognac, peach brandy, and citrus. Created in the 18th century by a Philadelphia social club, it\u0027s a strong yet smooth cocktail for gatherings.",
+    "description": "A historic punch made with rum, cognac, peach brandy, and citrus. Created in the 18th century by a Philadelphia social club, it's a strong yet smooth cocktail for gatherings.",
     "searchableTitles": [
       "Philadelphia Fish House Punch"
     ],
@@ -5855,19 +8159,61 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum",
+      "cognac"
+    ],
+    "keywordsSpiritSubtype": [
+      "jamaican-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "rich",
+      "fruity",
+      "sweet",
+      "complex",
+      "citrus"
+    ],
+    "keywordsCocktailFamily": [
+      "punch"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "gathering",
+      "celebration"
+    ],
+    "keywordsMood": [
+      "festive",
+      "communal"
+    ],
+    "keywordsSearchTerms": [
+      "peach brandy",
+      "punch bowl",
+      "Philadelphia",
+      "colonial",
+      "batch cocktail",
+      "State in Schuylkill"
+    ]
   },
   {
     "id": "pimms-cup",
-    "title": "Pimm\u0027s Cup",
+    "title": "Pimm's Cup",
     "content": null,
     "contentFile": "PimmsCup",
-    "descriptiveTitle": "Pimm\u0027s Cup: A Quintessential Summertime Refresher",
-    "description": "A refreshing British cocktail made with Pimm\u0027s No. 1, lemonade, and garnished with fruits and herbs. Popular since the 19th century, it\u0027s a quintessential summer cocktail.",
+    "descriptiveTitle": "Pimm's Cup: A Quintessential Summertime Refresher",
+    "description": "A refreshing British cocktail made with Pimm's No. 1, lemonade, and garnished with fruits and herbs. Popular since the 19th century, it's a quintessential summer cocktail.",
     "searchableTitles": [
-      "Pimm\u0027s Cup"
+      "Pimm's Cup"
     ],
     "eras": [
       "Traditional"
@@ -5973,19 +8319,59 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "pimms"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "herbal",
+      "effervescent",
+      "refreshing",
+      "light"
+    ],
+    "keywordsCocktailFamily": [
+      "cup"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "garden-party",
+      "afternoon",
+      "Wimbledon"
+    ],
+    "keywordsMood": [
+      "cheerful",
+      "relaxed",
+      "social"
+    ],
+    "keywordsSearchTerms": [
+      "British",
+      "English",
+      "Wimbledon",
+      "cucumber",
+      "summer drink",
+      "Pimm's No. 1"
+    ]
   },
   {
     "id": "pina-colada",
-    "title": "Pi\u00F1a Colada",
+    "title": "Pi\u00f1a Colada",
     "content": null,
     "contentFile": "PinaColada",
-    "descriptiveTitle": "The Pi\u00F1a Colada: A Taste of Puerto Rican Paradise",
-    "description": "A tropical cocktail made with rum, coconut cream, and pineapple juice, blended with ice. Created in Puerto Rico, it\u0027s a creamy, sweet escape to paradise.",
+    "descriptiveTitle": "The Pi\u00f1a Colada: A Taste of Puerto Rican Paradise",
+    "description": "A tropical cocktail made with rum, coconut cream, and pineapple juice, blended with ice. Created in Puerto Rico, it's a creamy, sweet escape to paradise.",
     "searchableTitles": [
-      "Pi\u00F1a Colada"
+      "Pi\u00f1a Colada"
     ],
     "eras": [
       "Traditional"
@@ -6076,9 +8462,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "tropical",
+      "sweet",
+      "creamy",
+      "coconut",
+      "fruity"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki",
+      "blended"
+    ],
+    "keywordsTechnique": [
+      "blended"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "frozen",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "pool-party",
+      "beach",
+      "casual"
+    ],
+    "keywordsMood": [
+      "fun",
+      "tropical",
+      "relaxed"
+    ],
+    "keywordsSearchTerms": [
+      "Puerto Rico",
+      "pineapple",
+      "coconut",
+      "frozen cocktail",
+      "blended cocktail"
+    ]
   },
   {
     "id": "pisco-sour",
@@ -6086,7 +8512,7 @@
     "content": null,
     "contentFile": "PiscoSour",
     "descriptiveTitle": "Pisco Sour: The South American Classic",
-    "description": "A vibrant cocktail made with pisco, lime juice, simple syrup, egg white, and bitters. Originating from Peru, it\u0027s a tangy and frothy cocktail with a smooth finish.",
+    "description": "A vibrant cocktail made with pisco, lime juice, simple syrup, egg white, and bitters. Originating from Peru, it's a tangy and frothy cocktail with a smooth finish.",
     "searchableTitles": [
       "Pisco Sour"
     ],
@@ -6178,19 +8604,57 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "pisco"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "creamy",
+      "frothy"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "dry-shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "aperitif"
+    ],
+    "keywordsMood": [
+      "vibrant",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "Peru",
+      "Peruvian",
+      "egg white",
+      "Angostura",
+      "South American"
+    ]
   },
   {
     "id": "planters-punch",
-    "title": "Planter\u0027s Punch",
+    "title": "Planter's Punch",
     "content": null,
     "contentFile": "PlantersPunch",
-    "descriptiveTitle": "Planter\u0027s Punch: A Caribbean Classic",
+    "descriptiveTitle": "Planter's Punch: A Caribbean Classic",
     "description": "A classic rum punch made with dark rum, lime juice, simple syrup, and Angostura bitters. A traditional Caribbean favorite known for its rich and refreshing taste.",
     "searchableTitles": [
-      "Planter\u0027s Punch"
+      "Planter's Punch"
     ],
     "eras": [
       "Traditional"
@@ -6299,19 +8763,60 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "dark-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "tropical",
+      "fruity",
+      "sweet",
+      "citrus"
+    ],
+    "keywordsCocktailFamily": [
+      "punch",
+      "tiki"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "casual",
+      "tiki-bar"
+    ],
+    "keywordsMood": [
+      "fun",
+      "tropical",
+      "festive"
+    ],
+    "keywordsSearchTerms": [
+      "Caribbean",
+      "Jamaica",
+      "pineapple",
+      "grenadine",
+      "plantation"
+    ]
   },
   {
     "id": "queens-park-swizzle",
-    "title": "Queen\u0027s Park Swizzle",
+    "title": "Queen's Park Swizzle",
     "content": null,
     "contentFile": "QueensParkSwizzle",
-    "descriptiveTitle": "Queen\u0027s Park Swizzle: A Caribbean Classic",
-    "description": "A tropical cocktail made with rum, lime juice, mint, simple syrup, and bitters, served over crushed ice. Originating from Trinidad, it\u0027s a vibrant and refreshing cocktail.",
+    "descriptiveTitle": "Queen's Park Swizzle: A Caribbean Classic",
+    "description": "A tropical cocktail made with rum, lime juice, mint, simple syrup, and bitters, served over crushed ice. Originating from Trinidad, it's a vibrant and refreshing cocktail.",
     "searchableTitles": [
-      "Queen\u0027s Park Swizzle"
+      "Queen's Park Swizzle"
     ],
     "eras": [
       "Traditional"
@@ -6361,7 +8866,7 @@
     ],
     "instructions": [
       {
-        "displayValue": "In a Collins or hurricane glass, gently muddle the mint sprig with the simple syrup to release the mint\u0027s oils.",
+        "displayValue": "In a Collins or hurricane glass, gently muddle the mint sprig with the simple syrup to release the mint's oils.",
         "order": 1
       },
       {
@@ -6393,9 +8898,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "demerara-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "minty",
+      "sweet",
+      "citrus",
+      "aromatic",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "swizzle",
+      "tiki"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "swizzled"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "tiki-bar",
+      "evening"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "exotic"
+    ],
+    "keywordsSearchTerms": [
+      "Trinidad",
+      "Queen's Park Hotel",
+      "crushed ice",
+      "mint",
+      "Angostura bitters"
+    ]
   },
   {
     "id": "ramos-gin-fizz",
@@ -6403,7 +8949,7 @@
     "content": null,
     "contentFile": "RamosGinFizz",
     "descriptiveTitle": "Ramos Gin Fizz: A Frothy New Orleans Classic",
-    "description": "A frothy cocktail made with gin, lemon and lime juice, simple syrup, cream, egg white, orange flower water, and soda. Created in the late 19th century in New Orleans, it\u0027s known for its rich, smooth texture.",
+    "description": "A frothy cocktail made with gin, lemon and lime juice, simple syrup, cream, egg white, orange flower water, and soda. Created in the late 19th century in New Orleans, it's known for its rich, smooth texture.",
     "searchableTitles": [
       "Ramos Gin Fizz"
     ],
@@ -6532,9 +9078,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "creamy",
+      "citrus",
+      "floral",
+      "effervescent",
+      "sweet"
+    ],
+    "keywordsCocktailFamily": [
+      "fizz"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "dry-shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "brunch",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "indulgent",
+      "elegant"
+    ],
+    "keywordsSearchTerms": [
+      "New Orleans",
+      "orange flower water",
+      "cream",
+      "egg white",
+      "Henry Ramos",
+      "frothy"
+    ]
   },
   {
     "id": "remember-the-maine",
@@ -6542,7 +9128,7 @@
     "content": null,
     "contentFile": "RememberTheMaine",
     "descriptiveTitle": "Remember The Maine: A Historical Tribute in a Glass",
-    "description": "A robust cocktail made with rye whiskey, sweet vermouth, cherry liqueur, and absinthe. Named after the rallying cry for the Spanish-American War, it\u0027s a complex and rich cocktail.",
+    "description": "A robust cocktail made with rye whiskey, sweet vermouth, cherry liqueur, and absinthe. Named after the rallying cry for the Spanish-American War, it's a complex and rich cocktail.",
     "searchableTitles": [
       "Remember The Maine"
     ],
@@ -6614,7 +9200,7 @@
         "order": 5
       },
       {
-        "displayValue": "Optionally, garnish with a brandied cherry\u2014a nod to the cocktail\u0027s cherry-infused heart.",
+        "displayValue": "Optionally, garnish with a brandied cherry\u2014a nod to the cocktail's cherry-infused heart.",
         "order": 6
       }
     ],
@@ -6638,9 +9224,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "herbal",
+      "anise",
+      "complex",
+      "cherry"
+    ],
+    "keywordsCocktailFamily": [
+      "manhattan-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "Cherry Heering",
+      "absinthe",
+      "sweet vermouth",
+      "Spanish-American War",
+      "USS Maine"
+    ]
   },
   {
     "id": "rob-roy",
@@ -6648,7 +9274,7 @@
     "content": null,
     "contentFile": "RobRoy",
     "descriptiveTitle": "The Rob Roy: A Scotch-Infused Salute to a Scottish Hero",
-    "description": "A Scotch whisky version of the Manhattan, made with Scotch, sweet vermouth, and Angostura bitters. Named after the Scottish folk hero, it\u0027s a classic and sophisticated cocktail.",
+    "description": "A Scotch whisky version of the Manhattan, made with Scotch, sweet vermouth, and Angostura bitters. Named after the Scottish folk hero, it's a classic and sophisticated cocktail.",
     "searchableTitles": [
       "Rob Roy"
     ],
@@ -6692,7 +9318,7 @@
     ],
     "instructions": [
       {
-        "displayValue": "In a chilled Nick \u0026 Nora or cocktail glass combine the Scotch Whiskey, sweet vermouth and Angostura bitters.",
+        "displayValue": "In a chilled Nick & Nora or cocktail glass combine the Scotch Whiskey, sweet vermouth and Angostura bitters.",
         "order": 1
       },
       {
@@ -6728,9 +9354,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "scotch"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "warm",
+      "rich",
+      "aromatic"
+    ],
+    "keywordsCocktailFamily": [
+      "manhattan-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "nightcap",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "classic",
+      "warming",
+      "refined"
+    ],
+    "keywordsSearchTerms": [
+      "Scotch Manhattan",
+      "sweet vermouth",
+      "Angostura",
+      "Scottish",
+      "Waldorf-Astoria"
+    ]
   },
   {
     "id": "sazerac",
@@ -6738,7 +9404,7 @@
     "content": null,
     "contentFile": "Sazerac",
     "descriptiveTitle": "The Sazerac: A Timeless Tribute to New Orleans",
-    "description": "A historic New Orleans cocktail made with rye whiskey, absinthe, sugar, and Peychaud\u0027s bitters. Known as one of America\u0027s oldest cocktails, it\u0027s a strong and aromatic cocktail.",
+    "description": "A historic New Orleans cocktail made with rye whiskey, absinthe, sugar, and Peychaud's bitters. Known as one of America's oldest cocktails, it's a strong and aromatic cocktail.",
     "searchableTitles": [
       "Sazerac"
     ],
@@ -6806,7 +9472,7 @@
         "order": 2
       },
       {
-        "displayValue": "In a separate mixing glass filled with ice, blend the rye, sugar and Peychaud\u0027s Bitters.",
+        "displayValue": "In a separate mixing glass filled with ice, blend the rye, sugar and Peychaud's Bitters.",
         "order": 3
       },
       {
@@ -6841,9 +9507,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "herbal",
+      "anise",
+      "aromatic",
+      "complex",
+      "bitter"
+    ],
+    "keywordsCocktailFamily": [
+      "old-fashioned-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "bold",
+      "classic"
+    ],
+    "keywordsSearchTerms": [
+      "New Orleans",
+      "Peychaud's",
+      "absinthe",
+      "official cocktail",
+      "Louisiana"
+    ]
   },
   {
     "id": "scorpion-bowl",
@@ -6851,7 +9556,7 @@
     "content": null,
     "contentFile": "ScorpionBowl",
     "descriptiveTitle": "The Scorpion Bowl: A Festive Concoction for Celebratory Gatherings",
-    "description": "A large, shared tiki cocktail made with rum, brandy, orange juice, lemon juice, and orgeat syrup. Known for its vibrant presentation, it\u0027s a festive and fruity party cocktail.",
+    "description": "A large, shared tiki cocktail made with rum, brandy, orange juice, lemon juice, and orgeat syrup. Known for its vibrant presentation, it's a festive and fruity party cocktail.",
     "searchableTitles": [
       "Scorpion Bowl"
     ],
@@ -6980,9 +9685,52 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum",
+      "cognac"
+    ],
+    "keywordsSpiritSubtype": [
+      "aged-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "tropical",
+      "sweet",
+      "citrus",
+      "nutty",
+      "rich"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki",
+      "punch"
+    ],
+    "keywordsTechnique": [
+      "blended"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "party",
+      "tiki-bar",
+      "group"
+    ],
+    "keywordsMood": [
+      "festive",
+      "communal",
+      "fun"
+    ],
+    "keywordsSearchTerms": [
+      "Trader Vic",
+      "orgeat",
+      "shared cocktail",
+      "flaming",
+      "tiki bowl"
+    ]
   },
   {
     "id": "sherry-cobbler",
@@ -6990,7 +9738,7 @@
     "content": null,
     "contentFile": "SherryCobbler",
     "descriptiveTitle": "Sherry Cobbler: A Refreshing Classic",
-    "description": "A refreshing cocktail made with sherry, sugar, and fresh fruit, served over crushed ice. Popular in the 19th century, it\u0027s a sweet and light cocktail.",
+    "description": "A refreshing cocktail made with sherry, sugar, and fresh fruit, served over crushed ice. Popular in the 19th century, it's a sweet and light cocktail.",
     "searchableTitles": [
       "Sherry Cobbler"
     ],
@@ -7086,9 +9834,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "sherry"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "sweet",
+      "refreshing",
+      "light"
+    ],
+    "keywordsCocktailFamily": [
+      "cobbler"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "shaken"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "spring"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "elegant",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "sherry",
+      "crushed ice",
+      "fruit",
+      "19th century",
+      "seasonal berries"
+    ]
   },
   {
     "id": "sherry-flip",
@@ -7096,7 +9882,7 @@
     "content": null,
     "contentFile": "SherryFlip",
     "descriptiveTitle": "The Sherry Flip: A Velvety Whisper of History",
-    "description": "A rich and creamy cocktail made with sherry, sugar, egg, and nutmeg. Dating back to the 17th century, it\u0027s a warming and indulgent cocktail.",
+    "description": "A rich and creamy cocktail made with sherry, sugar, egg, and nutmeg. Dating back to the 17th century, it's a warming and indulgent cocktail.",
     "searchableTitles": [
       "Sherry Flip"
     ],
@@ -7185,9 +9971,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "sherry"
+    ],
+    "keywordsSpiritSubtype": [
+      "oloroso-sherry"
+    ],
+    "keywordsFlavorProfile": [
+      "creamy",
+      "rich",
+      "sweet",
+      "nutmeg",
+      "warm"
+    ],
+    "keywordsCocktailFamily": [
+      "flip"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "dry-shaken"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter"
+    ],
+    "keywordsOccasion": [
+      "after-dinner",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "indulgent",
+      "warming",
+      "comforting"
+    ],
+    "keywordsSearchTerms": [
+      "whole egg",
+      "nutmeg",
+      "17th century",
+      "creamy cocktail",
+      "dessert drink"
+    ]
   },
   {
     "id": "sidecar",
@@ -7195,7 +10023,7 @@
     "content": null,
     "contentFile": "SideCar",
     "descriptiveTitle": "Sidecar: A Journey Through Time and Flavor",
-    "description": "A classic cocktail made with cognac, Cointreau, and lemon juice, garnished with a sugared rim. Believed to have originated during World War I, it\u0027s a balanced and sophisticated cocktail.",
+    "description": "A classic cocktail made with cognac, Cointreau, and lemon juice, garnished with a sugared rim. Believed to have originated during World War I, it's a balanced and sophisticated cocktail.",
     "searchableTitles": [
       "SideCar"
     ],
@@ -7289,9 +10117,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "cognac"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "rich"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "classic"
+    ],
+    "keywordsSearchTerms": [
+      "Cointreau",
+      "lemon",
+      "sugar rim",
+      "Paris",
+      "WWI",
+      "brandy"
+    ]
   },
   {
     "id": "singapore-sling",
@@ -7299,7 +10165,7 @@
     "content": null,
     "contentFile": "SingaporeSling",
     "descriptiveTitle": "Singapore Sling: A Tropical Elixir with a Dash of History",
-    "description": "A vibrant cocktail made with gin, cherry brandy, Cointreau, Benedictine, lime juice, and soda. Created in Singapore in the early 20th century, it\u0027s a complex and fruity cocktail.",
+    "description": "A vibrant cocktail made with gin, cherry brandy, Cointreau, Benedictine, lime juice, and soda. Created in Singapore in the early 20th century, it's a complex and fruity cocktail.",
     "searchableTitles": [
       "Singapore Sling"
     ],
@@ -7448,9 +10314,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "sweet",
+      "herbal",
+      "complex",
+      "tropical"
+    ],
+    "keywordsCocktailFamily": [
+      "sling"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "topped"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "tiki-bar",
+      "celebration"
+    ],
+    "keywordsMood": [
+      "exotic",
+      "festive"
+    ],
+    "keywordsSearchTerms": [
+      "Raffles Hotel",
+      "Singapore",
+      "Cherry Heering",
+      "Benedictine",
+      "pineapple"
+    ]
   },
   {
     "id": "sloe-gin-fizz",
@@ -7458,7 +10364,7 @@
     "content": null,
     "contentFile": "SloeGinFizz",
     "descriptiveTitle": "The Sloe Gin Fizz: A Berry-Infused Classic",
-    "description": "A refreshing cocktail made with sloe gin, lemon juice, simple syrup, and soda water. Known for its fruity and fizzy profile, it\u0027s a light and invigorating cocktail.",
+    "description": "A refreshing cocktail made with sloe gin, lemon juice, simple syrup, and soda water. Known for its fruity and fizzy profile, it's a light and invigorating cocktail.",
     "searchableTitles": [
       "Sloe Gin Fizz"
     ],
@@ -7553,9 +10459,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [
+      "sloe-gin"
+    ],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "sweet",
+      "effervescent",
+      "tart"
+    ],
+    "keywordsCocktailFamily": [
+      "fizz"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "dry-shaken"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "spring"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "brunch",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "cheerful",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "sloe gin",
+      "soda water",
+      "lemon",
+      "egg white",
+      "bubbly"
+    ]
   },
   {
     "id": "southside",
@@ -7563,7 +10510,7 @@
     "content": null,
     "contentFile": "Southside",
     "descriptiveTitle": "Southside: A Refreshing Gin and Mint Delight",
-    "description": "A refreshing cocktail made with gin, mint, lime juice, and simple syrup. Originating in the Prohibition era, it\u0027s a crisp and herbal cocktail.",
+    "description": "A refreshing cocktail made with gin, mint, lime juice, and simple syrup. Originating in the Prohibition era, it's a crisp and herbal cocktail.",
     "searchableTitles": [
       "Southside"
     ],
@@ -7660,9 +10607,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "minty",
+      "citrus",
+      "sweet",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "spring"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "elegant"
+    ],
+    "keywordsSearchTerms": [
+      "Prohibition",
+      "mint",
+      "lime",
+      "21 Club",
+      "speakeasy"
+    ]
   },
   {
     "id": "stone-fence",
@@ -7670,7 +10655,7 @@
     "content": null,
     "contentFile": "StoneFence",
     "descriptiveTitle": "The Stone Fence: A Rustic American Classic",
-    "description": "A historic cocktail made with rum or whiskey, apple cider, and a touch of maple syrup. Popular in colonial America, it\u0027s a warming and rustic cocktail.",
+    "description": "A historic cocktail made with rum or whiskey, apple cider, and a touch of maple syrup. Popular in colonial America, it's a warming and rustic cocktail.",
     "searchableTitles": [
       "Stone Fence"
     ],
@@ -7750,19 +10735,57 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "dark-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "sweet",
+      "spiced",
+      "autumnal",
+      "aromatic"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall"
+    ],
+    "keywordsOccasion": [
+      "casual",
+      "evening"
+    ],
+    "keywordsMood": [
+      "rustic",
+      "warming"
+    ],
+    "keywordsSearchTerms": [
+      "apple cider",
+      "colonial American",
+      "Angostura",
+      "Ethan Allen",
+      "Vermont"
+    ]
   },
   {
     "id": "ti-punch",
-    "title": "Ti\u0027 Punch",
+    "title": "Ti' Punch",
     "content": null,
     "contentFile": "TiPunch",
     "descriptiveTitle": "Ti Punch: The Spirit of the French Caribbean in a Glass",
-    "description": "A simple Caribbean cocktail made with rhum agricole, lime, and cane syrup. Known for its bold and zesty flavor, it\u0027s a traditional favorite in the French West Indies.",
+    "description": "A simple Caribbean cocktail made with rhum agricole, lime, and cane syrup. Known for its bold and zesty flavor, it's a traditional favorite in the French West Indies.",
     "searchableTitles": [
-      "Ti\u0027 Punch"
+      "Ti' Punch"
     ],
     "eras": [
       "Traditional"
@@ -7848,9 +10871,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "rhum-agricole"
+    ],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "funky",
+      "bold"
+    ],
+    "keywordsCocktailFamily": [
+      "punch"
+    ],
+    "keywordsTechnique": [
+      "built"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "casual",
+      "afternoon"
+    ],
+    "keywordsMood": [
+      "bold",
+      "authentic"
+    ],
+    "keywordsSearchTerms": [
+      "Martinique",
+      "Guadeloupe",
+      "Caribbean",
+      "French West Indies",
+      "cane syrup",
+      "rhum agricole"
+    ]
   },
   {
     "id": "tom-collins",
@@ -7858,7 +10921,7 @@
     "content": null,
     "contentFile": "TomCollins",
     "descriptiveTitle": "Tom Collins: The Quintessential Summer Refresher",
-    "description": "A classic cocktail made with gin, lemon juice, simple syrup, and soda water. Popular since the 19th century, it\u0027s a refreshing and fizzy cocktail.",
+    "description": "A classic cocktail made with gin, lemon juice, simple syrup, and soda water. Popular since the 19th century, it's a refreshing and fizzy cocktail.",
     "searchableTitles": [
       "Tom Collins"
     ],
@@ -7958,9 +11021,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "effervescent",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "collins",
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "topped"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "spring"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "casual",
+      "brunch"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "relaxed"
+    ],
+    "keywordsSearchTerms": [
+      "soda water",
+      "lemon",
+      "19th century",
+      "John Collins",
+      "Old Tom gin"
+    ]
   },
   {
     "id": "tuxedo",
@@ -7968,7 +11071,7 @@
     "content": null,
     "contentFile": "Tuxedo",
     "descriptiveTitle": "The Tuxedo: A Cocktail Dressed in Sophistication",
-    "description": "A sophisticated cocktail made with gin, dry vermouth, maraschino liqueur, absinthe, and bitters. Known for its elegant balance of flavors, it\u0027s a refined choice.",
+    "description": "A sophisticated cocktail made with gin, dry vermouth, maraschino liqueur, absinthe, and bitters. Known for its elegant balance of flavors, it's a refined choice.",
     "searchableTitles": [
       "Tuxedo"
     ],
@@ -8048,9 +11151,45 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "dry",
+      "aromatic",
+      "complex",
+      "savory"
+    ],
+    "keywordsCocktailFamily": [
+      "martini-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "formal",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "refined"
+    ],
+    "keywordsSearchTerms": [
+      "fino sherry",
+      "orange bitters",
+      "Tuxedo Park",
+      "formal cocktail"
+    ]
   },
   {
     "id": "vesper",
@@ -8058,7 +11197,7 @@
     "content": null,
     "contentFile": "Vesper",
     "descriptiveTitle": "The Vesper: A Cocktail of Espionage Elegance",
-    "description": "A strong cocktail made with gin, vodka, and Lillet Blanc, garnished with a lemon twist. Created by Ian Fleming for James Bond, it\u0027s a potent and suave cocktail.",
+    "description": "A strong cocktail made with gin, vodka, and Lillet Blanc, garnished with a lemon twist. Created by Ian Fleming for James Bond, it's a potent and suave cocktail.",
     "searchableTitles": [
       "Vesper"
     ],
@@ -8138,19 +11277,56 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "gin",
+      "vodka"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "dry",
+      "crisp",
+      "strong",
+      "citrus"
+    ],
+    "keywordsCocktailFamily": [
+      "martini-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "bold",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "James Bond",
+      "Casino Royale",
+      "Lillet Blanc",
+      "Ian Fleming",
+      "shaken not stirred"
+    ]
   },
   {
     "id": "vieux-carre",
-    "title": "Vieux Carr\u00E9",
+    "title": "Vieux Carr\u00e9",
     "content": null,
     "contentFile": "VieuxCarre",
-    "descriptiveTitle": "The Vieux Carr\u00E9: A Nostalgic Sip of New Orleans",
-    "description": "A complex cocktail made with rye whiskey, cognac, sweet vermouth, Benedictine, and bitters. Created in New Orleans, it\u0027s a rich and aromatic cocktail.",
+    "descriptiveTitle": "The Vieux Carr\u00e9: A Nostalgic Sip of New Orleans",
+    "description": "A complex cocktail made with rye whiskey, cognac, sweet vermouth, Benedictine, and bitters. Created in New Orleans, it's a rich and aromatic cocktail.",
     "searchableTitles": [
-      "Vieux Carr\u00E9"
+      "Vieux Carr\u00e9"
     ],
     "eras": [
       "Traditional"
@@ -8251,9 +11427,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rye",
+      "cognac"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "rich",
+      "herbal",
+      "complex",
+      "aromatic",
+      "warm"
+    ],
+    "keywordsCocktailFamily": [
+      "stirred-spirit"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "New Orleans",
+      "French Quarter",
+      "Benedictine",
+      "Peychaud's",
+      "Carousel Bar",
+      "Hotel Monteleone"
+    ]
   },
   {
     "id": "whiskey-smash",
@@ -8261,7 +11479,7 @@
     "content": null,
     "contentFile": "WhiskeySmash",
     "descriptiveTitle": "The Whiskey Smash: A Refreshing Blend of Citrus and Mint",
-    "description": "A refreshing cocktail made with whiskey, mint, lemon, and simple syrup. Known for its bright and citrusy flavor, it\u0027s a versatile and easy-to-cocktail cocktail.",
+    "description": "A refreshing cocktail made with whiskey, mint, lemon, and simple syrup. Known for its bright and citrusy flavor, it's a versatile and easy-to-cocktail cocktail.",
     "searchableTitles": [
       "Whiskey Smash"
     ],
@@ -8315,7 +11533,7 @@
     ],
     "instructions": [
       {
-        "displayValue": "In a Collins or rocks glass muddle mint and simple syrup to release the mint\u0027s oils.",
+        "displayValue": "In a Collins or rocks glass muddle mint and simple syrup to release the mint's oils.",
         "order": 1
       },
       {
@@ -8355,9 +11573,47 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "minty",
+      "citrus",
+      "sweet",
+      "refreshing"
+    ],
+    "keywordsCocktailFamily": [
+      "smash"
+    ],
+    "keywordsTechnique": [
+      "muddled",
+      "swizzled"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "casual",
+      "garden-party"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "lively"
+    ],
+    "keywordsSearchTerms": [
+      "mint",
+      "lemon",
+      "bourbon cocktail",
+      "julep cousin"
+    ]
   },
   {
     "id": "whiskey-sour",
@@ -8365,7 +11621,7 @@
     "content": null,
     "contentFile": "WhiskeySour",
     "descriptiveTitle": "Whiskey Sour: The Classic American Cocktail",
-    "description": "A classic cocktail made with whiskey, lemon juice, and simple syrup, sometimes with an egg white. Known for its balance of sweet and sour, it\u0027s a timeless favorite.",
+    "description": "A classic cocktail made with whiskey, lemon juice, and simple syrup, sometimes with an egg white. Known for its balance of sweet and sour, it's a timeless favorite.",
     "searchableTitles": [
       "Whiskey Sour"
     ],
@@ -8441,9 +11697,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "creamy",
+      "smooth"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "dry-shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "casual",
+      "dinner-party"
+    ],
+    "keywordsMood": [
+      "classic",
+      "comforting"
+    ],
+    "keywordsSearchTerms": [
+      "lemon",
+      "egg white",
+      "simple syrup",
+      "frothy",
+      "bourbon cocktail"
+    ]
   },
   {
     "id": "zombie",
@@ -8451,7 +11746,7 @@
     "content": null,
     "contentFile": "Zombie",
     "descriptiveTitle": "The Zombie: A Tiki Classic with a Potent Punch",
-    "description": "A potent tiki cocktail made with various rums, fruit juices, and a hint of spice. Created in the 1930s, it\u0027s a strong and flavorful cocktail known for its complex layers.",
+    "description": "A potent tiki cocktail made with various rums, fruit juices, and a hint of spice. Created in the 1930s, it's a strong and flavorful cocktail known for its complex layers.",
     "searchableTitles": [
       "Zombie"
     ],
@@ -8543,7 +11838,7 @@
     ],
     "instructions": [
       {
-        "displayValue": "In a blender with crushed ice, combine all the rums, lime juice, Don\u0027s Mix, falernum, grenadine, and bitters.",
+        "displayValue": "In a blender with crushed ice, combine all the rums, lime juice, Don's Mix, falernum, grenadine, and bitters.",
         "order": 1
       },
       {
@@ -8578,8 +11873,52 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-04-02T00:00:00-07:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "jamaican-rum",
+      "puerto-rican-rum",
+      "151-proof-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "tropical",
+      "sweet",
+      "complex",
+      "citrus",
+      "spiced"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki"
+    ],
+    "keywordsTechnique": [
+      "blended"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "tiki-bar",
+      "party"
+    ],
+    "keywordsMood": [
+      "bold",
+      "adventurous",
+      "festive"
+    ],
+    "keywordsSearchTerms": [
+      "Don the Beachcomber",
+      "Donn Beach",
+      "falernum",
+      "grenadine",
+      "151 rum",
+      "tiki",
+      "1934"
+    ]
   }
 ]

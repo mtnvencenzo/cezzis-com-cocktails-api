@@ -28,6 +28,18 @@ public class CocktailEntityTypeConfiguration(IOptions<CosmosDbConfig> cosmosDbCo
 
         builder.Property(x => x.Glassware).ToJsonProperty("glassware");
 
+        builder.Property(x => x.KeywordsBaseSpirit).ToJsonProperty("keywordsBaseSpirit");
+        builder.Property(x => x.KeywordsSpiritSubtype).ToJsonProperty("keywordsSpiritSubtype");
+        builder.Property(x => x.KeywordsFlavorProfile).ToJsonProperty("keywordsFlavorProfile");
+        builder.Property(x => x.KeywordsCocktailFamily).ToJsonProperty("keywordsCocktailFamily");
+        builder.Property(x => x.KeywordsTechnique).ToJsonProperty("keywordsTechnique");
+        builder.Property(x => x.KeywordsSeason).ToJsonProperty("keywordsSeason");
+        builder.Property(x => x.KeywordsOccasion).ToJsonProperty("keywordsOccasion");
+        builder.Property(x => x.KeywordsMood).ToJsonProperty("keywordsMood");
+        builder.Property(x => x.KeywordsSearchTerms).ToJsonProperty("keywordsSearchTerms");
+        builder.Property(x => x.KeywordsStrength).ToJsonProperty("keywordsStrength");
+        builder.Property(x => x.KeywordsTemperature).ToJsonProperty("keywordsTemperature");
+
         builder.HasDiscriminator(x => x.Discriminator).HasValue("cocktail");
 
         builder.Ignore(x => x.DomainEvents);

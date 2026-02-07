@@ -1,7 +1,6 @@
 ﻿namespace Cocktails.Api.Domain.Aggregates.CocktailAggregate;
 
 using Cezzi.Applications.Extensions;
-using Cezzi.Applications.Text;
 using Cocktails.Api.Domain.Aggregates.IngredientAggregate;
 using Cocktails.Api.Domain.Common;
 using Cocktails.Api.Domain.Exceptions;
@@ -17,6 +16,33 @@ public class Cocktail : Entity, IAggregateRoot
 
     [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
     private readonly List<string> glassware;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsBaseSpirit;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsSpiritSubtype;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsFlavorProfile;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsCocktailFamily;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsTechnique;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsSeason;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsOccasion;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsMood;
+
+    [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
+    private List<string> keywordsSearchTerms;
 
     [JsonInclude, JsonObjectCreationHandling(JsonObjectCreationHandling.Populate)]
     private readonly List<CocktailIngredient> ingredients;
@@ -39,6 +65,15 @@ public class Cocktail : Entity, IAggregateRoot
         this.images = [];
         this.eras = [];
         this.searchableTitles = [];
+        this.keywordsBaseSpirit = [];
+        this.keywordsSpiritSubtype = [];
+        this.keywordsFlavorProfile = [];
+        this.keywordsCocktailFamily = [];
+        this.keywordsTechnique = [];
+        this.keywordsSeason = [];
+        this.keywordsOccasion = [];
+        this.keywordsMood = [];
+        this.keywordsSearchTerms = [];
 
         this.PrepTimeMinutes = 10;
         this.Serves = 1;
@@ -115,6 +150,39 @@ public class Cocktail : Entity, IAggregateRoot
     [JsonIgnore]
     public IReadOnlyCollection<CocktailImage> Images => this.images.AsReadOnly();
 
+    [JsonIgnore]
+    public IList<string> KeywordsBaseSpirit => this.keywordsBaseSpirit ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsSpiritSubtype => this.keywordsSpiritSubtype ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsFlavorProfile => this.keywordsFlavorProfile ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsCocktailFamily => this.keywordsCocktailFamily ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsTechnique => this.keywordsTechnique ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsSeason => this.keywordsSeason ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsOccasion => this.keywordsOccasion ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsMood => this.keywordsMood ?? [];
+
+    [JsonIgnore]
+    public IList<string> KeywordsSearchTerms => this.keywordsSearchTerms ?? [];
+
+    [JsonInclude]
+    public string KeywordsStrength { get; private set; }
+
+    [JsonInclude]
+    public string KeywordsTemperature { get; private set; }
+
     public override DateTimeOffset CreatedOn
     {
         get => this.PublishedOn;
@@ -152,7 +220,20 @@ public class Cocktail : Entity, IAggregateRoot
             .SetContentFile(from.ContentFile)
             .SetImages([.. from.images])
             .SetInstructions([.. from.instructions])
-            .SetIngredients([.. from.ingredients]);
+            .SetIngredients([.. from.ingredients])
+            .SetKeywords(
+                keywordsBaseSpirit: [.. (from.keywordsBaseSpirit ?? [])],
+                keywordsSpiritSubtype: [.. (from.keywordsSpiritSubtype ?? [])],
+                keywordsFlavorProfile: [.. (from.keywordsFlavorProfile ?? [])],
+                keywordsCocktailFamily: [.. (from.keywordsCocktailFamily ?? [])],
+                keywordsTechnique: [.. (from.keywordsTechnique ?? [])],
+                keywordsSeason: [.. (from.keywordsSeason ?? [])],
+                keywordsOccasion: [.. (from.keywordsOccasion ?? [])],
+                keywordsMood: [.. (from.keywordsMood ?? [])],
+                keywordsSearchTerms: [.. (from.keywordsSearchTerms ?? [])],
+                keywordsStrength: from.KeywordsStrength,
+                keywordsTemperature: from.KeywordsTemperature
+            );
 
         this.SetModifiedOn(DateTimeOffset.Now);
         return this;
@@ -333,6 +414,35 @@ public class Cocktail : Entity, IAggregateRoot
         this.IsIba = isIba;
 
         this.SetModifiedOn(DateTimeOffset.Now);
+        return this;
+    }
+
+    public Cocktail SetKeywords(
+        IEnumerable<string> keywordsBaseSpirit,
+        IEnumerable<string> keywordsSpiritSubtype,
+        IEnumerable<string> keywordsFlavorProfile,
+        IEnumerable<string> keywordsCocktailFamily,
+        IEnumerable<string> keywordsTechnique,
+        IEnumerable<string> keywordsSeason,
+        IEnumerable<string> keywordsOccasion,
+        IEnumerable<string> keywordsMood,
+        IEnumerable<string> keywordsSearchTerms,
+        string keywordsStrength,
+        string keywordsTemperature)
+    {
+        this.keywordsBaseSpirit = [.. keywordsBaseSpirit ?? []];
+        this.keywordsSpiritSubtype = [.. keywordsSpiritSubtype ?? []];
+        this.keywordsFlavorProfile = [.. keywordsFlavorProfile ?? []];
+        this.keywordsCocktailFamily = [.. keywordsCocktailFamily ?? []];
+        this.keywordsTechnique = [.. keywordsTechnique ?? []];
+        this.keywordsSeason = [.. keywordsSeason ?? []];
+        this.keywordsOccasion = [.. keywordsOccasion ?? []];
+        this.keywordsMood = [.. keywordsMood ?? []];
+        this.keywordsSearchTerms = [.. keywordsSearchTerms ?? []];
+
+        this.KeywordsStrength = keywordsStrength;
+        this.KeywordsTemperature = keywordsTemperature;
+
         return this;
     }
 
@@ -562,6 +672,61 @@ public class Cocktail : Entity, IAggregateRoot
             {
                 return false;
             }
+        }
+
+        if (string.Join(',', this.keywordsBaseSpirit ?? []) != string.Join(',', other.keywordsBaseSpirit ?? []))
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsSpiritSubtype ?? []) != string.Join(',', other.keywordsSpiritSubtype ?? []))
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsFlavorProfile ?? []) != string.Join(',', other.keywordsFlavorProfile ?? []))
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsCocktailFamily ?? []) != string.Join(',', other.keywordsCocktailFamily ?? []))
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsTechnique ?? []) != string.Join(',', other.keywordsTechnique ?? []))
+        {
+            return false;
+        }
+
+        if (this.KeywordsStrength != other.KeywordsStrength)
+        {
+            return false;
+        }
+
+        if (this.KeywordsTemperature != other.KeywordsTemperature)
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsSeason ?? []) != string.Join(',', other.keywordsSeason ?? []))
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsOccasion ?? []) != string.Join(',', other.keywordsOccasion ?? []))
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsMood ?? []) != string.Join(',', other.keywordsMood ?? []))
+        {
+            return false;
+        }
+
+        if (string.Join(',', this.keywordsSearchTerms ?? []) != string.Join(',', other.keywordsSearchTerms ?? []))
+        {
+            return false;
         }
 
         return true;

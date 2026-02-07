@@ -106,9 +106,53 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "aged-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "sweet",
+      "citrus",
+      "tropical",
+      "nutty",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki",
+      "mai-tai-variant"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "date-night"
+    ],
+    "keywordsMood": [
+      "adventurous",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "amaro",
+      "bitter tiki",
+      "modern tiki",
+      "craft cocktail renaissance",
+      "orgeat",
+      "curacao"
+    ]
   },
   {
     "id": "bramble",
@@ -220,9 +264,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "sweet",
+      "tart",
+      "berry",
+      "citrus"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "drizzled"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "spring"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "garden-party",
+      "brunch"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "elegant"
+    ],
+    "keywordsSearchTerms": [
+      "blackberry",
+      "creme de mure",
+      "Dick Bradsell",
+      "London",
+      "British",
+      "crushed ice"
+    ]
   },
   {
     "id": "chartreuse-swizzle",
@@ -322,9 +407,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 6
+    "prepTimeMinutes": 6,
+    "keywordsBaseSpirit": [
+      "chartreuse"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "herbal",
+      "tropical",
+      "sweet",
+      "complex",
+      "coconut",
+      "pineapple"
+    ],
+    "keywordsCocktailFamily": [
+      "tiki",
+      "swizzle"
+    ],
+    "keywordsTechnique": [
+      "swizzled"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "tiki-bar",
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "exotic",
+      "adventurous"
+    ],
+    "keywordsSearchTerms": [
+      "green chartreuse",
+      "Smuggler's Cove",
+      "Marcovaldo Dionysos",
+      "tiki revival",
+      "herbal liqueur",
+      "coconut"
+    ]
   },
   {
     "id": "cosmopolitan",
@@ -425,9 +551,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "vodka"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "tart",
+      "citrus",
+      "sweet",
+      "crisp"
+    ],
+    "keywordsCocktailFamily": [
+      "martini-variant"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "dinner-party",
+      "girls-night",
+      "celebration"
+    ],
+    "keywordsMood": [
+      "glamorous",
+      "festive",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "cosmo",
+      "cranberry",
+      "Sex and the City",
+      "1990s",
+      "pink cocktail",
+      "Cointreau"
+    ]
   },
   {
     "id": "espresso-martini",
@@ -527,9 +693,48 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-21T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "vodka"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "coffee",
+      "bittersweet",
+      "rich",
+      "creamy"
+    ],
+    "keywordsCocktailFamily": [
+      "martini-variant"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "after-dinner",
+      "late-night",
+      "brunch"
+    ],
+    "keywordsMood": [
+      "energizing",
+      "sophisticated",
+      "indulgent"
+    ],
+    "keywordsSearchTerms": [
+      "coffee cocktail",
+      "espresso",
+      "Dick Bradsell",
+      "Kahlua",
+      "caffeine",
+      "frothy"
+    ]
   },
   {
     "id": "frozen-negroni",
@@ -629,9 +834,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 240
+    "prepTimeMinutes": 240,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "sweet",
+      "herbal",
+      "citrus",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "negroni-variant"
+    ],
+    "keywordsTechnique": [
+      "frozen",
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "frozen",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "afternoon",
+      "pool-party",
+      "bbq"
+    ],
+    "keywordsMood": [
+      "refreshing",
+      "playful",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "frozen cocktail",
+      "slushy",
+      "Campari",
+      "sweet vermouth",
+      "negroni",
+      "Italian"
+    ]
   },
   {
     "id": "gin-blossom",
@@ -731,9 +977,49 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "floral",
+      "citrus",
+      "delicate",
+      "sweet"
+    ],
+    "keywordsCocktailFamily": [
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "garden-party",
+      "afternoon"
+    ],
+    "keywordsMood": [
+      "elegant",
+      "romantic",
+      "light"
+    ],
+    "keywordsSearchTerms": [
+      "apricot",
+      "gin cocktail",
+      "botanical",
+      "fruit-forward",
+      "lemon"
+    ]
   },
   {
     "id": "hibiscus-punch-royale",
@@ -846,9 +1132,54 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 10
+    "prepTimeMinutes": 10,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "aged-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "floral",
+      "tart",
+      "fruity",
+      "effervescent",
+      "tropical"
+    ],
+    "keywordsCocktailFamily": [
+      "punch",
+      "tiki"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "topped"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "celebration",
+      "party",
+      "brunch"
+    ],
+    "keywordsMood": [
+      "festive",
+      "elegant",
+      "vibrant"
+    ],
+    "keywordsSearchTerms": [
+      "hibiscus",
+      "champagne",
+      "punch",
+      "sparkling",
+      "red cocktail",
+      "tiki revival"
+    ]
   },
   {
     "id": "la-bomba",
@@ -949,9 +1280,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "white-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "citrus",
+      "sweet",
+      "tart",
+      "complex",
+      "cherry"
+    ],
+    "keywordsCocktailFamily": [
+      "daiquiri-variant",
+      "sour"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "casual"
+    ],
+    "keywordsMood": [
+      "lively",
+      "refreshing"
+    ],
+    "keywordsSearchTerms": [
+      "daiquiri",
+      "maraschino",
+      "Luxardo",
+      "Cuban",
+      "rum cocktail"
+    ]
   },
   {
     "id": "oaxaca-old-fashioned",
@@ -1051,9 +1424,56 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "mezcal",
+      "tequila"
+    ],
+    "keywordsSpiritSubtype": [
+      "reposado-tequila"
+    ],
+    "keywordsFlavorProfile": [
+      "smoky",
+      "sweet",
+      "bitter",
+      "complex",
+      "earthy"
+    ],
+    "keywordsCocktailFamily": [
+      "old-fashioned-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred",
+      "built"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "contemplative",
+      "sophisticated",
+      "bold"
+    ],
+    "keywordsSearchTerms": [
+      "mezcal",
+      "agave",
+      "Death and Co",
+      "Phil Ward",
+      "Mexican",
+      "smokey",
+      "Oaxaca"
+    ]
   },
   {
     "id": "old-cuban",
@@ -1165,9 +1585,54 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "rum"
+    ],
+    "keywordsSpiritSubtype": [
+      "aged-rum"
+    ],
+    "keywordsFlavorProfile": [
+      "minty",
+      "citrus",
+      "effervescent",
+      "aromatic",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "mojito-variant"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "topped"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "celebration",
+      "date-night",
+      "evening"
+    ],
+    "keywordsMood": [
+      "elegant",
+      "refined",
+      "celebratory"
+    ],
+    "keywordsSearchTerms": [
+      "mojito",
+      "champagne",
+      "Audrey Saunders",
+      "Pegu Club",
+      "elevated classic",
+      "Cuban",
+      "mint"
+    ]
   },
   {
     "id": "paper-plane",
@@ -1254,9 +1719,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "citrus",
+      "herbal",
+      "complex",
+      "bittersweet"
+    ],
+    "keywordsCocktailFamily": [
+      "equal-parts",
+      "last-word-variant"
+    ],
+    "keywordsTechnique": [
+      "shaken"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "adventurous"
+    ],
+    "keywordsSearchTerms": [
+      "Aperol",
+      "Amaro Nonino",
+      "amari",
+      "Sam Ross",
+      "equal parts",
+      "Last Word",
+      "Italian"
+    ]
   },
   {
     "id": "penicillin",
@@ -1367,9 +1874,57 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "scotch"
+    ],
+    "keywordsSpiritSubtype": [
+      "blended-scotch",
+      "islay-scotch"
+    ],
+    "keywordsFlavorProfile": [
+      "smoky",
+      "sweet",
+      "spicy",
+      "citrus",
+      "honey",
+      "ginger"
+    ],
+    "keywordsCocktailFamily": [
+      "sour",
+      "whiskey-sour-variant"
+    ],
+    "keywordsTechnique": [
+      "shaken",
+      "floated"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter"
+    ],
+    "keywordsOccasion": [
+      "evening",
+      "craft-bar",
+      "nightcap"
+    ],
+    "keywordsMood": [
+      "comforting",
+      "warming",
+      "sophisticated"
+    ],
+    "keywordsSearchTerms": [
+      "scotch whisky",
+      "Islay",
+      "ginger",
+      "honey",
+      "Sam Ross",
+      "smokey",
+      "medicinal"
+    ]
   },
   {
     "id": "revolver",
@@ -1457,9 +2012,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "bourbon"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "coffee",
+      "sweet",
+      "bitter",
+      "rich",
+      "citrus"
+    ],
+    "keywordsCocktailFamily": [
+      "old-fashioned-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "after-dinner",
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "indulgent",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "coffee cocktail",
+      "Kahlua",
+      "Tia Maria",
+      "Jon Santer",
+      "old fashioned"
+    ]
   },
   {
     "id": "tequila-sunrise",
@@ -1560,9 +2156,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "tequila"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "fruity",
+      "sweet",
+      "citrus",
+      "easy-drinking"
+    ],
+    "keywordsCocktailFamily": [
+      "highball"
+    ],
+    "keywordsTechnique": [
+      "built",
+      "layered"
+    ],
+    "keywordsStrength": "light",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "summer"
+    ],
+    "keywordsOccasion": [
+      "brunch",
+      "pool-party",
+      "casual",
+      "bbq"
+    ],
+    "keywordsMood": [
+      "fun",
+      "relaxed",
+      "tropical"
+    ],
+    "keywordsSearchTerms": [
+      "orange juice",
+      "grenadine",
+      "California",
+      "1970s",
+      "sunrise",
+      "colorful cocktail",
+      "layered"
+    ]
   },
   {
     "id": "white-negroni",
@@ -1654,9 +2292,50 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 8
+    "prepTimeMinutes": 8,
+    "keywordsBaseSpirit": [
+      "gin"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "bitter",
+      "herbal",
+      "floral",
+      "dry",
+      "complex"
+    ],
+    "keywordsCocktailFamily": [
+      "negroni-variant"
+    ],
+    "keywordsTechnique": [
+      "stirred"
+    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "spring",
+      "summer",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "aperitif",
+      "evening",
+      "craft-bar"
+    ],
+    "keywordsMood": [
+      "sophisticated",
+      "contemplative"
+    ],
+    "keywordsSearchTerms": [
+      "Lillet Blanc",
+      "Suze",
+      "gentian",
+      "French aperitif",
+      "Wayne Collins",
+      "negroni"
+    ]
   },
   {
     "id": "white-russian",
@@ -1735,8 +2414,51 @@
         "height": 300
       }
     ],
-    "modifiedOn": "2025-07-17T00:00:00-06:00",
+    "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2025-07-17T00:00:00-06:00",
-    "prepTimeMinutes": 6
+    "prepTimeMinutes": 6,
+    "keywordsBaseSpirit": [
+      "vodka"
+    ],
+    "keywordsSpiritSubtype": [],
+    "keywordsFlavorProfile": [
+      "creamy",
+      "sweet",
+      "coffee",
+      "rich",
+      "indulgent"
+    ],
+    "keywordsCocktailFamily": [
+      "dessert-cocktail"
+    ],
+    "keywordsTechnique": [
+      "built",
+      "floated"
+    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
+    "keywordsSeason": [
+      "fall",
+      "winter",
+      "all-season"
+    ],
+    "keywordsOccasion": [
+      "after-dinner",
+      "nightcap",
+      "casual"
+    ],
+    "keywordsMood": [
+      "indulgent",
+      "relaxed",
+      "comforting"
+    ],
+    "keywordsSearchTerms": [
+      "The Dude",
+      "Big Lebowski",
+      "cream cocktail",
+      "Kahlua",
+      "dessert drink",
+      "Black Russian"
+    ]
   }
 ]

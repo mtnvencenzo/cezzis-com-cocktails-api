@@ -67,7 +67,7 @@ public record CocktailModel
 
     [property: Required()]
     [property: Description("A list of secondary, smaller sized images for the cocktail recipe")]
-    IEnumerable<CocktailImageModel2> SearchTiles,
+    IEnumerable<CocktailImageModel> SearchTiles,
 
     [property: Required()]
     [property: Description("The recommended glassware to use when serving the cocktail")]
@@ -95,5 +95,9 @@ public record CocktailModel
 
     [property: Required()]
     [property: Description("The list of instructions to make the cocktail recipe")]
-    IEnumerable<InstructionStepModel> Instructions
+    IEnumerable<InstructionStepModel> Instructions,
+
+    [property: Required()]
+    [property: Description("The keywords associated with the cocktail recipe")]
+    CocktailKeywordsModel Keywords
 );
