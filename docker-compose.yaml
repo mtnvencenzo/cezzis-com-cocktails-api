@@ -61,6 +61,10 @@ services:
       - QDRANT_SEMANTIC_SEARCH_SCORE_THRESHOLD=0.2
       - QDRANT_SEMANTIC_SEARCH_TOTAL_SCORE_THRESHOLD=0.5
       - HUGGINGFACE_INFERENCE_MODEL=http://tei:8989
+      - RERANKER_ENABLED=false
+      - RERANKER_ENDPOINT=http://tei-reranker:8990
+      - RERANKER_SCORE_THRESHOLD=0.2
+      - SPLADE_ENDPOINT=http://tei-splade:8991
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
