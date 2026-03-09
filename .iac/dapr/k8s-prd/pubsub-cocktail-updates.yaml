@@ -12,7 +12,8 @@ spec:
   version: v1
   metadata:
     - name: brokers
-      value: "localhost:9092"
+      secretKeyRef:
+        name: KAFKA_BOOTSTRAP_SERVERS
     - name: authType
       value: "none"
     - name: disableTls

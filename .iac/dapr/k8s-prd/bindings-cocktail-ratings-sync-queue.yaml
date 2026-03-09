@@ -16,7 +16,7 @@ spec:
       value: "cocktail-ratings-sync-queue"
     - name: host
       secretKeyRef:
-        name: rabbitmq_connectionstring
+        name: RABBITMQ_CONNECTION_STRING
     - name: durable
       value: "true"
     - name: deletedWhenUnused

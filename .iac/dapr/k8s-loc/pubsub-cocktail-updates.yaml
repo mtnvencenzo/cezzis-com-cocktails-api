@@ -9,7 +9,7 @@ spec:
   version: v1
   metadata:
     - name: brokers
-      value: "localhost:9092"
+      value: "localhost:30092"
     - name: authType
       value: "none"
     - name: disableTls
