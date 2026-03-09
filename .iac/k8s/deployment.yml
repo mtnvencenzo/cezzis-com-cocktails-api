@@ -25,7 +25,7 @@ spec:
         dapr.io/app-port: "7177"
         dapr.io/app-protocol: "http"
         dapr.io/log-level: "info"
-        dapr.io/config: "dapr-config"
+        dapr.io/config: "cocktails-api-dapr-config"
         dapr.io/api-token-secret: "cezzis-shared-daprio-dapr-api-token"
         dapr.io/app-token-secret: "cezzis-shared-daprio-app-api-token"
     spec:
