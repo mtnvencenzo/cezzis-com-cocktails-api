@@ -5,10 +5,39 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Cocktails API (Dapr)",
+            "name": "k8s Debug: Cocktails API",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "dapr-run",
+            "preLaunchTask": "dapr-run-k8s",
+            "program": "${workspaceFolder}/src/Cocktails.Api/bin/Debug/net10.0/Cocktails.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Cocktails.Api",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s/scalar/v1"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "loc",
+                "ASPNETCORE_URLS": "http://localhost:7179;https://localhost:7178",
+                "DAPR_HTTP_PORT": "5295",
+                "DAPR_GRPC_PORT": "50003",
+                "FORCE_HTTPS": "false"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "logging": {
+                "moduleLoad": false
+            },
+            "justMyCode": true
+        },
+        {
+            "name": "Docker Debug: Cocktails API",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "dapr-run-docker",
             "program": "${workspaceFolder}/src/Cocktails.Api/bin/Debug/net10.0/Cocktails.Api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/Cocktails.Api",

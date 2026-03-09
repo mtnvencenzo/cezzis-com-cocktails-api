@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cezzis-com-cocktails-api
+  namespace: cezzis
+  labels:
+    app: cezzis-com-cocktails-api
+    app.kubernetes.io/part-of: cezzis
+    app.kubernetes.io/managed-by: argocd
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: cezzis-com-cocktails-api
+  template:
+    metadata:
+      labels:
+        app: cezzis-com-cocktails-api
+        app.kubernetes.io/part-of: cezzis
+        app.kubernetes.io/managed-by: argocd
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "cezzis-com-cocktails-api"
+        dapr.io/app-port: "7177"
+        dapr.io/app-protocol: "http"
+        dapr.io/log-level: "info"
+        dapr.io/config: "cocktails-api-dapr-config"
+        dapr.io/api-token-secret: "cezzis-shared-daprio-dapr-api-token"
+        dapr.io/app-token-secret: "cezzis-shared-daprio-app-api-token"
+    spec:
+      imagePullSecrets:
+        - name: acr-pull-secret
+      containers:
+        - name: cezzis-com-cocktails-api
+          image: acrveceusgloshared001.azurecr.io/cezziscomcocktailsapi
+          ports:
+            - containerPort: 7177
+              name: http
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: cezzis-com-cocktails-api-config
+            - secretRef:
+                name: cezzis-com-cocktails-api-secrets
+            - secretRef:
+                name: cezzis-com-cocktails-api-shared-secrets
+          readinessProbe:
+            httpGet:
+              path: v1/health
+              port: 7177
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: v1/health
+              port: 7177
+            initialDelaySeconds: 20
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

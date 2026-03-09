@@ -1,0 +1,25 @@
+apiVersion: dapr.io/v1alpha1
+kind: Resiliency
+metadata:
+  name: cocktails-api-dapr-resiliency
+
+spec:
+  policies:
+    retries:
+      bindingRetry:
+        policy: constant
+        duration: 5s
+        maxRetries: 3
+    circuitBreakers:
+      bindingCircuitBreaker:
+        maxRequests: 1
+        interval: 10s
+        timeout: 30s
+        trip: consecutiveFailures >= 3
+  targets:
+    components:
+      bindings-cocktail-ratings-sync-queue:
+        inbound:
+          retry: bindingRetry
+          circuitBreaker: bindingCircuitBreaker
+

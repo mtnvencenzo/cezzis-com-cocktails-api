@@ -1,0 +1,29 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+
+metadata:
+  name: bindings-cocktail-ratings-sync-queue
+  namespace: cezzis
+  labels:
+    app.kubernetes.io/part-of: cezzis
+    app.kubernetes.io/managed-by: argocd
+
+spec:
+  type: bindings.rabbitmq
+  version: v1
+  metadata:
+    - name: queueName
+      value: "cocktail-ratings-sync-queue"
+    - name: host
+      secretKeyRef:
+        name: RABBITMQ_CONNECTION_STRING
+    - name: durable
+      value: "true"
+    - name: deletedWhenUnused
+      value: "false"
+    - name: direction
+      value: "input"
+scopes:
+  - cezzis-com-cocktails-api
+auth:
+  secretStore: kubernetes
