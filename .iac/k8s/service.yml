@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cezzis-com-cocktails-api
+  namespace: cezzis
+  labels:
+    app: cezzis-com-cocktails-api
+    app.kubernetes.io/part-of: cezzis
+    app.kubernetes.io/managed-by: argocd
+spec:
+  type: ClusterIP
+  selector:
+    app: cezzis-com-cocktails-api
+  ports:
+    - name: http
+      port: 7177
+      targetPort: 7177
+      protocol: TCP

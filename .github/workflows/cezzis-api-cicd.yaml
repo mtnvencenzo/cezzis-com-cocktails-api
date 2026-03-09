@@ -3,20 +3,18 @@ name: cicd-cezzis-api
 on:
   pull_request:
     branches: [main]
-    paths: [
-      src/**,
-      terraform/**,
-      test/**,
-      .github/workflows/cezzis-api-cicd.yaml
-    ]
+    paths-ignore:
+      - '.iac/**'
+      - '.github/**'
+      - '.vscode/**'
+      - '.assets/**'
   push:
     branches: [main]
-    paths: [
-      src/**,
-      terraform/**,
-      test/**,
-      .github/workflows/cezzis-api-cicd.yaml
-    ]
+    paths-ignore:
+      - '.iac/**'
+      - '.github/**'
+      - '.vscode/**'
+      - '.assets/**'
 
   workflow_dispatch:
 
@@ -88,7 +86,7 @@ jobs:
     needs: [docker, gitVersion]
     with:
       lint_only: false # if true, terraform plan and apply will not be ran
-      working_directory: terraform
+      working_directory: .iac/terraform
       environment_name: prd
       allow_deploy: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main' }}
       terraform_version: 1.11.4

@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cezzis-com-cocktails-api-config
+  namespace: cezzis
+  labels:
+    app.kubernetes.io/part-of: cezzis
+    app.kubernetes.io/managed-by: argocd
+data:
+  ASPNETCORE_ENVIRONMENT: "prd"
+  ASPNETCORE_URLS: "http://0.0.0.0:7177"
+  FORCE_HTTPS: "false"
+  AllowedOrigins: "https://localhost:4001,http://localhost:4001,https://localhost:4002,http://localhost:4002"
+  Auth0__Domain: "https://login.cezzis.com"
+  Auth0__ClientId: "HZXyiZxjHgkQqeb6UJxmikCGYpSz5iPb"
+  Auth0__Audience: "https://cezzis-cocktails-api"
+  CocktailsApi__BaseImageUri: "http://localhost:7177/api/v1/images"
+  CocktailsApi__BaseOpenApiUri: "http://localhost:7177"
+  CocktailsApi__ApimHostKey: ""
+  CocktailsWeb__SiteMap__CockailsPageFormat: "http://localhost:4001/cocktails/:id"
+  CosmosDb__AccountEndpoint: "https://cosmosdb:8081/"
+  CosmosDb__DatabaseName: "cocktails-db-prd"
+  Dapr__HttpEndpoint: "http://localhost:3500"
+  Dapr__GrpcEndpoint: "http://localhost:50001"
+  Dapr__InitJobEnabled: "true"
+  Kafka__CocktailsTopic: "cocktails-update-topic-prd"
+  OTel__ServiceName: "cocktails-api"
+  OTel__ServiceNamespace: "cezzis"
+  OTel__OtlpExporter__Endpoint: "http://otel-collector.openobserve-platform.svc.cluster.local:4317"
+  OTel__OtlpExporter__Protocol: "grpc"
+  PubSub__CocktailUpdatesPublisher__TopicName: "cocktails-update-topic-prd"

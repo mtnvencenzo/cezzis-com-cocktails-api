@@ -1,0 +1,27 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+
+metadata:
+  name: pubsub-cocktail-updates
+  namespace: cezzis
+  labels:
+    app.kubernetes.io/part-of: cezzis
+    app.kubernetes.io/managed-by: argocd
+spec:
+  type: pubsub.kafka
+  version: v1
+  metadata:
+    - name: brokers
+      value: "localhost:9092"
+    - name: authType
+      value: "none"
+    - name: disableTls
+      value: "true"
+    - name: skipVerify
+      value: "false"
+    - name: version
+      value: 1.0.0
+scopes:
+  - cezzis-com-accounts-api
+auth:
+  secretStore: kubernetes
