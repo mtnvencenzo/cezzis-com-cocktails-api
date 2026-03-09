@@ -10,11 +10,11 @@ spec:
         updateStrategy: "semver"
         forceUpdate: true
       images:
-        - alias: "cezziscomcocktailsapi"
-          imageName: "acrveceusgloshared001.azurecr.io/cezziscomcocktailsapi:0.x"
+        - alias: "cocktailsapi"
+          imageName: "acrveceusgloshared001.azurecr.io/cocktailsapi:0.x"
           manifestTargets:
             kustomize:
-              name: "acrveceusgloshared001.azurecr.io/cezziscomcocktailsapi"
+              name: "acrveceusgloshared001.azurecr.io/cocktailsapi"
   writeBackConfig:
     method: "git:secret:argocd/git-creds"
     gitConfig:

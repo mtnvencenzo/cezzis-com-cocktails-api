@@ -33,7 +33,7 @@ spec:
         - name: acr-pull-secret
       containers:
         - name: cezzis-com-cocktails-api
-          image: acrveceusgloshared001.azurecr.io/cezziscomcocktailsapi
+          image: acrveceusgloshared001.azurecr.io/cocktailsapi
           ports:
             - containerPort: 7177
               name: http
