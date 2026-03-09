@@ -24,6 +24,6 @@ spec:
     - name: direction
       value: "input"
 scopes:
-  - cezzis-com-accounts-api
+  - cezzis-com-cocktails-api
 auth:
   secretStore: kubernetes

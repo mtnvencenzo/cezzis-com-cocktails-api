@@ -23,6 +23,6 @@ spec:
     - name: version
       value: 1.0.0
 scopes:
-  - cezzis-com-accounts-api
+  - cezzis-com-cocktails-api
 auth:
   secretStore: kubernetes
