@@ -7,6 +7,8 @@ using Dapr.Jobs.Extensions;
 using Dapr.Jobs.Models;
 using Cocktails.Api.Application.Behaviors.DaprAppTokenAuthorization;
 using Microsoft.AspNetCore.Authorization;
+using Polly;
+using Polly.Retry;
 
 internal static class DaprExtensions
 {
@@ -80,18 +82,41 @@ internal static class DaprExtensions
 
         if (daprConfig.InitJobEnabled)
         {
+            var pipeline = new ResiliencePipelineBuilder()
+                .AddRetry(new RetryStrategyOptions
+                {
+                    MaxRetryAttempts = 5,
+                    Delay = TimeSpan.FromSeconds(20),
+                    BackoffType = DelayBackoffType.Exponential,
+                    UseJitter = true,
+                    OnRetry = args =>
+                    {
+                        logger.LogWarning(
+                            args.Outcome.Exception,
+                            "Failed to schedule initialize-app job. Retry attempt {AttemptNumber} after {RetryDelay}.",
+                            args.AttemptNumber,
+                            args.RetryDelay);
+                        return ValueTask.CompletedTask;
+                    }
+                })
+                .Build();
+
             try
             {
-                await jobClient.ScheduleJobAsync(
-                    jobName: "initialize-app",
-                    schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
-                    startingFrom: DateTimeOffset.UtcNow,
-                    repeats: 1,
-                    overwrite: true);
+                await pipeline.ExecuteAsync(async ct =>
+                {
+                    await jobClient.ScheduleJobAsync(
+                        jobName: "initialize-app",
+                        schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
+                        startingFrom: DateTimeOffset.UtcNow,
+                        repeats: 1,
+                        overwrite: true,
+                        cancellationToken: ct);
+                });
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Failed to schedule initialize-app job.");
+                logger.LogError(ex, "Failed to schedule initialize-app job after all retry attempts.");
             }
         }
 

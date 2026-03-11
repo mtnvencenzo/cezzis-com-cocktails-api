@@ -61,6 +61,10 @@ spec:
             periodSeconds: 20
             timeoutSeconds: 5
             failureThreshold: 3
+          volumeMounts:
+            - name: shared-pod-data
+              mountPath: /app/data
+              subPath: cezzis-com-cocktails-api
           resources:
             requests:
               cpu: 100m
@@ -68,3 +72,14 @@ spec:
             limits:
               cpu: 500m
               memory: 512Mi
+      initContainers:
+        - name: init-data-dir
+          image: busybox:1.37
+          command: ["sh", "-c", "mkdir -p /pods/cezzis-com-cocktails-api"]
+          volumeMounts:
+            - name: shared-pod-data
+              mountPath: /pods
+      volumes:
+        - name: shared-pod-data
+          persistentVolumeClaim:
+            claimName: shared-pod-data-pvc
