@@ -64,7 +64,7 @@ spec:
           volumeMounts:
             - name: shared-pod-data
               mountPath: /app/data
-              subPath: cezzis-com-cocktails-api
+              subPath: cezzis/cezzis-com-cocktails-api
           resources:
             requests:
               cpu: 100m
@@ -75,7 +75,7 @@ spec:
       initContainers:
         - name: init-data-dir
           image: busybox:1.37
-          command: ["sh", "-c", "mkdir -p /pods/cezzis-com-cocktails-api"]
+          command: ["sh", "-c", "mkdir -p /pods/cezzis/cezzis-com-cocktails-api"]
           volumeMounts:
             - name: shared-pod-data
               mountPath: /pods
