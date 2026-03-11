@@ -287,13 +287,7 @@ internal static class OpenApiOptionsExtensions
                         AuthorizationUrl = new Uri($"{auth0Config.Domain}/authorize?audience={auth0Config.Audience}"),
                         TokenUrl = new Uri($"{auth0Config.Domain}/oauth/token"),
                         Scopes = AuthScopes.All().ToDictionary(s => s, s => s),
-                        Extensions = new Dictionary<string, IOpenApiExtension>
-                        {
-                            { "x-usePkce", new OpenApiString("SHA-256") },
-                            { "x-scalar-client-id", new OpenApiString(auth0Config.ClientId) },
-                            { "x-scalar-credentials-location", new OpenApiString("body") },
-                            { "x-defaultClientId", new OpenApiString(auth0Config.ClientId) }
-                        }
+                        Extensions = BuildAuthorizationCodeExtensions(auth0Config)
                     }
                 },
                 In = ParameterLocation.Header,
@@ -310,6 +304,23 @@ internal static class OpenApiOptionsExtensions
             document.Components.SecuritySchemes.Add("oauth2", securityScheme);
 
             return Task.CompletedTask;
+        }
+
+        private static Dictionary<string, IOpenApiExtension> BuildAuthorizationCodeExtensions(Auth0Config auth0Config)
+        {
+            var extensions = new Dictionary<string, IOpenApiExtension>
+            {
+                { "x-scalar-client-id", new OpenApiString(auth0Config.ClientId) },
+                { "x-scalar-credentials-location", new OpenApiString("body") },
+                { "x-defaultClientId", new OpenApiString(auth0Config.ClientId) }
+            };
+
+            if (!string.IsNullOrEmpty(auth0Config.PKCE))
+            {
+                extensions.Add("x-usePkce", new OpenApiString(auth0Config.PKCE));
+            }
+
+            return extensions;
         }
     }
 }
