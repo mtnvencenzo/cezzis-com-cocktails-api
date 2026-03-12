@@ -73,54 +73,64 @@ internal static class DaprExtensions
     }
 
 #pragma warning disable DAPR_JOBS // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-    internal static async Task<IApplicationBuilder> UseDaprJobs(this IApplicationBuilder app)
+    internal static IApplicationBuilder UseDaprJobs(this IApplicationBuilder app)
     {
-        var jobClient = app.ApplicationServices.GetRequiredService<DaprJobsClient>();
         var daprConfig = app.ApplicationServices.GetRequiredService<IOptions<DaprConfig>>().Value;
-        var logger = app.ApplicationServices.GetRequiredService<ILoggerFactory>()
-            .CreateLogger(nameof(DaprExtensions));
 
         if (daprConfig.InitJobEnabled)
         {
-            var pipeline = new ResiliencePipelineBuilder()
-                .AddRetry(new RetryStrategyOptions
-                {
-                    MaxRetryAttempts = 5,
-                    Delay = TimeSpan.FromSeconds(20),
-                    BackoffType = DelayBackoffType.Exponential,
-                    UseJitter = true,
-                    OnRetry = args =>
-                    {
-                        logger.LogWarning(
-                            args.Outcome.Exception,
-                            "Failed to schedule initialize-app job. Retry attempt {AttemptNumber} after {RetryDelay}.",
-                            args.AttemptNumber,
-                            args.RetryDelay);
-                        return ValueTask.CompletedTask;
-                    }
-                })
-                .Build();
+            var lifetime = app.ApplicationServices.GetRequiredService<IHostApplicationLifetime>();
+            lifetime.ApplicationStarted.Register(() =>
+            {
+                var jobClient = app.ApplicationServices.GetRequiredService<DaprJobsClient>();
+                var logger = app.ApplicationServices.GetRequiredService<ILoggerFactory>()
+                    .CreateLogger(nameof(DaprExtensions));
 
-            try
-            {
-                await pipeline.ExecuteAsync(async ct =>
-                {
-                    await jobClient.ScheduleJobAsync(
-                        jobName: "initialize-app",
-                        schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
-                        startingFrom: DateTimeOffset.UtcNow,
-                        repeats: 1,
-                        overwrite: true,
-                        cancellationToken: ct);
-                });
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(ex, "Failed to schedule initialize-app job after all retry attempts.");
-            }
+                _ = ScheduleInitJobAsync(jobClient, logger);
+            });
         }
 
         return app;
+    }
+
+    private static async Task ScheduleInitJobAsync(DaprJobsClient jobClient, ILogger logger)
+    {
+        var pipeline = new ResiliencePipelineBuilder()
+            .AddRetry(new RetryStrategyOptions
+            {
+                MaxRetryAttempts = 5,
+                Delay = TimeSpan.FromSeconds(20),
+                BackoffType = DelayBackoffType.Exponential,
+                UseJitter = true,
+                OnRetry = args =>
+                {
+                    logger.LogWarning(
+                        args.Outcome.Exception,
+                        "Failed to schedule initialize-app job. Retry attempt {AttemptNumber} after {RetryDelay}.",
+                        args.AttemptNumber,
+                        args.RetryDelay);
+                    return ValueTask.CompletedTask;
+                }
+            })
+            .Build();
+
+        try
+        {
+            await pipeline.ExecuteAsync(async ct =>
+            {
+                await jobClient.ScheduleJobAsync(
+                    jobName: "initialize-app",
+                    schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
+                    startingFrom: DateTimeOffset.UtcNow,
+                    repeats: 1,
+                    overwrite: true,
+                    cancellationToken: ct);
+            });
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Failed to schedule initialize-app job after all retry attempts.");
+        }
     }
 #pragma warning restore DAPR_JOBS // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 }

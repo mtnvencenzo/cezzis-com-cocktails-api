@@ -51,7 +51,7 @@ if (Environment.GetEnvironmentVariable("FORCE_HTTPS") != "false")
     app.UseHttpsRedirection();
 }
 
-await app.UseDaprJobs();
+app.UseDaprJobs();
 
 app.Run();
 
