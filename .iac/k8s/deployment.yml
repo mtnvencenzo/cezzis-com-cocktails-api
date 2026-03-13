@@ -49,16 +49,16 @@ spec:
             httpGet:
               path: /api/v1/health/ping
               port: 7177
-            initialDelaySeconds: 15
-            periodSeconds: 10
+            initialDelaySeconds: 30
+            periodSeconds: 300
             timeoutSeconds: 5
             failureThreshold: 3
           livenessProbe:
             httpGet:
               path: /api/v1/health/ping
               port: 7177
-            initialDelaySeconds: 20
-            periodSeconds: 20
+            initialDelaySeconds: 40
+            periodSeconds: 300
             timeoutSeconds: 5
             failureThreshold: 3
           volumeMounts:
