@@ -1,7 +1,9 @@
 namespace Cocktails.Api.StartupExtensions;
 
 using Cezzi.OTel;
+using Cocktails.Api.Application.Behaviors.ProbeTelemetry;
 using Confluent.Kafka.Extensions.OpenTelemetry;
+using OpenTelemetry.Logs;
 using OpenTelemetry.Resources;
 
 internal static class OTelExtensions
@@ -48,6 +50,17 @@ internal static class OTelExtensions
                     });
             }
         );
+
+        // Suppress logs sent to the OTel collector during health probe requests
+        builder.Logging.AddFilter<OpenTelemetryLoggerProvider>((category, level) =>
+        {
+            if (ProbeRequestContext.IsProbeRequest.Value)
+            {
+                return false;
+            }
+
+            return level >= LogLevel.Information;
+        });
 
         return builder;
     }

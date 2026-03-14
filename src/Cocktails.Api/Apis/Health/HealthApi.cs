@@ -29,6 +29,14 @@ public static class HealthApi
             .WithName(nameof(GetVersion))
             .WithDisplayName(nameof(GetVersion));
 
+        groupBuilder.MapGet("/liveness", GetLiveness)
+            .WithName(nameof(GetLiveness))
+            .WithDisplayName(nameof(GetLiveness));
+
+        groupBuilder.MapGet("/readiness", GetReadiness)
+            .WithName(nameof(GetReadiness))
+            .WithDisplayName(nameof(GetReadiness));
+
         return groupBuilder;
     }
 
@@ -54,5 +62,35 @@ public static class HealthApi
         var version = healthServices.Queries.GetVersion();
 
         return TypedResults.Ok(version);
+    }
+
+    /// <summary>Performs a liveness check of the API</summary>
+    /// <returns></returns>
+    [ApiExplorerSettings(IgnoreApi = true)]
+    [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(HealthCheckRs))]
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public static Ok<HealthCheckRs> GetLiveness([AsParameters] HealthServices healthServices)
+    {
+        var result = healthServices.Queries.GetLiveness();
+
+        return TypedResults.Ok(result);
+    }
+
+    /// <summary>Performs a readiness check verifying connectivity to Dapr components and CosmosDB</summary>
+    /// <returns></returns>
+    [ApiExplorerSettings(IgnoreApi = true)]
+    [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(HealthCheckRs))]
+    [ProducesResponseType((int)HttpStatusCode.ServiceUnavailable, Type = typeof(HealthCheckRs))]
+    [ProducesDefaultResponseType(typeof(ProblemDetails))]
+    public static async Task<Results<Ok<HealthCheckRs>, JsonHttpResult<HealthCheckRs>>> GetReadiness([AsParameters] HealthServices healthServices)
+    {
+        var result = await healthServices.Queries.GetReadinessAsync();
+
+        if (result.Status != "healthy")
+        {
+            return TypedResults.Json(result, statusCode: StatusCodes.Status503ServiceUnavailable);
+        }
+
+        return TypedResults.Ok(result);
     }
 }

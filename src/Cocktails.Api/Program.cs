@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using Cocktails.Api.Application.Behaviors.ExceptionHandling;
+using Cocktails.Api.Application.Behaviors.ProbeTelemetry;
 using Cocktails.Api.StartupExtensions;
 using Microsoft.AspNetCore.Diagnostics;
 
@@ -28,6 +29,7 @@ var app = builder.Build();
 // Use cloud events to automatically unpack the message data
 // app.UseCloudEvents(); // test 
 
+app.UseMiddleware<ProbeTelemetryMiddleware>();
 app.UseApplicationEndpoints();
 app.UseDefaultOpenApi();
 app.UseCors("origin-policy");

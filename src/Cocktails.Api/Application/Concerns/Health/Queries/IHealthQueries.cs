@@ -7,4 +7,8 @@ public interface IHealthQueries
     PingRs GetPing();
 
     VersionRs GetVersion();
+
+    HealthCheckRs GetLiveness();
+
+    Task<HealthCheckRs> GetReadinessAsync();
 }

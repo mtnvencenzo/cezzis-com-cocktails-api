@@ -47,18 +47,18 @@ spec:
                 name: cezzis-com-cocktails-api-shared-secrets
           readinessProbe:
             httpGet:
-              path: /api/v1/health/ping
+              path: /api/v1/health/readiness
               port: 7177
-            initialDelaySeconds: 30
-            periodSeconds: 300
-            timeoutSeconds: 5
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            timeoutSeconds: 30
             failureThreshold: 3
           livenessProbe:
             httpGet:
-              path: /api/v1/health/ping
+              path: /api/v1/health/liveness
               port: 7177
-            initialDelaySeconds: 40
-            periodSeconds: 300
+            initialDelaySeconds: 15
+            periodSeconds: 15
             timeoutSeconds: 5
             failureThreshold: 3
           volumeMounts:

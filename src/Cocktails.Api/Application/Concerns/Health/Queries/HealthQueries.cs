@@ -2,9 +2,17 @@
 
 using global::Cocktails.Api.Application.Concerns.Health.Models;
 using global::Cocktails.Api.Domain.Aggregates.HealthAggregate;
+using global::Cocktails.Api.Domain.Config;
+using global::Cocktails.Api.Infrastructure;
+using Microsoft.Extensions.Options;
 using System.Reflection;
 
-public class HealthQueries(IHealthRepository healthRepository) : IHealthQueries
+public class HealthQueries(
+    IHealthRepository healthRepository,
+    IHttpClientFactory httpClientFactory,
+    IOptions<DaprConfig> daprConfig,
+    CocktailDbContext dbContext,
+    ILogger<HealthQueries> logger) : IHealthQueries
 {
     public PingRs GetPing()
     {
@@ -29,5 +37,82 @@ public class HealthQueries(IHealthRepository healthRepository) : IHealthQueries
             .InformationalVersion;
 
         return new VersionRs(version ?? "0.0.0");
+    }
+
+    public HealthCheckRs GetLiveness()
+    {
+        var version = Assembly.GetExecutingAssembly()
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+            .InformationalVersion;
+
+        return new HealthCheckRs(
+            Status: "healthy",
+            Version: version ?? "0.0.0",
+            Output: "API is running");
+    }
+
+    public async Task<HealthCheckRs> GetReadinessAsync()
+    {
+        var details = new Dictionary<string, string>();
+        var overallHealthy = true;
+
+        // Check Dapr outbound component health
+        try
+        {
+            var opts = daprConfig.Value;
+            using var client = httpClientFactory.CreateClient();
+
+            if (!string.IsNullOrWhiteSpace(opts.DaprAppToken))
+            {
+                client.DefaultRequestHeaders.Add("dapr-api-token", opts.DaprAppToken);
+            }
+
+            var response = await client.GetAsync(
+                $"{opts.HttpEndpoint}/v1.0/healthz/outbound",
+                new CancellationTokenSource(TimeSpan.FromSeconds(5)).Token);
+
+            if ((int)response.StatusCode == 204)
+            {
+                details["dapr"] = "healthy";
+            }
+            else
+            {
+                details["dapr"] = $"unhealthy (status {(int)response.StatusCode})";
+                overallHealthy = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning(ex, "Dapr health check failed");
+            details["dapr"] = "unhealthy";
+            overallHealthy = false;
+        }
+
+        // Check CosmosDB connectivity
+        try
+        {
+            var canConnect = await dbContext.Database.CanConnectAsync();
+            details["cosmosdb"] = canConnect ? "healthy" : "unhealthy";
+            if (!canConnect)
+            {
+                overallHealthy = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning(ex, "CosmosDB health check failed");
+            details["cosmosdb"] = "unhealthy";
+            overallHealthy = false;
+        }
+
+        var version = Assembly.GetExecutingAssembly()
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+            .InformationalVersion;
+
+        return new HealthCheckRs(
+            Status: overallHealthy ? "healthy" : "unhealthy",
+            Version: version ?? "0.0.0",
+            Output: overallHealthy ? "All dependencies are reachable" : "One or more dependencies are unreachable",
+            Details: details);
     }
 }
