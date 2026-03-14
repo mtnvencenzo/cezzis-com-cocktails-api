@@ -3,11 +3,17 @@ namespace Cocktails.Api.StartupExtensions;
 using Cezzi.OTel;
 using Cocktails.Api.Application.Behaviors.ProbeTelemetry;
 using Confluent.Kafka.Extensions.OpenTelemetry;
+using OpenTelemetry.Instrumentation.Http;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Resources;
 
 internal static class OTelExtensions
 {
+    private static readonly HashSet<string> SuppressedHttpPaths = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "/v1.0/healthz/outbound"
+    };
+
     internal static IHostApplicationBuilder AddOTelTelemetry(this IHostApplicationBuilder builder)
     {
         AppContext.SetSwitch("Azure.Experimental.EnableActivitySource", true);
@@ -18,6 +24,15 @@ internal static class OTelExtensions
         builder.Services
             .AddHttpClient("OtlpTraceExporter")
             .RemoveAllLoggers();
+
+        builder.Services.Configure<HttpClientTraceInstrumentationOptions>(options =>
+        {
+            options.FilterHttpRequestMessage = (httpRequestMessage) =>
+            {
+                var path = httpRequestMessage.RequestUri?.AbsolutePath;
+                return path == null || !SuppressedHttpPaths.Contains(path);
+            };
+        });
 
         builder.AddApplicationOpenTelemetry(
             configureTracing: (t) =>
@@ -56,6 +71,13 @@ internal static class OTelExtensions
         // hosting-level "Request starting" / "Request finished" logs too.
         builder.Logging.AddFilter((category, level) =>
         {
+            // Always allow Error logs
+            if (level >= LogLevel.Error)
+            {
+                return true;
+            }
+
+            // Suppress probe logs for non-error levels
             if (ProbeRequestContext.IsProbeRequest)
             {
                 return false;
@@ -69,6 +91,13 @@ internal static class OTelExtensions
         // so the probe check must be duplicated here.
         builder.Logging.AddFilter<OpenTelemetryLoggerProvider>((category, level) =>
         {
+            // Always allow Error logs
+            if (level >= LogLevel.Error)
+            {
+                return true;
+            }
+
+            // Suppress probe logs for non-error levels
             if (ProbeRequestContext.IsProbeRequest)
             {
                 return false;
