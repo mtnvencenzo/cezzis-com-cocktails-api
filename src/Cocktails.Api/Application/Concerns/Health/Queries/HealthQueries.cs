@@ -4,6 +4,7 @@ using global::Cocktails.Api.Application.Concerns.Health.Models;
 using global::Cocktails.Api.Domain.Aggregates.HealthAggregate;
 using global::Cocktails.Api.Domain.Config;
 using global::Cocktails.Api.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 
@@ -89,14 +90,12 @@ public class HealthQueries(
         }
 
         // Check CosmosDB connectivity
+        // Note: The Cosmos EF Core provider does not support CanConnectAsync(),
+        // so we run a lightweight query instead.
         try
         {
-            var canConnect = await dbContext.Database.CanConnectAsync();
-            details["cosmosdb"] = canConnect ? "healthy" : "unhealthy";
-            if (!canConnect)
-            {
-                overallHealthy = false;
-            }
+            _ = await dbContext.Cocktails.Take(1).Select(c => c.Id).FirstOrDefaultAsync();
+            details["cosmosdb"] = "healthy";
         }
         catch (Exception ex)
         {
