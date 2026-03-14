@@ -64,9 +64,16 @@ internal static class OTelExtensions
             return true;
         });
 
-        // Enforce minimum Information level for the OTel provider
+        // Suppress probe logs and enforce minimum Information level for the OTel provider.
+        // Provider-specific filters take precedence over the global filter above,
+        // so the probe check must be duplicated here.
         builder.Logging.AddFilter<OpenTelemetryLoggerProvider>((category, level) =>
         {
+            if (ProbeRequestContext.IsProbeRequest)
+            {
+                return false;
+            }
+
             return level >= LogLevel.Information;
         });
 
