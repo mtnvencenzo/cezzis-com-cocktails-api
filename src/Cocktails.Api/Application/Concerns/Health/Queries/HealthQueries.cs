@@ -94,7 +94,7 @@ public class HealthQueries(
         // so we run a lightweight query instead.
         try
         {
-            _ = await dbContext.Cocktails.Take(1).Select(c => c.Id).FirstOrDefaultAsync();
+            _ = await dbContext.Cocktails.Select(c => c.Id).FirstOrDefaultAsync();
             details["cosmosdb"] = "healthy";
         }
         catch (Exception ex)
