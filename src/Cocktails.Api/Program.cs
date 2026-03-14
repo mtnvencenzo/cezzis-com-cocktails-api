@@ -26,10 +26,13 @@ builder.AddDefaultOpenApi(apiVersioningBuilder);
 // -------------
 var app = builder.Build();
 
+// Initialize the probe request context with IHttpContextAccessor
+// so the log filter can suppress health probe logs (including hosting diagnostics)
+ProbeRequestContext.Initialize(app.Services.GetRequiredService<IHttpContextAccessor>());
+
 // Use cloud events to automatically unpack the message data
 // app.UseCloudEvents(); // test 
 
-app.UseMiddleware<ProbeTelemetryMiddleware>();
 app.UseApplicationEndpoints();
 app.UseDefaultOpenApi();
 app.UseCors("origin-policy");

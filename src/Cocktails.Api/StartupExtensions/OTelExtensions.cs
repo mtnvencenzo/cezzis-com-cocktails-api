@@ -51,14 +51,22 @@ internal static class OTelExtensions
             }
         );
 
-        // Suppress logs sent to the OTel collector during health probe requests
-        builder.Logging.AddFilter<OpenTelemetryLoggerProvider>((category, level) =>
+        // Suppress logs from all providers during health probe requests.
+        // Uses IHttpContextAccessor (via ProbeRequestContext) so it catches
+        // hosting-level "Request starting" / "Request finished" logs too.
+        builder.Logging.AddFilter((category, level) =>
         {
-            if (ProbeRequestContext.IsProbeRequest.Value)
+            if (ProbeRequestContext.IsProbeRequest)
             {
                 return false;
             }
 
+            return true;
+        });
+
+        // Enforce minimum Information level for the OTel provider
+        builder.Logging.AddFilter<OpenTelemetryLoggerProvider>((category, level) =>
+        {
             return level >= LogLevel.Information;
         });
 
