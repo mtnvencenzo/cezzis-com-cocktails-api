@@ -45,11 +45,18 @@ spec:
                 name: cezzis-com-cocktails-api-secrets
             - secretRef:
                 name: cezzis-com-cocktails-api-shared-secrets
+          startupProbe:
+            httpGet:
+              path: /api/v1/health/readiness
+              port: 7177
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 30
+            failureThreshold: 30
           readinessProbe:
             httpGet:
               path: /api/v1/health/readiness
               port: 7177
-            initialDelaySeconds: 10
             periodSeconds: 15
             timeoutSeconds: 30
             failureThreshold: 3
@@ -57,7 +64,6 @@ spec:
             httpGet:
               path: /api/v1/health/liveness
               port: 7177
-            initialDelaySeconds: 15
             periodSeconds: 15
             timeoutSeconds: 5
             failureThreshold: 3
