@@ -84,7 +84,7 @@ public class HealthQueries(
         }
         catch (Exception ex)
         {
-            logger.LogWarning(ex, "Dapr health check failed");
+            logger.LogError(ex, "Dapr health check failed");
             details["dapr"] = "unhealthy";
             overallHealthy = false;
         }
@@ -99,7 +99,7 @@ public class HealthQueries(
         }
         catch (Exception ex)
         {
-            logger.LogWarning(ex, "CosmosDB health check failed");
+            logger.LogError(ex, "CosmosDB health check failed");
             details["cosmosdb"] = "unhealthy";
             overallHealthy = false;
         }
