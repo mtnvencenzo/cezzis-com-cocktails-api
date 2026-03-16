@@ -7,10 +7,13 @@ metadata:
   labels:
     app.kubernetes.io/part-of: cezzis
     app.kubernetes.io/managed-by: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "200"
 
 spec:
   type: bindings.rabbitmq
   version: v1
+  initTimeout: 120s
   metadata:
     - name: queueName
       value: "cocktail-ratings-sync-queue"

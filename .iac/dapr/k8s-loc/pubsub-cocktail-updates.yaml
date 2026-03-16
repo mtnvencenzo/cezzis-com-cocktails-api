@@ -7,6 +7,7 @@ metadata:
 spec:
   type: pubsub.kafka
   version: v1
+  initTimeout: 120s
   metadata:
     - name: brokers
       value: "localhost:30092"

@@ -6,6 +6,8 @@ metadata:
   labels:
     app.kubernetes.io/part-of: cezzis
     app.kubernetes.io/managed-by: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
 data:
   ASPNETCORE_ENVIRONMENT: "prd"
   ASPNETCORE_URLS: "http://0.0.0.0:7177"

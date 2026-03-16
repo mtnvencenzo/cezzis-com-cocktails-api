@@ -7,9 +7,12 @@ metadata:
   labels:
     app.kubernetes.io/part-of: cezzis
     app.kubernetes.io/managed-by: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "200"
 spec:
   type: pubsub.kafka
   version: v1
+  initTimeout: 120s
   metadata:
     - name: brokers
       secretKeyRef:
