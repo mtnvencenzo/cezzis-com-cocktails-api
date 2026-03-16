@@ -166,6 +166,9 @@ csharp_prefer_static_anonymous_function = true:suggestion
 csharp_space_around_binary_operators = before_and_after
 csharp_prefer_system_threading_lock = true:suggestion
 
+# EXTEXP0001: Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+dotnet_diagnostic.EXTEXP0001.severity = none
+
 [*.{cs,vb}]
 dotnet_style_coalesce_expression= true:warning
 dotnet_style_null_propagation= true:warning

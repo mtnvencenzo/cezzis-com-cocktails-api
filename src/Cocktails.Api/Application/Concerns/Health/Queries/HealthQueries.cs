@@ -1,5 +1,6 @@
 ﻿namespace Cocktails.Api.Application.Concerns.Health.Queries;
 
+using global::Cocktails.Api.Application.Concerns.Health;
 using global::Cocktails.Api.Application.Concerns.Health.Models;
 using global::Cocktails.Api.Domain.Aggregates.HealthAggregate;
 using global::Cocktails.Api.Domain.Config;
@@ -61,7 +62,7 @@ public class HealthQueries(
         try
         {
             var opts = daprConfig.Value;
-            using var client = httpClientFactory.CreateClient();
+            using var client = httpClientFactory.CreateClient(HealthCheckConstants.DaprHealthCheckClientName);
 
             if (!string.IsNullOrWhiteSpace(opts.DaprAppToken))
             {

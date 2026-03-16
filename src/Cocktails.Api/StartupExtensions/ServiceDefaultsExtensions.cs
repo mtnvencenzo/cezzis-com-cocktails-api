@@ -1,5 +1,6 @@
 ﻿namespace Cocktails.Api.StartupExtensions;
 
+using Cocktails.Api.Application.Concerns.Health;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
@@ -25,6 +26,15 @@ internal static class ServiceDefaultsExtensions
             // Turn on service discovery by default
             http.AddServiceDiscovery();
         });
+
+        // Register a named HttpClient for health checks that bypasses the global
+        // standard resilience handler. The default Polly circuit breaker trips when
+        // Dapr is not yet ready during pod startup and never recovers, causing
+        // readiness probes to fail indefinitely.
+#pragma warning disable EXTEXP0001 // Type is for evaluation purposes only
+        builder.Services.AddHttpClient(HealthCheckConstants.DaprHealthCheckClientName)
+            .RemoveAllResilienceHandlers();
+#pragma warning restore EXTEXP0001
 
         builder.Services.AddProblemDetails();
 
