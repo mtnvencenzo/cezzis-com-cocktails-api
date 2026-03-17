@@ -4,6 +4,7 @@ resources:
   - configmap.yml
   - external-secrets.yml
   - ../dapr/k8s-prd/
+  - wait-for-dapr-injector.yml
   - deployment.yml
   - service.yml
   - ingress.yml
