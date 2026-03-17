@@ -7,6 +7,7 @@ using global::Cocktails.Api.Domain.Config;
 using global::Cocktails.Api.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Diagnostics;
 using System.Reflection;
 
 public class HealthQueries(
@@ -16,6 +17,9 @@ public class HealthQueries(
     CocktailDbContext dbContext,
     ILogger<HealthQueries> logger) : IHealthQueries
 {
+    private static readonly long StartTimestamp = Stopwatch.GetTimestamp();
+    internal static TimeSpan DaprGracePeriod = TimeSpan.FromSeconds(120); // 2 minutes
+
     public PingRs GetPing()
     {
         var item = healthRepository.GetServerInfo();
@@ -59,6 +63,7 @@ public class HealthQueries(
         var overallHealthy = true;
 
         // Check Dapr outbound component health
+        var daprHealthy = false;
         try
         {
             var opts = daprConfig.Value;
@@ -76,18 +81,34 @@ public class HealthQueries(
             if ((int)response.StatusCode == 204)
             {
                 details["dapr"] = "healthy";
+                daprHealthy = true;
             }
             else
             {
                 details["dapr"] = $"unhealthy (status {(int)response.StatusCode})";
-                overallHealthy = false;
             }
         }
         catch (Exception ex)
         {
             logger.LogError(ex, "Dapr health check failed");
             details["dapr"] = "unhealthy";
-            overallHealthy = false;
+        }
+
+        // During the startup grace period, treat Dapr failures as degraded (not unhealthy)
+        // to allow the pod to become Ready while the Dapr sidecar is still initializing
+        if (!daprHealthy)
+        {
+            var elapsed = Stopwatch.GetElapsedTime(StartTimestamp);
+            if (elapsed < DaprGracePeriod)
+            {
+                logger.LogWarning("Dapr is not ready but within startup grace period ({Elapsed:F0}s / {Grace:F0}s). Reporting as degraded.",
+                    elapsed.TotalSeconds, DaprGracePeriod.TotalSeconds);
+                details["dapr"] = $"degraded (starting, {elapsed.TotalSeconds:F0}s elapsed)";
+            }
+            else
+            {
+                overallHealthy = false;
+            }
         }
 
         // Check CosmosDB connectivity

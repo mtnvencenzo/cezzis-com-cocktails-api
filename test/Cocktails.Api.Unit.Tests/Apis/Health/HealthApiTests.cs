@@ -4,12 +4,11 @@ using FluentAssertions;
 using global::Cocktails.Api.Apis.Health;
 using global::Cocktails.Api.Application.Concerns.Health;
 using global::Cocktails.Api.Application.Concerns.Health.Models;
+using global::Cocktails.Api.Application.Concerns.Health.Queries;
 using global::Cocktails.Api.Domain.Config;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Moq;
 using System.Net;
 using Xunit;
 
@@ -89,53 +88,113 @@ public class HealthApiTests : ServiceTestBase
     [Fact]
     public async Task GetReadiness_WhenDaprUnhealthy_Returns503()
     {
-        // arrange
-        var mockHandler = new MockHttpMessageHandler(new HttpResponseMessage(HttpStatusCode.InternalServerError));
-        var httpClient = new HttpClient(mockHandler);
+        // arrange - set grace period to zero so Dapr failure counts as unhealthy
+        var originalGracePeriod = HealthQueries.DaprGracePeriod;
+        HealthQueries.DaprGracePeriod = TimeSpan.Zero;
 
-        this.httpClientFactoryMock
-            .Setup(f => f.CreateClient(HealthCheckConstants.DaprHealthCheckClientName))
-            .Returns(httpClient);
-
-        var sp = this.SetupEnvironment(services =>
+        try
         {
-            services.Configure<DaprConfig>(c => c.HttpEndpoint = "http://localhost:3500");
-        });
-        var services = GetAsParameterServices<HealthServices>(sp);
+            var mockHandler = new MockHttpMessageHandler(new HttpResponseMessage(HttpStatusCode.InternalServerError));
+            var httpClient = new HttpClient(mockHandler);
 
-        // act
-        var response = await HealthApi.GetReadiness(services);
-        var result = response.Result as JsonHttpResult<HealthCheckRs>;
+            this.httpClientFactoryMock
+                .Setup(f => f.CreateClient(HealthCheckConstants.DaprHealthCheckClientName))
+                .Returns(httpClient);
 
-        // assert
-        result.Should().NotBeNull();
-        result.StatusCode.Should().Be(StatusCodes.Status503ServiceUnavailable);
+            var sp = this.SetupEnvironment(services =>
+            {
+                services.Configure<DaprConfig>(c => c.HttpEndpoint = "http://localhost:3500");
+            });
+            var services = GetAsParameterServices<HealthServices>(sp);
+
+            // act
+            var response = await HealthApi.GetReadiness(services);
+            var result = response.Result as JsonHttpResult<HealthCheckRs>;
+
+            // assert
+            result.Should().NotBeNull();
+            result.StatusCode.Should().Be(StatusCodes.Status503ServiceUnavailable);
+        }
+        finally
+        {
+            HealthQueries.DaprGracePeriod = originalGracePeriod;
+        }
     }
 
     [Fact]
     public async Task GetReadiness_WhenDaprTimesOut_Returns503()
     {
-        // arrange
-        var mockHandler = new MockHttpMessageHandler(new TaskCanceledException("Simulated timeout"));
-        var httpClient = new HttpClient(mockHandler);
+        // arrange - set grace period to zero so Dapr failure counts as unhealthy
+        var originalGracePeriod = HealthQueries.DaprGracePeriod;
+        HealthQueries.DaprGracePeriod = TimeSpan.Zero;
 
-        this.httpClientFactoryMock
-            .Setup(f => f.CreateClient(HealthCheckConstants.DaprHealthCheckClientName))
-            .Returns(httpClient);
-
-        var sp = this.SetupEnvironment(services =>
+        try
         {
-            services.Configure<DaprConfig>(c => c.HttpEndpoint = "http://localhost:3500");
-        });
-        var services = GetAsParameterServices<HealthServices>(sp);
+            var mockHandler = new MockHttpMessageHandler(new TaskCanceledException("Simulated timeout"));
+            var httpClient = new HttpClient(mockHandler);
 
-        // act
-        var response = await HealthApi.GetReadiness(services);
-        var result = response.Result as JsonHttpResult<HealthCheckRs>;
+            this.httpClientFactoryMock
+                .Setup(f => f.CreateClient(HealthCheckConstants.DaprHealthCheckClientName))
+                .Returns(httpClient);
 
-        // assert
-        result.Should().NotBeNull();
-        result.StatusCode.Should().Be(StatusCodes.Status503ServiceUnavailable);
+            var sp = this.SetupEnvironment(services =>
+            {
+                services.Configure<DaprConfig>(c => c.HttpEndpoint = "http://localhost:3500");
+            });
+            var services = GetAsParameterServices<HealthServices>(sp);
+
+            // act
+            var response = await HealthApi.GetReadiness(services);
+            var result = response.Result as JsonHttpResult<HealthCheckRs>;
+
+            // assert
+            result.Should().NotBeNull();
+            result.StatusCode.Should().Be(StatusCodes.Status503ServiceUnavailable);
+        }
+        finally
+        {
+            HealthQueries.DaprGracePeriod = originalGracePeriod;
+        }
+    }
+
+    [Fact]
+    public async Task GetReadiness_WhenDaprUnhealthyDuringGracePeriod_ReturnsOkDegraded()
+    {
+        // arrange - ensure we're within grace period
+        var originalGracePeriod = HealthQueries.DaprGracePeriod;
+        HealthQueries.DaprGracePeriod = TimeSpan.FromHours(1);
+
+        try
+        {
+            var mockHandler = new MockHttpMessageHandler(new HttpResponseMessage(HttpStatusCode.InternalServerError));
+            var httpClient = new HttpClient(mockHandler);
+
+            this.httpClientFactoryMock
+                .Setup(f => f.CreateClient(HealthCheckConstants.DaprHealthCheckClientName))
+                .Returns(httpClient);
+
+            var sp = this.SetupEnvironment(services =>
+            {
+                services.Configure<DaprConfig>(c => c.HttpEndpoint = "http://localhost:3500");
+            });
+            var services = GetAsParameterServices<HealthServices>(sp);
+
+            // act
+            var response = await HealthApi.GetReadiness(services);
+            var okResult = response.Result as Ok<HealthCheckRs>;
+
+            // assert - should be 200 (degraded) during grace period
+            okResult.Should().NotBeNull();
+            var value = okResult.Value;
+            value.Status.Should().Be("healthy");
+            value.Details.Should().ContainKey("dapr");
+            value.Details["dapr"].Should().StartWith("degraded");
+            value.Details.Should().ContainKey("cosmosdb").WhoseValue.Should().Be("healthy");
+        }
+        finally
+        {
+            HealthQueries.DaprGracePeriod = originalGracePeriod;
+        }
     }
 
     private class MockHttpMessageHandler : HttpMessageHandler
