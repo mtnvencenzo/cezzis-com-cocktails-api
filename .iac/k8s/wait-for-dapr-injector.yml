@@ -7,10 +7,9 @@ metadata:
     app.kubernetes.io/part-of: cezzis
     app.kubernetes.io/managed-by: argocd
   annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
     argocd.argoproj.io/sync-wave: "400"
 spec:
+  ttlSecondsAfterFinished: 120
   backoffLimit: 10
   activeDeadlineSeconds: 120
   template:
