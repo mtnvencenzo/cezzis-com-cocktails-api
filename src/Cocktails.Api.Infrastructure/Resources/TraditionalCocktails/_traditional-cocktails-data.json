@@ -10,7 +10,9 @@
       "Absinthe Frapp\u00e9"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition",
+      "gilded age"
     ],
     "ingredients": [
       {
@@ -87,38 +89,59 @@
     "keywordsBaseSpirit": [
       "absinthe"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "wormwood liqueur",
+      "anise spirit",
+      "herbal liqueur"
+    ],
     "keywordsFlavorProfile": [
       "herbal",
       "anise",
+      "licorice",
       "sweet",
-      "refreshing"
+      "minty",
+      "refreshing",
+      "aromatic"
     ],
     "keywordsCocktailFamily": [
-      "frappe"
+      "frappe",
+      "classic cocktail"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "diluted",
+      "lightly mixed"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
       "summer",
+      "spring",
       "all-season"
     ],
     "keywordsOccasion": [
       "afternoon",
-      "aperitif"
+      "aperitif",
+      "day drinking",
+      "warm weather"
     ],
     "keywordsMood": [
       "refreshing",
-      "exotic"
+      "cooling",
+      "nostalgic",
+      "exotic",
+      "leisurely"
     ],
     "keywordsSearchTerms": [
-      "New Orleans",
-      "anise",
-      "mint",
-      "crushed ice"
+      "New Orleans cocktail",
+      "absinthe frappe",
+      "anise drink",
+      "mint garnish",
+      "crushed ice cocktail",
+      "classic absinthe drink",
+      "Old Absinthe House",
+      "vintage cocktail",
+      "herbal cocktail"
     ]
   },
   {
@@ -132,7 +155,9 @@
       "Adonis"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition",
+      "gilded age"
     ],
     "ingredients": [
       {
@@ -207,42 +232,64 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "sherry"
+      "sherry",
+      "vermouth"
     ],
     "keywordsSpiritSubtype": [
-      "fino-sherry"
+      "fino sherry",
+      "sweet vermouth",
+      "fortified wine"
     ],
     "keywordsFlavorProfile": [
       "dry",
       "aromatic",
       "citrus",
-      "low-proof"
+      "light",
+      "herbal",
+      "slightly sweet",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "aperitif"
+      "aperitif",
+      "low abv",
+      "classic"
     ],
     "keywordsTechnique": [
-      "stirred"
+      "stirred",
+      "strained"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+      "all-season",
+      "spring",
+      "summer"
     ],
     "keywordsOccasion": [
       "aperitif",
-      "afternoon"
+      "afternoon",
+      "pre-dinner",
+      "day drinking"
     ],
     "keywordsMood": [
       "elegant",
-      "refined"
+      "refined",
+      "classy",
+      "fancy",
+      "sophisticated",
+      "light"
     ],
     "keywordsSearchTerms": [
-      "sherry cocktail",
+      "adonis",
+      "sherry vermouth",
       "low alcohol",
-      "Broadway",
-      "pre-dinner",
-      "1884"
+      "low abv",
+      "aperitif",
+      "pre dinner",
+      "classic sherry",
+      "orange bitters",
+      "waldorf astoria",
+      "new york classic"
     ]
   },
   {
@@ -256,7 +303,8 @@
       "AirMail"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "prohibition"
     ],
     "ingredients": [
       {
@@ -340,44 +388,62 @@
     "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
-    "keywordsBaseSpirit": [
-      "rum"
-    ],
     "keywordsSpiritSubtype": [
-      "gold-rum"
+      "gold rum",
+      "aged rum"
     ],
     "keywordsFlavorProfile": [
       "sweet",
       "citrus",
       "effervescent",
-      "honey"
+      "honey",
+      "bright",
+      "refreshing",
+      "lightly tart"
     ],
     "keywordsCocktailFamily": [
-      "champagne-cocktail"
+      "champagne",
+      "sparkling",
+      "classic",
+      "highball"
     ],
     "keywordsTechnique": [
       "shaken",
-      "topped"
+      "strained",
+      "topped",
+      "built"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
+      "spring",
+      "summer",
       "all-season"
     ],
     "keywordsOccasion": [
       "celebration",
-      "brunch"
+      "brunch",
+      "day drinking",
+      "special occasion"
     ],
     "keywordsMood": [
       "festive",
-      "elegant"
+      "elegant",
+      "refreshing",
+      "uplifting",
+      "light"
     ],
     "keywordsSearchTerms": [
-      "champagne",
-      "honey",
+      "airmail",
+      "rum champagne",
+      "rum sparkling wine",
+      "honey lime",
+      "sparkling rum",
+      "brunch",
+      "celebration",
       "1930s",
-      "sparkling",
-      "aviation history"
+      "cuban",
+      "bacardi"
     ]
   },
   {
@@ -391,7 +457,8 @@
       "Americano"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -466,44 +533,65 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "campari"
+      "campari",
+      "vermouth"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bitter liqueur",
+      "sweet vermouth",
+      "amaro"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "sweet",
       "effervescent",
-      "herbal"
+      "herbal",
+      "citrus",
+      "refreshing",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "negroni-family",
-      "aperitif"
+      "negroni",
+      "aperitif",
+      "highball",
+      "classic"
     ],
     "keywordsTechnique": [
-      "built"
+      "built",
+      "topped"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
       "summer",
+      "spring",
       "all-season"
     ],
     "keywordsOccasion": [
       "aperitif",
       "afternoon",
-      "casual"
+      "casual",
+      "pre-dinner",
+      "day drinking"
     ],
     "keywordsMood": [
       "relaxed",
-      "refreshing"
+      "refreshing",
+      "light",
+      "easygoing",
+      "sociable"
     ],
     "keywordsSearchTerms": [
-      "Italian",
-      "Milano-Torino",
-      "Campari",
-      "sweet vermouth",
-      "soda water",
-      "1860s"
+      "americano",
+      "campari vermouth",
+      "campari soda",
+      "italian aperitif",
+      "milano torino",
+      "bitter sweet",
+      "low abv",
+      "pre dinner",
+      "italian classic",
+      "amaro soda"
     ]
   },
   {
@@ -517,7 +605,9 @@
       "Aperol Spritz"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "interwar",
+      "mid-20th century"
     ],
     "ingredients": [
       {
@@ -592,21 +682,33 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "aperol"
+      "aperol",
+      "prosecco"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bitter liqueur",
+      "italian aperitivo",
+      "sparkling wine"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "sweet",
       "citrus",
       "effervescent",
-      "light"
+      "light",
+      "orange",
+      "refreshing",
+      "slightly bitter"
     ],
     "keywordsCocktailFamily": [
-      "spritz"
+      "spritz",
+      "aperitif",
+      "sparkling",
+      "classic"
     ],
     "keywordsTechnique": [
-      "built"
+      "built",
+      "topped"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
@@ -618,19 +720,29 @@
       "aperitif",
       "brunch",
       "afternoon",
-      "garden-party"
+      "day drinking",
+      "garden party",
+      "outdoor"
     ],
     "keywordsMood": [
       "cheerful",
       "relaxed",
-      "social"
+      "social",
+      "bright",
+      "uplifting",
+      "leisurely"
     ],
     "keywordsSearchTerms": [
-      "Italian",
-      "prosecco",
-      "orange",
+      "aperol spritz",
+      "aperol prosecco",
+      "italian spritz",
+      "prosecco aperol",
+      "orange spritz",
+      "venetian spritz",
+      "summer aperitif",
+      "italian aperitivo",
       "spritz",
-      "summer drink"
+      "aperol"
     ]
   },
   {
@@ -644,7 +756,8 @@
       "Aviation"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -729,40 +842,58 @@
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin",
+      "floral gin"
+    ],
     "keywordsFlavorProfile": [
       "floral",
       "citrus",
       "sweet",
-      "delicate"
+      "delicate",
+      "aromatic",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "classic",
+      "pre-prohibition"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "strained"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
       "spring",
-      "summer"
+      "summer",
+      "all-season"
     ],
     "keywordsOccasion": [
       "evening",
-      "date-night",
-      "craft-bar"
+      "date night",
+      "craft bar",
+      "special occasion"
     ],
     "keywordsMood": [
       "elegant",
-      "romantic"
+      "romantic",
+      "light",
+      "refreshing",
+      "uplifting"
     ],
     "keywordsSearchTerms": [
-      "creme de violette",
+      "aviation",
+      "Hugo Ensslin",
+      "Hotel Wallick",
+      "Harry Craddock",
       "maraschino",
+      "creme de violette",
       "Luxardo",
-      "purple cocktail",
-      "blue cocktail"
+      "El Bart gin",
+      "purple drink",
+      "blue drink"
     ]
   },
   {
@@ -776,7 +907,8 @@
       "Bamboo"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -868,40 +1000,61 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "sherry"
+      "sherry",
+      "vermouth"
     ],
     "keywordsSpiritSubtype": [
-      "fino-sherry"
+      "fino sherry",
+      "dry vermouth",
+      "fortified wine"
     ],
     "keywordsFlavorProfile": [
       "dry",
       "aromatic",
       "citrus",
       "low-proof",
-      "complex"
+      "complex",
+      "lightly sweet",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "aperitif"
+      "aperitif",
+      "classic",
+      "pre-prohibition"
     ],
     "keywordsTechnique": [
-      "stirred"
+      "stirred",
+      "strained"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+      "all-season",
+      "spring",
+      "autumn"
     ],
     "keywordsOccasion": [
       "aperitif",
-      "afternoon"
+      "afternoon",
+      "day drinking",
+      "contemplative"
     ],
     "keywordsMood": [
       "refined",
-      "contemplative"
+      "contemplative",
+      "elegant",
+      "meditative",
+      "balanced"
     ],
     "keywordsSearchTerms": [
-      "sherry cocktail",
-      "low alcohol",
+      "bamboo",
+      "Louis Eppinger",
+      "The Grand Hotel",
+      "Yokohama",
+      "Japan",
+      "Commodore Perry",
+      "Dejima",
+      "sherry vermouth",
       "dry vermouth",
       "19th century"
     ]
