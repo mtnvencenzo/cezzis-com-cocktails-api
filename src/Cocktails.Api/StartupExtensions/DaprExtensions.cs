@@ -118,11 +118,11 @@ internal static class DaprExtensions
         {
             await pipeline.ExecuteAsync(async ct =>
             {
+                var schedule = DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(120));
+
                 await jobClient.ScheduleJobAsync(
                     jobName: "initialize-app",
-                    schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(120)),
-                    startingFrom: DateTimeOffset.UtcNow,
-                    repeats: 1,
+                    schedule: schedule,
                     overwrite: true,
                     cancellationToken: ct);
             });
