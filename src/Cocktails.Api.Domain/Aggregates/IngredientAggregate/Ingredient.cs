@@ -34,6 +34,19 @@ public class Ingredient : Entity, IAggregateRoot
     [JsonInclude]
     public string Discriminator { get; private set; }
 
+    [JsonInclude]
+    public DateTimeOffset PublishedOn { get; private set; }
+
+    public override DateTimeOffset CreatedOn
+    {
+        get => this.PublishedOn;
+        protected set
+        {
+            base.CreatedOn = value;
+            this.PublishedOn = value;
+        }
+    }
+
     [JsonIgnore]
     public List<string> Types => this.types;
 
@@ -104,6 +117,7 @@ public class Ingredient : Entity, IAggregateRoot
     public Ingredient MergeUpdate(Ingredient from)
     {
         this.SetName(from.Name)
+            .SetPublishedOn(from.PublishedOn)
             .SetShelfDisplay(from.ShelfDisplay)
             .SetTypes(from.types ?? [])
             .SetApplications(from.applications ?? [])
@@ -121,42 +135,18 @@ public class Ingredient : Entity, IAggregateRoot
             return false;
         }
 
-        if (this.Id != other.Id ||
-            this.Name != other.Name ||
-            this.ParentId != other.ParentId ||
-            this.ShelfDisplay != other.ShelfDisplay ||
-            this.types.Count != other.types.Count ||
-            this.applications.Count != other.applications.Count ||
-            this.variations.Count != other.variations.Count)
+        if (this.PublishedOn != other.PublishedOn)
         {
             return false;
         }
 
-        for (var i = 0; i < this.types.Count; i++)
-        {
-            if (this.types[i] != other.types[i])
-            {
-                return false;
-            }
-        }
-
-        for (var i = 0; i < this.applications.Count; i++)
-        {
-            if (this.applications[i] != other.applications[i])
-            {
-                return false;
-            }
-        }
-
-        for (var i = 0; i < this.variations.Count; i++)
-        {
-            if (!this.variations[i].IsSameAs(other.variations[i]))
-            {
-                return false;
-            }
-        }
-
         return true;
+    }
+
+    public Ingredient SetPublishedOn(DateTimeOffset publishedOn)
+    {
+        this.PublishedOn = publishedOn;
+        return this;
     }
 
     private Ingredient SetParentId(string parentId)
