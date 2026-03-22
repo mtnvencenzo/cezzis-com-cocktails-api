@@ -99,7 +99,7 @@ internal static class DaprExtensions
             .AddRetry(new RetryStrategyOptions
             {
                 MaxRetryAttempts = 5,
-                Delay = TimeSpan.FromSeconds(20),
+                Delay = TimeSpan.FromSeconds(120),
                 BackoffType = DelayBackoffType.Exponential,
                 UseJitter = true,
                 OnRetry = args =>
