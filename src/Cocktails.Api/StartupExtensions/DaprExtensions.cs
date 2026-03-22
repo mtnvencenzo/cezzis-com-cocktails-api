@@ -99,7 +99,7 @@ internal static class DaprExtensions
             .AddRetry(new RetryStrategyOptions
             {
                 MaxRetryAttempts = 5,
-                Delay = TimeSpan.FromSeconds(120),
+                Delay = TimeSpan.FromSeconds(20),
                 BackoffType = DelayBackoffType.Exponential,
                 UseJitter = true,
                 OnRetry = args =>
@@ -120,7 +120,7 @@ internal static class DaprExtensions
             {
                 await jobClient.ScheduleJobAsync(
                     jobName: "initialize-app",
-                    schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(10)),
+                    schedule: DaprJobSchedule.FromDateTime(DateTimeOffset.UtcNow.AddSeconds(120)),
                     startingFrom: DateTimeOffset.UtcNow,
                     repeats: 1,
                     overwrite: true,
