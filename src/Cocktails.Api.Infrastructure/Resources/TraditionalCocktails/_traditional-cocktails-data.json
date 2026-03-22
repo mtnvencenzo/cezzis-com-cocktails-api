@@ -3637,7 +3637,9 @@
       "Death In The Afternoon"
     ],
     "eras": [
-      "Traditional"
+      "pre-prohibition",
+      "1920s",
+      "roaring twenties"
     ],
     "ingredients": [
       {
@@ -3698,42 +3700,45 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "absinthe",
-      "champagne"
+        "absinthe",
+        "champagne"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "herbal",
-      "anise",
-      "effervescent",
-      "complex"
+        "herbal",
+        "anise",
+        "effervescent",
+        "complex"
     ],
     "keywordsCocktailFamily": [
-      "champagne-cocktail"
+        "champagne-cocktail"
     ],
     "keywordsTechnique": [
-      "built"
+        "built"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+        "all-season"
     ],
     "keywordsOccasion": [
-      "afternoon",
-      "celebration"
+        "afternoon",
+        "celebration"
     ],
     "keywordsMood": [
-      "bold",
-      "literary",
-      "adventurous"
+        "bold",
+        "literary",
+        "adventurous"
     ],
     "keywordsSearchTerms": [
-      "Hemingway",
-      "Ernest Hemingway",
-      "absinthe",
-      "champagne",
-      "literary cocktail"
+        "hemingway",
+        "ernest hemingway",
+        "absinthe",
+        "champagne",
+        "literary cocktail",
+        "1920s",
+        "roaring twenties",
+        "pre-prohibition"
     ]
   },
   {
@@ -3747,7 +3752,9 @@
       "Florodora"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition",
+      "early 1900s"
     ],
     "ingredients": [
       {
@@ -3855,43 +3862,49 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "fruity",
-      "sweet",
-      "tart",
-      "effervescent",
-      "ginger"
+        "fruity",
+        "sweet",
+        "tart",
+        "effervescent",
+        "ginger"
     ],
     "keywordsCocktailFamily": [
-      "highball"
+        "highball"
     ],
     "keywordsTechnique": [
-      "built"
+        "built"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "spring"
+        "summer",
+        "spring",
+        "all-season"
     ],
     "keywordsOccasion": [
-      "afternoon",
-      "casual",
-      "garden-party"
+        "afternoon",
+        "casual",
+        "garden-party",
+        "social"
     ],
     "keywordsMood": [
-      "cheerful",
-      "refreshing"
+        "cheerful",
+        "refreshing",
+        "theatrical"
     ],
     "keywordsSearchTerms": [
-      "raspberry",
-      "ginger ale",
-      "Broadway",
-      "1900 musical",
-      "pink cocktail"
+        "Broadway",
+        "Florodora musical",
+        "raspberry",
+        "ginger ale",
+        "new york",
+        "early 1900s",
+        "pink cocktail",
+        "florodora sextette"
     ]
   },
   {
@@ -3905,7 +3918,10 @@
       "French 75"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition",
+      "roaring twenties",
+      "early 1900s"
     ],
     "ingredients": [
       {
@@ -3992,44 +4008,48 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "cognac"
+        "cognac"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "citrus",
-      "effervescent",
-      "elegant",
-      "crisp"
+        "citrus",
+        "effervescent",
+        "elegant",
+        "crisp"
     ],
     "keywordsCocktailFamily": [
-      "champagne-cocktail",
-      "sour"
+        "champagne-cocktail",
+        "sour"
     ],
     "keywordsTechnique": [
-      "shaken",
-      "topped"
+        "shaken",
+        "topped"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+        "all-season"
     ],
     "keywordsOccasion": [
-      "celebration",
-      "dinner-party",
-      "evening"
+        "celebration",
+        "dinner-party",
+        "evening",
+        "toast"
     ],
     "keywordsMood": [
-      "festive",
-      "elegant",
-      "celebratory"
+        "festive",
+        "elegant",
+        "celebratory"
     ],
     "keywordsSearchTerms": [
-      "champagne",
-      "World War I",
-      "French 75mm gun",
-      "Harry's New York Bar",
-      "Paris"
+        "champagne",
+        "World War I",
+        "French 75mm gun",
+        "Harry MacElhone",
+        "Harry's New York Bar",
+        "Paris",
+        "New York",
+        "1915"
     ]
   },
   {
@@ -4043,7 +4063,10 @@
       "Garibaldi"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition",
+      "early 1900s"
     ],
     "ingredients": [
       {
@@ -4117,42 +4140,45 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "campari"
+        "campari"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "bitter",
-      "citrus",
-      "sweet",
-      "refreshing"
+        "bitter",
+        "citrus",
+        "sweet",
+        "refreshing"
     ],
     "keywordsCocktailFamily": [
-      "aperitif"
+        "aperitif"
     ],
     "keywordsTechnique": [
-      "built"
+        "built"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "all-season"
+        "summer",
+        "all-season"
     ],
     "keywordsOccasion": [
-      "brunch",
-      "aperitif",
-      "afternoon"
+        "brunch",
+        "aperitif",
+        "afternoon"
     ],
     "keywordsMood": [
-      "cheerful",
-      "bright"
+        "cheerful",
+        "bright"
     ],
     "keywordsSearchTerms": [
-      "Italian",
-      "orange juice",
-      "Campari",
-      "Italian unification",
-      "fluffy OJ"
+        "Italian",
+        "orange juice",
+        "Campari",
+        "Giuseppe Garibaldi",
+        "Italian unification",
+        "fluffy OJ",
+        "Naren Young",
+        "Dante NYC"
     ]
   },
   {
@@ -4166,7 +4192,10 @@
       "Gibson"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition",
+      "early 1900s"
     ],
     "ingredients": [
       {
@@ -4236,39 +4265,43 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "dry",
-      "savory",
-      "crisp",
-      "clean"
+        "dry",
+        "savory",
+        "crisp",
+        "clean"
     ],
     "keywordsCocktailFamily": [
-      "martini-variant"
+        "martini-variant"
     ],
     "keywordsTechnique": [
-      "stirred"
+        "stirred"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+        "all-season"
     ],
     "keywordsOccasion": [
-      "evening",
-      "dinner-party"
+        "evening",
+        "dinner-party"
     ],
     "keywordsMood": [
-      "sophisticated",
-      "refined"
+        "sophisticated",
+        "refined"
     ],
     "keywordsSearchTerms": [
-      "cocktail onion",
-      "martini",
-      "dry vermouth",
-      "savory"
+        "cocktail onion",
+        "martini",
+        "dry vermouth",
+        "Charles Dana Gibson",
+        "Walter D.K. Gibson",
+        "Bohemian Club",
+        "1908",
+        "Gibson Girl"
     ]
   },
   {
@@ -4282,7 +4315,9 @@
       "Gimlet"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -4362,40 +4397,43 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "citrus",
-      "sweet",
-      "tart",
-      "refreshing"
+        "citrus",
+        "sweet",
+        "tart",
+        "refreshing"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+        "sour"
     ],
     "keywordsTechnique": [
-      "stirred"
+        "stirred"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "all-season"
+        "summer",
+        "all-season"
     ],
     "keywordsOccasion": [
-      "evening",
-      "casual"
+        "evening",
+        "casual"
     ],
     "keywordsMood": [
-      "refreshing",
-      "clean"
+        "refreshing",
+        "clean"
     ],
     "keywordsSearchTerms": [
-      "lime cordial",
-      "Royal Navy",
-      "British naval",
-      "simple"
+        "lime cordial",
+        "Royal Navy",
+        "Rear-Admiral Sir Thomas Gimlette",
+        "British sailors",
+        "naval history",
+        "anti-scurvy",
+        "lime juice"
     ]
   },
   {
@@ -4409,7 +4447,9 @@
       "Gin And Tonic"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -4479,44 +4519,44 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "bitter",
-      "citrus",
-      "effervescent",
-      "botanical",
-      "refreshing"
+        "bitter",
+        "citrus",
+        "effervescent",
+        "botanical",
+        "refreshing"
     ],
     "keywordsCocktailFamily": [
-      "highball"
+        "highball"
     ],
     "keywordsTechnique": [
-      "built"
+        "built"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "all-season"
+        "summer",
+        "all-season"
     ],
     "keywordsOccasion": [
-      "casual",
-      "afternoon",
-      "evening"
+        "casual",
+        "afternoon",
+        "evening"
     ],
     "keywordsMood": [
-      "relaxed",
-      "refreshing"
+        "relaxed",
+        "refreshing"
     ],
     "keywordsSearchTerms": [
-      "tonic water",
-      "quinine",
-      "British",
-      "colonial",
-      "G&T",
-      "lime"
+        "tonic water",
+        "quinine",
+        "British East India Company",
+        "colonial India",
+        "G&T",
+        "lime wedge"
     ]
   },
   {
@@ -4530,7 +4570,9 @@
       "Gin Daisy"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -4617,41 +4659,43 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "floral",
-      "citrus",
-      "sweet",
-      "effervescent"
+        "floral",
+        "citrus",
+        "sweet",
+        "effervescent"
     ],
     "keywordsCocktailFamily": [
-      "daisy"
+        "daisy"
     ],
     "keywordsTechnique": [
-      "shaken",
-      "topped"
+        "shaken",
+        "topped"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "spring",
-      "summer"
+        "spring",
+        "summer"
     ],
     "keywordsOccasion": [
-      "afternoon",
-      "garden-party"
+        "afternoon",
+        "garden-party"
     ],
     "keywordsMood": [
-      "cheerful",
-      "elegant"
+        "cheerful",
+        "elegant"
     ],
     "keywordsSearchTerms": [
-      "orange liqueur",
-      "soda water",
-      "margarita ancestor",
-      "Victorian"
+        "orange liqueur",
+        "soda water",
+        "Victorian",
+        "Jerry Thomas",
+        "19th century",
+        "Daisy cocktail"
     ]
   },
   {
@@ -4665,7 +4709,9 @@
       "Gin Fizz"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -4759,41 +4805,47 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "citrus",
-      "sweet",
-      "effervescent",
-      "frothy"
+        "citrus",
+        "sweet",
+        "effervescent",
+        "frothy"
     ],
     "keywordsCocktailFamily": [
-      "fizz"
+        "fizz",
+        "daisy"
     ],
     "keywordsTechnique": [
-      "shaken",
-      "dry-shaken"
+        "shaken",
+        "dry-shaken",
+        "topped"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "spring",
-      "summer"
+        "spring",
+        "summer"
     ],
     "keywordsOccasion": [
-      "afternoon",
-      "brunch"
+        "afternoon",
+        "brunch",
+        "garden-party"
     ],
     "keywordsMood": [
-      "refreshing",
-      "lively"
+        "refreshing",
+        "lively"
     ],
     "keywordsSearchTerms": [
-      "soda water",
-      "lemon",
-      "fizzy",
-      "bubbly"
+        "soda water",
+        "lemon juice",
+        "Jerry Thomas",
+        "Ramos",
+        "New Orleans",
+        "egg white",
+        "carbonated"
     ]
   },
   {
@@ -4807,7 +4859,10 @@
       "Gin Rickey"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition",
+      "roaring twenties"
     ],
     "ingredients": [
       {
@@ -4885,40 +4940,46 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "dry",
-      "citrus",
-      "effervescent",
-      "crisp"
+        "dry",
+        "citrus",
+        "effervescent",
+        "crisp"
     ],
     "keywordsCocktailFamily": [
-      "highball"
+        "highball"
     ],
     "keywordsTechnique": [
-      "built"
+        "built"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer"
+        "summer",
+        "all-season"
     ],
     "keywordsOccasion": [
-      "afternoon",
-      "casual"
+        "afternoon",
+        "casual",
+        "garden-party"
     ],
     "keywordsMood": [
-      "refreshing",
-      "clean"
+        "refreshing",
+        "clean"
     ],
     "keywordsSearchTerms": [
-      "lime",
-      "soda water",
-      "Washington DC",
-      "no sugar",
-      "unsweetened"
+        "lime",
+        "soda water",
+        "Colonel Joe Rickey",
+        "Shoomaker's",
+        "Washington DC",
+        "no sugar",
+        "unsweetened",
+        "1920s",
+        "The Great Gatsby"
     ]
   },
   {
@@ -4932,7 +4993,9 @@
       "Gin Sour"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -5015,39 +5078,47 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+        "gin"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "citrus",
-      "sweet",
-      "tart",
-      "smooth"
+        "citrus",
+        "sweet",
+        "tart",
+        "smooth"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+        "sour"
     ],
     "keywordsTechnique": [
-      "shaken"
+        "shaken",
+        "dry-shaken"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+        "all-season"
     ],
     "keywordsOccasion": [
-      "evening",
-      "casual"
+        "evening",
+        "casual",
+        "afternoon"
     ],
     "keywordsMood": [
-      "classic",
-      "refreshing"
+        "classic",
+        "refreshing"
     ],
     "keywordsSearchTerms": [
-      "lemon",
-      "simple syrup",
-      "egg white",
-      "sour cocktail"
+        "lemon",
+        "simple syrup",
+        "egg white",
+        "sour cocktail",
+        "British Navy",
+        "Mart Ackermann",
+        "Toronto",
+        "Jerry Thomas",
+        "1856",
+        "1862"
     ]
   },
   {
@@ -5061,7 +5132,9 @@
       "Hemingway Daiquiri"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "roaring twenties",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -5148,45 +5221,50 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "rum"
+        "rum"
     ],
     "keywordsSpiritSubtype": [
-      "white-rum"
+        "white-rum"
     ],
     "keywordsFlavorProfile": [
-      "citrus",
-      "tart",
-      "dry",
-      "complex"
+        "citrus",
+        "tart",
+        "dry",
+        "complex"
     ],
     "keywordsCocktailFamily": [
-      "daiquiri-variant",
-      "sour"
+        "daiquiri-variant",
+        "sour"
     ],
     "keywordsTechnique": [
-      "shaken"
+        "shaken"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "all-season"
+        "summer",
+        "all-season"
     ],
     "keywordsOccasion": [
-      "evening",
-      "craft-bar"
+        "evening",
+        "craft-bar",
+        "afternoon"
     ],
     "keywordsMood": [
-      "adventurous",
-      "literary"
+        "adventurous",
+        "literary"
     ],
     "keywordsSearchTerms": [
-      "Hemingway",
-      "Papa Doble",
-      "maraschino",
-      "Luxardo",
-      "grapefruit",
-      "no sugar"
+        "Hemingway",
+        "Papa Doble",
+        "Ernest Hemingway",
+        "El Floridita",
+        "maraschino",
+        "Luxardo",
+        "grapefruit",
+        "lime",
+        "Cuba",
+        "1930s"
     ]
   },
   {
