@@ -11,8 +11,10 @@
     ],
     "eras": [
       "traditional",
+      "19th century",
+      "gilded age",
       "pre-prohibition",
-      "gilded age"
+      "revival"
     ],
     "ingredients": [
       {
@@ -156,8 +158,9 @@
     ],
     "eras": [
       "traditional",
-      "pre-prohibition",
-      "gilded age"
+      "19th century",
+      "gilded age",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -304,6 +307,7 @@
     ],
     "eras": [
       "traditional",
+      "1930s",
       "prohibition"
     ],
     "ingredients": [
@@ -458,6 +462,7 @@
     ],
     "eras": [
       "traditional",
+      "19th century",
       "pre-prohibition"
     ],
     "ingredients": [
@@ -606,8 +611,8 @@
     ],
     "eras": [
       "traditional",
-      "interwar",
-      "mid-20th century"
+      "20th century",
+      "post-war"
     ],
     "ingredients": [
       {
@@ -757,7 +762,9 @@
     ],
     "eras": [
       "traditional",
-      "pre-prohibition"
+      "20th century",
+      "pre-prohibition",
+      "roaring twenties"
     ],
     "ingredients": [
       {
@@ -908,6 +915,8 @@
     ],
     "eras": [
       "traditional",
+      "19th century",
+      "gilded age",
       "pre-prohibition"
     ],
     "ingredients": [
@@ -1069,9 +1078,6 @@
     "searchableTitles": [
       "Bee's Knees"
     ],
-    "eras": [
-      "Traditional"
-    ],
     "ingredients": [
       {
         "ingredientId": "gin",
@@ -1147,18 +1153,26 @@
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "london dry gin"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
       "citrus",
       "honey",
-      "smooth"
+      "smooth",
+      "bright",
+      "tart",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "classic",
+      "prohibition"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "strained"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -1170,18 +1184,28 @@
     "keywordsOccasion": [
       "afternoon",
       "evening",
-      "casual"
+      "casual",
+      "date night",
+      "speakeasy"
     ],
     "keywordsMood": [
       "cheerful",
-      "elegant"
+      "elegant",
+      "playful",
+      "uplifting",
+      "nostalgic"
     ],
     "keywordsSearchTerms": [
-      "Prohibition",
-      "honey syrup",
+      "bees knees",
+      "prohibition",
+      "roaring twenties",
       "1920s",
-      "Roaring Twenties",
-      "bathtub gin"
+      "honey lemon",
+      "bathtub gin",
+      "speakeasy",
+      "frank meier",
+      "ritz paris",
+      "molly brown"
     ]
   },
   {
@@ -1195,7 +1219,10 @@
       "Bicicletta"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "1930s",
+      "prohibition",
+      "20th century"
     ],
     "ingredients": [
       {
@@ -1269,42 +1296,65 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "campari"
+      "campari",
+      "white wine"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bitter liqueur",
+      "dry white wine",
+      "italian aperitivo"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "dry",
       "effervescent",
       "citrus",
-      "light"
+      "light",
+      "refreshing",
+      "slightly bitter",
+      "crisp"
     ],
     "keywordsCocktailFamily": [
       "spritz",
-      "aperitif"
+      "aperitif",
+      "highball",
+      "classic"
     ],
     "keywordsTechnique": [
-      "built"
+      "built",
+      "topped"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer"
+      "summer",
+      "spring"
     ],
     "keywordsOccasion": [
       "aperitif",
       "afternoon",
-      "casual"
+      "casual",
+      "day drinking",
+      "outdoor"
     ],
     "keywordsMood": [
       "relaxed",
-      "carefree"
+      "carefree",
+      "refreshing",
+      "easygoing",
+      "leisurely"
     ],
     "keywordsSearchTerms": [
-      "Italian",
-      "white wine",
-      "Campari",
-      "bicycle"
+      "bicicletta",
+      "campari white wine",
+      "campari wine spritz",
+      "italian spritz",
+      "aperitivo",
+      "white wine spritz",
+      "1930s",
+      "italy",
+      "bicycle",
+      "cedrata"
     ]
   },
   {
@@ -1318,7 +1368,12 @@
       "Bijou"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "gilded age",
+      "pre-prohibition",
+      "revival",
+      "modern"
     ],
     "ingredients": [
       {
@@ -1405,20 +1460,35 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "gin"
+      "gin",
+      "vermouth",
+      "chartreuse"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "london dry gin",
+      "sweet vermouth",
+      "green chartreuse",
+      "herbal liqueur"
+    ],
     "keywordsFlavorProfile": [
       "herbal",
       "sweet",
       "complex",
-      "bitter"
+      "bitter",
+      "boozy",
+      "aromatic",
+      "spiced",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "stirred-spirit"
+      "stirred",
+      "spirit-forward",
+      "classic",
+      "pre-prohibition"
     ],
     "keywordsTechnique": [
-      "stirred"
+      "stirred",
+      "strained"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -1429,17 +1499,28 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar"
+      "craft bar",
+      "after dinner",
+      "sipping"
     ],
     "keywordsMood": [
       "sophisticated",
-      "contemplative"
+      "contemplative",
+      "bold",
+      "refined",
+      "intense"
     ],
     "keywordsSearchTerms": [
-      "Chartreuse",
-      "jewel",
-      "French",
-      "sweet vermouth"
+      "bijou",
+      "harry johnson",
+      "bartenders manual",
+      "1880s",
+      "green chartreuse",
+      "chartreuse vermouth",
+      "gin chartreuse",
+      "spirit forward",
+      "classic",
+      "french"
     ]
   },
   {
@@ -1453,7 +1534,11 @@
       "Black Velvet"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "victorian era",
+      "gilded age",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -1508,44 +1593,66 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "champagne"
+      "champagne",
+      "stout",
+      "beer"
     ],
     "keywordsSpiritSubtype": [
-      "stout"
+      "dry champagne",
+      "stout",
+      "guinness",
+      "sparkling wine"
     ],
     "keywordsFlavorProfile": [
       "creamy",
       "effervescent",
       "rich",
-      "malty"
+      "malty",
+      "roasted",
+      "smooth",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "beer-cocktail"
+      "beer",
+      "sparkling",
+      "classic"
     ],
     "keywordsTechnique": [
       "built",
-      "layered"
+      "layered",
+      "floated"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+      "all-season",
+      "winter",
+      "fall"
     ],
     "keywordsOccasion": [
       "celebration",
-      "evening"
+      "evening",
+      "special occasion",
+      "ceremonial"
     ],
     "keywordsMood": [
       "festive",
-      "sophisticated"
+      "sophisticated",
+      "somber",
+      "reflective",
+      "elegant"
     ],
     "keywordsSearchTerms": [
-      "Guinness",
-      "champagne",
-      "stout",
-      "Prince Albert",
+      "black velvet",
+      "guinness champagne",
+      "stout champagne",
+      "beer champagne",
+      "prince albert",
+      "queen victoria",
+      "brooks club london",
       "1861",
-      "Victorian"
+      "victorian era",
+      "layered"
     ]
   },
   {
@@ -1559,7 +1666,10 @@
       "Blood and Sand"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "prohibition",
+      "1930s",
+      "20th century"
     ],
     "ingredients": [
       {
@@ -1637,22 +1747,33 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "scotch"
+      "scotch",
+      "vermouth",
+      "cherry liqueur"
     ],
     "keywordsSpiritSubtype": [
-      "blended-scotch"
+      "blended scotch",
+      "sweet vermouth",
+      "cherry heering",
+      "fruit liqueur"
     ],
     "keywordsFlavorProfile": [
       "fruity",
       "sweet",
       "citrus",
-      "rich"
+      "rich",
+      "balanced",
+      "smooth",
+      "lightly smoky"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "classic",
+      "equal parts"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "double strained"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -1662,18 +1783,28 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar"
+      "craft bar",
+      "date night",
+      "special occasion"
     ],
     "keywordsMood": [
       "sophisticated",
-      "bold"
+      "bold",
+      "refined",
+      "mysterious",
+      "balanced"
     ],
     "keywordsSearchTerms": [
-      "Cherry Heering",
-      "orange juice",
-      "Rudolph Valentino",
-      "1922 film",
-      "equal parts"
+      "blood and sand",
+      "rudolph valentino",
+      "blood and sand film",
+      "1922",
+      "silent film",
+      "vicente blasco ibanez",
+      "cherry heering",
+      "scotch orange",
+      "equal parts",
+      "classic hollywood"
     ]
   },
   {
@@ -1687,7 +1818,11 @@
       "Bloody Mary"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "prohibition",
+      "roaring twenties",
+      "1930s",
+      "20th century"
     ],
     "ingredients": [
       {
@@ -1796,15 +1931,24 @@
     "keywordsBaseSpirit": [
       "vodka"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "neutral vodka"
+    ],
     "keywordsFlavorProfile": [
       "savory",
       "spicy",
       "tangy",
-      "umami"
+      "umami",
+      "salty",
+      "peppery",
+      "rich",
+      "vegetal"
     ],
     "keywordsCocktailFamily": [
-      "savory-cocktail"
+      "savory",
+      "brunch",
+      "classic",
+      "highball"
     ],
     "keywordsTechnique": [
       "built",
@@ -1818,19 +1962,31 @@
     "keywordsOccasion": [
       "brunch",
       "morning",
-      "casual"
+      "afternoon",
+      "casual",
+      "day drinking"
     ],
     "keywordsMood": [
       "bold",
-      "restorative"
+      "restorative",
+      "invigorating",
+      "hearty",
+      "revitalizing"
     ],
     "keywordsSearchTerms": [
+      "bloody mary",
       "tomato juice",
-      "Worcestershire",
+      "worcestershire",
       "hot sauce",
+      "celery",
       "brunch",
       "hangover cure",
-      "celery"
+      "fernand petiot",
+      "harrys new york bar",
+      "21 club",
+      "george jessel",
+      "paris",
+      "new york"
     ]
   },
   {
@@ -1844,7 +2000,13 @@
       "Boulevardier"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "prohibition",
+      "roaring twenties",
+      "1920s",
+      "20th century",
+      "revival",
+      "modern"
     ],
     "ingredients": [
       {
@@ -1924,20 +2086,35 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "bourbon"
+      "bourbon",
+      "vermouth",
+      "campari"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bourbon whiskey",
+      "rye whiskey",
+      "sweet vermouth",
+      "bitter liqueur"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "sweet",
       "rich",
-      "warm"
+      "warm",
+      "herbal",
+      "balanced",
+      "spiced",
+      "orange"
     ],
     "keywordsCocktailFamily": [
-      "negroni-family"
+      "negroni",
+      "spirit-forward",
+      "classic",
+      "aperitif"
     ],
     "keywordsTechnique": [
-      "stirred"
+      "stirred",
+      "strained"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -1948,19 +2125,29 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
-      "date-night"
+      "craft bar",
+      "date night",
+      "after dinner",
+      "sipping"
     ],
     "keywordsMood": [
       "sophisticated",
-      "contemplative"
+      "contemplative",
+      "bold",
+      "refined",
+      "warming"
     ],
     "keywordsSearchTerms": [
-      "Campari",
-      "Negroni cousin",
-      "Paris",
+      "boulevardier",
+      "negroni with bourbon",
+      "bourbon negroni",
+      "erskine gwynne",
+      "harry mcelhone",
+      "harrys new york bar",
+      "barflies and cocktails",
+      "paris",
       "1920s",
-      "American expat"
+      "american expat"
     ]
   },
   {
@@ -1974,7 +2161,9 @@
       "Brooklyn"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition",
+      "gilded age"
     ],
     "ingredients": [
       {
@@ -2042,44 +2231,17 @@
     "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
-    "keywordsBaseSpirit": [
-      "rye"
-    ],
+    "keywordsBaseSpirit": ["rye"],
     "keywordsSpiritSubtype": [],
-    "keywordsFlavorProfile": [
-      "bitter",
-      "complex",
-      "dry",
-      "herbal"
-    ],
-    "keywordsCocktailFamily": [
-      "manhattan-variant"
-    ],
-    "keywordsTechnique": [
-      "stirred"
-    ],
+    "keywordsFlavorProfile": ["bitter", "complex", "dry", "herbal"],
+    "keywordsCocktailFamily": ["manhattan-variant"],
+    "keywordsTechnique": ["stirred"],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
-    "keywordsSeason": [
-      "fall",
-      "winter",
-      "all-season"
-    ],
-    "keywordsOccasion": [
-      "evening",
-      "craft-bar"
-    ],
-    "keywordsMood": [
-      "sophisticated",
-      "adventurous"
-    ],
-    "keywordsSearchTerms": [
-      "Amer Picon",
-      "maraschino",
-      "New York",
-      "borough cocktail",
-      "rye whiskey"
-    ]
+    "keywordsSeason": ["fall", "winter", "all-season"],
+    "keywordsOccasion": ["evening", "craft-bar"],
+    "keywordsMood": ["sophisticated", "adventurous"],
+    "keywordsSearchTerms": ["Amer Picon", "maraschino", "New York", "borough cocktail", "rye whiskey", "Jack Grohusko", "Jacques Straub", "Red Hook", "Greenpoint"]
   },
   {
     "id": "brown-derby",
@@ -2091,9 +2253,7 @@
     "searchableTitles": [
       "Brown Derby"
     ],
-    "eras": [
-      "Traditional"
-    ],
+    "eras": ["traditional", "prohibition", "golden age of Hollywood"],
     "ingredients": [
       {
         "ingredientId": "bourbon",
@@ -2169,42 +2329,17 @@
     "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
-    "keywordsBaseSpirit": [
-      "bourbon"
-    ],
+    "keywordsBaseSpirit": ["bourbon"],
     "keywordsSpiritSubtype": [],
-    "keywordsFlavorProfile": [
-      "citrus",
-      "sweet",
-      "tart",
-      "honey"
-    ],
-    "keywordsCocktailFamily": [
-      "sour"
-    ],
-    "keywordsTechnique": [
-      "shaken"
-    ],
+    "keywordsFlavorProfile": ["citrus", "sweet", "tart", "honey"],
+    "keywordsCocktailFamily": ["sour"],
+    "keywordsTechnique": ["shaken"],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
-    "keywordsSeason": [
-      "all-season"
-    ],
-    "keywordsOccasion": [
-      "evening",
-      "dinner-party"
-    ],
-    "keywordsMood": [
-      "glamorous",
-      "refreshing"
-    ],
-    "keywordsSearchTerms": [
-      "grapefruit",
-      "honey",
-      "Hollywood",
-      "Los Angeles",
-      "Brown Derby restaurant"
-    ]
+    "keywordsSeason": ["all-season"],
+    "keywordsOccasion": ["evening", "dinner-party", "cocktail-party"],
+    "keywordsMood": ["glamorous", "refreshing", "celebratory"],
+    "keywordsSearchTerms": ["grapefruit", "honey", "Hollywood", "Los Angeles", "Brown Derby restaurant", "Cobb salad", "film premieres", "award ceremonies", "Hollywood Golden Age"]
   },
   {
     "id": "caipirinha",
@@ -2216,9 +2351,7 @@
     "searchableTitles": [
       "Caipirinha"
     ],
-    "eras": [
-      "Traditional"
-    ],
+    "eras": ["traditional", "pre-prohibition"],
     "ingredients": [
       {
         "ingredientId": "cachaca",
@@ -2291,46 +2424,17 @@
     "modifiedOn": "2026-02-07T10:51:04-07:00",
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
-    "keywordsBaseSpirit": [
-      "cachaca"
-    ],
+    "keywordsBaseSpirit": ["cachaca"],
     "keywordsSpiritSubtype": [],
-    "keywordsFlavorProfile": [
-      "citrus",
-      "sweet",
-      "tart",
-      "refreshing"
-    ],
-    "keywordsCocktailFamily": [
-      "smash"
-    ],
-    "keywordsTechnique": [
-      "muddled",
-      "built"
-    ],
+    "keywordsFlavorProfile": ["citrus", "sweet", "tart", "refreshing"],
+    "keywordsCocktailFamily": ["smash"],
+    "keywordsTechnique": ["muddled", "built"],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
-    "keywordsSeason": [
-      "summer"
-    ],
-    "keywordsOccasion": [
-      "party",
-      "casual",
-      "afternoon"
-    ],
-    "keywordsMood": [
-      "fun",
-      "lively",
-      "tropical"
-    ],
-    "keywordsSearchTerms": [
-      "Brazil",
-      "Brazilian",
-      "lime",
-      "sugar",
-      "national cocktail",
-      "cachaca"
-    ]
+    "keywordsSeason": ["summer", "all-season"],
+    "keywordsOccasion": ["party", "casual", "afternoon", "festive"],
+    "keywordsMood": ["fun", "lively", "tropical", "social"],
+    "keywordsSearchTerms": ["Brazil", "Brazilian", "lime", "sugar", "national cocktail", "cachaca", "São Paulo", "Spanish flu", "Caipiroska", "Caipirissima"]
   },
   {
     "id": "champagne-cocktail",
@@ -2343,7 +2447,10 @@
       "Champagne Cocktail"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "victorian",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -2451,8 +2558,10 @@
     "keywordsSearchTerms": [
       "sugar cube",
       "Angostura bitters",
+      "sparkling",
       "19th century",
-      "sparkling"
+      "Victorian",
+      "pre-prohibition"
     ]
   },
   {
@@ -2466,7 +2575,10 @@
       "Charles Dickens's Punch"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "victorian",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -2592,7 +2704,8 @@
     ],
     "keywordsTechnique": [
       "stirred",
-      "heated"
+      "heated",
+      "flamed"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "warm",
@@ -2614,9 +2727,13 @@
       "Charles Dickens",
       "Victorian",
       "punch bowl",
-      "tea",
+      "rum",
+      "cognac",
       "nutmeg",
-      "batch cocktail"
+      "literary cocktail",
+      "batch cocktail",
+      "19th century",
+      "pre-prohibition"
     ]
   },
   {
@@ -2630,7 +2747,9 @@
       "Clover Club"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -2760,9 +2879,14 @@
       "raspberry",
       "egg white",
       "Philadelphia",
-      "pre-Prohibition",
+      "pre-prohibition",
       "pink cocktail",
-      "frothy"
+      "frothy",
+      "Clover Club",
+      "Bellevue-Stratford",
+      "Julie Reiner",
+      "Brooklyn",
+      "19th century"
     ]
   },
   {
@@ -2776,7 +2900,8 @@
       "Corpse Reviver No. 2"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -2905,8 +3030,10 @@
       "Cointreau",
       "absinthe",
       "hangover cure",
-      "1930s",
-      "Savoy"
+      "Harry Craddock",
+      "Savoy Cocktail Book",
+      "pre-Prohibition",
+      "1930s"
     ]
   },
   {
@@ -2920,7 +3047,9 @@
       "Daiquiri"
     ],
     "eras": [
-      "Traditional"
+      "pre-prohibition",
+      "early-20th-century",
+      "traditional"
     ],
     "ingredients": [
       {
@@ -3027,9 +3156,14 @@
     "keywordsSearchTerms": [
       "Cuba",
       "Cuban",
+      "Daiquirí",
+      "Jennings Stockton Cox",
+      "Ernest Hemingway",
+      "John F. Kennedy",
       "lime",
       "simple syrup",
-      "rum cocktail"
+      "rum cocktail",
+      "Army and Navy Club"
     ]
   },
   {
@@ -3043,7 +3177,9 @@
       "Daniel Webster's Punch"
     ],
     "eras": [
-      "Traditional"
+      "pre-prohibition",
+      "19th century",
+      "traditional"
     ],
     "ingredients": [
       {
@@ -3190,8 +3326,10 @@
       "sherry",
       "red wine",
       "champagne",
+      "punch bowl",
       "batch cocktail",
-      "punch bowl"
+      "American statesman",
+      "19th century"
     ]
   },
   {
@@ -3205,7 +3343,9 @@
       "Dark 'n' Stormy"
     ],
     "eras": [
-      "Traditional"
+      "pre-prohibition",
+      "early 20th century",
+      "traditional"
     ],
     "ingredients": [
       {
@@ -3282,12 +3422,14 @@
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "dark-rum"
+      "dark-rum",
+      "blackstrap-rum"
     ],
     "keywordsFlavorProfile": [
       "spicy",
       "sweet",
       "ginger",
+      "citrus",
       "bold"
     ],
     "keywordsCocktailFamily": [
@@ -3309,14 +3451,17 @@
     ],
     "keywordsMood": [
       "bold",
+      "refreshing",
       "relaxed"
     ],
     "keywordsSearchTerms": [
       "Bermuda",
-      "ginger beer",
-      "Goslings",
+      "Gosling Brothers",
       "dark rum",
-      "stormy"
+      "ginger beer",
+      "trademark cocktail",
+      "nautical",
+      "early 20th century"
     ]
   },
   {
@@ -3330,7 +3475,9 @@
       "De La Louisiane"
     ],
     "eras": [
-      "Traditional"
+      "pre-prohibition",
+      "early 20th century",
+      "mid-20th century"
     ],
     "ingredients": [
       {
@@ -3427,13 +3574,16 @@
     "keywordsBaseSpirit": [
       "rye"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "rye-whiskey"
+    ],
     "keywordsFlavorProfile": [
       "herbal",
       "complex",
       "aromatic",
       "rich",
-      "anise"
+      "anise",
+      "slightly sweet"
     ],
     "keywordsCocktailFamily": [
       "stirred-spirit",
@@ -3456,14 +3606,18 @@
     ],
     "keywordsMood": [
       "sophisticated",
-      "contemplative"
+      "contemplative",
+      "elegant"
     ],
     "keywordsSearchTerms": [
       "New Orleans",
-      "Benedictine",
+      "Restaurant La Louisiane",
+      "Bénédictine",
       "absinthe",
       "Peychaud's",
-      "Louisiana"
+      "Vieux Carré",
+      "Stanley Clisby Arthur",
+      "Louisiana cocktail"
     ]
   },
   {
