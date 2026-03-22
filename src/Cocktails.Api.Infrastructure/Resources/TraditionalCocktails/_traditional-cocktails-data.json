@@ -5278,7 +5278,9 @@
       "Improved Whiskey Cocktail"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition",
+      "roaring twenties"
     ],
     "ingredients": [
       {
@@ -5384,44 +5386,51 @@
     "publishedOn": "2024-05-24T00:00:00-07:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "bourbon"
+        "bourbon"
     ],
     "keywordsSpiritSubtype": [],
     "keywordsFlavorProfile": [
-      "sweet",
-      "herbal",
-      "anise",
-      "complex",
-      "aromatic"
+        "complex",
+        "herbal",
+        "citrus",
+        "sweet",
+        "bitter"
     ],
     "keywordsCocktailFamily": [
-      "old-fashioned-variant"
+        "whiskey-variant",
+        "stirred-spirit"
     ],
     "keywordsTechnique": [
-      "stirred"
+        "stirred"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "fall",
-      "winter",
-      "all-season"
+        "fall",
+        "winter",
+        "all-season"
     ],
     "keywordsOccasion": [
-      "evening",
-      "craft-bar",
-      "nightcap"
+        "evening",
+        "craft-bar",
+        "nightcap"
     ],
     "keywordsMood": [
-      "sophisticated",
-      "contemplative"
+        "sophisticated",
+        "refined",
+        "classic"
     ],
     "keywordsSearchTerms": [
-      "maraschino",
-      "absinthe",
-      "Angostura",
-      "Peychaud's",
-      "19th century"
+        "Improved Whiskey",
+        "bourbon",
+        "maraschino liqueur",
+        "absinthe",
+        "Angostura",
+        "Peychaud's",
+        "citrus twist",
+        "stirred",
+        "19th century",
+        "Jerry Thomas"
     ]
   },
   {
@@ -5435,7 +5444,8 @@
       "Jungle Bird"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "20th century"
     ],
     "ingredients": [
       {
@@ -5564,11 +5574,13 @@
       "tropical"
     ],
     "keywordsSearchTerms": [
-      "Campari",
+      "campari",
       "pineapple",
       "tiki cocktail",
-      "Kuala Lumpur",
-      "bitter tiki"
+      "kuala lumpur",
+      "aviary bar",
+      "bitter tiki",
+      "1970s"
     ]
   },
   {
@@ -5582,7 +5594,9 @@
       "Last Word"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "pre-prohibition",
+      "20th century"
     ],
     "ingredients": [
       {
@@ -5698,11 +5712,12 @@
       "bold"
     ],
     "keywordsSearchTerms": [
-      "Chartreuse",
+      "chartreuse",
       "maraschino",
-      "Prohibition",
-      "equal parts",
-      "Detroit Athletic Club"
+      "prohibition",
+      "detroit athletic club",
+      "1910s",
+      "pre-prohibition"
     ]
   },
   {
@@ -5716,7 +5731,8 @@
       "Mai Tai"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "20th century"
     ],
     "ingredients": [
       {
@@ -5844,7 +5860,8 @@
     "keywordsSpiritSubtype": [
       "white-rum",
       "gold-rum",
-      "aged-rum"
+      "aged-rum",
+      "rhum-agricole"
     ],
     "keywordsFlavorProfile": [
       "tropical",
@@ -5875,12 +5892,16 @@
       "festive"
     ],
     "keywordsSearchTerms": [
-      "Trader Vic",
+      "trader vic",
+      "donn beach",
+      "qb cooler",
       "orgeat",
       "curacao",
       "tiki",
-      "Polynesian",
-      "1944"
+      "polynesian",
+      "tiki culture",
+      "1944",
+      "tiki cocktail"
     ]
   },
   {
@@ -5894,7 +5915,9 @@
       "Manhattan"
     ],
     "eras": [
-      "Traditional"
+      "19th century",
+      "gilded age",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -5974,16 +5997,20 @@
     "keywordsBaseSpirit": [
       "rye"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "rye-whiskey"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
       "bitter",
       "rich",
-      "warm",
-      "aromatic"
+      "aromatic",
+      "smooth",
+      "spiced"
     ],
     "keywordsCocktailFamily": [
-      "stirred-spirit"
+      "stirred-spirit",
+      "whiskey-variant"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -5998,19 +6025,24 @@
     "keywordsOccasion": [
       "evening",
       "dinner-party",
-      "nightcap"
+      "nightcap",
+      "craft-bar"
     ],
     "keywordsMood": [
       "sophisticated",
       "classic",
-      "refined"
+      "refined",
+      "elegant"
     ],
     "keywordsSearchTerms": [
       "sweet vermouth",
-      "Angostura",
-      "cherry",
+      "Angostura bitters",
+      "maraschino cherry",
       "New York",
-      "whiskey cocktail"
+      "Manhattan Club",
+      "Hoffman House",
+      "rye whiskey",
+      "classic cocktail"
     ]
   },
   {
@@ -6024,7 +6056,10 @@
       "Margarita"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "20th century",
+      "post-prohibition",
+      "mid-20th century"
     ],
     "ingredients": [
       {
@@ -6131,10 +6166,12 @@
       "sweet",
       "tart",
       "salty",
-      "refreshing"
+      "refreshing",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "daisy"
     ],
     "keywordsTechnique": [
       "shaken"
@@ -6148,20 +6185,24 @@
     "keywordsOccasion": [
       "party",
       "casual",
-      "mexican-food"
+      "dinner-party",
+      "pool-party"
     ],
     "keywordsMood": [
       "fun",
       "festive",
-      "lively"
+      "lively",
+      "refreshing"
     ],
     "keywordsSearchTerms": [
       "Cointreau",
-      "lime",
+      "lime juice",
       "salt rim",
-      "agave",
+      "agave syrup",
       "Mexico",
-      "Mexican"
+      "Tommy's Margarita",
+      "tequila daisy",
+      "triple sec"
     ]
   },
   {
@@ -6175,7 +6216,10 @@
       "Martinez"
     ],
     "eras": [
-      "Traditional"
+      "traditional",
+      "19th century",
+      "Gilded Age",
+      "pre-prohibition"
     ],
     "ingredients": [
       {
@@ -6264,15 +6308,20 @@
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "old tom gin"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
       "herbal",
       "rich",
-      "complex"
+      "complex",
+      "aromatic",
+      "botanical"
     ],
     "keywordsCocktailFamily": [
-      "martini-variant"
+      "martini variant",
+      "stirred spirit"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -6284,18 +6333,24 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar"
+      "craft-bar",
+      "dinner-party"
     ],
     "keywordsMood": [
       "sophisticated",
-      "classic"
+      "classic",
+      "refined",
+      "historical"
     ],
     "keywordsSearchTerms": [
-      "martini precursor",
       "sweet vermouth",
-      "maraschino",
-      "Angostura",
-      "19th century"
+      "maraschino liqueur",
+      "Angostura bitters",
+      "orange twist",
+      "Jerry Thomas",
+      "Old Tom gin",
+      "Martinez California",
+      "martini precursor"
     ]
   },
   {
@@ -6309,7 +6364,10 @@
       "Martini"
     ],
     "eras": [
-      "Traditional"
+      "19th century",
+      "pre-prohibition",
+      "post-prohibition",
+      "mid-20th century"
     ],
     "ingredients": [
       {
@@ -6390,15 +6448,20 @@
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "dry",
       "crisp",
       "clean",
-      "botanical"
+      "botanical",
+      "aromatic",
+      "smooth"
     ],
     "keywordsCocktailFamily": [
-      "martini"
+      "martini",
+      "stirred-spirit"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -6411,19 +6474,24 @@
     "keywordsOccasion": [
       "evening",
       "dinner-party",
-      "date-night"
+      "date-night",
+      "craft-bar"
     ],
     "keywordsMood": [
       "sophisticated",
       "classic",
-      "refined"
+      "refined",
+      "elegant"
     ],
     "keywordsSearchTerms": [
       "dry vermouth",
-      "olive",
-      "lemon peel",
+      "orange bitters",
+      "olive garnish",
+      "lemon twist",
+      "London dry gin",
+      "Martinez cocktail",
       "James Bond",
-      "iconic"
+      "classic cocktail"
     ]
   },
   {
