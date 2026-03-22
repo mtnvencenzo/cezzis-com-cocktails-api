@@ -1078,6 +1078,12 @@
     "searchableTitles": [
       "Bee's Knees"
     ],
+    "eras": [
+      "traditional",
+      "prohibition",
+      "roaring twenties",
+      "20th century"
+    ],
     "ingredients": [
       {
         "ingredientId": "gin",

@@ -18,8 +18,8 @@ public static class AssertionHelpers
         cocktail.Title.Should().Be("Bee's Knees");
         cocktail.Content.Should().NotBeNullOrWhiteSpace();
         cocktail.Content.Should().Contain($"{options.BaseImageUri}/traditional-bees-knees-cocktail-main.webp");
-        cocktail.Tags.Should().ContainSingle();
-        cocktail.Tags.First().Should().Be("Traditional");
+        cocktail.Tags.Should().HaveCount(4);
+        cocktail.Tags.First().Should().Be("traditional");
         cocktail.Serves.Should().Be(1);
         cocktail.Glassware.Should().HaveCount(2);
         cocktail.Glassware.First().Should().Be(GlasswareTypeModel.Coupe);
