@@ -7773,9 +7773,6 @@
     "searchableTitles": [
       "New York Sour"
     ],
-    "eras": [
-      "Traditional"
-    ],
     "ingredients": [
       {
         "ingredientId": "bourbon",
@@ -7848,17 +7845,19 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "bourbon"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bourbon whiskey"
+    ],
     "keywordsFlavorProfile": [
       "citrus",
       "sweet",
       "tart",
-      "fruity",
+      "bitter",
       "complex"
     ],
     "keywordsCocktailFamily": [
@@ -7866,7 +7865,7 @@
     ],
     "keywordsTechnique": [
       "shaken",
-      "floated"
+      "float"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -7876,19 +7875,27 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
-      "dinner-party"
+      "craft bar",
+      "dinner party"
     ],
     "keywordsMood": [
       "sophisticated",
-      "striking"
+      "elegant",
+      "visually striking"
     ],
     "keywordsSearchTerms": [
+      "bourbon whiskey",
+      "lemon juice",
+      "simple syrup",
       "red wine float",
-      "wine",
-      "layered",
-      "whiskey sour",
-      "New York"
+      "whiskey sour variation",
+      "claret float",
+      "New York Sour"
+    ],
+    "eras": [
+      "traditional",
+      "19th century",
+      "gilded age"
     ]
   },
   {
@@ -7900,9 +7907,6 @@
     "description": "A variation of the Boulevardier, made with rye whiskey, dry vermouth, and Campari. Known for its dry and slightly bitter profile, it's a sophisticated and bold cocktail.",
     "searchableTitles": [
       "Old Pal"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -7982,20 +7986,24 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rye"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "rye whiskey"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "dry",
-      "complex",
-      "herbal"
+      "herbal",
+      "spicy",
+      "complex"
     ],
     "keywordsCocktailFamily": [
-      "negroni-family"
+      "stirred-spirit",
+      "equal-parts"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -8009,18 +8017,30 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar"
+      "craft bar"
     ],
     "keywordsMood": [
       "sophisticated",
-      "bold"
+      "bold",
+      "classic"
     ],
     "keywordsSearchTerms": [
+      "rye whiskey",
       "Campari",
       "dry vermouth",
-      "Boulevardier cousin",
+      "Campari cocktail",
+      "equal parts cocktail",
+      "Negroni variation",
+      "Boulevardier",
+      "Harry's New York Bar Paris",
       "Harry MacElhone",
       "Paris"
+    ],
+    "eras": [
+      "traditional",
+      "prohibition",
+      "roaring twenties",
+      "20th century"
     ]
   },
   {

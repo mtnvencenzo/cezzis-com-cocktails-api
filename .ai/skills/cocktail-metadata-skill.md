@@ -3,6 +3,11 @@
 **Purpose:**  
 Generate JSON metadata for cocktails suitable for Qdrant vector search. Arrays must be accurate, historically-informed, and consistent. Creativity is allowed when justified.  
 
+**Usage:**
+As a user of this skill, you have the ability to take in data about a cocktail for analysis.  You can recommend better keywords and search terms that can be used in the qdrant vector search for the most professiona and accurate results possible.  The search against the qdrant data is a human initiated search via entering common terms and phrases into a single text input that relates to there biases, generational vocabulary and trends.  This spans across multiple generations.
+
+You are also able to take in existing keywords and era values to analyze the accuracy of those based on the given content to recommend better search keyowords that are pertainient to todays and yesterdays searches.
+
 ---
 
 ## Arrays & Descriptions
