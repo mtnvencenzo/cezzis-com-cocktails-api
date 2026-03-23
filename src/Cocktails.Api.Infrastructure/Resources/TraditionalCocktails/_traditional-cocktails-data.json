@@ -8699,9 +8699,6 @@
     "searchableTitles": [
       "Philadelphia Fish House Punch"
     ],
-    "eras": [
-      "Traditional"
-    ],
     "ingredients": [
       {
         "ingredientId": "jamaican-rum",
@@ -8810,27 +8807,31 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum",
       "cognac"
     ],
     "keywordsSpiritSubtype": [
-      "jamaican-rum"
+      "jamaican rum",
+      "cognac"
     ],
     "keywordsFlavorProfile": [
-      "rich",
-      "fruity",
+      "citrus",
       "sweet",
+      "fruity",
+      "rich",
       "complex",
-      "citrus"
+      "tea",
+      "boozy"
     ],
     "keywordsCocktailFamily": [
       "punch"
     ],
     "keywordsTechnique": [
-      "stirred"
+      "built",
+      "batch"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -8839,20 +8840,32 @@
     ],
     "keywordsOccasion": [
       "party",
+      "celebration",
       "gathering",
-      "celebration"
+      "large format"
     ],
     "keywordsMood": [
       "festive",
-      "communal"
+      "communal",
+      "historic",
+      "lively"
     ],
     "keywordsSearchTerms": [
+      "fish house punch",
+      "Philadelphia fish house punch",
+      "jamaican rum",
+      "cognac",
       "peach brandy",
-      "punch bowl",
-      "Philadelphia",
-      "colonial",
-      "batch cocktail",
+      "black tea",
+      "lemon juice",
+      "colonial American punch",
       "State in Schuylkill"
+    ],
+    "eras": [
+      "early american",
+      "traditional",
+      "18th century",
+      "pre-prohibition"
     ]
   },
   {
@@ -8864,9 +8877,6 @@
     "description": "A refreshing British cocktail made with Pimm's No. 1, lemonade, and garnished with fruits and herbs. Popular since the 19th century, it's a quintessential summer cocktail.",
     "searchableTitles": [
       "Pimm's Cup"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -8970,24 +8980,30 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "pimms"
+      "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "Pimm's No. 1",
+      "gin-based liqueur"
+    ],
     "keywordsFlavorProfile": [
       "fruity",
       "herbal",
-      "effervescent",
+      "citrus",
       "refreshing",
+      "effervescent",
       "light"
     ],
     "keywordsCocktailFamily": [
-      "cup"
+      "cup",
+      "highball"
     ],
     "keywordsTechnique": [
-      "built"
+      "built",
+      "topped"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
@@ -8995,22 +9011,34 @@
       "summer"
     ],
     "keywordsOccasion": [
-      "garden-party",
+      "garden party",
       "afternoon",
-      "Wimbledon"
+      "sporting event",
+      "day drinking"
     ],
     "keywordsMood": [
+      "refreshing",
       "cheerful",
       "relaxed",
-      "social"
+      "social",
+      "lively"
     ],
     "keywordsSearchTerms": [
-      "British",
-      "English",
-      "Wimbledon",
+      "Pimms",
+      "Pimm's Cup",
+      "Pimm's No. 1",
+      "Pimm's",
+      "gin liqueur",
+      "lemon juice",
+      "soda water",
       "cucumber",
-      "summer drink",
-      "Pimm's No. 1"
+      "mint",
+      "Angostura bitters"
+    ],
+    "eras": [
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ]
   },
   {
@@ -9022,9 +9050,6 @@
     "description": "A tropical cocktail made with rum, coconut cream, and pineapple juice, blended with ice. Created in Puerto Rico, it's a creamy, sweet escape to paradise.",
     "searchableTitles": [
       "Pi\u00f1a Colada"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -9113,18 +9138,22 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "white rum",
+      "light rum"
+    ],
     "keywordsFlavorProfile": [
       "tropical",
       "sweet",
       "creamy",
       "coconut",
-      "fruity"
+      "fruity",
+      "smooth"
     ],
     "keywordsCocktailFamily": [
       "tiki",
@@ -9134,26 +9163,40 @@
       "blended"
     ],
     "keywordsStrength": "medium",
-    "keywordsTemperature": "frozen",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "summer"
     ],
     "keywordsOccasion": [
-      "pool-party",
+      "pool party",
       "beach",
+      "vacation",
       "casual"
     ],
     "keywordsMood": [
       "fun",
       "tropical",
-      "relaxed"
+      "relaxed",
+      "escapist",
+      "indulgent"
     ],
     "keywordsSearchTerms": [
-      "Puerto Rico",
-      "pineapple",
-      "coconut",
-      "frozen cocktail",
-      "blended cocktail"
+      "pina",
+      "pina colada",
+      "piña colada",
+      "white rum",
+      "pineapple juice",
+      "coconut cream",
+      "coconut milk",
+      "blended rum drink",
+      "tropical rum cocktail",
+      "Caribe Hilton",
+      "San Juan Puerto Rico"
+    ],
+    "eras": [
+      "modern",
+      "mid-20th century",
+      "20th century"
     ]
   },
   {
@@ -9165,9 +9208,6 @@
     "description": "A vibrant cocktail made with pisco, lime juice, simple syrup, egg white, and bitters. Originating from Peru, it's a tangy and frothy cocktail with a smooth finish.",
     "searchableTitles": [
       "Pisco Sour"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -9255,18 +9295,23 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "pisco"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "Peruvian pisco",
+      "grape brandy"
+    ],
     "keywordsFlavorProfile": [
       "citrus",
       "sweet",
       "tart",
       "creamy",
-      "frothy"
+      "frothy",
+      "smooth",
+      "aromatic"
     ],
     "keywordsCocktailFamily": [
       "sour"
@@ -9282,18 +9327,32 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "aperitif"
+      "aperitif",
+      "cocktail hour"
     ],
     "keywordsMood": [
       "vibrant",
-      "sophisticated"
+      "sophisticated",
+      "refined",
+      "lively"
     ],
     "keywordsSearchTerms": [
-      "Peru",
-      "Peruvian",
+      "pisco sour",
+      "pisco",
+      "Peruvian pisco",
+      "lime juice",
       "egg white",
-      "Angostura",
-      "South American"
+      "simple syrup",
+      "Angostura bitters",
+      "Amargo Chuncho bitters",
+      "Lima Peru",
+      "Morris Bar"
+    ],
+    "eras": [
+      "traditional",
+      "early 20th century",
+      "pre-prohibition",
+      "prohibition"
     ]
   },
   {
@@ -9305,9 +9364,6 @@
     "description": "A classic rum punch made with dark rum, lime juice, simple syrup, and Angostura bitters. A traditional Caribbean favorite known for its rich and refreshing taste.",
     "searchableTitles": [
       "Planter's Punch"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -9414,23 +9470,26 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "dark-rum"
+      "dark rum",
+      "jamaican rum"
     ],
     "keywordsFlavorProfile": [
       "tropical",
       "fruity",
       "sweet",
-      "citrus"
+      "citrus",
+      "refreshing",
+      "juicy"
     ],
     "keywordsCocktailFamily": [
       "punch",
-      "tiki"
+      "rum punch"
     ],
     "keywordsTechnique": [
       "shaken"
@@ -9443,19 +9502,31 @@
     "keywordsOccasion": [
       "party",
       "casual",
-      "tiki-bar"
+      "tiki bar",
+      "beach"
     ],
     "keywordsMood": [
       "fun",
       "tropical",
-      "festive"
+      "festive",
+      "lively"
     ],
     "keywordsSearchTerms": [
-      "Caribbean",
-      "Jamaica",
-      "pineapple",
+      "planters punch",
+      "planter's punch",
+      "dark rum",
+      "jamaican rum",
+      "lime juice",
+      "pineapple juice",
+      "orange juice",
       "grenadine",
-      "plantation"
+      "honey syrup",
+      "jamaican cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ]
   },
   {
@@ -9467,9 +9538,6 @@
     "description": "A tropical cocktail made with rum, lime juice, mint, simple syrup, and bitters, served over crushed ice. Originating from Trinidad, it's a vibrant and refreshing cocktail.",
     "searchableTitles": [
       "Queen's Park Swizzle"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -9549,28 +9617,30 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "demerara-rum"
+      "demerara rum"
     ],
     "keywordsFlavorProfile": [
       "minty",
-      "sweet",
       "citrus",
+      "sweet",
       "aromatic",
-      "complex"
+      "complex",
+      "refreshing"
     ],
     "keywordsCocktailFamily": [
       "swizzle",
-      "tiki"
+      "rum swizzle"
     ],
     "keywordsTechnique": [
       "muddled",
-      "swizzled"
+      "swizzled",
+      "built"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -9578,19 +9648,32 @@
       "summer"
     ],
     "keywordsOccasion": [
-      "tiki-bar",
-      "evening"
+      "tiki bar",
+      "evening",
+      "vacation"
     ],
     "keywordsMood": [
       "refreshing",
-      "exotic"
+      "exotic",
+      "lively",
+      "cooling"
     ],
     "keywordsSearchTerms": [
-      "Trinidad",
-      "Queen's Park Hotel",
-      "crushed ice",
+      "queens park swizzle",
+      "queen's park swizzle",
+      "demerara rum",
+      "lime juice",
+      "simple syrup",
       "mint",
-      "Angostura bitters"
+      "Angostura bitters",
+      "swizzle cocktail",
+      "Queen's Park Hotel",
+      "Port of Spain Trinidad"
+    ],
+    "eras": [
+      "traditional",
+      "early 20th century",
+      "prohibition"
     ]
   },
   {
@@ -9602,9 +9685,6 @@
     "description": "A frothy cocktail made with gin, lemon and lime juice, simple syrup, cream, egg white, orange flower water, and soda. Created in the late 19th century in New Orleans, it's known for its rich, smooth texture.",
     "searchableTitles": [
       "Ramos Gin Fizz"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -9729,25 +9809,32 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin",
+      "Old Tom gin"
+    ],
     "keywordsFlavorProfile": [
       "creamy",
       "citrus",
       "floral",
       "effervescent",
-      "sweet"
+      "sweet",
+      "frothy",
+      "smooth"
     ],
     "keywordsCocktailFamily": [
-      "fizz"
+      "fizz",
+      "gin fizz"
     ],
     "keywordsTechnique": [
       "shaken",
-      "dry-shaken"
+      "dry-shaken",
+      "topped"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -9757,19 +9844,32 @@
     ],
     "keywordsOccasion": [
       "brunch",
-      "craft-bar"
+      "craft bar",
+      "day drinking"
     ],
     "keywordsMood": [
       "indulgent",
-      "elegant"
+      "elegant",
+      "refined",
+      "luxurious"
     ],
     "keywordsSearchTerms": [
-      "New Orleans",
+      "ramos gin fizz",
+      "ramos fizz",
+      "gin fizz",
+      "London dry gin",
+      "lemon juice",
+      "lime juice",
       "orange flower water",
-      "cream",
       "egg white",
-      "Henry Ramos",
-      "frothy"
+      "heavy cream",
+      "New Orleans cocktail",
+      "Henry C Ramos"
+    ],
+    "eras": [
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ]
   },
   {
@@ -9781,9 +9881,6 @@
     "description": "A robust cocktail made with rye whiskey, sweet vermouth, cherry liqueur, and absinthe. Named after the rallying cry for the Spanish-American War, it's a complex and rich cocktail.",
     "searchableTitles": [
       "Remember The Maine"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -9875,21 +9972,25 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rye"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "rye whiskey"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
       "herbal",
       "anise",
       "complex",
-      "cherry"
+      "cherry",
+      "aromatic"
     ],
     "keywordsCocktailFamily": [
-      "manhattan-variant"
+      "manhattan-variant",
+      "rye manhattan"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -9903,19 +10004,29 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
+      "craft bar",
       "nightcap"
     ],
     "keywordsMood": [
       "sophisticated",
-      "contemplative"
+      "contemplative",
+      "elegant"
     ],
     "keywordsSearchTerms": [
+      "remember the maine",
+      "remember maine",
       "Cherry Heering",
+      "cherry liqueur",
       "absinthe",
       "sweet vermouth",
+      "rye whiskey",
       "Spanish-American War",
       "USS Maine"
+    ],
+    "eras": [
+      "traditional",
+      "20th century",
+      "post-prohibition"
     ]
   },
   {
@@ -9927,9 +10038,6 @@
     "description": "A Scotch whisky version of the Manhattan, made with Scotch, sweet vermouth, and Angostura bitters. Named after the Scottish folk hero, it's a classic and sophisticated cocktail.",
     "searchableTitles": [
       "Rob Roy"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -10005,20 +10113,26 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "scotch"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "blended scotch",
+      "single malt scotch"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
-      "warm",
       "rich",
-      "aromatic"
+      "aromatic",
+      "smoky",
+      "smooth",
+      "warming"
     ],
     "keywordsCocktailFamily": [
-      "manhattan-variant"
+      "manhattan-variant",
+      "scotch manhattan"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -10033,19 +10147,27 @@
     "keywordsOccasion": [
       "evening",
       "nightcap",
-      "dinner-party"
+      "dinner party"
     ],
     "keywordsMood": [
       "classic",
+      "refined",
       "warming",
-      "refined"
+      "sophisticated"
     ],
     "keywordsSearchTerms": [
+      "rob roy",
       "Scotch Manhattan",
       "sweet vermouth",
       "Angostura",
-      "Scottish",
-      "Waldorf-Astoria"
+      "Scotland",
+      "Waldorf Astoria",
+      "Rob Roy MacGregor"
+    ],
+    "eras": [
+      "traditional",
+      "pre-prohibition",
+      "19th century"
     ]
   },
   {
@@ -10057,9 +10179,6 @@
     "description": "A historic New Orleans cocktail made with rye whiskey, absinthe, sugar, and Peychaud's bitters. Known as one of America's oldest cocktails, it's a strong and aromatic cocktail.",
     "searchableTitles": [
       "Sazerac"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -10158,21 +10277,25 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rye"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "rye whiskey"
+    ],
     "keywordsFlavorProfile": [
       "herbal",
       "anise",
       "aromatic",
       "complex",
-      "bitter"
+      "bitter",
+      "spicy"
     ],
     "keywordsCocktailFamily": [
-      "old-fashioned-variant"
+      "old-fashioned-variant",
+      "rye old fashioned"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -10184,20 +10307,29 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
+      "craft bar",
       "nightcap"
     ],
     "keywordsMood": [
       "sophisticated",
       "bold",
-      "classic"
+      "classic",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "sazerac",
       "New Orleans",
-      "Peychaud's",
+      "rye whiskey",
+      "Peychaud's bitters",
       "absinthe",
-      "official cocktail",
+      "lemon peel",
+      "Thomas Handy",
       "Louisiana"
+    ],
+    "eras": [
+      "traditional",
+      "pre-prohibition",
+      "19th century"
     ]
   },
   {
