@@ -7884,13 +7884,14 @@
       "visually striking"
     ],
     "keywordsSearchTerms": [
+      "New York Sour",
       "bourbon whiskey",
       "lemon juice",
       "simple syrup",
       "red wine float",
       "whiskey sour variation",
       "claret float",
-      "New York Sour"
+      "New York"
     ],
     "eras": [
       "traditional",
@@ -8025,14 +8026,12 @@
       "classic"
     ],
     "keywordsSearchTerms": [
+      "Old Pal",
       "rye whiskey",
       "Campari",
       "dry vermouth",
-      "Campari cocktail",
-      "equal parts cocktail",
       "Negroni variation",
       "Boulevardier",
-      "Harry's New York Bar Paris",
       "Harry MacElhone",
       "Paris"
     ],
@@ -8052,9 +8051,6 @@
     "description": "A timeless cocktail made with whiskey, sugar, Angostura bitters, and a twist of citrus. Originating in the early 19th century, it's the epitome of classic cocktail simplicity.",
     "searchableTitles": [
       "Old-Fashioned"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -8153,24 +8149,27 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rye"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "rye whiskey"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
       "bitter",
       "citrus",
       "aromatic",
-      "rich"
+      "rich",
+      "spirit-forward"
     ],
     "keywordsCocktailFamily": [
-      "old-fashioned"
+      "old-fashioned",
+      "stirred-spirit"
     ],
     "keywordsTechnique": [
-      "muddled",
       "stirred",
       "built"
     ],
@@ -8182,20 +8181,29 @@
     "keywordsOccasion": [
       "evening",
       "nightcap",
-      "craft-bar"
+      "craft bar"
     ],
     "keywordsMood": [
       "classic",
       "contemplative",
-      "sophisticated"
+      "sophisticated",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "Old Fashioned cocktail",
       "Angostura bitters",
-      "sugar",
+      "simple syrup",
+      "sugar cube",
       "orange peel",
-      "whiskey",
-      "bourbon",
-      "timeless"
+      "whiskey cocktail",
+      "bourbon Old Fashioned",
+      "rye Old Fashioned"
+    ],
+    "eras": [
+      "traditional",
+      "19th century",
+      "pre-prohibition",
+      "gilded age"
     ]
   },
   {
@@ -8207,9 +8215,6 @@
     "description": "A tropical cocktail made with dark rum, pineapple juice, orange juice, and cream of coconut, garnished with nutmeg. Created in the British Virgin Islands, it's a rich and creamy island favorite.",
     "searchableTitles": [
       "Pain Killer"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -8301,23 +8306,24 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "virgin-islands-rum"
+      "Virgin Islands rum"
     ],
     "keywordsFlavorProfile": [
       "tropical",
       "sweet",
       "creamy",
-      "coconut",
+      "coconut-forward",
       "fruity"
     ],
     "keywordsCocktailFamily": [
-      "tiki"
+      "tiki",
+      "highball"
     ],
     "keywordsTechnique": [
       "shaken"
@@ -8325,24 +8331,34 @@
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer"
+      "summer",
+      "all-season"
     ],
     "keywordsOccasion": [
-      "pool-party",
-      "tiki-bar",
+      "pool party",
+      "tiki bar",
       "casual"
     ],
     "keywordsMood": [
       "fun",
       "tropical",
-      "indulgent"
+      "indulgent",
+      "escapist"
     ],
     "keywordsSearchTerms": [
-      "Pusser's",
-      "British Virgin Islands",
-      "Soggy Dollar Bar",
-      "pineapple",
-      "coconut cream"
+      "Painkiller cocktail",
+      "Virgin Islands rum",
+      "pineapple juice",
+      "orange juice",
+      "coconut cream",
+      "nutmeg",
+      "hurricane glass",
+      "Soggy Dollar Bar"
+    ],
+    "eras": [
+      "modern",
+      "20th century",
+      "1970s"
     ]
   },
   {
@@ -8354,9 +8370,6 @@
     "description": "A refreshing Mexican cocktail made with tequila, fresh lime juice, and grapefruit soda. Known for its bright and tangy flavors, it's a popular alternative to the margarita.",
     "searchableTitles": [
       "Paloma"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -8463,47 +8476,60 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "tequila"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "blanco tequila"
+    ],
     "keywordsFlavorProfile": [
       "citrus",
-      "tart",
-      "effervescent",
+      "citrus-forward",
+      "sweet",
+      "bitter",
       "refreshing",
-      "bitter"
+      "effervescent"
     ],
     "keywordsCocktailFamily": [
-      "highball"
+      "highball",
+      "tequila-variant"
     ],
     "keywordsTechnique": [
-      "built"
+      "built",
+      "stirred"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer"
+      "summer",
+      "all-season"
     ],
     "keywordsOccasion": [
       "casual",
-      "party",
-      "bbq"
+      "garden party",
+      "pool party"
     ],
     "keywordsMood": [
       "refreshing",
-      "fun",
-      "lively"
+      "cheerful",
+      "easygoing"
     ],
     "keywordsSearchTerms": [
-      "grapefruit",
-      "Mexico",
-      "Mexican",
-      "lime",
+      "Paloma cocktail",
+      "blanco tequila",
+      "grapefruit juice",
+      "lime juice",
       "soda water",
-      "tequila cocktail"
+      "agave syrup",
+      "Cantarito",
+      "Mexico"
+    ],
+    "eras": [
+      "modern",
+      "20th century",
+      "1950s"
     ]
   },
   {
@@ -8515,9 +8541,6 @@
     "description": "A classic gin cocktail made with gin, orange cura\u00e7ao, lime juice, and Angostura bitters. Named after a British colonial club in Burma, it's a tart and slightly spicy cocktail.",
     "searchableTitles": [
       "Pegu Club"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -8609,20 +8632,26 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "citrus",
       "bitter",
       "aromatic",
-      "complex"
+      "complex",
+      "bright",
+      "botanical"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "gin-variant",
+      "stirred-spirit"
     ],
     "keywordsTechnique": [
       "shaken"
@@ -8634,19 +8663,30 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar"
+      "craft bar"
     ],
     "keywordsMood": [
       "exotic",
-      "sophisticated"
+      "sophisticated",
+      "refreshing"
     ],
     "keywordsSearchTerms": [
-      "curacao",
+      "Pegu Club cocktail",
+      "London dry gin",
+      "dry curaçao",
+      "lime juice",
+      "Angostura bitters",
+      "orange bitters",
+      "lime peel garnish",
+      "Audrey Saunders",
       "Burma",
       "Myanmar",
-      "Angostura",
-      "orange bitters",
       "colonial"
+    ],
+    "eras": [
+      "traditional",
+      "roaring twenties",
+      "20th century"
     ]
   },
   {
