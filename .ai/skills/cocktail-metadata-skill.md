@@ -109,14 +109,14 @@ Generate JSON metadata for cocktails suitable for Qdrant vector search. Arrays m
 - evening  
 - afternoon  
 - brunch  
-- garden-party  
-- craft-bar  
-- tiki-bar  
+- garden party  
+- craft bar  
+- tiki bar  
 - nightcap  
 - casual  
 - party  
-- pool-party  
-- dinner-party  
+- pool party  
+- dinner party  
 
 ---
 
@@ -156,8 +156,10 @@ Generate JSON metadata for cocktails suitable for Qdrant vector search. Arrays m
 ---
 
 ### `eras`
-**Description:** Historical era(s) relevant to the cocktail’s creation or popularity. Use historically accurate periods. Multiple entries allowed if needed. Content in parentheses should be excluded and is only for reference.  
+**Description:** Historical era(s) relevant to the cocktail’s creation or popularity. Use historically accurate periods. Multiple entries allowed if needed. Content in parentheses should be excluded and is only for reference.  The ears array must always contain either 'traditional' or 'modern' depending on the cocktail but never both.
 **Common values:**  
+- traditional
+- modern
 - pre-prohibition  
 - prohibition  
 - post-prohibition  

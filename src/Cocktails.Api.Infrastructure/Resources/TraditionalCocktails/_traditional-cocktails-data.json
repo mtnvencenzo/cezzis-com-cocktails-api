@@ -6364,10 +6364,10 @@
       "Martini"
     ],
     "eras": [
+      "traditional",
       "19th century",
       "pre-prohibition",
-      "post-prohibition",
-      "mid-20th century"
+      "roaring twenties"
     ],
     "ingredients": [
       {
@@ -6443,7 +6443,7 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
@@ -6457,14 +6457,16 @@
       "clean",
       "botanical",
       "aromatic",
-      "smooth"
+      "smooth",
+      "slightly bitter"
     ],
     "keywordsCocktailFamily": [
-      "martini",
+      "martini-variant",
       "stirred-spirit"
     ],
     "keywordsTechnique": [
-      "stirred"
+      "stirred",
+      "shaken"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -6473,15 +6475,17 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "dinner-party",
-      "date-night",
-      "craft-bar"
+      "dinner party",
+      "date night",
+      "craft bar",
+      "formal event"
     ],
     "keywordsMood": [
       "sophisticated",
       "classic",
       "refined",
-      "elegant"
+      "elegant",
+      "timeless"
     ],
     "keywordsSearchTerms": [
       "dry vermouth",
@@ -6489,6 +6493,9 @@
       "olive garnish",
       "lemon twist",
       "London dry gin",
+      "Vodka Martini",
+      "extra dry Martini",
+      "wet Martini",
       "Martinez cocktail",
       "James Bond",
       "classic cocktail"
@@ -6503,9 +6510,6 @@
     "description": "A bold cocktail made with tequila, lime juice, grenadine, and Angostura bitters. Originating from Mexico City in the 1930s, it's a vibrant and spicy cocktail.",
     "searchableTitles": [
       "Mexican Firing Squad"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -6596,23 +6600,29 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "tequila"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "blanco tequila"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
       "tart",
       "citrus",
-      "spicy"
+      "spicy",
+      "refreshing",
+      "effervescent"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "highball"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "topped"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -6622,18 +6632,31 @@
     ],
     "keywordsOccasion": [
       "party",
-      "evening"
+      "evening",
+      "garden party",
+      "pool party",
+      "casual"
     ],
     "keywordsMood": [
       "bold",
-      "lively"
+      "lively",
+      "adventurous",
+      "cheerful"
     ],
     "keywordsSearchTerms": [
       "grenadine",
       "Angostura bitters",
-      "lime",
-      "Mexico",
-      "Charles Baker"
+      "lime juice",
+      "soda water",
+      "Mexico City",
+      "Charles Baker",
+      "tequila-based cocktail",
+      "grenadine-based cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "post-prohibition",
+      "mid-20th century"
     ]
   },
   {
@@ -6645,9 +6668,6 @@
     "description": "A savory Mexican cocktail made with beer, lime juice, assorted sauces, spices, and tomato juice. Often enjoyed as a brunch cocktail or hangover cure.",
     "searchableTitles": [
       "Michelada"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -6750,49 +6770,66 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "beer"
+      "Mexican beer"
     ],
     "keywordsSpiritSubtype": [
-      "mexican-beer"
+      "lager-style Mexican beer"
     ],
     "keywordsFlavorProfile": [
       "savory",
       "spicy",
       "citrus",
       "salty",
-      "tangy"
+      "tangy",
+      "effervescent",
+      "refreshing"
     ],
     "keywordsCocktailFamily": [
       "beer-cocktail",
       "savory-cocktail"
     ],
     "keywordsTechnique": [
-      "built"
+      "built",
+      "rimmed"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer"
+      "summer",
+      "all-season"
     ],
     "keywordsOccasion": [
       "brunch",
       "casual",
-      "bbq"
+      "bbq",
+      "garden party",
+      "pool party",
+      "afternoon"
     ],
     "keywordsMood": [
       "bold",
       "restorative",
-      "casual"
+      "casual",
+      "cheerful",
+      "refreshing"
     ],
     "keywordsSearchTerms": [
       "tomato juice",
+      "Clamato",
       "Mexican beer",
       "hot sauce",
-      "lime",
+      "lime juice",
+      "salted rim",
+      "Tabasco",
+      "Worcestershire sauce",
       "hangover cure"
+    ],
+    "eras": [
+      "traditional",
+      "mid-20th century"
     ]
   },
   {
@@ -6804,9 +6841,6 @@
     "description": "A luxurious cocktail made with bourbon, Grand Marnier, grenadine, and absinthe. Known for its rich and complex flavors, it's a cocktail that lives up to its name.",
     "searchableTitles": [
       "Millionaire Cocktail"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -6907,44 +6941,66 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "bourbon"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bourbon whiskey"
+    ],
     "keywordsFlavorProfile": [
       "sweet",
       "citrus",
       "herbal",
       "rich",
-      "creamy"
+      "creamy",
+      "frothy",
+      "complex"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "classic sour"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "dry-shaken"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "all-season"
+      "all-season",
+      "fall",
+      "winter"
     ],
     "keywordsOccasion": [
       "evening",
-      "celebration"
+      "celebration",
+      "dinner party",
+      "craft bar"
     ],
     "keywordsMood": [
       "glamorous",
-      "indulgent"
+      "indulgent",
+      "luxurious",
+      "refined"
     ],
     "keywordsSearchTerms": [
       "Grand Marnier",
       "grenadine",
       "absinthe",
       "egg white",
-      "frothy"
+      "lemon juice",
+      "bourbon sour variation",
+      "Millionaire No. 2",
+      "Millionaire No. 1",
+      "sloe gin",
+      "apricot brandy"
+    ],
+    "eras": [
+      "traditional",
+      "prohibition",
+      "early 20th century"
     ]
   },
   {
@@ -6956,9 +7012,6 @@
     "description": "A classic Southern cocktail made with bourbon, fresh mint, sugar, and crushed ice. Traditionally associated with the Kentucky Derby, it's a refreshing and aromatic cocktail.s",
     "searchableTitles": [
       "Mint Julep"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -7039,24 +7092,30 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "bourbon"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bourbon whiskey"
+    ],
     "keywordsFlavorProfile": [
       "minty",
       "sweet",
       "refreshing",
-      "cool"
+      "cool",
+      "herbal",
+      "icy"
     ],
     "keywordsCocktailFamily": [
-      "julep"
+      "julep",
+      "classic"
     ],
     "keywordsTechnique": [
       "muddled",
-      "stirred"
+      "stirred",
+      "built"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -7067,19 +7126,29 @@
     "keywordsOccasion": [
       "Kentucky Derby",
       "afternoon",
-      "garden-party"
+      "garden party",
+      "outdoor event"
     ],
     "keywordsMood": [
       "Southern",
       "elegant",
-      "refreshing"
+      "refreshing",
+      "classic"
     ],
     "keywordsSearchTerms": [
       "Kentucky Derby",
-      "mint",
+      "fresh mint",
+      "simple syrup",
       "crushed ice",
-      "Southern",
-      "julep tin"
+      "bourbon whiskey",
+      "julep cup",
+      "silver julep cup",
+      "Southern cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "18th century",
+      "19th century"
     ]
   },
   {
@@ -7091,9 +7160,6 @@
     "description": "A vibrant Cuban cocktail made with white rum, fresh lime juice, mint leaves, sugar, and soda water. Known for its refreshing taste, it's a perfect summer cocktail.",
     "searchableTitles": [
       "Mojito"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -7199,51 +7265,69 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "light-rum"
+      "white rum",
+      "light rum"
     ],
     "keywordsFlavorProfile": [
       "minty",
       "citrus",
       "sweet",
       "effervescent",
-      "refreshing"
+      "refreshing",
+      "herbal",
+      "crisp"
     ],
     "keywordsCocktailFamily": [
-      "highball"
+      "highball",
+      "sour"
     ],
     "keywordsTechnique": [
       "muddled",
-      "built"
+      "built",
+      "topped"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer"
+      "summer",
+      "spring"
     ],
     "keywordsOccasion": [
       "party",
       "casual",
       "afternoon",
-      "pool-party"
+      "pool party",
+      "beach",
+      "barbecue"
     ],
     "keywordsMood": [
       "fun",
       "tropical",
-      "refreshing"
+      "refreshing",
+      "lively",
+      "cheerful"
     ],
     "keywordsSearchTerms": [
       "Cuba",
       "Havana",
-      "mint",
-      "lime",
+      "white rum",
+      "lime juice",
+      "fresh mint",
+      "sugar",
       "soda water",
-      "Ernest Hemingway"
+      "Ernest Hemingway",
+      "Sloppy Joe's Bar"
+    ],
+    "eras": [
+      "traditional",
+      "16th century",
+      "20th century"
     ]
   },
   {
@@ -7255,9 +7339,6 @@
     "description": "A refreshing cocktail made with vodka, ginger beer, and lime juice, served in a copper mug. Invented in the 1940s, it's a classic with a spicy kick.",
     "searchableTitles": [
       "Moscow Mule"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -7332,20 +7413,25 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "vodka"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "neutral vodka"
+    ],
     "keywordsFlavorProfile": [
       "spicy",
       "citrus",
       "ginger",
-      "refreshing"
+      "refreshing",
+      "effervescent",
+      "crisp"
     ],
     "keywordsCocktailFamily": [
-      "mule"
+      "mule",
+      "highball"
     ],
     "keywordsTechnique": [
       "built"
@@ -7359,17 +7445,28 @@
     "keywordsOccasion": [
       "casual",
       "afternoon",
-      "evening"
+      "evening",
+      "party",
+      "bar"
     ],
     "keywordsMood": [
       "relaxed",
-      "refreshing"
+      "refreshing",
+      "lively",
+      "easy-drinking"
     ],
     "keywordsSearchTerms": [
-      "copper mug",
+      "vodka",
       "ginger beer",
-      "lime",
-      "1940s"
+      "lime juice",
+      "copper mug",
+      "Los Angeles",
+      "1940s cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "post-prohibition",
+      "mid-20th century"
     ]
   },
   {
@@ -7381,9 +7478,6 @@
     "description": "A bold and bitter cocktail made with gin, Campari, and sweet vermouth, garnished with an orange peel. Created in the early 20th century, it's a favorite among aperitif lovers.",
     "searchableTitles": [
       "Negroni"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -7460,23 +7554,30 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "sweet",
       "herbal",
-      "complex"
+      "complex",
+      "aromatic",
+      "citrus"
     ],
     "keywordsCocktailFamily": [
-      "negroni"
+      "negroni-variant",
+      "equal-parts",
+      "stirred-spirit"
     ],
     "keywordsTechnique": [
-      "stirred"
+      "stirred",
+      "built"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -7486,20 +7587,31 @@
     "keywordsOccasion": [
       "aperitif",
       "evening",
-      "craft-bar"
+      "craft bar",
+      "dinner party"
     ],
     "keywordsMood": [
       "sophisticated",
       "bold",
-      "classic"
+      "classic",
+      "refined"
     ],
     "keywordsSearchTerms": [
       "Campari",
       "sweet vermouth",
-      "Italian",
-      "Florence",
-      "Count Negroni",
-      "bitter cocktail"
+      "London dry gin",
+      "orange peel",
+      "Italian cocktail",
+      "Florence Italy",
+      "Count Camillo Negroni",
+      "Americano cocktail",
+      "Negroni Sbagliato",
+      "Boulevardier"
+    ],
+    "eras": [
+      "traditional",
+      "early 20th century",
+      "post-prohibition"
     ]
   },
   {
@@ -7511,9 +7623,6 @@
     "description": "A twist on the classic Negroni, made with prosecco instead of gin. Invented by mistake in the 1970s in Milan, it's a lighter, bubbly version of the original.",
     "searchableTitles": [
       "Negroni Sbagliato"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -7589,47 +7698,69 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-22T18:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "prosecco"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "Italian sparkling wine",
+      "Prosecco"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "sweet",
       "effervescent",
-      "light"
+      "light",
+      "herbal",
+      "citrus",
+      "refreshing"
     ],
     "keywordsCocktailFamily": [
       "negroni-variant",
-      "spritz"
+      "spritz",
+      "equal-parts",
+      "highball"
     ],
     "keywordsTechnique": [
-      "stirred",
+      "built",
       "topped"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
       "summer",
+      "spring",
       "all-season"
     ],
     "keywordsOccasion": [
       "aperitif",
       "afternoon",
-      "casual"
+      "casual",
+      "brunch",
+      "day drinking"
     ],
     "keywordsMood": [
       "relaxed",
-      "refreshing"
+      "refreshing",
+      "cheerful",
+      "lively"
     ],
     "keywordsSearchTerms": [
-      "mistaken Negroni",
-      "prosecco",
+      "Prosecco",
+      "Italian sparkling wine",
       "Campari",
-      "Italian",
-      "low alcohol"
+      "sweet vermouth",
+      "orange peel",
+      "Bar Basso Milan",
+      "Mirko Stocchetto",
+      "Negroni variation",
+      "spritz cocktail",
+      "low alcohol cocktail"
+    ],
+    "eras": [
+      "modern",
+      "late 20th century"
     ]
   },
   {
