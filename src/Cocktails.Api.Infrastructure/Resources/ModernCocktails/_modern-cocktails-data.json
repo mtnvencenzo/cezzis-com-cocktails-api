@@ -1318,9 +1318,6 @@
       "La Bomba",
       "Bomba"
     ],
-    "eras": [
-      "Modern"
-    ],
     "ingredients": [
       {
         "ingredientId": "white-rum",
@@ -1407,23 +1404,24 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "white-rum"
+      "white rum"
     ],
     "keywordsFlavorProfile": [
       "citrus",
       "sweet",
       "tart",
+      "dry",
       "complex",
-      "cherry"
+      "subtle cherry"
     ],
     "keywordsCocktailFamily": [
-      "daiquiri-variant",
+      "daiquiri variant",
       "sour"
     ],
     "keywordsTechnique": [
@@ -1437,19 +1435,27 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
+      "craft bar",
       "casual"
     ],
     "keywordsMood": [
+      "refreshing",
       "lively",
-      "refreshing"
+      "sophisticated"
     ],
     "keywordsSearchTerms": [
       "daiquiri",
-      "maraschino",
+      "white rum",
+      "lime juice",
+      "simple syrup",
+      "maraschino liqueur",
       "Luxardo",
-      "Cuban",
-      "rum cocktail"
+      "Cuban cocktail",
+      "rum sour"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -1461,9 +1467,6 @@
     "description": "A sophisticated blend of mezcal, reposado tequila, agave nectar, and bitters that transforms the classic Old Fashioned into a celebration of Mexican spirits and flavors. Created by Phil Ward at Death & Co.",
     "searchableTitles": [
       "Oaxaca Old Fashioned"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -1551,24 +1554,26 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "mezcal",
       "tequila"
     ],
     "keywordsSpiritSubtype": [
-      "reposado-tequila"
+      "reposado tequila"
     ],
     "keywordsFlavorProfile": [
       "smoky",
       "sweet",
       "bitter",
+      "earthy",
       "complex",
-      "earthy"
+      "spirit-forward",
+      "orange"
     ],
     "keywordsCocktailFamily": [
-      "old-fashioned-variant"
+      "old fashioned variant"
     ],
     "keywordsTechnique": [
       "stirred",
@@ -1583,22 +1588,30 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
+      "craft bar",
       "nightcap"
     ],
     "keywordsMood": [
-      "contemplative",
       "sophisticated",
-      "bold"
+      "bold",
+      "contemplative",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "Oaxaca Old Fashioned",
       "mezcal",
-      "agave",
+      "reposado tequila",
+      "agave nectar",
+      "Angostura bitters",
+      "orange peel",
+      "Old Fashioned",
       "Death and Co",
       "Phil Ward",
-      "Mexican",
-      "smokey",
-      "Oaxaca"
+      "Mexican cocktail"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -1610,9 +1623,6 @@
     "description": "A sophisticated blend of aged rum, lime juice, simple syrup, mint, Angostura bitters, and champagne that combines the tropical flavors of a Mojito with the elegance of French sparkling wine. Created by Audrey Saunders.",
     "searchableTitles": [
       "Old Cuban"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -1712,23 +1722,27 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "aged-rum"
+      "aged rum"
     ],
     "keywordsFlavorProfile": [
       "minty",
       "citrus",
       "effervescent",
       "aromatic",
-      "complex"
+      "complex",
+      "dry",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "mojito-variant"
+      "mojito variant",
+      "champagne cocktail",
+      "fizz"
     ],
     "keywordsTechnique": [
       "shaken",
@@ -1742,22 +1756,32 @@
     ],
     "keywordsOccasion": [
       "celebration",
-      "date-night",
+      "date night",
       "evening"
     ],
     "keywordsMood": [
       "elegant",
       "refined",
-      "celebratory"
+      "celebratory",
+      "sophisticated"
     ],
     "keywordsSearchTerms": [
-      "mojito",
+      "Old Cuban",
+      "aged rum",
+      "lime juice",
+      "simple syrup",
+      "mint",
+      "Angostura bitters",
       "champagne",
+      "sparkling wine cocktail",
+      "mojito",
       "Audrey Saunders",
       "Pegu Club",
-      "elevated classic",
-      "Cuban",
-      "mint"
+      "Cuban cocktail"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -1769,9 +1793,6 @@
     "description": "A sophisticated blend of bourbon, Aperol, Amaro Nonino, and lemon juice that has become a global phenomenon. Created by Sam Ross, this innovative cocktail perfectly captures the energy and sophistication of the modern cocktail renaissance.",
     "searchableTitles": [
       "Paper Plane"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -1846,7 +1867,7 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "bourbon"
@@ -1856,12 +1877,15 @@
       "bitter",
       "citrus",
       "herbal",
+      "bittersweet",
       "complex",
-      "bittersweet"
+      "bright",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "equal-parts",
-      "last-word-variant"
+      "equal parts",
+      "Last Word variant",
+      "sour"
     ],
     "keywordsTechnique": [
       "shaken"
@@ -1875,20 +1899,29 @@
     "keywordsOccasion": [
       "aperitif",
       "evening",
-      "craft-bar"
+      "craft bar"
     ],
     "keywordsMood": [
       "sophisticated",
-      "adventurous"
+      "adventurous",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "Paper Plane cocktail",
+      "bourbon",
+      "lemon juice",
       "Aperol",
+      "Aperol cocktail",
       "Amaro Nonino",
       "amari",
-      "Sam Ross",
-      "equal parts",
+      "equal parts cocktail",
       "Last Word",
-      "Italian"
+      "Sam Ross",
+      "bourbon sour"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -1900,9 +1933,6 @@
     "description": "A sophisticated blend of blended Scotch, Islay Scotch, lemon juice, honey syrup, and ginger syrup that transforms the classic Whiskey Sour into something entirely new and exciting. Created by Sam Ross.",
     "searchableTitles": [
       "Penicillin"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -2001,14 +2031,14 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "scotch"
     ],
     "keywordsSpiritSubtype": [
-      "blended-scotch",
-      "islay-scotch"
+      "blended scotch",
+      "Islay scotch"
     ],
     "keywordsFlavorProfile": [
       "smoky",
@@ -2016,11 +2046,15 @@
       "spicy",
       "citrus",
       "honey",
-      "ginger"
+      "ginger",
+      "tart",
+      "warming",
+      "complex"
     ],
     "keywordsCocktailFamily": [
       "sour",
-      "whiskey-sour-variant"
+      "whiskey sour variant",
+      "modern classic"
     ],
     "keywordsTechnique": [
       "shaken",
@@ -2034,22 +2068,31 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
+      "craft bar",
       "nightcap"
     ],
     "keywordsMood": [
       "comforting",
       "warming",
-      "sophisticated"
+      "sophisticated",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "Penicillin cocktail",
       "scotch whisky",
-      "Islay",
-      "ginger",
-      "honey",
-      "Sam Ross",
-      "smokey",
-      "medicinal"
+      "blended scotch",
+      "Islay scotch",
+      "peaty scotch",
+      "lemon juice",
+      "honey syrup",
+      "ginger syrup",
+      "ginger cocktail",
+      "whiskey sour",
+      "Sam Ross"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -2061,9 +2104,6 @@
     "description": "A sophisticated blend of bourbon, coffee liqueur, and orange bitters that transforms the classic Old Fashioned into something entirely new and exciting. Created by Jon Santer, this innovative cocktail has become a modern classic.",
     "searchableTitles": [
       "Revolver"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -2139,7 +2179,7 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "bourbon"
@@ -2150,10 +2190,14 @@
       "sweet",
       "bitter",
       "rich",
-      "citrus"
+      "citrus",
+      "roasted",
+      "complex",
+      "orange"
     ],
     "keywordsCocktailFamily": [
-      "old-fashioned-variant"
+      "old fashioned variant",
+      "stirred spirit"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -2166,21 +2210,31 @@
       "all-season"
     ],
     "keywordsOccasion": [
-      "after-dinner",
+      "after dinner",
       "evening",
-      "craft-bar"
+      "craft bar"
     ],
     "keywordsMood": [
       "sophisticated",
       "indulgent",
-      "contemplative"
+      "contemplative",
+      "refined"
     ],
     "keywordsSearchTerms": [
-      "coffee cocktail",
+      "Revolver cocktail",
+      "bourbon cocktail",
+      "coffee liqueur",
       "Kahlua",
       "Tia Maria",
-      "Jon Santer",
-      "old fashioned"
+      "orange bitters",
+      "orange peel",
+      "old fashioned",
+      "spirit forward cocktail",
+      "Jon Santer"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -2192,9 +2246,6 @@
     "description": "A vibrant blend of tequila, orange juice, and grenadine that creates a stunning visual effect reminiscent of a sunrise. This colorful cocktail became synonymous with the laid-back California lifestyle and helped introduce tequila to a broader audience.",
     "searchableTitles": [
       "Tequila Sunrise"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -2283,7 +2334,7 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "tequila"
@@ -2293,10 +2344,13 @@
       "fruity",
       "sweet",
       "citrus",
-      "easy-drinking"
+      "easy-drinking",
+      "tropical",
+      "refreshing"
     ],
     "keywordsCocktailFamily": [
-      "highball"
+      "highball",
+      "juice cocktail"
     ],
     "keywordsTechnique": [
       "built",
@@ -2309,23 +2363,33 @@
     ],
     "keywordsOccasion": [
       "brunch",
-      "pool-party",
+      "pool party",
       "casual",
       "bbq"
     ],
     "keywordsMood": [
       "fun",
       "relaxed",
-      "tropical"
+      "tropical",
+      "cheerful"
     ],
     "keywordsSearchTerms": [
+      "Tequila Sunrise",
+      "tequila",
       "orange juice",
+      "tequila orange juice",
       "grenadine",
-      "California",
-      "1970s",
-      "sunrise",
+      "maraschino cherry",
+      "layered cocktail",
       "colorful cocktail",
-      "layered"
+      "1970s cocktail",
+      "retro cocktail",
+      "California cocktail",
+      "easy tequila cocktail"
+    ],
+    "eras": [
+      "post-prohibition",
+      "20th century"
     ]
   },
   {
@@ -2337,9 +2401,6 @@
     "description": "A sophisticated blend of gin, Lillet Blanc, and Suze that transforms the classic Negroni into something entirely new and exciting. Created by Wayne Collins, this innovative cocktail has become a modern classic.",
     "searchableTitles": [
       "White Negroni"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -2419,7 +2480,7 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "gin"
@@ -2430,10 +2491,15 @@
       "herbal",
       "floral",
       "dry",
-      "complex"
+      "complex",
+      "citrus",
+      "earthy",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "negroni-variant"
+      "negroni variant",
+      "aperitif",
+      "stirred spirit"
     ],
     "keywordsTechnique": [
       "stirred"
@@ -2448,19 +2514,29 @@
     "keywordsOccasion": [
       "aperitif",
       "evening",
-      "craft-bar"
+      "craft bar"
     ],
     "keywordsMood": [
       "sophisticated",
-      "contemplative"
+      "contemplative",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "White Negroni",
+      "gin cocktail",
       "Lillet Blanc",
       "Suze",
-      "gentian",
+      "gentian liqueur",
       "French aperitif",
-      "Wayne Collins",
-      "negroni"
+      "bitter cocktail",
+      "aperitif cocktail",
+      "orange peel",
+      "negroni",
+      "Wayne Collins"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -2472,9 +2548,6 @@
     "description": "A sophisticated blend of vodka, coffee liqueur, and cream that became synonymous with the laid-back, ironic culture of the 1990s. This creamy, indulgent cocktail transcended its humble origins to become a cultural phenomenon.",
     "searchableTitles": [
       "White Russian"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -2541,7 +2614,7 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 6,
     "keywordsBaseSpirit": [
       "vodka"
@@ -2552,10 +2625,14 @@
       "sweet",
       "coffee",
       "rich",
-      "indulgent"
+      "indulgent",
+      "smooth",
+      "chocolate"
     ],
     "keywordsCocktailFamily": [
-      "dessert-cocktail"
+      "dessert cocktail",
+      "cream cocktail",
+      "after dinner cocktail"
     ],
     "keywordsTechnique": [
       "built",
@@ -2569,22 +2646,33 @@
       "all-season"
     ],
     "keywordsOccasion": [
-      "after-dinner",
+      "after dinner",
       "nightcap",
       "casual"
     ],
     "keywordsMood": [
       "indulgent",
       "relaxed",
-      "comforting"
+      "comforting",
+      "nostalgic"
     ],
     "keywordsSearchTerms": [
-      "The Dude",
-      "Big Lebowski",
-      "cream cocktail",
+      "White Russian",
+      "vodka",
+      "vodka coffee cocktail",
+      "coffee liqueur",
       "Kahlua",
+      "heavy cream",
+      "cream cocktail",
       "dessert drink",
-      "Black Russian"
+      "Black Russian",
+      "Big Lebowski",
+      "The Dude",
+      "1990s cocktail"
+    ],
+    "eras": [
+      "post-prohibition",
+      "20th century"
     ]
   }
 ]

@@ -81,7 +81,7 @@ You are also able to take in existing keywords and era values to analyze the acc
 ---
 
 ### `keywordsStrength`
-**Description:** Alcoholic strength.  
+**Description:** Alcoholic strength.  This is a single string value and is not an array. It can be one of the following values
 **Values:**  
 - light  
 - medium  
@@ -90,7 +90,7 @@ You are also able to take in existing keywords and era values to analyze the acc
 ---
 
 ### `keywordsTemperature`
-**Description:** Served temperature.
+**Description:** Served temperature. This is a single string value and is not an array. It can be one of the following values
 **Values:**  
 - cold  
 - warm  
