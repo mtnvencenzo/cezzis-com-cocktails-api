@@ -11842,9 +11842,6 @@
     "searchableTitles": [
       "Tom Collins"
     ],
-    "eras": [
-      "Traditional"
-    ],
     "ingredients": [
       {
         "ingredientId": "gin",
@@ -11939,47 +11936,75 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin",
+      "Old Tom gin"
+    ],
     "keywordsFlavorProfile": [
       "citrus",
       "sweet",
       "effervescent",
-      "refreshing"
+      "refreshing",
+      "light",
+      "crisp"
     ],
     "keywordsCocktailFamily": [
       "collins",
-      "highball"
+      "highball",
+      "sour"
     ],
     "keywordsTechnique": [
       "shaken",
       "topped"
     ],
-    "keywordsStrength": "medium",
-    "keywordsTemperature": "cold",
+    "keywordsStrength": [
+      "medium"
+    ],
+    "keywordsTemperature": [
+      "cold"
+    ],
     "keywordsSeason": [
       "summer",
       "spring"
     ],
     "keywordsOccasion": [
       "afternoon",
+      "brunch",
       "casual",
-      "brunch"
+      "garden party",
+      "day drinking",
+      "outdoor gathering"
     ],
     "keywordsMood": [
       "refreshing",
+      "light",
+      "lively",
+      "cheerful",
+      "classic",
       "relaxed"
     ],
     "keywordsSearchTerms": [
+      "gin",
+      "lemon juice",
+      "simple syrup",
       "soda water",
-      "lemon",
-      "19th century",
+      "Tom Collins",
       "John Collins",
-      "Old Tom gin"
+      "Collins glass",
+      "Jerry Thomas",
+      "Old Tom gin",
+      "London dry gin",
+      "Tom Collins hoax"
+    ],
+    "eras": [
+      "traditional",
+      "pre-prohibition",
+      "19th century"
     ]
   },
   {
@@ -11991,9 +12016,6 @@
     "description": "A sophisticated cocktail made with gin, dry vermouth, maraschino liqueur, absinthe, and bitters. Known for its elegant balance of flavors, it's a refined choice.",
     "searchableTitles": [
       "Tuxedo"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -12069,43 +12091,73 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin",
+      "Old Tom gin"
+    ],
     "keywordsFlavorProfile": [
       "dry",
       "aromatic",
-      "complex",
-      "savory"
+      "herbal",
+      "citrus",
+      "crisp",
+      "complex"
     ],
     "keywordsCocktailFamily": [
-      "martini-variant"
+      "martini-variant",
+      "stirred-spirit",
+      "aromatic"
     ],
     "keywordsTechnique": [
       "stirred"
     ],
-    "keywordsStrength": "medium",
-    "keywordsTemperature": "cold",
+    "keywordsStrength": [
+      "medium"
+    ],
+    "keywordsTemperature": [
+      "cold"
+    ],
     "keywordsSeason": [
       "all-season"
     ],
     "keywordsOccasion": [
       "evening",
       "formal",
-      "dinner-party"
+      "dinner party",
+      "black tie",
+      "cocktail bar",
+      "celebration"
     ],
     "keywordsMood": [
       "sophisticated",
-      "refined"
+      "refined",
+      "elegant",
+      "classic",
+      "polished"
     ],
     "keywordsSearchTerms": [
+      "gin",
+      "London dry gin",
+      "Old Tom gin",
       "fino sherry",
+      "sherry",
       "orange bitters",
-      "Tuxedo Park",
-      "formal cocktail"
+      "orange peel",
+      "Tuxedo cocktail",
+      "Tuxedo Club",
+      "New York",
+      "IBA cocktail",
+      "martini variation"
+    ],
+    "eras": [
+      "traditional",
+      "pre-prohibition",
+      "19th century"
     ]
   },
   {
@@ -12117,9 +12169,6 @@
     "description": "A strong cocktail made with gin, vodka, and Lillet Blanc, garnished with a lemon twist. Created by Ian Fleming for James Bond, it's a potent and suave cocktail.",
     "searchableTitles": [
       "Vesper"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -12195,44 +12244,72 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin",
       "vodka"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "dry",
       "crisp",
-      "strong",
-      "citrus"
+      "citrus",
+      "aromatic",
+      "smooth",
+      "lightly bitter"
     ],
     "keywordsCocktailFamily": [
-      "martini-variant"
+      "martini-variant",
+      "stirred-spirit",
+      "aromatic"
     ],
     "keywordsTechnique": [
+      "shaken",
       "stirred"
     ],
-    "keywordsStrength": "strong",
-    "keywordsTemperature": "cold",
+    "keywordsStrength": [
+      "strong"
+    ],
+    "keywordsTemperature": [
+      "cold"
+    ],
     "keywordsSeason": [
       "all-season"
     ],
     "keywordsOccasion": [
       "evening",
-      "dinner-party"
+      "dinner party",
+      "cocktail bar",
+      "formal",
+      "late night"
     ],
     "keywordsMood": [
+      "sophisticated",
       "bold",
-      "sophisticated"
+      "mysterious",
+      "elegant",
+      "iconic"
     ],
     "keywordsSearchTerms": [
-      "James Bond",
-      "Casino Royale",
+      "Vesper cocktail",
+      "gin",
+      "vodka",
       "Lillet Blanc",
+      "Lillet",
+      "lemon peel",
+      "James Bond",
+      "Vesper Lynd",
+      "Casino Royale",
       "Ian Fleming",
-      "shaken not stirred"
+      "shaken not stirred",
+      "martini variation"
+    ],
+    "eras": [
+      "modern",
+      "20th century"
     ]
   },
   {
@@ -12244,9 +12321,6 @@
     "description": "A complex cocktail made with rye whiskey, cognac, sweet vermouth, Benedictine, and bitters. Created in New Orleans, it's a rich and aromatic cocktail.",
     "searchableTitles": [
       "Vieux Carr\u00e9"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -12345,28 +12419,40 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "rye",
+      "rye whiskey",
       "cognac"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "rye whiskey",
+      "cognac"
+    ],
     "keywordsFlavorProfile": [
       "rich",
       "herbal",
-      "complex",
+      "spiced",
+      "bitter",
       "aromatic",
-      "warm"
+      "complex",
+      "slightly sweet",
+      "boozy"
     ],
     "keywordsCocktailFamily": [
-      "stirred-spirit"
+      "stirred-spirit",
+      "aromatic",
+      "manhattan-variant"
     ],
     "keywordsTechnique": [
       "stirred"
     ],
-    "keywordsStrength": "strong",
-    "keywordsTemperature": "cold",
+    "keywordsStrength": [
+      "strong"
+    ],
+    "keywordsTemperature": [
+      "cold"
+    ],
     "keywordsSeason": [
       "fall",
       "winter",
@@ -12374,20 +12460,38 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
-      "nightcap"
+      "nightcap",
+      "cocktail bar",
+      "craft bar",
+      "after dinner",
+      "classic cocktail lounge"
     ],
     "keywordsMood": [
       "sophisticated",
-      "contemplative"
+      "contemplative",
+      "rich",
+      "elegant",
+      "nostalgic"
     ],
     "keywordsSearchTerms": [
+      "Vieux Carré cocktail",
+      "rye whiskey",
+      "cognac",
+      "sweet vermouth",
+      "Benedictine",
+      "Bénédictine",
+      "Peychaud's bitters",
+      "Angostura bitters",
       "New Orleans",
       "French Quarter",
-      "Benedictine",
-      "Peychaud's",
       "Carousel Bar",
-      "Hotel Monteleone"
+      "Hotel Monteleone",
+      "Walter Bergeron"
+    ],
+    "eras": [
+      "traditional",
+      "post-prohibition",
+      "20th century"
     ]
   },
   {
@@ -12399,9 +12503,6 @@
     "description": "A refreshing cocktail made with whiskey, mint, lemon, and simple syrup. Known for its bright and citrusy flavor, it's a versatile and easy-to-cocktail cocktail.",
     "searchableTitles": [
       "Whiskey Smash"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -12491,27 +12592,41 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "bourbon"
+      "bourbon",
+      "whiskey"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bourbon whiskey"
+    ],
     "keywordsFlavorProfile": [
       "minty",
       "citrus",
       "sweet",
-      "refreshing"
+      "tart",
+      "herbal",
+      "refreshing",
+      "crisp",
+      "light"
     ],
     "keywordsCocktailFamily": [
-      "smash"
+      "smash",
+      "sour",
+      "julep-variant"
     ],
     "keywordsTechnique": [
       "muddled",
+      "built",
       "swizzled"
     ],
-    "keywordsStrength": "medium",
-    "keywordsTemperature": "cold",
+    "keywordsStrength": [
+      "medium"
+    ],
+    "keywordsTemperature": [
+      "cold"
+    ],
     "keywordsSeason": [
       "spring",
       "summer"
@@ -12519,17 +12634,34 @@
     "keywordsOccasion": [
       "afternoon",
       "casual",
-      "garden-party"
+      "garden party",
+      "day drinking",
+      "outdoor gathering",
+      "patio"
     ],
     "keywordsMood": [
       "refreshing",
-      "lively"
+      "lively",
+      "cheerful",
+      "easygoing",
+      "bright"
     ],
     "keywordsSearchTerms": [
-      "mint",
-      "lemon",
-      "bourbon cocktail",
-      "julep cousin"
+      "whiskey smash",
+      "bourbon",
+      "bourbon whiskey",
+      "lemon wedges",
+      "mint leaves",
+      "simple syrup",
+      "crushed ice",
+      "Jerry Thomas",
+      "Dale DeGroff",
+      "mint julep variation"
+    ],
+    "eras": [
+      "traditional",
+      "pre-prohibition",
+      "19th century"
     ]
   },
   {
@@ -12541,9 +12673,6 @@
     "description": "A classic cocktail made with whiskey, lemon juice, and simple syrup, sometimes with an egg white. Known for its balance of sweet and sour, it's a timeless favorite.",
     "searchableTitles": [
       "Whiskey Sour"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -12615,46 +12744,76 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
+      "whiskey",
       "bourbon"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "bourbon whiskey"
+    ],
     "keywordsFlavorProfile": [
       "citrus",
       "sweet",
       "tart",
+      "balanced",
       "creamy",
-      "smooth"
+      "smooth",
+      "frothy",
+      "refreshing",
+      "light"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "classic",
+      "daisy"
     ],
     "keywordsTechnique": [
       "shaken",
       "dry-shaken"
     ],
-    "keywordsStrength": "medium",
-    "keywordsTemperature": "cold",
+    "keywordsStrength": [
+      "medium"
+    ],
+    "keywordsTemperature": [
+      "cold"
+    ],
     "keywordsSeason": [
       "all-season"
     ],
     "keywordsOccasion": [
       "evening",
       "casual",
-      "dinner-party"
+      "dinner party",
+      "cocktail bar",
+      "happy hour",
+      "date night"
     ],
     "keywordsMood": [
       "classic",
-      "comforting"
+      "comforting",
+      "balanced",
+      "refreshing",
+      "approachable"
     ],
     "keywordsSearchTerms": [
-      "lemon",
-      "egg white",
+      "whiskey sour",
+      "whiskey",
+      "bourbon",
+      "bourbon whiskey",
+      "lemon juice",
       "simple syrup",
-      "frothy",
-      "bourbon cocktail"
+      "egg white",
+      "Angostura bitters",
+      "sour mix",
+      "Jerry Thomas",
+      "classic sour cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "pre-prohibition",
+      "19th century"
     ]
   },
   {
@@ -12666,9 +12825,6 @@
     "description": "A potent tiki cocktail made with various rums, fruit juices, and a hint of spice. Created in the 1930s, it's a strong and flavorful cocktail known for its complex layers.",
     "searchableTitles": [
       "Zombie"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -12791,51 +12947,86 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "jamaican-rum",
-      "puerto-rican-rum",
-      "151-proof-rum"
+      "Jamaican rum",
+      "Puerto Rican rum",
+      "overproof rum",
+      "aged rum"
     ],
     "keywordsFlavorProfile": [
       "tropical",
       "sweet",
-      "complex",
       "citrus",
-      "spiced"
+      "spiced",
+      "fruity",
+      "herbal",
+      "bitter",
+      "complex",
+      "boozy"
     ],
     "keywordsCocktailFamily": [
-      "tiki"
+      "tiki",
+      "punch",
+      "sour"
     ],
     "keywordsTechnique": [
-      "blended"
+      "blended",
+      "built"
     ],
-    "keywordsStrength": "strong",
-    "keywordsTemperature": "cold",
+    "keywordsStrength": [
+      "strong"
+    ],
+    "keywordsTemperature": [
+      "cold"
+    ],
     "keywordsSeason": [
-      "summer"
+      "summer",
+      "all-season"
     ],
     "keywordsOccasion": [
-      "tiki-bar",
-      "party"
+      "tiki bar",
+      "party",
+      "group setting",
+      "vacation",
+      "beach party"
     ],
     "keywordsMood": [
       "bold",
       "adventurous",
-      "festive"
+      "festive",
+      "exotic",
+      "escapist",
+      "intense"
     ],
     "keywordsSearchTerms": [
+      "Zombie cocktail",
+      "rum",
+      "Jamaican rum",
+      "Puerto Rican rum",
+      "overproof rum",
+      "lime juice",
+      "grenadine",
+      "falernum",
+      "Velvet Falernum",
+      "Don's Mix",
+      "grapefruit juice",
+      "Angostura bitters",
+      "absinthe",
       "Don the Beachcomber",
       "Donn Beach",
-      "falernum",
-      "grenadine",
-      "151 rum",
-      "tiki",
-      "1934"
+      "Hollywood",
+      "tiki cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "post-prohibition",
+      "20th century",
+      "mid-20th century"
     ]
   }
 ]
