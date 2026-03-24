@@ -11962,12 +11962,8 @@
       "shaken",
       "topped"
     ],
-    "keywordsStrength": [
-      "medium"
-    ],
-    "keywordsTemperature": [
-      "cold"
-    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "summer",
       "spring"
@@ -12116,12 +12112,8 @@
     "keywordsTechnique": [
       "stirred"
     ],
-    "keywordsStrength": [
-      "medium"
-    ],
-    "keywordsTemperature": [
-      "cold"
-    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "all-season"
     ],
@@ -12270,12 +12262,8 @@
       "shaken",
       "stirred"
     ],
-    "keywordsStrength": [
-      "strong"
-    ],
-    "keywordsTemperature": [
-      "cold"
-    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "all-season"
     ],
@@ -12447,12 +12435,8 @@
     "keywordsTechnique": [
       "stirred"
     ],
-    "keywordsStrength": [
-      "strong"
-    ],
-    "keywordsTemperature": [
-      "cold"
-    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "fall",
       "winter",
@@ -12621,12 +12605,8 @@
       "built",
       "swizzled"
     ],
-    "keywordsStrength": [
-      "medium"
-    ],
-    "keywordsTemperature": [
-      "cold"
-    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "spring",
       "summer"
@@ -12773,12 +12753,8 @@
       "shaken",
       "dry-shaken"
     ],
-    "keywordsStrength": [
-      "medium"
-    ],
-    "keywordsTemperature": [
-      "cold"
-    ],
+    "keywordsStrength": "medium",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "all-season"
     ],
@@ -12978,12 +12954,8 @@
       "blended",
       "built"
     ],
-    "keywordsStrength": [
-      "strong"
-    ],
-    "keywordsTemperature": [
-      "cold"
-    ],
+    "keywordsStrength": "strong",
+    "keywordsTemperature": "cold",
     "keywordsSeason": [
       "summer",
       "all-season"

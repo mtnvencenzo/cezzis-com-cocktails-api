@@ -10,9 +10,6 @@
       "Bitter Mai Tai",
       "Bitter Mai-Tai"
     ],
-    "eras": [
-      "Modern"
-    ],
     "ingredients": [
       {
         "ingredientId": "aged-rum",
@@ -107,13 +104,13 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "aged-rum"
+      "aged rum"
     ],
     "keywordsFlavorProfile": [
       "bitter",
@@ -121,14 +118,21 @@
       "citrus",
       "tropical",
       "nutty",
-      "complex"
+      "fruity",
+      "balanced",
+      "bright",
+      "complex",
+      "boozy"
     ],
     "keywordsCocktailFamily": [
       "tiki",
-      "mai-tai-variant"
+      "mai-tai-variant",
+      "sour",
+      "modern-classic"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "built"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -138,20 +142,37 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "craft-bar",
-      "date-night"
+      "craft bar",
+      "cocktail bar",
+      "tiki bar",
+      "date night"
     ],
     "keywordsMood": [
       "adventurous",
-      "sophisticated"
+      "sophisticated",
+      "balanced",
+      "refined",
+      "innovative",
+      "tropical"
     ],
     "keywordsSearchTerms": [
-      "amaro",
-      "bitter tiki",
-      "modern tiki",
-      "craft cocktail renaissance",
+      "Bitter Mai Tai",
+      "Mai Tai",
+      "rum",
+      "aged rum",
+      "lime juice",
       "orgeat",
-      "curacao"
+      "orange curaçao",
+      "curacao",
+      "amaro",
+      "Campari",
+      "Trader Vic",
+      "tiki cocktail",
+      "modern tiki"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -163,9 +184,6 @@
     "description": "A sophisticated blend of gin, lemon juice, sugar syrup, and cr\u00c3\u00a8me de m\u00c3\u00bbre that has become a cornerstone of contemporary cocktail culture. Created by Dick Bradsell, this elegant libation represents the perfect marriage of classic cocktail structure and innovative flavor combinations.",
     "searchableTitles": [
       "Bramble"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -265,25 +283,33 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "fruity",
       "sweet",
       "tart",
       "berry",
-      "citrus"
+      "citrus",
+      "refreshing",
+      "bright",
+      "juicy",
+      "slightly sweet"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "modern-classic"
     ],
     "keywordsTechnique": [
       "shaken",
-      "drizzled"
+      "built",
+      "topped"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -293,20 +319,38 @@
     ],
     "keywordsOccasion": [
       "afternoon",
-      "garden-party",
-      "brunch"
+      "brunch",
+      "garden party",
+      "cocktail bar",
+      "day drinking",
+      "summer party"
     ],
     "keywordsMood": [
       "refreshing",
-      "elegant"
+      "elegant",
+      "vibrant",
+      "refined",
+      "approachable"
     ],
     "keywordsSearchTerms": [
-      "blackberry",
+      "Bramble cocktail",
+      "gin",
+      "London dry gin",
+      "lemon juice",
+      "simple syrup",
+      "crème de mûre",
       "creme de mure",
+      "blackberry liqueur",
+      "blackberries",
       "Dick Bradsell",
+      "Fred's Club",
       "London",
-      "British",
       "crushed ice"
+    ],
+    "eras": [
+      "modern",
+      "20th century",
+      "late 20th century"
     ]
   },
   {
@@ -318,9 +362,6 @@
     "description": "A sophisticated blend of Green Chartreuse, pineapple juice, lime juice, and coconut cream that combines the tropical flavors of classic Tiki drinks with the elegance of French sparkling wine. Created by Marcovaldo Dionysos at Smuggler's Cove.",
     "searchableTitles": [
       "Chartreuse Swizzle"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -408,48 +449,69 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 6,
     "keywordsBaseSpirit": [
       "chartreuse"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "Green Chartreuse"
+    ],
     "keywordsFlavorProfile": [
       "herbal",
       "tropical",
       "sweet",
       "complex",
       "coconut",
-      "pineapple"
+      "pineapple",
+      "citrus",
+      "refreshing",
+      "bright",
+      "frothy"
     ],
     "keywordsCocktailFamily": [
       "tiki",
-      "swizzle"
+      "swizzle",
+      "modern-classic"
     ],
     "keywordsTechnique": [
-      "swizzled"
+      "swizzled",
+      "built",
+      "topped"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer"
+      "summer",
+      "all-season"
     ],
     "keywordsOccasion": [
       "tiki-bar",
       "evening",
-      "craft-bar"
+      "craft-bar",
+      "summer party"
     ],
     "keywordsMood": [
       "exotic",
-      "adventurous"
+      "adventurous",
+      "refined",
+      "playful"
     ],
     "keywordsSearchTerms": [
+      "Chartreuse Swizzle",
       "green chartreuse",
+      "lime juice",
+      "pineapple juice",
+      "coconut cream",
       "Smuggler's Cove",
       "Marcovaldo Dionysos",
       "tiki revival",
       "herbal liqueur",
-      "coconut"
+      "swizzle technique"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -462,9 +524,6 @@
     "searchableTitles": [
       "Cosmopolitan",
       "Cosmo"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -552,24 +611,30 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "vodka"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "citron vodka"
+    ],
     "keywordsFlavorProfile": [
       "fruity",
       "tart",
       "citrus",
       "sweet",
-      "crisp"
+      "crisp",
+      "bright",
+      "balanced"
     ],
     "keywordsCocktailFamily": [
-      "martini-variant"
+      "martini-variant",
+      "modern-classic"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "strained"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -579,20 +644,32 @@
     "keywordsOccasion": [
       "dinner-party",
       "girls-night",
-      "celebration"
+      "celebration",
+      "urban-chic",
+      "afternoon brunch"
     ],
     "keywordsMood": [
       "glamorous",
       "festive",
-      "sophisticated"
+      "sophisticated",
+      "playful"
     ],
     "keywordsSearchTerms": [
       "cosmo",
-      "cranberry",
+      "Cosmopolitan",
+      "cranberry juice",
+      "lime juice",
+      "triple sec",
+      "vodka cocktail",
       "Sex and the City",
       "1990s",
       "pink cocktail",
+      "New York",
       "Cointreau"
+    ],
+    "eras": [
+      "modern",
+      "late 20th century"
     ]
   },
   {
@@ -605,9 +682,6 @@
     "searchableTitles": [
       "Espresso Martini",
       "Coffee Martini"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -694,23 +768,29 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "vodka"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "neutral spirit"
+    ],
     "keywordsFlavorProfile": [
       "coffee",
       "bittersweet",
       "rich",
-      "creamy"
+      "creamy",
+      "bold",
+      "smooth"
     ],
     "keywordsCocktailFamily": [
-      "martini-variant"
+      "martini-variant",
+      "modern-classic"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "strained"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -720,7 +800,9 @@
     "keywordsOccasion": [
       "after-dinner",
       "late-night",
-      "brunch"
+      "brunch",
+      "urban-chic",
+      "evening social"
     ],
     "keywordsMood": [
       "energizing",
@@ -730,10 +812,18 @@
     "keywordsSearchTerms": [
       "coffee cocktail",
       "espresso",
-      "Dick Bradsell",
+      "vodka cocktail",
+      "coffee liqueur",
       "Kahlua",
+      "Dick Bradsell",
+      "Fred's Club",
+      "London 1980s",
       "caffeine",
       "frothy"
+    ],
+    "eras": [
+      "modern",
+      "late 20th century"
     ]
   },
   {
@@ -745,9 +835,6 @@
     "description": "A frozen version of the classic Negroni that maintains the sophisticated complexity of the original while adding a refreshing, modern twist. This innovative variation has become a favorite among bartenders and cocktail enthusiasts who appreciate both tradition and innovation.",
     "searchableTitles": [
       "Frozen Negroni"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -835,25 +922,31 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 240,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "bitter",
       "sweet",
       "herbal",
       "citrus",
-      "complex"
+      "complex",
+      "refreshing",
+      "slushy"
     ],
     "keywordsCocktailFamily": [
-      "negroni-variant"
+      "negroni-variant",
+      "modern-classic"
     ],
     "keywordsTechnique": [
       "frozen",
-      "stirred"
+      "stirred",
+      "fork-scraped"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "frozen",
@@ -863,7 +956,9 @@
     "keywordsOccasion": [
       "afternoon",
       "pool-party",
-      "bbq"
+      "bbq",
+      "summer-party",
+      "tropical"
     ],
     "keywordsMood": [
       "refreshing",
@@ -875,8 +970,16 @@
       "slushy",
       "Campari",
       "sweet vermouth",
-      "negroni",
-      "Italian"
+      "Negroni",
+      "Italian",
+      "Florence",
+      "summer cocktail",
+      "frozen Negroni",
+      "Campari cocktail"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -888,9 +991,6 @@
     "description": "A delicate blend of gin, apricot liqueur, and fresh lemon juice that showcases the botanical complexity of gin while adding layers of fruit-forward elegance. This modern classic has become a favorite among gin enthusiasts and cocktail connoisseurs.",
     "searchableTitles": [
       "Gin Blossom"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -978,24 +1078,30 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 8,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "fruity",
       "floral",
       "citrus",
       "delicate",
-      "sweet"
+      "sweet",
+      "light",
+      "aromatic"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "modern-classic"
     ],
     "keywordsTechnique": [
-      "shaken"
+      "shaken",
+      "fresh citrus"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
@@ -1006,7 +1112,9 @@
     "keywordsOccasion": [
       "aperitif",
       "garden-party",
-      "afternoon"
+      "afternoon",
+      "springtime",
+      "afternoon refreshment"
     ],
     "keywordsMood": [
       "elegant",
@@ -1018,7 +1126,14 @@
       "gin cocktail",
       "botanical",
       "fruit-forward",
-      "lemon"
+      "lemon",
+      "London",
+      "apricot liqueur",
+      "modern gin cocktail"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
@@ -1031,9 +1146,6 @@
     "searchableTitles": [
       "Hibiscus Punch Royale",
       "Hibiscus Punch"
-    ],
-    "eras": [
-      "Modern"
     ],
     "ingredients": [
       {
@@ -1133,7 +1245,7 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2025-07-17T00:00:00-06:00",
+    "publishedOn": "2026-03-24T00:00:00-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
@@ -1146,11 +1258,14 @@
       "tart",
       "fruity",
       "effervescent",
-      "tropical"
+      "tropical",
+      "bright",
+      "refreshing"
     ],
     "keywordsCocktailFamily": [
       "punch",
-      "tiki"
+      "tiki",
+      "modern-classic"
     ],
     "keywordsTechnique": [
       "shaken",
@@ -1165,7 +1280,9 @@
     "keywordsOccasion": [
       "celebration",
       "party",
-      "brunch"
+      "brunch",
+      "festive brunch",
+      "summer gathering"
     ],
     "keywordsMood": [
       "festive",
@@ -1174,11 +1291,20 @@
     ],
     "keywordsSearchTerms": [
       "hibiscus",
+      "hibiscus tea",
       "champagne",
       "punch",
       "sparkling",
       "red cocktail",
-      "tiki revival"
+      "tiki revival",
+      "lime",
+      "modern tiki",
+      "roselle",
+      "jamaica"
+    ],
+    "eras": [
+      "modern",
+      "21st century"
     ]
   },
   {
