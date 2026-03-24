@@ -9,5 +9,5 @@ resources:
   - ingress.yml
 images:
   - name: acrveceusgloshared001.azurecr.io/cocktailsapi
-    newTag: 0.1.193
+    newTag: 0.1.194
     newName: acrveceusgloshared001.azurecr.io/cocktailsapi
