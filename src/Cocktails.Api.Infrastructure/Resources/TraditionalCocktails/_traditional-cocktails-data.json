@@ -10342,9 +10342,6 @@
     "searchableTitles": [
       "Scorpion Bowl"
     ],
-    "eras": [
-      "Traditional"
-    ],
     "ingredients": [
       {
         "ingredientId": "anejo-rum",
@@ -10468,25 +10465,29 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum",
       "cognac"
     ],
     "keywordsSpiritSubtype": [
-      "aged-rum"
+      "aged rum",
+      "añejo rum",
+      "cognac"
     ],
     "keywordsFlavorProfile": [
       "tropical",
       "sweet",
       "citrus",
       "nutty",
-      "rich"
+      "spiced",
+      "complex"
     ],
     "keywordsCocktailFamily": [
       "tiki",
-      "punch"
+      "punch",
+      "communal"
     ],
     "keywordsTechnique": [
       "blended"
@@ -10498,20 +10499,32 @@
     ],
     "keywordsOccasion": [
       "party",
-      "tiki-bar",
-      "group"
+      "group",
+      "tiki bar",
+      "celebration",
+      "shared experience"
     ],
     "keywordsMood": [
       "festive",
       "communal",
-      "fun"
+      "fun",
+      "tropical",
+      "lively"
     ],
     "keywordsSearchTerms": [
       "Trader Vic",
-      "orgeat",
+      "tiki cocktail",
+      "scorpion bowl",
+      "orgeat syrup",
+      "lemon juice",
+      "orange juice",
       "shared cocktail",
-      "flaming",
-      "tiki bowl"
+      "flaming lime shell"
+    ],
+    "eras": [
+      "traditional",
+      "mid-20th century",
+      "post-prohibition"
     ]
   },
   {
@@ -10523,9 +10536,6 @@
     "description": "A refreshing cocktail made with sherry, sugar, and fresh fruit, served over crushed ice. Popular in the 19th century, it's a sweet and light cocktail.",
     "searchableTitles": [
       "Sherry Cobbler"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -10617,45 +10627,65 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "sherry"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "amontillado sherry",
+      "dry sherry"
+    ],
     "keywordsFlavorProfile": [
       "fruity",
       "sweet",
+      "citrus",
       "refreshing",
-      "light"
+      "light",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "cobbler"
+      "cobbler",
+      "historical"
     ],
     "keywordsTechnique": [
       "muddled",
-      "shaken"
+      "shaken",
+      "built"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "spring"
+      "spring",
+      "summer"
     ],
     "keywordsOccasion": [
       "afternoon",
-      "garden-party"
+      "garden party",
+      "brunch",
+      "picnic"
     ],
     "keywordsMood": [
       "elegant",
-      "refreshing"
+      "refreshing",
+      "classic",
+      "refined"
     ],
     "keywordsSearchTerms": [
-      "sherry",
+      "sherry cobbler",
+      "amontillado sherry",
+      "dry sherry",
+      "orange slices",
+      "mint sprig",
       "crushed ice",
-      "fruit",
+      "straw",
+      "Charles Dickens"
+    ],
+    "eras": [
+      "traditional",
       "19th century",
-      "seasonal berries"
+      "pre-prohibition",
+      "victorian era"
     ]
   },
   {
@@ -10667,9 +10697,6 @@
     "description": "A rich and creamy cocktail made with sherry, sugar, egg, and nutmeg. Dating back to the 17th century, it's a warming and indulgent cocktail.",
     "searchableTitles": [
       "Sherry Flip"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -10754,27 +10781,31 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "sherry"
     ],
     "keywordsSpiritSubtype": [
-      "oloroso-sherry"
+      "oloroso sherry",
+      "dry sherry"
     ],
     "keywordsFlavorProfile": [
       "creamy",
       "rich",
       "sweet",
-      "nutmeg",
-      "warm"
+      "nutty",
+      "spiced",
+      "velvety"
     ],
     "keywordsCocktailFamily": [
-      "flip"
+      "flip",
+      "historical"
     ],
     "keywordsTechnique": [
       "shaken",
-      "dry-shaken"
+      "dry shaken",
+      "double shaken"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
@@ -10783,20 +10814,30 @@
       "winter"
     ],
     "keywordsOccasion": [
-      "after-dinner",
-      "nightcap"
+      "after dinner",
+      "nightcap",
+      "dessert"
     ],
     "keywordsMood": [
       "indulgent",
-      "warming",
-      "comforting"
+      "comforting",
+      "elegant",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "sherry flip",
+      "oloroso sherry",
       "whole egg",
       "nutmeg",
-      "17th century",
-      "creamy cocktail",
-      "dessert drink"
+      "simple syrup",
+      "egg cocktail",
+      "dry shake",
+      "flip cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ]
   },
   {
@@ -10808,9 +10849,6 @@
     "description": "A classic cocktail made with cognac, Cointreau, and lemon juice, garnished with a sugared rim. Believed to have originated during World War I, it's a balanced and sophisticated cocktail.",
     "searchableTitles": [
       "SideCar"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -10900,20 +10938,27 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "cognac"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "cognac",
+      "brandy"
+    ],
     "keywordsFlavorProfile": [
       "citrus",
       "sweet",
       "tart",
-      "rich"
+      "rich",
+      "balanced",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "daisy",
+      "classic"
     ],
     "keywordsTechnique": [
       "shaken"
@@ -10921,24 +10966,34 @@
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "fall",
-      "all-season"
+      "all-season",
+      "fall"
     ],
     "keywordsOccasion": [
       "evening",
-      "dinner-party"
+      "cocktail hour",
+      "dinner party"
     ],
     "keywordsMood": [
       "sophisticated",
-      "classic"
+      "classic",
+      "elegant",
+      "refined"
     ],
     "keywordsSearchTerms": [
+      "sidecar cocktail",
+      "cognac",
+      "brandy cocktail",
       "Cointreau",
-      "lemon",
+      "triple sec",
+      "lemon juice",
       "sugar rim",
-      "Paris",
-      "WWI",
-      "brandy"
+      "Harry MacElhone"
+    ],
+    "eras": [
+      "traditional",
+      "20th century",
+      "post-prohibition"
     ]
   },
   {
@@ -10950,9 +11005,6 @@
     "description": "A vibrant cocktail made with gin, cherry brandy, Cointreau, Benedictine, lime juice, and soda. Created in Singapore in the early 20th century, it's a complex and fruity cocktail.",
     "searchableTitles": [
       "Singapore Sling"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -11097,21 +11149,28 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "fruity",
       "sweet",
+      "citrus",
       "herbal",
+      "tropical",
       "complex",
-      "tropical"
+      "effervescent",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "sling"
+      "sling",
+      "tiki",
+      "classic"
     ],
     "keywordsTechnique": [
       "shaken",
@@ -11125,19 +11184,32 @@
     ],
     "keywordsOccasion": [
       "evening",
-      "tiki-bar",
-      "celebration"
+      "celebration",
+      "tiki bar",
+      "vacation",
+      "travel"
     ],
     "keywordsMood": [
       "exotic",
-      "festive"
+      "festive",
+      "tropical",
+      "adventurous",
+      "lively"
     ],
     "keywordsSearchTerms": [
+      "Singapore Sling",
       "Raffles Hotel",
       "Singapore",
+      "Ngiam Tong Boon",
       "Cherry Heering",
-      "Benedictine",
-      "pineapple"
+      "Bénédictine",
+      "Cointreau",
+      "pineapple juice"
+    ],
+    "eras": [
+      "traditional",
+      "20th century",
+      "pre-prohibition"
     ]
   },
   {
@@ -11149,9 +11221,6 @@
     "description": "A refreshing cocktail made with sloe gin, lemon juice, simple syrup, and soda water. Known for its fruity and fizzy profile, it's a light and invigorating cocktail.",
     "searchableTitles": [
       "Sloe Gin Fizz"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -11242,48 +11311,66 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
     "keywordsSpiritSubtype": [
-      "sloe-gin"
+      "sloe gin",
+      "London dry gin"
     ],
     "keywordsFlavorProfile": [
       "fruity",
       "sweet",
+      "tart",
+      "citrus",
       "effervescent",
-      "tart"
+      "light",
+      "bright"
     ],
     "keywordsCocktailFamily": [
-      "fizz"
+      "fizz",
+      "sour",
+      "classic"
     ],
     "keywordsTechnique": [
       "shaken",
-      "dry-shaken"
+      "dry shaken",
+      "topped"
     ],
     "keywordsStrength": "light",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "spring"
+      "spring",
+      "summer"
     ],
     "keywordsOccasion": [
       "afternoon",
       "brunch",
-      "garden-party"
+      "garden party",
+      "day drinking"
     ],
     "keywordsMood": [
       "cheerful",
-      "refreshing"
+      "refreshing",
+      "lively",
+      "light"
     ],
     "keywordsSearchTerms": [
+      "sloe gin fizz",
       "sloe gin",
-      "soda water",
-      "lemon",
+      "gin fizz",
+      "lemon juice",
+      "simple syrup",
       "egg white",
-      "bubbly"
+      "soda water",
+      "sloe berries"
+    ],
+    "eras": [
+      "traditional",
+      "20th century",
+      "prohibition"
     ]
   },
   {
@@ -11295,9 +11382,6 @@
     "description": "A refreshing cocktail made with gin, mint, lime juice, and simple syrup. Originating in the Prohibition era, it's a crisp and herbal cocktail.",
     "searchableTitles": [
       "Southside"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -11390,45 +11474,66 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "gin"
     ],
-    "keywordsSpiritSubtype": [],
+    "keywordsSpiritSubtype": [
+      "London dry gin"
+    ],
     "keywordsFlavorProfile": [
       "minty",
+      "herbal",
       "citrus",
       "sweet",
-      "refreshing"
+      "refreshing",
+      "bright",
+      "clean"
     ],
     "keywordsCocktailFamily": [
-      "sour"
+      "sour",
+      "daisy",
+      "classic"
     ],
     "keywordsTechnique": [
       "muddled",
-      "shaken"
+      "shaken",
+      "double strained"
     ],
     "keywordsStrength": "medium",
     "keywordsTemperature": "cold",
     "keywordsSeason": [
-      "summer",
-      "spring"
+      "spring",
+      "summer"
     ],
     "keywordsOccasion": [
       "evening",
-      "garden-party"
+      "cocktail hour",
+      "garden party",
+      "day drinking"
     ],
     "keywordsMood": [
       "refreshing",
-      "elegant"
+      "elegant",
+      "crisp",
+      "lively",
+      "classic"
     ],
     "keywordsSearchTerms": [
-      "Prohibition",
-      "mint",
-      "lime",
-      "21 Club",
-      "speakeasy"
+      "Southside cocktail",
+      "gin mint cocktail",
+      "mint leaves",
+      "lime juice",
+      "simple syrup",
+      "orange bitters",
+      "speakeasy",
+      "21 Club"
+    ],
+    "eras": [
+      "traditional",
+      "20th century",
+      "prohibition"
     ]
   },
   {
@@ -11440,9 +11545,6 @@
     "description": "A historic cocktail made with rum or whiskey, apple cider, and a touch of maple syrup. Popular in colonial America, it's a warming and rustic cocktail.",
     "searchableTitles": [
       "Stone Fence"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -11518,22 +11620,29 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
-      "rum"
+      "rum",
+      "whiskey"
     ],
     "keywordsSpiritSubtype": [
-      "dark-rum"
+      "dark rum",
+      "aged rum",
+      "applejack",
+      "American whiskey"
     ],
     "keywordsFlavorProfile": [
       "sweet",
+      "fruity",
       "spiced",
-      "autumnal",
-      "aromatic"
+      "aromatic",
+      "rich",
+      "warming"
     ],
     "keywordsCocktailFamily": [
-      "highball"
+      "highball",
+      "historical"
     ],
     "keywordsTechnique": [
       "built"
@@ -11545,18 +11654,30 @@
     ],
     "keywordsOccasion": [
       "casual",
-      "evening"
+      "evening",
+      "fall gathering",
+      "holiday"
     ],
     "keywordsMood": [
       "rustic",
-      "warming"
+      "warming",
+      "comforting",
+      "hearty"
     ],
     "keywordsSearchTerms": [
+      "stone fence cocktail",
       "apple cider",
-      "colonial American",
-      "Angostura",
-      "Ethan Allen",
-      "Vermont"
+      "dark rum",
+      "whiskey",
+      "applejack",
+      "Angostura bitters",
+      "colonial America",
+      "cider cocktail"
+    ],
+    "eras": [
+      "traditional",
+      "pre-prohibition",
+      "19th century"
     ]
   },
   {
@@ -11568,9 +11689,6 @@
     "description": "A simple Caribbean cocktail made with rhum agricole, lime, and cane syrup. Known for its bold and zesty flavor, it's a traditional favorite in the French West Indies.",
     "searchableTitles": [
       "Ti' Punch"
-    ],
-    "eras": [
-      "Traditional"
     ],
     "ingredients": [
       {
@@ -11654,25 +11772,30 @@
       }
     ],
     "modifiedOn": "2026-02-07T10:51:04-07:00",
-    "publishedOn": "2024-05-24T00:00:00-07:00",
+    "publishedOn": "2026-03-23T06:38:54-06:00",
     "prepTimeMinutes": 10,
     "keywordsBaseSpirit": [
       "rum"
     ],
     "keywordsSpiritSubtype": [
-      "rhum-agricole"
+      "rhum agricole",
+      "agricole rum"
     ],
     "keywordsFlavorProfile": [
       "citrus",
       "sweet",
       "funky",
-      "bold"
+      "bold",
+      "grassy",
+      "earthy"
     ],
     "keywordsCocktailFamily": [
-      "punch"
+      "sour",
+      "classic"
     ],
     "keywordsTechnique": [
-      "built"
+      "built",
+      "stirred"
     ],
     "keywordsStrength": "strong",
     "keywordsTemperature": "cold",
@@ -11682,19 +11805,31 @@
     ],
     "keywordsOccasion": [
       "casual",
-      "afternoon"
+      "afternoon",
+      "day drinking",
+      "aperitif"
     ],
     "keywordsMood": [
       "bold",
-      "authentic"
+      "authentic",
+      "tropical",
+      "rustic",
+      "minimalist"
     ],
     "keywordsSearchTerms": [
+      "Ti Punch",
+      "rhum agricole",
+      "agricole rum",
+      "cane syrup",
+      "lime wedge",
       "Martinique",
       "Guadeloupe",
-      "Caribbean",
-      "French West Indies",
-      "cane syrup",
-      "rhum agricole"
+      "French Caribbean"
+    ],
+    "eras": [
+      "traditional",
+      "19th century",
+      "pre-prohibition"
     ]
   },
   {

@@ -1,10 +1,10 @@
 # Cocktail Metadata Skill Guide
 
 **Purpose:**  
-Generate JSON metadata for cocktails suitable for Qdrant vector search. Arrays must be accurate, historically-informed, and consistent. Creativity is allowed when justified.  
+Generate JSON metadata for cocktails suitable for Qdrant vector search. Arrays must be accurate, historically-informed, and consistent. Creativity is allowed and encuraged when justified.  
 
 **Usage:**
-As a user of this skill, you have the ability to take in data about a cocktail for analysis.  You can recommend better keywords and search terms that can be used in the qdrant vector search for the most professiona and accurate results possible.  The search against the qdrant data is a human initiated search via entering common terms and phrases into a single text input that relates to there biases, generational vocabulary and trends.  This spans across multiple generations.
+As a user of this skill, you have the ability to take in data about a cocktail for analysis.  You can recommend better keywords and search terms that can be used ias filters against a qdrant vector search for the most professiona and accurate results possible.  The search against the qdrant data is a human initiated search via entering common terms and phrases into a single text input that relates to there biases, generational vocabulary and trends.  Teh usage of the search spans across multiple generations.
 
 You are also able to take in existing keywords and era values to analyze the accuracy of those based on the given content to recommend better search keyowords that are pertainient to todays and yesterdays searches.
 
@@ -90,10 +90,11 @@ You are also able to take in existing keywords and era values to analyze the acc
 ---
 
 ### `keywordsTemperature`
-**Description:** Served temperature.  
+**Description:** Served temperature.
 **Values:**  
 - cold  
 - warm  
+- frozen
 
 ---
 
@@ -161,7 +162,7 @@ You are also able to take in existing keywords and era values to analyze the acc
 ---
 
 ### `eras`
-**Description:** Historical era(s) relevant to the cocktail’s creation or popularity. Use historically accurate periods. Multiple entries allowed if needed. Content in parentheses should be excluded and is only for reference.  The ears array must always contain either 'traditional' or 'modern' depending on the cocktail but never both.
+**Description:** Historical era(s) relevant to the cocktail’s creation or popularity. Use historically accurate periods. Multiple entries allowed if needed. Content in parentheses should be excluded and is only for reference.  The eras array must always contain either 'traditional' or 'modern' depending on the cocktail but never both. If the cocktail is referenced prior to prohibition it must have the label -pre-prohibition but can contain others.
 **Common values:**  
 - traditional
 - modern
@@ -245,4 +246,4 @@ Each cocktail should include:
 ---
 
 **Goal:**  
-Maximize semantic match quality and keyword recall for vector search while preserving historical and cocktail accuracy.
+Maximize search filters used as filtering clauses on a semantic vector search while providing historical, cultural and cocktail accuracy.
